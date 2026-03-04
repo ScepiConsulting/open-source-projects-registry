@@ -3,6 +3,7 @@ import concurrent.futures
 import dataclasses
 import datetime as dt
 import hashlib
+import html
 import json
 import logging
 import os
@@ -672,6 +673,7 @@ class Harvester:
             },
         }
         self._write_json(self.knowledge_root / "manifest.json", manifest)
+        self._write_html_indexes(manifest)
 
     def _write_chunks(
         self,
@@ -804,6 +806,126 @@ class Harvester:
         path.parent.mkdir(parents=True, exist_ok=True)
         with path.open("w", encoding="utf-8") as f:
             f.write(text)
+
+    def _write_html_indexes(self, manifest: Dict[str, Any]) -> None:
+        knowledge_index = self.knowledge_root / "index.html"
+        apps_index = self.apps_root / "index.html"
+        repos_index = self.repos_root / "index.html"
+        readmes_index = self.readmes_root / "index.html"
+        meta_index = self.meta_root / "index.html"
+
+        app_files = manifest["files"].get("apps", [])
+        repo_files = manifest["files"].get("repos", [])
+        tag_files = manifest["files"].get("index_by_tag", [])
+        license_files = manifest["files"].get("index_by_license", [])
+        report_file = manifest["files"].get("report")
+
+        self._write_text(
+            knowledge_index,
+            self._build_html_page(
+                "Knowledge Root",
+                [
+                    "<p>This is a static knowledge export for self-hosted software metadata and READMEs.</p>",
+                    "<h2>For ChatGPT ingestion</h2>",
+                    "<ol>"
+                    "<li>Start with <code>manifest.json</code> for entry points and chunk files.</li>"
+                    "<li>Load app chunks from <code>apps/apps-*.json</code>.</li>"
+                    "<li>Use each app's <code>readme_path</code> to fetch full README text.</li>"
+                    "<li>Use tag/license indexes for filtering candidates quickly.</li>"
+                    "</ol>",
+                ],
+                [
+                    ("manifest.json", "./manifest.json"),
+                    ("apps/", "./apps/"),
+                    ("repos/", "./repos/"),
+                    ("meta/", "./meta/"),
+                    ("readmes/", "./readmes/"),
+                ],
+            ),
+        )
+
+        self._write_text(
+            apps_index,
+            self._build_html_page(
+                "App Chunks",
+                [
+                    "<p>Chunked app records with metadata, tags, and <code>readme_path</code> references.</p>",
+                    f"<p>Chunks: {len(app_files)}</p>",
+                ],
+                [(p.split("/")[-1], f"./{p.split('/')[-1]}") for p in app_files],
+            ),
+        )
+
+        self._write_text(
+            repos_index,
+            self._build_html_page(
+                "Repo Chunks",
+                [
+                    "<p>Chunked repository records and README fetch status.</p>",
+                    f"<p>Chunks: {len(repo_files)}</p>",
+                ],
+                [(p.split("/")[-1], f"./{p.split('/')[-1]}") for p in repo_files],
+            ),
+        )
+
+        readme_sample = sorted([p.name for p in self.readmes_root.glob("*.md")])[:200]
+        readme_links = [(name, f"./{name}") for name in readme_sample]
+        self._write_text(
+            readmes_index,
+            self._build_html_page(
+                "README Files",
+                [
+                    "<p>Full README markdown files harvested from software repositories.</p>",
+                    "<p>Use <code>readme_path</code> from app/repo JSON records for deterministic lookup.</p>",
+                    f"<p>Showing first {len(readme_links)} files as direct links.</p>",
+                ],
+                readme_links,
+            ),
+        )
+
+        meta_links: List[Tuple[str, str]] = []
+        if report_file:
+            meta_links.append((report_file.split("/")[-1], f"./{report_file.split('/')[-1]}"))
+        meta_links.append(("failed_repos.json", "./failed_repos.json"))
+        meta_links.append(("by-tag indexes", "../index/by-tag/"))
+        meta_links.append(("by-license indexes", "../index/by-license/"))
+        self._write_text(
+            meta_index,
+            self._build_html_page(
+                "Meta",
+                [
+                    "<p>Run reports and index pointers.</p>",
+                    f"<p>Tag indexes: {len(tag_files)} | License indexes: {len(license_files)}</p>",
+                ],
+                meta_links,
+            ),
+        )
+
+    def _build_html_page(self, title: str, paragraphs: List[str], links: List[Tuple[str, str]]) -> str:
+        link_items = "".join(
+            f'<li><a href="{html.escape(href)}">{html.escape(label)}</a></li>' for label, href in links
+        )
+        body_parts = "\n".join(paragraphs)
+        return f"""<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{html.escape(title)}</title>
+  <style>
+    body {{ font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 2rem; line-height: 1.5; }}
+    code {{ background: #f4f4f5; padding: 0.1rem 0.3rem; border-radius: 4px; }}
+  </style>
+</head>
+<body>
+  <h1>{html.escape(title)}</h1>
+  {body_parts}
+  <ul>
+    {link_items}
+  </ul>
+</body>
+</html>
+"""
 
     def _log(self, message: str) -> None:
         self.logger.info(message)
