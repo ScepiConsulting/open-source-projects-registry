@@ -1,0 +1,172 @@
+<p align="center">
+  <a href="https://count.racku.la">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/Rackula-lockup-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="assets/Rackula-lockup-light.svg">
+      <img src="assets/Rackula-lockup-dark.svg" alt="Rackula" width="420">
+    </picture>
+  </a>
+</p>
+
+<p align="center">
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-bd93f9?style=for-the-badge&labelColor=44475a" alt="License: MIT"></a>
+  <img src="https://img.shields.io/github/v/release/RackulaLives/Rackula?style=for-the-badge&labelColor=44475a&color=ff79c6" alt="GitHub Release">
+  <a href="https://github.com/RackulaLives/Rackula/pkgs/container/Rackula"><img src="https://img.shields.io/github/v/release/RackulaLives/Rackula?style=for-the-badge&labelColor=44475a&color=50fa7b&label=docker&logo=docker&logoColor=white" alt="Docker"></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FRackulaLives%2FRackula%2Freport%2Fbadges%2Fdocs%2Fbadges%2Fcoverage.json&style=for-the-badge&labelColor=44475a" alt="Coverage">
+  <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FRackulaLives%2FRackula%2Freport%2Fbadges%2Fdocs%2Fbadges%2Fratio.json&style=for-the-badge&labelColor=44475a" alt="Code to Test Ratio">
+  <img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FRackulaLives%2FRackula%2Freport%2Fbadges%2Fdocs%2Fbadges%2Ftime.json&style=for-the-badge&labelColor=44475a" alt="Test Time">
+</p>
+
+<p align="center">
+  <strong>Drag and drop rack visualizer</strong>
+</p>
+
+<p align="center">
+  <img src="assets/Rackula-hero-drac.gif" alt="Rackula demo" width="500">
+</p>
+
+---
+
+## What _Is_ This
+
+Plan your rack layout. Drag your devices in, move them around, export it. It runs in your browser. You can close the tab whenever you want.
+
+## What It _Do_
+
+- **Drag and drop devices** into your rack so you can frown at them
+- **Real device images** so it actually looks like your gear, not sad grey boxes
+- **Export to PNG, PDF, SVG** for your documentation or for printing and staring at
+- **QR code sharing** - your layout lives in a URL, scan it and it just shows up
+
+## But _Why?_
+
+You might ask, why should I make an imaginary rack like some sort of IT cosplay? And to that I would say, "fine then! don't! SCRAM!" but also, consider:
+
+- **Plan your layouts** before you build them. It's a lot easier to move your mouse than that 4U server full of hard drives. Your shoulder will thank you.
+- **Document existing layouts** so you know what is where.
+- **Because you can**
+
+## Get Started
+
+### **Use it right now:** [count.racku.la](https://count.racku.la)
+
+### Selfhost with Docker
+
+#### Docker Run
+
+```bash
+docker run -d -p 8080:8080 ghcr.io/rackulalives/rackula:latest
+```
+
+#### Docker Compose
+
+```bash
+curl -O https://raw.githubusercontent.com/rackulalives/rackula/main/docker-compose.yml
+docker compose up -d
+```
+
+Then open `http://localhost:8080` and get after it.
+
+### Persistent Storage (Self-Hosted)
+
+For layouts that persist across sessions:
+
+```bash
+git clone https://github.com/RackulaLives/Rackula.git
+cd Rackula
+curl -fsSL https://raw.githubusercontent.com/RackulaLives/Rackula/main/deploy/docker-compose.persist.yml -o docker-compose.yml
+mkdir -p data
+sudo chown 1001:1001 data
+docker compose up -d
+```
+
+See [Self-Hosting Guide](docs/guides/SELF-HOSTING.md) for details.
+
+For production/self-hosted API security:
+
+- `CORS_ORIGIN` should be your real app URL (restricts which browser origins can call the API).
+- `RACKULA_API_WRITE_TOKEN` protects API `PUT`/`DELETE` routes (optional, strongly recommended). If unset, write routes remain open.
+- `RACKULA_AUTH_MODE` controls centralized auth gate behavior:
+  - `none`: auth gate disabled (best for local/trusted development only)
+  - `oidc`: use an OpenID Connect provider (requires provider config plus `RACKULA_AUTH_SESSION_SECRET`)
+  - `local`: local auth mode (requires `RACKULA_AUTH_SESSION_SECRET`; tracking: [#1117](https://github.com/RackulaLives/Rackula/issues/1117))
+- `RACKULA_AUTH_SESSION_SECRET` is required when auth mode is enabled (minimum 32 characters). Use a random secret and rotate it when needed.
+- Current stable auth hardening: deny-by-default gate, signed session cookies, timeout/rotation policy, CSRF enforcement.
+- Current auth flow maturity: OIDC/local login provider wiring is still in progress.
+- For HTTPS deployments, set `RACKULA_AUTH_SESSION_COOKIE_SECURE=true` (compose templates default to this). Only set `false` for local HTTP testing.
+- Session hardening defaults are enabled when auth is on:
+  - `HttpOnly` cookie, `SameSite=Lax`, `Secure` in production
+  - bounded absolute + idle session lifetime
+  - CSRF checks on state-changing cookie-authenticated requests
+
+Generate strong secrets:
+
+```bash
+openssl rand -hex 32
+```
+
+Set values in a `.env` file beside `docker-compose.yml`:
+
+```bash
+cat > .env <<'EOF'
+CORS_ORIGIN=https://rack.example.com
+RACKULA_API_WRITE_TOKEN=replace-with-generated-token
+RACKULA_AUTH_MODE=none
+# To enable auth gate:
+# RACKULA_AUTH_MODE=oidc
+# RACKULA_AUTH_MODE=local
+# RACKULA_AUTH_SESSION_SECRET=replace-with-generated-secret
+# RACKULA_AUTH_SESSION_COOKIE_SECURE=true
+EOF
+docker compose up -d
+```
+
+Or pass them inline:
+
+```bash
+CORS_ORIGIN=https://rack.example.com \
+RACKULA_API_WRITE_TOKEN=replace-with-generated-token \
+docker compose up -d
+```
+
+### Build from source
+
+```bash
+git clone https://github.com/RackulaLives/Rackula.git
+cd Rackula && npm install && npm run build
+```
+
+Serve the `dist/` folder however you like. It's just files.
+
+## Documentation
+
+- [Architecture Overview](docs/reference/ARCHITECTURE.md)
+- [Technical Specification](docs/reference/SPEC.md)
+- [Contributing Guide](CONTRIBUTING.md)
+
+## Built With Claude
+
+This project was built using AI-assisted development with Claude. I told it what to build and then said "no, not like that" a lot. The AI did a lot of typing. Commits with substantial AI contributions are marked with `Co-authored-by` tags because we're not going to pretend otherwise.
+
+## Acknowledgements
+
+Built for the [r/homelab](https://reddit.com/r/homelab) and [r/selfhosted](https://reddit.com/r/selfhosted) communities. Colours from [Dracula Theme](https://draculatheme.com/). Device data from [NetBox devicetype-library](https://github.com/netbox-community/devicetype-library).
+
+See [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md) for full credits.
+
+## Star History
+
+<a href="https://star-history.com/#RackulaLives/Rackula&Date">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=RackulaLives/Rackula&type=Date&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=RackulaLives/Rackula&type=Date" />
+    <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=RackulaLives/Rackula&type=Date" />
+  </picture>
+</a>
+
+## Licence
+
+[MIT](LICENSE) - Copyright (c) 2025 Gareth Evans

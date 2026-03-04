@@ -1,0 +1,690 @@
+<!-- markdownlint-disable-file -->
+<div align="center">
+
+<br/>
+
+# <img src="docs/icons/favicon.svg" alt="" width="28" height="28" style="vertical-align: -0.18em;"> &nbsp;HomeTube
+
+<br/>
+
+[![Website](https://img.shields.io/badge/🌐-Website-blueviolet)](https://hometube.egalitarianmonkey.com)
+[![Reddit](https://img.shields.io/badge/Reddit-r%2FHomeTube-FF4500?logo=reddit&logoColor=white)](https://www.reddit.com/r/HomeTube/)
+[![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://python.org)
+[![Streamlit](https://img.shields.io/badge/Streamlit-1.49+-red.svg)](https://streamlit.io)
+[![Latest Release](https://img.shields.io/github/v/release/EgalitarianMonkey/hometube)](https://github.com/EgalitarianMonkey/hometube/releases)
+[![Docker Image](https://ghcr-badge.egpl.dev/egalitarianmonkey/hometube/latest_tag?trim=major&label=Docker)](https://github.com/EgalitarianMonkey/hometube/pkgs/container/hometube)
+[![License](https://img.shields.io/badge/License-AGPL--3.0-green.svg)](LICENSE)
+
+<br/>
+
+**🏡 Universal Video Downloader for Your Media Server**
+
+Download, process, and organize ads-free best-quality videos at Home.
+
+<br/>
+
+</div>
+
+<br/>
+<br/>
+
+<!-- --- -->
+
+<!-- ## 🎯 What is HomeTube? -->
+
+
+🎬 HomeTube is a simple web UI for downloading single videos and playlists from the internet with the highest quality available and moving them to specific local locations automatically managed and integrated by media server such as Plex or Jellyfin.
+
+A simple friendly solution for easily integrating preferred videos from Youtube and others platforms to local media server:
+
+<br/>
+
+<!-- ## 🏠 **HomeLab Integration** -->
+
+- **🚫 Ad-Free Content**: Block natively all videos' ads and sponsors
+- **🏆 Best Quality Control**: Advanced best videos quality download strategy or manual override
+- **🎬 Media Server Ready**: Download best quality videos with explicit name and location directly in your HomeLab media server structure and get automatic watch experience on Plex, Jellyfin, Emby or even on your PC
+- **📋 Intelligent Playlist Sync**: Download and synchronize playlists with resilient tracking - local library stays perfectly in sync with source
+- **📱 Network Access**: Web interface videos download accessible from any device on your network
+- **🎯 One-Click Downloads**: Paste URL → Get perfectly organized video
+- **🔐 Cookies Authentication**: Essential for reliable downloads - unlocks restricted content and prevents signature errors
+- **🎬 Advanced Processing**: Cut clips, embed subtitles, convert formats
+- **⚙️ Advanced Configurations**: Organized advanced options including any custom yt-dlp arguments (proxy, max-filesize, etc.)
+- **🎥 Video Sources**: **YouTube**, Reddit, Vimeo, Dailymotion, TikTok, Twitch, Facebook, Instagram, etc. [See complete list (1800+)](docs/supported-platforms.md)
+
+
+<!-- ## 🏠 **HomeLab Integration**
+
+- **🎬 Media server Ready**: Download best quality videos with explicit name and location directly in your HomeLab media server structure and get automatic watch experience on Plex, Jellyfin, Emby or even on your PC
+- **📱 Network Access**: Web interface videos download accessible from any device on your network
+
+## ⚡ **Features**
+
+- **🎯 One-Click Downloads**: Paste URL → Get perfectly organized video
+- **🚫 Ad-Free Content**: Block videos' sponsors and ads
+- **🎬 Advanced Processing**: Cut clips, embed subtitles, convert formats
+- **⚙️ Advanced configurations**: Set any custom yt-dlp arguments (proxy, max-filesize, etc.)
+- **🔐 Cookies Authentication**: Essential for reliable downloads - unlocks restricted content and prevents signature errors
+- **📊 Quality Control**: Auto-select best quality or manual override
+- **🧠 Intelligent Caching**: Smart URL analysis reuse with quality verification - avoids re-downloading metadata unless format quality improves
+- **🎥 Video Sources**: **YouTube**, Reddit, Vimeo, Dailymotion, TikTok, Twitch, Facebook, Instagra, etc. [See complete list (1800+)](docs/supported-platforms.md) -->
+
+<!-- ## ⚡ Technical Highlights
+
+<div align="center">
+
+| 🎯 **Easy to Use** | 🔧 **Powerful** | 🏠 **HomeLab Ready** |
+|:---:|:---:|:---:|
+| Web interface | 1800+ platforms | Docker deployment |
+| One-click downloads | Advanced processing | Network accessible |
+| Auto-organization | Cookie authentication | Plex/Jellyfin ready |
+
+</div> -->
+
+<!-- --- -->
+
+<br/>
+<br/>
+
+<div align="center">
+  <img src="https://github.com/EgalitarianMonkey/hometube/releases/download/v2.3.1/2026_01_19_HomeTube-demo.gif" alt="HomeTube Demo" width="75%">
+</div>
+
+<br/>
+<br/>
+
+<!-- --- -->
+
+## 🛠️ HomeTube Options
+
+### 🏠 HomeLab Integration
+
+**Automatic integration with self-hosted setup**:
+
+- **🐳 Docker Ready**: One-command deployment with Docker Compose
+- **🎬 Media Server Integration**: Direct integration with media server thanks to well named video files automatically moved to chosen locations watched by media server such as Plex, Jellyfin, or Emby.
+- **🆕 Create new folder from the UI**: Create organized new folder structures when necessary from the "🆕 Create New Folder" option at the bottom of the "Destination folder" field listing menu (e.g., `Tech/Python/Advanced`)
+- **📱 Network Access**: Web interface accessible from any device on your network
+- **🔐 Secure**: No cloud dependencies, everything runs locally
+- **⚙️ Configurable**: Extensive customization through environment variables
+
+[Setup your HomeLab integration](docs/deployment.md).
+
+### 🚫 Block all ads and sponsors
+
+**Automatically skip sponsors, ads, and promotional content** with built-in SponsorBlock support. Just download your video and sponsors segments are automatically detected and marked.
+
+- ✅ **Auto-detection**: Sponsors segments automatically identified
+- ✅ **Manage sponsors to block**: Sponsors segments to block or mark can be managed in the UI
+- ✅ **Community-driven**: Powered by SponsorBlock's crowd-sourced database
+- ✅ **Zero configuration**: Works out of the box for YouTube videos
+
+[Learn more about SponsorBlock features](docs/usage.md#-sponsorblock-integration).
+
+### 🍪 Cookies Authentication (Highly Recommended)
+
+**Cookies authentication should be setup** for optimal video downloading experience and to avoid common download failures.
+
+#### 🚨 **Why Cookies Are Essential**
+
+Even for **public YouTube videos**, cookies are increasingly necessary because of modern protections.  
+They ensure **higher quality, reliability, and access** to all formats:
+
+- **🏆 Access the best quality** (AV1/Opus, high-res video, premium audio)  
+- **🔓 Unlock restricted content** (age-gated, member-only, region-locked)  
+- **🔐 Handle encrypted signatures (n-sig)** required for many video/audio streams  
+- **🛡️ Bypass anti-bot measures** that block automated downloaders  
+- **📺 Ensure stream availability** (audio/video may be signature-protected even for public videos)  
+- **⚡ Improve reliability** (fewer "format unavailable" or extraction errors)  
+- **🎵 Get high-quality audio tracks** (Opus, AAC) without failures  
+- **🚀 Reduce throttling** for faster, more stable downloads  
+
+👉 In short: **cookies are not just for private content — they’re the key to consistent, best-quality downloads.**
+
+#### 🛠️ **Setup Options**
+
+We can use **Browser cookies** if on a machine sharing a browser, otherwise **Cookies File** in HomeLab setup.
+
+[More details about Cookies authentication setup](docs/usage.md#-authentication--private-content).
+
+### ✂️ Advanced Video Processing
+
+Transform your downloads with **powerful built-in video processing tools**:
+
+- **🎬 Clip Extraction**: Cut specific segments from videos with precision timing
+- **📝 Subtitle Embedding**: Automatically embed subtitles in multiple languages
+- **🔄 Format Conversion**: Convert between video formats (MP4, MKV, WebM, etc.)
+- **🎵 Audio Extraction**: Extract audio-only versions in high quality
+- **📱 Mobile Optimization**: Optimize videos for mobile devices
+
+[Explore all processing options](docs/usage.md#-video-processing).
+
+### 🔧 Advanced configurations
+
+Custom yt-dlp arguments support offers **full flexibility** for advanced users to tailor downloads to specific needs.
+
+- **📱 Network configuration**: `--proxy http://proxy.company.com:8080 --retries 5`
+- **📂 File size limits**: `--max-filesize 500M --min-filesize 100M`
+- **📋 Enhanced metadata**: `--write-info-json --write-description --write-thumbnail`
+- **🛜 Bandwidth control**: `--limit-rate 1M --fragment-retries 10`
+- **➕ More options**: `yt-dlp --options variable`
+
+Custom yt-dlp arguments can be added directly from the UI or set by default for any download with the `YTDLP_CUSTOM_ARGS` environment variable.
+
+**🔀 Smart Conflict Resolution**: HomeTube automatically detects and resolves conflicts between base settings and custom arguments, giving priority to your custom preferences while maintaining system stability.
+
+### 🎯 Smart Quality System
+
+HomeTube uses **intelligent quality detection** that analyzes each video and automatically selects the **best available formats** with a **simple 2-profile strategy**:
+
+**🔍 How It Works:**
+- **📊 Real-time Analysis** → Detects all available video formats and codecs
+- **🏆 Smart Ranking** → Prioritizes modern codecs (AV1 > VP9 > H.264) and audio quality (Opus > AAC)
+- **🎯 Optimal Selection** → Generates up to 2 best profiles from actual available formats
+- **🔄 Intelligent Fallback** → Tries best quality first, then second-best if needed
+
+**Quality Profiles Generated:**
+1. **🥇 Best Available** → Highest resolution with most modern codec (e.g., 4K AV1 + Opus)
+2. **🥈 Fallback Option** → Next best combination (e.g., 4K VP9 + Opus)
+
+**Download Strategies:**
+- **🔄 Auto Best (Default)** → Tries up to 2 optimal profiles automatically until success
+- **🏆 Best Only** → Only attempts highest quality, no fallback (stops if unavailable)
+- **🎯 Choose Profile** → Manually select from detected optimal profiles
+- **📋 Choose Format** → Advanced: select specific format IDs from all available formats
+
+**🚀 Benefits:**
+- ✅ Always gets the best quality actually available for each video
+- ✅ No generic fallbacks - uses real format analysis
+- ✅ Fast downloads with minimal retries (max 2 attempts)
+- ✅ Supports all modern codecs: AV1, VP9, H.264, Opus, AAC
+
+👉 [Full details on quality detection & strategies](docs/usage.md#-quality-profiles--download-modes)
+
+### 🎯 Smart Download Management
+
+**Intelligent download system** that adapts to your needs:
+
+- **📁 Auto-Organization**: Videos organized by channel/creator automatically
+- **⚡ Resume Support**: Interrupted downloads automatically resume
+- **💾 Storage Optimization**: Duplicate detection and space management
+
+[Learn more about download features](docs/usage.md#-basic-video-download).
+
+### 📋 Intelligent Playlist Management
+
+**Powerful playlist synchronization** with resilient tracking and perfect source fidelity:
+
+**🔄 Smart Synchronization:**
+- **📡 Source of Truth**: YouTube playlist is always the reference - local library stays perfectly synchronized
+- **🔄 Auto-Refresh**: Playlist metadata automatically refreshed on each load for accurate status
+- **📊 Instant Status**: See exactly which videos are downloaded, pending, or new at a glance
+- **🎯 Incremental Downloads**: Only download new videos - existing ones are preserved and tracked
+
+**📁 Resilient Video Tracking:**
+- **🆔 ID-Based Tracking**: Videos tracked by unique ID - survives title changes on YouTube
+- **📝 Pattern-Based Naming**: Flexible filename patterns with placeholders (`{idx}`, `{title}`, `{channel}`, etc.)
+- **🔄 Smart Rename Detection**: Finds renamed files in destination folder automatically
+- **📂 Index Preservation**: Maintains playlist order even when videos are reordered upstream
+
+**🛡️ Robust Change Detection:**
+- **➕ New Videos**: Automatically detected and queued for download
+- **🔢 Reordering**: Detect and apply index changes with smart renaming
+- **📂 Relocation**: Move entire playlist to new folder while preserving files
+- **📦 Archive Mode**: Removed videos can be archived instead of deleted
+- **🗑️ Clean Removal**: Optional deletion of videos removed from source playlist
+
+**🎨 Customizable Title Patterns:**
+
+```
+{idx} - {pretty(title)}.{ext}           → 01 - My Video Title.mkv
+{pretty(title)} - {channel}.{ext}       → My Video - Creator Name.mkv  
+{i:03d} - {slug(title)} [{id}].{ext}    → 001 - my-video-title [abc123].mkv
+```
+
+**Supported placeholders:**
+- `{idx}` - Smart zero-padded index (01, 02... or 001, 002... based on total)
+- `{title}` / `{pretty(title)}` / `{slug(title)}` - Video title variants
+- `{channel}` / `{pretty(channel)}` / `{slug(channel)}` - Channel name variants
+- `{id}` - Video ID • `{ext}` - File extension
+
+**📈 Progress Tracking:**
+- Real-time download progress with visual indicators
+- Detailed sync plan preview before applying changes
+- Full logging of all operations for transparency
+
+Set `PLAYLIST_KEEP_OLD_VIDEOS=true` (or enable *Keep videos removed from playlist* in the UI) to move removed entries into an `Archives/` folder instead of deleting them.
+
+### 🌐 Universal Platform Support
+
+**1800+ supported platforms** - way beyond just YouTube:
+
+- **📺 Major Platforms**: YouTube, Twitch, Vimeo, Dailymotion, TikTok
+- **🎭 Social Media**: Instagram, Facebook, Twitter, Reddit
+- **🎓 Educational**: Coursera, Khan Academy, edX
+- **🏢 Professional**: LinkedIn Learning, Udemy, Skillshare
+- **📺 Streaming**: Netflix previews, Hulu trailers, Disney+ clips
+
+[See complete platform list](docs/supported-platforms.md).
+
+<!-- <br/><br/> -->
+<!-- ![Application Demo](./docs/images/options_ui_demo.gif) -->
+<!-- <br/><br/> -->
+
+## 🚀 Quick Start
+
+### ⚙️ Essential Configuration
+
+**📋 HomeTube uses environment variables for all configurations**: videos download paths, temporary download folder, authentication, languages, quality profiles, and more.
+
+Depending of the setup, Docker, Docker compose, Portainer, local run, environment variables can be passed to the application in different ways.
+
+**`.env` file from `.env.sample` can be practical for rapid setup:**
+
+```bash
+# 1. Clone repository (if not already done)
+git clone https://github.com/EgalitarianMonkey/hometube.git
+cd hometube
+
+# 2. Create your own configuration file from the sample
+cp .env.sample .env
+```
+
+### 🐳 Docker
+
+With Docker, environment variables can be passed either with `-e VARIABLE=` arguments or `--env-file .env`.
+
+**`-e VARIABLE=`**
+
+```bash
+docker run -p 8501:8501 \
+  -e TZ=America/New_York \
+  -e VIDEOS_FOLDER=/data/videos \
+  -e TMP_DOWNLOAD_FOLDER=/data/tmp \
+  -e YOUTUBE_COOKIES_FILE_PATH=/config/youtube_cookies.txt \
+  -v <VIDEOS_FOLDER_DOCKER_HOST>:/data/videos \
+  -v <TMP_DOWNLOAD_FOLDER_DOCKER_HOST>:/data/tmp \
+  -v <YOUTUBE_COOKIES_FILE_PATH_DOCKER_HOST>:/config \
+  ghcr.io/egalitarianmonkey/hometube:latest
+```
+
+**`--env-file .env`**
+
+```bash
+docker run -p 8501:8501 \
+  --env-file .env \
+  -v <VIDEOS_FOLDER_DOCKER_HOST>:/data/videos \
+  -v <TMP_DOWNLOAD_FOLDER_DOCKER_HOST>:/data/tmp \
+  -v <YOUTUBE_COOKIES_FILE_PATH_DOCKER_HOST>:/config \
+  ghcr.io/egalitarianmonkey/hometube:latest
+```
+
+**Access at <http://localhost:8501>**
+
+### 🐳 Docker Compose
+
+With Docker compose, environment variables can be passed either with the `environment:` entry or from the convenient `.env` file with `env_file: .env`.
+
+#### Configuration with `.env` file
+
+**`.env`**
+
+```bash
+# --- PORT ---
+PORT=8510
+
+# --- Timezone ---
+TZ=America/New_York
+
+# --- Languages ---
+UI_LANGUAGE=en
+LANGUAGE_PRIMARY=en
+LANGUAGE_PRIMARY_INCLUDE_SUBTITLES=true
+LANGUAGES_SECONDARIES=  # Optional: comma-separated (e.g., fr,es)
+
+# --- Docker host paths ---
+# Docker environment variables to specify depending on your homelab setup.
+VIDEOS_FOLDER_DOCKER_HOST=/mnt/data/videos
+TMP_DOWNLOAD_FOLDER_DOCKER_HOST=/mnt/data/hometube/tmp
+YOUTUBE_COOKIES_FILE_PATH_DOCKER_HOST=/opt/cookies/youtube.txt
+
+# --- Paths ---
+# Internal Docker container paths (do not change)
+VIDEOS_FOLDER=/data/videos
+TMP_DOWNLOAD_FOLDER=/data/tmp
+YOUTUBE_COOKIES_FILE_PATH=/config/youtube_cookies.txt
+#COOKIES_FROM_BROWSER=brave # Not working natively in Docker
+```
+
+**docker-compose.yml**
+
+```yaml
+services:
+  hometube:
+    image: ghcr.io/egalitarianmonkey/hometube:latest
+    env_file: .env
+    volumes:
+      - type: bind
+        source: ${VIDEOS_FOLDER_DOCKER_HOST:?set VIDEOS_FOLDER_DOCKER_HOST}
+        target: /data/videos
+      - type: bind
+        source: ${TMP_DOWNLOAD_FOLDER_DOCKER_HOST:?set TMP_DOWNLOAD_FOLDER_DOCKER_HOST}
+        target: /data/tmp
+      - "${YOUTUBE_COOKIES_FILE_PATH_DOCKER_HOST}:/config/youtube_cookies.txt"
+```
+
+This **long volume structure** with `type:`, `source:`, and `target:` entries forces the environment variables to be set, otherwise the Docker deployment fails. This avoids silent failures and confusions when environment variables are missing.
+
+#### Configuration with `environment:`:
+
+**docker-compose.yml**
+
+```yaml
+services:
+  hometube:
+    image: ghcr.io/egalitarianmonkey/hometube:latest
+    environment:
+      UI_LANGUAGE: en
+      LANGUAGE_PRIMARY: en
+      LANGUAGE_PRIMARY_INCLUDE_SUBTITLES: true
+      LANGUAGES_SECONDARIES: ""  # Optional: comma-separated
+      VIDEOS_FOLDER: /data/videos
+      TMP_DOWNLOAD_FOLDER: /data/tmp
+      YOUTUBE_COOKIES_FILE_PATH: /config/youtube_cookies.txt
+    volumes:
+      - type: bind
+        source: ${VIDEOS_FOLDER_DOCKER_HOST:?set VIDEOS_FOLDER_DOCKER_HOST}
+        target: /data/videos
+      - type: bind
+        source: ${TMP_DOWNLOAD_FOLDER_DOCKER_HOST:?set TMP_DOWNLOAD_FOLDER_DOCKER_HOST}
+        target: /data/tmp
+      - "${YOUTUBE_COOKIES_FILE_PATH_DOCKER_HOST}:/config/youtube_cookies.txt"
+```
+
+This **long volume structure** with `type:`, `source:`, and `target:` entries forces the environment variables to be set, otherwise the Docker deployment fails. This avoids silent failures and confusions when environment variables are missing.
+
+**Access at <http://localhost:8501>**
+
+### 🐳 Portainer
+
+With Portainer, environment variables must be explicitly written in the `environment:` section of the container setup to get those environment variables in the app.
+
+#### Portainer environment variables management
+
+- It does not support `env_file:` entry for passing environment variables **in the container** from a `.env` file involving that the environment variables must be explicitly written in the `environment:` section of the container setup to get those environment variables in the app.
+- It does not retrieve any Docker environment variables from a `.env` file as the stack isn't linked to any location. Environment variables for the Portainer docker-compose.yml stack must be **manually** entered from the UI either one by one or with a convenient `.env` upload.
+
+**docker-compose.yml**
+
+```yaml
+services:
+  hometube:
+    image: ghcr.io/egalitarianmonkey/hometube:latest
+    ports:
+      - "${PORT:-8501}:8501"
+    environment:
+      TZ: "${TZ}"
+      UI_LANGUAGE: en
+      LANGUAGE_PRIMARY: en
+      LANGUAGE_PRIMARY_INCLUDE_SUBTITLES: true
+      LANGUAGES_SECONDARIES: ""  # Optional: comma-separated
+      VIDEOS_FOLDER: /data/videos
+      TMP_DOWNLOAD_FOLDER: /data/tmp
+      YOUTUBE_COOKIES_FILE_PATH: "${YOUTUBE_COOKIES_FILE_PATH}"
+    volumes:
+      - type: bind
+        source: ${VIDEOS_FOLDER_DOCKER_HOST:?set VIDEOS_FOLDER_DOCKER_HOST}
+        target: /data/videos
+      - type: bind
+        source: ${TMP_DOWNLOAD_FOLDER_DOCKER_HOST:?set TMP_DOWNLOAD_FOLDER_DOCKER_HOST}
+        target: /data/tmp
+      - "${YOUTUBE_COOKIES_FILE_PATH_DOCKER_HOST}:/config/youtube_cookies.txt"
+```
+
+This **long volume structure** with `type:`, `source:`, and `target:` entries forces the environment variables to be set, otherwise the Docker deployment fails. This avoids silent failures and confusions when environment variables are missing.
+
+**Portainer environment variables in the UI**
+
+```bash
+VIDEOS_FOLDER_DOCKER_HOST=/mnt/data/videos
+TMP_DOWNLOAD_FOLDER_DOCKER_HOST=/mnt/data/hometube/tmp
+YOUTUBE_COOKIES_FILE_PATH_DOCKER_HOST=/opt/cookies/youtube.txt
+TZ=America/New_York
+PORT=8501
+YOUTUBE_COOKIES_FILE_PATH=/config/youtube_cookies.txt
+#COOKIES_FROM_BROWSER=chrome
+```
+
+### 🏠 Local Installation
+
+**Environment variables for local run are setup following a specific order:**
+
+- First, defined and **exported** environment variables from the current shell will be taken (`export VIDEOS_DIR=/data/videos`, `set -a && source .env && set +a`, etc.)
+- Then, if a `.env` file exists, not defined environment variables from exported shell will be taken from local `.env` file
+- At last, default values will be used for not defined environment variables from **shell** and `.env` file
+
+**Prerequisites** are installed through python environment setup. Below are setups for `venv`, `conda`, or `uv`.
+
+**Option 1: Using pip (Recommended)**
+
+```bash
+# Create virtual environment
+python -m venv hometube-env
+source hometube-env/bin/activate  # On Windows: hometube-env\Scripts\activate
+
+# Install dependencies including yt-dlp
+pip install ".[local]"
+
+# Run the application
+streamlit run app/main.py
+# OR
+python run.py
+```
+
+**Option 2: Using conda**
+
+```bash
+# Create conda environment
+conda create -n hometube python=3.10
+conda activate hometube
+
+# Install dependencies including yt-dlp
+pip install ".[local]"
+
+# Run the application
+streamlit run app/main.py
+```
+
+**Option 3: Using uv (Fastest)**
+
+```bash
+# Install uv if not already installed
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+# Install dependencies including yt-dlp
+uv pip install ".[local]"
+
+# Run with uv
+uv run streamlit run app/main.py
+```
+
+**Access at**: <http://localhost:8501>
+
+## ⚙️ Configuration Guide
+
+### 🔧 Environment Variables
+
+HomeTube configuration is managed through the `.env` file:
+
+|Variable|Purpose|Defaults|Examples|
+|--------|-------|--------|--------|
+|**Core Paths & System**||||
+|`VIDEOS_FOLDER`|Where videos will be moved at the end of download|`/data/videos` if in Docker container else `./downloads`|`/data/videos`|
+|`TMP_DOWNLOAD_FOLDER`|Temporary download location|`/data/tmp` if in Docker container else `./tmp`|`/data/tmp`|
+|`PORT`|Web interface port|`8501`|`8501`|
+|`TZ`|Timezone for Docker|`America/New_York`|`Europe/Paris`|
+|`DEBUG`|Debug logging mode|`false`|`true`|
+|**Authentication & Cookies**||||
+|`YOUTUBE_COOKIES_FILE_PATH`|Authentication for private videos|**Must be defined** (or `COOKIES_FROM_BROWSER`)|`/config/youtube_cookies.txt`|
+|`COOKIES_FROM_BROWSER`|Cookies auth directly from active local browser||`chrome,firefox,brave,chromium,edge,opera,safari,vivaldi,whale`|
+|`BROWSER_SELECT`|Default browser for cookie extraction|`chrome`|`chrome,firefox,edge,safari`|
+|**Localization**||||
+|`UI_LANGUAGE`|UI language. English (en) and French (fr) supported|`en`|`en,fr`|
+|**Audio Language Preferences**||||
+|`LANGUAGE_PRIMARY`|Primary audio language preference|`en`|`en,fr,es,de,ja`|
+|`LANGUAGES_SECONDARIES`|Secondary audio languages (comma-separated)|*(empty)*|`en,es,de`|
+|`LANGUAGE_PRIMARY_INCLUDE_SUBTITLES`|Include subtitles for primary language|`true`|`true,false`|
+|`VO_FIRST`|Prioritize original voice (VO) before primary language|`true`|`true,false`|
+|**Quality & Download Preferences**||||
+|`VIDEO_QUALITY_MAX`|Maximum video resolution limit|`max`|`max,2160,1440,1080,720,480,360`|
+|`QUALITY_DOWNGRADE`|Allow quality downgrade if best profile fails (false = best quality only, no fallback)|`true`|`true,false`|
+|`EMBED_CHAPTERS`|Embed chapters by default|`true`|`true,false`|
+|`EMBED_SUBTITLES`|Embed subtitles by default|`true`|`true,false`|
+|`CUTTING_MODE`|Video cutting precision|`keyframes`|`keyframes,precise`|
+|**Playlist Sync**||||
+|`PLAYLIST_KEEP_OLD_VIDEOS`|Archive playlist videos removed upstream instead of deleting them (moved to `Archives/`)|`false`|`true,false`|
+|**Safety Options**||||
+|`ALLOW_OVERWRITE_EXISTING_VIDEO`|Allow overwriting existing videos in destination folder|`false`|`true,false` (false = protect existing files)|
+|**Advanced Options**||||
+|`YTDLP_CUSTOM_ARGS`|Custom yt-dlp arguments||`--max-filesize 5M --write-info-json`|
+|`REMOVE_TMP_FILES_AFTER_DOWNLOAD`|Remove temporary files after successful download|`false`|`true,false` (false = keep for debugging/reuse)|
+|`NEW_DOWNLOAD_WITHOUT_TMP_FILES`|Clean tmp folder before each new download|`false`|`true,false` (true = fresh start, useful after errors)|
+|**Media Server Integration**||||
+|`JELLYFIN_BASE_URL`|Base URL of your Jellyfin server||`https://jellyfin.local:8096`|
+|`JELLYFIN_API_KEY`|Jellyfin API key used to trigger library scans||`0123456789abcdef0123456789abcdef`|
+|**Docker-specific Variables**||||
+|`VIDEOS_FOLDER_DOCKER_HOST`|Host videos folder in Docker context|**Must be defined**|`/mnt/data/videos` if in Docker container else `/downloads`|
+|`TMP_DOWNLOAD_FOLDER_DOCKER_HOST`|Host tmp download videos folder in Docker context|**Must be defined**|`/mnt/data/hometube/tmp` if in Docker container else `./tmp`|
+|`YOUTUBE_COOKIES_FILE_PATH_DOCKER_HOST`|Youtube cookies file path in Docker context|**Must be defined**|`/opt/cookies/youtube.txt` if in Docker container else `./cookies/youtube_cookies.txt`|
+
+### 🔄 Configuration Validation
+
+Check your setup with this command:
+
+```bash
+DEBUG=1 python -c "import app.main" 2>/dev/null
+```
+
+**Expected output:**
+
+```text
+🔧 HomeTube Configuration Summary:
+📁 Videos folder: downloads
+📁 Temp folder: tmp
+✅ Videos folder is ready: downloads
+🍪 Cookies file: ./cookies/youtube_cookies.txt
+🔤 Subtitle languages: en, fr
+✅ Configuration file: .env
+```
+
+---
+
+## 📚 Documentation
+
+**📋 Complete Documentation Hub: [docs/README.md](docs/README.md)**
+
+### Core Guides
+
+- **[Installation Guide](docs/installation.md)** - System setup and requirements
+- **[Usage Guide](docs/usage.md)** - Complete feature walkthrough
+- **[Docker Guide](docs/docker.md)** - Container deployment strategies
+
+### Development & Operations
+
+- **[Development Setup](docs/development-setup.md)** - Multi-environment development guide
+- **[UV Workflow Guide](docs/uv-workflow.md)** - Modern dependency management
+- **[Testing Documentation](docs/testing.md)** - Test framework and guidelines
+- **[Deployment Guide](docs/deployment.md)** - Production deployment strategies
+
+## 🛠️ Tech Stack
+
+|Component|Technology|Purpose|
+|---------|----------|-------|
+|**Backend**|Python 3.10+, yt-dlp, FFmpeg|Core processing|
+|**Frontend**|Streamlit|Web interface|
+|**Container**|🐳 jauderho/yt-dlp (Alpine + yt-dlp + FFmpeg)|Optimized deployment|
+|**CI/CD**|GitHub Actions|Automation|
+|**Testing**|pytest, coverage|Quality assurance|
+|**Dependencies**|UV, conda, pip|Package management|
+
+## 📊 System Requirements
+
+|Requirement|Minimum|Recommended|
+|-----------|-------|-----------|
+|**Python**|3.10+|3.11+|
+|**FFmpeg**|Latest|Latest|
+|**Storage**|2GB free|10GB+|
+|**Memory**|512MB|2GB|
+|**Network**|Broadband|High-speed|
+
+## 📈 Project Status
+
+- ✅ **Stable**: Core functionality tested and reliable
+- 🔄 **Active Development**: Regular updates and improvements
+- 🧪 **Test Coverage**: 84% on testable modules ([details](docs/testing.md))
+- 📦 **Production Ready**: Docker images available on GHCR
+- 🏠 **HomeLab Optimized**: Designed for self-hosted environments
+
+## 📆 Coming Features
+
+Check out the roadmap for upcoming features and enhancements:
+
+**📋 See the complete roadmap**: [docs/todo.md](docs/todo.md)
+
+---
+
+## 🤝 Contributing & Development
+
+**For developers and contributors**, comprehensive guides are available:
+
+📖 **[Development Setup Guide](docs/development-setup.md)** - Environment setup  
+🔄 **[Contributing Guidelines](docs/development.md)** - Workflow and best practices
+
+**Quick Setup Options:**
+
+- **Conda** (recommended for contributors)
+- **UV** (fastest for developers)
+- **pip/venv** (universal)
+
+
+**Includes:** Testing commands, workflows, code standards, and pull request process.
+
+---
+
+## ☕ Support This Project
+
+If you find HomeTube useful, consider supporting the project to help with development costs.
+
+<div align="center">
+<a href="https://buymeacoffee.com/egalitarianmonkey" target="_blank">
+  <img src="https://cdn.buymeacoffee.com/buttons/v2/default-orange.png"
+       alt="Buy Me A Coffee"
+       height="35" />
+</a>
+</div>
+
+<div align="center">
+
+Every contribution is appreciated! 🙏
+</div>
+
+## 📄 License
+
+This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **[yt-dlp](https://github.com/yt-dlp/yt-dlp)** - Universal video downloader supporting 1800+ platforms
+- **[Streamlit](https://streamlit.io/)** - Excellent web app framework  
+- **[SponsorBlock](https://sponsor.ajay.app/)** - Community-driven sponsor detection (YouTube)
+- **[FFmpeg](https://ffmpeg.org/)** - Multimedia processing framework
+
+---
+
+<div align="center">
+
+**⭐ If you find this project useful, please consider starring it!**
+
+[⭐ Star on GitHub](https://github.com/EgalitarianMonkey/hometube) • [📖 Documentation](docs/README.md) • [🐳 Docker Hub](https://github.com/EgalitarianMonkey/hometube/pkgs/container/hometube) • [☕ Buy Me a Coffee](https://buymeacoffee.com/egalitarianmonkey)
+
+</div>

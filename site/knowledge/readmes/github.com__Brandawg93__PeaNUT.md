@@ -1,0 +1,278 @@
+<p align="center">
+    <img alt="PeaNUT" src="https://raw.githubusercontent.com/Brandawg93/PeaNUT/main/src/app/icon.svg" width="200px">
+</p>
+
+# PeaNUT
+
+A Tiny Dashboard for Network UPS Tools
+
+[![PayPal](https://img.shields.io/badge/paypal-donate-blue?logo=paypal)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=CEYYGVB7ZZ764&item_name=peanut&currency_code=USD&source=url)
+[![GitHub Sponsors](https://img.shields.io/github/sponsors/brandawg93)](https://github.com/Brandawg93)
+![Docker Pulls](https://img.shields.io/docker/pulls/brandawg93/peanut)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Brandawg93_PeaNUT&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Brandawg93_PeaNUT)
+
+<img src="https://raw.githubusercontent.com/Brandawg93/PeaNUT/main/images/table.png" width="600px" />
+<img src="https://raw.githubusercontent.com/Brandawg93/PeaNUT/main/images/charts.png" width="600px" />
+
+## Features
+
+- Monitor UPS devices connected to your network via [NUT](https://networkupstools.org)
+- View real-time statistics and status of UPS devices
+- Customizable dashboard layout
+- Supports multiple UPS devices
+- Execute commands on UPS devices
+- Configure settings through a user-friendly UI
+- Manual configuration via YAML file
+- Access NUT server directly via terminal
+- API access for integration with other tools
+- [InfluxDB](https://www.influxdata.com) v2 integration for monitoring via [Grafana](https://grafana.com)
+- [Prometheus](https://prometheus.io) support for monitoring and alerting
+- Customizable widgets for [Homepage](https://gethomepage.dev) integration
+- Detailed [documentation](https://github.com/Brandawg93/PeaNUT/wiki) and examples available
+
+## Platform Support
+
+PeaNUT supports the following platforms:
+
+- `linux/amd64` (x86-64)
+- `linux/arm64` (ARM 64-bit, including Raspberry Pi 4+)
+
+**Note:** Raspberry Pi 3 and older models (arm/v7) are no longer supported as of version 5.17.0. Please use arm64-capable hardware (Raspberry Pi 4 or newer).
+
+## Installation
+
+Install using Docker
+
+### docker run
+
+```bash
+docker run -v ${PWD}/config:/config -p 8080:8080 --restart unless-stopped \
+--env WEB_PORT=8080 brandawg93/peanut
+```
+
+### docker-compose.yml
+
+```yaml
+services:
+  peanut:
+    image: brandawg93/peanut:latest
+    container_name: PeaNUT
+    restart: unless-stopped
+    volumes:
+      - /path/to/config:/config
+    ports:
+      - 8080:8080
+    environment:
+      - WEB_PORT=8080
+```
+
+### compile from source
+
+```bash
+git clone https://github.com/Brandawg93/PeaNUT.git
+cd PeaNUT
+npm i -g pnpm # only if you don't have pnpm installed
+pnpm i
+pnpm run build:local
+pnpm run start:local
+```
+
+More examples can be found in the [examples](https://github.com/Brandawg93/PeaNUT/tree/main/examples) folder.
+
+## Environment Variables
+
+| Variable            | Default   | Description                                       |
+| ------------------- | --------- | ------------------------------------------------- |
+| WEB_HOST            | localhost | Hostname of web server                            |
+| WEB_PORT            | 8080      | Port of web server                                |
+| WEB_USERNAME        | undefined | Username of web app                               |
+| WEB_PASSWORD        | undefined | Password of web app                               |
+| BASE_PATH           | undefined | Base path for reverse proxy                       |
+| SSL_CERT_PATH       | undefined | Path to SSL certificate file                      |
+| SSL_KEY_PATH        | undefined | Path to SSL private key file                      |
+| DISABLE_CONFIG_FILE | undefined | If set to 'true', disables all config file saving |
+| DEBUG               | false     | Enable debug logging for server components        |
+
+## Reverse Proxies
+
+For detailed reverse proxy configuration instructions, see the [Reverse Proxy Setup Wiki](https://github.com/Brandawg93/PeaNUT/wiki/Reverse-Proxy-Setup-for-PeaNUT).
+
+**Note**: If you encounter issues with missing favicon or font loading errors, please check the troubleshooting section in the wiki for additional `sub_filter` rules.
+
+## Configuration
+
+Configuration is primarily done via the UI, but manual configuration can be done via the `/config/settings.yml` file within the container. More information can be found on the [wiki](https://github.com/Brandawg93/PeaNUT/wiki/YAML-Configuration).
+
+## Authentication
+
+Authentication can be enabled by setting both `WEB_USERNAME` and `WEB_PASSWORD` environment variables. When these are set:
+
+- Web UI access will require login using these credentials
+- API calls will require Basic Authentication
+
+For API calls, you'll need to include an Authorization header with the Base64 encoded credentials in the format `username:password`. The header should be formatted as: `Authorization: Basic <encoded credentials>`
+
+## API
+
+| API Call                                                  | Description                                                               |
+| --------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `GET /api/ping`                                           | Health check endpoint that returns "pong"                                 |
+| `GET /api/v1/info`                                        | Retrieves information about the PeaNUT application                        |
+| `GET /api/v1/version`                                     | Retrieves the version of the NUT server currently in use                  |
+| `GET /api/v1/netversion`                                  | Retrieves the version of the network protocol currently in use            |
+| `GET /api/v1/devices`                                     | Retrieves information about all UPS devices                               |
+| `GET /api/v1/devices/[ups]`                               | Retrieves information about the specified UPS device                      |
+| `GET /api/v1/devices/[ups]/vars`                          | Retrieves all variables for the specified UPS device                      |
+| `GET /api/v1/devices/[ups]/var/[param]`                   | Retrieves value for a single parameter of the specified UPS device        |
+| `POST /api/v1/devices/[ups]/var/[param]`                  | Saves value for a single parameter of the specified UPS device            |
+| `GET /api/v1/devices/[ups]/var/[param]/description`       | Retrieves description for a single parameter of the specified UPS device  |
+| `GET /api/v1/devices/[ups]/var/[param]/type`              | Retrieves type for a single parameter of the specified UPS device         |
+| `GET /api/v1/devices/[ups]/var/[param]/enum`              | Retrieves enum values for a single parameter of the specified UPS device  |
+| `GET /api/v1/devices/[ups]/var/[param]/range`             | Retrieves range values for a single parameter of the specified UPS device |
+| `GET /api/v1/devices/[ups]/commands`                      | Retrieves available commands for the specified UPS device                 |
+| `POST /api/v1/devices/[ups]/command/[command]`            | Executes a given command for the specified UPS device                     |
+| `GET /api/v1/devices/[ups]/command/[command]/description` | Retrieves description for a single command of the specified UPS device    |
+| `GET /api/v1/devices/[ups]/description`                   | Retrieves the description for the specified UPS device                    |
+| `GET /api/v1/devices/[ups]/clients`                       | Retrieves the connected clients for the specified UPS device              |
+| `GET /api/v1/devices/[ups]/rwvars`                        | Retrieves writable variables for the specified UPS device                 |
+| `GET /api/v1/metrics`                                     | Metrics endpoint for prometheus                                           |
+| `GET /api/ws`                                             | WebSocket endpoint for direct NUT server communication                    |
+
+### PeaNUT Metadata (opt-in)
+
+By default, API responses contain only values returned by the NUT server. You can opt-in to include PeaNUT-specific metadata by adding `?meta=true` to requests.
+
+- When enabled for `GET /api/v1/devices`, each device object will include:
+  - `peanut.device_id`: The NUT device identifier (UPS name)
+  - `peanut.server`: The NUT server host:port that provided the data
+
+- When enabled for `GET /api/v1/devices/[ups]`, the response will include the same fields.
+
+## Homepage Support
+
+For information about how to set up Homepage, check the [Homepage docs](https://gethomepage.dev/widgets/services/peanut/).
+
+Ex:
+
+```yaml
+widget:
+  type: peanut
+  url: http://peanut.host.or.ip:port
+  key: nameofyourups
+```
+
+Or use the `customapi` widget for complete customization!
+
+Ex:
+
+```yaml
+widget:
+  type: customapi
+  url: http://{HOSTNAME}:{PORT}/api/v1/devices/{UPS_NAME}
+  mappings:
+    - field: battery.charge
+      label: Battery Charge
+      format: percent
+    - field: battery.runtime
+      label: Battery Runtime
+      format: duration
+    - field: ups.load
+      label: UPS Load
+      format: percent
+    - field: ups.status
+      label: UPS Status
+      format: text
+      remap:
+        - value: OL
+          to: Online
+        - value: OB
+          to: On Battery
+        - value: LB
+          to: Low Battery
+        - any: true
+          to: Unknown
+```
+
+## Glance Support
+
+For information about how to set up Glance, check the [Glance docs](https://github.com/glanceapp/glance).
+
+Example:
+
+<img src="https://raw.githubusercontent.com/Brandawg93/PeaNUT/main/images/glance.png" width="600px" />
+
+```yaml
+- type: custom-api
+  title: UPS
+  cache: 5m
+  url: http://{HOSTNAME}:{PORT}/api/v1/devices/{UPS_NAME}
+  template: |
+    {{ if .JSON.Exists "ups\\.status" }}
+      {{ $jsonStatus := .JSON.String "ups\\.status" }}
+      <div class="flex justify-between text-center">
+        <div>
+          <div class="color-highlight size-h3">{{ .JSON.Int "battery\\.charge" | formatNumber }}%</div>
+          <div class="size-h6">BATTERY CHARGE</div>
+        </div>
+        <div>
+          <div class="color-highlight size-h3">{{ concat (.JSON.String "battery\\.runtime") "s" | duration }} ({{ div (.JSON.Int "battery\\.runtime") 60 | formatNumber }} Wh)</div>
+          <div class="size-h6">BATTERY RUNTIME</div>
+        </div>
+        <div>
+          <div class="color-highlight size-h3">{{ .JSON.Int "ups\\.load" | formatNumber }}% ({{ .JSON.Int "ups\\.realpower" | formatNumber }} W / {{ .JSON.Int "ups\\.power" | formatNumber }} VA)</div>
+          <div class="size-h6">UPS LOAD</div>
+        </div>
+        <div>
+          <div class="color-highlight size-h3">
+      {{ if eq $jsonStatus "OL" }}
+          Online
+      {{ else if eq $jsonStatus "OL CHRG" }}
+            Online Charging
+      {{ else if eq $jsonStatus "OB" }}
+            On Battery
+      {{ else if eq $jsonStatus "OB DISCHRG" }}
+            On Battery Discharging
+      {{ else if eq $jsonStatus "LB" }}
+            Low Battery
+      {{ else }}
+            Unknown
+      {{ end }}
+          </div>
+          <div class="size-h6">UPS STATUS</div>
+        </div>
+      </div>
+    {{ else }}
+      <div class="widget-error-header">
+        <div class="color-negative size-h3">ERROR</div>
+        <svg class="widget-error-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"></path>
+        </svg>
+      </div>
+      <p class="break-all">UPS is unavailable</p>
+    {{ end }}
+```
+
+## FAQ
+
+**Question:** Chokidar is using lots of resources on my machine.
+
+**Answer:** If you are using a Networked File Share, please see [#142](https://github.com/Brandawg93/PeaNUT/issues/142).
+
+**Question:** Why can't I see multiple NUT devices on the display?
+
+**Answer:** In order for PeaNUT to display multiple NUT devices, each UPS must have a unique identifier in the corresponding NUT configuration file. Make sure each UPS device has a distinct name/identifier in your NUT configuration to avoid conflicts and ensure proper display of all devices.
+
+## Tested Devices
+
+[A wiki](https://github.com/Brandawg93/PeaNUT/wiki/Tested-UPS-Devices) has been compiled of tested UPS devices. Feel free to look there for your device or add your device to the list by submitting an issue with the `tested device` label.
+
+## Donate to Support PeaNUT
+
+This project was made with you in mind. If you would like to show your appreciation for its continued development, please consider [sponsoring me on Github](https://github.com/sponsors/Brandawg93).
+
+<details>
+  <summary>Star History</summary>
+
+[![Star History Chart](https://api.star-history.com/svg?repos=brandawg93/peanut&type=Date)](https://star-history.com/#brandawg93/peanut&Date)
+
+</details>
