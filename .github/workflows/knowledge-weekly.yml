@@ -3,8 +3,20 @@ name: Build Self-Hosted Knowledge
 on:
   workflow_dispatch:
     inputs:
+      publish_to_pages:
+        description: "Publish generated site to GitHub Pages"
+        required: false
+        default: "false"
       use_custom_domain:
-        description: "Write CNAME from repository variable PAGES_CUSTOM_DOMAIN"
+        description: "Write CNAME from repository variable PAGES_CUSTOM_DOMAIN (used only if publish_to_pages=true)"
+        required: false
+        default: "false"
+      ingest_to_supabase:
+        description: "Ingest generated knowledge into Supabase registry_apps"
+        required: false
+        default: "true"
+      deploy_registry_search_function:
+        description: "Deploy Supabase Edge Function registry-search (requires Supabase CLI token+project ref)"
         required: false
         default: "false"
   schedule:
@@ -63,15 +75,48 @@ jobs:
           git commit -m "Weekly knowledge refresh" || echo "No changes"
           git push
 
+      - name: Ingest to Supabase
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.ingest_to_supabase == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_SUPABASE_INGEST == 'true') }}
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          EMBEDDING_API_KEY: ${{ secrets.EMBEDDING_API_KEY }}
+          EMBEDDING_API_URL: ${{ vars.EMBEDDING_API_URL }}
+          EMBEDDING_MODEL: ${{ vars.EMBEDDING_MODEL }}
+        run: python -u scripts/ingest_registry_to_supabase.py --manifest site/knowledge/manifest.json
+
+      - name: Setup Supabase CLI
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.deploy_registry_search_function == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_DEPLOY_REGISTRY_SEARCH_FUNCTION == 'true') }}
+        uses: supabase/setup-cli@v1
+        with:
+          version: latest
+
+      - name: Deploy Edge Function registry-search
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.deploy_registry_search_function == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_DEPLOY_REGISTRY_SEARCH_FUNCTION == 'true') }}
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
+          EMBEDDING_API_KEY: ${{ secrets.EMBEDDING_API_KEY }}
+          EMBEDDING_API_URL: ${{ vars.EMBEDDING_API_URL }}
+          EMBEDDING_MODEL: ${{ vars.EMBEDDING_MODEL }}
+        run: |
+          supabase functions deploy registry-search --project-ref "$SUPABASE_PROJECT_REF"
+
       - name: Configure Pages
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.publish_to_pages == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_PAGES_DEPLOY == 'true') }}
         uses: actions/configure-pages@v5
 
       - name: Upload Pages artifact
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.publish_to_pages == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_PAGES_DEPLOY == 'true') }}
         uses: actions/upload-pages-artifact@v3
         with:
           path: site
 
   deploy:
+    if: ${{ (github.event_name == 'workflow_dispatch' && inputs.publish_to_pages == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_PAGES_DEPLOY == 'true') }}
     needs: build
     runs-on: ubuntu-latest
     environment:
