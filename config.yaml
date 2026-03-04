@@ -1,0 +1,49 @@
+source:
+  base_raw_url: "https://raw.githubusercontent.com/selfhst/cdn/main/directory"
+  files:
+    - "software.json"
+    - "tags.json"
+    - "licenses.json"
+    - "languages.json"
+    - "activitypub.json"
+    - "alternatives.json"
+    - "companions.json"
+    - "companion-software.json"
+    - "integrations/trala.json"
+
+schema:
+  software_columns:
+    id: 0
+    name: 1
+    reference: 2
+    website: 3
+    repo_url: 4
+    description: 5
+  optional_indices:
+    stars: 6
+    forks: 7
+    updated_at: 8
+    tag_ids: 9
+    license_id: 10
+
+fetch:
+  user_agent: "selfhst-knowledge-harvester"
+  timeout_sec: 25
+  max_workers: 6
+  retry_max: 5
+  retry_base_sec: 1.5
+  retry_max_sec: 90
+  github_min_remaining: 120
+  github_max_pause_sec: 900
+  include_readme_text_in_repo: true
+
+output:
+  site_root: "site"
+  knowledge_root: "site/knowledge"
+  apps_chunk_size: 50
+  chunk_max_bytes: 2000000
+  write_pretty_json: true
+
+state:
+  file: "data/state/readme_state.json"
+  report_file: "site/knowledge/meta/fetch_report.json"
