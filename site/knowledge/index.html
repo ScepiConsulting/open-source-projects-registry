@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Knowledge Root</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 2rem; line-height: 1.5; }
+    code { background: #f4f4f5; padding: 0.1rem 0.3rem; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>Knowledge Root</h1>
+  <p>This is a static knowledge export for self-hosted software metadata and READMEs.</p>
+<h2>For ChatGPT ingestion</h2>
+<ol><li>Start with <code>manifest.json</code> for entry points and chunk files.</li><li>Load app chunks from <code>apps/apps-*.json</code>.</li><li>Use each app's <code>readme_path</code> to fetch full README text.</li><li>Use tag/license indexes for filtering candidates quickly.</li></ol>
+  <ul>
+    <li><a href="./manifest.json">manifest.json</a></li><li><a href="./apps/">apps/</a></li><li><a href="./repos/">repos/</a></li><li><a href="./meta/">meta/</a></li><li><a href="./readmes/">readmes/</a></li>
+  </ul>
+</body>
+</html>
