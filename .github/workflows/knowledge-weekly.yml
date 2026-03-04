@@ -2,6 +2,11 @@ name: Build Self-Hosted Knowledge
 
 on:
   workflow_dispatch:
+    inputs:
+      use_custom_domain:
+        description: "Write CNAME from repository variable PAGES_CUSTOM_DOMAIN"
+        required: false
+        default: "false"
   schedule:
     - cron: "0 3 * * 0"
 
@@ -34,13 +39,27 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: python scripts/harvest_knowledge.py
+          PYTHONUNBUFFERED: "1"
+        run: python -u scripts/harvest_knowledge.py
+
+      - name: Manage CNAME
+        env:
+          USE_CUSTOM_DOMAIN: ${{ inputs.use_custom_domain || 'false' }}
+          CUSTOM_DOMAIN: ${{ vars.PAGES_CUSTOM_DOMAIN }}
+        run: |
+          if [ "$USE_CUSTOM_DOMAIN" = "true" ] && [ -n "$CUSTOM_DOMAIN" ]; then
+            echo "$CUSTOM_DOMAIN" > site/CNAME
+            echo "Using custom domain: $CUSTOM_DOMAIN"
+          else
+            rm -f site/CNAME
+            echo "Custom domain disabled for this run"
+          fi
 
       - name: Commit updated knowledge
         run: |
           git config user.name "github-actions"
           git config user.email "actions@github.com"
-          git add site/knowledge data/state site/.nojekyll
+          git add -A site data/state
           git commit -m "Weekly knowledge refresh" || echo "No changes"
           git push
 

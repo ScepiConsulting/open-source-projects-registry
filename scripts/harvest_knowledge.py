@@ -4,6 +4,7 @@ import dataclasses
 import datetime as dt
 import hashlib
 import json
+import logging
 import os
 import random
 import re
@@ -59,20 +60,33 @@ class Harvester:
         self.repos_root = self.knowledge_root / "repos"
         self.index_root = self.knowledge_root / "index"
         self.meta_root = self.knowledge_root / "meta"
+        self.logger = logging.getLogger("harvester")
 
     def run(self) -> int:
+        self._log("Starting knowledge harvest")
         self._ensure_dirs()
         self._write_text(self.site_root / ".nojekyll", "")
 
+        self._log("Loading source JSON files")
         source = self._load_sources()
+        self._log("Normalizing source data")
         normalized = self._normalize(source)
         repo_tasks = self._build_repo_tasks(normalized["repos"])
+        self._log(
+            f"Prepared normalized dataset: apps={len(normalized['apps'])}, repos={len(repo_tasks)}, "
+            f"github_token={'yes' if bool(self.github_token) else 'no'}"
+        )
+        self._log("Fetching README files")
         self.fetch_results = self._fetch_all_readmes(repo_tasks)
 
+        self._log("Building static site payload")
         site_payload = self._build_site_payload(normalized)
+        self._log("Writing static output files")
         self._write_site(site_payload)
+        self._log("Persisting state/report")
         self._write_state()
         self._write_report(site_payload)
+        self._log("Harvest finished")
         return 0
 
     def _ensure_dirs(self) -> None:
@@ -112,6 +126,7 @@ class Harvester:
         loaded: Dict[str, Any] = {}
         for rel in files:
             url = f"{base_url}/{rel}"
+            self._log(f"Loading source: {rel}")
             loaded[rel] = self._get_json(url)
         self.source_cache = loaded
         return loaded
@@ -124,15 +139,17 @@ class Harvester:
         software = source.get("software.json", [])
         tags = source.get("tags.json", [])
         licenses = source.get("licenses.json", [])
+        trala = source.get("integrations/trala.json", [])
 
         tags_map = self._build_id_map(tags)
         license_map = self._build_id_map(licenses)
+        trala_map = self._build_trala_tag_map(trala)
 
         apps: List[Dict[str, Any]] = []
         repos: Dict[str, Dict[str, Any]] = {}
 
         for row in software:
-            app = self._normalize_software_row(row, tags_map, license_map)
+            app = self._normalize_software_row(row, tags_map, license_map, trala_map)
             if not app:
                 continue
             apps.append(app)
@@ -166,11 +183,21 @@ class Harvester:
             "alternatives": source.get("alternatives.json", []),
             "companions": source.get("companions.json", []),
             "companion_software": source.get("companion-software.json", []),
-            "trala": source.get("integrations/trala.json", []),
+            "trala": trala,
         }
 
     def _build_id_map(self, rows: Any) -> Dict[int, Dict[str, Any]]:
         out: Dict[int, Dict[str, Any]] = {}
+        if isinstance(rows, dict):
+            for key, value in rows.items():
+                rid = safe_int(key)
+                if rid is None:
+                    continue
+                if isinstance(value, dict):
+                    out[rid] = {"id": rid, "name": value.get("name") or str(rid), "raw": value}
+                else:
+                    out[rid] = {"id": rid, "name": str(value), "raw": value}
+            return out
         if not isinstance(rows, list):
             return out
         for r in rows:
@@ -184,11 +211,30 @@ class Harvester:
                     out[rid] = {"id": rid, "name": r.get("name") or str(rid), "raw": r}
         return out
 
+    def _build_trala_tag_map(self, trala_rows: Any) -> Dict[str, List[str]]:
+        out: Dict[str, List[str]] = {}
+        if not isinstance(trala_rows, list):
+            return out
+        for row in trala_rows:
+            if not isinstance(row, dict):
+                continue
+            ref = clean_text(row.get("reference"))
+            if not ref:
+                continue
+            tags = row.get("tags")
+            if not isinstance(tags, list):
+                continue
+            names = sorted({clean_text(tag) for tag in tags if clean_text(tag)})
+            if names:
+                out[ref] = names
+        return out
+
     def _normalize_software_row(
         self,
         row: Any,
         tags_map: Dict[int, Dict[str, Any]],
         license_map: Dict[int, Dict[str, Any]],
+        trala_map: Dict[str, List[str]],
     ) -> Optional[Dict[str, Any]]:
         if isinstance(row, dict):
             app = {
@@ -253,7 +299,14 @@ class Harvester:
             license_name = license_map[license_id]["name"]
 
         app["tag_ids"] = tag_ids
-        app["tags"] = sorted({t["name"] for t in resolved_tags})
+        official_tags = sorted({t["name"] for t in resolved_tags})
+        trala_tags = trala_map.get(app["reference"], [])
+        app["tags"] = sorted(set(official_tags) | set(trala_tags))
+        app["tags_source"] = (
+            "official+trala"
+            if official_tags and trala_tags
+            else ("official" if official_tags else ("trala" if trala_tags else "none"))
+        )
         app["license_id"] = license_id
         app["license_name"] = license_name
         app["stars"] = safe_int(app.get("stars"))
@@ -310,20 +363,42 @@ class Harvester:
         if not tasks:
             return results
 
+        total = len(tasks)
+        completed = 0
+        started_at = time.time()
+        self._log(f"README fetch queue started: {total} repos, workers={self.max_workers}")
+
         with concurrent.futures.ThreadPoolExecutor(max_workers=self.max_workers) as pool:
-            futures = {pool.submit(self._fetch_readme_for_repo, task): task for task in tasks}
-            for fut in concurrent.futures.as_completed(futures):
-                task = futures[fut]
-                try:
-                    result = fut.result()
-                except Exception as exc:
-                    result = {
-                        "status": "error",
-                        "error": f"worker_exception: {exc}",
-                        "repo_key": task.repo_key,
-                        "repo_url": task.repo_url,
-                    }
-                results[task.repo_key] = result
+            future_map = {pool.submit(self._fetch_readme_for_repo, task): task for task in tasks}
+            pending = set(future_map.keys())
+
+            while pending:
+                done, pending = concurrent.futures.wait(
+                    pending,
+                    timeout=20,
+                    return_when=concurrent.futures.FIRST_COMPLETED,
+                )
+                if not done:
+                    elapsed = int(time.time() - started_at)
+                    self._log(f"README fetch heartbeat: {completed}/{total} completed, elapsed={elapsed}s")
+                    continue
+
+                for fut in done:
+                    task = future_map[fut]
+                    try:
+                        result = fut.result()
+                    except Exception as exc:
+                        result = {
+                            "status": "error",
+                            "error": f"worker_exception: {exc}",
+                            "repo_key": task.repo_key,
+                            "repo_url": task.repo_url,
+                        }
+                    results[task.repo_key] = result
+                    completed += 1
+                    if completed == total or completed % 25 == 0:
+                        elapsed = int(time.time() - started_at)
+                        self._log(f"README progress: {completed}/{total} completed, elapsed={elapsed}s")
         return results
 
     def _fetch_readme_for_repo(self, task: RepoTask) -> Dict[str, Any]:
@@ -695,7 +770,10 @@ class Harvester:
         with self.rate_lock:
             resume = self.rate_resume_at
         if resume > time.time():
-            time.sleep(min(resume - time.time(), self.github_max_pause))
+            wait_s = min(resume - time.time(), self.github_max_pause)
+            if wait_s > 5:
+                self._log(f"Rate-limit pause: sleeping {int(wait_s)}s")
+            time.sleep(wait_s)
 
     def _update_rate_limit(self, resp: requests.Response) -> None:
         remaining = safe_int(resp.headers.get("X-RateLimit-Remaining"))
@@ -726,6 +804,9 @@ class Harvester:
         path.parent.mkdir(parents=True, exist_ok=True)
         with path.open("w", encoding="utf-8") as f:
             f.write(text)
+
+    def _log(self, message: str) -> None:
+        self.logger.info(message)
 
 
 # Helpers
@@ -870,6 +951,10 @@ def load_config(path: Path) -> Dict[str, Any]:
 
 
 def main() -> int:
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s %(message)s",
+    )
     config_path = Path(os.getenv("KNOWLEDGE_CONFIG", "config.yaml"))
     if not config_path.exists():
         print(f"ERROR: config file not found: {config_path}")
