@@ -83,12 +83,22 @@ jobs:
       - name: Ingest to Supabase
         if: ${{ (github.event_name == 'workflow_dispatch' && inputs.ingest_to_supabase == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_SUPABASE_INGEST == 'true') }}
         env:
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+          SUPABASE_URL: ${{ format('https://{0}.supabase.co', secrets.SUPABASE_PROJECT_REF) }}
           SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           EMBEDDING_API_KEY: ${{ secrets.EMBEDDING_API_KEY }}
           EMBEDDING_API_URL: ${{ vars.EMBEDDING_API_URL }}
           EMBEDDING_MODEL: ${{ vars.EMBEDDING_MODEL }}
-        run: python -u scripts/ingest_registry_to_supabase.py --manifest site/knowledge/manifest.json
+        run: |
+          if [ -z "$SUPABASE_PROJECT_REF" ]; then
+            echo "::error::SUPABASE_PROJECT_REF (secret) is missing."
+            exit 1
+          fi
+          if [ -z "$SUPABASE_SECRET_KEY" ]; then
+            echo "::error::SUPABASE_SECRET_KEY (secret) is missing."
+            exit 1
+          fi
+          python -u scripts/ingest_registry_to_supabase.py --manifest site/knowledge/manifest.json
 
       - name: Setup Supabase CLI
         if: ${{ (github.event_name == 'workflow_dispatch' && inputs.deploy_registry_search_function == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_DEPLOY_REGISTRY_SEARCH_FUNCTION == 'true') }}
@@ -96,14 +106,42 @@ jobs:
         with:
           version: latest
 
+      - name: Validate Supabase deploy configuration
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.deploy_registry_search_function == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_DEPLOY_REGISTRY_SEARCH_FUNCTION == 'true') }}
+        env:
+          SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
+          SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
+          EMBEDDING_API_KEY: ${{ secrets.EMBEDDING_API_KEY }}
+          EMBEDDING_API_URL: ${{ vars.EMBEDDING_API_URL }}
+          EMBEDDING_MODEL: ${{ vars.EMBEDDING_MODEL }}
+        run: |
+          missing=0
+
+          check_required() {
+            local name="$1"
+            local value="$2"
+            if [ -z "$value" ]; then
+              echo "::error::$name is missing. Configure it in repository Secrets and variables."
+              missing=1
+            fi
+          }
+
+          check_required "SUPABASE_ACCESS_TOKEN (secret)" "$SUPABASE_ACCESS_TOKEN"
+          check_required "SUPABASE_PROJECT_REF (secret)" "$SUPABASE_PROJECT_REF"
+          check_required "EMBEDDING_API_KEY (secret)" "$EMBEDDING_API_KEY"
+          check_required "EMBEDDING_API_URL (variable)" "$EMBEDDING_API_URL"
+          check_required "EMBEDDING_MODEL (variable)" "$EMBEDDING_MODEL"
+
+          if [ "$missing" -ne 0 ]; then
+            echo "::error::One or more required deploy settings are missing."
+            exit 1
+          fi
+
       - name: Deploy Edge Function registry-search
         if: ${{ (github.event_name == 'workflow_dispatch' && inputs.deploy_registry_search_function == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_DEPLOY_REGISTRY_SEARCH_FUNCTION == 'true') }}
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
           SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
-          SUPABASE_DB_PASSWORD: ${{ secrets.SUPABASE_DB_PASSWORD }}
-          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_SECRET_KEY: ${{ secrets.SUPABASE_SECRET_KEY }}
           EMBEDDING_API_KEY: ${{ secrets.EMBEDDING_API_KEY }}
           EMBEDDING_API_URL: ${{ vars.EMBEDDING_API_URL }}
           EMBEDDING_MODEL: ${{ vars.EMBEDDING_MODEL }}
