@@ -49,6 +49,7 @@ Fallback behavior:
 - If `GH_PAT` is missing, Actions will use `GITHUB_TOKEN`.
 
 Optional repository variables:
+- `ENABLE_HARVEST=true|false` (scheduled runs; enabled unless explicitly set to `false`)
 - `ENABLE_SUPABASE_INGEST=true` (scheduled runs)
 - `ENABLE_PAGES_DEPLOY=true` (scheduled runs)
 - `ENABLE_DEPLOY_REGISTRY_SEARCH_FUNCTION=true` (scheduled runs)
@@ -67,6 +68,7 @@ python scripts/ingest_registry_to_supabase.py --manifest site/knowledge/manifest
 ## Workflow flags (manual run)
 
 - `publish_to_pages` (default `false`)
+- `run_harvester` (default `true`)
 - `use_custom_domain` (default `false`)
 - `ingest_to_supabase` (default `true`)
 - `deploy_registry_search_function` (default `false`)

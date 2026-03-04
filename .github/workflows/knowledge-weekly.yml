@@ -7,6 +7,10 @@ on:
         description: "Publish generated site to GitHub Pages"
         required: false
         default: "false"
+      run_harvester:
+        description: "Run data harvester (if false, later phases use files already in repo)"
+        required: false
+        default: "true"
       use_custom_domain:
         description: "Write CNAME from repository variable PAGES_CUSTOM_DOMAIN (used only if publish_to_pages=true)"
         required: false
@@ -48,6 +52,7 @@ jobs:
         run: pip install -r scripts/requirements.txt
 
       - name: Run harvester
+        if: ${{ (github.event_name == 'workflow_dispatch' && inputs.run_harvester == 'true') || (github.event_name != 'workflow_dispatch' && vars.ENABLE_HARVEST != 'false') }}
         env:
           GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

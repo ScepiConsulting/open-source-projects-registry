@@ -25,8 +25,10 @@ class SupabaseIngestor:
             raise RuntimeError("SUPABASE_URL and SUPABASE_SECRET_KEY are required")
 
         self.embedding_api_key = os.environ.get("EMBEDDING_API_KEY", "").strip()
-        self.embedding_api_url = os.environ.get("EMBEDDING_API_URL", "https://api.openai.com/v1/embeddings")
-        self.embedding_model = os.environ.get("EMBEDDING_MODEL", "text-embedding-3-small")
+        self.embedding_api_url = (
+            os.environ.get("EMBEDDING_API_URL", "").strip() or "https://api.openai.com/v1/embeddings"
+        )
+        self.embedding_model = os.environ.get("EMBEDDING_MODEL", "").strip() or "text-embedding-3-small"
         self.embedding_timeout_sec = int(os.environ.get("EMBEDDING_TIMEOUT_SEC", "30"))
 
         self.headers = {
@@ -46,6 +48,8 @@ class SupabaseIngestor:
             "embed_success": 0,
             "embed_error": 0,
             "upsert_error": 0,
+            "duplicate_ids_in_batch": 0,
+            "missing_id_skipped": 0,
             "chunks_processed": 0,
             "duration_sec": 0,
         }
@@ -116,8 +120,9 @@ class SupabaseIngestor:
                 self.stats["embed_error"] += 1
                 self.logger.warning("Embedding failed for %s: %s", app.get("reference"), exc)
 
+        app_id = str(app.get("reference") or "").strip()
         row = {
-            "id": str(app.get("reference") or "").strip(),
+            "id": app_id,
             "name": app.get("name"),
             "description": app.get("description"),
             "tags": app.get("tags") or [],
@@ -174,14 +179,28 @@ class SupabaseIngestor:
         if not rows:
             return
 
+        deduped: Dict[str, Dict[str, Any]] = {}
+        for row in rows:
+            app_id = (row.get("id") or "").strip()
+            if not app_id:
+                self.stats["missing_id_skipped"] += 1
+                continue
+            if app_id in deduped:
+                self.stats["duplicate_ids_in_batch"] += 1
+            deduped[app_id] = row
+
+        payload_rows = list(deduped.values())
+        if not payload_rows:
+            return
+
         url = f"{self.supabase_url}/rest/v1/registry_apps?on_conflict=id"
         headers = dict(self.headers)
         headers["Prefer"] = "resolution=merge-duplicates,return=minimal"
-        resp = requests.post(url, headers=headers, data=json.dumps(rows, ensure_ascii=False), timeout=60)
+        resp = requests.post(url, headers=headers, data=json.dumps(payload_rows, ensure_ascii=False), timeout=60)
         if resp.status_code not in (200, 201, 204):
-            self.stats["upsert_error"] += len(rows)
+            self.stats["upsert_error"] += len(payload_rows)
             raise RuntimeError(f"upsert_http_{resp.status_code}: {resp.text[:500]}")
-        self.stats["apps_upserted"] += len(rows)
+        self.stats["apps_upserted"] += len(payload_rows)
 
     @staticmethod
     def _vector_literal(values: List[float]) -> str:
