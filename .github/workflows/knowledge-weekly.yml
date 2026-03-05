@@ -111,9 +111,6 @@ jobs:
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
           SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
-          EMBEDDING_API_KEY: ${{ secrets.EMBEDDING_API_KEY }}
-          EMBEDDING_API_URL: ${{ vars.EMBEDDING_API_URL }}
-          EMBEDDING_MODEL: ${{ vars.EMBEDDING_MODEL }}
         run: |
           missing_required=0
 
@@ -126,20 +123,8 @@ jobs:
             fi
           }
 
-          check_optional_setting() {
-            local name="$1"
-            local value="$2"
-            if [ -z "$value" ]; then
-              echo "::warning::$name is missing. Semantic search embedding will be disabled."
-            fi
-          }
-
           check_required_secret "SUPABASE_ACCESS_TOKEN (secret)" "$SUPABASE_ACCESS_TOKEN"
           check_required_secret "SUPABASE_PROJECT_REF (secret)" "$SUPABASE_PROJECT_REF"
-
-          check_optional_setting "EMBEDDING_API_KEY (secret)" "$EMBEDDING_API_KEY"
-          check_optional_setting "EMBEDDING_API_URL (variable)" "$EMBEDDING_API_URL"
-          check_optional_setting "EMBEDDING_MODEL (variable)" "$EMBEDDING_MODEL"
 
           if [ "$missing_required" -ne 0 ]; then
             echo "::error::One or more required Supabase deploy settings are missing."
@@ -151,9 +136,6 @@ jobs:
         env:
           SUPABASE_ACCESS_TOKEN: ${{ secrets.SUPABASE_ACCESS_TOKEN }}
           SUPABASE_PROJECT_REF: ${{ secrets.SUPABASE_PROJECT_REF }}
-          EMBEDDING_API_KEY: ${{ secrets.EMBEDDING_API_KEY }}
-          EMBEDDING_API_URL: ${{ vars.EMBEDDING_API_URL }}
-          EMBEDDING_MODEL: ${{ vars.EMBEDDING_MODEL }}
         run: |
           supabase functions deploy registry-search --project-ref "$SUPABASE_PROJECT_REF"
 

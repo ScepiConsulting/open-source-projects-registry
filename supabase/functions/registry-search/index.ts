@@ -23,7 +23,10 @@ Deno.serve(async (req) => {
   }
 
   const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "";
-  const SUPABASE_SECRET_KEY = Deno.env.get("SUPABASE_SECRET_KEY") || "";
+  const SUPABASE_SECRET_KEY =
+    Deno.env.get("SUPABASE_SECRET_KEY") ||
+    Deno.env.get("SUPABASE_SERVICE_ROLE_KEY") ||
+    "";
   const EMBEDDING_API_KEY = Deno.env.get("EMBEDDING_API_KEY") || "";
   const EMBEDDING_API_URL = Deno.env.get("EMBEDDING_API_URL") || "https://api.openai.com/v1/embeddings";
   const EMBEDDING_MODEL = Deno.env.get("EMBEDDING_MODEL") || "text-embedding-3-small";
