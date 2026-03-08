@@ -1,8 +1,83 @@
 {
   "chunk": 16,
   "count": 50,
-  "generated_at": "2026-03-04T17:47:43Z",
+  "generated_at": "2026-03-08T04:48:56Z",
   "items": [
+    {
+      "repo_key": "github.com/klausmeyer/docker-registry-browser",
+      "repo_url": "github.com/klausmeyer/docker-registry-browser",
+      "host": "github.com",
+      "owner": "klausmeyer",
+      "repo": "docker-registry-browser",
+      "app_references": [
+        "docker-registry-browser"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__klausmeyer__docker-registry-browser.md",
+      "readme_download_url": null,
+      "readme_sha256": "82ab1b47a799baac6412ef47d4ff8cc720438218729b0aaa6a124d363df2f4e9",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/knadh/listmonk",
+      "repo_url": "github.com/knadh/listmonk",
+      "host": "github.com",
+      "owner": "knadh",
+      "repo": "listmonk",
+      "app_references": [
+        "listmonk"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__knadh__listmonk.md",
+      "readme_download_url": null,
+      "readme_sha256": "e3592dcea72705901f2cfba4f674de81e96dc7aaded2343246cca9312a092cee",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/koel/koel",
+      "repo_url": "github.com/koel/koel",
+      "host": "github.com",
+      "owner": "koel",
+      "repo": "koel",
+      "app_references": [
+        "koel"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__koel__koel.md",
+      "readme_download_url": null,
+      "readme_sha256": "62aec45d96391e80d7f9271763e585d52cafcc27a06bb8ba7d3346b6376ee709",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/kopia/kopia",
+      "repo_url": "github.com/kopia/kopia",
+      "host": "github.com",
+      "owner": "kopia",
+      "repo": "kopia",
+      "app_references": [
+        "kopia"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__kopia__kopia.md",
+      "readme_download_url": null,
+      "readme_sha256": "ebf6a914a8ffb9c201eb2b6309245ce913575101fcca19750b93710103071cde",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/koush/scrypted",
+      "repo_url": "github.com/koush/scrypted",
+      "host": "github.com",
+      "owner": "koush",
+      "repo": "scrypted",
+      "app_references": [
+        "scrypted"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__koush__scrypted.md",
+      "readme_download_url": null,
+      "readme_sha256": "831b3d79588280cbbef71d781a5b7eb41f8f365de094804ec4b3a01fe1112e33",
+      "error": null
+    },
     {
       "repo_key": "github.com/krakend/krakend-ce",
       "repo_url": "github.com/krakend/krakend-ce",
@@ -357,10 +432,10 @@
       "app_references": [
         "aurral"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__lklynet__aurral.md",
-      "readme_download_url": null,
-      "readme_sha256": "d51e18edea994ef9f456ec03e149acb6bee9ca38bedca13d7e0be3a0c8768f2d",
+      "readme_download_url": "https://raw.githubusercontent.com/lklynet/aurral/main/README.md",
+      "readme_sha256": "9feec2b469f2ea2c1822ce5a9057b905888ba2ead4c63202b715f2f613a8c321",
       "error": null
     },
     {
@@ -672,85 +747,10 @@
       "app_references": [
         "m3u-editor"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__m3ue__m3u-editor.md",
-      "readme_download_url": null,
-      "readme_sha256": "3724996bfc6910a00220d791d8cf032e2108241371c77eb7aa6392c00a5c49a5",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/macarooni-man/auto-mcs",
-      "repo_url": "github.com/macarooni-man/auto-mcs",
-      "host": "github.com",
-      "owner": "macarooni-man",
-      "repo": "auto-mcs",
-      "app_references": [
-        "auto-mcs"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__macarooni-man__auto-mcs.md",
-      "readme_download_url": null,
-      "readme_sha256": "67a2c1f3fab17b8f9a6422c7433784e277514456f67a27ca4fc3d4cfb70c9e70",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/madeofpendletonwool/PinePods",
-      "repo_url": "github.com/madeofpendletonwool/PinePods",
-      "host": "github.com",
-      "owner": "madeofpendletonwool",
-      "repo": "PinePods",
-      "app_references": [
-        "pinepods"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__madeofpendletonwool__PinePods.md",
-      "readme_download_url": null,
-      "readme_sha256": "44a684c7c476e16379c7d6a4151f2414df9a3d5df9497e001881e192067adf0f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/maelgangloff/domain-watchdog",
-      "repo_url": "github.com/maelgangloff/domain-watchdog",
-      "host": "github.com",
-      "owner": "maelgangloff",
-      "repo": "domain-watchdog",
-      "app_references": [
-        "domain-watchdog"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__maelgangloff__domain-watchdog.md",
-      "readme_download_url": null,
-      "readme_sha256": "baa2c486071799b2af32b3408208ab37ca931477773d38257a85f47e04f3613f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/mag37/dockcheck",
-      "repo_url": "github.com/mag37/dockcheck",
-      "host": "github.com",
-      "owner": "mag37",
-      "repo": "dockcheck",
-      "app_references": [
-        "dockcheck"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__mag37__dockcheck.md",
-      "readme_download_url": null,
-      "readme_sha256": "cb87b6823982af42dc9ffe6439667f65925d0db4af70e00cc5bfa5c46a26cf8c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/magweter/spacepad",
-      "repo_url": "github.com/magweter/spacepad",
-      "host": "github.com",
-      "owner": "magweter",
-      "repo": "spacepad",
-      "app_references": [
-        "spacepad"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__magweter__spacepad.md",
-      "readme_download_url": null,
-      "readme_sha256": "80f68f8c119e291a16eba80d5339a7f1427c05cec82a18d3e5bd8b287f0e05f2",
+      "readme_download_url": "https://raw.githubusercontent.com/m3ue/m3u-editor/master/README.md",
+      "readme_sha256": "c80269ed8f9717b3e2d498fdcf434b9010183041714ddd2e130301d90fe34693",
       "error": null
     }
   ]

@@ -1,8 +1,68 @@
 {
   "chunk": 15,
   "count": 50,
-  "generated_at": "2026-03-04T17:47:43Z",
+  "generated_at": "2026-03-08T04:48:56Z",
   "items": [
+    {
+      "repo_key": "github.com/jellydeck/moocup",
+      "repo_url": "github.com/jellydeck/moocup",
+      "host": "github.com",
+      "owner": "jellydeck",
+      "repo": "moocup",
+      "app_references": [
+        "moocup"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__jellydeck__moocup.md",
+      "readme_download_url": null,
+      "readme_sha256": "5ac350b1662309b8c82a110f00b9d3936537e518eabde51313f998609c198629",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/jellyfin/jellyfin",
+      "repo_url": "github.com/jellyfin/jellyfin",
+      "host": "github.com",
+      "owner": "jellyfin",
+      "repo": "jellyfin",
+      "app_references": [
+        "jellyfin"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__jellyfin__jellyfin.md",
+      "readme_download_url": null,
+      "readme_sha256": "02cd77cc8727fbc18a8183b336f9fa36a4f0d5024fb4f46a785c4a72187ff0c5",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/jeremehancock/Posteria",
+      "repo_url": "github.com/jeremehancock/Posteria",
+      "host": "github.com",
+      "owner": "jeremehancock",
+      "repo": "Posteria",
+      "app_references": [
+        "posteria"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__jeremehancock__Posteria.md",
+      "readme_download_url": null,
+      "readme_sha256": "c11be5a0283e4b92933f4d894fb46d40740ace808de1337fade68c4438738849",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/jeremyckahn/chitchatter",
+      "repo_url": "github.com/jeremyckahn/chitchatter",
+      "host": "github.com",
+      "owner": "jeremyckahn",
+      "repo": "chitchatter",
+      "app_references": [
+        "chitchatter"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__jeremyckahn__chitchatter.md",
+      "readme_download_url": null,
+      "readme_sha256": "08bedeaa795283e2164913c7e6ee6e78915cf4b71622b22e6ab1b5e309bd52b7",
+      "error": null
+    },
     {
       "repo_key": "github.com/jesec/flood",
       "repo_url": "github.com/jesec/flood",
@@ -27,10 +87,10 @@
       "app_references": [
         "draw-io"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jgraph__drawio.md",
-      "readme_download_url": null,
-      "readme_sha256": "5278a0f47206e91e1f6b266e8c62b99623d288c86906d860b41607a96f968cc8",
+      "readme_download_url": "https://raw.githubusercontent.com/jgraph/drawio/dev/README.md",
+      "readme_sha256": "7d728dc2b3f67bb48126bf194bdb31d831bff9c081f421456522f5ceadc5d299",
       "error": null
     },
     {
@@ -162,10 +222,10 @@
       "app_references": [
         "habitsync"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jofoerster__habitsync.md",
-      "readme_download_url": null,
-      "readme_sha256": "8d3477800a27a45b2f9a17d592420a9265864c4a3276edb5b11c32f795a60878",
+      "readme_download_url": "https://raw.githubusercontent.com/jofoerster/habitsync/main/README.md",
+      "readme_sha256": "2f26958789fcc4dc79d505ff0fbd98823487ac97ad691bfcd6e14e4343a45ade",
       "error": null
     },
     {
@@ -417,10 +477,10 @@
       "app_references": [
         "omnipoly"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__kWeglinski__OmniPoly.md",
-      "readme_download_url": null,
-      "readme_sha256": "23585a340985e284d5b106f94ded3efb8b5b9995a8236a5a9633f996458205c2",
+      "readme_download_url": "https://raw.githubusercontent.com/kWeglinski/OmniPoly/develop/README.md",
+      "readme_sha256": "de146979872cdc171cd89dc481fd1ed7696c66bff43726e6f8d820ddb3ba8618",
       "error": null
     },
     {
@@ -619,6 +679,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/kikootwo/ReadMeABook",
+      "repo_url": "github.com/kikootwo/ReadMeABook",
+      "host": "github.com",
+      "owner": "kikootwo",
+      "repo": "ReadMeABook",
+      "app_references": [
+        "readmeabook"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__kikootwo__ReadMeABook.md",
+      "readme_download_url": "https://raw.githubusercontent.com/kikootwo/ReadMeABook/main/README.md",
+      "readme_sha256": "01aa9fa7b80d02f0c82f6cdf0989a67cb54b111a34a577107024309d33390020",
+      "error": null
+    },
+    {
       "repo_key": "github.com/kimai/kimai",
       "repo_url": "github.com/kimai/kimai",
       "host": "github.com",
@@ -657,10 +732,10 @@
       "app_references": [
         "kite-kubernetes"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__kite-org__kite.md",
-      "readme_download_url": null,
-      "readme_sha256": "4a8a427e4e9acbe7ab1d2a69ff39def117b8a346e8096ca8d3a9b50268101ddc",
+      "readme_download_url": "https://raw.githubusercontent.com/kite-org/kite/main/README.md",
+      "readme_sha256": "8040d28fc06b41178db147afcbb50983b2d6bd72225513e1a471d82d5c3979c6",
       "error": null
     },
     {
@@ -676,81 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__kittendevv__Invio.md",
       "readme_download_url": null,
       "readme_sha256": "5937514d395218826468b04a792ff0a95b7e3d81adffd2769b42c1cf9aec758f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/klausmeyer/docker-registry-browser",
-      "repo_url": "github.com/klausmeyer/docker-registry-browser",
-      "host": "github.com",
-      "owner": "klausmeyer",
-      "repo": "docker-registry-browser",
-      "app_references": [
-        "docker-registry-browser"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__klausmeyer__docker-registry-browser.md",
-      "readme_download_url": null,
-      "readme_sha256": "82ab1b47a799baac6412ef47d4ff8cc720438218729b0aaa6a124d363df2f4e9",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/knadh/listmonk",
-      "repo_url": "github.com/knadh/listmonk",
-      "host": "github.com",
-      "owner": "knadh",
-      "repo": "listmonk",
-      "app_references": [
-        "listmonk"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__knadh__listmonk.md",
-      "readme_download_url": null,
-      "readme_sha256": "e3592dcea72705901f2cfba4f674de81e96dc7aaded2343246cca9312a092cee",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/koel/koel",
-      "repo_url": "github.com/koel/koel",
-      "host": "github.com",
-      "owner": "koel",
-      "repo": "koel",
-      "app_references": [
-        "koel"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__koel__koel.md",
-      "readme_download_url": null,
-      "readme_sha256": "62aec45d96391e80d7f9271763e585d52cafcc27a06bb8ba7d3346b6376ee709",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/kopia/kopia",
-      "repo_url": "github.com/kopia/kopia",
-      "host": "github.com",
-      "owner": "kopia",
-      "repo": "kopia",
-      "app_references": [
-        "kopia"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__kopia__kopia.md",
-      "readme_download_url": null,
-      "readme_sha256": "ebf6a914a8ffb9c201eb2b6309245ce913575101fcca19750b93710103071cde",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/koush/scrypted",
-      "repo_url": "github.com/koush/scrypted",
-      "host": "github.com",
-      "owner": "koush",
-      "repo": "scrypted",
-      "app_references": [
-        "scrypted"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__koush__scrypted.md",
-      "readme_download_url": null,
-      "readme_sha256": "831b3d79588280cbbef71d781a5b7eb41f8f365de094804ec4b3a01fe1112e33",
       "error": null
     }
   ]

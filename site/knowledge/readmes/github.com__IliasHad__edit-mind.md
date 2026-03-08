@@ -18,6 +18,7 @@ Note: (Edit Mind name is coming from Video Editor Mind, so this will be the edit
 ## Sponsors of this project 
 
 [![brycedev](https://img.shields.io/badge/Sponosor-brycedev-blue?logo=github)](https://github.com/brycedev)
+[![alittlebitweird](https://img.shields.io/badge/Sponosor-alittlebitweird-blue?logo=github)](https://github.com/alittlebitweird)
 
 ## Showcase Video
 
@@ -219,4 +220,4 @@ docker-compose -f docker-compose.dev.yml up --build
 ---
 ## License
 
-This project is licensed under the MIT License - see the `LICENSE.md` file for details.
+This project is licensed under the Edit Mind License - see the `LICENSE.md` file for details.

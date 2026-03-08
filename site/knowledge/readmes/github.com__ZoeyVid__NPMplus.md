@@ -8,7 +8,7 @@ If you don't need the web GUI of NPMplus, you may also have a look at caddy: htt
 
 **Note: this fork is distributed under the GNU Affero General Public License version 3. It is based on the MIT licensed [nginx-proxy-manager](https://github.com/NginxProxyManager/nginx-proxy-manager).** <br>
 **Note: by running NPMplus you agree to the TOS of Let's Encrypt/your custom CA.** <br>
-**Note: remember to expose udp/quic for the https port (443/upd).** <br>
+**Note: remember to expose udp/quic for the https port (443/udp).** <br>
 **Note: remember to add your domain to the [hsts preload list](https://hstspreload.org) if you enabled hsts for your domain.** <br>
 **Note: please report issues first to this fork before reporting them to the upstream repository.** <br>
 
@@ -163,7 +163,7 @@ status_codes:
 4. You can override the "allow", "checking" and "blocked" images used by default by setting the `AUTH_REQUEST_ANUBIS_USE_CUSTOM_IMAGES` env to true and putting put your custom images as happy.webp, pensive.webp and reject.webp to /opt/npmplus/anubis
 
 ### Tinyauth
-1. Set the AUTH_REQUEST_TINYAUTH_UPSTREAM and AUTH_REQUEST_TINYAUTH_DOMAIM env in the NPMplus compose.yaml and select tinyauth in the Auth Request selection, no custom/advanced config/locations needed
+1. Set the AUTH_REQUEST_TINYAUTH_UPSTREAM and AUTH_REQUEST_TINYAUTH_DOMAIN env in the NPMplus compose.yaml and select tinyauth in the Auth Request selection, no custom/advanced config/locations needed
 
 ### Authelia (modern)
 1. Set the AUTH_REQUEST_AUTHELIA_UPSTREAM env in the NPMplus compose.yaml and select authelia (modern) in the Auth Request selection, no custom/advanced config/locations needed

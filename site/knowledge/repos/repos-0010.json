@@ -1,8 +1,23 @@
 {
   "chunk": 10,
   "count": 50,
-  "generated_at": "2026-03-04T17:47:43Z",
+  "generated_at": "2026-03-08T04:48:56Z",
   "items": [
+    {
+      "repo_key": "github.com/civilblur/mazanoke",
+      "repo_url": "github.com/civilblur/mazanoke",
+      "host": "github.com",
+      "owner": "civilblur",
+      "repo": "mazanoke",
+      "app_references": [
+        "mazanoke"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__civilblur__mazanoke.md",
+      "readme_download_url": null,
+      "readme_sha256": "1ed1ead3322405bc58bb1f10dc3f80da6d0481ac310ad4a3e3b053838ddd3938",
+      "error": null
+    },
     {
       "repo_key": "github.com/civilblur/youlag",
       "repo_url": "github.com/civilblur/youlag",
@@ -72,10 +87,10 @@
       "app_references": [
         "cloudflared"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__cloudflare__cloudflared.md",
-      "readme_download_url": null,
-      "readme_sha256": "5847b91f03b684b9003b2152b8dc99eae6773dd9a1d59bb3ed4082262b4d1c2c",
+      "readme_download_url": "https://raw.githubusercontent.com/cloudflare/cloudflared/master/README.md",
+      "readme_sha256": "4ba729d32fc56a9c7a92f98be3a94113442fc1adc11e1d744bb88fb84f3073b8",
       "error": null
     },
     {
@@ -507,10 +522,10 @@
       "app_references": [
         "imagor-studio"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__cshum__imagor-studio.md",
-      "readme_download_url": null,
-      "readme_sha256": "8d4506551e53d8f1082a6305f92d8f4f8aeed9f85ff45eb20ce4a5329a49c6e0",
+      "readme_download_url": "https://raw.githubusercontent.com/cshum/imagor-studio/main/README.md",
+      "readme_sha256": "c543721243bd2ba1aaace08dfbb1a2099f78427bc0451025b75b758fa1e90fbc",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__davideshay__groceries.md",
       "readme_download_url": null,
       "readme_sha256": "e7525b4f1e7d953c6dd8265ddc075eddaee2ee74cf850b94a257946c050f27fb",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/daya0576/beaverhabits",
-      "repo_url": "github.com/daya0576/beaverhabits",
-      "host": "github.com",
-      "owner": "daya0576",
-      "repo": "beaverhabits",
-      "app_references": [
-        "beaver-habit-tracker"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__daya0576__beaverhabits.md",
-      "readme_download_url": null,
-      "readme_sha256": "64854603c025c4c35372bdf7037e2679189e1d00254a600cba146b68446af5b0",
       "error": null
     }
   ]

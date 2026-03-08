@@ -1,7 +1,7 @@
 {
   "chunk": 8,
   "count": 50,
-  "generated_at": "2026-03-04T17:47:43Z",
+  "generated_at": "2026-03-08T04:48:56Z",
   "items": [
     {
       "repo_key": "github.com/ampache/ampache",
@@ -319,6 +319,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/arpanghosh8453/open-dronelog",
+      "repo_url": "github.com/arpanghosh8453/open-dronelog",
+      "host": "github.com",
+      "owner": "arpanghosh8453",
+      "repo": "open-dronelog",
+      "app_references": [
+        "open-dronelog"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__arpanghosh8453__open-dronelog.md",
+      "readme_download_url": "https://raw.githubusercontent.com/arpanghosh8453/open-dronelog/main/README.md",
+      "readme_sha256": "c9d8ff2220dfd119a93949f0e89fcd1685fba98d286fdeae7d187e2aa9a6c26c",
+      "error": null
+    },
+    {
       "repo_key": "github.com/asciimoo/hister",
       "repo_url": "github.com/asciimoo/hister",
       "host": "github.com",
@@ -327,10 +342,10 @@
       "app_references": [
         "hister"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__asciimoo__hister.md",
-      "readme_download_url": null,
-      "readme_sha256": "b6a48848b7a95c16fc9e8460e49fae8522d80b520d69ff2538692f48698dd350",
+      "readme_download_url": "https://raw.githubusercontent.com/asciimoo/hister/master/README.md",
+      "readme_sha256": "88e4f44ab8c16f78a47b9f44be7decaa4a7f8b9c0153bfd1a1da52512fe8597c",
       "error": null
     },
     {
@@ -567,9 +582,9 @@
       "app_references": [
         "baserow"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__baserow__baserow.md",
-      "readme_download_url": "https://raw.githubusercontent.com/baserow/baserow/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "16ede028cbf3d68b8171ec5f9058353ac524f0d09975ca8c024ade405d93d9c4",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__binwiederhier__ntfy.md",
       "readme_download_url": null,
       "readme_sha256": "82a20acbffd743668a39a68c7ae6f2e4c3d1d30fc216fcc2f5d9592caa32efb0",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/biolds/sosse",
-      "repo_url": "github.com/biolds/sosse",
-      "host": "github.com",
-      "owner": "biolds",
-      "repo": "sosse",
-      "app_references": [
-        "sosse"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__biolds__sosse.md",
-      "readme_download_url": null,
-      "readme_sha256": "6a537d46aa19e25ba567565164be0d5d235a3700be9e6a8a01fab7ea7dd74fa0",
       "error": null
     }
   ]

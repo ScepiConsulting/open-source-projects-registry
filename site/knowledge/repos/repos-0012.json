@@ -1,8 +1,38 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-03-04T17:47:43Z",
+  "generated_at": "2026-03-08T04:48:56Z",
   "items": [
+    {
+      "repo_key": "github.com/element-hq/synapse",
+      "repo_url": "github.com/element-hq/synapse",
+      "host": "github.com",
+      "owner": "element-hq",
+      "repo": "synapse",
+      "app_references": [
+        "synapse"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__element-hq__synapse.md",
+      "readme_download_url": null,
+      "readme_sha256": "fdb0a6d62135f6e1a89b653017fc1bbdd682d0ba482281c9e6fcb396cc7bb06b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/eleven-am/frames",
+      "repo_url": "github.com/eleven-am/frames",
+      "host": "github.com",
+      "owner": "eleven-am",
+      "repo": "frames",
+      "app_references": [
+        "frames"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__eleven-am__frames.md",
+      "readme_download_url": null,
+      "readme_sha256": "859aa7dc2026c484e03141180f398b7773d25d99643da9c49d5b8791c24b7495",
+      "error": null
+    },
     {
       "repo_key": "github.com/ellite/Wallos",
       "repo_url": "github.com/ellite/Wallos",
@@ -73,10 +103,10 @@
         "ente-auth",
         "ente-photos"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ente-io__ente.md",
-      "readme_download_url": null,
-      "readme_sha256": "29ee205f2b3cda231b6e0eeced7f51a9199eb93e3b85d33534872094f9db228d",
+      "readme_download_url": "https://raw.githubusercontent.com/ente-io/ente/main/README.md",
+      "readme_sha256": "c5ed2bf00c05714859248de7c61afcbe7184a150c8a23a701d69c3d7440d3bba",
       "error": null
     },
     {
@@ -118,10 +148,10 @@
       "app_references": [
         "filerise"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__error311__FileRise.md",
-      "readme_download_url": null,
-      "readme_sha256": "839e3cfcac5f80950108b82499f3db33949a5321afdf5d5ed339b4bd72bbd53d",
+      "readme_download_url": "https://raw.githubusercontent.com/error311/FileRise/master/README.md",
+      "readme_sha256": "72a15843fa414f800309a0ca18d69eba8a1bc87fd4c07ade864343e01f8c4811",
       "error": null
     },
     {
@@ -178,10 +208,10 @@
       "app_references": [
         "etherpad"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ether__etherpad-lite.md",
-      "readme_download_url": null,
-      "readme_sha256": "6df312ae39aa3d03f92c930d2cccc41f90f669a77b4f71de95ad0db9a89de327",
+      "readme_download_url": "https://raw.githubusercontent.com/ether/etherpad-lite/develop/README.md",
+      "readme_sha256": "bfe08880ced09313b6c6b5e93fa528b3c050a2c359fc1f1b26146e362ae7249c",
       "error": null
     },
     {
@@ -410,6 +440,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/figranium/figranium",
+      "repo_url": "github.com/figranium/figranium",
+      "host": "github.com",
+      "owner": "figranium",
+      "repo": "figranium",
+      "app_references": [
+        "figranium"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__figranium__figranium.md",
+      "readme_download_url": "https://raw.githubusercontent.com/figranium/figranium/main/README.md",
+      "readme_sha256": "21cfa437f5b80c8d8e0ee629c90f03edee3c39176739c210c9c31866f37a9222",
+      "error": null
+    },
+    {
       "repo_key": "github.com/filebrowser/filebrowser",
       "repo_url": "github.com/filebrowser/filebrowser",
       "host": "github.com",
@@ -448,10 +493,10 @@
       "app_references": [
         "firefly-iii"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__firefly-iii__firefly-iii.md",
-      "readme_download_url": null,
-      "readme_sha256": "5365ebd9ade2d00c6f0a5b36ad1b49c4de5e2160beb2aa6c257eddd0aabc3605",
+      "readme_download_url": "https://raw.githubusercontent.com/firefly-iii/firefly-iii/main/readme.md",
+      "readme_sha256": "e3cf2d268bd549f5cf5a6b6faf77b8d4709955f78b15a55942a30b68ce0240d4",
       "error": null
     },
     {
@@ -508,10 +553,10 @@
       "app_references": [
         "fluxer"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__fluxerapp__fluxer.md",
-      "readme_download_url": null,
-      "readme_sha256": "ab8e983c1f250963cf6239c5da307a75902b20c1d672ea4c607ec4af102e5ff0",
+      "readme_download_url": "https://raw.githubusercontent.com/fluxerapp/fluxer/refactor/README.md",
+      "readme_sha256": "06c3a552deea3a0e533f07621b0176a4e6aab176d2d82672b43fb725a239c277",
       "error": null
     },
     {
@@ -643,10 +688,10 @@
       "app_references": [
         "friendica"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__friendica__friendica.md",
-      "readme_download_url": null,
-      "readme_sha256": "e83795f576393b394245a789cc9dd248416735670c9204bb609b468ed35727c8",
+      "readme_download_url": "https://raw.githubusercontent.com/friendica/friendica/develop/README.md",
+      "readme_sha256": "7f67f7ac5e4bd8b1328d46fce0e61cf89c166edd540f3c96f7a2b7f97475a41a",
       "error": null
     },
     {
@@ -707,51 +752,6 @@
       "readme_path": "knowledge/readmes/github.com__games-on-whales__wolf.md",
       "readme_download_url": null,
       "readme_sha256": "9bc70d8c0379d6adfcc37fd9708d7841c2d9d5b4647778ef499fc9e75839af21",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/gameyfin/gameyfin",
-      "repo_url": "github.com/gameyfin/gameyfin",
-      "host": "github.com",
-      "owner": "gameyfin",
-      "repo": "gameyfin",
-      "app_references": [
-        "gameyfin"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__gameyfin__gameyfin.md",
-      "readme_download_url": null,
-      "readme_sha256": "35aa3c30c92fca3a9f205eac2c989d665805e695fd212c5916b4326514b23f7f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/gamosoft/NoteDiscovery",
-      "repo_url": "github.com/gamosoft/NoteDiscovery",
-      "host": "github.com",
-      "owner": "gamosoft",
-      "repo": "NoteDiscovery",
-      "app_references": [
-        "notediscovery"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__gamosoft__NoteDiscovery.md",
-      "readme_download_url": null,
-      "readme_sha256": "de7f9bda9e92c9b08b96281a40ea07c2fe90fa7758af891cc2cf4c3c24bf50d3",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/garanda21/deepsubx",
-      "repo_url": "github.com/garanda21/deepsubx",
-      "host": "github.com",
-      "owner": "garanda21",
-      "repo": "deepsubx",
-      "app_references": [
-        "deepsubx"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__garanda21__deepsubx.md",
-      "readme_download_url": null,
-      "readme_sha256": "b4071edebe97ad868fdd7da65807964959909ea59f27e5cda944152bdf594a61",
       "error": null
     }
   ]

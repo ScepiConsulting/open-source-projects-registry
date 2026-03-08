@@ -1,8 +1,23 @@
 {
   "chunk": 9,
   "count": 50,
-  "generated_at": "2026-03-04T17:47:43Z",
+  "generated_at": "2026-03-08T04:48:56Z",
   "items": [
+    {
+      "repo_key": "github.com/biolds/sosse",
+      "repo_url": "github.com/biolds/sosse",
+      "host": "github.com",
+      "owner": "biolds",
+      "repo": "sosse",
+      "app_references": [
+        "sosse"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__biolds__sosse.md",
+      "readme_download_url": null,
+      "readme_sha256": "6a537d46aa19e25ba567565164be0d5d235a3700be9e6a8a01fab7ea7dd74fa0",
+      "error": null
+    },
     {
       "repo_key": "github.com/birdnet-team/BirdNET-Analyzer",
       "repo_url": "github.com/birdnet-team/BirdNET-Analyzer",
@@ -132,10 +147,10 @@
       "app_references": [
         "booklore"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__booklore-app__booklore.md",
-      "readme_download_url": null,
-      "readme_sha256": "b900d2edb140eadbb7e55f255c833d9e1f41e173aee4bb917fd6e4e03d46eb1e",
+      "readme_download_url": "https://raw.githubusercontent.com/booklore-app/booklore/develop/README.md",
+      "readme_sha256": "dcfa8c486a65789d39957937e9a0a6311376cc84e5100aa62e23c4b4ee90698f",
       "error": null
     },
     {
@@ -372,10 +387,10 @@
       "app_references": [
         "shelfmark"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__calibrain__shelfmark.md",
-      "readme_download_url": null,
-      "readme_sha256": "5e165cffdf3ce73c10033abb64fe93491be05102199ba180d6c628528d01c288",
+      "readme_download_url": "https://raw.githubusercontent.com/calibrain/shelfmark/main/readme.md",
+      "readme_sha256": "db1a833eac31d6e020a15db809b1fa36f1b9ca1e12f7a4855c1634991fbe90d5",
       "error": null
     },
     {
@@ -462,10 +477,10 @@
       "app_references": [
         "crosswatch"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__cenodude__CrossWatch.md",
-      "readme_download_url": null,
-      "readme_sha256": "6b98dac8ae9ac4b4767302c5318e2d960262f7377af4e9b3ad9ca45d0f9548ad",
+      "readme_download_url": "https://raw.githubusercontent.com/cenodude/CrossWatch/main/README.md",
+      "readme_sha256": "840f79f59b2c26f22e353a252fca86aa1b07aeec145682e246bbbfd271a71737",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__ciur__papermerge.md",
       "readme_download_url": null,
       "readme_sha256": "6b0e7a5a8f719d03fb85faec78860a777be35a772b9a31decfc616aefeeca19d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/civilblur/mazanoke",
-      "repo_url": "github.com/civilblur/mazanoke",
-      "host": "github.com",
-      "owner": "civilblur",
-      "repo": "mazanoke",
-      "app_references": [
-        "mazanoke"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__civilblur__mazanoke.md",
-      "readme_download_url": null,
-      "readme_sha256": "1ed1ead3322405bc58bb1f10dc3f80da6d0481ac310ad4a3e3b053838ddd3938",
       "error": null
     }
   ]

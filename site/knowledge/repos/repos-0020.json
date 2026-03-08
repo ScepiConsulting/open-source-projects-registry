@@ -1,8 +1,98 @@
 {
   "chunk": 20,
   "count": 50,
-  "generated_at": "2026-03-04T17:47:43Z",
+  "generated_at": "2026-03-08T04:48:56Z",
   "items": [
+    {
+      "repo_key": "github.com/passbolt/passbolt_api",
+      "repo_url": "github.com/passbolt/passbolt_api",
+      "host": "github.com",
+      "owner": "passbolt",
+      "repo": "passbolt_api",
+      "app_references": [
+        "passbolt"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__passbolt__passbolt_api.md",
+      "readme_download_url": null,
+      "readme_sha256": "481840b1daaab2e2d9ea9ab594298564bbf84f9f0f33719e15aaa26155a89993",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/pawelmalak/flame",
+      "repo_url": "github.com/pawelmalak/flame",
+      "host": "github.com",
+      "owner": "pawelmalak",
+      "repo": "flame",
+      "app_references": [
+        "flame"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__pawelmalak__flame.md",
+      "readme_download_url": null,
+      "readme_sha256": "c704f3dc7ffb8f4b5059a6c0ee4008f759f895c096481f8a7dfa9e00a2b58715",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/payloadcms/payload",
+      "repo_url": "github.com/payloadcms/payload",
+      "host": "github.com",
+      "owner": "payloadcms",
+      "repo": "payload",
+      "app_references": [
+        "payload"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__payloadcms__payload.md",
+      "readme_download_url": null,
+      "readme_sha256": "54bcaba223f7894a070d982e4bd92f6e9978d9acbe4b3e81db7d6e3278f7491a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/pbogre/jetlog",
+      "repo_url": "github.com/pbogre/jetlog",
+      "host": "github.com",
+      "owner": "pbogre",
+      "repo": "jetlog",
+      "app_references": [
+        "jetlog"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__pbogre__jetlog.md",
+      "readme_download_url": null,
+      "readme_sha256": "1beecb078cacbbab8dab8c98a12ac2adfbab07580f09578ea8cd87df3ee6fb86",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/pelican-dev/panel",
+      "repo_url": "github.com/pelican-dev/panel",
+      "host": "github.com",
+      "owner": "pelican-dev",
+      "repo": "panel",
+      "app_references": [
+        "pelican-panel"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__pelican-dev__panel.md",
+      "readme_download_url": null,
+      "readme_sha256": "fddc787d9d2d75a09ec06bc20566cddef792c3021239cd8ecf4ab819b2667c92",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/penpot/penpot",
+      "repo_url": "github.com/penpot/penpot",
+      "host": "github.com",
+      "owner": "penpot",
+      "repo": "penpot",
+      "app_references": [
+        "penpot"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__penpot__penpot.md",
+      "readme_download_url": null,
+      "readme_sha256": "993040e8adfd48eb117bbad7f84a662e4944eac34338d34a57aedc5f1c7c6116",
+      "error": null
+    },
     {
       "repo_key": "github.com/pentacent/keila",
       "repo_url": "github.com/pentacent/keila",
@@ -72,10 +162,10 @@
       "app_references": [
         "password-pusher"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
-      "readme_download_url": null,
-      "readme_sha256": "28e6dce0d99ea42eb10de4de8fc2eb2ac31a9deb043e1b07e6d972f4f562d042",
+      "readme_download_url": "https://raw.githubusercontent.com/pglombardo/PasswordPusher/master/README.md",
+      "readme_sha256": "6a783314539d48a12c102a99cb741a8a72a7da9293a622849ceac0033d1c1b99",
       "error": null
     },
     {
@@ -394,21 +484,6 @@
       "error": null
     },
     {
-      "repo_key": "github.com/productiveops/dokemon",
-      "repo_url": "github.com/productiveops/dokemon",
-      "host": "github.com",
-      "owner": "productiveops",
-      "repo": "dokemon",
-      "app_references": [
-        "dokemon"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__productiveops__dokemon.md",
-      "readme_download_url": null,
-      "readme_sha256": "d173b110ca96bd174950f94acd9a054f9979d620cd6ca171cfc057128d545378",
-      "error": null
-    },
-    {
       "repo_key": "github.com/project-zot/zot",
       "repo_url": "github.com/project-zot/zot",
       "host": "github.com",
@@ -676,81 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__rapidforge-io__release.md",
       "readme_download_url": null,
       "readme_sha256": "5c060c9955b57d88c411a08a8812158faab85426311f484f79ba6375a915cb85",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/raydak-labs/configarr",
-      "repo_url": "github.com/raydak-labs/configarr",
-      "host": "github.com",
-      "owner": "raydak-labs",
-      "repo": "configarr",
-      "app_references": [
-        "configarr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__raydak-labs__configarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "71e42e4096857d6cba78b33cdc9331b65bab9ddab954d357f8750193baee7b95",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/rclone/rclone",
-      "repo_url": "github.com/rclone/rclone",
-      "host": "github.com",
-      "owner": "rclone",
-      "repo": "rclone",
-      "app_references": [
-        "rclone"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__rclone__rclone.md",
-      "readme_download_url": null,
-      "readme_sha256": "7ec507431f53ed10a49054660bf9d4416ab44dc5eb3d58ad9a8ddda055afbaad",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/rcourtman/Pulse",
-      "repo_url": "github.com/rcourtman/Pulse",
-      "host": "github.com",
-      "owner": "rcourtman",
-      "repo": "Pulse",
-      "app_references": [
-        "pulse"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__rcourtman__Pulse.md",
-      "readme_download_url": null,
-      "readme_sha256": "9d983314de3041327d955cd193d612f9b18e3902fd9a137545bae61fc62d84f5",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/recyclarr/recyclarr",
-      "repo_url": "github.com/recyclarr/recyclarr",
-      "host": "github.com",
-      "owner": "recyclarr",
-      "repo": "recyclarr",
-      "app_references": [
-        "recyclarr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__recyclarr__recyclarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "579c388227162e61ffa00b7477ae85e26d109e23bf72319955cf0bf1ded41cb9",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/redimp/otterwiki",
-      "repo_url": "github.com/redimp/otterwiki",
-      "host": "github.com",
-      "owner": "redimp",
-      "repo": "otterwiki",
-      "app_references": [
-        "an-otter-wiki"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__redimp__otterwiki.md",
-      "readme_download_url": null,
-      "readme_sha256": "a5d165625bbab832456cdae01de795edad44555124f53c9fafa440e35d92fd49",
       "error": null
     }
   ]

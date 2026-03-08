@@ -2,14 +2,13 @@
 
 # Hister
 
-**Web history on steroids**
+**Your own search engine**
 
-Hister is a web history management tool that provides blazing fast, content-based search for visited websites. Unlike traditional browser history that only searches URLs and titles, Hister indexes the full content of web pages you visit.
+Hister is a general purpose web search engine providing automatic full-text indexing for visited websites.
 
-![hister screenshot](webui/website/static/screenshot.png)
+![hister screenshot](webui/website/src/lib/assets/screenshot.png)
 
-![hister screencast](webui/website/static/demo.gif)
-
+![hister screencast](webui/website/src/lib/assets/demo.gif)
 
 ## Features
 
@@ -19,42 +18,22 @@ Hister is a web history management tool that provides blazing fast, content-base
 - **Efficient retrieval**: Use keyword aliases to quickly find content
 - **Flexible content management**: Configure blacklist and priority rules for better control
 
-## Setup & run
-
-### Install the extension
-
-Available for [Chrome](https://chromewebstore.google.com/detail/hister/cciilamhchpmbdnniabclekddabkifhb) and [Firefox](https://addons.mozilla.org/en-US/firefox/addon/hister/)
-
-### Download pre-built binary
-
-- **Stable:** Grab a versioned binary from the [releases page](https://github.com/asciimoo/hister/releases).
-- **Latest (HEAD):** Get the absolute latest build from our [Rolling Release](https://github.com/asciimoo/hister/releases/tag/rolling).
-
-Choose the binary for your architecture (e.g., `hister_linux_amd64`), make it executable (`chmod +x hister_linux_amd64`), and run it.
-
-Execute `./hister` to see all available commands.
-
-### Build for yourself
-
-**NPM is required**
-
- - Clone the repository
- - Build with `./manage.sh build` (or `go generate ./...; go build`)
- - Run `./hister help` to list the available commands
- - Execute `./hister listen` to start the web application
-
-### Use pre-built [Docker container](https://github.com/asciimoo/hister/pkgs/container/hister)
-
-## Configuration
-
-Settings can be configured in `~/.config/hister/config.yml` config file - don't forget to restart webapp after updating.
-
-TUI-specific settings are stored in a separate `~/.config/hister/tui.yaml` file that is automatically created when you first run `hister search`.
-
-Execute `./hister create-config config.yml` to generate a configuration file with the default configuration values.
-
-
 ## Check out our [Documentation](https://hister.org/docs/) for more details
+
+## Development
+
+**Requirements**: Go 1.16 and NPM
+
+- Clone the repository
+- Build with `./manage.sh build` (or `go generate ./...; go build`)
+
+To work on the web app with hot reload and automatic Go rebuilds:
+
+```
+npm run serve:app
+```
+
+This starts a Vite dev server (with HMR) and the Go backend (with auto-rebuild via [air](https://github.com/air-verse/air)) concurrently.
 
 ## Community
 
@@ -64,7 +43,6 @@ Join us on IRCNet: #hister or on [Discord](https://discord.gg/vAjtDtFp)
 
 Bugs or suggestions? Visit the [issue tracker](https://github.com/asciimoo/hister/issues).
 
-
 ## License
 
-AGPLv3
+[AGPLv3](LICENSE) or any later version

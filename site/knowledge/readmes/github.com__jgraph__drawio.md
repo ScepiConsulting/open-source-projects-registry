@@ -20,7 +20,7 @@ We make no copyright claim on diagrams you create with this software.
 
 ## Contributions
 
-We do not accept pull requests. The project is developed entirely by the core team. The entire draw.io editor is human written by the core, full-time development team, no AI generation. 
+We do not accept pull requests. The project is developed entirely by the core team.
 
 ## Scope
 

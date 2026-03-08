@@ -64,6 +64,7 @@ built in Norway 🇳🇴 with contributions from [not-norway](https://github.com
     * [other tricks](#other-tricks)
     * [searching](#searching) - search by size, date, path/name, mp3-tags, ...
 * [server config](#server-config) - using arguments or config files, or a mix of both
+    * [version-checker](#version-checker) - sleep better at night
     * [zeroconf](#zeroconf) - announce enabled services on the LAN ([pic](https://user-images.githubusercontent.com/241032/215344737-0eae8d98-9496-4256-9aa8-cd2f6971810d.png))
         * [mdns](#mdns) - LAN domain-name and feature announcer
         * [ssdp](#ssdp) - windows-explorer announcer
@@ -1311,6 +1312,31 @@ using arguments or config files, or a mix of both:
 **NB:** as humongous as this readme is, there is also a lot of undocumented features. Run copyparty with [`--help`](https://copyparty.eu/cli/) (or click that link) to see all available global options; all of those can be used in the `[global]` section of config files, and everything listed in [`--help-flags`](https://copyparty.eu/cli/#flags-help-page) can be used in volumes as volflags (per-volume configuration).
 * if running in docker/podman, try this: `docker run --rm -it copyparty/ac --help`
 * or if you prefer plaintext, https://copyparty.eu/helptext.txt
+
+
+## version-checker
+
+sleep better at night  by telling copyparty to periodically check whether your version has a [known vulnerability](https://github.com/9001/copyparty/security/advisories)
+
+this feature can be enabled by setting the global-option `--vc-url` to one of the following URLs; all of them provide the same information, so which one you choose is whatever
+* `https://api.copyparty.eu/advisories`
+* `https://api.github.com/repos/9001/copyparty/security-advisories?per_page=9`
+
+> to see what happens when a bad version is detected, try `--vc-url https://api.copyparty.eu/advisories-test`
+
+also consider the following options:
+* global-option `--vc-age` is how often (in hours) to check that URL; default is 3
+* global-option `--vc-exit` can be enabled to panic and immediately exit if a vulnerability is indicated
+  * if `--vc-exit` is not enabled, it just shows a warning on the controlpanel for all users with permission `a` or `A`
+
+config file example:
+
+```yaml
+[global]
+  vc-url: https://api.copyparty.eu/advisories
+  vc-age: 3  # how many hours to wait between each check
+  vc-exit    # emergency-exit if current version is vulnerable
+```
 
 
 ## zeroconf

@@ -1,8 +1,23 @@
 {
   "chunk": 11,
   "count": 50,
-  "generated_at": "2026-03-04T17:47:43Z",
+  "generated_at": "2026-03-08T04:48:56Z",
   "items": [
+    {
+      "repo_key": "github.com/daya0576/beaverhabits",
+      "repo_url": "github.com/daya0576/beaverhabits",
+      "host": "github.com",
+      "owner": "daya0576",
+      "repo": "beaverhabits",
+      "app_references": [
+        "beaver-habit-tracker"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__daya0576__beaverhabits.md",
+      "readme_download_url": null,
+      "readme_sha256": "64854603c025c4c35372bdf7037e2679189e1d00254a600cba146b68446af5b0",
+      "error": null
+    },
     {
       "repo_key": "github.com/dbeaver/cloudbeaver",
       "repo_url": "github.com/dbeaver/cloudbeaver",
@@ -177,10 +192,10 @@
       "app_references": [
         "tootik"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dimkr__tootik.md",
-      "readme_download_url": null,
-      "readme_sha256": "217dc5240ef2d8eddd8b8f7b7d08ab39bd133acb2cd39cf092da9d199b6c199f",
+      "readme_download_url": "https://raw.githubusercontent.com/dimkr/tootik/main/README.md",
+      "readme_sha256": "feb097dfbc6bfa1a29ec455fb1d3fa237d1190f8911445be7381d889860e6251",
       "error": null
     },
     {
@@ -492,10 +507,10 @@
       "app_references": [
         "donetick"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__donetick__donetick.md",
-      "readme_download_url": null,
-      "readme_sha256": "b426094ddf152a174c8ca2cf32f3e87a1068d96b392641cb4e71bf75f610a0ff",
+      "readme_download_url": "https://raw.githubusercontent.com/donetick/donetick/main/README.md",
+      "readme_sha256": "e0169e225fa7a465f8101379516533521f6debab787fc403ce489bda190d5101",
       "error": null
     },
     {
@@ -556,6 +571,21 @@
       "readme_path": "knowledge/readmes/github.com__dribdat__dribdat.md",
       "readme_download_url": null,
       "readme_sha256": "45b4bb044b3e15fb17a0fea933b638d3e69827974dcddab720bdfe43d275352c",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/drivebase/drivebase",
+      "repo_url": "github.com/drivebase/drivebase",
+      "host": "github.com",
+      "owner": "drivebase",
+      "repo": "drivebase",
+      "app_references": [
+        "drivebase"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__drivebase__drivebase.md",
+      "readme_download_url": "https://raw.githubusercontent.com/drivebase/drivebase/main/README.md",
+      "readme_sha256": "89f77450b8e3dd89dce04d4b1ae9cbf086d0d67a384cad069d3df019c70545d7",
       "error": null
     },
     {
@@ -721,36 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__electerious__Ackee.md",
       "readme_download_url": null,
       "readme_sha256": "8921480f59f5d92f99177d52db33565c1a9967d556f3e333852f46a12ebc3373",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/element-hq/synapse",
-      "repo_url": "github.com/element-hq/synapse",
-      "host": "github.com",
-      "owner": "element-hq",
-      "repo": "synapse",
-      "app_references": [
-        "synapse"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__element-hq__synapse.md",
-      "readme_download_url": null,
-      "readme_sha256": "fdb0a6d62135f6e1a89b653017fc1bbdd682d0ba482281c9e6fcb396cc7bb06b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/eleven-am/frames",
-      "repo_url": "github.com/eleven-am/frames",
-      "host": "github.com",
-      "owner": "eleven-am",
-      "repo": "frames",
-      "app_references": [
-        "frames"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__eleven-am__frames.md",
-      "readme_download_url": null,
-      "readme_sha256": "859aa7dc2026c484e03141180f398b7773d25d99643da9c49d5b8791c24b7495",
       "error": null
     }
   ]

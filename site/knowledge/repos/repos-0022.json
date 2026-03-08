@@ -1,8 +1,83 @@
 {
   "chunk": 22,
   "count": 50,
-  "generated_at": "2026-03-04T17:47:43Z",
+  "generated_at": "2026-03-08T04:48:56Z",
   "items": [
+    {
+      "repo_key": "github.com/searxng/searxng",
+      "repo_url": "github.com/searxng/searxng",
+      "host": "github.com",
+      "owner": "searxng",
+      "repo": "searxng",
+      "app_references": [
+        "searxng"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__searxng__searxng.md",
+      "readme_download_url": null,
+      "readme_sha256": "6a78fb798e890f75c99d2637f83dcdc90bebfdfdc563d24b59b38ef8a673e2ab",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/seaweedfs/seaweedfs",
+      "repo_url": "github.com/seaweedfs/seaweedfs",
+      "host": "github.com",
+      "owner": "seaweedfs",
+      "repo": "seaweedfs",
+      "app_references": [
+        "seaweedfs"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__seaweedfs__seaweedfs.md",
+      "readme_download_url": null,
+      "readme_sha256": "f18ea3b7872588e7ceee786e84661d33be4acb1b5a5ae6ce679a9741bc8b0f59",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/sebadob/rauthy",
+      "repo_url": "github.com/sebadob/rauthy",
+      "host": "github.com",
+      "owner": "sebadob",
+      "repo": "rauthy",
+      "app_references": [
+        "rauthy"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__sebadob__rauthy.md",
+      "readme_download_url": null,
+      "readme_sha256": "90ed3d6bd0f70591af7fbb9edf53752279c46bc5eedad4db3d1a3b4159c79e2f",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/seerr-team/seerr",
+      "repo_url": "github.com/seerr-team/seerr",
+      "host": "github.com",
+      "owner": "seerr-team",
+      "repo": "seerr",
+      "app_references": [
+        "seerr"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__seerr-team__seerr.md",
+      "readme_download_url": null,
+      "readme_sha256": "3d53659af8983362cea9bb277f6179b4cbeec2171110992bee130093737f8e50",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/selfhst/icons",
+      "repo_url": "github.com/selfhst/icons",
+      "host": "github.com",
+      "owner": "selfhst",
+      "repo": "icons",
+      "app_references": [
+        "selfh-st-icons"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__selfhst__icons.md",
+      "readme_download_url": null,
+      "readme_sha256": "e4b4dc843a0e0294ae6f8f81a32511bc58356ee0b37497083ebaf3ec8c98be6f",
+      "error": null
+    },
     {
       "repo_key": "github.com/semaphoreio/semaphore",
       "repo_url": "github.com/semaphoreio/semaphore",
@@ -147,10 +222,10 @@
       "app_references": [
         "cannery"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__shibaobun__cannery.md",
-      "readme_download_url": null,
-      "readme_sha256": "04702434fd79f6d307a1288337f61432fbbc31c9f6001bcbc6d7960117d4db67",
+      "readme_download_url": "https://raw.githubusercontent.com/shibaobun/cannery/dev/README.md",
+      "readme_sha256": "e090b9c691bd7e013ec3c22765cf7dfce39795c5c57972854bdb20273d3dcf15",
       "error": null
     },
     {
@@ -529,6 +604,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/statamic/cms",
+      "repo_url": "github.com/statamic/cms",
+      "host": "github.com",
+      "owner": "statamic",
+      "repo": "cms",
+      "app_references": [
+        "statamic"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__statamic__cms.md",
+      "readme_download_url": "https://raw.githubusercontent.com/statamic/cms/6.x/README.md",
+      "readme_sha256": "fa8a65ec0fadea7a63c3440a0daca912ac41f5828d24224fcb4fd00fe51dee59",
+      "error": null
+    },
+    {
       "repo_key": "github.com/statping-ng/statping-ng",
       "repo_url": "github.com/statping-ng/statping-ng",
       "host": "github.com",
@@ -597,10 +687,10 @@
       "app_references": [
         "stoat"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__stoatchat__stoatchat.md",
-      "readme_download_url": null,
-      "readme_sha256": "22fa8ca49efdc6fd1533c8979f95166418ff7d2779c5a559a8baf1a0055358dc",
+      "readme_download_url": "https://raw.githubusercontent.com/stoatchat/stoatchat/main/README.md",
+      "readme_sha256": "62a6f9dde98df2bff173ef0a567423d913f684791e0d895148cb8204581f6ae2",
       "error": null
     },
     {
@@ -661,96 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__subnub__myDrive.md",
       "readme_download_url": null,
       "readme_sha256": "1bc8f55b2400a0db745452bb88d5f4b7ba5b9f281d88b365d125020c27d44c0c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/successible/cleanslate",
-      "repo_url": "github.com/successible/cleanslate",
-      "host": "github.com",
-      "owner": "successible",
-      "repo": "cleanslate",
-      "app_references": [
-        "clean-slate"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__successible__cleanslate.md",
-      "readme_download_url": null,
-      "readme_sha256": "ce594c7a7dc0c15170ce296d1d90002d4219bec0962336573736ce8bc08c994a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/suitenumerique/docs",
-      "repo_url": "github.com/suitenumerique/docs",
-      "host": "github.com",
-      "owner": "suitenumerique",
-      "repo": "docs",
-      "app_references": [
-        "docs-collaboration"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__suitenumerique__docs.md",
-      "readme_download_url": null,
-      "readme_sha256": "7179300729486924ad8969574f6ffe152fb2fb4781f36bc5b2e6f72f876eab97",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/suitenumerique/meet",
-      "repo_url": "github.com/suitenumerique/meet",
-      "host": "github.com",
-      "owner": "suitenumerique",
-      "repo": "meet",
-      "app_references": [
-        "lasuite-meet"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__suitenumerique__meet.md",
-      "readme_download_url": null,
-      "readme_sha256": "7ac5670bca7b912bd9e490711a2369ec7354b4a5dcc47e1d72c52c0e7530f064",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/supabase/supabase",
-      "repo_url": "github.com/supabase/supabase",
-      "host": "github.com",
-      "owner": "supabase",
-      "repo": "supabase",
-      "app_references": [
-        "supabase"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__supabase__supabase.md",
-      "readme_download_url": null,
-      "readme_sha256": "6381696523ff0d9b092703949716cfc24b90271fd3e803ae14fb483574f9ea3f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/swingmx/swingmusic",
-      "repo_url": "github.com/swingmx/swingmusic",
-      "host": "github.com",
-      "owner": "swingmx",
-      "repo": "swingmusic",
-      "app_references": [
-        "swing-music"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__swingmx__swingmusic.md",
-      "readme_download_url": null,
-      "readme_sha256": "38e85e6f8e085fbdff523ef2cc943508297b45505ecb05f95a74debfdc89f1ac",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/syeopite/priviblur",
-      "repo_url": "github.com/syeopite/priviblur",
-      "host": "github.com",
-      "owner": "syeopite",
-      "repo": "priviblur",
-      "app_references": [
-        "priviblur"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__syeopite__priviblur.md",
-      "readme_download_url": null,
-      "readme_sha256": "07dc2ac433336b5a4836e23e4379031c5a2278cc2b4ed46a4ed3443fa565c575",
       "error": null
     }
   ]

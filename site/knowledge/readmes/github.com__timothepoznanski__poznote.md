@@ -8,25 +8,30 @@
 
 <div align="center">
 
-[![GitHub stars](https://img.shields.io/github/stars/timothepoznanski/poznote?style=flat&logo=github)](https://github.com/timothepoznanski/poznote/stargazers) [![License](https://img.shields.io/github/license/timothepoznanski/poznote?style=flat)](https://github.com/timothepoznanski/poznote/blob/main/LICENCE) [![Docker GHCR](https://img.shields.io/badge/Docker-GHCR-2496ED?style=flat&logo=docker&logoColor=white)](https://github.com/timothepoznanski/poznote/pkgs/container/poznote) [![Ko-fi](https://img.shields.io/badge/Ko--fi-Buy%20me%20a%20coffee-ff5e5b?logo=ko-fi&logoColor=white)](https://ko-fi.com/timothepoznanski)
+[![GitHub stars](https://img.shields.io/github/stars/timothepoznanski/poznote?style=flat&logo=github)](https://github.com/timothepoznanski/poznote/stargazers) [![License](https://img.shields.io/github/license/timothepoznanski/poznote?style=flat)](https://github.com/timothepoznanski/poznote/blob/main/LICENCE) [![Docker GHCR](https://img.shields.io/badge/Docker-GHCR-2496ED?style=flat&logo=docker&logoColor=white)](https://github.com/timothepoznanski/poznote/pkgs/container/poznote)
 
 </div>
 
 <h3 align="center">
-Poznote is a personal note-taking and documentation platform.<br><br>
+Poznote is a personal note-taking and documentation platform.
 </h3>
+This project started from a simple personal need: a practical way to write, organize, and synchronize my technical and personal notes. From the beginning, the priority has been simplicity and ease of use (I have no patience for bloated interfaces with unnecessary options). Advanced features exist, but they never get in the way of a clear and accessible experience.
+<br>
+<p align="center">
+  <a href="https://ko-fi.com/Q5Q61IECOW"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi"></a>
+</p>
+
+
 
 <p align="center">
-  <img src="images/github.png" alt="Poznote" width="100%">
+  <img src="images/poznote-light.png" alt="Poznote-light" width="100%">
 </p>
 
 <p align="center">
-  <img src="images/poznote.png" alt="Poznote" width="100%">
+  <img src="images/poznote-dark.png" alt="Poznote-dark" width="100%">
 </p>
 
-## Features
-
-Discover all the [powerful features](https://poznote.com/index.html#features) that make Poznote your perfect note-taking companion!
+Discover all the [features here](https://poznote.com/index.html#features).
 
 <p align="center">
   <img src="images/poznote-features.png" alt="Poznote Features" width="100%">
@@ -44,7 +49,6 @@ Password: `poznote`
 
 - [Install](#install)
 - [Access](#access)
-- [Troubleshooting Installation](#troubleshooting-installation)
 - [Change Settings](#change-settings)
 - [Authentication](#authentication)
 - [Update application](#update-application)
@@ -211,6 +215,7 @@ docker compose up -d
 
 </details>
 
+> If you encounter installation issues, see the [Troubleshooting Guide](docs/TROUBLESHOOTING.md).
 
 ## Access
 
@@ -223,95 +228,6 @@ After installation, access Poznote in your web browser:
 - Password: `admin`
 - Port: `8040`
 
-## Troubleshooting Installation
-
-<details>
-<summary><strong>"mkdir() warnings (permission denied) or Connection failed"</strong></summary>
-<br>
-
-If you encounter errors like:
-- `Warning: mkdir(): Permission denied in /var/www/html/db_connect.php`
-- `Connection failed: SQLSTATE[HY000] [14] unable to open database file`
-- The `database` folder is created with `root:root` instead of `www-data:www-data`
-
-This is a known issue with Docker volume mounts in certain environments (Komodo, Portainer, etc.). The container cannot change permissions on mounted volumes in some configurations.
-
-**Solution:** Before starting the container, set the correct permissions on your host machine:
-
-```bash
-# Navigate to your Poznote directory
-cd poznote
-
-# Create the data directory structure with correct permissions
-mkdir -p data/database
-
-# Set ownership to UID 82 (www-data in Alpine Linux)
-sudo chown -R 82:82 data
-
-# Start the container
-docker compose up -d
-```
-
-</details>
-
-<details>
-<summary><strong>"Connection failed: SQLSTATE[HY000]: General error: 8 attempt to write a readonly database"</strong></summary>
-<br>
-
-First, try to stop and restart the container and wait for the database to be initialized (refresh the page).
-
-If that didn't work, stop the container and fix ownership for the `data` folder (adapt UID/GID to your setup, example uses 1000:1000):
-
-```bash
-docker compose down
-sudo chown 1000:1000 -R data
-```
-
-> 💡 **Note:** UID 82 corresponds to the `www-data` user in Alpine Linux, which is used by the Poznote Docker image.
-
-</details>
-
-<details>
-<summary><strong>"This site can't be reached"</strong></summary>
- <br>
-
-If you see "This site can't be reached" in your browser, you may have SELinux enabled. In this case, check the container logs:
-
-```bash
-docker logs poznote-webserver-1
-# or with podman
-podman logs poznote-webserver-1
-```
-
-You'll likely find:
-- `chown: /var/www/html/data: Permission denied`
-
-This occurs when Docker volumes don't have the correct SELinux context, especially when installing from `/root` directory.
-
-**Solution:** We strongly recommend using the `:Z` suffix for Docker volumes and avoiding the `/root` directory to ensure proper functioning on all distributions.
-
-Edit your `docker-compose.yml` to add `:Z` to volume definitions:
-
-```yaml
-volumes:
-  - ./data:/var/www/html/data:Z
-```
-
-Alternatively, install Poznote in a directory outside of `/root`, such as `/opt/poznote` or `~/poznote`.
-
-</details>
-
-<details>
-<summary><strong>"Incorrect username or password"</strong></summary>
-<br>
-
-1. Try to log with "admin" or "admin_change_me" and your password.
-2. Check if the user's role (Admin vs User) matches the password you are using from the `.env` file.
-3. Ensure no extra spaces were added when editing the `.env` variables.
-4. If you can log in as an administrator (admin) but not as a standard user, check if the profile is marked as **active** in the User Management panel.
-
-</details>
-
 ## Change Settings
 
 Poznote configuration is split between two locations:
@@ -322,10 +238,13 @@ Poznote configuration is split between two locations:
 
 System settings can be modified in the `.env` file. Several categories of settings are available:
 
-- **Authentication**
-- **Web Server**
-- **OIDC / SSO Authentication**
-- **Import Limits**
+- **Authentication** - Admin and user passwords
+- **Web Server** - HTTP port configuration
+- **OIDC / SSO Authentication** - OpenID Connect integration
+- **Settings Access Control** - Restrict or password-protect settings page
+- **Import Limits** - Maximum files for imports
+- **Git Sync** - GitHub and Forgejo synchronization
+- **MCP Server** - AI assistant integration
 
 **How to Modify System Settings**
 
@@ -352,7 +271,7 @@ docker compose up -d
 <summary><strong>Application Settings (Settings Page)</strong></summary>
 <br>
 
-Additional settings are available through the Poznote web interface and are stored in the database.
+Additional settings are available through the Poznote web interface and are stored in the database or web browser local storage.
 
 **How to Modify Application Settings**
 
@@ -424,12 +343,6 @@ POZNOTE_OIDC_AUTO_CREATE_USERS=true
 
 ## Update application
 
-> **📘 Docker Versioning**: Poznote supports flexible Docker image versioning. Learn about major/minor version tags in our [Docker Versioning Guide](docs/DOCKER-VERSIONING.md).
-
-<details>
-<summary><strong>Update to the latest version</strong></summary>
-<br>
-
 Navigate to your Poznote directory:
 ```bash
 cd poznote
@@ -466,82 +379,6 @@ docker compose up -d
 ```
 
 Your data is preserved in the `./data` directory and will not be affected by the update.
-
-</details>
-
-<details>
-<summary><strong>Version pinning and automatic updates</strong></summary>
-<br>
-
-Poznote supports multiple Docker image tags for different upgrade strategies:
-
-- **Major version** (`poznote:4`): Auto-upgrade within v4.x.x, no breaking changes
-- **Minor version** (`poznote:4.1`): Auto-upgrade within v4.1.x, patch updates only  
-- **Exact version** (`poznote:4.1.0`): No automatic updates, complete control
-- **Latest** (`poznote:latest`): Always the newest stable release
-
-**Example: Stay on major version 4 with auto-updates**
-
-Edit your `docker-compose.yml`:
-```yaml
-services:
-  poznote:
-    image: ghcr.io/timothepoznanski/poznote:4  # Auto-upgrade to 4.x.x
-    # ... rest of config
-```
-
-Then update with:
-```bash
-docker compose pull && docker compose up -d
-```
-
-**⚠️ Note about Watchtower**: Automated tools like Watchtower only update Docker images, not `docker-compose.yml` or environment variables. For production, manual updates are recommended to ensure configuration compatibility.
-
-For complete details on versioning strategies, automatic updates, and migration between major versions, see the [Docker Versioning Guide](docs/DOCKER-VERSIONING.md).
-
-</details>
-
-<details>
-<summary><strong>Update to Beta version</strong></summary>
-<br>
-
-Occasionally, beta versions will be published as **pre-releases** on GitHub. These versions include more features and fixes than the stable production version, but may not be fully validated yet.
-
-**How to install a beta version:**
-
-You can install beta versions by modifying your `docker-compose.yml` to use a specific version tag instead of `latest`:
-
-1. Download the latest Docker Compose configuration:
-   ```bash
-   curl -o docker-compose.yml https://raw.githubusercontent.com/timothepoznanski/poznote/main/docker-compose.yml
-   ```
-
-2. Download the latest .env.template:
-   ```bash
-   curl -o .env.template https://raw.githubusercontent.com/timothepoznanski/poznote/main/.env.template
-   ```
-
-3. Review `.env.template` and add any new variables to your `.env` file if needed.
-   ```bash
-   sdiff .env .env.template
-   ```
-
-4. Edit your `docker-compose.yml` file and change the image line to:
-   ```yaml
-   image: ghcr.io/timothepoznanski/poznote:X.X.X-beta
-   ```
-   Replace `X.X.X-beta` with the specific beta version from the [GitHub Releases](https://github.com/timothepoznanski/poznote/releases) page.
-
-5. Update and restart:
-   ```bash
-   docker compose down
-   docker compose pull
-   docker compose up -d
-   ```
-
-> **Note:** Beta versions are marked as "Pre-release" on GitHub and are not automatically suggested for updates in the application.
-
-</details>
 
 ## Multi-users
 
@@ -916,11 +753,25 @@ For installation, configuration, and setup instructions, see the [MCP Server doc
 
 ## Poznote Extension
 
-The **Poznote URL Saver** is a browser extension (Chrome, Edge, Brave, Opera, and any Chromium-based browser) that allows you to quickly save the URL of the current page to your Poznote instance with a single click.
+The **Poznote URL Saver** is a browser extension that allows you to quickly save the URL of the current page to your Poznote instance with a single click.
 
 <p align="center">
   <img src="images/chrome-extension.png" alt="Poznote Chrome Extension" width="50%">
 </p>
+
+### Install from Chrome Web Store (Recommended)
+
+> **Note:** The extension is currently under review by Google and will be available soon on the Chrome Web Store.
+
+Install the extension directly from the Chrome Web Store. Works with Chrome, Edge, Brave, Opera, and any Chromium-based browser.
+
+**[Install Poznote URL Saver →](https://chrome.google.com/webstore)** (Coming soon)
+
+<details>
+<summary><strong>Alternative: Install from Source (Developer Mode)</strong></summary>
+<br>
+
+You can also install the extension manually from source:
 
 1. Get the extension folder (two possibilities):
    - **Download:** [Download the repository as ZIP](https://github.com/timothepoznanski/poznote/archive/refs/heads/main.zip) and extract it
@@ -931,6 +782,10 @@ The **Poznote URL Saver** is a browser extension (Chrome, Edge, Brave, Opera, an
 5. Click **Load unpacked** in the top left
 6. Select the `poznote-url-saver` folder from the Poznote repository
 7. The extension is now installed and ready to use!
+
+> **Note:** Manual installation does not provide automatic updates. You will need to manually download and reinstall the extension to get new versions. For automatic updates, use the Chrome Web Store version.
+
+</details>
 
 ## API Documentation
 

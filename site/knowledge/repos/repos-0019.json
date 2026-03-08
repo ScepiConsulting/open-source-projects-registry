@@ -1,8 +1,68 @@
 {
   "chunk": 19,
   "count": 50,
-  "generated_at": "2026-03-04T17:47:43Z",
+  "generated_at": "2026-03-08T04:48:56Z",
   "items": [
+    {
+      "repo_key": "github.com/nocobase/nocobase",
+      "repo_url": "github.com/nocobase/nocobase",
+      "host": "github.com",
+      "owner": "nocobase",
+      "repo": "nocobase",
+      "app_references": [
+        "nocobase"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nocobase__nocobase.md",
+      "readme_download_url": null,
+      "readme_sha256": "0d469f163c4717a8592f5a9240c03304afa1027b3a3b3a426a0efc529c2147c2",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/nocodb/nocodb",
+      "repo_url": "github.com/nocodb/nocodb",
+      "host": "github.com",
+      "owner": "nocodb",
+      "repo": "nocodb",
+      "app_references": [
+        "nocodb"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nocodb__nocodb.md",
+      "readme_download_url": null,
+      "readme_sha256": "efd83f8381255c4d415922aca98a40c6d3727fa8a623164dbe7381db9e9b3c1e",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/node-red/node-red",
+      "repo_url": "github.com/node-red/node-red",
+      "host": "github.com",
+      "owner": "node-red",
+      "repo": "node-red",
+      "app_references": [
+        "node-red"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__node-red__node-red.md",
+      "readme_download_url": null,
+      "readme_sha256": "1a32569437c5f7aff27b62c4f95952a861512a6aeefc2873d137a3cd0eb27a7f",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/nosduco/nforwardauth",
+      "repo_url": "github.com/nosduco/nforwardauth",
+      "host": "github.com",
+      "owner": "nosduco",
+      "repo": "nforwardauth",
+      "app_references": [
+        "nforwardauth"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nosduco__nforwardauth.md",
+      "readme_download_url": null,
+      "readme_sha256": "7cce6f7c29ed910bf22ee1e54e320c9a4bcc95264f177afc478bcb83e46dcb5b",
+      "error": null
+    },
     {
       "repo_key": "github.com/notclickable-jordan/starbase-80",
       "repo_url": "github.com/notclickable-jordan/starbase-80",
@@ -214,6 +274,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/onllm-dev/onWatch",
+      "repo_url": "github.com/onllm-dev/onWatch",
+      "host": "github.com",
+      "owner": "onllm-dev",
+      "repo": "onWatch",
+      "app_references": [
+        "onwatch"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__onllm-dev__onWatch.md",
+      "readme_download_url": "https://raw.githubusercontent.com/onllm-dev/onWatch/main/README.md",
+      "readme_sha256": "d4945c3b2a33aa21daa4edd9e1306ea19ef711db97d7e842b92d41b416dbc531",
+      "error": null
+    },
+    {
       "repo_key": "github.com/open-wanderer/wanderer",
       "repo_url": "github.com/open-wanderer/wanderer",
       "host": "github.com",
@@ -256,6 +331,21 @@
       "readme_path": "knowledge/readmes/github.com__openbao__openbao.md",
       "readme_download_url": null,
       "readme_sha256": "40e0e3edbdae0303a5de9bd2fc9840a2f0f0dd9dba46b4eb79716f5c0c135192",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/openclaw/openclaw",
+      "repo_url": "github.com/openclaw/openclaw",
+      "host": "github.com",
+      "owner": "openclaw",
+      "repo": "openclaw",
+      "app_references": [
+        "openclaw"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__openclaw__openclaw.md",
+      "readme_download_url": "https://raw.githubusercontent.com/openclaw/openclaw/main/README.md",
+      "readme_sha256": "7745abc0652930546c7efa08ce7969586f4f286208c415f12a75f216644a2220",
       "error": null
     },
     {
@@ -657,100 +747,10 @@
       "app_references": [
         "parseable"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__parseablehq__parseable.md",
-      "readme_download_url": null,
-      "readme_sha256": "a385bfac1b010726fce5fedbc87b2c71b5ed38bcb6cf5647ba72d0c89e7562de",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/passbolt/passbolt_api",
-      "repo_url": "github.com/passbolt/passbolt_api",
-      "host": "github.com",
-      "owner": "passbolt",
-      "repo": "passbolt_api",
-      "app_references": [
-        "passbolt"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__passbolt__passbolt_api.md",
-      "readme_download_url": null,
-      "readme_sha256": "481840b1daaab2e2d9ea9ab594298564bbf84f9f0f33719e15aaa26155a89993",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pawelmalak/flame",
-      "repo_url": "github.com/pawelmalak/flame",
-      "host": "github.com",
-      "owner": "pawelmalak",
-      "repo": "flame",
-      "app_references": [
-        "flame"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pawelmalak__flame.md",
-      "readme_download_url": null,
-      "readme_sha256": "c704f3dc7ffb8f4b5059a6c0ee4008f759f895c096481f8a7dfa9e00a2b58715",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/payloadcms/payload",
-      "repo_url": "github.com/payloadcms/payload",
-      "host": "github.com",
-      "owner": "payloadcms",
-      "repo": "payload",
-      "app_references": [
-        "payload"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__payloadcms__payload.md",
-      "readme_download_url": null,
-      "readme_sha256": "54bcaba223f7894a070d982e4bd92f6e9978d9acbe4b3e81db7d6e3278f7491a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pbogre/jetlog",
-      "repo_url": "github.com/pbogre/jetlog",
-      "host": "github.com",
-      "owner": "pbogre",
-      "repo": "jetlog",
-      "app_references": [
-        "jetlog"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pbogre__jetlog.md",
-      "readme_download_url": null,
-      "readme_sha256": "1beecb078cacbbab8dab8c98a12ac2adfbab07580f09578ea8cd87df3ee6fb86",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pelican-dev/panel",
-      "repo_url": "github.com/pelican-dev/panel",
-      "host": "github.com",
-      "owner": "pelican-dev",
-      "repo": "panel",
-      "app_references": [
-        "pelican-panel"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pelican-dev__panel.md",
-      "readme_download_url": null,
-      "readme_sha256": "fddc787d9d2d75a09ec06bc20566cddef792c3021239cd8ecf4ab819b2667c92",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/penpot/penpot",
-      "repo_url": "github.com/penpot/penpot",
-      "host": "github.com",
-      "owner": "penpot",
-      "repo": "penpot",
-      "app_references": [
-        "penpot"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__penpot__penpot.md",
-      "readme_download_url": null,
-      "readme_sha256": "993040e8adfd48eb117bbad7f84a662e4944eac34338d34a57aedc5f1c7c6116",
+      "readme_download_url": "https://raw.githubusercontent.com/parseablehq/parseable/main/README.md",
+      "readme_sha256": "aa7ae1c038ba34e7e51e036adb6fc2ed5f76b3726f5dc1575624e9c9a291b137",
       "error": null
     }
   ]

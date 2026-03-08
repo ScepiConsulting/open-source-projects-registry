@@ -30,9 +30,9 @@ OpenClaw costs
 
 ## What do you get?
 
-- 🔀 **Routes every request to the right model** — and cuts costs up to 70%
-- 📊 **Track your expenses** — real-time dashboard that shows tokens and costs per model
-- 🔔 **Set limits** — set up alerts (soft or hard) if your consumption exceeds a certain volume
+- 🔀 **Route requests to the right model** — cut costs up to 70%
+- 📊 **Track spending** — see tokens and costs per model in real time
+- 🔔 **Set limits** — get alerts when usage goes over a threshold
 
 ## Why Manifest
 
@@ -122,14 +122,14 @@ Or add `"telemetryOptOut": true` to `~/.openclaw/manifest/config.json`.
 
 ## Supported Providers
 
-Manifest supports **300+ models** across all major LLM providers. Every provider supports smart routing, real-time cost tracking, and OTLP telemetry.
+Works with **300+ models** across these providers:
 
 | Provider | Models |
 |----------|--------|
 | [OpenAI](https://platform.openai.com/) | `gpt-5.3`, `gpt-4.1`, `o3`, `o4-mini` + 54 more |
 | [Anthropic](https://www.anthropic.com/) | `claude-opus-4-6`, `claude-sonnet-4.5`, `claude-haiku-4.5` + 14 more |
 | [Google Gemini](https://ai.google.dev/) | `gemini-2.5-pro`, `gemini-2.5-flash`, `gemini-3-pro` + 19 more |
-| [DeepSeek](https://www.deepseek.com/) | `deepseek-v3`, `deepseek-r1` + 11 more |
+| [DeepSeek](https://www.deepseek.com/) | `deepseek-chat`, `deepseek-reasoner` + 11 more |
 | [xAI](https://x.ai/) | `grok-4`, `grok-3`, `grok-3-mini` + 8 more |
 | [Mistral AI](https://mistral.ai/) | `mistral-large`, `codestral`, `devstral` + 26 more |
 | [Qwen (Alibaba)](https://www.alibabacloud.com/en/solutions/generative-ai/qwen) | `qwen3-235b`, `qwen3-coder`, `qwq-32b` + 42 more |
