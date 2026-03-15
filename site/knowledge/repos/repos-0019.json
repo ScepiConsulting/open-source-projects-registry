@@ -1,8 +1,53 @@
 {
   "chunk": 19,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/nirui/sshwifty",
+      "repo_url": "github.com/nirui/sshwifty",
+      "host": "github.com",
+      "owner": "nirui",
+      "repo": "sshwifty",
+      "app_references": [
+        "sshwifty"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nirui__sshwifty.md",
+      "readme_download_url": null,
+      "readme_sha256": "2c9ebcffdd0c54bf83bd9ba826569266645d42b877a7a016ba7866ae70f54ab9",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/njic/medassist",
+      "repo_url": "github.com/njic/medassist",
+      "host": "github.com",
+      "owner": "njic",
+      "repo": "medassist",
+      "app_references": [
+        "medassist"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__njic__medassist.md",
+      "readme_download_url": null,
+      "readme_sha256": "078033aa502b9737e60457657b986b723eeddb0f80e05fb1920a84f83d74a88a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/nkanaev/yarr",
+      "repo_url": "github.com/nkanaev/yarr",
+      "host": "github.com",
+      "owner": "nkanaev",
+      "repo": "yarr",
+      "app_references": [
+        "yarr"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nkanaev__yarr.md",
+      "readme_download_url": null,
+      "readme_sha256": "70be2b1474ee560e5d887f8bc7ed773ef4bde0ed0352967932509b570e1cb74e",
+      "error": null
+    },
     {
       "repo_key": "github.com/nocobase/nocobase",
       "repo_url": "github.com/nocobase/nocobase",
@@ -12,10 +57,10 @@
       "app_references": [
         "nocobase"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nocobase__nocobase.md",
-      "readme_download_url": null,
-      "readme_sha256": "0d469f163c4717a8592f5a9240c03304afa1027b3a3b3a426a0efc529c2147c2",
+      "readme_download_url": "https://raw.githubusercontent.com/nocobase/nocobase/main/README.md",
+      "readme_sha256": "9b5e09f2a3e02d2276e8bb51fd51e94adc66ab4474176edc342995a3dfefcd5f",
       "error": null
     },
     {
@@ -46,6 +91,21 @@
       "readme_path": "knowledge/readmes/github.com__node-red__node-red.md",
       "readme_download_url": null,
       "readme_sha256": "1a32569437c5f7aff27b62c4f95952a861512a6aeefc2873d137a3cd0eb27a7f",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/norish-recipes/norish",
+      "repo_url": "github.com/norish-recipes/norish",
+      "host": "github.com",
+      "owner": "norish-recipes",
+      "repo": "norish",
+      "app_references": [
+        "norish"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__norish-recipes__norish.md",
+      "readme_download_url": "https://raw.githubusercontent.com/norish-recipes/norish/main/README.md",
+      "readme_sha256": "56ad98531242079ad12bd6e7884c30bc71bbddd70532bde3292c81e2e45e1b77",
       "error": null
     },
     {
@@ -285,7 +345,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__onllm-dev__onWatch.md",
       "readme_download_url": "https://raw.githubusercontent.com/onllm-dev/onWatch/main/README.md",
-      "readme_sha256": "d4945c3b2a33aa21daa4edd9e1306ea19ef711db97d7e842b92d41b416dbc531",
+      "readme_sha256": "49809208518bb2c4e6e92276d59ade07a9be4df94330eeb265021e98ae542c45",
       "error": null
     },
     {
@@ -342,9 +402,9 @@
       "app_references": [
         "openclaw"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__openclaw__openclaw.md",
-      "readme_download_url": "https://raw.githubusercontent.com/openclaw/openclaw/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7745abc0652930546c7efa08ce7969586f4f286208c415f12a75f216644a2220",
       "error": null
     },
@@ -402,10 +462,10 @@
       "app_references": [
         "checkcle"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__operacle__checkcle.md",
-      "readme_download_url": null,
-      "readme_sha256": "fd1d56bc3208f94866bdc8032d0fd9f14a9c90a35abe691cc3864036f902516d",
+      "readme_download_url": "https://raw.githubusercontent.com/operacle/checkcle/develop/README.md",
+      "readme_sha256": "59ffc72241f00f27a7f4f40b0e5fdc9e1fc4f4996edf3d97f2718a155c55f36f",
       "error": null
     },
     {
@@ -691,66 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__p0lloc__perfice.md",
       "readme_download_url": null,
       "readme_sha256": "0785da53383af9667ffddbbc97478b3fbc064affa01e7d89d31076f9f2766543",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/panoratech/Panora",
-      "repo_url": "github.com/panoratech/Panora",
-      "host": "github.com",
-      "owner": "panoratech",
-      "repo": "Panora",
-      "app_references": [
-        "panora"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__panoratech__Panora.md",
-      "readme_download_url": null,
-      "readme_sha256": "0ba4ab59ffd48c18e85bac2f85e7c9361b7430a9912fd90ea1efe2d97eb66221",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/paperless-ngx/paperless-ngx",
-      "repo_url": "github.com/paperless-ngx/paperless-ngx",
-      "host": "github.com",
-      "owner": "paperless-ngx",
-      "repo": "paperless-ngx",
-      "app_references": [
-        "paperless-ngx"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__paperless-ngx__paperless-ngx.md",
-      "readme_download_url": null,
-      "readme_sha256": "61917eeabd6ef9a19047a2aca6c746dfbe75e0466a0f053bfcd1c3d106c8b970",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/papra-hq/papra",
-      "repo_url": "github.com/papra-hq/papra",
-      "host": "github.com",
-      "owner": "papra-hq",
-      "repo": "papra",
-      "app_references": [
-        "papra"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__papra-hq__papra.md",
-      "readme_download_url": null,
-      "readme_sha256": "55901fac5cf1c44f69968fb249e9292e6aa5e67b3255c405bdbad6f7f4207882",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/parseablehq/parseable",
-      "repo_url": "github.com/parseablehq/parseable",
-      "host": "github.com",
-      "owner": "parseablehq",
-      "repo": "parseable",
-      "app_references": [
-        "parseable"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__parseablehq__parseable.md",
-      "readme_download_url": "https://raw.githubusercontent.com/parseablehq/parseable/main/README.md",
-      "readme_sha256": "aa7ae1c038ba34e7e51e036adb6fc2ed5f76b3726f5dc1575624e9c9a291b137",
       "error": null
     }
   ]

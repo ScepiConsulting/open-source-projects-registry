@@ -1,6 +1,6 @@
 # YAMLResume
 
-[Français](./README-fr.md) | [日本語](./README-ja.md) | [简体中文](./README-zh-cn.md) | [繁體中文](./README-zh-tw.md)
+[English](./README.md) | [Français](./readmes/README-fr.md) | [Deutsch](./readmes/README-de.md) | [Español](./readmes/README-es.md) | [Português](./readmes/README-pt.md) | [Bahasa Indonesia](./readmes/README-id.md) | [日本語](./readmes/README-ja.md) | [简体中文](./readmes/README-zh-cn.md) | [繁體中文](./readmes/README-zh-tw.md)
 
 <!-- Build, Quality & Docs -->
 [![GitHub CI](https://github.com/yamlresume/yamlresume/workflows/test/badge.svg)](https://github.com/yamlresume/yamlresume/actions/workflows/test.yml)
@@ -24,6 +24,11 @@
 [![Biome](https://img.shields.io/badge/Biome-Linted-60a5fa?style=flat-square&logo=biome)](https://biomejs.dev/)
 [![Vitest](https://img.shields.io/badge/Vitest-Tested-6E9F18?style=flat-square&logo=vitest)](https://vitest.dev/)
 
+> 📢 **News:** [YAMLResume GitHub
+> Action](https://github.com/marketplace/actions/yamlresume) has been released!
+> Automate your resume PDF generation directly in your CI/CD pipeline. Check out
+> the [documentation](https://yamlresume.dev/docs/ecosystem/action) and the
+> [announcement blog post](https://yamlresume.dev/blog/yamlresume-action).
 
 Writing resumes may not be hard, but it is definitely not fun and it's tedious.
 

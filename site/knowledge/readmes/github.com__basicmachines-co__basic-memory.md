@@ -23,6 +23,18 @@ Basic Memory lets you build persistent knowledge through natural conversations w
 Claude, while keeping everything in simple Markdown files on your computer. It uses the Model Context Protocol (MCP) to
 enable any compatible LLM to read and write to your local knowledge base.
 
+## What's New in v0.19.0
+
+- **Semantic Vector Search** — find notes by meaning, not just keywords. Combines full-text and vector similarity for hybrid search with FastEmbed embeddings.
+- **Schema System** — infer, validate, and diff the structure of your knowledge base with `schema_infer`, `schema_validate`, and `schema_diff` tools.
+- **Per-Project Cloud Routing** — route individual projects through the cloud while others stay local, using API key authentication (`basic-memory project set-cloud`).
+- **FastMCP 3.0** — upgraded to FastMCP 3.0 with tool annotations for better client integration.
+- **CLI Overhaul** — JSON output mode (`--json`) for scripting, workspace-aware commands, and an htop-inspired project dashboard.
+- **Smarter Editing** — `edit_note` append/prepend auto-creates notes if they don't exist; `write_note` has an overwrite guard to prevent accidental data loss.
+- **Richer Search Results** — matched chunk text returned in search results for better context.
+
+See the full [CHANGELOG](CHANGELOG.md) for details.
+
 - Website: [basicmemory.com](https://basicmemory.com?utm_source=github&utm_medium=referral&utm_campaign=readme)
 - Documentation: [docs.basicmemory.com](https://docs.basicmemory.com?utm_source=github&utm_medium=referral&utm_campaign=readme)
 - Community: [Discord](https://discord.gg/tyvKNccgqN?utm_source=github&utm_medium=referral&utm_campaign=readme)
@@ -62,6 +74,36 @@ uv tool install basic-memory
 ```
 
 You can view shared context via files in `~/basic-memory` (default directory location).
+
+## Automatic Updates
+
+Basic Memory includes a default-on auto-update flow for CLI installs.
+
+- **Auto-install supported:** `uv tool` and Homebrew installs
+- **Default check interval:** every 24 hours (`86400` seconds)
+- **MCP-safe behavior:** update checks run silently in `basic-memory mcp` mode
+- **`uvx` behavior:** skipped (runtime is ephemeral and managed by `uvx`)
+
+Manual update commands:
+
+```bash
+# Check now and install if supported
+bm update
+
+# Check only, do not install
+bm update --check
+```
+
+Config options in `~/.basic-memory/config.json`:
+
+```json
+{
+  "auto_update": true,
+  "update_check_interval": 86400
+}
+```
+
+To disable automatic updates, set `"auto_update": false`.
 
 ## Why Basic Memory?
 

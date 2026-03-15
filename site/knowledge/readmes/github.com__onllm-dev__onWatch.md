@@ -1,29 +1,41 @@
 # onWatch
 
-### **[onwatch.onllm.dev](https://onwatch.onllm.dev)**
+**Free, open-source AI API quota monitoring for developers.**
 
-**onWatch** is a free, open-source CLI tool that tracks [Synthetic](https://synthetic.new), [Z.ai](https://z.ai), [Anthropic](https://anthropic.com) (Claude Code), [Codex](https://openai.com/codex), [GitHub Copilot](https://github.com/features/copilot), and Antigravity API quota usage in real time. It runs as a lightweight background agent (<50 MB RAM with all six providers polling in parallel), stores historical data in SQLite, and serves a Material Design 3 web dashboard with dark/light mode.
+Track usage across [Synthetic](https://synthetic.new), [Z.ai](https://z.ai), [Anthropic](https://anthropic.com), [Codex](https://openai.com/codex), [GitHub Copilot](https://github.com/features/copilot), [MiniMax](https://platform.minimax.io), and Antigravity in one place.
+See history, get alerts, and open a local web dashboard before you hit throttling or run over budget.
 
-onWatch fills the gap between "current usage snapshot" and the historical, per-cycle, cross-session intelligence that developers actually need. It works with any tool that uses Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, or Antigravity API keys, including **Cline**, **Roo Code**, **Kilo Code**, **Claude Code**, **Codex CLI**, **Cursor**, **GitHub Copilot**, **Antigravity**, and others.
+**Links:** [Website](https://onwatch.onllm.dev) | [Buy Me a Coffee](https://buymeacoffee.com/prakersh)
+
+**Trust & Quality**
+
+[![Stars](https://img.shields.io/github/stars/onllm-dev/onwatch?style=for-the-badge&logo=github&logoColor=white&label=Stars&color=181717)](https://github.com/onllm-dev/onwatch/stargazers)
+[![Awesome Go](https://img.shields.io/badge/Awesome_Go-Mentioned-22C55E?style=for-the-badge)](https://github.com/avelino/awesome-go)
+[![Downloads](https://img.shields.io/github/downloads/onllm-dev/onwatch/total?style=for-the-badge&logo=github&logoColor=white&label=Downloads&color=181717)](https://github.com/onllm-dev/onwatch/releases)  
+[![Coverage](https://img.shields.io/codecov/c/github/onllm-dev/onwatch?style=for-the-badge&logo=codecov&logoColor=white&label=Coverage)](https://codecov.io/gh/onllm-dev/onwatch)
+[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-brightgreen?style=for-the-badge&logo=gnu&logoColor=white)](LICENSE)
+[![Go Report Card](https://goreportcard.com/badge/github.com/onllm-dev/onwatch/v2?style=for-the-badge)](https://goreportcard.com/report/github.com/onllm-dev/onwatch/v2)
+
+**Compatibility & Docs**
+
+[![Version](https://img.shields.io/badge/Version-v2.11.17-0EA5E9?style=for-the-badge)](https://github.com/onllm-dev/onwatch/releases/tag/v2.11.17)
+[![Go 1.25+](https://img.shields.io/badge/Go-1.25+-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev)
+[![Platform](https://img.shields.io/badge/macOS%20%7C%20Linux%20%7C%20Windows-orange?style=for-the-badge&logo=apple&logoColor=white)](#quick-start)
+[![pkg.go.dev](https://img.shields.io/badge/pkg.go.dev-reference-007D9C?style=for-the-badge&logo=go&logoColor=white)](https://pkg.go.dev/github.com/onllm-dev/onwatch/v2)
+
+onWatch fills the gap between "current usage snapshot" and the historical, per-cycle, cross-session view that developers actually need. It runs as a lightweight background agent (<50 MB RAM with all seven providers polling in parallel), stores historical data in SQLite, and serves a Material Design 3 web dashboard with dark/light mode.
+
+It works with any tool that uses Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, or Antigravity API keys, including **Cline**, **Roo Code**, **Kilo Code**, **Claude Code**, **Codex CLI**, **Cursor**, **GitHub Copilot**, **MiniMax Coding Plan**, **Antigravity**, and others.
 
 **Zero telemetry. Single binary. All data stays on your machine.**
 
-> If onWatch helps you track your AI spending, consider giving it a star — it helps others discover the project.
-
-> **Beta**: onWatch is currently in active development. Features and APIs may change as we refine the product.
-
-[![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-brightgreen?style=for-the-badge&logo=gnu&logoColor=white)](LICENSE)
-[![Go 1.25+](https://img.shields.io/badge/Go-1.25+-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev)
-[![Platform](https://img.shields.io/badge/macOS%20%7C%20Linux%20%7C%20Windows-orange?style=for-the-badge&logo=apple&logoColor=white)](#quick-start)
-[![Website](https://img.shields.io/badge/onwatch.onllm.dev-7C3AED?style=for-the-badge&logo=globe&logoColor=white)](https://onwatch.onllm.dev)
-[![Version](https://img.shields.io/badge/Version-v2.11.12-0EA5E9?style=for-the-badge)](https://github.com/onllm-dev/onwatch/releases/tag/v2.11.12)
-[![Coverage](https://img.shields.io/codecov/c/github/onllm-dev/onwatch?style=for-the-badge&logo=codecov&logoColor=white&label=Coverage)](https://codecov.io/gh/onllm-dev/onwatch)
-[![Downloads](https://img.shields.io/github/downloads/onllm-dev/onwatch/total?style=for-the-badge&logo=github&logoColor=white&label=Downloads&color=181717)](https://github.com/onllm-dev/onwatch/releases)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?style=for-the-badge&logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/prakersh)
+**Beta:** onWatch is currently in active development. Features and APIs may change as we refine the product.
 
 [![Star History Chart](https://api.star-history.com/svg?repos=onllm-dev/onwatch&type=Timeline)](https://star-history.com/#onllm-dev/onwatch&Timeline)
 
 ![Anthropic Dashboard - Light Mode](./docs/screenshots/anthropic-light.png)
+
+If onWatch helps you track your AI spending, consider giving it a star. It helps others discover the project.
 
 > Powered by [onllm.dev](https://onllm.dev) | [Landing Page](https://onwatch.onllm.dev)
 
@@ -40,6 +52,8 @@ curl -fsSL https://raw.githubusercontent.com/onllm-dev/onwatch/main/install.sh |
 ```
 
 This downloads the binary to `~/.onwatch/`, creates a `.env` config, sets up a systemd service (Linux) or self-daemonizes (macOS), and adds `onwatch` to your PATH.
+
+On macOS, the installer downloads the standard binary with menubar support.
 
 ### Homebrew (macOS & Linux)
 
@@ -109,12 +123,13 @@ Provider setup guides:
 - [Windows Setup Guide](docs/WINDOWS_SETUP.md) - Detailed Windows installation & manual configuration
 - [Codex Setup Guide](docs/CODEX_SETUP.md)
 - [Copilot Setup Guide](docs/COPILOT_SETUP.md)
+- [MiniMax Setup Guide](docs/MINIMAX_SETUP.md)
 - [Antigravity Setup Guide](docs/ANTIGRAVITY_SETUP.md)
 
 ### Run
 
 ```bash
-onwatch              # start in background (daemonizes, logs to ~/.onwatch/.onwatch.log)
+onwatch              # start in background (daemonizes, logs to ~/.onwatch/data/.onwatch.log)
 onwatch --debug      # foreground mode, logs to stdout
 onwatch stop         # stop the running instance
 onwatch status       # check if running
@@ -147,6 +162,7 @@ Open **http://localhost:9211** and log in with your `.env` credentials.
 - **Anthropic** -- Dynamic quota cards (5-Hour, 7-Day, 7-Day Sonnet, Monthly, etc.) with utilization percentages, OAuth token auto-refresh, and automatic rate limit bypass via token rotation
 - **Codex** -- Dynamic quota cards (LLMs, Review Requests) with OAuth auth-state refresh, historical cycle analytics, and **multi-account support (Beta)** for tracking multiple ChatGPT accounts
 - **GitHub Copilot (Beta)** -- Premium Interactions, Chat, and Completions quota cards with monthly reset tracking
+- **MiniMax Coding Plan (Beta)** -- Shared quota pool tracking for M2, M2.1, and M2.5 models with 5-hour rolling window reset cycles
 - **Antigravity** -- Multi-model quota cards (Claude, Gemini, GPT) with grouped quota pools, logging history, and cycle overview
 - **All** -- Side-by-side view of all configured providers
 - **PWA installable** -- Install onWatch from your browser for a native app experience (Beta)
@@ -162,6 +178,15 @@ Each quota card shows: usage vs. limit with progress bar, live countdown to rese
 **Sessions** -- Every agent run creates a session that tracks peak consumption, letting you compare usage across work periods.
 
 **Settings** -- Dedicated settings page (`/settings`) with tabs for general preferences, provider controls, notification thresholds, and SMTP email configuration.
+
+**Menubar (macOS, Beta)** -- The macOS build includes a menubar companion with two preset views:
+
+- **Standard** -- Provider cards with circular quota meters and reset metadata
+- **Detailed** -- Expanded provider cards with sparkline trends and full quota breakdowns
+
+Configure it in **Settings > Menubar**. You can enable or disable the companion, pick the default view, change refresh and threshold settings, and drag providers into the order you want.
+
+Menubar is currently in beta. Feedback is highly appreciated at [github.com/onllm-dev/onwatch/issues](https://github.com/onllm-dev/onwatch/issues).
 
 **Email notifications (Beta)** -- Configure SMTP to receive alerts when quotas cross warning or critical thresholds, or when quotas reset. Per-quota threshold overrides for fine-grained control. SMTP passwords are encrypted at rest with AES-GCM.
 
@@ -179,7 +204,7 @@ Each quota card shows: usage vs. limit with progress bar, live countdown to rese
 
 | Audience                                                                                                                 | Pain Point                                                                          | How onWatch Helps                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| **Solo developers & freelancers** using Claude Code, Cline, Roo Code, or Kilo Code with Anthropic/Synthetic/Z.ai/Codex/Copilot/Antigravity | Budget anxiety -- no visibility into quota burn rate, surprise throttling mid-task  | Real-time rate projections, historical trends, live countdowns so you never get throttled unexpectedly  |
+| **Solo developers & freelancers** using Claude Code, Cline, Roo Code, or Kilo Code with Anthropic/Synthetic/Z.ai/Codex/Copilot/MiniMax/Antigravity | Budget anxiety -- no visibility into quota burn rate, surprise throttling mid-task  | Real-time rate projections, historical trends, live countdowns so you never get throttled unexpectedly  |
 | **Small dev teams (3-20 people)** sharing API keys                                                                       | No shared visibility into who's consuming what, impossible to budget next month     | Shared dashboard with session tracking, cycle history for budget planning                               |
 | **DevOps & platform engineers**                                                                                          | Shadow AI usage with no FinOps for coding API subscriptions                         | Lightweight sidecar (<50 MB), SQLite data source for Grafana, REST API for monitoring stack integration |
 | **Privacy-conscious developers** in regulated industries                                                                 | Can't use SaaS analytics that phone home; need local, auditable monitoring          | Single binary, local SQLite, zero telemetry, GPL-3.0 source code, works air-gapped                      |
@@ -210,45 +235,49 @@ Set `CODEX_TOKEN` in your `.env` (recommended for Codex-only installs). You can 
 
 Set `COPILOT_TOKEN` in your `.env` with a GitHub Personal Access Token (classic) that has the `copilot` scope. Generate one at [github.com/settings/tokens](https://github.com/settings/tokens). onWatch polls the GitHub Copilot internal API to track premium interactions, chat, and completions quotas with monthly reset cycle detection. This feature is in beta and uses an undocumented API.
 
+### How do I track my MiniMax Coding Plan usage?
+
+Set `MINIMAX_API_KEY` in your `.env` with your MiniMax Coding Plan API key. Get your key from the [MiniMax Console](https://platform.minimax.io). onWatch tracks the shared quota pool across all MiniMax models (M2, M2.1, M2.5) with 5-hour rolling window reset cycles. This feature is in beta. Full walkthrough: [MiniMax Setup Guide](docs/MINIMAX_SETUP.md).
+
 ### Does onWatch work with Cline, Roo Code, Kilo Code, or Claude Code?
 
-Yes. onWatch monitors the API provider (Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, or Antigravity), not the coding tool. Any tool that uses a Synthetic, Z.ai, Anthropic, Codex, Copilot, or Antigravity API key -- including Cline, Roo Code, Kilo Code, Claude Code, Codex CLI, Cursor, GitHub Copilot, Antigravity, and others -- will have its usage tracked automatically.
+Yes. onWatch monitors the API provider (Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, or Antigravity), not the coding tool. Any tool that uses a Synthetic, Z.ai, Anthropic, Codex, Copilot, MiniMax, or Antigravity API key -- including Cline, Roo Code, Kilo Code, Claude Code, Codex CLI, Cursor, GitHub Copilot, MiniMax Coding Plan, Antigravity, and others -- will have its usage tracked automatically.
 
 ### Does onWatch send any data to external servers?
 
-No. Zero telemetry. All data stays in a local SQLite file. The only outbound calls are to the Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, and Antigravity quota APIs you configure (Antigravity connects to localhost only). Fully auditable on [GitHub](https://github.com/onllm-dev/onwatch) (GPL-3.0).
+No. Zero telemetry. All data stays in a local SQLite file. The only outbound calls are to the Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, and Antigravity quota APIs you configure (Antigravity connects to localhost only). Fully auditable on [GitHub](https://github.com/onllm-dev/onwatch) (GPL-3.0).
 
 ### How much memory does onWatch use?
 
-<50 MB under all conditions (typically ~34 MB idle, ~43 MB under heavy load). Measured with all six agents (Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, Antigravity) polling in parallel. Lighter than a single browser tab. See [DEVELOPMENT.md](docs/DEVELOPMENT.md) for detailed benchmarks.
+<50 MB under all conditions (typically ~34 MB idle, ~43 MB under heavy load). Measured with all seven agents (Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, Antigravity) polling in parallel. Lighter than a single browser tab. See [DEVELOPMENT.md](docs/DEVELOPMENT.md) for detailed benchmarks.
 
 ---
 
 ## Architecture
 
 ```text
-                       ┌──────────────┐
-                       │  Dashboard   │
-                       │  :9211       │
-                       └──────┬───────┘
-                       ┌──────┴───────┐
-                       │   SQLite     │
-                       │   (WAL)      │
-                       └──┬──┬──┬──┬──┬──┬─┘
-       ┌─────────────────┘  │  │  │  │  └─────────────────┐
-  ┌────┴─────┐  ┌──────┴──┐  ┌──────┴──┐  ┌──────┴──┐  ┌──────┴──┐  ┌────┴─────┐
-  │ Synthetic│  │  Z.ai   │  │Anthropic│  │  Codex  │  │ Copilot │  │Antigrav. │
-  │  Agent   │  │  Agent  │  │  Agent  │  │  Agent  │  │  Agent  │  │  Agent   │
-  └────┬─────┘  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘  └────┬─────┘
-  ┌────┴─────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴─────┐
-  │ Synthetic│  │  Z.ai   │  │Anthropic│  │chatgpt  │  │ GitHub  │  │ Local    │
-  │  API     │  │  API    │  │OAuth API│  │OAuth API│  │Copilot  │  │ RPC      │
-  └──────────┘  └─────────┘  └─────────┘  └─────────┘  └─────────┘  └──────────┘
+                              ┌──────────────┐
+                              │  Dashboard   │
+                              │  :9211       │
+                              └──────┬───────┘
+                              ┌──────┴───────┐
+                              │   SQLite     │
+                              │   (WAL)      │
+                              └──┬──┬──┬──┬──┬──┬──┬─┘
+       ┌────────────────────────┘  │  │  │  │  │  └────────────────────────┐
+  ┌────┴─────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴─────┐
+  │ Synthetic│  │  Z.ai   │  │Anthropic│  │  Codex  │  │ Copilot │  │ MiniMax │  │Antigrav. │
+  │  Agent   │  │  Agent  │  │  Agent  │  │  Agent  │  │  Agent  │  │  Agent  │  │  Agent   │
+  └────┬─────┘  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘  └────┬─────┘
+  ┌────┴─────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴─────┐
+  │ Synthetic│  │  Z.ai   │  │Anthropic│  │chatgpt  │  │ GitHub  │  │ MiniMax │  │ Local    │
+  │  API     │  │  API    │  │OAuth API│  │OAuth API│  │Copilot  │  │  API    │  │ RPC      │
+  └──────────┘  └─────────┘  └─────────┘  └─────────┘  └─────────┘  └─────────┘  └──────────┘
 ```
 
 All agents run as parallel goroutines. Each polls its API at the configured interval and writes snapshots. The dashboard reads from the shared store.
 
-**Measured RAM (all six agents running in parallel):** ~34 MB idle, ~43 MB under heavy load. Single binary, all assets embedded via `embed.FS`.
+**Measured RAM (all seven agents running in parallel):** ~34 MB idle, ~43 MB under heavy load. Single binary, all assets embedded via `embed.FS`.
 
 ---
 
@@ -270,6 +299,7 @@ Additional environment variables:
 | `ANTHROPIC_TOKEN`        | Anthropic OAuth token (auto-detected from Claude Code) |
 | `CODEX_TOKEN`            | Codex OAuth access token (recommended for Codex-only)  |
 | `COPILOT_TOKEN`          | GitHub Copilot PAT with `copilot` scope (Beta)         |
+| `MINIMAX_API_KEY`        | MiniMax Coding Plan API key (Beta)                     |
 | `ANTIGRAVITY_ENABLED`    | Enable Antigravity provider (auto-detects local server)|
 | `ANTIGRAVITY_BASE_URL`   | Antigravity base URL (for Docker/manual config)        |
 | `ANTIGRAVITY_CSRF_TOKEN` | Antigravity CSRF token (for Docker/manual config)      |
@@ -287,7 +317,7 @@ CLI flags override environment variables.
 
 ## API Endpoints
 
-All endpoints require authentication (session cookie or Basic Auth). Append `?provider=synthetic|zai|anthropic|codex|copilot|antigravity|both` to select the provider.
+All endpoints require authentication (session cookie or Basic Auth). Append `?provider=synthetic|zai|anthropic|codex|copilot|minimax|antigravity|both` to select the provider.
 
 | Endpoint                        | Method      | Description                                    |
 | ------------------------------- | ----------- | ---------------------------------------------- |
@@ -300,10 +330,13 @@ All endpoints require authentication (session cookie or Basic Auth). Append `?pr
 | `/api/cycles?type=subscription` | GET         | Reset cycle history                            |
 | `/api/cycle-overview`           | GET         | Cross-quota correlation at peak usage          |
 | `/api/summary`                  | GET         | Usage summaries                                |
+| `/api/capabilities`             | GET         | Build/runtime capabilities (platform, menubar) |
+| `/api/menubar/summary`          | GET         | Normalized menubar snapshot payload            |
+| `/api/menubar/test`             | GET         | Browser-testable menubar page in test mode     |
 | `/api/sessions`                 | GET         | Session history                                |
 | `/api/insights`                 | GET         | Usage insights                                 |
 | `/api/providers`                | GET         | Available providers                            |
-| `/api/settings`                 | GET/PUT     | User settings (notifications, SMTP, providers) |
+| `/api/settings`                 | GET/PUT     | User settings (notifications, SMTP, providers, menubar) |
 | `/api/settings/smtp/test`       | POST        | Send test email via configured SMTP            |
 | `/api/password`                 | PUT         | Change password                                |
 | `/api/push/vapid`               | GET         | Get VAPID public key for push subscription     |
@@ -347,10 +380,14 @@ onwatch stop && onwatch
 ```shell
 ~/.onwatch/
 ├── onwatch.pid          # PID file
-├── .onwatch.log         # Log file (background mode)
 └── data/
-    └── onwatch.db       # SQLite database (WAL mode)
+    ├── onwatch.db       # SQLite database (WAL mode)
+    ├── .onwatch.log     # Main daemon log file (background mode)
+    └── menubar.log      # Menubar companion log file (macOS menubar builds)
 ```
+
+Log files are stored next to the database (default `~/.onwatch/data/`).
+Each log rotates at 50 MB with 3 backups (`.1`, `.2`, `.3`) for both main and menubar logs.
 
 On first run, if a database exists at `./onwatch.db`, onWatch auto-migrates it to `~/.onwatch/data/`.
 
@@ -410,7 +447,7 @@ docker run -d --name onwatch -p 9211:9211 \
 
 ### Configuration
 
-Copy `.env.docker.example` to `.env` and set at least one provider key. See `.env.docker.example` for all available options. Key variables:
+Copy `.env.docker.example` to `.env` and set provider keys as needed. onWatch can start with no providers and you can enable them later from Settings. Key variables:
 
 | Variable                | Description                                | Default    |
 | ----------------------- | ------------------------------------------ | ---------- |
@@ -418,6 +455,7 @@ Copy `.env.docker.example` to `.env` and set at least one provider key. See `.en
 | `ZAI_API_KEY`           | Z.ai API key                               | --         |
 | `ANTHROPIC_TOKEN`       | Anthropic token (auto-detected if not set) | --         |
 | `CODEX_TOKEN`           | Codex OAuth access token (recommended; required for Codex-only) | -- |
+| `MINIMAX_API_KEY`       | MiniMax Coding Plan API key                | --         |
 | `ONWATCH_ADMIN_USER`    | Dashboard username                         | `admin`    |
 | `ONWATCH_ADMIN_PASS`    | Dashboard password                         | `changeme` |
 | `ONWATCH_POLL_INTERVAL` | Polling interval (seconds)                 | `120`      |
@@ -449,7 +487,7 @@ The `docker-compose.yml` includes memory limits (64M limit, 32M reservation), lo
 
 ### Troubleshooting
 
-**Database errors:** Pre-create bind mount directories with `sudo chown 65532:65532` or use named volumes.
+**Database path is not writable:** If startup shows `database path is not writable`, fix bind mount ownership recursively with `sudo chown -R 65532:65532 ./onwatch-data` or use named volumes.
 **Container won't start:** Check `docker-compose logs -f`; verify API keys in `.env` and port 9211 availability.
 **Debugging:** The distroless image has no shell - use a sidecar: `docker run -it --rm --pid=container:onwatch --net=container:onwatch nicolaka/netshoot bash`
 
@@ -474,7 +512,7 @@ The `docker-compose.yml` includes memory limits (64M limit, 32M reservation), lo
 See [DEVELOPMENT.md](docs/DEVELOPMENT.md) for build instructions, cross-compilation, and testing.
 
 ```bash
-./app.sh --build       # Production binary        (or: make build)
+./app.sh --build       # Production binary (macOS includes menubar) (or: make build)
 ./app.sh --test        # Tests with race detection (or: make test)
 ./app.sh --build --run # Build + run debug mode    (or: make run)
 ./app.sh --release     # Cross-compile all platforms (or: make release-local)

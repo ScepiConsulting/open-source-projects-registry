@@ -91,12 +91,12 @@
 - **Multi-Format Support**: Import DJI logs (.txt), Litchi CSV, and Airdata CSV exports with automatic unit detection. Third-party apps (Dronelink, DroneDeploy) supported.
 - **Smart Deduplication**: Prevents duplicate imports based on drone serial, battery serial, and start time.
 - **Interactive Flight Maps**: 3D terrain, map-type selection (Satellite, Topographic, OpenStreetMap), flight replay with speed control (0.5x-16x), live telemetry overlay, and RC joystick visualization.
-- **Telemetry Charts**: Height, speed, battery, cell voltages, attitude, RC signal, GPS, distance-to-home, and velocity with synchronized drag-to-zoom.
+- **Telemetry Charts**: Height, speed, battery, cell voltages, attitude, RC signal, GPS, distance-to-home, velocity, battery full capacity, and battery remained capacity with synchronized drag-to-zoom.
 - **Local-First Storage**: All data in a local DuckDB database. No cloud upload required (except DJI key fetch during first import).
 - **Smart Tags**: Auto-tagging (Night Flight, High Speed, Low Battery, etc.) and offline reverse geocoding for location tags. Manual tags and bulk operations supported.on.
-- **Filters & Search**: Date range, drone/battery/color filters, duration/altitude/distance sliders, tag filter, map area filter, and filter inversion.
+- **Filters & Search**: Date range, drone/battery/controller/color filters, duration/altitude/distance sliders, tag filter, map area filter, and filter inversion.
 - **Overview Dashboard**: Aggregate stats, activity heatmap, pie charts by drone/battery/duration, time-of-day radial chart, cluster map with optional heatmap layer, and top-flight highlights.
-- **Battery Health**: Per-battery health bars with cycle count tracking, serial renaming, and per-minute usage history with zoom.
+- **Battery Health**: Per-battery health bars with cycle count tracking, serial renaming, per-minute usage history with zoom, and battery capacity history chart with multi-select battery dropdown showing full-charge capacity trends over time.
 - **Maintenance Tracking**: Configurable thresholds with color-coded progress bars and date-based maintenance recording.
 - **Exports**: CSV, JSON, GPX, KML, and Summary CSV export. FlyCard generator for shareable 1080x1080 social media images.
 - **HTML Report**: Generate a configurable, print-ready flight regulation report (A4 layout) with selectable field groups, weather data, and day-by-day grouping. Can be printed as PDF via Ctrl+P. Pilot name and field preferences can be customized and will persist across sessions.
@@ -466,6 +466,9 @@ For production deployments, a reverse proxy with TLS is essential.
 ```
 
 ## How to obtain your own DJI Developer API key
+
+> [!NOTE]
+> Unless you set up your own API key, the import process will be rate limited because you are using a shared key (provided by me) for the project alongside other users. You may see a 5 second `cooling down...` message during each new log file import when the default key is in use. 
 
 I have shipped this project with my own API key to save you from some extra painful steps. If you are tech savvy please read the following guide to generate and use your own API key for this project. To acquire an apiKey, follow these steps:
 

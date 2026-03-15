@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:06Z",
   "summary": {
-    "apps": 1243,
-    "repos": 1219,
-    "readme_ok": 81,
-    "readme_not_modified": 1095,
-    "readme_error": 43
+    "apps": 1249,
+    "repos": 1226,
+    "readme_ok": 125,
+    "readme_not_modified": 1056,
+    "readme_error": 45
   },
   "failed_repos": [
     {
@@ -129,6 +129,11 @@
       "error": "worker_exception: Invalid URL 'gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md?"
     },
     {
+      "repo_key": "github.com/shibaobun/cannery",
+      "repo_url": "github.com/shibaobun/cannery",
+      "error": "github_readme_http_404"
+    },
+    {
       "repo_key": "gitlab.com/LazyLibrarian/LazyLibrarian",
       "repo_url": "gitlab.com/LazyLibrarian/LazyLibrarian",
       "error": "worker_exception: Invalid URL 'gitlab.com/LazyLibrarian/LazyLibrarian/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/LazyLibrarian/LazyLibrarian/-/raw/main/README.md?"
@@ -142,6 +147,11 @@
       "repo_key": "gitlab.com/Shinobi-Systems/Shinobi",
       "repo_url": "gitlab.com/Shinobi-Systems/Shinobi",
       "error": "worker_exception: Invalid URL 'gitlab.com/Shinobi-Systems/Shinobi/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/Shinobi-Systems/Shinobi/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/comentario/comentario",
+      "repo_url": "gitlab.com/comentario/comentario",
+      "error": "worker_exception: Invalid URL 'gitlab.com/comentario/comentario/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/comentario/comentario/-/raw/main/README.md?"
     },
     {
       "repo_key": "gitlab.com/crafty-controller/crafty-4",

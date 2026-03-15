@@ -1,8 +1,68 @@
 {
   "chunk": 21,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/quickwit-oss/quickwit",
+      "repo_url": "github.com/quickwit-oss/quickwit",
+      "host": "github.com",
+      "owner": "quickwit-oss",
+      "repo": "quickwit",
+      "app_references": [
+        "quickwit"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__quickwit-oss__quickwit.md",
+      "readme_download_url": null,
+      "readme_sha256": "9283f919a91d5111abc21c9cef7159f57746c5ec4642364c5e3f0747caf791f3",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/raghavyuva/nixopus",
+      "repo_url": "github.com/raghavyuva/nixopus",
+      "host": "github.com",
+      "owner": "raghavyuva",
+      "repo": "nixopus",
+      "app_references": [
+        "nixopus"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__raghavyuva__nixopus.md",
+      "readme_download_url": null,
+      "readme_sha256": "b9ecf8aab957a20520ccd9b589da0a1421b29767761023743b0366002979ed44",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/rajnandan1/kener",
+      "repo_url": "github.com/rajnandan1/kener",
+      "host": "github.com",
+      "owner": "rajnandan1",
+      "repo": "kener",
+      "app_references": [
+        "kener"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__rajnandan1__kener.md",
+      "readme_download_url": "https://raw.githubusercontent.com/rajnandan1/kener/main/README.md",
+      "readme_sha256": "982f20d39a1437219c91fbe5070df610ba6e159a8e355e1340bc3e1fbe9f3c06",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/rapidforge-io/release",
+      "repo_url": "github.com/rapidforge-io/release",
+      "host": "github.com",
+      "owner": "rapidforge-io",
+      "repo": "release",
+      "app_references": [
+        "rapidforge"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__rapidforge-io__release.md",
+      "readme_download_url": null,
+      "readme_sha256": "5c060c9955b57d88c411a08a8812158faab85426311f484f79ba6375a915cb85",
+      "error": null
+    },
     {
       "repo_key": "github.com/raydak-labs/configarr",
       "repo_url": "github.com/raydak-labs/configarr",
@@ -57,9 +117,9 @@
       "app_references": [
         "recyclarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__recyclarr__recyclarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/recyclarr/recyclarr/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "68d9517a840082eb407fe27e688ad4ce13c63112ac5d4a7f023bda90008d0cfb",
       "error": null
     },
@@ -237,10 +297,10 @@
       "app_references": [
         "keeper"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ridafkih__keeper.sh.md",
-      "readme_download_url": null,
-      "readme_sha256": "87d821fd1b8334c1cf262d91489a07806c631454e42b309bbfb9ec5135403272",
+      "readme_download_url": "https://raw.githubusercontent.com/ridafkih/keeper.sh/main/README.md",
+      "readme_sha256": "19be1a666e010027a034f196deecba5593e37036a70ad0123d4734155f82bc80",
       "error": null
     },
     {
@@ -357,10 +417,10 @@
       "app_references": [
         "romm"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__rommapp__romm.md",
-      "readme_download_url": null,
-      "readme_sha256": "cfc1e3442f276847b9b38d887685b52f1492bc8b3daf46e75e8ab58b70ed665b",
+      "readme_download_url": "https://raw.githubusercontent.com/rommapp/romm/master/README.md",
+      "readme_sha256": "8bd8017209e1618bca7b02461f07fa5e95514f2cd572ce267495c5d1224ae562",
       "error": null
     },
     {
@@ -447,10 +507,10 @@
       "app_references": [
         "runtipi"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__runtipi__runtipi.md",
-      "readme_download_url": null,
-      "readme_sha256": "5442074ed0e0cbbf21056433a7cec2e555e856184759764df7fc4aa7dd9f27c7",
+      "readme_download_url": "https://raw.githubusercontent.com/runtipi/runtipi/develop/README.md",
+      "readme_sha256": "4a266a97914e215cd0e5af4bf3222ab5890046570cfd088dd4b41f6ed5ab7388",
       "error": null
     },
     {
@@ -465,7 +525,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__rustfs__rustfs.md",
       "readme_download_url": "https://raw.githubusercontent.com/rustfs/rustfs/main/README.md",
-      "readme_sha256": "2ccc6a3081de8c8318e6dbc6e321e2e86a0f49f462cdae92156547c31e937c8c",
+      "readme_sha256": "97f5ecea7df5216bffbc82b292080638a5e4211aeb1c68310b383290c32d9091",
       "error": null
     },
     {
@@ -477,9 +537,9 @@
       "app_references": [
         "bichon"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__rustmailer__bichon.md",
-      "readme_download_url": "https://raw.githubusercontent.com/rustmailer/bichon/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6b38fbd23bb867564f70b3958fdf7c241f452fc95a2a3bd4a03020301b03cfaa",
       "error": null
     },
@@ -597,9 +657,9 @@
       "app_references": [
         "saltcorn"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__saltcorn__saltcorn.md",
-      "readme_download_url": "https://raw.githubusercontent.com/saltcorn/saltcorn/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "bf1e869ad2a12a151627b15fceea9b9cc63cd8d9356c6c6f2e6f46178d839b42",
       "error": null
     },
@@ -612,9 +672,9 @@
       "app_references": [
         "newsblur"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__samuelclay__NewsBlur.md",
-      "readme_download_url": "https://raw.githubusercontent.com/samuelclay/NewsBlur/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "40720412ce2546a7c9d8d18c53bcfac7a068a38d4e5cff6726b8a02dc8b5e295",
       "error": null
     },
@@ -691,66 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__scanopy__scanopy.md",
       "readme_download_url": null,
       "readme_sha256": "4e97a8ed6e9457f94468f2e1c0f99316b8df5f352e0a316864b3789000c54f9c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/schelskedevco/ignidash",
-      "repo_url": "github.com/schelskedevco/ignidash",
-      "host": "github.com",
-      "owner": "schelskedevco",
-      "repo": "ignidash",
-      "app_references": [
-        "ignidash"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__schelskedevco__ignidash.md",
-      "readme_download_url": null,
-      "readme_sha256": "d6268bd382bb6f505cc43fcbe5b11c5393834b01daf7782aaf61b14cd4f3213d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/schlagmichdoch/PairDrop",
-      "repo_url": "github.com/schlagmichdoch/PairDrop",
-      "host": "github.com",
-      "owner": "schlagmichdoch",
-      "repo": "PairDrop",
-      "app_references": [
-        "pairdrop"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__schlagmichdoch__PairDrop.md",
-      "readme_download_url": null,
-      "readme_sha256": "fe1fcf4cb27f732477160c00ec0c9313bcdfa95bed89f482a5dda12c6d24cac7",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/screenlite/screenlite",
-      "repo_url": "github.com/screenlite/screenlite",
-      "host": "github.com",
-      "owner": "screenlite",
-      "repo": "screenlite",
-      "app_references": [
-        "screenlite"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__screenlite__screenlite.md",
-      "readme_download_url": null,
-      "readme_sha256": "5a9d59af421fbb0ab9064b773bc1238f483f09a174e7ff3d10e29a5ec2a8cac7",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/seanmorley15/AdventureLog",
-      "repo_url": "github.com/seanmorley15/AdventureLog",
-      "host": "github.com",
-      "owner": "seanmorley15",
-      "repo": "AdventureLog",
-      "app_references": [
-        "adventurelog"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__seanmorley15__AdventureLog.md",
-      "readme_download_url": null,
-      "readme_sha256": "6833bd73394206516334d88520a0c662508bf2a45c119314a9a43ffbaf318808",
       "error": null
     }
   ]

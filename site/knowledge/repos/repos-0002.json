@@ -1,8 +1,23 @@
 {
   "chunk": 2,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/Beast12/who-rang",
+      "repo_url": "github.com/Beast12/who-rang",
+      "host": "github.com",
+      "owner": "Beast12",
+      "repo": "who-rang",
+      "app_references": [
+        "whorang"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__Beast12__who-rang.md",
+      "readme_download_url": null,
+      "readme_sha256": "2c6ba77bc7baceffc17033faa1a4ad539571e833ca56c3905f39ae76f03387e1",
+      "error": null
+    },
     {
       "repo_key": "github.com/BeryJu/gravity",
       "repo_url": "github.com/BeryJu/gravity",
@@ -267,9 +282,9 @@
       "app_references": [
         "clickhouse"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ClickHouse__ClickHouse.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ClickHouse/ClickHouse/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "5b724fc339d4dd439247d5027fff0a8d59b577415ba538a424e54c52cde2dd8a",
       "error": null
     },
@@ -297,9 +312,9 @@
       "app_references": [
         "sparkybudget"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__CodeWithCJ__SparkyBudget.md",
-      "readme_download_url": "https://raw.githubusercontent.com/CodeWithCJ/SparkyBudget/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6f259e72eb9596a0d5f195741a35543ce020a4cba8d25574734bf84b89cad41a",
       "error": null
     },
@@ -312,10 +327,10 @@
       "app_references": [
         "sparkyfitness"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__CodeWithCJ__SparkyFitness.md",
-      "readme_download_url": null,
-      "readme_sha256": "5c3d734657de26ce0a256d154ad371ca45c239a5332058c9041abea7c2f41a80",
+      "readme_download_url": "https://raw.githubusercontent.com/CodeWithCJ/SparkyFitness/main/README.md",
+      "readme_sha256": "278d41293e9528b5d4480f09133e129d18a372394fff1de67e586c202f88e1e7",
       "error": null
     },
     {
@@ -447,10 +462,10 @@
       "app_references": [
         "nutify"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__DartSteven__Nutify.md",
-      "readme_download_url": null,
-      "readme_sha256": "ebacb9a867b0c595474ed2fdfbc31873b85e8774603d108008507b4e2dca34db",
+      "readme_download_url": "https://raw.githubusercontent.com/DartSteven/Nutify/main/README.md",
+      "readme_sha256": "eec10deec04a22cb5995fadf04ae1d2b479aba08279837b6a94a2e31da828557",
       "error": null
     },
     {
@@ -492,10 +507,10 @@
       "app_references": [
         "profilarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Dictionarry-Hub__profilarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "26f249d00e9291c0eaaf317584903cdd04ff2929cb05586c5c685a7c8a8694fa",
+      "readme_download_url": "https://raw.githubusercontent.com/Dictionarry-Hub/profilarr/develop/README.md",
+      "readme_sha256": "688d9527d94ca6f0091bcd6ac5146da062f048e96e2a116a0dd670ffff53468d",
       "error": null
     },
     {
@@ -510,7 +525,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__DioCrafts__OxiCloud.md",
       "readme_download_url": "https://raw.githubusercontent.com/DioCrafts/OxiCloud/main/README.md",
-      "readme_sha256": "d3fc1910b9a0aec6bbb6fd361f65a64237400a74a83b775e5d2e4d314f64b804",
+      "readme_sha256": "1ff2ed5dea70983eb0fcb8f67d88440c71a0314bca7b00603b1d3e6d6f9a29a0",
       "error": null
     },
     {
@@ -522,10 +537,10 @@
       "app_references": [
         "dispatcharr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Dispatcharr__Dispatcharr.md",
-      "readme_download_url": null,
-      "readme_sha256": "92d7db8f0a96686227a1afb4c4bbe6bab3de28633065b0b3dc935233e0c46471",
+      "readme_download_url": "https://raw.githubusercontent.com/Dispatcharr/Dispatcharr/main/README.md",
+      "readme_sha256": "95c1e8bf73399db76349b95503a0ba3b0dbc94585a2c991d2e97717d8eed5333",
       "error": null
     },
     {
@@ -615,7 +630,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__DrewThomasson__ebook2audiobook.md",
       "readme_download_url": "https://raw.githubusercontent.com/DrewThomasson/ebook2audiobook/main/README.md",
-      "readme_sha256": "2b8f84843a1b9da4af3cb4eeb667719ec1df7afae0774fdbc417a12b2c916c9f",
+      "readme_sha256": "4e8d2f4f915f183c3b02018ff95f2d33fbc09ffdee28d4ad2e7620443c3471d6",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbPad.md",
       "readme_download_url": null,
       "readme_sha256": "9784a5cde8ec94a4a4c07b12587c60a1b79f10b411f6c26285a96c85893f0394",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/DumbWareio/DumbWhoIs",
-      "repo_url": "github.com/DumbWareio/DumbWhoIs",
-      "host": "github.com",
-      "owner": "DumbWareio",
-      "repo": "DumbWhoIs",
-      "app_references": [
-        "dumbwhois"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbWhoIs.md",
-      "readme_download_url": null,
-      "readme_sha256": "a754136aa2bccff6cd4d662e77bde24a987b19a640976410a8951e316eba5695",
       "error": null
     }
   ]

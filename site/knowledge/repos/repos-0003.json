@@ -1,8 +1,23 @@
 {
   "chunk": 3,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/DumbWareio/DumbWhoIs",
+      "repo_url": "github.com/DumbWareio/DumbWhoIs",
+      "host": "github.com",
+      "owner": "DumbWareio",
+      "repo": "DumbWhoIs",
+      "app_references": [
+        "dumbwhois"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbWhoIs.md",
+      "readme_download_url": null,
+      "readme_sha256": "a754136aa2bccff6cd4d662e77bde24a987b19a640976410a8951e316eba5695",
+      "error": null
+    },
     {
       "repo_key": "github.com/Dusk-Labs/dim",
       "repo_url": "github.com/Dusk-Labs/dim",
@@ -42,10 +57,10 @@
       "app_references": [
         "eigenfocus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Eigenfocus__eigenfocus.md",
-      "readme_download_url": null,
-      "readme_sha256": "f78f8c5c36be99d309efbdc0d4e891b81e0daf9bfb276e48bdcb9bff025e7c5d",
+      "readme_download_url": "https://raw.githubusercontent.com/Eigenfocus/eigenfocus/main/README.md",
+      "readme_sha256": "03a7f2c1155f9844f953a851094c5582fea4c7452290b27b1c826cf6f8d4ea27",
       "error": null
     },
     {
@@ -72,9 +87,9 @@
       "app_references": [
         "erugo"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ErugoOSS__Erugo.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ErugoOSS/Erugo/main/readme.md",
+      "readme_download_url": null,
       "readme_sha256": "d27df3b6cea7b70ebf5ad498485a89553d9b4f2219b57cf1d200db14d7b17dee",
       "error": null
     },
@@ -165,7 +180,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__FreshRSS__FreshRSS.md",
       "readme_download_url": "https://raw.githubusercontent.com/FreshRSS/FreshRSS/edge/README.md",
-      "readme_sha256": "9b4826e71cbe656d40d022f8b8a41df27c251932bdbdce7d20cb8e25868633b9",
+      "readme_sha256": "30963804b53259a03dbfce53a36d0b6469f0df4ce4d5e8a75380b7f69291ba83",
       "error": null
     },
     {
@@ -252,10 +267,10 @@
       "app_references": [
         "atlas-cmms"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Grashjs__cmms.md",
-      "readme_download_url": null,
-      "readme_sha256": "c9ff5c376a6580ad0beaf70755bc2e2ff27e5210bb75a00432865d7d3f9f2f2b",
+      "readme_download_url": "https://raw.githubusercontent.com/Grashjs/cmms/main/README.MD",
+      "readme_sha256": "27a38b3f1e3e4a8cca04dc1e2d909ebf1c18fef6809392bdc5f14facdfd7398e",
       "error": null
     },
     {
@@ -417,10 +432,10 @@
       "app_references": [
         "guardian-plex"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__HydroshieldMKII__Guardian.md",
-      "readme_download_url": null,
-      "readme_sha256": "6620c634a0749dbb6c9e99bbb67b4384fc7786fe2f4a7d288ffa5382d3467bb2",
+      "readme_download_url": "https://raw.githubusercontent.com/HydroshieldMKII/Guardian/main/README.md",
+      "readme_sha256": "5071e4ea4b423a05d8d11f58aee323cb2ebe94f32dd3cb9d95a5271b3793b526",
       "error": null
     },
     {
@@ -450,7 +465,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__IliasHad__edit-mind.md",
       "readme_download_url": "https://raw.githubusercontent.com/IliasHad/edit-mind/main/README.md",
-      "readme_sha256": "337b15be9562d130ea5577569bac4c1d782fb88139c2127306362cc92185858d",
+      "readme_sha256": "43eab456dc91dd5c690ef3bbf4684c7473e98fcd4349e60175d65ca84fd831bf",
       "error": null
     },
     {
@@ -522,9 +537,9 @@
       "app_references": [
         "8mb-local"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__JMS1717__8mb.local.md",
-      "readme_download_url": "https://raw.githubusercontent.com/JMS1717/8mb.local/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "70862120844a9ebc473b6d35d69a50e5e3327c2122348e284ba343c3f7e39db7",
       "error": null
     },
@@ -540,7 +555,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Jackett__Jackett.md",
       "readme_download_url": "https://raw.githubusercontent.com/Jackett/Jackett/master/README.md",
-      "readme_sha256": "edd2ddfd8aae7c7f845223ebe196ac47dea05a2e27c16b444415951576ef4149",
+      "readme_sha256": "6e25a2150a6ff5829db30af42cbff9b94174f3a83ce71b4ec8473cbf02b1dddc",
       "error": null
     },
     {
@@ -552,10 +567,10 @@
       "app_references": [
         "sortarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Jaredharper1__Sortarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "d92c0510f0c3d06d2432f5e76e4ba676a3f0cebaa709248184a11965dd83fa42",
+      "readme_download_url": "https://raw.githubusercontent.com/Jaredharper1/Sortarr/main/README.md",
+      "readme_sha256": "335d9a1d1f3e2e0b22837063a7d364fab49a92ca12cafe17ba3585c233415b2d",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__LLukas22__Jellyswarrm.md",
       "readme_download_url": null,
       "readme_sha256": "09674e6294d6654919e85b96c72e60d9033d0160fb81f7bb34f08e1a3fe38a7c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/LMS-Community/slimserver",
-      "repo_url": "github.com/LMS-Community/slimserver",
-      "host": "github.com",
-      "owner": "LMS-Community",
-      "repo": "slimserver",
-      "app_references": [
-        "lyrion-music-server"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__LMS-Community__slimserver.md",
-      "readme_download_url": null,
-      "readme_sha256": "f089a7bb71c959ccafb79066dae10bfcfbb6412bc67e7c48588b5c5b8d4f533a",
       "error": null
     }
   ]

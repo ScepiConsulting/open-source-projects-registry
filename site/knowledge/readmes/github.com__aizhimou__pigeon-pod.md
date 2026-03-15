@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="documents/assets/logo-with-brand.png" alt="pigeonpod" width="260" />
+  <img src=".github/docs-assets/logo-with-brand.png" alt="pigeonpod" width="260" />
   <h2>Listen to YouTube & Bilibili, Anywhere, Anytime.</h2>
   <h3>If self-hosting isn't your thing, take a look at our upcoming online services:
     <a target="_blank" href="https://pigeonpod.cloud/?utm_source=github&utm_medium=repo&utm_campaign=readme&utm_content=cta">PigeonPod</a>
@@ -8,40 +8,43 @@
 
 <div align="center">
 
-  [简体中文](documents/readme/README-ZH.md) | [Español](documents/readme/README-ES.md) | [Português](documents/readme/README-PT.md) | [日本語](documents/readme/README-JA.md) | [Deutsch](documents/readme/README-DE.md) | [Français](documents/readme/README-FR.md) | [한국어](documents/readme/README-KO.md)
+  [简体中文](README-ZH.md) | [Español](README-ES.md) | [Português](README-PT.md) | [日本語](README-JA.md) | [Deutsch](README-DE.md) | [Français](README-FR.md) | [한국어](README-KO.md)
 </div>
 
 ## Screenshots
 
-![index-dark&light](documents/assets/screenshots/home-27-11-2025.png)
+![index-dark&light](.github/docs-assets/home-27-11-2025.png)
 <div align="center">
   <p style="color: gray">Channel list</p>
 </div>
 
-![detail-dark&light](documents/assets/screenshots/feed-27-11-2025.png)
+![detail-dark&light](.github/docs-assets/feed-27-11-2025.png)
 <div align="center">
   <p style="color: gray">Channel detail</p>
 </div>
 
 ## Core Features
 
-- **🎯 Smart Subscription & Preview**: Paste any YouTube or Bilibili channel/playlist URL, auto-detect its type, and preview feed details before subscribing.
-- **📻 Secure RSS for Any Client**: Generate standard, API-key-protected RSS links for channels and playlists that work in all podcast apps.
-- **🤖 Auto Sync & History Backfill**: Periodically sync new uploads in the background, with configurable initial episodes and one-click backfill of historical videos.
-- **🎦 Flexible Audio/Video Output**: Choose audio-only (AAC) or full video downloads with quality presets or selectable resolution/encoding, plus embedded metadata, chapters and artwork.
-- **🍪 Restricted Content Support**: Use YouTube Data API keys and uploaded cookies to access age-restricted and members-only content more reliably.
-- **📦 Historical Episodes Batch Download**: Designed specifically for efficient back-catalog downloads, with search, pagination, per-item or per-page selection, and one-click submission.
-- **📊 Download Dashboard & Bulk Actions**: Real-time dashboard for pending/downloading/completed/failed tasks, with detailed error logs and one-click bulk cancel/delete/retry.
-- **🔍 Per-feed Filters & Retention**: Filter episodes by title/description keywords (include/exclude), minimum duration, and set per-feed sync and maximum episode limits.
-- **⏱ Delayed Auto Download for New Episodes**: Configure per-feed auto-download delay windows to improve `--sponsorblock` success rates on newly published videos.
-- **📈 YouTube API Usage Insights**: Monitor API quota usage and limits to plan sync jobs and avoid unexpected interruptions.
-- **🎛 Customizable Feeds & Player**: Set per-feed custom title and cover art, and use the built-in web player for quick audio/video playback.
-- **🔄 OPML Subscription Export**: Export all subscriptions as a standard OPML file for smooth migration between podcast clients.
-- **🧩 Episode Management & Control**: Infinite-scrolling episode list with manual download, retry, cancel and delete actions that also manage downloaded files.
-- **⬆️ In-app yt-dlp Updates**: Upgrade the built-in yt-dlp runtime with one click to keep extraction and download compatibility current.
-- **🛠 Advanced yt-dlp Arguments**: Add custom yt-dlp arguments with standard syntax to fine-tune download behavior for advanced use cases.
-- **🌐 Multilingual Responsive UI**: Fully localized interface (English, Chinese, Spanish, Portuguese, Japanese, French, German, Korean) with a responsive layout across devices.
-- **📚 Podcasting 2.0 Chapters Support**: Generate standard `chapters.json` chapter files so more podcast clients can display rich episode chapter navigation.
+- **🎯 Smart Subscription & Preview**: Subscribe to YouTube or Bilibili channels and playlists in seconds.
+- **📻 Secure RSS for Any Client**: Generate protected standard RSS feeds for any podcast app.
+- **🎦 Flexible Audio/Video Output**: Download as audio or video with quality and format control.
+- **🤖 Auto Sync & History Backfill**: Keep subscriptions updated and backfill older videos on demand.
+- **🍪 Expanded Cookie Support**: Use YouTube and Bilibili cookies for more reliable restricted-content access.
+- **🌍 Proxy-ready Network Access**: Route YouTube API and yt-dlp traffic through custom proxies.
+- **🔗 One-click Episode Sharing**: Share any episode with a public page for direct playback without login.
+- **📦 Fast Batch Downloads**: Search, select, and queue large back catalogs efficiently.
+- **📊 Download Dashboard & Bulk Actions**: Track task status and retry, cancel, or delete in bulk.
+- **🔍 Per-feed Filters & Retention**: Control sync scope with keywords, duration, and episode limits.
+- **⏱ Smarter New Episode Downloads**: Delay auto-downloads to improve fresh-video processing results.
+- **🎛 Customizable Feeds & Player**: Customize titles and cover art, then play episodes on the web.
+- **🧩 Episode Management & Control**: Download, retry, cancel, and delete episodes with file cleanup.
+- **🔓 Trusted-environment Auto Login**: Skip manual sign-in when PigeonPod runs behind trusted access controls.
+- **📈 YouTube API Usage Insights**: Monitor quota usage before sync jobs hit the limit.
+- **🔄 OPML Subscription Export**: Export subscriptions for easy migration between podcast clients.
+- **⬆️ In-app yt-dlp Updates**: Update yt-dlp without leaving the app.
+- **🛠 Advanced yt-dlp Arguments**: Fine-tune downloads with custom yt-dlp arguments.
+- **📚 Podcasting 2.0 Chapters Support**: Generate chapter files for richer player navigation.
+- **🌐 Multilingual Responsive UI**: Use PigeonPod across devices in eight interface languages.
 
 ## Deployment
 
@@ -61,12 +64,19 @@ services:
       - '8834:8080'
     environment:
       - SPRING_DATASOURCE_URL=jdbc:sqlite:/data/pigeon-pod.db # set to your database path
+      # Optional: disable PigeonPod built-in auth when running behind another auth layer
+      # - PIGEON_AUTH_ENABLED=false
     volumes:
       - data:/data
 
 volumes:
   data:
 ```
+
+> [!WARNING]
+> `PIGEON_AUTH_ENABLED` defaults to `true`. Set it to `false` only if another trusted layer already protects the web UI, such as an auth proxy, reverse proxy access control, VPN, or private network.
+>
+> If you disable built-in auth, you must secure PigeonPod by other means. Do not expose an auth-disabled instance directly to the public Internet.
 
 2. Start the service
 ```bash
@@ -114,9 +124,12 @@ Open your browser and visit `http://localhost:8080` with **default username: `ro
 
 ## Documentation
 
-- [How to get YouTube API Key](documents/how-to-get-youtube-api-key/how-to-get-youtube-api-key-en.md)
-- [How to setup YouTube Cookies](documents/youtube-cookie-setup/youtube-cookie-setup-en.md)
-- [How to get YouTube channel ID](documents/how-to-get-youtube-channel-id/how-to-get-youtube-channel-id-en.md)
+- [Wiki Home](https://github.com/aizhimou/PigeonPod/wiki)
+- [Quick Start](https://github.com/aizhimou/PigeonPod/wiki/Quick-Start)
+- [Installation](https://github.com/aizhimou/PigeonPod/wiki/Installation)
+- [Configuration Overview](https://github.com/aizhimou/PigeonPod/wiki/Configuration-Overview)
+- [Troubleshooting](https://github.com/aizhimou/PigeonPod/wiki/Troubleshooting)
+- [Advanced Customization](https://github.com/aizhimou/PigeonPod/wiki/Advanced-Customization)
 
 
 ## Tech Stack

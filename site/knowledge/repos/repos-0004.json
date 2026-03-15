@@ -1,8 +1,23 @@
 {
   "chunk": 4,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/LMS-Community/slimserver",
+      "repo_url": "github.com/LMS-Community/slimserver",
+      "host": "github.com",
+      "owner": "LMS-Community",
+      "repo": "slimserver",
+      "app_references": [
+        "lyrion-music-server"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__LMS-Community__slimserver.md",
+      "readme_download_url": null,
+      "readme_sha256": "f089a7bb71c959ccafb79066dae10bfcfbb6412bc67e7c48588b5c5b8d4f533a",
+      "error": null
+    },
     {
       "repo_key": "github.com/Leantime/leantime",
       "repo_url": "github.com/Leantime/leantime",
@@ -177,10 +192,10 @@
       "app_references": [
         "dashy"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Lissy93__dashy.md",
-      "readme_download_url": null,
-      "readme_sha256": "6664539e3781490942118287eb8bc54c24258c96fd6ea55c409b0dd4fec062d0",
+      "readme_download_url": "https://raw.githubusercontent.com/Lissy93/dashy/master/README.md",
+      "readme_sha256": "002e93ccc8ef55257ba334fa04c3405999c5b589a904650f9c97f2f54c2a4e30",
       "error": null
     },
     {
@@ -192,9 +207,9 @@
       "app_references": [
         "domain-locker"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Lissy93__domain-locker.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Lissy93/domain-locker/main/.github/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d7cf6e135b57cfe7e15fff6155c05a519f1f5482ec50fa768566578d216d341c",
       "error": null
     },
@@ -454,6 +469,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/Matszwe02/ytdlp_web_player",
+      "repo_url": "github.com/Matszwe02/ytdlp_web_player",
+      "host": "github.com",
+      "owner": "Matszwe02",
+      "repo": "ytdlp_web_player",
+      "app_references": [
+        "yt-dlp-web-player"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__Matszwe02__ytdlp_web_player.md",
+      "readme_download_url": "https://raw.githubusercontent.com/Matszwe02/ytdlp_web_player/main/readme.md",
+      "readme_sha256": "5c29bc355c6750319abdc4e92b63980def3de3d2fcd854f2d9b60a2a130ff371",
+      "error": null
+    },
+    {
       "repo_key": "github.com/MauriceNino/dashdot",
       "repo_url": "github.com/MauriceNino/dashdot",
       "host": "github.com",
@@ -597,9 +627,9 @@
       "app_references": [
         "soulsync"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Nezreka__SoulSync.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Nezreka/SoulSync/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "00c778f1b39d74bfd6fcbf16829229c0163b314917f50090502621509c708eb0",
       "error": null
     },
@@ -687,10 +717,10 @@
       "app_references": [
         "sprout-track"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Oak-and-Sprout__sprout-track.md",
-      "readme_download_url": null,
-      "readme_sha256": "a2f339968b87d8df334c1797eaae8c6833b8da6c483de12645c3f2365dd3c5ba",
+      "readme_download_url": "https://raw.githubusercontent.com/Oak-and-Sprout/sprout-track/main/README.md",
+      "readme_sha256": "6c860297f9c1bf86e47376df13f918a1390f1b5f4def035824ea450fffcf69a3",
       "error": null
     },
     {
@@ -721,36 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__OliveTin__OliveTin.md",
       "readme_download_url": null,
       "readme_sha256": "2fe12461dccf6d6957e190a0991726233633ffce315d5dde532f8cc9efb258bb",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Ombi-app/Ombi",
-      "repo_url": "github.com/Ombi-app/Ombi",
-      "host": "github.com",
-      "owner": "Ombi-app",
-      "repo": "Ombi",
-      "app_references": [
-        "ombi"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Ombi-app__Ombi.md",
-      "readme_download_url": null,
-      "readme_sha256": "93541d8d20871f0b261c93262de23a69e4e4801ae6d0cea27cc93e29de7a2dd5",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/OneUptime/oneuptime",
-      "repo_url": "github.com/OneUptime/oneuptime",
-      "host": "github.com",
-      "owner": "OneUptime",
-      "repo": "oneuptime",
-      "app_references": [
-        "oneuptime"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__OneUptime__oneuptime.md",
-      "readme_download_url": "https://raw.githubusercontent.com/OneUptime/oneuptime/master/README.md",
-      "readme_sha256": "93021f8514b484e3d71ef62430bcdda2617e535be6c80c2087cf9306ded8157d",
       "error": null
     }
   ]

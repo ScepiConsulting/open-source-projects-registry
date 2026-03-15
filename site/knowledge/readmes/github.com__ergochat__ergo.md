@@ -76,15 +76,17 @@ to the GitHub Container Registry at [ghcr.io/ergochat/ergo](https://ghcr.io/ergo
 
 ### From Source
 
-You can also clone this repository and build from source. Typical deployments should use the `stable` branch, which points to the latest stable release. In general, `stable` should coincide with the latest published tag that is not designated as a beta or release candidate (for example, `v2.7.0-rc1` was an unstable release candidate and `v2.7.0` was the corresponding stable release), so you can also identify the latest stable release tag on the [releases page](https://github.com/ergochat/ergo/releases) and build that.
+You can also clone this repository and build from source. A quick start guide:
 
-The `master` branch is not recommended for production use since it may contain bugs, and because the forwards compatibility guarantees for the config file and the database that apply to releases do not apply to master. That is to say, running master may result in changes to your database that end up being incompatible with future versions of Ergo.
+1. Obtain an [up-to-date distribution of the Go language for your OS and architecture](https://golang.org/dl/). Check the output of `go version` to ensure it was installed correctly.
+1. Clone the repository.
+1. `git checkout stable`
+1. `make`
+1. You should now have a binary named `ergo` in the working directory.
+
+Ergo vendors all its dependencies, so you will not need to fetch any dependencies remotely. For more information, including on build customization, see [docs/BUILD.md](https://github.com/ergochat/ergo/blob/master/docs/BUILD.md).
 
 For information on contributing to Ergo, see [DEVELOPING.md](https://github.com/ergochat/ergo/blob/master/DEVELOPING.md).
-
-#### Building
-
-You'll need an [up-to-date distribution of the Go language for your OS and architecture](https://golang.org/dl/). Once that's installed (check the output of `go version`), just check out your desired branch or tag and run `make`. This will produce an executable binary named `ergo` in the base directory of the project. (Ergo vendors all its dependencies, so you will not need to fetch any dependencies remotely.)
 
 ## Configuration
 

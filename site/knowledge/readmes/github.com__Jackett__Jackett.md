@@ -93,14 +93,12 @@ Prior versions of Jackett are no longer supported.
  * Bangumi Moe
  * BigFANGroup
  * BitRu
- * BluDV
  * BlueRoms
  * BT.etree
  * BTdirectory (BT目录)
  * btstate
  * Byrutor
  * Catorrent
- * cpasbienClone
  * CrackingPatching
  * DaMagNet
  * Demonoid Clone
@@ -121,7 +119,6 @@ Prior versions of Jackett are no longer supported.
  * HDRTorrent
  * ilCorSaRoNeRo
  * Internet Archive (archive.org)
- * Isohunt2
  * kickasstorrents.to
  * kickasstorrents.ws
  * Knaben
@@ -146,7 +143,6 @@ Prior versions of Jackett are no longer supported.
  * OneJAV
  * OpenSharing
  * PC-torrent
- * Pirate's Paradise
  * plugintorrent
  * PornoTorrent
  * PornRips
@@ -179,6 +175,7 @@ Prior versions of Jackett are no longer supported.
  * Torrents.csv
  * Torrentsome (토렌트썸)
  * Torrenttip (토렌트팁)
+ * U2P
  * U3C3
  * Uindex
  * UzTracker
@@ -594,7 +591,6 @@ Prior versions of Jackett are no longer supported.
  * seedpool
  * SewerPT (下水道) [![(invite needed)][inviteneeded]](#)
  * SexTorrent
- * SFP (Share Friends Projekt)
  * ShaKaw [![(invite needed)][inviteneeded]](#)
  * Shareisland
  * Shazbat
@@ -682,7 +678,6 @@ Prior versions of Jackett are no longer supported.
  * WinterSakura [![(invite needed)][inviteneeded]](#)
  * World-In-HD [![(invite needed)][inviteneeded]](#)
  * World-of-Tomorrow [![(invite needed)][inviteneeded]](#)
- * x-ite.me (XM)
  * Xingwan (星湾) [![(invite needed)][inviteneeded]](#)
  * Xingyung (星陨阁) [![(invite needed)][inviteneeded]](#)
  * xloli (ilolicon PT)

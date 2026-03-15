@@ -1,8 +1,53 @@
 {
   "chunk": 6,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/SmilyOrg/photofield",
+      "repo_url": "github.com/SmilyOrg/photofield",
+      "host": "github.com",
+      "owner": "SmilyOrg",
+      "repo": "photofield",
+      "app_references": [
+        "photofield"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__SmilyOrg__photofield.md",
+      "readme_download_url": null,
+      "readme_sha256": "a78a7902a0a5c82718c808c7ab2b8c26f8f2c3b9a8925bd5861e3a9d0c9b02ef",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/SnapDrop/snapdrop",
+      "repo_url": "github.com/SnapDrop/snapdrop",
+      "host": "github.com",
+      "owner": "SnapDrop",
+      "repo": "snapdrop",
+      "app_references": [
+        "snapdrop"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__SnapDrop__snapdrop.md",
+      "readme_download_url": null,
+      "readme_sha256": "90990ea35e441163502d4255acfbf8bdc0f1c25796ee0bb4b2192198d10abbb4",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/Snouzy/workout-cool",
+      "repo_url": "github.com/Snouzy/workout-cool",
+      "host": "github.com",
+      "owner": "Snouzy",
+      "repo": "workout-cool",
+      "app_references": [
+        "workout-cool"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__Snouzy__workout-cool.md",
+      "readme_download_url": null,
+      "readme_sha256": "0d267b08ea412ceddfcdcd1a94a8f427bfb5f8a51f57ca8ea0b48073eb050b9d",
+      "error": null
+    },
     {
       "repo_key": "github.com/SolidInvoice/SolidInvoice",
       "repo_url": "github.com/SolidInvoice/SolidInvoice",
@@ -27,10 +72,10 @@
       "app_references": [
         "sonarqube"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__SonarSource__sonarqube.md",
-      "readme_download_url": null,
-      "readme_sha256": "d3534850ca1b3e68bb4556f94e0511493fe1e3f2a8b5d3d5680180480a298506",
+      "readme_download_url": "https://raw.githubusercontent.com/SonarSource/sonarqube/master/README.md",
+      "readme_sha256": "6d3ca18d55b4c14e537deaa9d110195ac9f20677ffd9bcece8d1165750808e82",
       "error": null
     },
     {
@@ -342,10 +387,10 @@
       "app_references": [
         "termix"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Termix-SSH__Termix.md",
-      "readme_download_url": null,
-      "readme_sha256": "f18c981381b2f084a3081ebdd601297feccae0c77f4ec30f80d0179ee8941278",
+      "readme_download_url": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/README.md",
+      "readme_sha256": "6e830ec620ab31103b0524747f135d0ef6096b351e2b50ae9e08e169e1099e30",
       "error": null
     },
     {
@@ -612,9 +657,9 @@
       "app_references": [
         "youtubedl-material"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Tzahi12345__YoutubeDL-Material.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Tzahi12345/YoutubeDL-Material/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "20e7106a6cd60d5c01def3d003ddbab9811a908700e6d1266bac84e56b2955fc",
       "error": null
     },
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__VityaSchel__lufin.md",
       "readme_download_url": null,
       "readme_sha256": "4d63780c45a9097259cfcaca2517d58490bfe601c92678aa592244f19420b643",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Volmarg/personal-management-system",
-      "repo_url": "github.com/Volmarg/personal-management-system",
-      "host": "github.com",
-      "owner": "Volmarg",
-      "repo": "personal-management-system",
-      "app_references": [
-        "personal-management-system"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Volmarg__personal-management-system.md",
-      "readme_download_url": null,
-      "readme_sha256": "c20f4cfc95125d10c9be4b685f532e07f22706fc611b17e0fc327f005bb61d60",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/VueTorrent/VueTorrent",
-      "repo_url": "github.com/VueTorrent/VueTorrent",
-      "host": "github.com",
-      "owner": "VueTorrent",
-      "repo": "VueTorrent",
-      "app_references": [
-        "vuetorrent"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__VueTorrent__VueTorrent.md",
-      "readme_download_url": null,
-      "readme_sha256": "17c0a7f3ace8f839c937160a1d41e8fb87d1a7ecd1a0e6b5427d7d304533e174",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/WGDashboard/WGDashboard",
-      "repo_url": "github.com/WGDashboard/WGDashboard",
-      "host": "github.com",
-      "owner": "WGDashboard",
-      "repo": "WGDashboard",
-      "app_references": [
-        "wgdashboard"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__WGDashboard__WGDashboard.md",
-      "readme_download_url": null,
-      "readme_sha256": "4ca5dd815635f35126fa684a66f4a8d4506859e8d686d5df1817ec29728dd280",
       "error": null
     }
   ]

@@ -20,6 +20,12 @@
 </p>
 
 <p align="center">
+<a href="LICENSE" target="blank">
+<img src="https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge" alt="LocalAI License"/>
+</a>
+</p>
+
+<p align="center">
 <a href="https://hub.docker.com/r/localai/localai" target="blank">
 <img src="https://img.shields.io/badge/dockerhub-images-important.svg?logo=Docker" alt="LocalAI Docker hub"/>
 </a>
@@ -48,8 +54,43 @@
 
 [![tests](https://github.com/go-skynet/LocalAI/actions/workflows/test.yml/badge.svg)](https://github.com/go-skynet/LocalAI/actions/workflows/test.yml)[![Build and Release](https://github.com/go-skynet/LocalAI/actions/workflows/release.yaml/badge.svg)](https://github.com/go-skynet/LocalAI/actions/workflows/release.yaml)[![build container images](https://github.com/go-skynet/LocalAI/actions/workflows/image.yml/badge.svg)](https://github.com/go-skynet/LocalAI/actions/workflows/image.yml)[![Bump dependencies](https://github.com/go-skynet/LocalAI/actions/workflows/bump_deps.yaml/badge.svg)](https://github.com/go-skynet/LocalAI/actions/workflows/bump_deps.yaml)[![Artifact Hub](https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/localai)](https://artifacthub.io/packages/search?repo=localai)
 
+<p align="center">
+<a href="https://github.com/mudler/LocalAI-examples" target="blank">
+<img src="https://img.shields.io/badge/📦_Examples_Repository-Browse_Ready--to--Run_Examples-blue?style=for-the-badge" alt="LocalAI Examples Repository"/>
+</a>
+</p>
+
 **LocalAI** is the free, Open Source OpenAI alternative. LocalAI act as a drop-in replacement REST API that's compatible with OpenAI (Elevenlabs, Anthropic... ) API specifications for local AI inferencing. It allows you to run LLMs, generate images, audio (and not only) locally or on-prem with consumer grade hardware, supporting multiple model families. Does not require GPU. It is created and maintained by [Ettore Di Giacinto](https://github.com/mudler).
 
+<details>
+<summary><strong>Table of Contents</strong></summary>
+
+- [Local Stack Family](#local-stack-family)
+- [Screenshots / Video](#screenshots--video)
+- [Quickstart](#-quickstart)
+  - [macOS Download](#macos-download)
+  - [Containers (Docker, podman, ...)](#containers-docker-podman-)
+- [Latest project news](#-latest-project-news)
+- [Features](#-features)
+- [Supported Backends & Acceleration](#-supported-backends--acceleration)
+  - [Text Generation & Language Models](#text-generation--language-models)
+  - [Audio & Speech Processing](#audio--speech-processing)
+  - [Image & Video Generation](#image--video-generation)
+  - [Specialized AI Tasks](#specialized-ai-tasks)
+  - [Hardware Acceleration Matrix](#hardware-acceleration-matrix)
+  - [Community and integrations](#-community-and-integrations)
+  - [Resources](#-resources)
+- [Media, Blogs, Social](#book--media-blogs-social)
+- [Autonomous Development Team](#-autonomous-development-team)
+- [Citation](#citation)
+- [Sponsors](#️-sponsors)
+  - [Individual sponsors](#individual-sponsors)
+- [Star history](#-star-history)
+- [License](#-license)
+- [Acknowledgements](#-acknowledgements)
+- [Contributors](#-contributors)
+
+</details>
 
 ## Local Stack Family
 
@@ -77,19 +118,19 @@ Liking LocalAI? LocalAI is part of an integrated suite of AI infrastructure tool
 
 | Talk Interface | Generate Audio |
 | --- | --- |
-| ![Screenshot 2025-03-31 at 12-01-36 LocalAI - Talk](./docs/assets/images/screenshots/screenshot_tts.png) | ![Screenshot 2025-03-31 at 12-01-29 LocalAI - Generate audio with voice-en-us-ryan-low](./docs/assets/images/screenshots/screenshot_tts.png) |
+| ![LocalAI - Talk](./docs/assets/images/screenshots/screenshot_talk.png) | ![LocalAI - Generate Audio](./docs/assets/images/screenshots/screenshot_tts.png) |
 
 | Models Overview | Generate Images |
 | --- | --- |
-| ![Screenshot 2025-03-31 at 12-01-20 LocalAI - Models](./docs/assets/images/screenshots/screenshot_gallery.png) | ![Screenshot 2025-03-31 at 12-31-41 LocalAI - Generate images with flux 1-dev](./docs/assets/images/screenshots/screenshot_image.png) |
+| ![LocalAI - Models](./docs/assets/images/screenshots/screenshot_gallery.png) | ![LocalAI - Generate Images](./docs/assets/images/screenshots/screenshot_image.png) |
 
 | Chat Interface | Home |
 | --- | --- |
-| ![Screenshot 2025-03-31 at 11-57-44 LocalAI - Chat with localai-functioncall-qwen2 5-7b-v0 5](./docs/assets/images/screenshots/screenshot_chat.png) | ![Screenshot 2025-03-31 at 11-57-23 LocalAI API - c2a39e3 (c2a39e3639227cfd94ffffe9f5691239acc275a8)](./docs/assets/images/screenshots/screenshot_home.png) |
+| ![LocalAI - Chat](./docs/assets/images/screenshots/screenshot_chat.png) | ![LocalAI - Home](./docs/assets/images/screenshots/screenshot_home.png) |
 
 | Login | Swarm |
 | --- | --- |
-|![Screenshot 2025-03-31 at 12-09-59 ](./docs/assets/images/screenshots/screenshot_login.png) | ![Screenshot 2025-03-31 at 12-10-39 LocalAI - P2P dashboard](./docs/assets/images/screenshots/screenshot_p2p.png) |
+| ![LocalAI - Login](./docs/assets/images/screenshots/screenshot_login.png) | ![LocalAI - P2P Dashboard](./docs/assets/images/screenshots/screenshot_p2p.png) |
 
 ## 💻 Quickstart
 
@@ -153,27 +194,6 @@ docker run -ti --name local-ai -p 8080:8080 --device=/dev/dri/card1 --device=/de
 docker run -ti --name local-ai -p 8080:8080 localai/localai:latest-gpu-vulkan
 ```
 
-#### AIO Images (pre-downloaded models):
-
-```bash
-# CPU version
-docker run -ti --name local-ai -p 8080:8080 localai/localai:latest-aio-cpu
-
-# NVIDIA CUDA 13 version
-docker run -ti --name local-ai -p 8080:8080 --gpus all localai/localai:latest-aio-gpu-nvidia-cuda-13
-
-# NVIDIA CUDA 12 version
-docker run -ti --name local-ai -p 8080:8080 --gpus all localai/localai:latest-aio-gpu-nvidia-cuda-12
-
-# Intel GPU version
-docker run -ti --name local-ai -p 8080:8080 localai/localai:latest-aio-gpu-intel
-
-# AMD GPU version
-docker run -ti --name local-ai -p 8080:8080 --device=/dev/kfd --device=/dev/dri --group-add=video localai/localai:latest-aio-gpu-hipblas
-```
-
-For more information about the AIO images and pre-downloaded models, see [Container Documentation](https://localai.io/basics/container/).
-
 To load models:
 
 ```bash
@@ -194,7 +214,7 @@ local-ai run oci://localai/phi-2:latest
 For more information, see [💻 Getting started](https://localai.io/basics/getting_started/index.html), if you are interested in our roadmap items and future enhancements, you can see the [Issues labeled as Roadmap here](https://github.com/mudler/LocalAI/issues?q=is%3Aissue+is%3Aopen+label%3Aroadmap)
 
 ## 📰 Latest project news
-- March 2026: [Agent management](https://github.com/mudler/LocalAI/pull/8820), [New React UI](https://github.com/mudler/LocalAI/pull/8772), [WebRTC](https://github.com/mudler/LocalAI/pull/8790),[MLX-distributed via P2P and RDMA](https://github.com/mudler/LocalAI/pull/8801)
+- March 2026: [Agent management](https://github.com/mudler/LocalAI/pull/8820), [New React UI](https://github.com/mudler/LocalAI/pull/8772), [WebRTC](https://github.com/mudler/LocalAI/pull/8790),[MLX-distributed via P2P and RDMA](https://github.com/mudler/LocalAI/pull/8801), [MCP Apps, MCP Client-side](https://github.com/mudler/LocalAI/pull/8947)
 - February 2026: [Realtime API for audio-to-audio with tool calling](https://github.com/mudler/LocalAI/pull/6245), [ACE-Step 1.5 support](https://github.com/mudler/LocalAI/pull/8396)
 - January 2026: **LocalAI 3.10.0** - Major release with Anthropic API support, Open Responses API for stateful agents, video & image generation suite (LTX-2), unified GPU backends, tool streaming & XML parsing, system-aware backend gallery, crash fixes for AVX-only CPUs and AMD VRAM reporting, request tracing, and new backends: **Moonshine** (ultra-fast transcription), **Pocket-TTS** (lightweight TTS). Vulkan arm64 builds now available. [Release notes](https://github.com/mudler/LocalAI/releases/tag/v3.10.0).
 - December 2025: [Dynamic Memory Resource reclaimer](https://github.com/mudler/LocalAI/pull/7583), [Automatic fitting of models to multiple GPUS(llama.cpp)](https://github.com/mudler/LocalAI/pull/7584), [Added Vibevoice backend](https://github.com/mudler/LocalAI/pull/7494)
@@ -209,7 +229,7 @@ For more information, see [💻 Getting started](https://localai.io/basics/getti
 - May 2025: Important: image name changes [See release](https://github.com/mudler/LocalAI/releases/tag/v2.29.0)
 - Apr 2025: Rebrand, WebUI enhancements
 - Apr 2025: [LocalAGI](https://github.com/mudler/LocalAGI) and [LocalRecall](https://github.com/mudler/LocalRecall) join the LocalAI family stack.
-- Apr 2025: WebUI overhaul, AIO images updates
+- Apr 2025: WebUI overhaul
 - Feb 2025: Backend cleanup, Breaking changes, new backends (kokoro, OutelTTS, faster-whisper), Nvidia L4T images
 - Jan 2025: LocalAI model release: https://huggingface.co/mudler/LocalAI-functioncall-phi-4-v0.3, SANA support in diffusers: https://github.com/mudler/LocalAI/pull/4603
 - Dec 2024: stablediffusion.cpp backend (ggml) added ( https://github.com/mudler/LocalAI/pull/4289 )
@@ -257,6 +277,7 @@ LocalAI supports a comprehensive range of AI backends with multiple acceleration
 | **transformers** | HuggingFace transformers framework | CUDA 12/13, ROCm, Intel, CPU |
 | **MLX** | Apple Silicon LLM inference | Metal (M1/M2/M3+) |
 | **MLX-VLM** | Apple Silicon Vision-Language Models | Metal (M1/M2/M3+) |
+| **vLLM Omni** | Multimodal vLLM with vision and audio | CUDA 12/13, ROCm, Intel |
 
 ### Audio & Speech Processing
 | Backend | Description | Acceleration Support |
@@ -274,6 +295,12 @@ LocalAI supports a comprehensive range of AI backends with multiple acceleration
 | **vibevoice** | Real-time TTS with voice cloning | CUDA 12/13, ROCm, Intel, CPU |
 | **pocket-tts** | Lightweight CPU-based TTS | CUDA 12/13, ROCm, Intel, CPU |
 | **qwen-tts** | High-quality TTS with custom voice, voice design, and voice cloning | CUDA 12/13, ROCm, Intel, CPU |
+| **nemo** | NVIDIA NeMo framework for speech models | CUDA 12/13, ROCm, Intel, CPU |
+| **outetts** | OuteTTS with voice cloning | CUDA 12/13, CPU |
+| **faster-qwen3-tts** | Faster Qwen3 TTS | CUDA 12/13, ROCm, Intel, CPU |
+| **qwen-asr** | Qwen ASR speech recognition | CUDA 12/13, ROCm, Intel, CPU |
+| **voxcpm** | VoxCPM speech understanding | CUDA 12/13, Metal, CPU |
+| **whisperx** | Enhanced Whisper transcription | CUDA 12/13, ROCm, Intel, CPU |
 | **ace-step** | Music generation from text descriptions, lyrics, or audio samples | CUDA 12/13, ROCm, Intel, Metal, CPU |
 
 ### Image & Video Generation
@@ -434,6 +461,7 @@ LocalAI couldn't have been built without the help of great software already avai
 - https://github.com/EdVince/Stable-Diffusion-NCNN
 - https://github.com/ggerganov/whisper.cpp
 - https://github.com/rhasspy/piper
+- [exo](https://github.com/exo-explore/exo) for the MLX distributed auto-parallel sharding implementation
 
 ## 🤗 Contributors
 

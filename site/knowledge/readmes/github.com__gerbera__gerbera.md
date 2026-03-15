@@ -52,11 +52,12 @@ sudo make install
 
 | Library             | Min Version  | Recommended  | Latest tested        | Required?     | Note                             | Default  |
 |---------------------|--------------|--------------|----------------------|---------------|----------------------------------|----------|
-| [libupnp]           | 1.14.6       | 1.14.30      | 1.18.1               | XOR libnpupnp | UPnP protocol support            |          |
+| [libupnp]           | 1.14.6       | 1.14.30      | 1.18.2               | XOR libnpupnp | UPnP protocol support            |          |
 | [libnpupnp]         | 4.2.1        | 5.1.2        | 6.2.3                | XOR libupnp   | Alternate UPnP protocol support  | Disabled |
 | libuuid             |              |              |                      | Depends on OS | Not required on \*BSD            |          |
 | [pugixml]           |              | 1.10         | 1.15                 | Required      | XML file and data support        |          |
 | [jsoncpp]           | 1.7.4        | 1.9.6        | 1.9.6                | Required      | JSON data support                |          |
+| [cxxopts]           | 3.2.0        | 3.2.1        | 3.3.1                | Required      | Command line parsing             | Bundled  |
 | libiconv            |              |              |                      | Required      | Charset conversion               |          |
 | sqlite3             | 3.7.0        | 3.35.5       | 3.50.2               | Required      | Database storage                 |          |
 | zlib                |              |              |                      | Required      | Data compression                 |          |
@@ -68,7 +69,7 @@ sudo make install
 | [libpqxx]           | 7.10.1       | 7.10.3       | 7.10.3               | Optional      | Alternate database PostgreSQL    | Disabled |
 | [libpq]             | 12.22        |              | 17.0.6               | Optional      | required by [libpqxx]            | Disabled |
 | curl                |              |              |                      | Optional      | Enables web services             | Enabled  |
-| [taglib]            | 1.12         | 1.12         | 2.2                  | Optional      | Audio tag support                | Enabled  |
+| [taglib]            | 1.12         | 1.12         | 2.2.1                | Optional      | Audio tag support                | Enabled  |
 | libmagic            |              |              |                      | Optional      | File type detection              | Enabled  |
 | [wavpack]           | 5.1.0        | 5.4.0        | 5.9.0                | Optional      | WavPack metadata support         | Disabled |
 | [libmatroska]       | 1.4.8        | 1.6.3        | 1.7.1                | Optional      | MKV metadata                     | Enabled  |
@@ -80,7 +81,7 @@ sudo make install
 | [ffmpegthumbnailer] | 2.1.1        | 2.2.3        | 2.3.0                | Optional      | Generate video/image thumbnails  | Disabled |
 | [libsystemd]        | 237          | 254          | 257                  | Optional      | Interact with systemd            | Disabled |
 | inotify             |              |              |                      | Optional      | Efficient file monitoring        | Enabled  |
-| [libzippp]          | v7.1-g8992d6 | v7.1-g8992d6 | v7.1-g8992d6         | Optional      | ZIP Package download             | Enabled  |
+| [libzippp]          | v7.1-g8992d6 | v7.1-g8992d6 | v7.1-gd4a60d         | Optional      | ZIP Package download             | Enabled  |
 | [libzip]            | 1.10.1       | 1.11.4       | 1.11.4               | Optional      | Required for [libzippp]          | Enabled  |
 
 ## Development Dependencies
@@ -108,6 +109,7 @@ sudo make install
         Gerbera Contributors
 
 [cmake]: https://cmake.org/
+[cxxopts]: https://github.com/jarro2783/cxxopts/
 [Docker Hub]: https://hub.docker.com/r/gerbera/gerbera
 [doxygen]: https://github.com/doxygen/doxygen
 [duktape]: https://duktape.org

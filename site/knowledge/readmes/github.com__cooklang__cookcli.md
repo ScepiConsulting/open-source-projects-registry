@@ -97,6 +97,38 @@ Create a shopping list from multiple recipes:
 $ cook -v shopping-list "Neapolitan Pizza.cook" "./Breakfast/Easy Pancakes.cook""
 ```
 
+Plan your meals with a menu file (`Weekly Plan.menu`):
+
+```
+---
+servings: 2
+---
+
+==Saturday==
+
+Breakfast: \
+- @oats{1%cup} with @milk{1/2%cup} and @honey{1%tbsp}
+
+Lunch: \
+- @./lamb-chops{}
+
+Dinner: \
+- @./Neapolitan Pizza{}
+
+==Sunday==
+
+Breakfast: \
+- @./Breakfast/Easy Pancakes{} with @maple syrup{2%tbsp}
+
+Lunch: \
+- @./Salads/Caprese{}
+
+Dinner: \
+- @./Risotto{}
+```
+
+Menu files let you reference recipes and inline ingredients, plan by day and meal, and generate a combined shopping list for the whole plan.
+
 Or start the web server to browse your recipes:
 
 ```bash
@@ -106,10 +138,11 @@ Serving Web UI on http://localhost:9080
 Serving recipe files from: "/Users/chefalexey/recipes"
 ```
 
-<img width="600" alt="recipes" src="docs/screenshots/recipe-list.png" />
-<img width="600" alt="recipe" src="docs/screenshots/recipe-detail.png" />
-<img width="600" alt="shopping list" src="docs/screenshots/shopping-list.png" />
-<img width="600" alt="pantry" src="docs/screenshots/pantry.png" />
+<img width="600" alt="recipes" src="docs/screenshots/recipe-list.png?v=2" />
+<img width="600" alt="recipe" src="docs/screenshots/recipe-detail.png?v=2" />
+<img width="600" alt="menu" src="docs/screenshots/menu.png?v=2" />
+<img width="600" alt="shopping list" src="docs/screenshots/shopping-list.png?v=2" />
+<img width="600" alt="pantry" src="docs/screenshots/pantry.png?v=2" />
 
 
 ## 📦 Installation
@@ -118,7 +151,7 @@ Serving recipe files from: "/Users/chefalexey/recipes"
 
 Download the latest release for your platform from the [releases page](https://github.com/cooklang/CookCLI/releases) and add it to your PATH.
 
-### macOS
+### macOS/Linux
 
 Using Homebrew:
 
@@ -127,8 +160,6 @@ brew install cookcli
 ```
 
 ### Install with Cargo
-
-> not working at the moment, re: https://github.com/cooklang/cookcli/issues/155#issuecomment-3239646168
 
 If you have Rust installed:
 

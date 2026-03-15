@@ -203,6 +203,7 @@ pnpm dev
 | `S3_ACCESS_KEY_ID`                        | S3 access key                                             | For file uploads (optional with IRSA) | `xxx`                                                       |
 | `S3_SECRET_ACCESS_KEY`                    | S3 secret key                                             | For file uploads (optional with IRSA) | `xxx`                                                       |
 | `S3_FORCE_PATH_STYLE`                     | Use path-style URLs for S3                                | For file uploads                      | `true`                                                      |
+| `S3_AVATAR_UPLOAD_LIMIT`                  | Maximum avatar file size in bytes                         | For file uploads                      | `2097152` (2MB)                                             |
 | `NEXT_PUBLIC_STORAGE_URL`                 | Storage service URL                                       | For file uploads                      | `https://storage.kanbn.com`                                 |
 | `NEXT_PUBLIC_STORAGE_DOMAIN`              | Storage domain name                                       | For file uploads                      | `kanbn.com`                                                 |
 | `NEXT_PUBLIC_USE_VIRTUAL_HOSTED_URLS`     | Use virtual-hosted style URLs (bucket.domain.com)         | For file uploads (optional)           | `true`                                                      |
@@ -212,6 +213,7 @@ pnpm dev
 | `NEXT_PUBLIC_DISABLE_SIGN_UP`             | Disable sign up                                           | For authentication                    | `false`                                                     |
 | `NEXT_PUBLIC_WHITE_LABEL_HIDE_POWERED_BY` | Hide “Powered by kan.bn” on public boards (self-host)     | For white labelling                   | `true`                                                      |
 | `KAN_ADMIN_API_KEY`                       | Admin API key for stats and admin endpoints               | For admin/monitoring                  | `your-secret-admin-key`                                     |
+| `LOG_LEVEL`                               | Log verbosity level (debug, info, warn, error)            | No (defaults to debug in dev, info in prod) | `info`                                                 |
 
 See `.env.example` for a complete list of supported environment variables.
 

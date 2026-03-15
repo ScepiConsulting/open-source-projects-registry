@@ -1,8 +1,53 @@
 {
   "chunk": 10,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/cially/cially",
+      "repo_url": "github.com/cially/cially",
+      "host": "github.com",
+      "owner": "cially",
+      "repo": "cially",
+      "app_references": [
+        "cially"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__cially__cially.md",
+      "readme_download_url": null,
+      "readme_sha256": "c4ced5106eaa3853d44d13dc4be976c20991a8c62cf6c60eb8912526e8501a3f",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/circled-me/server",
+      "repo_url": "github.com/circled-me/server",
+      "host": "github.com",
+      "owner": "circled-me",
+      "repo": "server",
+      "app_references": [
+        "circled-me"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__circled-me__server.md",
+      "readme_download_url": null,
+      "readme_sha256": "6781bb9e4b42c086b55621ce8a742248e160c0efc2feeeb6a1cd260259920dc8",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/ciur/papermerge",
+      "repo_url": "github.com/ciur/papermerge",
+      "host": "github.com",
+      "owner": "ciur",
+      "repo": "papermerge",
+      "app_references": [
+        "papermerge"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__ciur__papermerge.md",
+      "readme_download_url": null,
+      "readme_sha256": "6b0e7a5a8f719d03fb85faec78860a777be35a772b9a31decfc616aefeeca19d",
+      "error": null
+    },
     {
       "repo_key": "github.com/civilblur/mazanoke",
       "repo_url": "github.com/civilblur/mazanoke",
@@ -87,9 +132,9 @@
       "app_references": [
         "cloudflared"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__cloudflare__cloudflared.md",
-      "readme_download_url": "https://raw.githubusercontent.com/cloudflare/cloudflared/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4ba729d32fc56a9c7a92f98be3a94113442fc1adc11e1d744bb88fb84f3073b8",
       "error": null
     },
@@ -327,10 +372,10 @@
       "app_references": [
         "cookcli"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__cooklang__cookcli.md",
-      "readme_download_url": null,
-      "readme_sha256": "2d4a2ef138afd258f34599dcd96ff91a5997e86bfa591707e335e2838b31a6a6",
+      "readme_download_url": "https://raw.githubusercontent.com/cooklang/cookcli/main/README.md",
+      "readme_sha256": "f218c34bd72b9ba1a8a16ac0b1a9e48ac365dfcff35e29e8cf937755a18c1d43",
       "error": null
     },
     {
@@ -342,10 +387,10 @@
       "app_references": [
         "coolify"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__coollabsio__coolify.md",
-      "readme_download_url": null,
-      "readme_sha256": "9582638085a7c1a9c13900a3772e9b0aca134cd8ad2e44ef26a1a5d7c7727929",
+      "readme_download_url": "https://raw.githubusercontent.com/coollabsio/coolify/v4.x/README.md",
+      "readme_sha256": "611632f98a4440d4e4c44d65309581ede62b35ca9a65172bad9f2c51d883a728",
       "error": null
     },
     {
@@ -387,10 +432,10 @@
       "app_references": [
         "ontime"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__cpvalente__ontime.md",
-      "readme_download_url": null,
-      "readme_sha256": "76b09b8a4b3884919bcadc82001f563e8ce0ae076381c88f26212066562b8f54",
+      "readme_download_url": "https://raw.githubusercontent.com/cpvalente/ontime/master/README.md",
+      "readme_sha256": "8161cf2128d2264d84e2f4ab4e06c6ff9c19934e3aeaf5e5d864e20c63e966ce",
       "error": null
     },
     {
@@ -525,7 +570,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__cshum__imagor-studio.md",
       "readme_download_url": "https://raw.githubusercontent.com/cshum/imagor-studio/main/README.md",
-      "readme_sha256": "c543721243bd2ba1aaace08dfbb1a2099f78427bc0451025b75b758fa1e90fbc",
+      "readme_sha256": "daeaea21d2d6c345a7c7b56877c70a2eabeecf29f999bb9ade13d4d8caf598b2",
       "error": null
     },
     {
@@ -582,10 +627,10 @@
       "app_references": [
         "dagu"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dagu-org__dagu.md",
-      "readme_download_url": null,
-      "readme_sha256": "7c6848b229bb30f85497b6b3d22e3d25793d1fcf7b212bd90a22525777af4370",
+      "readme_download_url": "https://raw.githubusercontent.com/dagu-org/dagu/main/README.md",
+      "readme_sha256": "02f1d5630d5c867b6c46c1b688396a42007cd8a6949b2526c060ca828d7734b3",
       "error": null
     },
     {
@@ -672,10 +717,10 @@
       "app_references": [
         "hortusfox"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__danielbrendel__hortusfox-web.md",
-      "readme_download_url": null,
-      "readme_sha256": "bd7dcf85a79cc9ca8298f4f0f99d6023289ce97e5b91a59a254e56edbbe21535",
+      "readme_download_url": "https://raw.githubusercontent.com/danielbrendel/hortusfox-web/main/README.md",
+      "readme_sha256": "3901abeb097dc408a7969abf3595375fab7726ca5f555820ada9f677fa713047",
       "error": null
     },
     {
@@ -702,55 +747,10 @@
       "app_references": [
         "trala"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dannybouwers__trala.md",
-      "readme_download_url": null,
-      "readme_sha256": "93f472b8c342430d5ac7d1618aa2135cbaa9a9fcc2c3e80fb97c91bb7f276b73",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/databasus/databasus",
-      "repo_url": "github.com/databasus/databasus",
-      "host": "github.com",
-      "owner": "databasus",
-      "repo": "databasus",
-      "app_references": [
-        "databasus"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__databasus__databasus.md",
-      "readme_download_url": null,
-      "readme_sha256": "dc8dfbf9a662f109c538da63c25685e2034e337deaba5cd745ef4e54ed68ccf1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/datarhei/restreamer",
-      "repo_url": "github.com/datarhei/restreamer",
-      "host": "github.com",
-      "owner": "datarhei",
-      "repo": "restreamer",
-      "app_references": [
-        "restreamer"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__datarhei__restreamer.md",
-      "readme_download_url": null,
-      "readme_sha256": "00b2eeeaf4d9e481f9bbd54f4d659728917cc6a8c9fe5538efaf2d83590069eb",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/davideshay/groceries",
-      "repo_url": "github.com/davideshay/groceries",
-      "host": "github.com",
-      "owner": "davideshay",
-      "repo": "groceries",
-      "app_references": [
-        "specifically-clementines"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__davideshay__groceries.md",
-      "readme_download_url": null,
-      "readme_sha256": "e7525b4f1e7d953c6dd8265ddc075eddaee2ee74cf850b94a257946c050f27fb",
+      "readme_download_url": "https://raw.githubusercontent.com/dannybouwers/trala/main/README.md",
+      "readme_sha256": "b162860a35c2c9e968ef9c6e7691b22dda1759ed315db2dcf14450541b07e0f9",
       "error": null
     }
   ]

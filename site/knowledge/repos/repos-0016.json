@@ -1,8 +1,53 @@
 {
   "chunk": 16,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/kimdre/doco-cd",
+      "repo_url": "github.com/kimdre/doco-cd",
+      "host": "github.com",
+      "owner": "kimdre",
+      "repo": "doco-cd",
+      "app_references": [
+        "doco-cd"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__kimdre__doco-cd.md",
+      "readme_download_url": null,
+      "readme_sha256": "f3f32cdbb0ee4e724a69d5c3452253d161b44f286729deefc7995c01198a18bd",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/kite-org/kite",
+      "repo_url": "github.com/kite-org/kite",
+      "host": "github.com",
+      "owner": "kite-org",
+      "repo": "kite",
+      "app_references": [
+        "kite-kubernetes"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__kite-org__kite.md",
+      "readme_download_url": "https://raw.githubusercontent.com/kite-org/kite/main/README.md",
+      "readme_sha256": "ea5aa26f7ddf4a97014b2372a5ab3ff42c1ff69d1c6de630cd55273ca7a91add",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/kittendevv/Invio",
+      "repo_url": "github.com/kittendevv/Invio",
+      "host": "github.com",
+      "owner": "kittendevv",
+      "repo": "Invio",
+      "app_references": [
+        "invio"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__kittendevv__Invio.md",
+      "readme_download_url": null,
+      "readme_sha256": "5937514d395218826468b04a792ff0a95b7e3d81adffd2769b42c1cf9aec758f",
+      "error": null
+    },
     {
       "repo_key": "github.com/klausmeyer/docker-registry-browser",
       "repo_url": "github.com/klausmeyer/docker-registry-browser",
@@ -192,10 +237,10 @@
       "app_references": [
         "vouchervault"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__l4rm4nd__VoucherVault.md",
-      "readme_download_url": null,
-      "readme_sha256": "67f63ae62f93ced1233bd698c337bd10a3f494621146cfaff9eed0d54fa269b0",
+      "readme_download_url": "https://raw.githubusercontent.com/l4rm4nd/VoucherVault/main/README.md",
+      "readme_sha256": "6da3e692959541443e79e01db7b48655b9ec80f52604adb8818749e7132b4a6d",
       "error": null
     },
     {
@@ -297,10 +342,10 @@
       "app_references": [
         "revel"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__letsrevel__revel-backend.md",
-      "readme_download_url": null,
-      "readme_sha256": "f8e6151272ad5ec373a73cd3d4629effec3fc9031f06e1da4566f7039f3b6839",
+      "readme_download_url": "https://raw.githubusercontent.com/letsrevel/revel-backend/main/README.md",
+      "readme_sha256": "d48460421cb393fb168051fae927acdfa9dc10d2ce2aeacd28dbe7fe5c9b1407",
       "error": null
     },
     {
@@ -435,7 +480,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__lklynet__aurral.md",
       "readme_download_url": "https://raw.githubusercontent.com/lklynet/aurral/main/README.md",
-      "readme_sha256": "9feec2b469f2ea2c1822ce5a9057b905888ba2ead4c63202b715f2f613a8c321",
+      "readme_sha256": "1ff2f32f89d25f36ddb40eeb8b91ec25d9bf887aa8bdfafb9eb6c6e03d98014d",
       "error": null
     },
     {
@@ -687,10 +732,10 @@
       "app_references": [
         "rallly"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__lukevella__rallly.md",
-      "readme_download_url": null,
-      "readme_sha256": "96cca614451c77789f6a38435ae8cdc045c02b016292eff02abeaad58ad86398",
+      "readme_download_url": "https://raw.githubusercontent.com/lukevella/rallly/main/README.md",
+      "readme_sha256": "93504a7f167ae54eb286d0524e49169de208553ce5cf963d3880004395c08446",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__lunarphp__lunar.md",
       "readme_download_url": null,
       "readme_sha256": "f5d0bbed6a8e9a7c33f2a7bc226f14d52b1796002ed8a84ca6afff9a264a6ce1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/lyqht/mini-qr",
-      "repo_url": "github.com/lyqht/mini-qr",
-      "host": "github.com",
-      "owner": "lyqht",
-      "repo": "mini-qr",
-      "app_references": [
-        "mini-qr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__lyqht__mini-qr.md",
-      "readme_download_url": null,
-      "readme_sha256": "3a348e40bb557b51b964ef29c100354943af16883dd9d2e0f5d4759e698f7a35",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/m1k1o/neko",
-      "repo_url": "github.com/m1k1o/neko",
-      "host": "github.com",
-      "owner": "m1k1o",
-      "repo": "neko",
-      "app_references": [
-        "neko"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__m1k1o__neko.md",
-      "readme_download_url": null,
-      "readme_sha256": "b1c000fc19526d59375d0a0879180a67cee60f2dc297df9128510e0d213af690",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/m3ue/m3u-editor",
-      "repo_url": "github.com/m3ue/m3u-editor",
-      "host": "github.com",
-      "owner": "m3ue",
-      "repo": "m3u-editor",
-      "app_references": [
-        "m3u-editor"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__m3ue__m3u-editor.md",
-      "readme_download_url": "https://raw.githubusercontent.com/m3ue/m3u-editor/master/README.md",
-      "readme_sha256": "c80269ed8f9717b3e2d498fdcf434b9010183041714ddd2e130301d90fe34693",
       "error": null
     }
   ]

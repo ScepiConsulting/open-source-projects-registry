@@ -1,5 +1,4 @@
 
-
 <p align="center">
   <img src="images/poznote.svg" alt="Poznote Logo" width="80">
 </p>
@@ -15,35 +14,26 @@
 <h3 align="center">
 Poznote is a personal note-taking and documentation platform.
 </h3>
-This project started from a simple personal need: a practical way to write, organize, and synchronize my technical and personal notes. From the beginning, the priority has been simplicity and ease of use (I have no patience for bloated interfaces with unnecessary options). Advanced features exist, but they never get in the way of a clear and accessible experience.
+This project started from a simple personal need: a practical way to write, organize, and synchronize my technical and personal notes. From the beginning, the priority has been simplicity and ease of use.<br>
+
 <br>
+
 <p align="center">
-  <a href="https://ko-fi.com/Q5Q61IECOW"><img src="https://ko-fi.com/img/githubbutton_sm.svg" alt="Support me on Ko-fi"></a>
+  <a href="https://poznote.com/about.html">Learn more about the project and its background on the Poznote About page</a>
 </p>
 
-
-
+<br>
 <p align="center">
   <img src="images/poznote-light.png" alt="Poznote-light" width="100%">
 </p>
 
-<p align="center">
-  <img src="images/poznote-dark.png" alt="Poznote-dark" width="100%">
-</p>
+### Features
 
-Discover all the [features here](https://poznote.com/index.html#features).
+Discover all the features [here](https://poznote.com/index.html#features)
 
 <p align="center">
   <img src="images/poznote-features.png" alt="Poznote Features" width="100%">
 </p>
-
-## Try the Poznote demo
-
-Username: `poznote`
-<br>
-Password: `poznote`
-
-[poznote-demo.up.railway.app](https://poznote-demo.up.railway.app)
 
 ## Table of content
 
@@ -59,7 +49,7 @@ Password: `poznote`
 - [Offline View](#offline-view)
 - [Multiple Instances](#multiple-instances)
 - [MCP Server](#mcp-server)
-- [Poznote Extension](#poznote-extension)
+- [Chrome Extension](#poznote-extension)
 - [API Documentation](#api-documentation)
 - [Tech Stack](#tech-stack)
 
@@ -230,13 +220,7 @@ After installation, access Poznote in your web browser:
 
 ## Change Settings
 
-Poznote configuration is split between two locations:
-
-<details>
-<summary><strong>System Settings (`.env` file)</strong></summary>
-<br>
-
-System settings can be modified in the `.env` file. Several categories of settings are available:
+Most settings can be modified directly in the application through the settings page, but some system settings can only be changed in the `.env` file and require a container restart.
 
 - **Authentication** - Admin and user passwords
 - **Web Server** - HTTP port configuration
@@ -246,7 +230,7 @@ System settings can be modified in the `.env` file. Several categories of settin
 - **Git Sync** - GitHub and Forgejo synchronization
 - **MCP Server** - AI assistant integration
 
-**How to Modify System Settings**
+### Modify System Settings (`.env`)
 
 Navigate to your Poznote directory:
 ```bash
@@ -258,30 +242,13 @@ Stop the running Poznote container:
 docker compose down
 ```
 
-Edit and modify the `.env` file with your preferred text editor.
+Edit your `.env` file with your preferred text editor.
 
 Save the file and restart Poznote to apply changes:
 ```bash
 docker compose up -d
 ```
 
-</details>
-
-<details>
-<summary><strong>Application Settings (Settings Page)</strong></summary>
-<br>
-
-Additional settings are available through the Poznote web interface and are stored in the database or web browser local storage.
-
-**How to Modify Application Settings**
-
-1. Log in to Poznote
-2. Click on the **Settings** icon (⚙️) in the navigation bar
-3. Modify your preferences directly in the interface
-
-> **Note:** Settings in the web interface are stored in the database and persist across container restarts. Only `.env` file changes require container restart.
-
-</details>
 
 ## Authentication
 
@@ -289,24 +256,12 @@ Additional settings are available through the Poznote web interface and are stor
 <summary><strong>Traditional Authentication</strong></summary>
 <br>
 
-Poznote uses a password model based on the `.env` file. You define your administrator and standard user passwords in the `.env` file, and users log in with their username and password.
+Poznote uses a password model based on the `.env` file. Define your administrator and user passwords, and users log in with their username and password.
 
-#### Authentication Model
+#### Configuration
 
-- **Global Authentication**: Uses `POZNOTE_PASSWORD` (admin) and `POZNOTE_PASSWORD_USER` (standard users) defined in your `.env` file.
-- **User-Specific Passwords**: You can set individual passwords for standard users using `POZNOTE_PASSWORD_{USERNAME}` in your `.env`.
-- **User Profiles**: Each user has a unique profile (username) with isolated data.
-- **Automatic Profile Selection**: The system automatically selects the correct profile when you log in based on your credentials.
-- **First Account**: On a new installation or migration, the first user created is always an administrator named `admin_change_me`.
-
-
-
-#### Login Flow
-
-1. User opens Poznote.
-2. User enters their **username** and **password**.
-3. System automatically selects the appropriate user profile.
-4. User accesses their personal data space.
+- **Global Authentication**: Set `POZNOTE_PASSWORD` (admin) and `POZNOTE_PASSWORD_USER` (standard users) in your `.env` file.
+- **User-Specific Passwords**: Set individual passwords using `POZNOTE_PASSWORD_{USERNAME}` in your `.env`.
 
 </details>
 
@@ -561,8 +516,7 @@ You can also trigger manual push/pull from the **Sync Status** page (accessible 
 ## Restore / Import
 
 **Via Web Interface (Settings > Restore/Import):**
-- **All users** can restore backups to their own profile
-- **Admins** can access additional disaster recovery tools
+- All users can restore backups to their own profile
 - Supports complete backup restoration and individual file imports
 
 **Via API (Administrators only):**
@@ -578,14 +532,6 @@ Upload the complete backup ZIP to restore everything:
 
   - Replaces database, restores all notes, and attachments
   - Works for all workspaces at once
-
-</details>
-
-<details>
-<summary><strong>Disaster Recovery (Reconstruct System Index)</strong></summary>
-<br>
-
-In case of system corruption or loss of the master database, Poznote can reconstruct its entire user index by scanning the data folders. This tool is accessible via Settings > Advanced > Reconstruct System Index.
 
 </details>
 
@@ -627,6 +573,14 @@ Import a ZIP archive containing multiple notes from Obsidian:
   - Poznote automatically imports images if they are at the zip file root
 
 </details>
+
+## Admin Tools
+
+Admins can access additional tools via Settings > Admin Tools:
+
+- **Disaster Recovery** - Reconstruct the entire user index from data folders in case of system corruption or database loss.
+- **Base64 Image Converter** - Convert inline Base64 encoded images to attachments.
+- **Orphan attachments scanner** - Scan and clean up orphaned attachment files.
 
 <a id="import-standard-notes"></a>
 <details>
@@ -751,7 +705,7 @@ Poznote includes a Model Context Protocol (MCP) server that enables AI assistant
 
 For installation, configuration, and setup instructions, see the [MCP Server documentation](docs/MCP-SERVER.md).
 
-## Poznote Extension
+## Chrome Extension
 
 The **Poznote URL Saver** is a browser extension that allows you to quickly save the URL of the current page to your Poznote instance with a single click.
 
@@ -759,33 +713,7 @@ The **Poznote URL Saver** is a browser extension that allows you to quickly save
   <img src="images/chrome-extension.png" alt="Poznote Chrome Extension" width="50%">
 </p>
 
-### Install from Chrome Web Store (Recommended)
-
-> **Note:** The extension is currently under review by Google and will be available soon on the Chrome Web Store.
-
-Install the extension directly from the Chrome Web Store. Works with Chrome, Edge, Brave, Opera, and any Chromium-based browser.
-
-**[Install Poznote URL Saver →](https://chrome.google.com/webstore)** (Coming soon)
-
-<details>
-<summary><strong>Alternative: Install from Source (Developer Mode)</strong></summary>
-<br>
-
-You can also install the extension manually from source:
-
-1. Get the extension folder (two possibilities):
-   - **Download:** [Download the repository as ZIP](https://github.com/timothepoznanski/poznote/archive/refs/heads/main.zip) and extract it
-   - **Clone:** `git clone https://github.com/timothepoznanski/poznote.git`
-2. Open your browser (Chrome, Edge, or any Chromium-based browser)
-3. Go to the extensions page by typing `chrome://extensions/` in the address bar
-4. Enable **Developer mode** using the toggle switch in the top right corner
-5. Click **Load unpacked** in the top left
-6. Select the `poznote-url-saver` folder from the Poznote repository
-7. The extension is now installed and ready to use!
-
-> **Note:** Manual installation does not provide automatic updates. You will need to manually download and reinstall the extension to get new versions. For automatic updates, use the Chrome Web Store version.
-
-</details>
+Install the extension directly from the Chrome Web Store → [Install extension](https://chromewebstore.google.com/detail/bmjclfamahegmgillaghhmnbkjebipbh?utm_source=item-share-cb)
 
 ## API Documentation
 

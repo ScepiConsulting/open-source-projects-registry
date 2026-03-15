@@ -1,8 +1,68 @@
 {
   "chunk": 22,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/schelskedevco/ignidash",
+      "repo_url": "github.com/schelskedevco/ignidash",
+      "host": "github.com",
+      "owner": "schelskedevco",
+      "repo": "ignidash",
+      "app_references": [
+        "ignidash"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__schelskedevco__ignidash.md",
+      "readme_download_url": null,
+      "readme_sha256": "d6268bd382bb6f505cc43fcbe5b11c5393834b01daf7782aaf61b14cd4f3213d",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/schlagmichdoch/PairDrop",
+      "repo_url": "github.com/schlagmichdoch/PairDrop",
+      "host": "github.com",
+      "owner": "schlagmichdoch",
+      "repo": "PairDrop",
+      "app_references": [
+        "pairdrop"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__schlagmichdoch__PairDrop.md",
+      "readme_download_url": null,
+      "readme_sha256": "fe1fcf4cb27f732477160c00ec0c9313bcdfa95bed89f482a5dda12c6d24cac7",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/screenlite/screenlite",
+      "repo_url": "github.com/screenlite/screenlite",
+      "host": "github.com",
+      "owner": "screenlite",
+      "repo": "screenlite",
+      "app_references": [
+        "screenlite"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__screenlite__screenlite.md",
+      "readme_download_url": null,
+      "readme_sha256": "5a9d59af421fbb0ab9064b773bc1238f483f09a174e7ff3d10e29a5ec2a8cac7",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/seanmorley15/AdventureLog",
+      "repo_url": "github.com/seanmorley15/AdventureLog",
+      "host": "github.com",
+      "owner": "seanmorley15",
+      "repo": "AdventureLog",
+      "app_references": [
+        "adventurelog"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__seanmorley15__AdventureLog.md",
+      "readme_download_url": "https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/README.md",
+      "readme_sha256": "54665b5299ca78c0d85532df8f0f9af348b60673c8ca2fa04a713e1d282dbdd8",
+      "error": null
+    },
     {
       "repo_key": "github.com/searxng/searxng",
       "repo_url": "github.com/searxng/searxng",
@@ -222,11 +282,11 @@
       "app_references": [
         "cannery"
       ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__shibaobun__cannery.md",
-      "readme_download_url": "https://raw.githubusercontent.com/shibaobun/cannery/dev/README.md",
-      "readme_sha256": "e090b9c691bd7e013ec3c22765cf7dfce39795c5c57972854bdb20273d3dcf15",
-      "error": null
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "github_readme_http_404"
     },
     {
       "repo_key": "github.com/shlinkio/shlink",
@@ -267,10 +327,10 @@
       "app_references": [
         "silverbullet"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__silverbulletmd__silverbullet.md",
-      "readme_download_url": null,
-      "readme_sha256": "ef846f9be343f67b0bf7a86a89785a23da54d2b9c79730cef269b1e151ea3e47",
+      "readme_download_url": "https://raw.githubusercontent.com/silverbulletmd/silverbullet/main/README.md",
+      "readme_sha256": "5811b3ad2b1764b6ae730021bf9d3533bd2888a4c59cb62d2b3f3bb2331702e9",
       "error": null
     },
     {
@@ -297,10 +357,10 @@
       "app_references": [
         "ocular"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__simonwep__ocular.md",
-      "readme_download_url": null,
-      "readme_sha256": "fac22689d90b04beec0cfa43d12a3c1c1a9b5799faa02086e2a6a165b989207a",
+      "readme_download_url": "https://raw.githubusercontent.com/simonwep/ocular/main/README.md",
+      "readme_sha256": "394c4f9437f693843ba764448c4c5ef22ffd5db0ee1b3fc6b9810cdecd95bf1b",
       "error": null
     },
     {
@@ -447,10 +507,10 @@
       "app_references": [
         "step-ca"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__smallstep__certificates.md",
-      "readme_download_url": null,
-      "readme_sha256": "0b14379ba68e09ae24e453976bc0b551f32e2470aae46f6c7bb0d8955eee24ad",
+      "readme_download_url": "https://raw.githubusercontent.com/smallstep/certificates/master/README.md",
+      "readme_sha256": "02c6439cbcc6f0c2260bfb2b014d28cffc8d86263a9fda4a2496caad95ecb897",
       "error": null
     },
     {
@@ -612,9 +672,9 @@
       "app_references": [
         "statamic"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__statamic__cms.md",
-      "readme_download_url": "https://raw.githubusercontent.com/statamic/cms/6.x/README.md",
+      "readme_download_url": null,
       "readme_sha256": "fa8a65ec0fadea7a63c3440a0daca912ac41f5828d24224fcb4fd00fe51dee59",
       "error": null
     },
@@ -642,10 +702,10 @@
       "app_references": [
         "openpanel"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__stefanpejcic__OpenPanel.md",
-      "readme_download_url": null,
-      "readme_sha256": "05ecd2c551c329f43aa71eebe826d430061f2b5bbcfdfcf37f0b427bf4302479",
+      "readme_download_url": "https://raw.githubusercontent.com/stefanpejcic/OpenPanel/main/README.md",
+      "readme_sha256": "fb1bdee3cb76d3927c0b73ffbf351e428fa6c5f9dc4d6991bb1215add7369fd6",
       "error": null
     },
     {
@@ -672,10 +732,10 @@
       "app_references": [
         "tinyauth"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__steveiliop56__tinyauth.md",
-      "readme_download_url": null,
-      "readme_sha256": "dac726bd68505988d9bd38a9aade06d9a47a03753bde3447c397080687f6c036",
+      "readme_download_url": "https://raw.githubusercontent.com/steveiliop56/tinyauth/main/README.md",
+      "readme_sha256": "04725dcadbe55f0a616c83dfcc53beefc08a8eff6085e55b881bd08a91a2e66c",
       "error": null
     },
     {
@@ -687,70 +747,10 @@
       "app_references": [
         "stoat"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__stoatchat__stoatchat.md",
-      "readme_download_url": "https://raw.githubusercontent.com/stoatchat/stoatchat/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "62a6f9dde98df2bff173ef0a567423d913f684791e0d895148cb8204581f6ae2",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/stormkit-io/app-stormkit-io",
-      "repo_url": "github.com/stormkit-io/app-stormkit-io",
-      "host": "github.com",
-      "owner": "stormkit-io",
-      "repo": "app-stormkit-io",
-      "app_references": [
-        "stormkit"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__stormkit-io__app-stormkit-io.md",
-      "readme_download_url": null,
-      "readme_sha256": "d4ea8e7b13aeb406cab81fb5fda12ae364d9bcb7f888a66c3e81b3b55ab19c45",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/streetwriters/notesnook-sync-server",
-      "repo_url": "github.com/streetwriters/notesnook-sync-server",
-      "host": "github.com",
-      "owner": "streetwriters",
-      "repo": "notesnook-sync-server",
-      "app_references": [
-        "notesnook"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__streetwriters__notesnook-sync-server.md",
-      "readme_download_url": null,
-      "readme_sha256": "ba8d9bba5da1b320018bc5c7657980b7ea3642f4a114e3a0a2609d47a7fd548f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/stumpapp/stump",
-      "repo_url": "github.com/stumpapp/stump",
-      "host": "github.com",
-      "owner": "stumpapp",
-      "repo": "stump",
-      "app_references": [
-        "stump"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__stumpapp__stump.md",
-      "readme_download_url": null,
-      "readme_sha256": "bb5971c40138d77ec31d63ccbaf62a0caa7400e8a595bfe57c3e5a488b32f5ee",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/subnub/myDrive",
-      "repo_url": "github.com/subnub/myDrive",
-      "host": "github.com",
-      "owner": "subnub",
-      "repo": "myDrive",
-      "app_references": [
-        "mydrive"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__subnub__myDrive.md",
-      "readme_download_url": null,
-      "readme_sha256": "1bc8f55b2400a0db745452bb88d5f4b7ba5b9f281d88b365d125020c27d44c0c",
       "error": null
     }
   ]

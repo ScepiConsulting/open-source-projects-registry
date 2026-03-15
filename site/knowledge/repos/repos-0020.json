@@ -1,8 +1,68 @@
 {
   "chunk": 20,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/panoratech/Panora",
+      "repo_url": "github.com/panoratech/Panora",
+      "host": "github.com",
+      "owner": "panoratech",
+      "repo": "Panora",
+      "app_references": [
+        "panora"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__panoratech__Panora.md",
+      "readme_download_url": null,
+      "readme_sha256": "0ba4ab59ffd48c18e85bac2f85e7c9361b7430a9912fd90ea1efe2d97eb66221",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/paperless-ngx/paperless-ngx",
+      "repo_url": "github.com/paperless-ngx/paperless-ngx",
+      "host": "github.com",
+      "owner": "paperless-ngx",
+      "repo": "paperless-ngx",
+      "app_references": [
+        "paperless-ngx"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__paperless-ngx__paperless-ngx.md",
+      "readme_download_url": null,
+      "readme_sha256": "61917eeabd6ef9a19047a2aca6c746dfbe75e0466a0f053bfcd1c3d106c8b970",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/papra-hq/papra",
+      "repo_url": "github.com/papra-hq/papra",
+      "host": "github.com",
+      "owner": "papra-hq",
+      "repo": "papra",
+      "app_references": [
+        "papra"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__papra-hq__papra.md",
+      "readme_download_url": null,
+      "readme_sha256": "55901fac5cf1c44f69968fb249e9292e6aa5e67b3255c405bdbad6f7f4207882",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/parseablehq/parseable",
+      "repo_url": "github.com/parseablehq/parseable",
+      "host": "github.com",
+      "owner": "parseablehq",
+      "repo": "parseable",
+      "app_references": [
+        "parseable"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__parseablehq__parseable.md",
+      "readme_download_url": null,
+      "readme_sha256": "aa7ae1c038ba34e7e51e036adb6fc2ed5f76b3726f5dc1575624e9c9a291b137",
+      "error": null
+    },
     {
       "repo_key": "github.com/passbolt/passbolt_api",
       "repo_url": "github.com/passbolt/passbolt_api",
@@ -165,7 +225,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
       "readme_download_url": "https://raw.githubusercontent.com/pglombardo/PasswordPusher/master/README.md",
-      "readme_sha256": "6a783314539d48a12c102a99cb741a8a72a7da9293a622849ceac0033d1c1b99",
+      "readme_sha256": "2208fda4dd80f05c89f4a1b9a99b2d8cc5ec8b3ec0b8a0ddc3d71dac09404016",
       "error": null
     },
     {
@@ -312,10 +372,10 @@
       "app_references": [
         "xyops"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pixlcore__xyops.md",
-      "readme_download_url": null,
-      "readme_sha256": "ea8e19d5d64395ce3a6e4687aba41a853b47b8c3a9818cca57311bb0518ebf1b",
+      "readme_download_url": "https://raw.githubusercontent.com/pixlcore/xyops/main/README.md",
+      "readme_sha256": "53badce5079171e0f91b803312a1067e3ae0e1168a1c23e32dd61f01296a6f99",
       "error": null
     },
     {
@@ -691,66 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__qdm12__ddns-updater.md",
       "readme_download_url": null,
       "readme_sha256": "599ee61723c3c2921345617dabdecdaed9d8608947d86274772bb5a4cb3d3203",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/quickwit-oss/quickwit",
-      "repo_url": "github.com/quickwit-oss/quickwit",
-      "host": "github.com",
-      "owner": "quickwit-oss",
-      "repo": "quickwit",
-      "app_references": [
-        "quickwit"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__quickwit-oss__quickwit.md",
-      "readme_download_url": null,
-      "readme_sha256": "9283f919a91d5111abc21c9cef7159f57746c5ec4642364c5e3f0747caf791f3",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/raghavyuva/nixopus",
-      "repo_url": "github.com/raghavyuva/nixopus",
-      "host": "github.com",
-      "owner": "raghavyuva",
-      "repo": "nixopus",
-      "app_references": [
-        "nixopus"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__raghavyuva__nixopus.md",
-      "readme_download_url": null,
-      "readme_sha256": "b9ecf8aab957a20520ccd9b589da0a1421b29767761023743b0366002979ed44",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/rajnandan1/kener",
-      "repo_url": "github.com/rajnandan1/kener",
-      "host": "github.com",
-      "owner": "rajnandan1",
-      "repo": "kener",
-      "app_references": [
-        "kener"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__rajnandan1__kener.md",
-      "readme_download_url": null,
-      "readme_sha256": "a3e45047f99e9646aa867c41f3040f1ef052b5065df58641fcce4fa4f7f9e9c5",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/rapidforge-io/release",
-      "repo_url": "github.com/rapidforge-io/release",
-      "host": "github.com",
-      "owner": "rapidforge-io",
-      "repo": "release",
-      "app_references": [
-        "rapidforge"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__rapidforge-io__release.md",
-      "readme_download_url": null,
-      "readme_sha256": "5c060c9955b57d88c411a08a8812158faab85426311f484f79ba6375a915cb85",
       "error": null
     }
   ]

@@ -6,7 +6,6 @@ Edit Mind lets you index your videos **(including transcription, frame analysis,
 > Expect incomplete features and occasional bugs. We welcome contributors to help us reach **v1.0**!
 
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE.md)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![ChromaDB](https://img.shields.io/badge/VectorDB-ChromaDB-purple.svg)](https://www.trychroma.com/)
 [![Docker](https://img.shields.io/badge/Containerized-Docker-blue.svg)](https://www.docker.com/)
@@ -19,6 +18,7 @@ Note: (Edit Mind name is coming from Video Editor Mind, so this will be the edit
 
 [![brycedev](https://img.shields.io/badge/Sponosor-brycedev-blue?logo=github)](https://github.com/brycedev)
 [![alittlebitweird](https://img.shields.io/badge/Sponosor-alittlebitweird-blue?logo=github)](https://github.com/alittlebitweird)
+[![mgerasolo](https://img.shields.io/badge/Sponosor-mgerasolo-blue?logo=github)](https://github.com/mgerasolo)
 
 ## Showcase Video
 
@@ -118,7 +118,7 @@ HOST_MEDIA_PATH="/Users/yourusername/Videos"
 # 2. CHOOSE AI MODEL (Pick one option)
 # Option A: Use Ollama (more private, requires model download)
 USE_OLLAMA_MODEL="true"
-OLLAMA_HOST="http://host.docker.internal"
+OLLAMA_HOST="http://172.17.0.1"
 OLLAMA_PORT="11434"
 OLLAMA_MODEL="qwen2.5:7b-instruct"
 

@@ -1,8 +1,53 @@
 {
   "chunk": 9,
   "count": 50,
-  "generated_at": "2026-03-08T04:48:56Z",
+  "generated_at": "2026-03-15T05:11:07Z",
   "items": [
+    {
+      "repo_key": "github.com/bigcapitalhq/bigcapital",
+      "repo_url": "github.com/bigcapitalhq/bigcapital",
+      "host": "github.com",
+      "owner": "bigcapitalhq",
+      "repo": "bigcapital",
+      "app_references": [
+        "bigcapital"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__bigcapitalhq__bigcapital.md",
+      "readme_download_url": null,
+      "readme_sha256": "6bda0019943b8e9b5aa494ceed01440b35a4a5f11c50b34fe3837a106f08e56b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/bilde2910/Hauk",
+      "repo_url": "github.com/bilde2910/Hauk",
+      "host": "github.com",
+      "owner": "bilde2910",
+      "repo": "Hauk",
+      "app_references": [
+        "hauk"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__bilde2910__Hauk.md",
+      "readme_download_url": null,
+      "readme_sha256": "df57d42402fcbec25e175731ade6b57bd60ffb4f6c6e7414871fbba90a825346",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/binwiederhier/ntfy",
+      "repo_url": "github.com/binwiederhier/ntfy",
+      "host": "github.com",
+      "owner": "binwiederhier",
+      "repo": "ntfy",
+      "app_references": [
+        "ntfy"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__binwiederhier__ntfy.md",
+      "readme_download_url": null,
+      "readme_sha256": "82a20acbffd743668a39a68c7ae6f2e4c3d1d30fc216fcc2f5d9592caa32efb0",
+      "error": null
+    },
     {
       "repo_key": "github.com/biolds/sosse",
       "repo_url": "github.com/biolds/sosse",
@@ -72,10 +117,10 @@
       "app_references": [
         "bknd"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__bknd-io__bknd.md",
-      "readme_download_url": null,
-      "readme_sha256": "b08a2d83b7f34c57beef85719e8d5aa8278de418b3c94e7b263e1902f1002ba1",
+      "readme_download_url": "https://raw.githubusercontent.com/bknd-io/bknd/main/README.md",
+      "readme_sha256": "9c585da1a986eb86f215f0c6c929f8425607598db30f9d3c939d280fa689f14b",
       "error": null
     },
     {
@@ -132,25 +177,10 @@
       "app_references": [
         "checkmate"
       ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__bluewave-labs__Checkmate.md",
-      "readme_download_url": null,
-      "readme_sha256": "01dedad5eb4abb9b3f0a292b3d17621b55b568030927e69742a1cd8acf16bc2e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/booklore-app/booklore",
-      "repo_url": "github.com/booklore-app/booklore",
-      "host": "github.com",
-      "owner": "booklore-app",
-      "repo": "booklore",
-      "app_references": [
-        "booklore"
-      ],
       "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__booklore-app__booklore.md",
-      "readme_download_url": "https://raw.githubusercontent.com/booklore-app/booklore/develop/README.md",
-      "readme_sha256": "dcfa8c486a65789d39957937e9a0a6311376cc84e5100aa62e23c4b4ee90698f",
+      "readme_path": "knowledge/readmes/github.com__bluewave-labs__Checkmate.md",
+      "readme_download_url": "https://raw.githubusercontent.com/bluewave-labs/Checkmate/develop/README.md",
+      "readme_sha256": "392204f572856dc3e32db4c28d8c37eb7e7c46024ae40ea2c972c202196affe7",
       "error": null
     },
     {
@@ -312,10 +342,10 @@
       "app_references": [
         "bunkerweb"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__bunkerity__bunkerweb.md",
-      "readme_download_url": null,
-      "readme_sha256": "968d65d9b9480062e4fc046a0e072722e27a0aff1227dfd3bc5de0f3a0de2a5a",
+      "readme_download_url": "https://raw.githubusercontent.com/bunkerity/bunkerweb/master/README.md",
+      "readme_sha256": "2508f7b2241b90cb6fd4591cad8ee8ccc12a9fb292312760395243481287ce15",
       "error": null
     },
     {
@@ -331,6 +361,21 @@
       "readme_path": "knowledge/readmes/github.com__butlerx__wetty.md",
       "readme_download_url": null,
       "readme_sha256": "a527b501eddc66c50632811effc307e8f4ed2f1f139f6343d9eb48a5db50f1ea",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/cachethq/cachet",
+      "repo_url": "github.com/cachethq/cachet",
+      "host": "github.com",
+      "owner": "cachethq",
+      "repo": "cachet",
+      "app_references": [
+        "cachet"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__cachethq__cachet.md",
+      "readme_download_url": "https://raw.githubusercontent.com/cachethq/cachet/3.x/README.md",
+      "readme_sha256": "4049f1807d8ffacb4dba19fe4dc778814acfa40c22b163b9db1b8b02ea3d6107",
       "error": null
     },
     {
@@ -387,9 +432,9 @@
       "app_references": [
         "shelfmark"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__calibrain__shelfmark.md",
-      "readme_download_url": "https://raw.githubusercontent.com/calibrain/shelfmark/main/readme.md",
+      "readme_download_url": null,
       "readme_sha256": "db1a833eac31d6e020a15db809b1fa36f1b9ca1e12f7a4855c1634991fbe90d5",
       "error": null
     },
@@ -480,7 +525,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__cenodude__CrossWatch.md",
       "readme_download_url": "https://raw.githubusercontent.com/cenodude/CrossWatch/main/README.md",
-      "readme_sha256": "840f79f59b2c26f22e353a252fca86aa1b07aeec145682e246bbbfd271a71737",
+      "readme_sha256": "441c02afb61c42f1c83dce0714b9b2bda8af1ae3cf02bdaa66e830976a17c408",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__chroxify__haptic.md",
       "readme_download_url": null,
       "readme_sha256": "6212bfdaf280d763f265a8fb76c841d483f953172a5c83dc85870db462c9232d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/cially/cially",
-      "repo_url": "github.com/cially/cially",
-      "host": "github.com",
-      "owner": "cially",
-      "repo": "cially",
-      "app_references": [
-        "cially"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__cially__cially.md",
-      "readme_download_url": null,
-      "readme_sha256": "c4ced5106eaa3853d44d13dc4be976c20991a8c62cf6c60eb8912526e8501a3f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/circled-me/server",
-      "repo_url": "github.com/circled-me/server",
-      "host": "github.com",
-      "owner": "circled-me",
-      "repo": "server",
-      "app_references": [
-        "circled-me"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__circled-me__server.md",
-      "readme_download_url": null,
-      "readme_sha256": "6781bb9e4b42c086b55621ce8a742248e160c0efc2feeeb6a1cd260259920dc8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ciur/papermerge",
-      "repo_url": "github.com/ciur/papermerge",
-      "host": "github.com",
-      "owner": "ciur",
-      "repo": "papermerge",
-      "app_references": [
-        "papermerge"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__ciur__papermerge.md",
-      "readme_download_url": null,
-      "readme_sha256": "6b0e7a5a8f719d03fb85faec78860a777be35a772b9a31decfc616aefeeca19d",
       "error": null
     }
   ]

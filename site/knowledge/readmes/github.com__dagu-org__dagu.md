@@ -1,7 +1,7 @@
 <div align="center">
   <img src="./assets/images/hero-logo.webp" width="480" alt="Dagu Logo">
   <p>
-    <a href="https://docs.dagu.sh/reference/changelog"><img src="https://img.shields.io/github/release/dagu-org/dagu.svg?style=flat-square" alt="Latest Release"></a>
+    <a href="https://docs.dagu.sh/overview/changelog"><img src="https://img.shields.io/github/release/dagu-org/dagu.svg?style=flat-square" alt="Latest Release"></a>
     <a href="https://github.com/dagu-org/dagu/actions/workflows/ci.yaml"><img src="https://img.shields.io/github/actions/workflow/status/dagu-org/dagu/ci.yaml?style=flat-square" alt="Build Status"></a>
     <a href="https://discord.gg/gpahPUjGRk"><img src="https://img.shields.io/discord/1095289480774172772?style=flat-square&logo=discord" alt="Discord"></a>
     <a href="https://bsky.app/profile/dagu-org.bsky.social"><img src="https://img.shields.io/badge/Bluesky-0285FF?style=flat-square&logo=bluesky&logoColor=white" alt="Bluesky"></a>
@@ -22,12 +22,18 @@
 Built for developers who want powerful workflow orchestration without the operational overhead. For a quick feel of how it works, take a look at the [examples](https://docs.dagu.sh/writing-workflows/examples).
 
 - Zero-Ops: Single binary, file-based storage, under 128MB memory footprint
-- Full-Power: Docker steps, SSH execution, DAG composition, distributed mode, Git-based version management for DAGs & docs, [19+ executors](https://docs.dagu.sh/reference/executors)
+- Full-Power: Docker steps, SSH execution, DAG composition, distributed mode, Git-based version management for DAGs & docs, [19+ executors](https://docs.dagu.sh/step-types/shell)
 - AI-Native: Built-in LLM agent creates, edits, and debugs workflows from natural language
 - Legacy Script Friendly: Orchestrate existing shell commands, Python scripts, Docker containers, or HTTP calls without modification.
 - Air-gapped Ready: Runs in isolated environments without external dependencies or network access
 
-![Web UI](./assets/images/demo-web-ui.webp)
+<div align="center">
+  <img src="./assets/images/dagu-demo.gif" alt="Demo" width="720">
+</div>
+
+| Cockpit (Kanban) | DAG Run Details |
+|---|---|
+| ![Cockpit](./assets/images/ui-cockpit.png) | ![DAG Run Details](./assets/images/ui-dag-run-details.png) |
 
 **Try it live:** [Live Demo](https://demo-instance.dagu.sh/) (credentials: `demouser` / `demouser`)
 
@@ -76,9 +82,32 @@ irm https://raw.githubusercontent.com/dagu-org/dagu/main/scripts/installer.ps1 |
 docker run --rm -v ~/.dagu:/var/lib/dagu -p 8080:8080 ghcr.io/dagu-org/dagu:latest dagu start-all
 ```
 
+**Kubernetes (Helm):**
+
+```bash
+helm repo add dagu https://dagu-org.github.io/dagu
+helm repo update
+helm install dagu dagu/dagu --set persistence.storageClass=<your-rwx-storage-class>
+```
+
+> Replace `<your-rwx-storage-class>` with a StorageClass in your cluster that supports `ReadWriteMany`. If your cluster default storage class already supports `ReadWriteMany`, you can omit the flag. See [charts/dagu/README.md](./charts/dagu/README.md) for chart details, values, and source-checkout installation.
+
 > More options (npm, custom paths, specific versions): [Installation docs](https://docs.dagu.sh/getting-started/installation)
 
-### 2. Create your first workflow
+### 2. Set up AI-assisted workflow authoring (optional)
+
+If you use an AI coding tool (Claude Code, Codex, OpenCode, Gemini CLI, or Copilot CLI), install the Dagu skill so the AI can write correct DAG YAML:
+
+```bash
+dagu ai install
+
+# Or install into a specific skills directory
+dagu ai install --skills-dir ~/.agents/skills
+```
+
+This auto-detects installed tools and installs the DAG authoring skill into each one. Use `--skills-dir` to install only into the specified skills directory or directories. See [docs](https://docs.dagu.sh/getting-started/cli#ai-install) for details.
+
+### 3. Create your first workflow
 
 > When you first start Dagu with an empty DAGs directory, it automatically creates example workflows. Set `DAGU_SKIP_EXAMPLES=true` to skip this.
 
@@ -90,19 +119,19 @@ steps:
 EOF
 ```
 
-### 3. Run the workflow
+### 4. Run the workflow
 
 ```bash
 dagu start hello.yaml
 ```
 
-### 4. Check the status
+### 5. Check the status
 
 ```bash
 dagu status hello
 ```
 
-### 5. Explore the Web UI
+### 6. Explore the Web UI
 
 ```bash
 dagu start-all
@@ -221,27 +250,27 @@ For more examples, see the [Examples](https://docs.dagu.sh/writing-workflows/exa
 - Single binary installation, under 128MB memory
 - File-based storage — no PostgreSQL, no Redis, no message brokers
 - Air-gapped / offline capable
-- [Cron scheduling](https://docs.dagu.sh/features/scheduling) with timezone support and zombie detection
-- [High availability](https://docs.dagu.sh/features/scheduling#high-availability) with scheduler failover
+- [Cron scheduling](https://docs.dagu.sh/writing-workflows/scheduling) with timezone support and zombie detection
+- [High availability](https://docs.dagu.sh/writing-workflows/scheduling#high-availability) with scheduler failover
 
 ### Full-Power
 
-- [Docker executor](https://docs.dagu.sh/features/executors/docker) — run containers as workflow steps
-- [SSH executor](https://docs.dagu.sh/features/executors/ssh) — execute commands on remote machines
-- [Git sync](https://docs.dagu.sh/features/git-sync) — version management for DAG definitions and documents
-- [Hierarchical DAG composition](https://docs.dagu.sh/features/execution-control#parallel-execution) — nest workflows inside workflows
-- [Distributed execution](https://docs.dagu.sh/features/distributed-execution) — coordinator/worker mode across machines
-- [19+ built-in executors](https://docs.dagu.sh/reference/executors) — HTTP, SQL, Redis, S3, jq, mail, archive, and more
-- [RBAC](https://docs.dagu.sh/configurations/authentication) with 5 roles, OIDC, API keys, and audit logging
-- [Human-in-the-loop](https://docs.dagu.sh/writing-workflows/examples) approval gates
+- [Docker executor](https://docs.dagu.sh/step-types/docker) — run containers as workflow steps
+- [SSH executor](https://docs.dagu.sh/step-types/ssh) — execute commands on remote machines
+- [Git sync](https://docs.dagu.sh/server-admin/git-sync) — version management for DAG definitions and documents
+- [Hierarchical DAG composition](https://docs.dagu.sh/writing-workflows/execution-control#parallel-execution) — nest workflows inside workflows
+- [Distributed execution](https://docs.dagu.sh/server-admin/distributed/) — coordinator/worker mode across machines
+- [19+ built-in executors](https://docs.dagu.sh/step-types/shell) — HTTP, SQL, Redis, S3, jq, mail, archive, and more
+- [RBAC](https://docs.dagu.sh/server-admin/authentication/) with 5 roles, OIDC, API keys, and audit logging
+- [Approval gates](https://docs.dagu.sh/writing-workflows/approval) on any step type
 
 ### AI-Native
 
 - Built-in [AI agent](https://docs.dagu.sh/features/agent/) — creates, edits, runs, and debugs workflows from natural language
-- [Agent and chat step types](https://docs.dagu.sh/reference/executors) in DAGs with tool calling
+- [Agent and chat step types](https://docs.dagu.sh/features/agent/step) in DAGs with tool calling
 - Multi-provider LLM support (Anthropic, OpenAI, Google Gemini, OpenRouter)
 - Persistent memory, sub-agent delegation, and domain-specific skills
-- Built-in [document management](https://docs.dagu.sh/features/documents) with AI agent integration
+- Built-in [document management](https://docs.dagu.sh/web-ui/documents) with AI agent integration
 
 > See the [full feature list](https://docs.dagu.sh) for all capabilities.
 
@@ -332,7 +361,7 @@ When `DAGU_AUTH_MODE=builtin`, a file-based user management system with role-bas
 
 ### Git Sync Configuration
 
-Synchronize DAG definitions with a Git repository. See [Git Sync](https://docs.dagu.sh/features/git-sync) for details.
+Synchronize DAG definitions with a Git repository. See [Git Sync](https://docs.dagu.sh/server-admin/git-sync) for details.
 
 | Environment Variable | Default | Description |
 |---------------------|---------|-------------|
@@ -359,7 +388,7 @@ Synchronize DAG definitions with a Git repository. See [Git Sync](https://docs.d
 
 ### Worker Configuration
 
-This configuration is used for worker instances that execute DAGs. See the [Distributed Execution](https://docs.dagu.sh/features/distributed-execution) documentation for more details.
+This configuration is used for worker instances that execute DAGs. See the [Distributed Execution](https://docs.dagu.sh/server-admin/distributed/) documentation for more details.
 
 | Environment Variable | Default | Description |
 |---------------------|---------|-------------|
@@ -376,7 +405,7 @@ This configuration is used for worker instances that execute DAGs. See the [Dist
 
 ### Peer Configuration
 
-This configuration is used for communication between coordinator services and other services (e.g., scheduler, worker, web UI). See the [Distributed Execution](https://docs.dagu.sh/features/distributed-execution) documentation for more details.
+This configuration is used for communication between coordinator services and other services (e.g., scheduler, worker, web UI). See the [Distributed Execution](https://docs.dagu.sh/server-admin/distributed/) documentation for more details.
 
 | Environment Variable | Default | Description |
 |---------------------|---------|-------------|
@@ -393,9 +422,9 @@ Full documentation at [docs.dagu.sh](https://docs.dagu.sh/).
 - [Getting Started](https://docs.dagu.sh/getting-started/installation) — Installation and first workflow
 - [Examples](https://docs.dagu.sh/writing-workflows/examples) — Feature walkthroughs with YAML samples
 - [AI Agent](https://docs.dagu.sh/features/agent/) — Built-in AI assistant for workflow management
-- [Distributed Execution](https://docs.dagu.sh/features/distributed-execution) — Coordinator/worker setup
-- [Configuration](https://docs.dagu.sh/configurations/reference) — Environment variables and settings
-- [Changelog](https://docs.dagu.sh/reference/changelog) — Recent updates and releases
+- [Distributed Execution](https://docs.dagu.sh/server-admin/distributed/) — Coordinator/worker setup
+- [Configuration](https://docs.dagu.sh/server-admin/reference) — Environment variables and settings
+- [Changelog](https://docs.dagu.sh/overview/changelog) — Recent updates and releases
 
 ## Community
 

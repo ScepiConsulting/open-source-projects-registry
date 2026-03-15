@@ -2,12 +2,14 @@
 
 # yubal
 
-**Self-hosted YouTube Music downloader with automatic metadata tagging and playlist sync.**
+Self-hosted YouTube Music downloader. Paste a link, get a tagged, organized library.
 
-Paste a link, get a properly tagged and organized library. Subscribe to playlists to keep them synced. Albums sorted by artist and year. No duplicates. Media server ready.
+Playlist sync. Artist/year sorting. Duplicate detection. Media server ready.
 
 [![CI](https://github.com/guillevc/yubal/actions/workflows/ci.yaml/badge.svg)](https://github.com/guillevc/yubal/actions/workflows/ci.yaml)
 [![Release](https://img.shields.io/github/v/release/guillevc/yubal)](https://github.com/guillevc/yubal/releases)
+[![Firefox Add-on](https://img.shields.io/amo/v/yubal?label=firefox%20add-on&logo=firefox&logoColor=white&color=orange)](https://addons.mozilla.org/firefox/addon/yubal/)
+[![Chrome Extension](https://img.shields.io/github/v/release/guillevc/yubal?filter=ext-v*&label=chrome%20extension&logo=googlechrome&logoColor=white&color=orange)](https://github.com/guillevc/yubal/releases?q=🧩)
 [![Docker](https://img.shields.io/badge/ghcr.io-blue?logo=docker&logoColor=white)](https://ghcr.io/guillevc/yubal)
 [![codecov](https://codecov.io/gh/guillevc/yubal/branch/master/graph/badge.svg)](https://codecov.io/gh/guillevc/yubal)
 
@@ -18,11 +20,6 @@ Paste a link, get a properly tagged and organized library. Subscribe to playlist
 </div>
 
 <br/>
-
-> [!IMPORTANT]
-> **Upgrading from v0.3?** Folder and file names now preserve unicode characters (`Bjork` → `Björk`), which may create duplicates alongside existing ASCII-named items.
->
-> To keep the previous ASCII behavior, set `YUBAL_ASCII_FILENAMES=true`. Otherwise, check your library and merge any duplicates after upgrading.
 
 ## 📖 How It Works
 
@@ -75,6 +72,22 @@ When downloading a playlist, each track goes to its album folder—the M3U file 
 - **Format options** — Native `opus` (best quality), mp3, or m4a (direct download when available, transcoded otherwise)
 - **Media server ready** — Tested with [Navidrome, Jellyfin, and Gonic](#-media-server-integration)
 - **[CLI](packages/yubal/src/yubal/cli/README.md)** — Download and inspect metadata from the terminal
+
+## 🧩 Browser Extension
+
+Download tracks and subscribe to playlists directly from YouTube and YouTube Music without leaving the page.
+
+<p>
+  <img src="https://raw.githubusercontent.com/guillevc/yubal/refs/heads/master/extension/docs/images/extension-track.png" alt="Track view" width="32%">
+  <img src="https://raw.githubusercontent.com/guillevc/yubal/refs/heads/master/extension/docs/images/extension-playlist.png" alt="Playlist view" width="32%">
+  <img src="https://raw.githubusercontent.com/guillevc/yubal/refs/heads/master/extension/docs/images/extension-settings.png" alt="Settings view" width="32%">
+</p>
+<p>
+  <a href="https://addons.mozilla.org/addon/yubal/"><img src="https://img.shields.io/badge/Firefox-get_add--on-FF7139?logo=firefox&logoColor=white&style=for-the-badge" alt="Get the add-on for Firefox"></a>
+  <a href="https://github.com/guillevc/yubal/releases?q=🧩"><img src="https://img.shields.io/badge/Chrome-manual_install-4285F4?logo=googlechrome&logoColor=white&style=for-the-badge" alt="Chrome manual install"></a>
+</p>
+
+More info in the extension's [README.md](https://github.com/guillevc/yubal/blob/master/extension/README.md).
 
 ## 🚀 Quick Start
 
@@ -203,8 +216,8 @@ Need age-restricted content, private playlists, or Premium quality? Add your coo
 - [x] Automatic lyrics (.lrc) ([v0.3.0](https://github.com/guillevc/yubal/releases/tag/v0.3.0))
 - [x] Auto-sync playlists ([v0.4.0](https://github.com/guillevc/yubal/releases/tag/v0.4.0))
 - [x] UGC tracks (user-generated content, remixes, unofficial tracks) ([v0.5.0](https://github.com/guillevc/yubal/releases/tag/v0.5.0))
+- [x] Browser extension ([v0.7.0](https://github.com/guillevc/yubal/releases/tag/v0.7.0), [ext-v0.1.0](https://github.com/guillevc/yubal/releases/tag/ext-v0.1.0))
 - [ ] Flat folder mode
-- [ ] Browser extension
 - [ ] Post-download webhooks
 - [ ] New music automatic discovery
 

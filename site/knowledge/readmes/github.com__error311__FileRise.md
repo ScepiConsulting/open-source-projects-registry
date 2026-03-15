@@ -14,9 +14,12 @@ Drag & drop uploads, OnlyOffice integration, and **optional folder-level encrypt
 
 Quick links: [Website](https://filerise.net) • [Docs](https://filerise.net/docs/) • [Live demo](https://demo.filerise.net) • [Install](#install-docker--recommended) • [FileRise Pro](https://filerise.net/pro/)
 
-- **Built for:** anyone who wants a fast, self-hosted file manager / storage hub
-- **Core (MIT):** full open-source FileRise feature set (ACLs, sharing, uploads, tags/search, and more), plus multiple local roots and WebDAV sources for storage-hub workflows.
-- **Pro:** adds user groups, client portals, automation, additional source adapters, gateway shares, and  search everywhere/audit tooling.
+- **Built for:** anyone who wants a fast, self-hosted file manager, storage hub, client portal, and AI workflow workspace on their own infrastructure.
+- **Core (MIT):** full open-source FileRise feature set (ACLs, folder and file sharing, uploads, tags/search, PDF previews, and more), plus multiple local roots and WebDAV sources for storage-hub workflows.
+- **Pro:** adds user groups, client portals, automation, additional source adapters, gateway shares, search everywhere/audit tooling, and a permissions-aware AI workspace for structured extraction, organization, approvals, and scoped copilots.
+
+- [FileRise Pro AI Chat: Organize Files By Type](https://youtu.be/zoM7LudY934)
+- [FileRise Pro AI Chat: Extract Invoice Fields to JSON and CSV](https://youtu.be/HhY__X695KM)
 
 [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor-❤-red)](https://github.com/sponsors/error311)
 [![Support on Ko-fi](https://img.shields.io/badge/Ko--fi-Buy%20me%20a%20coffee-orange)](https://ko-fi.com/error311)
@@ -46,7 +49,9 @@ Quick links: [Website](https://filerise.net) • [Docs](https://filerise.net/doc
 - 💾 **Self-hosted “cloud drive”** – Runs anywhere with PHP (or via Docker). No external database required.
 - 🔐 **Granular per-folder ACLs** – Manage View (all/own), Upload, Create, Edit, Rename, Move, Copy, Delete, Extract, Share, and more — all enforced consistently across the UI, API, and WebDAV.
 - 🔗 **Link File (authenticated deep links)** – Generate internal links to specific files, require login + ACL checks, and open directly to the target in the app.
+- 🤝 **Folder and file sharing** – Share folders for browsing or upload-only file requests, protect links with passwords/expiration, and share individual files with generated links.
 - 📥 **File Request links (upload-only)** – Share upload-only links so external users can submit files into a folder without browsing existing files.
+- 📄 **PDF viewing + optional local PDF thumbnails** – View PDFs inline in the preview modal, and optionally enable first-page PDF thumbnails for gallery cards and hover previews using `pdftoppm`.
 - 🔐 **Folder-level encryption at rest (optional)** – Encrypt entire folders (and all descendants) on disk using modern authenticated encryption.
   - Opt-in per folder with inherited protection for subfolders
   - Files are stored encrypted on disk and transparently decrypted on download
@@ -77,6 +82,8 @@ Quick links: [Website](https://filerise.net) • [Docs](https://filerise.net/doc
   Group-based ACLs, brandable client upload portals, **ACL-aware global search across files, folders, users, and permissions**, an ncdu-style storage explorer for identifying large folders/files and reclaiming disk space directly from the UI, and **Pro Audit Logs** (configurable activity logging with filters + CSV export for tracking key actions across web, WebDAV, shares, and portals).
 - ⚙️ **Pro: Automation (Webhooks + Jobs)** –
   Send FileRise events to other apps/services using managed webhook endpoints with async delivery, retries, queue visibility, and job history from Admin.
+- 🤖 **Pro: AI workflows + workspace** –
+  Use a permissions-aware AI workspace for structured extraction, folder organization, watched-folder workflows, approval-gated bulk actions, and scoped share/portal copilots with cited answers and admin controls.
 - 🌐 **Sources (Core + Pro adapters)** –
   Turn FileRise into a storage hub by connecting multiple backends and switching between them in the UI:
   - **Core:** Multiple local roots (additional local paths)
@@ -155,6 +162,14 @@ The easiest way to run FileRise is the official Docker image.
 
 ### Option A – Quick start (docker run)
 
+Pristine Docker installs can omit `PERSISTENT_TOKENS_KEY`. FileRise will generate a unique key on first start and persist it in `metadata/persistent_tokens.key`.
+
+If you prefer to manage the key yourself, set one before first start:
+
+```bash
+export PERSISTENT_TOKENS_KEY="$(openssl rand -hex 32)"
+```
+
 ```bash
 docker run -d \
   --name filerise \
@@ -162,7 +177,6 @@ docker run -d \
   -e TIMEZONE="America/New_York" \
   -e TOTAL_UPLOAD_SIZE="10G" \
   -e SECURE="false" \
-  -e PERSISTENT_TOKENS_KEY="default_please_change_this_key" \
   -e SCAN_ON_START="true" \
   -e CHOWN_ON_START="true" \
   -v ~/filerise/uploads:/var/www/uploads \
@@ -187,6 +201,13 @@ On first launch you’ll be guided through creating the **initial admin user**.
 > (for example `~/filerise/uploads` or `/mnt/user/appdata/FileRise/uploads`),
 > not the root of a huge media share.
 >
+> 🔐 **Persistent tokens key note**
+>
+> Keep `/var/www/metadata` persistent. On a pristine install, FileRise writes the
+> generated persistent tokens key to `metadata/persistent_tokens.key`. If you
+> choose to manage the key via env instead, keep that value stable for the life
+> of the instance.
+>
 > If you really want FileRise to sit “on top of” an existing share, use a
 > subfolder (e.g. `/mnt/user/media/filerise_root`) instead of the share root,
 > so scans and permission changes stay scoped to that folder.
@@ -204,7 +225,7 @@ services:
       TIMEZONE: "America/New_York"
       TOTAL_UPLOAD_SIZE: "10G"
       SECURE: "false"
-      PERSISTENT_TOKENS_KEY: "default_please_change_this_key"
+      PERSISTENT_TOKENS_KEY: "${PERSISTENT_TOKENS_KEY:-}" # optional; blank = pristine installs auto-generate and persist a key in metadata
       SCAN_ON_START: "true"   # auto-index existing files on startup
       CHOWN_ON_START: "true"  # fix permissions on uploads/metadata on startup
     volumes:
@@ -219,6 +240,12 @@ Bring it up with:
 docker compose up -d
 ```
 
+You can leave `PERSISTENT_TOKENS_KEY` blank for pristine installs, or set it in your shell / `.env` if you want to manage the key yourself:
+
+```bash
+export PERSISTENT_TOKENS_KEY="$(openssl rand -hex 32)"
+```
+
 ### Common environment variables
 
 | Variable                | Required | Example                          | What it does |
@@ -226,7 +253,7 @@ docker compose up -d
 | `TIMEZONE`              | ✅       | `America/New_York`               | PHP / container timezone. |
 | `TOTAL_UPLOAD_SIZE`     | ✅       | `10G`                            | Max total upload size per request; also used to set PHP/Apache upload limits. |
 | `SECURE`                | ✅       | `false`                          | `true` when running behind HTTPS / a reverse proxy, else `false`. |
-| `PERSISTENT_TOKENS_KEY` | ✅       | `change_me_super_secret`         | Secret used to encrypt stored secrets (tokens, permissions, admin config). **Do not leave this at the default.** |
+| `PERSISTENT_TOKENS_KEY` | Optional | `openssl rand -hex 32`           | Secret used to encrypt stored secrets (tokens, permissions, admin config). If omitted on a pristine Docker install, FileRise auto-generates and persists one in `metadata/persistent_tokens.key`; existing installs without an explicit key stay on the legacy compatibility path until rotated. |
 | `SCAN_ON_START`         | Optional | `true`                           | If `true`, runs a scan once on container start to index existing files. |
 | `CHOWN_ON_START`        | Optional | `true`                           | If `true`, recursively normalizes ownership/permissions on `uploads/` + `metadata/`. |
 | `PUID`                  | Optional | `99`                             | If running as root, remap `www-data` user to this UID (e.g. Unraid’s 99).                             |
@@ -317,11 +344,13 @@ Back up these paths (Docker volumes or host directories):
 
 Notes:
 - Logs live in `/var/www/metadata/log` and can be rotated or pruned.
-- Keep your `PERSISTENT_TOKENS_KEY` consistent when restoring backups.
+- If you use the auto-generated key path, back up `/var/www/metadata/persistent_tokens.key` with the rest of `metadata/`.
+- If you manage the key via env, keep your `PERSISTENT_TOKENS_KEY` consistent when restoring backups.
 
 ## First-run security checklist
 
-- Set a strong `PERSISTENT_TOKENS_KEY` (encrypts tokens, permissions, admin config).
+- Persist `/var/www/metadata` so the generated persistent tokens key survives container recreation.
+- Either set your own strong `PERSISTENT_TOKENS_KEY` or let a pristine install generate one and then back up `metadata/persistent_tokens.key`.
 - Use HTTPS and set `SECURE="true"` when behind TLS/reverse proxy.
 - If behind a proxy, set `FR_TRUSTED_PROXIES` and `FR_IP_HEADER`.
 - Set `FR_PUBLISHED_URL` (and `FR_BASE_PATH` if needed) so share links are correct.

@@ -67,6 +67,7 @@ git clone https://github.com/pixlcore/xyops.git
 cd xyops
 npm install
 node bin/build.js dev
+echo '{ "secret_key": "test" }' > conf/overrides.json
 bin/debug.sh
 ```
 
