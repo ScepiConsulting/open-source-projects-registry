@@ -107,29 +107,6 @@ flowchart LR
   D -- Files --> E[outputs/]
   A -- Download --> B
 ```
-> Note (Nov 2025): RTX 50-Series (Blackwell) Support
->
-> **🎉 RTX 50-Series Users (RTX 5090/5080/5070 Ti/etc.):**  
-> Verified working support with full NVENC hardware acceleration!
->
-> **Docker Image:** `jms1717/8mblocal:rtx50-working`  
-> **Branch:** `rtx50-blackwell`  
-> **Complete Setup Guide:** [RTX50-WORKING.md](https://github.com/JMS1717/8mb.local/blob/rtx50-blackwell/RTX50-WORKING.md)
->
-> **⚠️ CRITICAL for RTX 50-series:** You must mount the WSL driver directory:  
-> `-v /usr/lib/wsl/drivers:/usr/lib/wsl/drivers:ro`  
-> (Already configured in docker-compose.yml on the rtx50-blackwell branch)
->
-> **Requirements:**
-> - RTX 50-series GPU (Blackwell/SM_100)
-> - NVIDIA Driver 550.x+ (tested with 581.80)
-> - Windows 11 WSL2 or Linux with CUDA 13 support
->
-> **Verified Test Results:** ✅ All 6 encoders passing (h264_nvenc, hevc_nvenc, av1_nvenc, libx264, libx265, libaom-av1)
->
-> **Other NVIDIA GPUs:**
-> - Main branch: CUDA 12.2 + FFmpeg 6.1.1, driver 535.x+ (Turing/Ampere/Ada)
-> - CPU/VAAPI still work if NVENC is incompatible
 
 ### Intel Arc / Integrated Graphics (Linux)
 

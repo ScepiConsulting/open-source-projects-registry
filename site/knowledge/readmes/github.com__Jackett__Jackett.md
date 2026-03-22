@@ -93,6 +93,7 @@ Prior versions of Jackett are no longer supported.
  * Bangumi Moe
  * BigFANGroup
  * BitRu
+ * BitSearch (Solid Torrents)
  * BlueRoms
  * BT.etree
  * BTdirectory (BT目录)
@@ -360,7 +361,6 @@ Prior versions of Jackett are no longer supported.
  * CrnaBerza
  * cspt (财神)
  * cyanbug (大青虫)
- * DANISH BYTES
  * Darkpeers
  * Das Unerwartete (D-U)
  * DataScene (DS)
@@ -390,7 +390,6 @@ Prior versions of Jackett are no longer supported.
  * FileList (FL)
  * FinElite (FE) [![(invite needed)][inviteneeded]](#)
  * Flood (FLD)
- * Flux-Zone
  * Free Farm (自由农场)
  * FunFile (FF)
  * FunkyTorrents (FT) [![(invite needed)][inviteneeded]](#)
@@ -472,7 +471,6 @@ Prior versions of Jackett are no longer supported.
  * Le Saloon [![(invite needed)][inviteneeded]](#)
  * LearnFlakes
  * Leech24
- * LemonHD [![(invite needed)][inviteneeded]](#)
  * LemonHD.net
  * Lesbians4u
  * LetSeed
@@ -516,8 +514,10 @@ Prior versions of Jackett are no longer supported.
  * njtupt (浦园)) [![(invite needed)][inviteneeded]](#)
  * NOBS (NUCLEAR ORDER BIT SYNDICATE)
  * NorBits
+ * NordicBytes
  * NORDiCHD
  * NordicQuality
+ * Nostradamus
  * NovaHD
  * OKPT
  * Old Greek Tracker (OGT)
@@ -597,6 +597,7 @@ Prior versions of Jackett are no longer supported.
  * SiamBIT [PAY2DL]
  * Siqi
  * SkipTheCommercials
+ * Slobit Media
  * SnowPT (SSPT)
  * SoulVoice (聆音Club) [![(invite needed)][inviteneeded]](#)
  * SpeedApp (SceneFZ, XtreMeZone / MYXZ, ICE Torrent)
@@ -613,6 +614,7 @@ Prior versions of Jackett are no longer supported.
  * Tapochek
  * Tasmanit
  * Team CT Game (TCTG)
+ * TeamFlix
  * TeamHD
  * TeamOS
  * TEKNO3D [![(invite needed)][inviteneeded]](#)

@@ -152,6 +152,13 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ## Development setup
 
+### Run tests
+
+````bash
+docker compose up -d
+docker compose run --rm cypress
+```
+
 ### Update Dependencies
 
 ```bash
@@ -159,7 +166,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 docker compose run --rm --pull always frontend yarn upgrade --latest
 
 # Go packages
-docker compose run --rm --pull always app go get -u && go mod tidy
+docker compose run --rm --pull always backend go get -u && go mod tidy
 ```
 
 ### Automatic rebuild and reload

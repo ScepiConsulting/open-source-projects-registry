@@ -28,7 +28,6 @@ services:
       - "8363:8363"  
     environment:
       - PORT=8363
-      - READONLY_MODE=false
     restart: unless-stopped
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8363"]
@@ -45,7 +44,6 @@ docker run -d \
   --name couchtube_app \
   -p 8363:8363 \
   -e PORT=8363 \
-  -e READONLY_MODE=false \
   --restart unless-stopped \
   --health-cmd="curl -f http://localhost:8363 || exit 1" \
   --health-interval=30s \
@@ -62,7 +60,6 @@ Ensure you have Golang 1.22 or higher installed. Create a `.env` file with the s
 ```dotenv
 PORT=8363
 DATABASE_FILE_PATH=/app/data/couchtube.db
-READONLY_MODE=false
 ```
 
 1. **Clone the Repository**:
@@ -100,12 +97,23 @@ You can configure CouchTube using environment variables.
 
 | Variable             | Description                                                                 |
 | -------------------- | --------------------------------------------------------------------------- |
-| `PORT`               | The port number on which CouchTube will run.                                |
-| `DATABASE_FILE_PATH` | The path to the SQLite database file used by CouchTube.                     |
-| `JSON_FILE_PATH`     | The path to the JSON file used by CouchTube.                                |
-| `FULL_SCAN`          | Overwrites the existing data in the DB with the videos in JSON file.        |
-| `READONLY_MODE`      | If set to `true`, CouchTube will run in read-only mode, preventing changes. |
+| `PORT`                   | The port number on which CouchTube will run.                                    |
+| `DATABASE_FILE_PATH`     | The path to the SQLite database file used by CouchTube.                         |
+| `DEFAULT_CHANNELS_PATH`  | Path to the JSON file used to seed the database on first run. Default: `/videos.json`. |
+| `EDITOR_MODE`            | Controls the channel editor at `/editor`. Values: `off` (default, hidden), `readonly` (visible but no edits), `full` (fully enabled). Also accepts `true`/`false` for backward compat. |
 
+### Editor
+
+![CouchTube Editor](docs/screenshots/editor-screenshot.png)
+
+CouchTube includes a built-in channel editor at `/editor`. Set `EDITOR_MODE=full` to enable editing, or `EDITOR_MODE=readonly` to let users browse without making changes (useful for demos). The editor lets you:
+
+- **Manage channels** — create, rename, and delete channels from the sidebar
+- **Add videos** — paste a YouTube URL or video ID to add videos to a channel
+- **Set playback sections** — configure start and end times for each video to control which segment plays on air
+- **Preview** — preview individual video sections directly in the editor
+- **Import/Export JSON** — bulk import or export your entire channel configuration
+- **Import playlists** — paste a YouTube playlist URL to bulk-import videos into a channel
 
 ### Custom JSON Format for Channel and Video Lists
 

@@ -46,6 +46,7 @@ Discover all the features [here](https://poznote.com/index.html#features)
 - [Backup / Export](#backup--export)
 - [Git Synchronization](#git-synchronization)
 - [Restore / Import](#restore--import)
+- [PWA](#pwa)
 - [Offline View](#offline-view)
 - [Multiple Instances](#multiple-instances)
 - [MCP Server](#mcp-server)
@@ -214,21 +215,25 @@ After installation, access Poznote in your web browser:
 [http://localhost:8040](http://localhost:8040)
 
 
-- Username: `admin`
-- Password: `admin`
+- Username: `admin_change_me`
+- Password: value of `POZNOTE_PASSWORD` (`admin` in `.env.template` by default)
 - Port: `8040`
+
+Rename the default administrator account after the first login.
 
 ## Change Settings
 
-Most settings can be modified directly in the application through the settings page, but some system settings can only be changed in the `.env` file and require a container restart.
+Most settings can be modified directly in the application through the settings page. Some system settings can only be changed in the `.env` file and require a container restart.
 
-- **Authentication** - Admin and user passwords
+- **Authentication** - Initial/default passwords and login configuration
 - **Web Server** - HTTP port configuration
 - **OIDC / SSO Authentication** - OpenID Connect integration
 - **Settings Access Control** - Restrict or password-protect settings page
 - **Import Limits** - Maximum files for imports
 - **Git Sync** - GitHub and Forgejo synchronization
 - **MCP Server** - AI assistant integration
+
+Passwords can be changed directly in the application from `Settings > Change Password`. The `.env` authentication variables remain available to define the initial or fallback passwords used when no custom password has been set for a user.
 
 ### Modify System Settings (`.env`)
 
@@ -256,12 +261,51 @@ docker compose up -d
 <summary><strong>Traditional Authentication</strong></summary>
 <br>
 
-Poznote uses a password model based on the `.env` file. Define your administrator and user passwords, and users log in with their username and password.
+Poznote authenticates users against their profile using a username or email address and a password.
+
+#### Password resolution order
+
+When a user signs in, Poznote checks passwords in this order:
+
+1. A custom bcrypt password hash stored in the master database for that user.
+2. Fallback values from `.env`:
+  - `POZNOTE_PASSWORD` for the administrator profile
+  - `POZNOTE_PASSWORD_USER` for standard users
+  - `POZNOTE_PASSWORD_{USERNAME}` for per-user overrides
+
+This means `.env` acts as the default or seed credential source, while a password changed from the interface takes priority afterward.
+
+#### Default account
+
+On a fresh installation, Poznote creates one active administrator profile:
+
+- Username: `admin_change_me`
+- Password: `POZNOTE_PASSWORD`
+
+Rename this account after the first login.
+
+#### Password management
+
+- Users can change their own password from `Settings > Change Password`.
+- Administrators can set a custom password for any user or reset that user back to their `.env` password from `Settings > User Management`.
+- The `Remember me` option keeps the session for 30 days.
+- Changing a password invalidates existing remember-me cookies for that user.
+
 
 #### Configuration
 
-- **Global Authentication**: Set `POZNOTE_PASSWORD` (admin) and `POZNOTE_PASSWORD_USER` (standard users) in your `.env` file.
-- **User-Specific Passwords**: Set individual passwords using `POZNOTE_PASSWORD_{USERNAME}` in your `.env`.
+- **Admin password**: Set `POZNOTE_PASSWORD` in your `.env` file.
+- **Default standard-user password**: Set `POZNOTE_PASSWORD_USER` in your `.env` file.
+- **User-specific passwords**: Set individual defaults using `POZNOTE_PASSWORD_{USERNAME}` in your `.env`.
+
+Example:
+
+```bash
+POZNOTE_PASSWORD=admin-secret
+POZNOTE_PASSWORD_USER=user-secret
+POZNOTE_PASSWORD_ALICE=alice-secret
+POZNOTE_PASSWORD_BOB=bob-secret
+```
 
 </details>
 
@@ -274,14 +318,32 @@ Poznote supports OpenID Connect (authorization code + PKCE) for single sign-on i
 
 #### How it works
 
-1. Optionally restrict access by OIDC group membership.
-2. The login page displays a "Continue with [Provider Name]" button.
-3. Clicking the button redirects users to your identity provider.
-4. After successful authentication, Poznote links the OIDC identity to an existing profile (by `sub`, then `preferred_username`, then `email`) and can auto-create a profile if enabled.
+1. The login page displays a `Continue with [Provider Name]` button when OIDC is enabled.
+2. Users authenticate with the OIDC authorization code flow secured by PKCE.
+3. Access can be restricted with `POZNOTE_OIDC_ALLOWED_GROUPS` and, if needed, the legacy `POZNOTE_OIDC_ALLOWED_USERS` allowlist.
+4. After authentication, Poznote links the identity in this order: `sub` (`oidc_subject`), then `preferred_username`, then `email`.
+5. If no profile matches and `POZNOTE_OIDC_AUTO_CREATE_USERS=true`, Poznote creates one automatically.
+6. If `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true`, the username/password form is hidden and the login page becomes SSO-only.
 
 #### Configuration
 
-Add the OIDC variables to your `.env` file (see `.env.template`). If `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN` is `true`, the standard login form will be hidden.
+Add the OIDC variables to your `.env` file (see `.env.template`).
+
+Minimum required settings:
+
+```bash
+POZNOTE_OIDC_ENABLED=true
+POZNOTE_OIDC_ISSUER=https://your-identity-provider.com
+POZNOTE_OIDC_CLIENT_ID=your_client_id
+```
+
+Notes:
+
+- `POZNOTE_OIDC_DISCOVERY_URL` can be used instead of deriving discovery from the issuer.
+- `POZNOTE_OIDC_CLIENT_SECRET` is optional and mainly needed for confidential clients.
+- `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true` hides the local login form.
+- `POZNOTE_OIDC_DISABLE_BASIC_AUTH=true` rejects HTTP Basic Auth on the API.
+- `POZNOTE_OIDC_GROUPS_CLAIM` defaults to `groups`.
 
 #### Access Control Example (Groups + Auto-Provision)
 
@@ -293,6 +355,8 @@ POZNOTE_OIDC_AUTO_CREATE_USERS=true
 ```
 
 `POZNOTE_OIDC_ALLOWED_USERS` remains available for backward compatibility, but group-based access is recommended.
+
+If auto-provisioning is enabled, Poznote generates a username from the OIDC claims (`preferred_username`, `nickname`, email local part, `name`, then `sub`) and stores the OIDC subject on the created profile.
 
 </details>
 
@@ -340,7 +404,7 @@ Your data is preserved in the `./data` directory and will not be affected by the
 Poznote features a multi-user architecture with isolated data space for each user (ideal for families, teams, or personal personas).
 
 - **Data Isolation**: Each user has their own separate notes, workspaces, tags, folders and attachments.
-- **Global Passwords**: Access is managed via passwords defined in the `.env` file, with optional per-user passwords.
+- **Hybrid Password Model**: Access uses per-profile credentials with custom passwords stored in database, falling back to `.env` defaults when no custom password has been set.
 - **User Management**: Administrators can manage profiles via the Settings panel.
 
 > ⚠️ **Warning:** It is not possible to share notes between users. Each user has their own isolated space. The only way to share notes or a profile is to share a common account.
@@ -472,44 +536,44 @@ bash backup-poznote.sh '<poznote_url>' '<admin_username>' '<admin_password>' '<t
 
 ## Git Synchronization
 
-Poznote supports automatic and manual synchronization with Git providers like **GitHub** or **Forgejo**. This allows you to keep a versioned history of your notes and sync them across multiple instances.
+Poznote supports automatic and manual synchronization with **GitHub** or **Forgejo**. Each user configures their own repository independently. There is no shared global repository.
 
 <details>
 <summary><strong>How to configure Git Sync</strong></summary>
 <br>
 
-To enable Git synchronization, you need to configure the following variables in your `.env` file:
+**Step 1 — Enable the feature (admin, in `.env`)**
 
 ```bash
-# Enable Git Sync
 POZNOTE_GIT_SYNC_ENABLED=true
-
-# Provider: 'github' or 'forgejo'
-POZNOTE_GIT_PROVIDER=github
-
-# Your Personal Access Token (PAT)
-POZNOTE_GIT_TOKEN=ghp_your_token
-
-# Repository (format: username/repo)
-POZNOTE_GIT_REPO=yourname/notes-backup
-
-# Branch (default: main)
-POZNOTE_GIT_BRANCH=main
-
-# API Base URL (Required for Forgejo)
-# Example: http://your-instance:3000/api/v1
-POZNOTE_GIT_API_BASE=
 ```
 
-> 💡 **Note:** For GitHub, the API Base URL is automatically set to `https://api.github.com`. For Forgejo, ensure you include the `/api/v1` suffix.
+That's the only `.env` setting required. Token, repository, and provider are configured per-user.
 
-#### Automatic Sync
+---
 
-When enabled, Poznote will automatically:
-- **Pull** changes from the repository upon login.
-- **Push** changes (commits) to the repository whenever a note is created, updated, or deleted.
+**Step 2 — Each user configures their own repo (Settings > Git Sync)**
 
-You can also trigger manual push/pull from the **Sync Status** page (accessible via the cloud icon in the header).
+| Field | Description |
+|---|---|
+| Provider | `GitHub` or `Forgejo` |
+| API Base URL | GitHub: auto-filled (read-only). Forgejo: your instance URL, e.g. `https://forgejo.example.com/api/v1` |
+| Access Token | GitHub PAT (`ghp_...`) or Forgejo token (Settings > Applications) |
+| Repository | `owner/repo` format |
+| Branch | Default: `main` |
+| Author Name / Email | Used for commit metadata |
+
+> 🔒 Access tokens are encrypted at rest using AES-256-GCM. Set `POZNOTE_APP_SECRET` in your `.env` (generated with `openssl rand -hex 32`) to ensure the encryption key survives container rebuilds. If not set, a key is auto-generated and stored in `data/.app_secret`.
+
+---
+
+**Automatic sync**
+
+When enabled by the user, Poznote will automatically:
+- **Pull** on login
+- **Push** on every note create, update, or delete
+
+Manual push/pull is also available from the **Sync Status** page (cloud icon in the header).
 
 </details>
 
@@ -663,9 +727,28 @@ updated: 2024-01-20 15:45:00
 
 </details>
 
+## PWA
+
+Poznote can be installed as a **Progressive Web App (PWA)** in compatible browsers (Chrome, Edge, Safari on iOS, etc.).
+
+### Install on desktop
+
+1. Open your Poznote URL in the browser.
+2. Use the browser install action (for example **Install app** in the address bar/menu), or use the install button in **Settings** → **PWA Installation**.
+3. Launch Poznote from your applications list like a native app.
+
+### Install on mobile
+
+- **Android (Chrome/Edge):** open menu → **Install app** / **Add to Home screen**
+- **iPhone/iPad (Safari):** tap **Share** → **Add to Home Screen**
+
+### Offline behavior
+
+Poznote can be installed as a PWA, but this does not provide offline access to your notes content. For offline access to your notes, you must use the **Complete Backup** export feature (see section below).
+
 ## Offline View
 
-The **📦 Complete Backup** creates a standalone offline version of your notes. Simply extract the ZIP and open `index.html` in any web browser.
+The **📦 Complete Backup** creates a standalone offline version of your notes. Simply extract the ZIP and open `index.html` in any web browser. This allows you to read your notes offline, but without the full Poznote functionality, it's a read-only export.
 
 ## Multiple Instances
 

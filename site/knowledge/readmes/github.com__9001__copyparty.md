@@ -65,6 +65,7 @@ built in Norway 🇳🇴 with contributions from [not-norway](https://github.com
     * [searching](#searching) - search by size, date, path/name, mp3-tags, ...
 * [server config](#server-config) - using arguments or config files, or a mix of both
     * [version-checker](#version-checker) - sleep better at night
+    * [logging](#logging) - serverlog is sent to stdout by default
     * [zeroconf](#zeroconf) - announce enabled services on the LAN ([pic](https://user-images.githubusercontent.com/241032/215344737-0eae8d98-9496-4256-9aa8-cd2f6971810d.png))
         * [mdns](#mdns) - LAN domain-name and feature announcer
         * [ssdp](#ssdp) - windows-explorer announcer
@@ -1005,6 +1006,8 @@ specify `--shr /foobar` to enable this feature; a toplevel virtual folder named 
 
 users can delete their own shares in the controlpanel, and a list of privileged users (`--shr-adm`) are allowed to see and/or delet any share on the server
 
+the volflag `--shr-who` lets you control who can create a share from that volume, either `no` (nobody), `a` (people with admin permission), or `auth` (people who are logged in) 
+
 after a share has expired, it remains visible in the controlpanel for `--shr-rt` minutes (default is 1 day), and the owner can revive it by extending the expiration time there
 
 **security note:** using this feature does not mean that you can skip the [accounts and volumes](#accounts-and-volumes) section -- you still need to restrict access to volumes that you do not intend to share with unauthenticated users! it is not sufficient to use rules in the reverseproxy to restrict access to just the `/share` folder.
@@ -1336,6 +1339,33 @@ config file example:
   vc-url: https://api.copyparty.eu/advisories
   vc-age: 3  # how many hours to wait between each check
   vc-exit    # emergency-exit if current version is vulnerable
+```
+
+
+## logging
+
+serverlog is sent to stdout by default  (but logging to a file is also possible)
+
+"stdout" usually means either the terminal, or journalctl, or whatever is collecting logs from your docker containers, so that depends on your setup
+
+* [-q](https://copyparty.eu/cli/#g-q) disables logging to stdout, and may improve performance a little bit
+  * combine it with `-lo logfolder/cpp-%Y-%m-%d.txt` to log to a file instead
+  * the `%Y-%m-%d` makes it create a new logfile every day, with the date as filename
+* `-lo whatever.txt` can be used without `-q` to log to both at the same time
+  * by default, the logfile will have colors if the terminal does (usually the case)
+  * use the [textfile-viewer](https://github.com/user-attachments/assets/8a828947-2fae-4df9-bd2a-3de46f42d478) or `less -R` in a terminal to see colors correctly
+* if you want [no colors](https://youtu.be/biW5UVGkPMA?t=148):
+  * `--flo 2` disables colors for just the logfile
+  * `--no-ansi` disables colors for both the terminal and logfile
+
+config file example:
+
+```yaml
+[global]
+  log-date: %Y-%m-%d  # show dates on stdout too
+  lo: /var/log/cpp/%Y-%m-%d.txt  # logfile path
+  flo: 2  # just text (no colors) in logfile
+  q       # disable stdout; use logfile only
 ```
 
 

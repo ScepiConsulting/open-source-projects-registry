@@ -1,23 +1,8 @@
 {
   "chunk": 10,
   "count": 50,
-  "generated_at": "2026-03-15T05:11:07Z",
+  "generated_at": "2026-03-22T04:58:29Z",
   "items": [
-    {
-      "repo_key": "github.com/cially/cially",
-      "repo_url": "github.com/cially/cially",
-      "host": "github.com",
-      "owner": "cially",
-      "repo": "cially",
-      "app_references": [
-        "cially"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__cially__cially.md",
-      "readme_download_url": null,
-      "readme_sha256": "c4ced5106eaa3853d44d13dc4be976c20991a8c62cf6c60eb8912526e8501a3f",
-      "error": null
-    },
     {
       "repo_key": "github.com/circled-me/server",
       "repo_url": "github.com/circled-me/server",
@@ -237,10 +222,10 @@
       "app_references": [
         "cloud-commander"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__coderaiser__cloudcmd.md",
-      "readme_download_url": null,
-      "readme_sha256": "b19710a671dca267e6ed762c6e52f41f4fef2943fbe698c74d769babe3478a5d",
+      "readme_download_url": "https://raw.githubusercontent.com/coderaiser/cloudcmd/master/README.md",
+      "readme_sha256": "1bb32b6bb8c0e2de1314c5dcf707d81fcd077394c0eb58a6f1436afc92e08877",
       "error": null
     },
     {
@@ -334,6 +319,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/contao/contao",
+      "repo_url": "github.com/contao/contao",
+      "host": "github.com",
+      "owner": "contao",
+      "repo": "contao",
+      "app_references": [
+        "contao"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__contao__contao.md",
+      "readme_download_url": "https://raw.githubusercontent.com/contao/contao/main/README.md",
+      "readme_sha256": "979838d0e61d1f5f7ace1654c3564ced35de80dd2934a4d1fb3af078133f5602",
+      "error": null
+    },
+    {
       "repo_key": "github.com/conversejs/converse.js",
       "repo_url": "github.com/conversejs/converse.js",
       "host": "github.com",
@@ -372,9 +372,9 @@
       "app_references": [
         "cookcli"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__cooklang__cookcli.md",
-      "readme_download_url": "https://raw.githubusercontent.com/cooklang/cookcli/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f218c34bd72b9ba1a8a16ac0b1a9e48ac365dfcff35e29e8cf937755a18c1d43",
       "error": null
     },
@@ -390,7 +390,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__coollabsio__coolify.md",
       "readme_download_url": "https://raw.githubusercontent.com/coollabsio/coolify/v4.x/README.md",
-      "readme_sha256": "611632f98a4440d4e4c44d65309581ede62b35ca9a65172bad9f2c51d883a728",
+      "readme_sha256": "1cc854ff81eea4dada6d63e0e87617c77897020ebb32e008e40068771c70005a",
       "error": null
     },
     {
@@ -432,9 +432,9 @@
       "app_references": [
         "ontime"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__cpvalente__ontime.md",
-      "readme_download_url": "https://raw.githubusercontent.com/cpvalente/ontime/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8161cf2128d2264d84e2f4ab4e06c6ff9c19934e3aeaf5e5d864e20c63e966ce",
       "error": null
     },
@@ -567,9 +567,9 @@
       "app_references": [
         "imagor-studio"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__cshum__imagor-studio.md",
-      "readme_download_url": "https://raw.githubusercontent.com/cshum/imagor-studio/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "daeaea21d2d6c345a7c7b56877c70a2eabeecf29f999bb9ade13d4d8caf598b2",
       "error": null
     },
@@ -630,7 +630,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dagu-org__dagu.md",
       "readme_download_url": "https://raw.githubusercontent.com/dagu-org/dagu/main/README.md",
-      "readme_sha256": "02f1d5630d5c867b6c46c1b688396a42007cd8a6949b2526c060ca828d7734b3",
+      "readme_sha256": "6062070cfc53d219777a20fbc712c1ef5a20067130771ebdd14b7c5c07146fda",
       "error": null
     },
     {
@@ -720,7 +720,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__danielbrendel__hortusfox-web.md",
       "readme_download_url": "https://raw.githubusercontent.com/danielbrendel/hortusfox-web/main/README.md",
-      "readme_sha256": "3901abeb097dc408a7969abf3595375fab7726ca5f555820ada9f677fa713047",
+      "readme_sha256": "06db79531b9eaef45c0dd587ad57974402943c18a302781821b14473c3fd92a9",
       "error": null
     },
     {
@@ -732,10 +732,10 @@
       "app_references": [
         "librechat"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__danny-avila__LibreChat.md",
-      "readme_download_url": null,
-      "readme_sha256": "c83aee68a8ddf82c6aa19e8d434da37cca051ff40bcaffea10d968f7bd0bae3b",
+      "readme_download_url": "https://raw.githubusercontent.com/danny-avila/LibreChat/main/README.md",
+      "readme_sha256": "cac93d529e88f1db08121ad41abde215ab43fbfba6538b9a092db977fc7b734b",
       "error": null
     },
     {
@@ -747,9 +747,9 @@
       "app_references": [
         "trala"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dannybouwers__trala.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dannybouwers/trala/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b162860a35c2c9e968ef9c6e7691b22dda1759ed315db2dcf14450541b07e0f9",
       "error": null
     }

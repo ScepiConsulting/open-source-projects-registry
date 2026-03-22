@@ -14,7 +14,7 @@
 <a href="https://github.com/ChrispyBacon-dev/DockFlare/stargazers">
   <img src="https://img.shields.io/github/stars/ChrispyBacon-dev/DockFlare?style=for-the-badge" alt="Stars">
 </a>
-  <a href="https://github.com/ChrispyBacon-dev/DockFlare/releases"><img src="https://img.shields.io/badge/Release-v3.0.7-blue.svg?style=for-the-badge" alt="Release"></a>
+  <a href="https://github.com/ChrispyBacon-dev/DockFlare/releases"><img src="https://img.shields.io/badge/Release-v3.0.9-blue.svg?style=for-the-badge" alt="Release"></a>
   <a href="https://hub.docker.com/r/alplat/dockflare"><img src="https://img.shields.io/docker/pulls/alplat/dockflare?style=for-the-badge" alt="Docker Pulls"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=for-the-badge" alt="Python"></a>
   <a href="https://github.com/ChrispyBacon-dev/DockFlare/blob/main/LICENSE.MD"><img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=for-the-badge" alt="License"></a>
@@ -36,17 +36,20 @@ DockFlare is a self-hosted ingress and access-control plane for Cloudflare Tunne
 
 It was built to remove repetitive dashboard work from fast-changing self-hosted environments. Instead of manually updating DNS records, tunnel ingress rules, and Access applications, you define intent once and DockFlare reconciles it.
 
-The result is a set-it-and-forget-it workflow: less operational drift, more reliable service exposure, and one place to manage routing and access decisions.
+The result is a set-it-and-forget-it workflow with a fully localized native experience: less operational drift, more reliable service exposure, and one place to manage routing and access decisions.
 
 ## Core Capabilities
 
 - Automatic service discovery from Docker labels.
+- Native multi-language support (10 languages) for the Web UI and Help Center.
 - Manual ingress rule management for non-Docker workloads.
 - Cloudflare Tunnel ingress orchestration, including advanced origin options.
 - Access Group and reusable policy management with application assignment.
 - Cloudflare Access application lifecycle management.
 - Multi-zone DNS handling and zone-aware record placement.
 - Multi-host operation through a master and lightweight agents.
+- Cloudflare Zero Trust service token provisioning for secure agent communication.
+- One-liner deploy scripts for master and agent deployment.
 - Backup and restore of encrypted configuration and runtime state.
 - Deep-link shortcuts into Cloudflare Zero Trust pages from the DockFlare UI.
 
@@ -71,6 +74,14 @@ Detailed architecture guide: [https://dockflare.app/architecture](https://dockfl
 
 ## Getting Started
 
+### One-Liner Install
+
+```bash
+curl -fsSL https://dockflare.app/install.sh | bash
+```
+
+The script checks prerequisites, creates `~/dockflare/`, writes a production-ready `docker-compose.yml`, and starts all services. Open `http://<your-server-ip>:5000` when it finishes and follow the setup wizard.
+
 For full setup documentation, use the project docs site:
 
 - [Quick Start Guide](https://dockflare.app/docs)
@@ -90,6 +101,7 @@ For full setup documentation, use the project docs site:
   - `Account:Access: Organizations, Identity Providers, and Groups:Edit`
   - `Account:Account Settings:Read`
   - `Account:Access: Apps and Policies:Edit`
+  - `Account:Access: Service Tokens:Edit`
   - `Zone:Zone:Read`
   - `Zone:DNS:Edit`
 
@@ -107,7 +119,6 @@ docker network create cloudflare-net
 1. Create `docker-compose.yml`:
 
 ```yaml
-version: '3.8'
 services:
   docker-socket-proxy:
     image: tecnativa/docker-socket-proxy:v0.4.1
@@ -271,6 +282,7 @@ services:
 - Encourages Docker socket proxy for least-privilege Docker API exposure.
 - Runs containers as non-root (`UID/GID 65532`) in the reference setup.
 - Supports agent API key lifecycle controls and enrollment flow.
+- Optional Cloudflare Zero Trust service token authentication for all agent traffic, removing the need for a private network or VPN between master and agents.
 
 ## Operations and Day-2 Tasks
 
@@ -314,6 +326,8 @@ curl http://localhost:5000/api/v2/overview
 ```
 
 ## Documentation Map
+
+*(Available in 8 languages directly within the DockFlare UI or online)*
 
 - Product docs: [https://dockflare.app/docs](https://dockflare.app/docs)
 - Source docs in repository:

@@ -1,262 +1,233 @@
-[![Repository's starts](https://img.shields.io/github/stars/silexlabs/Silex?colorA=2c2837&colorB=c9cbff&style=for-the-badge&logo=starship)](https://github.com/silexlabs/Silex/stargazers)
+[![Stars](https://img.shields.io/github/stars/silexlabs/Silex?colorA=2c2837&colorB=c9cbff&style=for-the-badge&logo=starship)](https://github.com/silexlabs/Silex/stargazers)
 [![Issues](https://img.shields.io/github/issues-raw/silexlabs/Silex?colorA=2c2837&colorB=f2cdcd&style=for-the-badge&logo=starship)](https://github.com/silexlabs/Silex/issues)
 [![License](https://img.shields.io/github/license/silexlabs/Silex?colorA=2c2837&colorB=b5e8e0&style=for-the-badge&logo=starship)](https://github.com/silexlabs/Silex/blob/main/LICENSE)
-[![Latest commit](https://img.shields.io/github/last-commit/silexlabs/Silex/main?colorA=2c2837&colorB=ddb6f2&style=for-the-badge&logo=starship)](https://github.com/silexlabs/Silex/commits/main)
+[![Good first issues](https://img.shields.io/github/issues/silexlabs/Silex/good%20first%20issue?colorA=2c2837&colorB=a6e3a1&style=for-the-badge&logo=starship&label=good%20first%20issues)](https://github.com/silexlabs/Silex/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
 
+# Silex — the visual builder for static sites
 
-## Silex meta repo
+The web belongs to everyone. Silex is a free/libre visual website builder — no lock-in, no subscription, no tracking. Design visually, export clean HTML/CSS, host anywhere.
 
-Silex is a no-code tool for building websites. It also lets you code when needed. It can be used online, offline or in a JAMStack project.
+**[Try Silex online](https://v3.silex.me/)** | **[Documentation](https://docs.silex.me)** | **[Desktop app — coming soon](https://roadmap.silex.me/posts/3/silex-desktop)** | **[Manifesto](https://www.silex.me/manifesto/)**
 
-Silex lets you create websites without coding, but it also has built-in editors for HTML, CSS, and JavaScript for when you need more control. It is used by freelancers and web studios to make real websites for real clients. Also Silex can generate templates or be integrated in a nodejs ilproject, it has a plugin system and can integrate with headleass CMS and static site generators, it is part of the JSAMStack ecosystem since the v3.
+![Silex UI](https://www.silex.me/img/HJKUdOfC5N-2400.webp)
 
-![Silex UI](https://github.com/silexlabs/www.silex.me/raw/gh-pages/assets/silex-ui.gif)
+## Why Silex?
 
-Brought to you by [Alex Hoyau](https://lexoyo.me) and [Silex contributors](https://github.com/silexlabs/silex-lib/graphs/contributors).
+Most no-code tools lock you in: proprietary formats, forced hosting, subscriptions. Silex is different.
 
-Silex is free/libre software, users are expected to help make Silex sustainable by being [part of the community](https://community.silex.me/), [contributing documentation](https://docs.silex.me/), [making a financial contribution](https://opencollective.com/silex), [report bugs](https://github.com/silexlabs/Silex/issues).
+- **Your data is yours** — standard HTML/CSS output, export everything, host anywhere, leave anytime
+- **Real web skills** — everything you learn in Silex (HTML, CSS, JAMstack) is transferable knowledge
+- **Community-owned** — maintained by [Silex Labs](https://www.silexlabs.org/), a non-profit recognized as being of general interest. No investors, no exit strategy, [transparent finances](https://opencollective.com/silex)
+- **Free forever** — always free software (AGPL), all features included, no premium tier
 
-Useful links
+> _"The only open source alternative to Webflow."_ — _"The most powerful and graphically precise website builder that I have experienced."_
 
-* [User docs](https://docs.silex.me/en/user/selectors)
-* [Official website](https://www.silex.me/)
-* [Road map (please help defining tasks and prioritising)](https://roadmap.silex.me)
-* [Bug report in Github issues](https://github.com/silexlabs/Silex/issues)
-* [Forums in Github discussions](https://community.silex.me)
-* [Silex meta package with more source code](https://github.com/silexlabs/Silex)
+## Who is Silex for?
 
-Here are the main features of Silex website builder:
+- **Web agencies** — visual workflow, static output, scale client work without scaling your team
+- **WordPress developers** — visual frontend, content from WP via GraphQL, ditch the theme layer
+- **Freelance webdesigners** — create client sites without code, export standard HTML, host anywhere
+- **No-code developers** — go beyond Wix/Squarespace with full CSS control and no vendor lock-in
 
-* Free and Open Source, open to contributions
-* Visual Editor: Silex offers a visual editor that allows users to create websites without needing to write code. It supports drag-and-drop functionality for easy website creation.
-* Online CSS Editor: Alongside the visual editor, Silex also provides an online CSS editor for more advanced customization.
-* Static HTML Websites: Silex is designed to create static HTML websites, which are fast, secure, and easy to host.
-* SEO Features: Silex includes SEO features to help improve the visibility of websites on search engines.
-* Editor UI: Silex offers features like fonts, visual CSS editor, publication...
-* Self-hosting Option: Users can choose to host Silex website builder on their own server, using docker, nodejs or helpers for [Caprover](https://caprover.com/), [Yunohost](https://yunohost.org/), [Elest.io](https://elest.io/)
-* Community Support: Being an open-source project, Silex has a community of developers who contribute to its development and provide support.
-* Silex v3 > Silex is based on [GrapesJs](https://grapesjs.com/)
-* Silex v2 > Sync with Dropbox and FTP: Users can sync their Silex projects with Dropbox and FTP, allowing for easy access and management of files.
-* Silex v2 > Templates: Silex comes with a growing number of templates (both free and paid) that users can use as a starting point for their websites.
+## Features
 
-## About this repo
+- **[GrapesJS](https://grapesjs.com/)-based visual editor** — drag-and-drop page building with HTML, CSS, and JS editors
+- **Static HTML output** — fast, secure, easy to host anywhere
+- **CMS integration** — bind components to WordPress, Strapi, Squidex, or any GraphQL API
+- **[11ty](https://www.11ty.dev/) compatible** — generate static sites from Silex templates, deploy with CI/CD
+- **Desktop app (coming soon)** — work offline, no account needed, AI-ready with built-in [MCP server](#ai--vibe-coding). Built with [Tauri](https://tauri.app/) for Windows, macOS, Linux. [Follow progress](https://roadmap.silex.me/posts/3/silex-desktop).
+- **Plugin system** — extend with server and client plugins in JS/TS
+- **SEO tools** — meta tags, Open Graph, per-page settings
+- **Self-hosting** — Docker, Node.js, or one-click deploy on [CapRover](https://caprover.com/), [YunoHost](https://yunohost.org/), [Elest.io](https://elest.io/)
 
-This is a meta repository for Silex website builder.
+## Quick start
 
-It includes all projects needed for Silex development as git submodules. This is the repo you need to contribute to Silex, many of the repositories are dependencies of each other so use this meta repo and benefit from using [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/) or [npm workspaces](https://docs.npmjs.com/cli/using-npm/workspaces).
+**Use it online** — **[v3.silex.me](https://v3.silex.me/)** (free, requires a GitLab account for storage)
 
-To execute a command in every package, use `git submodule foreach 'command'` or `npm run exec -- 'command'` or `scripts/exec.js 'command'`.
+**Desktop app (alpha)** — [download for Windows, macOS or Linux](https://github.com/silexlabs/Silex/releases/latest). Work offline, no account needed.
 
-## Included repositories in this meta repo
+**Run with Node.js:**
 
-> Leave the line bellow as it is used in the doc script to insert content in the readme
->
-> Auto generated submodules
-
-# Silex packages
-
-| Name | Directory | Repo | Description |
-| ---- | --------- | ---- | ----------- |
-| @silexlabs/sitemapgen | `packages/SitemapGen` | `git@github.com:silexlabs/SitemapGen.git` | Generate a`sitemap.xml` from a static site generator (SSG) output directory. |
-| Silex Puter Plugin | `packages/silex-puter` | `git@github.com:silexlabs/silex-puter.git` | The **Silex Puter Plugin** brings Silex’s professional website-building capabilities to the Puter environment, letting users create, save, and publish static websites directly in Puter. This plugin enables seamless integration, making it easier than ever to use Silex within Puter for web design and content management. |
-| Silex plugins | `packages/silex-plugins` | `git@github.com:silexlabs/silex-plugins.git` | Environment agnostic (node.js, browser, commonjs, esnext...) open architecture (plugin system) inspired by 11ty.dev config |
-| Silex Plugin Starter | `packages/silex-plugin-starter` | `git@github.com:silexlabs/silex-plugin-starter.git` | A good place to start writing a Silex plugin. It supports server and/or client side plugins, in Javascript and TypeScript. Check [Silex developer docs if you need help](https://docs.silex.me/en/dev) or [join the discussions in the forum](https://community.silex.me/) |
-| Silex Platform by Silex Labs | `packages/silex-platform` | `git@github.com:silexlabs/silex-platform.git` | This is also a good example on how to customize Silex. And it has a Dockerfile for easy deployment. |
-| Silex core library | `packages/silex-lib` | `git@github.com:silexlabs/silex-lib.git` | This repository is the core library of Silex, it is a nodejs server which serves the Silex editor and the websites created with Silex. The core library is used in the online version of Silex, in the desktop app, and in the nodejs integration. It is available as a npx cli, as a docker image, and as a npm/nodejs library. |
-| Silex desktop (v2) | `packages/silex-desktop` | `git@github.com:silexlabs/silex-desktop.git` | This is the official [Silex](https://www.silex.me) desktop version, an installable application for Windows, MacOS and linux. |
-| Silex Dashboard | `packages/silex-dashboard` | `git@github.com:silexlabs/silex-dashboard.git` | Here is the source code of Silex dashboard. It is a [Silex](https://www.silex.me) plugin which can be installed to manage websites you will then edit in Silex. |
-| node_modules Path | `packages/node_modules-path` | `git@github.com:lexoyo/node_modules-path.git` | Get the path of the `node_modules` folder in your scripts or CLI or `package.json`. This is useful when you are building a library that can either be used as an npm dependency or directly, [see this question on SO](https://stackoverflow.com/questions/44279838/copy-assets-from-npm). |
-| @silexlabs/grapesjs-version-flow | `packages/grapesjs-version-flow` | `git@github.com:silexlabs/grapesjs-version-flow.git` | A GrapesJS plugin for managing version upgrades and migrations with sequential upgrade flow and modal UI |
-| Grapesjs Tailwind(WIP) | `packages/grapesjs-tailwind` | `git@github.com:silexlabs/grapesjs-tailwind.git` | [DEMO](https://codepen.io/ju99ernaut/pen/BaKGadb) |
-| Symbols plugin for GrapesJS | `packages/grapesjs-symbols` | `git@github.com:silexlabs/grapesjs-symbols.git` | This plugin enables users to create symbols, which are reusable elements, in a page and accross pages |
-| Grapesjs Storage Rate Limit | `packages/grapesjs-storage-rate-limit` | `git@github.com:silexlabs/grapesjs-storage-rate-limit.git` | A plugin for GrapesJS that provides rate-limited storage, allowing you to save changes immediately and then cool down for a specified period before saving again. |
-| GrapesJs Notifications Plugin | `packages/grapesjs-notifications` | `git@github.com:silexlabs/grapesjs-notifications.git` | Why this plugin? GrapesJs is a powerful framework to build no-code tools and allow users to create templates using a drag-and-drop interface. However, the framework does not offer a standard way of notifying users and each plugin implements its own, which is messy and not user friendly. This plugin provides a centralized notification system that can be used by all plugins to display messages to the user. |
-| Grapesjs Loading | `packages/grapesjs-loading` | `git@github.com:silexlabs/grapesjs-loading.git` | Shows a loading bar while the site is loaded or saved. By default it looks like the classic loading bar on top of the page, e.g. on github.com. |
-| GrapesJS Keymap Dialog | `packages/grapesjs-keymaps-dialog` | `git@github.com:silexlabs/grapesjs-keymaps-dialog.git` | This GrapesJS plugin implements a floating UI showing the available keymaps for the editor. |
-| Grapesjs Fonts | `packages/grapesjs-fonts` | `git@github.com:silexlabs/grapesjs-fonts.git` | Custom Fonts plugin for grapesjs |
-| Grapesjs Filter Styles | `packages/grapesjs-filter-styles` | `git@github.com:silexlabs/grapesjs-filter-styles.git` | This plugin adds a search bar in the Style manager so that users can search for a CSS style |
-| GrapesJs Data Source plugin | `packages/grapesjs-data-source` | `git@github.com:silexlabs/grapesjs-data-source.git` | This GrapesJS plugin integrates various APIs into the editor, providing powerful data-driven website building capabilities. |
-| GrapesJS AI Copilot | `packages/grapesjs-ai-copilot` | `git@github.com:silexlabs/grapesjs-ai-copilot.git` | ![AI Copilot Banner](https://img.shields.io/badge/AI-Copilot-blue?style=for-the-badge) |
-| GrapesJS Advanced Selector Manager | `packages/grapesjs-advanced-selector` | `git@github.com:silexlabs/grapesjs-advanced-selector.git` | An advanced selector management plugin for GrapesJS, designed for cases where the default Selector Manager falls short |
-| Expression & Popin Form Components | `packages/expression-input` | `git@github.com:silexlabs/expression-input.git` | A set of reusable web components to manage expressions (chains of tokens) and form overlays.   |
-| eleventy-plugin-concat | `packages/eleventy-plugin-concat` | `git@github.com:silexlabs/eleventy-plugin-concat.git` | Eleventy plugin to bundle your scripts and styles |
-
-
-> Auto generated submodules
-
-## Instruction
-
-> For the initial setup, please use yarn instead of npm, as it handles workspaces better. You can use npm after the initial setup.
-> For the versionning process, please use npm instead of yarn, as it has not been migrated to yarn yet.
-
-To contribute to Silex you need to fork this repo then clone locally (mini 2CPU and 4GoRAM) this repo with its submodules, make sure you use the required nodejs version (nvm) and install its dependencies (you can replace `npm` with `yarn`):
-
-* On github, fork this repo
-* Be sure of your ssh key for gitlab and github configured (we use both for repos)
-* Don't forget to verify if nodejs, nvm and npm are installed on your server
-* Then clone and setup the project:
-
-```
-$ git clone git@github.com:<your github handle>/Silex.git --recurse-submodules -j8
-$ cd Silex
-$ nvm install # [optional] Get the node version from .nvmrc
-$ npm install # Will install dependencies in all submodules too
-$ npm start # Will run the Silex editor from packages/silex-lib
-```
-If needed, add your .env file in <your-install-dir>/Silex/ [Server side options documentation](https://docs.silex.me/en/dev/options#server-side-options) and your server-side config file .<name>.silex.js in <your-install-dir>/Silex/packages/silex-lib/ [Server side configuration documentation](https://docs.silex.me/en/dev/connect#configuring-silex-with-existing-connectors)
-
-Then you can open your browser at [http://localhost:6805](http://localhost:6805) to see the Silex editor running locally.
-
-When you are ready to contribute to a specific library or libraries, you can do the following:
-
-* On github, fork the libraries you intend to contribute to, e.g. `silex-desktop`
-* In your local clone of this meta repo, update submodule URLs to point to your own forks of each library, e.g:
-  ```sh
-  $ cd packages/silex-desktop
-  $ git remote set-url origin git@github.com:<your-username>/silex-desktop.git'
-  ```
-* Sync Changes: Once your contributions are merged into the main library repositories, they will automatically sync with the meta repository when submodules are updated.
-
-Troubleshooting:
-
-If you find your repositories in a strange state, e.g repositories are on commits instead of the main branch, or if your `npm install` fails... You can do this:
-```
-$ scripts/exec.js "git checkout {{branch}}" # checkout the default branch in all submodules
-$ scripts/exec.js "npm install" # install dependencies in all submodules
-$ cd packages/Silex && npm run build && cd ../.. # build the Silex editor
+```sh
+npx @silexlabs/silex
 ```
 
-Useful commands
+Then open [http://localhost:6805](http://localhost:6805).
 
-* Start Silex: `npm start` (or use `npm run start:debug`)
-* Add a project: `git submodule add $PACKAGE_GIT_URL packages/$PACKAGE_NAME`, then run `npm run doc`
-* Update `package-lock.json` for a particular package: `npm i --package-lock-only --workspaces false` in the package directory
+## Contributing
+
+Silex has been built by contributors from around the world since 2009. Today, over 1,000 people use it every week, and 23,000+ accounts have been created. It's a small, friendly community — you'll get noticed, your PRs get reviewed, and your work has real impact.
+
+- **[Good first issues](https://github.com/silexlabs/Silex/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)** — start here
+- **[Contributing guide](https://docs.silex.me/en/dev/contribute)** — how to get started
+- **[Community forums](https://community.silex.me)** — ask questions, share ideas
+- **[Chat](https://short.silex.me/chat)** — quick help
+- **[Bug reports](https://github.com/silexlabs/Silex/issues)**
+
+### How the repo is organized
+
+This is a **meta repo** — it doesn't contain much code itself. Instead, it pulls together all Silex packages as [git submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in the `packages/` directory. Dependencies are managed with [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces/).
+
+Each package (e.g. `silex-lib`, `grapesjs-fonts`) is its **own git repository** with its own issues, PRs and releases. You can contribute to a single package without touching the rest.
+
+### Dev setup
+
+```sh
+git clone git@github.com:silexlabs/Silex.git --recurse-submodules -j8
+cd Silex
+nvm install        # optional — uses version from .nvmrc
+yarn install       # installs dependencies and builds all packages
+npm start          # starts the editor at http://localhost:6805
+```
+
+**Windows users:** Run `yarn install --ignore-scripts && yarn run build` instead.
+
+### Contributing to a package
+
+1. Fork the package repo on GitHub (e.g. `silexlabs/silex-lib`)
+2. Add your fork as a remote:
+   ```sh
+   cd packages/silex-lib
+   git remote add fork git@github.com:<your-username>/silex-lib.git
+   ```
+3. Create a branch, make changes, push to your fork:
+   ```sh
+   git checkout -b my-fix
+   # ... make changes ...
+   git commit -m "fix: description of the fix"
+   git push fork my-fix
+   ```
+4. Open a PR from your fork against the upstream repo (`silexlabs/silex-lib`)
 
 ### Releasing
 
-Use `npm run release` to release packages in the monorepo. Run without arguments to see help:
+Run `npm run release` for guided version bumping across packages. Run without arguments to see help and options (prepatch, preminor, patch, minor, dry-run).
 
-```sh
-$ npm run release
+## AI / Vibe coding
 
-Usage: scripts/release.sh --type=TYPE [--dry-run]
+> Design websites with AI — open, local, yours. [Learn more](https://www.silex.me/ai/)
 
-Options:
-  --type=TYPE  (required) Version bump type:
-               - prepatch: Increment patch and add/increment canary prerelease (e.g., 1.0.0 -> 1.0.1-canary.0)
-               - preminor: Increment minor and add/increment canary prerelease (e.g., 1.0.0 -> 1.1.0-canary.0)
-               - patch:    Release stable patch version (e.g., 1.0.1-canary.0 -> 1.0.1)
-               - minor:    Release stable minor version (e.g., 1.1.0-canary.0 -> 1.1.0)
-  --dry-run    Simulate the release process without making any changes
-  --help       Show this help message
-```
+The upcoming Silex Desktop app will let you create and transform sites through prompts: describe what you want, see it built live, refine the design in real time, publish clean HTML/CSS anywhere.
 
-Examples:
-```sh
-npm run release -- --type=preminor           # Create a canary prerelease
-npm run release -- --type=minor              # Promote prerelease to stable
-npm run release -- --type=patch --dry-run    # Simulate a patch release
-```
+Silex uses [MCP](https://modelcontextprotocol.io/) (Model Context Protocol), an open standard — so you choose your AI. Run a local model with [Ollama](https://ollama.com/) for full privacy, or use any MCP-compatible tool: [OpenCode](https://opencode.ai/), [Goose](https://block.github.io/goose/), Claude Code, etc. The MCP server is optimized for small local models (7B+).
 
-The script:
-1. Validates all packages have no uncommitted changes
-2. Processes packages in dependency order (updating internal deps first)
-3. Bumps versions and pushes tags for packages with new commits
-4. Tags the main monorepo with the same versioning logic
-5. Waits for npm publication confirmation between packages
+See the [vibe coding roadmap](https://roadmap.silex.me/posts/65/vibe-coding-with-silex-desktop) for what's coming (prompt library, examples cookbook, best practices guide — contributions welcome).
 
-## Third party dependencies
+### MCP setup (for developers)
 
-* The excellent [GrapesJs framework](https://grapesjs.com/) used for the front end drag/drop feature
-* [Typescript](https://www.typescriptlang.org/) is used to build Silex
-* [GLYPHICONS library of icons and symbols](http://glyphicons.com/) ([CC license](http://creativecommons.org/licenses/by/3.0/)) and [fontawesome icons](http://fontawesome.io/)
-
-## Size of Silex code base
-
-This includes all the packages of this repo.
-
-> Auto generated count
+Once Silex Desktop is running, connect your AI tool to:
 
 ```
-
-> silex-meta@1.0.0 count
-> cloc packages --exclude-dir node_modules,doc,strapi,test,dist,mock --exclude-ext=md,xml,pug,njk,ini,scss,css,json,svg,yaml,yml,html
-
-     100 files     200 files     300 files     400 files     500 files     600 files     700 files     800 files     900 files     938 text files.
-classified 558 filesDuplicate file check 558 files (461 known unique)Unique:      100 files                                          Unique:      200 files                                          Unique:      300 files                                          Unique:      400 files                                               479 unique files.                              
-Counting:  100Counting:  200Counting:  300Counting:  400     542 files ignored.
-
-github.com/AlDanial/cloc v 1.96  T=0.41 s (1180.7 files/s, 279547.1 lines/s)
--------------------------------------------------------------------------------
-Language                     files          blank        comment           code
--------------------------------------------------------------------------------
-JavaScript                     269           1907           2889          68820
-TypeScript                     197           2984           6929          28244
-GraphQL                          4            115              6           1002
-JSX                              1              0              2            266
-Text                             2             32              0             86
-Dockerfile                       2             10              7             66
-Bourne Shell                     3              8              1             24
-liquid                           1              0              0              9
--------------------------------------------------------------------------------
-SUM:                           479           5056           9834          98517
--------------------------------------------------------------------------------
-
+http://localhost:6807/mcp
 ```
 
-> Auto generated count
+**[OpenCode](https://opencode.ai/)** — add an MCP server in your [config file](https://opencode.ai/docs/configuration#mcp-servers) with URL `http://localhost:6807/mcp`.
 
-[Cloc's report](https://github.com/AlDanial/cloc) in mar. 2021:
+**[Goose](https://block.github.io/goose/)** — add a remote server in your [profile config](https://block.github.io/goose/docs/getting-started/using-extensions#remote-extensions) with endpoint `http://localhost:6807/mcp`.
 
-```
--------------------------------------------------------------------------------
-Language                     files          blank        comment           code
--------------------------------------------------------------------------------
-JavaScript                     149           9652          10733          54582
-JSON                            55              3              0          52723
-TypeScript                     178           2591           4713          21524
-HTML                           114          16988            380          16689
-CSS                             57           2142           1098          14399
-SCSS                            57            881            415           5444
-SVG                             17              0              0           4810
-LESS                            36            172            203           4039
-YAML                            38             18             46           2607
-EJS                             28             40              9           1627
-JSX                             14            160            109           1406
-Markdown                        42            472              0           1067
-Pug                             17             54             36            938
-Dockerfile                       1              3              3              9
-Properties                       1              1              0              1
--------------------------------------------------------------------------------
-SUM:                           804          33177          17745         181865
--------------------------------------------------------------------------------
-```
+**Claude Code** — `claude mcp add --transport http silex http://localhost:6807/mcp`
 
-[Cloc's report](https://github.com/AlDanial/cloc) in feb 2023:
+**Any other MCP client** — use a Streamable HTTP transport pointed at the same URL.
 
-```
-$ cloc packages
-     515 text files.
-     345 unique files.
-     697 files ignored.
+## Packages
 
-github.com/AlDanial/cloc v 1.92  T=1.00 s (345.0 files/s, 212776.0 lines/s)
--------------------------------------------------------------------------------
-Language                     files          blank        comment           code
--------------------------------------------------------------------------------
-JSON                            22              1              0         119875
-JavaScript                      62           7190           7805          38240
-TypeScript                     142           2035           4067          17106
-CSS                             21            594            715           5761
-YAML                            23             53             39           2914
-LESS                            21            138            159           2234
-Markdown                        15            413              0            932
-Pug                             14             49             30            899
-EJS                              7             35              4            798
-HTML                             3             56             12            495
-SVG                             13              0              0             96
-Dockerfile                       2              9              9             13
--------------------------------------------------------------------------------
-SUM:                           345          10573          12840         189363
--------------------------------------------------------------------------------
-```
+<details>
+<summary>This project is made up of 24 packages — click to expand</summary>
+
+<!-- Auto generated submodules -->
+
+| Package | Description |
+| ------- | ----------- |
+| [@silexlabs/sitemapgen](https://github.com/silexlabs/SitemapGen) | Generate a`sitemap.xml` from a static site generator (SSG) output directory. |
+| [Silex Server (Rust)](https://github.com/silexlabs/silex-server) | A Rust implementation of the Silex website builder server, providing storage and hosting connectors for website manag... |
+| [Silex plugins](https://github.com/silexlabs/silex-plugins) | Environment-agnostic plugin system for Silex, inspired by 11ty config. |
+| [Silex Plugin Starter](https://github.com/silexlabs/silex-plugin-starter) | Starter template for writing Silex plugins. |
+| [Silex Platform by Silex Labs](https://github.com/silexlabs/silex-platform) | Ready-to-deploy Silex instance maintained by Silex Labs. |
+| [Silex core library](https://github.com/silexlabs/silex-lib) | Core library of Silex — Node.js server, visual editor, npx CLI and Docker image. |
+| [Silex Desktop](https://github.com/silexlabs/silex-desktop) | Desktop application for Silex, the free/libre no-code website builder. |
+| [Silex Dashboard](https://github.com/silexlabs/silex-dashboard) | Dashboard plugin for managing websites in Silex. |
+| [Silex Dashboard 2026](https://gitlab.com/silexlabs/silex_silex-dashboard-2026) | Next-generation dashboard for Silex, replacing the legacy Vue.js dashboard. |
+| [node_modules Path](https://github.com/lexoyo/node_modules-path) | Get the path of the `node_modules` folder in your scripts or CLI or `package.json`. |
+| [@silexlabs/grapesjs-version-flow](https://github.com/silexlabs/grapesjs-version-flow) | A GrapesJS plugin for managing version upgrades and migrations with sequential upgrade flow and modal UI |
+| [Symbols plugin for GrapesJS](https://github.com/silexlabs/grapesjs-symbols) | This plugin enables users to create symbols, which are reusable elements, in a page and accross pages |
+| [Grapesjs Storage Rate Limit](https://github.com/silexlabs/grapesjs-storage-rate-limit) | A plugin for GrapesJS that provides rate-limited storage, allowing you to save changes immediately and then cool down... |
+| [GrapesJs Notifications Plugin](https://github.com/silexlabs/grapesjs-notifications) | Centralized notification system for GrapesJS plugins. |
+| [Grapesjs Loading](https://github.com/silexlabs/grapesjs-loading) | Shows a loading bar while the site is loaded or saved. |
+| [GrapesJS Keymap Dialog](https://github.com/silexlabs/grapesjs-keymaps-dialog) | This GrapesJS plugin implements a floating UI showing the available keymaps for the editor. |
+| [Grapesjs Fonts](https://github.com/silexlabs/grapesjs-fonts) | Custom Fonts plugin for grapesjs |
+| [Grapesjs Filter Styles](https://github.com/silexlabs/grapesjs-filter-styles) | This plugin adds a search bar in the Style manager so that users can search for a CSS style |
+| [GrapesJs Data Source plugin](https://github.com/silexlabs/grapesjs-data-source) | This GrapesJS plugin integrates various APIs into the editor, providing powerful data-driven website building capabil... |
+| [GrapesJS CSS Variables](https://github.com/silexlabs/grapesjs-css-variables) | Define and manage CSS custom properties in GrapesJs editors, e.g. `--primary`. |
+| [GrapesJS AI Capabilities](https://github.com/silexlabs/grapesjs-ai-capabilities) | Discovery and metadata layer for GrapesJS commands. |
+| [GrapesJS Advanced Selector Manager](https://github.com/silexlabs/grapesjs-advanced-selector) | An advanced selector management plugin for GrapesJS, designed for cases where the default Selector Manager falls short |
+| [Expression & Popin Form Components](https://github.com/silexlabs/expression-input) | A set of reusable web components to manage expressions (chains of tokens) and form overlays. |
+| [eleventy-plugin-concat](https://github.com/silexlabs/eleventy-plugin-concat) | Eleventy plugin to bundle your scripts and styles. |
+
+
+<!-- Auto generated submodules -->
+
+</details>
+
+## Contributors
+
+Silex is made up of many packages (git submodules), each with its own contributors. This project is maintained by [Alex Hoyau](https://lexoyo.me) and owned by the non-profit [Silex Labs](https://www.silexlabs.org/)
+
+<!-- Auto generated contributors -->
+
+**2026** — [Alex Hoyau](https://github.com/silexlabs/Silex/commit/b5138ce5cd191daf20e1250db91dda33480b78ee), [Safal2004](https://github.com/silexlabs/silex-dashboard/commit/ee9f1a86bd95afaced7180bb9dc5e45d39ca8bc3), [Wassim Triki](https://github.com/silexlabs/Silex/commit/ad0d0c27b41fe0813dcfc81ec74993899bd04bd6)
+
+**2025** — [Alex Hoyau](https://github.com/silexlabs/eleventy-plugin-concat/commit/3a76523aedcc559cb8cb4352d6e7650c128aa03a), [ceubri](https://gitlab.com/silexlabs/silex_silex-dashboard-2026/commit/b2ec28ff587000d7db6a75defed7e818f1dc0db3), [Mazen Kamal](https://github.com/silexlabs/silex-lib/commit/fa7a7af1d1c60ff9e8106c0ba857faba78bb67fd), [Piotr Golebiewski](https://github.com/silexlabs/grapesjs-fonts/commit/56411dccbc37eccf187eb0567fbb9c198b56c6a6), [oliviermgx](https://github.com/silexlabs/Silex/commit/5ec66e5d0c4f20f98a1a8b1f58f162fc5838882e)
+
+**2024** — [Alex Hoyau](https://github.com/silexlabs/silex-platform/commit/41132b3ab316916da1a843dcb0163b1b0c09e431), [oliviermgx](https://github.com/silexlabs/silex-lib/commit/c03c796a5536b391b1101e06665ed90a049d0093), [JeremyZXi](https://github.com/silexlabs/silex-lib/commit/0c1fe22d56b8493b0273eb0a78ee49e55343c259), [SuperDelphi](https://github.com/silexlabs/silex-lib/commit/44f2023803f34761772c881ee58a5487bc9ea32b)
+
+**2023** — [Alex Hoyau](https://github.com/silexlabs/grapesjs-data-source/commit/f3ead04500606620a7da4f81b596efd245b4a664), [Eskeminha](https://github.com/silexlabs/grapesjs-fonts/commit/29876050c7de637519f538aa6c130fc2d2147d31), [Ari Karageorgos](https://github.com/silexlabs/grapesjs-fonts/commit/e6e69d5ee24f2cbd9e2ea72845038a3f64fcc51a)
+
+**2022** — [Alex Hoyau](https://github.com/silexlabs/grapesjs-symbols/commit/497c2b5d34a1fecb4a137ddd296a92b0536be631), [Makara Sok](https://github.com/lexoyo/node_modules-path/commit/530e94c4d360a3b5f4c9538338162a283ac398af), [Khaled Bentoumi](https://github.com/silexlabs/grapesjs-symbols/commit/915fa0511497817f9af35c12aa96ce22c6290a40)
+
+**2021** — [Alex Hoyau](https://github.com/silexlabs/silex-platform/commit/d042a580a03ad7cb744fe714317d4631b5767ed7)
+
+**2020** — [Alex Hoyau](https://github.com/silexlabs/silex-lib/commit/fb7eebca0281032810053ac83b6e89130b636a0c), [Fredrik Söderquist](https://github.com/lexoyo/node_modules-path/commit/038aa91510fedff09ff47038ad12e6ad604020eb)
+
+**2019** — [Alex Hoyau](https://github.com/silexlabs/silex-lib/commit/ac23a53308bc8bb22d40cc933ebf945d89356991)
+
+**2018** — [Alex Hoyau](https://github.com/silexlabs/silex-lib/commit/e1a3bb271c3b57745390099e84b693df702c1f82), [Jean-Baptiste Richardet](https://github.com/silexlabs/silex-lib/commit/bfc91263712d68001845c3a81c90693648a00c79), [jotakar](https://github.com/silexlabs/silex-lib/commit/2eb4a718403e1d49417093ab7975abce2df0aa50), [swakarm](https://github.com/silexlabs/silex-lib/commit/f28e75392f34930c12227139b3cd958b195c51af)
+
+**2017** — [Alex Hoyau](https://github.com/silexlabs/silex-lib/commit/c81f28becb569768bcdebc45830530c316c67c69), [Jean-Baptiste Richardet](https://github.com/silexlabs/silex-lib/commit/3108529302a6afdfdb6d348eba7e3aebfea1272c), [Jenn Parker](https://github.com/silexlabs/silex-lib/commit/fc129b8ccec4e3bb09b7d33fbd42f1fe72462fcc), [Rapenne Solène](https://github.com/silexlabs/silex-lib/commit/4e91fb89cab3d6b3ff9d6ab525b795b0a9ea5699), [tariqbenezza](https://github.com/silexlabs/silex-lib/commit/52e0bb1ff3e36e5d788f120a606f3c626658fc60), [singchan](https://github.com/silexlabs/silex-lib/commit/34a9cc9537738843ee0a7fc4de4ead9c5d153877)
+
+**2016** — [Alex Hoyau](https://github.com/silexlabs/silex-lib/commit/99b57279fdd73448770fb13cad21877d8afa710b), [singchan](https://github.com/silexlabs/silex-lib/commit/2794c835bf819d34978dba68f66d15e7ca401344), [Pierre Ozoux](https://github.com/silexlabs/silex-lib/commit/80bcbeea30114c7d4de1fb1398712a191ea5027f)
+
+**2015** — [Alex Hoyau](https://github.com/silexlabs/silex-lib/commit/fdba661185c530ffc1f6e86a3616dcd663003475), [singchan](https://github.com/silexlabs/silex-lib/commit/c9edb6fb4be71b6b8cc5b6a62217fa54501be2a0), [Christophe](https://github.com/silexlabs/silex-lib/commit/945108e1b15fa62085cc17d6774610cb2198382e), [Pierre Ozoux](https://github.com/silexlabs/silex-lib/commit/94ba6133c3d6b71b5ef926129684a3143c6d4aea), [René Föhring](https://github.com/silexlabs/silex-lib/commit/856ed96545887721d91c242ff7469cb991351b0f), [christian-bromann](https://github.com/silexlabs/silex-lib/commit/a700472aea2c2872be98d8c27624809d403a5cbf)
+
+**2014** — [Alex Hoyau](https://github.com/silexlabs/silex-lib/commit/997c77eeb0eea7a7c51b0995eb68ffd47787b54b), [Camille Gérard-Hirne](https://github.com/silexlabs/silex-lib/commit/004cb78c1d22d7c98a813db1c248b37dcaadc59a), [neocorp64](https://github.com/silexlabs/silex-lib/commit/7826c144740512054fb4da780416101a9b865aad), [Michele Martone](https://github.com/silexlabs/silex-lib/commit/afb6f843ec5798e6bae8c6927ff48da5cd7abb84), [peoslaap](https://github.com/silexlabs/silex-lib/commit/78af56973f05537c1a087791d8985523875e9d15)
+
+**2013** — [Alex Hoyau](https://github.com/silexlabs/silex-lib/commit/4b794ed0c92477c818e634ec93c92a21a532a861), [Yann Le Scouarnec](https://github.com/silexlabs/silex-lib/commit/061734c0ad044ed819530b6667805e76e2f7585a), [TheCause](https://github.com/silexlabs/silex-lib/commit/a9dc6da9cbef495e7c89ae15e1d9c8fc1496804c), [yanhick](https://github.com/silexlabs/silex-lib/commit/b24de1f9cfcfd0378aa018940ebb540b00a4a8d0), [Thomas Fetiveau](https://github.com/silexlabs/silex-lib/commit/c39b1045e0ee33c9d164f956081a8fa71fed4264)
+
+
+
+<!-- Auto generated contributors -->
+
+## Links
+
+- [Official website](https://www.silex.me/)
+- [Manifesto](https://www.silex.me/manifesto/) — our values and commitments
+- [User documentation](https://docs.silex.me/)
+- [Developer documentation](https://docs.silex.me/en/dev)
+- [Road map](https://roadmap.silex.me) — help define tasks and priorities
+- [Community forums](https://community.silex.me)
+- [Newsletter (EN)](https://short.silex.me/news_en) | [(FR)](https://short.silex.me/news_fr)
+- [OpenCollective](https://opencollective.com/silex) — financial contributions
+
+## Built on
+
+Silex stands on the shoulders of these open-source projects and their communities:
+
+- [GrapesJS](https://grapesjs.com/) — front-end drag-and-drop framework
+- [11ty (Eleventy)](https://www.11ty.dev/) — static site generator used for CMS integration
+- [Tauri](https://tauri.app/) — desktop app framework (Rust + WebView)
+- [TypeScript](https://www.typescriptlang.org/) — language used across packages
+
+## Credits
+
+Brought to you since 2009 by [Alex Hoyau](https://lexoyo.me) and the Silex community.
+
+Silex is free/libre software. [Join the community](https://community.silex.me/), [contribute](https://docs.silex.me/en/dev/contribute), [donate](https://opencollective.com/silex), or [report bugs](https://github.com/silexlabs/Silex/issues).

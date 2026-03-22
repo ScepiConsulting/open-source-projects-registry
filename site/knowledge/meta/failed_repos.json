@@ -190,9 +190,9 @@
     "error": "worker_exception: Invalid URL 'gitlab.com/rtraceio/web/flink/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/rtraceio/web/flink/-/raw/main/README.md?"
   },
   {
-    "repo_key": "gitlab.com/smoores/storyteller",
-    "repo_url": "gitlab.com/smoores/storyteller",
-    "error": "worker_exception: Invalid URL 'gitlab.com/smoores/storyteller/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/smoores/storyteller/-/raw/main/README.md?"
+    "repo_key": "gitlab.com/storyteller-platform/storyteller",
+    "repo_url": "gitlab.com/storyteller-platform/storyteller",
+    "error": "worker_exception: Invalid URL 'gitlab.com/storyteller-platform/storyteller/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/storyteller-platform/storyteller/-/raw/main/README.md?"
   },
   {
     "repo_key": "gitlab.com/timvisee/send",
@@ -218,6 +218,11 @@
     "repo_key": "salsa.debian.org/freedombox-team/freedombox",
     "repo_url": "salsa.debian.org/freedombox-team/freedombox",
     "error": "worker_exception: Invalid URL 'salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md?"
+  },
+  {
+    "repo_key": "sr.ht/~sircmpwn/sourcehut",
+    "repo_url": "sr.ht/~sircmpwn/sourcehut",
+    "error": "worker_exception: Invalid URL 'sr.ht/~sircmpwn/sourcehut/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://sr.ht/~sircmpwn/sourcehut/-/raw/main/README.md?"
   },
   {
     "repo_key": "we.phorge.it/source/phorge",

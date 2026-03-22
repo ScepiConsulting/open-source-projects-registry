@@ -27,6 +27,9 @@
   </a>
   <a href="https://github.com/3xpyth0n/ideon/issues">
     <img src="https://img.shields.io/badge/contributions-welcome-001.svg?style=flat-square" alt="Contributions welcome">
+  <a href="https://discord.gg/X6gJSjupz3">
+    <img src="https://img.shields.io/discord/1476900574380167254?label=Discord&logo=discord&style=flat-square&color=5865F2" alt="Discord server">
+  </a>
   </a>
   <a href="https://github.com/3xpyth0n/ideon/commits/main">
     <img src="https://img.shields.io/github/last-commit/3xpyth0n/ideon?style=flat-square&color=001" alt="Last commit">
@@ -45,6 +48,7 @@ Ideon replaces abstract folders with spatial organization. Instead of navigating
     <a href="https://www.theideon.com">Home Page</a> |
     <a href="https://www.theideon.com/docs/">Documentation</a> |
     <a href="https://github.com/users/3xpyth0n/projects/3">Roadmap</a> |
+    <a href="https://discord.gg/X6gJSjupz3">Discord Server</a> |
     <a href="https://www.theideon.com/about/">About</a>
   </strong>
 </div>
@@ -114,6 +118,7 @@ Thanks go to these wonderful people:
       <td align="center" valign="top" width="14.28%"><a href="https://zorinos.com/ "><img src="https://avatars.githubusercontent.com/u/34811668?v=4?s=100" width="75px;" alt="albanobattistella"/><br /><sub><b>albanobattistella</b></sub></a><br /><a href="#translation-albanobattistella" title="Translation">🌍</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Solirix"><img src="https://avatars.githubusercontent.com/u/99198915?v=4?s=100" width="100px;" alt="Solirix"/><br /><sub><b>Solirix</b></sub></a><br /><a href="#security-Solirix" title="Security">🛡️</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/flooryyyy"><img src="https://avatars.githubusercontent.com/u/67979730?v=4?s=100" width="100px;" alt="floory"/><br /><sub><b>floory</b></sub></a><br /><a href="https://github.com/3xpyth0n/ideon/issues?q=author%3Aflooryyyy" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.murlock.org/blog"><img src="https://avatars.githubusercontent.com/u/250625?v=4?s=100" width="100px;" alt="Michael Bonfils"/><br /><sub><b>Michael Bonfils</b></sub></a><br /><a href="https://github.com/3xpyth0n/ideon/commits?author=murlock" title="Documentation">📖</a></td>
     </tr>
   </tbody>
 </table>

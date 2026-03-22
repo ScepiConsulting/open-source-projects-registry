@@ -1,7 +1,7 @@
 {
   "chunk": 20,
   "count": 50,
-  "generated_at": "2026-03-15T05:11:07Z",
+  "generated_at": "2026-03-22T04:58:29Z",
   "items": [
     {
       "repo_key": "github.com/panoratech/Panora",
@@ -76,21 +76,6 @@
       "readme_path": "knowledge/readmes/github.com__passbolt__passbolt_api.md",
       "readme_download_url": null,
       "readme_sha256": "481840b1daaab2e2d9ea9ab594298564bbf84f9f0f33719e15aaa26155a89993",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pawelmalak/flame",
-      "repo_url": "github.com/pawelmalak/flame",
-      "host": "github.com",
-      "owner": "pawelmalak",
-      "repo": "flame",
-      "app_references": [
-        "flame"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pawelmalak__flame.md",
-      "readme_download_url": null,
-      "readme_sha256": "c704f3dc7ffb8f4b5059a6c0ee4008f759f895c096481f8a7dfa9e00a2b58715",
       "error": null
     },
     {
@@ -225,7 +210,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
       "readme_download_url": "https://raw.githubusercontent.com/pglombardo/PasswordPusher/master/README.md",
-      "readme_sha256": "2208fda4dd80f05c89f4a1b9a99b2d8cc5ec8b3ec0b8a0ddc3d71dac09404016",
+      "readme_sha256": "6cc52ceae80d6d03aca1c8b4efa9d3e4dda5aace1e15c80425b8dd75c7c6c7c8",
       "error": null
     },
     {
@@ -375,7 +360,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pixlcore__xyops.md",
       "readme_download_url": "https://raw.githubusercontent.com/pixlcore/xyops/main/README.md",
-      "readme_sha256": "53badce5079171e0f91b803312a1067e3ae0e1168a1c23e32dd61f01296a6f99",
+      "readme_sha256": "8e5b14784f97ecce7eb70da8f97e964663757b54b82f1629471b824a8f45b9b5",
       "error": null
     },
     {
@@ -447,10 +432,10 @@
       "app_references": [
         "pocketbase"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pocketbase__pocketbase.md",
-      "readme_download_url": null,
-      "readme_sha256": "7bd87b84fc3ff4155ea7c998dfb0d8d0d628cee5f67966247238ea55bb321cfe",
+      "readme_download_url": "https://raw.githubusercontent.com/pocketbase/pocketbase/master/README.md",
+      "readme_sha256": "0b836126977fa642fe286a309917c362f20e4d5e63bb6f3848282147c32a2ed4",
       "error": null
     },
     {
@@ -529,21 +514,6 @@
       "error": null
     },
     {
-      "repo_key": "github.com/postgres/postgres",
-      "repo_url": "github.com/postgres/postgres",
-      "host": "github.com",
-      "owner": "postgres",
-      "repo": "postgres",
-      "app_references": [
-        "postgresql"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__postgres__postgres.md",
-      "readme_download_url": null,
-      "readme_sha256": "f8f3f3b5e7f522c8b4d8e49679ccab090b26fd0a0b4bcf6fd54e22fec6a88b2a",
-      "error": null
-    },
-    {
       "repo_key": "github.com/project-zot/zot",
       "repo_url": "github.com/project-zot/zot",
       "host": "github.com",
@@ -567,10 +537,10 @@
       "app_references": [
         "projectsend"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__projectsend__projectsend.md",
-      "readme_download_url": null,
-      "readme_sha256": "99f0d8d99533078845f6b0d89cbbcea27387633260839dfaf2c666f04a2a9550",
+      "readme_download_url": "https://raw.githubusercontent.com/projectsend/projectsend/develop/README.md",
+      "readme_sha256": "91670dbf4b01c4ff202991637bd042f2967da36c4e96176599bedbebbd73edb8",
       "error": null
     },
     {
@@ -717,10 +687,10 @@
       "app_references": [
         "czkawka"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__qarmin__czkawka.md",
-      "readme_download_url": null,
-      "readme_sha256": "9535faeee5e7d0b7ac8278c39ab1831768429a6df28a3c5419d9188d87705b69",
+      "readme_download_url": "https://raw.githubusercontent.com/qarmin/czkawka/master/README.md",
+      "readme_sha256": "a5fe167beb83c3fa11e87b5432ee99b3c910ea4e3b08d0a2125bdf037385477f",
       "error": null
     },
     {
@@ -751,6 +721,36 @@
       "readme_path": "knowledge/readmes/github.com__qdm12__ddns-updater.md",
       "readme_download_url": null,
       "readme_sha256": "599ee61723c3c2921345617dabdecdaed9d8608947d86274772bb5a4cb3d3203",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/quickwit-oss/quickwit",
+      "repo_url": "github.com/quickwit-oss/quickwit",
+      "host": "github.com",
+      "owner": "quickwit-oss",
+      "repo": "quickwit",
+      "app_references": [
+        "quickwit"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__quickwit-oss__quickwit.md",
+      "readme_download_url": null,
+      "readme_sha256": "9283f919a91d5111abc21c9cef7159f57746c5ec4642364c5e3f0747caf791f3",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/qwibitai/nanoclaw",
+      "repo_url": "github.com/qwibitai/nanoclaw",
+      "host": "github.com",
+      "owner": "qwibitai",
+      "repo": "nanoclaw",
+      "app_references": [
+        "nanoclaw"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__qwibitai__nanoclaw.md",
+      "readme_download_url": "https://raw.githubusercontent.com/qwibitai/nanoclaw/main/README.md",
+      "readme_sha256": "88abddf74305de0cc8f4dcf8ab26cfd376b4ac0c6ce4c878f0d7c18145b2d93a",
       "error": null
     }
   ]

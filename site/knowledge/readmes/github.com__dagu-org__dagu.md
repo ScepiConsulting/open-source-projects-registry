@@ -23,7 +23,8 @@ Built for developers who want powerful workflow orchestration without the operat
 
 - Zero-Ops: Single binary, file-based storage, under 128MB memory footprint
 - Full-Power: Docker steps, SSH execution, DAG composition, distributed mode, Git-based version management for DAGs & docs, [19+ executors](https://docs.dagu.sh/step-types/shell)
-- AI-Native: Built-in LLM agent creates, edits, and debugs workflows from natural language
+- AI-Native: Built-in LLM agent creates, edits, and debugs workflows from natural language in the Web UI or as `type: agent` steps
+- Workflow Operator: Persistent AI operator for Slack and Telegram. Monitor runs, debug failures, recover incidents, and continue follow-up in the same conversation
 - Legacy Script Friendly: Orchestrate existing shell commands, Python scripts, Docker containers, or HTTP calls without modification.
 - Air-gapped Ready: Runs in isolated environments without external dependencies or network access
 
@@ -61,7 +62,7 @@ One binary. No Postgres. No Redis. No Python. Just `dagu start-all`.
 **macOS/Linux:**
 
 ```bash
-curl -L https://raw.githubusercontent.com/dagu-org/dagu/main/scripts/installer.sh | bash
+curl -fsSL https://raw.githubusercontent.com/dagu-org/dagu/main/scripts/installer.sh | bash
 ```
 
 **Homebrew:**
@@ -75,6 +76,10 @@ brew install dagu
 ```powershell
 irm https://raw.githubusercontent.com/dagu-org/dagu/main/scripts/installer.ps1 | iex
 ```
+
+The script installers open a guided wizard. They can install Dagu, add it to your PATH, set it up as a background service, create the first admin account, and install the Dagu AI skill when a supported AI tool is detected.
+
+Homebrew, npm, Docker, Helm, and manual downloads install Dagu without the guided wizard. See the [Installation docs](https://docs.dagu.sh/getting-started/installation) for the full install guide and advanced options.
 
 **Docker:**
 
@@ -93,19 +98,28 @@ helm install dagu dagu/dagu --set persistence.storageClass=<your-rwx-storage-cla
 > Replace `<your-rwx-storage-class>` with a StorageClass in your cluster that supports `ReadWriteMany`. If your cluster default storage class already supports `ReadWriteMany`, you can omit the flag. See [charts/dagu/README.md](./charts/dagu/README.md) for chart details, values, and source-checkout installation.
 
 > More options (npm, custom paths, specific versions): [Installation docs](https://docs.dagu.sh/getting-started/installation)
+>
+> The script installers also support uninstall. See the [Installation docs](https://docs.dagu.sh/getting-started/installation#uninstall) for `--uninstall` / `-Uninstall`, optional data purge, and AI skill removal.
 
 ### 2. Set up AI-assisted workflow authoring (optional)
 
-If you use an AI coding tool (Claude Code, Codex, OpenCode, Gemini CLI, or Copilot CLI), install the Dagu skill so the AI can write correct DAG YAML:
+If you use an AI coding tool (Claude Code, Codex, OpenCode, Gemini CLI, or Copilot CLI), install the Dagu skill so the AI can write correct DAG YAML.
+
+If you installed Dagu with Homebrew, npm, or a manual binary download, run this after `dagu` is available on your PATH. The guided installer can offer the same step automatically.
+
+Use Dagu's built-in installer:
 
 ```bash
-dagu ai install
-
-# Or install into a specific skills directory
-dagu ai install --skills-dir ~/.agents/skills
+dagu ai install --yes
 ```
 
-This auto-detects installed tools and installs the DAG authoring skill into each one. Use `--skills-dir` to install only into the specified skills directory or directories. See [docs](https://docs.dagu.sh/getting-started/cli#ai-install) for details.
+Fallback via the shared `skills` CLI:
+
+```bash
+npx skills add https://github.com/dagu-org/dagu --skill dagu
+```
+
+For explicit skills directories, see the [installation docs](https://docs.dagu.sh/getting-started/installation) and the [CLI reference](https://docs.dagu.sh/getting-started/cli#ai).
 
 ### 3. Create your first workflow
 
@@ -267,6 +281,7 @@ For more examples, see the [Examples](https://docs.dagu.sh/writing-workflows/exa
 ### AI-Native
 
 - Built-in [AI agent](https://docs.dagu.sh/features/agent/) — creates, edits, runs, and debugs workflows from natural language
+- [Workflow Operator](https://docs.dagu.sh/features/bots/) — persistent AI operator for Slack and Telegram to monitor runs, debug failures, recover incidents, and continue follow-up in context
 - [Agent and chat step types](https://docs.dagu.sh/features/agent/step) in DAGs with tool calling
 - Multi-provider LLM support (Anthropic, OpenAI, Google Gemini, OpenRouter)
 - Persistent memory, sub-agent delegation, and domain-specific skills
@@ -333,7 +348,7 @@ For more examples, see the [Examples](https://docs.dagu.sh/writing-workflows/exa
 
 ### Builtin Authentication (RBAC)
 
-When `DAGU_AUTH_MODE=builtin`, a file-based user management system with role-based access control is enabled. Roles: `admin`, `manager`, `developer`, `operator`, `viewer`. On first startup, visit the web UI to create your admin account via the setup page.
+When `DAGU_AUTH_MODE=builtin`, a file-based user management system with role-based access control is enabled. Roles: `admin`, `manager`, `developer`, `operator`, `viewer`. On first startup, create the first admin with the guided installer, configure `initial_admin`, or visit the web UI setup page.
 
 | Environment Variable | Default | Description |
 |---------------------|---------|-------------|
@@ -357,6 +372,7 @@ When `DAGU_AUTH_MODE=builtin`, a file-based user management system with role-bas
 | Environment Variable | Default | Description |
 |---------------------|---------|-------------|
 | `DAGU_TERMINAL_ENABLED` | `false` | Enable web-based terminal |
+| `DAGU_TERMINAL_MAX_SESSIONS` | `5` | Maximum concurrent terminal sessions |
 | `DAGU_AUDIT_ENABLED` | `true` | Enable audit logging for security events |
 
 ### Git Sync Configuration
@@ -396,8 +412,10 @@ This configuration is used for worker instances that execute DAGs. See the [Dist
 | `DAGU_COORDINATOR_HOST` | `127.0.0.1` | Coordinator gRPC server bind address |
 | `DAGU_COORDINATOR_ADVERTISE` | (auto) | Address to advertise in service registry (default: hostname) |
 | `DAGU_COORDINATOR_PORT` | `50055` | Coordinator gRPC server port |
+| `DAGU_COORDINATOR_HEALTH_PORT` | `8091` | Coordinator HTTP health check server port (`0` disables) |
 | `DAGU_WORKER_ID` | - | Worker instance ID |
 | `DAGU_WORKER_MAX_ACTIVE_RUNS` | `100` | Maximum concurrent runs per worker |
+| `DAGU_WORKER_HEALTH_PORT` | `8092` | Worker HTTP health check server port (`0` disables) |
 | `DAGU_WORKER_LABELS` | - | Worker labels (format: `key1=value1,key2=value2`, e.g., `gpu=true,memory=64G`) |
 | `DAGU_SCHEDULER_PORT` | `8090` | Scheduler health check server port |
 | `DAGU_SCHEDULER_LOCK_STALE_THRESHOLD` | `30s` | Time after which scheduler lock is considered stale |
@@ -422,6 +440,7 @@ Full documentation at [docs.dagu.sh](https://docs.dagu.sh/).
 - [Getting Started](https://docs.dagu.sh/getting-started/installation) — Installation and first workflow
 - [Examples](https://docs.dagu.sh/writing-workflows/examples) — Feature walkthroughs with YAML samples
 - [AI Agent](https://docs.dagu.sh/features/agent/) — Built-in AI assistant for workflow management
+- [Workflow Operator](https://docs.dagu.sh/features/bots/) — Manage workflows from Slack or Telegram
 - [Distributed Execution](https://docs.dagu.sh/server-admin/distributed/) — Coordinator/worker setup
 - [Configuration](https://docs.dagu.sh/server-admin/reference) — Environment variables and settings
 - [Changelog](https://docs.dagu.sh/overview/changelog) — Recent updates and releases

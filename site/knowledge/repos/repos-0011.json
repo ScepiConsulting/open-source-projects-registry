@@ -1,7 +1,7 @@
 {
   "chunk": 11,
   "count": 50,
-  "generated_at": "2026-03-15T05:11:07Z",
+  "generated_at": "2026-03-22T04:58:29Z",
   "items": [
     {
       "repo_key": "github.com/databasus/databasus",
@@ -15,7 +15,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__databasus__databasus.md",
       "readme_download_url": "https://raw.githubusercontent.com/databasus/databasus/main/README.md",
-      "readme_sha256": "6d5e6089045dcba0fd5f6fcce755ae9db48881081ccfadf17fb4cd4242dc5614",
+      "readme_sha256": "e6d80f1a51769d082120f0bec736057b58f0e2fbe4d0459495c90cf2af710b87",
       "error": null
     },
     {
@@ -267,9 +267,9 @@
       "app_references": [
         "mantium"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__diogovalentte__mantium.md",
-      "readme_download_url": "https://raw.githubusercontent.com/diogovalentte/mantium/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6d63ee589298ce03ac39de43d7f9f90558613138b23825841944dc38a733371f",
       "error": null
     },
@@ -297,10 +297,10 @@
       "app_references": [
         "discourse"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__discourse__discourse.md",
-      "readme_download_url": null,
-      "readme_sha256": "0bb146da1d03dcf549a518ec7cb61b3348b776732b8acaea4608222ed755b10d",
+      "readme_download_url": "https://raw.githubusercontent.com/discourse/discourse/main/README.md",
+      "readme_sha256": "2cd0c9edb07fd333bd30beda74a50923a4fd4b0dde796394551223e003b0de1a",
       "error": null
     },
     {
@@ -346,6 +346,21 @@
       "readme_path": "knowledge/readmes/github.com__diyhue__diyHue.md",
       "readme_download_url": null,
       "readme_sha256": "01a7a2e3a0df91fb48fc702d1bab396cfc34ee186b5660c8e6a0d8c4e8f8c6c7",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/djylb/nps",
+      "repo_url": "github.com/djylb/nps",
+      "host": "github.com",
+      "owner": "djylb",
+      "repo": "nps",
+      "app_references": [
+        "nps-enhanced"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__djylb__nps.md",
+      "readme_download_url": "https://raw.githubusercontent.com/djylb/nps/master/README.md",
+      "readme_sha256": "4b0bdca068c4829042810affa69077d94cdcaf747b415538bdd3bc6f51acd41e",
       "error": null
     },
     {
@@ -447,10 +462,10 @@
       "app_references": [
         "docuseal"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__docusealco__docuseal.md",
-      "readme_download_url": null,
-      "readme_sha256": "775cc2b55f9606c1768a9496abfcf4f5ff16e34117d8a442c3df299d97dead06",
+      "readme_download_url": "https://raw.githubusercontent.com/docusealco/docuseal/master/README.md",
+      "readme_sha256": "17a0d4a7743d59ca2a1201f6099e118c0487fb2f8b4cae0669acbea5f694a415",
       "error": null
     },
     {
@@ -507,9 +522,9 @@
       "app_references": [
         "dokku"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dokku__dokku.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dokku/dokku/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "94d43597a2806941682501bfb4708a91d893695509c454d1fd8f865b23517150",
       "error": null
     },
@@ -552,9 +567,9 @@
       "app_references": [
         "donetick"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__donetick__donetick.md",
-      "readme_download_url": "https://raw.githubusercontent.com/donetick/donetick/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7dc087db918bbc68ce9174546b9b5656054cd78704151cb862ec689b6be729f7",
       "error": null
     },
@@ -627,9 +642,9 @@
       "app_references": [
         "drivebase"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__drivebase__drivebase.md",
-      "readme_download_url": "https://raw.githubusercontent.com/drivebase/drivebase/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "36e53e6e3379f44b85c9f05be92bf848af9d88b0c13b363cbd22f273a6c6283b",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__eikek__docspell.md",
       "readme_download_url": null,
       "readme_sha256": "48a17edad2649b969886280fc17fe20e98eef55a841664a66ae43c07b85f3858",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/eikek/sharry",
-      "repo_url": "github.com/eikek/sharry",
-      "host": "github.com",
-      "owner": "eikek",
-      "repo": "sharry",
-      "app_references": [
-        "sharry"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__eikek__sharry.md",
-      "readme_download_url": null,
-      "readme_sha256": "f737c63eb59fd8e62257cd3bbce947d034240083a77444e0c84bd210666befd1",
       "error": null
     }
   ]

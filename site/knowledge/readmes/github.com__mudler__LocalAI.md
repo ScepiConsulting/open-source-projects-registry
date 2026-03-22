@@ -62,48 +62,15 @@
 
 **LocalAI** is the free, Open Source OpenAI alternative. LocalAI act as a drop-in replacement REST API that's compatible with OpenAI (Elevenlabs, Anthropic... ) API specifications for local AI inferencing. It allows you to run LLMs, generate images, audio (and not only) locally or on-prem with consumer grade hardware, supporting multiple model families. Does not require GPU. It is created and maintained by [Ettore Di Giacinto](https://github.com/mudler).
 
-<details>
-<summary><strong>Table of Contents</strong></summary>
-
-- [Local Stack Family](#local-stack-family)
-- [Screenshots / Video](#screenshots--video)
-- [Quickstart](#-quickstart)
-  - [macOS Download](#macos-download)
-  - [Containers (Docker, podman, ...)](#containers-docker-podman-)
-- [Latest project news](#-latest-project-news)
-- [Features](#-features)
-- [Supported Backends & Acceleration](#-supported-backends--acceleration)
-  - [Text Generation & Language Models](#text-generation--language-models)
-  - [Audio & Speech Processing](#audio--speech-processing)
-  - [Image & Video Generation](#image--video-generation)
-  - [Specialized AI Tasks](#specialized-ai-tasks)
-  - [Hardware Acceleration Matrix](#hardware-acceleration-matrix)
-  - [Community and integrations](#-community-and-integrations)
-  - [Resources](#-resources)
-- [Media, Blogs, Social](#book--media-blogs-social)
-- [Autonomous Development Team](#-autonomous-development-team)
-- [Citation](#citation)
-- [Sponsors](#️-sponsors)
-  - [Individual sponsors](#individual-sponsors)
-- [Star history](#-star-history)
-- [License](#-license)
-- [Acknowledgements](#-acknowledgements)
-- [Contributors](#-contributors)
-
-</details>
-
-## Local Stack Family
-
-Liking LocalAI? LocalAI is part of an integrated suite of AI infrastructure tools, you might also like:
-
-- **[LocalAGI](https://github.com/mudler/LocalAGI)** - AI agent orchestration platform with OpenAI Responses API compatibility and advanced agentic capabilities
-- **[LocalRecall](https://github.com/mudler/LocalRecall)** - MCP/REST API knowledge base system providing persistent memory and storage for AI agents
-- 🆕 **[Cogito](https://github.com/mudler/cogito)** - Go library for building intelligent, co-operative agentic software and LLM-powered workflows, focusing on improving results for small, open source language models that scales to any LLM. Powers LocalAGI and LocalAI MCP/Agentic capabilities
-- 🆕 **[Wiz](https://github.com/mudler/wiz)** - Terminal-based AI agent accessible via Ctrl+Space keybinding. Portable, local-LLM friendly shell assistant with TUI/CLI modes, tool execution with approval, MCP protocol support, and multi-shell compatibility (zsh, bash, fish)
-- 🆕 **[SkillServer](https://github.com/mudler/skillserver)** - Simple, centralized skills database for AI agents via MCP. Manages skills as Markdown files with MCP server integration, web UI for editing, Git synchronization, and full-text search capabilities
-
-
 ## Screenshots / Video
+
+### Chat, Model gallery
+
+https://github.com/user-attachments/assets/08cbb692-57da-48f7-963d-2e7b43883c18
+
+### Agents
+
+https://github.com/user-attachments/assets/6270b331-e21d-4087-a540-6290006b381a
 
 ### Youtube video
 
@@ -113,28 +80,7 @@ Liking LocalAI? LocalAI is part of an integrated suite of AI infrastructure tool
 <br>
 </h1>
 
-
-### Screenshots
-
-| Talk Interface | Generate Audio |
-| --- | --- |
-| ![LocalAI - Talk](./docs/assets/images/screenshots/screenshot_talk.png) | ![LocalAI - Generate Audio](./docs/assets/images/screenshots/screenshot_tts.png) |
-
-| Models Overview | Generate Images |
-| --- | --- |
-| ![LocalAI - Models](./docs/assets/images/screenshots/screenshot_gallery.png) | ![LocalAI - Generate Images](./docs/assets/images/screenshots/screenshot_image.png) |
-
-| Chat Interface | Home |
-| --- | --- |
-| ![LocalAI - Chat](./docs/assets/images/screenshots/screenshot_chat.png) | ![LocalAI - Home](./docs/assets/images/screenshots/screenshot_home.png) |
-
-| Login | Swarm |
-| --- | --- |
-| ![LocalAI - Login](./docs/assets/images/screenshots/screenshot_login.png) | ![LocalAI - P2P Dashboard](./docs/assets/images/screenshots/screenshot_p2p.png) |
-
 ## 💻 Quickstart
-
-
 
 ### macOS Download:
 
@@ -143,6 +89,7 @@ Liking LocalAI? LocalAI is part of an integrated suite of AI infrastructure tool
 </a>
 
 > Note: the DMGs are not signed by Apple as quarantined. See https://github.com/mudler/LocalAI/issues/6268 for a workaround, fix is tracked here: https://github.com/mudler/LocalAI/issues/6244
+> Install the DMG and paste this code into terminal: `sudo xattr -d com.apple.quarantine /Applications/LocalAI.app`
 
 ### Containers (Docker, podman, ...)
 

@@ -6,7 +6,7 @@
 ![ghcr pull](https://ghcr-badge.elias.eu.org/shield/arabcoders/watchstate/watchstate)
 
 This tool primary goal is to sync your backends **users** play state without relying on third party services, out of the
-box, this tool support `Jellyfin`, `Plex` and `Emby` media servers.
+box, this tool supports `Jellyfin`, `Plex` and `Emby` media servers.
 
 # Updates
 

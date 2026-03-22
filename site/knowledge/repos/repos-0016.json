@@ -1,8 +1,23 @@
 {
   "chunk": 16,
   "count": 50,
-  "generated_at": "2026-03-15T05:11:07Z",
+  "generated_at": "2026-03-22T04:58:29Z",
   "items": [
+    {
+      "repo_key": "github.com/kimai/kimai",
+      "repo_url": "github.com/kimai/kimai",
+      "host": "github.com",
+      "owner": "kimai",
+      "repo": "kimai",
+      "app_references": [
+        "kimai"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__kimai__kimai.md",
+      "readme_download_url": null,
+      "readme_sha256": "7373deda1c8e288be1f4b8d4258e7a0fd97a55310ae313753f1847bb6c37cd96",
+      "error": null
+    },
     {
       "repo_key": "github.com/kimdre/doco-cd",
       "repo_url": "github.com/kimdre/doco-cd",
@@ -27,9 +42,9 @@
       "app_references": [
         "kite-kubernetes"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__kite-org__kite.md",
-      "readme_download_url": "https://raw.githubusercontent.com/kite-org/kite/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ea5aa26f7ddf4a97014b2372a5ab3ff42c1ff69d1c6de630cd55273ca7a91add",
       "error": null
     },
@@ -76,6 +91,21 @@
       "readme_path": "knowledge/readmes/github.com__knadh__listmonk.md",
       "readme_download_url": null,
       "readme_sha256": "e3592dcea72705901f2cfba4f674de81e96dc7aaded2343246cca9312a092cee",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/koala73/worldmonitor",
+      "repo_url": "github.com/koala73/worldmonitor",
+      "host": "github.com",
+      "owner": "koala73",
+      "repo": "worldmonitor",
+      "app_references": [
+        "world-monitor"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__koala73__worldmonitor.md",
+      "readme_download_url": "https://raw.githubusercontent.com/koala73/worldmonitor/main/README.md",
+      "readme_sha256": "42a03e06914c333425eabe2618d72e3573554abd51d307900d217f3acb25a7e6",
       "error": null
     },
     {
@@ -237,9 +267,9 @@
       "app_references": [
         "vouchervault"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__l4rm4nd__VoucherVault.md",
-      "readme_download_url": "https://raw.githubusercontent.com/l4rm4nd/VoucherVault/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6da3e692959541443e79e01db7b48655b9ec80f52604adb8818749e7132b4a6d",
       "error": null
     },
@@ -342,9 +372,9 @@
       "app_references": [
         "revel"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__letsrevel__revel-backend.md",
-      "readme_download_url": "https://raw.githubusercontent.com/letsrevel/revel-backend/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d48460421cb393fb168051fae927acdfa9dc10d2ce2aeacd28dbe7fe5c9b1407",
       "error": null
     },
@@ -480,7 +510,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__lklynet__aurral.md",
       "readme_download_url": "https://raw.githubusercontent.com/lklynet/aurral/main/README.md",
-      "readme_sha256": "1ff2f32f89d25f36ddb40eeb8b91ec25d9bf887aa8bdfafb9eb6c6e03d98014d",
+      "readme_sha256": "c8d7920e5ceab65bcd0576f39fbcc84dca1bf37171ef9b86f4cf05209291d200",
       "error": null
     },
     {
@@ -721,36 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__lowercasename__gathio.md",
       "readme_download_url": null,
       "readme_sha256": "b7887b05b64150494641c7b705fe19ba4c33012f75017d976cb199bfca87a020",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/lukevella/rallly",
-      "repo_url": "github.com/lukevella/rallly",
-      "host": "github.com",
-      "owner": "lukevella",
-      "repo": "rallly",
-      "app_references": [
-        "rallly"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__lukevella__rallly.md",
-      "readme_download_url": "https://raw.githubusercontent.com/lukevella/rallly/main/README.md",
-      "readme_sha256": "93504a7f167ae54eb286d0524e49169de208553ce5cf963d3880004395c08446",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/lunarphp/lunar",
-      "repo_url": "github.com/lunarphp/lunar",
-      "host": "github.com",
-      "owner": "lunarphp",
-      "repo": "lunar",
-      "app_references": [
-        "lunar"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__lunarphp__lunar.md",
-      "readme_download_url": null,
-      "readme_sha256": "f5d0bbed6a8e9a7c33f2a7bc226f14d52b1796002ed8a84ca6afff9a264a6ce1",
       "error": null
     }
   ]

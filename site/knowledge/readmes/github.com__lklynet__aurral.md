@@ -5,7 +5,7 @@
 # Aurral
 
 [![Docker](https://img.shields.io/badge/docker-ghcr.io%2Flklynet%2Faurral-blue?logo=docker&logoColor=white)](https://ghcr.io/lklynet/aurral) ![GitHub Release](https://img.shields.io/github/v/release/lklynet/aurral) ![GitHub License](https://img.shields.io/github/license/lklynet/aurral)
-[![Build](https://img.shields.io/github/actions/workflow/status/lklynet/aurral/docker-publish.yml?branch=main)](https://github.com/lklynet/aurral/actions/workflows/docker-publish.yml) ![Discord](https://img.shields.io/discord/1457052417580339285?style=flat) [![Discussions](https://img.shields.io/github/discussions/lklynet/aurral)](https://github.com/lklynet/aurral/discussions) ![GitHub Sponsors](https://img.shields.io/github/sponsors/lklynet)
+[![Build](https://img.shields.io/github/actions/workflow/status/lklynet/aurral/release.yml?branch=main)](https://github.com/lklynet/aurral/actions/workflows/release.yml) ![Discord](https://img.shields.io/discord/1457052417580339285?style=flat) [![Discussions](https://img.shields.io/github/discussions/lklynet/aurral)](https://github.com/lklynet/aurral/discussions) ![GitHub Sponsors](https://img.shields.io/github/sponsors/lklynet)
 
 Self-hosted music discovery and request management for Lidarr with library-aware recommendations, granular monitoring controls, and optional Weekly Flow playlists powered by Soulseek + Navidrome.
 
@@ -35,11 +35,13 @@ services:
     ports:
       - "3001:3001"
     environment:
-      - DOWNLOAD_FOLDER=/data/downloads/tmp
+      - DOWNLOAD_FOLDER=${DL_FOLDER:-./data/downloads}
     volumes:
-      - /data/downloads/tmp:/app/downloads
-      - ./data:/app/backend/data
+      - ${DL_FOLDER:-./data/downloads}:/app/downloads
+      - ${STORAGE:-./data}:/app/backend/data
 ```
+
+You can optionally set `DL_FOLDER` and `STORAGE` in a `.env` file next to your compose file. If you leave them unset, Aurral uses `./data/downloads` and `./data`.
 
 Start it:
 
@@ -130,12 +132,13 @@ If you want Weekly Flow to appear as a separate library inside Navidrome:
 
 1. In Aurral: Settings → Integrations → Navidrome (URL, username, password)
 2. Ensure your compose config maps a host folder into `/app/downloads`
-3. Set `DOWNLOAD_FOLDER` to the same host path you mapped in the volume
+3. Set `DL_FOLDER` once and use it for both `DOWNLOAD_FOLDER` and the `/app/downloads` volume
 
 Example:
 
-- Volume: `/data/downloads/tmp:/app/downloads`
-- Env: `DOWNLOAD_FOLDER=/data/downloads/tmp`
+- `DL_FOLDER=/data/downloads/tmp`
+- Volume: `${DL_FOLDER}:/app/downloads`
+- Env: `DOWNLOAD_FOLDER=${DL_FOLDER}`
 
 Aurral will:
 
@@ -149,6 +152,26 @@ Navidrome should be configured to purge missing tracks so Weekly Flow rotations 
 ---
 
 ## Authentication & Reverse Proxy
+
+### Local users (default)
+
+Aurral uses local user accounts created in onboarding. Authentication is HTTP Basic Auth at the API layer. Use HTTPS when exposing it publicly.
+
+### Reset forgotten admin password (terminal)
+
+If you forget your admin password, you can reset it from the terminal:
+
+```bash
+npm run auth:reset-admin-password -- --password "new-password"
+```
+
+Or generate a random password:
+
+```bash
+npm run auth:reset-admin-password -- --generate
+```
+
+The `--` after `npm run auth:reset-admin-password` tells npm to pass the remaining flags to the reset script.
 
 ### Reverse-proxy auth (OAuth2/OIDC)
 
@@ -183,7 +206,7 @@ Most configuration is done in the web UI, but some settings are controlled by en
 |---|---|---|
 | `PORT` | HTTP port | `3001` |
 | `TRUST_PROXY` | Express trust proxy setting (`true`/`false`/number) | `1` |
-| `DOWNLOAD_FOLDER` | Host path used for Navidrome Weekly Flow library | `/data/downloads/tmp` |
+| `DOWNLOAD_FOLDER` | Weekly Flow root folder path used for Navidrome library creation | `${DL_FOLDER:-./data/downloads}` (in compose example) |
 | `PUID` / `PGID` | Run container as this UID/GID (when starting as root) | `1001/1001` |
 | `LIDARR_INSECURE` | Allow invalid TLS certificates (`true`/`1`) | unset |
 | `LIDARR_TIMEOUT_MS` | Lidarr request timeout | `8000` |

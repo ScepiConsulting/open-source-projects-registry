@@ -2,7 +2,7 @@
 
 **Free, open-source AI API quota monitoring for developers.**
 
-Track usage across [Synthetic](https://synthetic.new), [Z.ai](https://z.ai), [Anthropic](https://anthropic.com), [Codex](https://openai.com/codex), [GitHub Copilot](https://github.com/features/copilot), [MiniMax](https://platform.minimax.io), and Antigravity in one place.
+Track usage across [Synthetic](https://synthetic.new), [Z.ai](https://z.ai), [Anthropic](https://anthropic.com), [Codex](https://openai.com/codex), [GitHub Copilot](https://github.com/features/copilot), [MiniMax](https://platform.minimax.io), [Gemini CLI](docs/GEMINI_SETUP.md), and Antigravity in one place.
 See history, get alerts, and open a local web dashboard before you hit throttling or run over budget.
 
 **Links:** [Website](https://onwatch.onllm.dev) | [Buy Me a Coffee](https://buymeacoffee.com/prakersh)
@@ -23,9 +23,9 @@ See history, get alerts, and open a local web dashboard before you hit throttlin
 [![Platform](https://img.shields.io/badge/macOS%20%7C%20Linux%20%7C%20Windows-orange?style=for-the-badge&logo=apple&logoColor=white)](#quick-start)
 [![pkg.go.dev](https://img.shields.io/badge/pkg.go.dev-reference-007D9C?style=for-the-badge&logo=go&logoColor=white)](https://pkg.go.dev/github.com/onllm-dev/onwatch/v2)
 
-onWatch fills the gap between "current usage snapshot" and the historical, per-cycle, cross-session view that developers actually need. It runs as a lightweight background agent (<50 MB RAM with all seven providers polling in parallel), stores historical data in SQLite, and serves a Material Design 3 web dashboard with dark/light mode.
+onWatch fills the gap between "current usage snapshot" and the historical, per-cycle, cross-session view that developers actually need. It runs as a lightweight background agent (<50 MB RAM with all eight providers polling in parallel), stores historical data in SQLite, and serves a Material Design 3 web dashboard with dark/light mode.
 
-It works with any tool that uses Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, or Antigravity API keys, including **Cline**, **Roo Code**, **Kilo Code**, **Claude Code**, **Codex CLI**, **Cursor**, **GitHub Copilot**, **MiniMax Coding Plan**, **Antigravity**, and others.
+It works with any tool that uses Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, Gemini CLI, or Antigravity API keys, including **Cline**, **Roo Code**, **Kilo Code**, **Claude Code**, **Codex CLI**, **Cursor**, **GitHub Copilot**, **MiniMax Coding Plan**, **Antigravity**, and others.
 
 **Zero telemetry. Single binary. All data stays on your machine.**
 
@@ -101,7 +101,7 @@ Or via `app.sh`:
 ./app.sh --docker --run
 ```
 
-The Docker image uses a distroless base (~10-12 MB) and runs as non-root. Data persists via volume mount at `/data`. Logs go to stdout (`docker logs -f onwatch`). See [Docker Deployment](#docker-deployment) for details.
+The Docker image uses a distroless base (~10-12 MB) and runs as non-root. An Alpine variant with shell access is also available (`ghcr.io/onllm-dev/onwatch:alpine`). Data persists via volume mount at `/data`. Logs go to stdout (`docker logs -f onwatch`). See [Docker Deployment](#docker-deployment) for details.
 
 ### Configure
 
@@ -162,7 +162,8 @@ Open **http://localhost:9211** and log in with your `.env` credentials.
 - **Anthropic** -- Dynamic quota cards (5-Hour, 7-Day, 7-Day Sonnet, Monthly, etc.) with utilization percentages, OAuth token auto-refresh, and automatic rate limit bypass via token rotation
 - **Codex** -- Dynamic quota cards (LLMs, Review Requests) with OAuth auth-state refresh, historical cycle analytics, and **multi-account support (Beta)** for tracking multiple ChatGPT accounts
 - **GitHub Copilot (Beta)** -- Premium Interactions, Chat, and Completions quota cards with monthly reset tracking
-- **MiniMax Coding Plan (Beta)** -- Shared quota pool tracking for M2, M2.1, and M2.5 models with 5-hour rolling window reset cycles
+- **MiniMax Coding Plan** -- Shared quota pool tracking for M2, M2.1, and M2.5 models with 5-hour rolling window reset cycles
+- **Gemini CLI (Beta)** -- Per-model quota tracking for Gemini 2.5/3.x Pro, Flash, and Flash Lite models with 24-hour reset cycles
 - **Antigravity** -- Multi-model quota cards (Claude, Gemini, GPT) with grouped quota pools, logging history, and cycle overview
 - **All** -- Side-by-side view of all configured providers
 - **PWA installable** -- Install onWatch from your browser for a native app experience (Beta)
@@ -204,7 +205,7 @@ Menubar is currently in beta. Feedback is highly appreciated at [github.com/onll
 
 | Audience                                                                                                                 | Pain Point                                                                          | How onWatch Helps                                                                                       |
 | ------------------------------------------------------------------------------------------------------------------------ | ----------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------- |
-| **Solo developers & freelancers** using Claude Code, Cline, Roo Code, or Kilo Code with Anthropic/Synthetic/Z.ai/Codex/Copilot/MiniMax/Antigravity | Budget anxiety -- no visibility into quota burn rate, surprise throttling mid-task  | Real-time rate projections, historical trends, live countdowns so you never get throttled unexpectedly  |
+| **Solo developers & freelancers** using Claude Code, Cline, Roo Code, or Kilo Code with Anthropic/Synthetic/Z.ai/Codex/Copilot/MiniMax/Gemini CLI/Antigravity | Budget anxiety -- no visibility into quota burn rate, surprise throttling mid-task  | Real-time rate projections, historical trends, live countdowns so you never get throttled unexpectedly  |
 | **Small dev teams (3-20 people)** sharing API keys                                                                       | No shared visibility into who's consuming what, impossible to budget next month     | Shared dashboard with session tracking, cycle history for budget planning                               |
 | **DevOps & platform engineers**                                                                                          | Shadow AI usage with no FinOps for coding API subscriptions                         | Lightweight sidecar (<50 MB), SQLite data source for Grafana, REST API for monitoring stack integration |
 | **Privacy-conscious developers** in regulated industries                                                                 | Can't use SaaS analytics that phone home; need local, auditable monitoring          | Single binary, local SQLite, zero telemetry, GPL-3.0 source code, works air-gapped                      |
@@ -237,19 +238,19 @@ Set `COPILOT_TOKEN` in your `.env` with a GitHub Personal Access Token (classic)
 
 ### How do I track my MiniMax Coding Plan usage?
 
-Set `MINIMAX_API_KEY` in your `.env` with your MiniMax Coding Plan API key. Get your key from the [MiniMax Console](https://platform.minimax.io). onWatch tracks the shared quota pool across all MiniMax models (M2, M2.1, M2.5) with 5-hour rolling window reset cycles. This feature is in beta. Full walkthrough: [MiniMax Setup Guide](docs/MINIMAX_SETUP.md).
+Set `MINIMAX_API_KEY` in your `.env` with your MiniMax Coding Plan API key. Get your key from the [MiniMax Console](https://platform.minimax.io). onWatch tracks the shared quota pool across all MiniMax models (M2, M2.1, M2.5) with 5-hour rolling window reset cycles. Full walkthrough: [MiniMax Setup Guide](docs/MINIMAX_SETUP.md).
 
 ### Does onWatch work with Cline, Roo Code, Kilo Code, or Claude Code?
 
-Yes. onWatch monitors the API provider (Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, or Antigravity), not the coding tool. Any tool that uses a Synthetic, Z.ai, Anthropic, Codex, Copilot, MiniMax, or Antigravity API key -- including Cline, Roo Code, Kilo Code, Claude Code, Codex CLI, Cursor, GitHub Copilot, MiniMax Coding Plan, Antigravity, and others -- will have its usage tracked automatically.
+Yes. onWatch monitors the API provider (Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, Gemini CLI, or Antigravity), not the coding tool. Any tool that uses a Synthetic, Z.ai, Anthropic, Codex, Copilot, MiniMax, Gemini CLI, or Antigravity API key -- including Cline, Roo Code, Kilo Code, Claude Code, Codex CLI, Cursor, GitHub Copilot, MiniMax Coding Plan, Gemini CLI, Antigravity, and others -- will have its usage tracked automatically.
 
 ### Does onWatch send any data to external servers?
 
-No. Zero telemetry. All data stays in a local SQLite file. The only outbound calls are to the Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, and Antigravity quota APIs you configure (Antigravity connects to localhost only). Fully auditable on [GitHub](https://github.com/onllm-dev/onwatch) (GPL-3.0).
+No. Zero telemetry. All data stays in a local SQLite file. The only outbound calls are to the Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, Gemini CLI, and Antigravity quota APIs you configure (Antigravity connects to localhost only). Fully auditable on [GitHub](https://github.com/onllm-dev/onwatch) (GPL-3.0).
 
 ### How much memory does onWatch use?
 
-<50 MB under all conditions (typically ~34 MB idle, ~43 MB under heavy load). Measured with all seven agents (Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, Antigravity) polling in parallel. Lighter than a single browser tab. See [DEVELOPMENT.md](docs/DEVELOPMENT.md) for detailed benchmarks.
+<50 MB under all conditions (typically ~34 MB idle, ~43 MB under heavy load). Measured with all eight agents (Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, Gemini CLI, Antigravity) polling in parallel. Lighter than a single browser tab. See [DEVELOPMENT.md](docs/DEVELOPMENT.md) for detailed benchmarks.
 
 ---
 
@@ -263,21 +264,21 @@ No. Zero telemetry. All data stays in a local SQLite file. The only outbound cal
                               ┌──────┴───────┐
                               │   SQLite     │
                               │   (WAL)      │
-                              └──┬──┬──┬──┬──┬──┬──┬─┘
-       ┌────────────────────────┘  │  │  │  │  │  └────────────────────────┐
-  ┌────┴─────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴─────┐
-  │ Synthetic│  │  Z.ai   │  │Anthropic│  │  Codex  │  │ Copilot │  │ MiniMax │  │Antigrav. │
-  │  Agent   │  │  Agent  │  │  Agent  │  │  Agent  │  │  Agent  │  │  Agent  │  │  Agent   │
-  └────┬─────┘  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘  └────┬────┘  └────┬─────┘
-  ┌────┴─────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴────┐  ┌────┴─────┐
-  │ Synthetic│  │  Z.ai   │  │Anthropic│  │chatgpt  │  │ GitHub  │  │ MiniMax │  │ Local    │
-  │  API     │  │  API    │  │OAuth API│  │OAuth API│  │Copilot  │  │  API    │  │ RPC      │
-  └──────────┘  └─────────┘  └─────────┘  └─────────┘  └─────────┘  └─────────┘  └──────────┘
+                              └──┬──┬──┬──┬──┬──┬──┬──┬─┘
+       ┌───────────────────────┘  │  │  │  │  │  │  └───────────────────────┐
+  ┌────┴─────┐ ┌────┴────┐ ┌────┴────┐ ┌────┴────┐ ┌────┴────┐ ┌────┴────┐ ┌────┴────┐ ┌────┴─────┐
+  │ Synthetic│ │  Z.ai   │ │Anthropic│ │  Codex  │ │ Copilot │ │ MiniMax │ │ Gemini  │ │Antigrav. │
+  │  Agent   │ │  Agent  │ │  Agent  │ │  Agent  │ │  Agent  │ │  Agent  │ │  Agent  │ │  Agent   │
+  └────┬─────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬────┘ └────┬─────┘
+  ┌────┴─────┐ ┌────┴────┐ ┌────┴────┐ ┌────┴────┐ ┌────┴────┐ ┌────┴────┐ ┌────┴────┐ ┌────┴─────┐
+  │ Synthetic│ │  Z.ai   │ │Anthropic│ │chatgpt  │ │ GitHub  │ │ MiniMax │ │ Gemini  │ │ Local    │
+  │  API     │ │  API    │ │OAuth API│ │OAuth API│ │Copilot  │ │  API    │ │CLI  API │ │ RPC      │
+  └──────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘ └─────────┘ └──────────┘
 ```
 
 All agents run as parallel goroutines. Each polls its API at the configured interval and writes snapshots. The dashboard reads from the shared store.
 
-**Measured RAM (all seven agents running in parallel):** ~34 MB idle, ~43 MB under heavy load. Single binary, all assets embedded via `embed.FS`.
+**Measured RAM (all eight agents running in parallel):** ~34 MB idle, ~43 MB under heavy load. Single binary, all assets embedded via `embed.FS`.
 
 ---
 
@@ -299,7 +300,12 @@ Additional environment variables:
 | `ANTHROPIC_TOKEN`        | Anthropic OAuth token (auto-detected from Claude Code) |
 | `CODEX_TOKEN`            | Codex OAuth access token (recommended for Codex-only)  |
 | `COPILOT_TOKEN`          | GitHub Copilot PAT with `copilot` scope (Beta)         |
-| `MINIMAX_API_KEY`        | MiniMax Coding Plan API key (Beta)                     |
+| `MINIMAX_API_KEY`        | MiniMax Coding Plan API key                            |
+| `GEMINI_ENABLED`         | Enable Gemini CLI quota tracking (Beta, auto-detected)   |
+| `GEMINI_REFRESH_TOKEN`   | Gemini OAuth refresh token (for Docker/headless)         |
+| `GEMINI_ACCESS_TOKEN`    | Gemini OAuth access token (for Docker/headless)          |
+| `GEMINI_CLIENT_ID`       | Custom OAuth client ID (optional, has defaults)          |
+| `GEMINI_CLIENT_SECRET`   | Custom OAuth client secret (optional, has defaults)      |
 | `ANTIGRAVITY_ENABLED`    | Enable Antigravity provider (auto-detects local server)|
 | `ANTIGRAVITY_BASE_URL`   | Antigravity base URL (for Docker/manual config)        |
 | `ANTIGRAVITY_CSRF_TOKEN` | Antigravity CSRF token (for Docker/manual config)      |
@@ -317,7 +323,7 @@ CLI flags override environment variables.
 
 ## API Endpoints
 
-All endpoints require authentication (session cookie or Basic Auth). Append `?provider=synthetic|zai|anthropic|codex|copilot|minimax|antigravity|both` to select the provider.
+All endpoints require authentication (session cookie or Basic Auth). Append `?provider=synthetic|zai|anthropic|codex|copilot|minimax|gemini|antigravity|both` to select the provider.
 
 | Endpoint                        | Method      | Description                                    |
 | ------------------------------- | ----------- | ---------------------------------------------- |
@@ -398,7 +404,7 @@ On first run, if a database exists at `./onwatch.db`, onWatch auto-migrates it t
 The container auto-detects the Docker environment and runs in foreground mode with stdout logging.
 
 > [!NOTE]
-> onWatch provides Docker support with a distroless runtime image (~10-12 MB).
+> onWatch provides Docker support with a distroless runtime image (~10-12 MB) and an Alpine variant (~15 MB) with shell access.
 > You will almost certainly need to account for file permissions when using bind mounts for the SQLite database, as the container runs as non-root (UID 65532).
 > See [Storage](#storage) below for details.
 
@@ -409,12 +415,27 @@ The container auto-detects the Docker environment and runs in foreground mode wi
 Multi-arch images (linux/amd64, linux/arm64) are automatically built and published on each release:
 
 ```bash
-# Pull and run the latest release
+# Pull and run the latest release (distroless - default)
 docker run -d --name onwatch -p 9211:9211 \
   -v onwatch-data:/data \
   -e SYNTHETIC_API_KEY=your_key_here \
   ghcr.io/onllm-dev/onwatch:latest
 ```
+
+An Alpine variant with shell access is also available for users who need `docker exec` (e.g. Codex multi-account setup):
+
+```bash
+# Alpine variant (includes /bin/sh)
+docker run -d --name onwatch -p 9211:9211 \
+  -v onwatch-data:/data \
+  -e SYNTHETIC_API_KEY=your_key_here \
+  ghcr.io/onllm-dev/onwatch:alpine
+```
+
+| Tag | Base | Shell | Size |
+|-----|------|-------|------|
+| `latest`, `2.x.y` | Distroless | No | ~10-12 MB |
+| `alpine`, `2.x.y-alpine` | Alpine 3.21 | Yes | ~15 MB |
 
 **Docker Compose (recommended):**
 
@@ -456,6 +477,7 @@ Copy `.env.docker.example` to `.env` and set provider keys as needed. onWatch ca
 | `ANTHROPIC_TOKEN`       | Anthropic token (auto-detected if not set) | --         |
 | `CODEX_TOKEN`           | Codex OAuth access token (recommended; required for Codex-only) | -- |
 | `MINIMAX_API_KEY`       | MiniMax Coding Plan API key                | --         |
+| `GEMINI_REFRESH_TOKEN`  | Gemini OAuth refresh token (Beta)          | --         |
 | `ONWATCH_ADMIN_USER`    | Dashboard username                         | `admin`    |
 | `ONWATCH_ADMIN_PASS`    | Dashboard password                         | `changeme` |
 | `ONWATCH_POLL_INTERVAL` | Polling interval (seconds)                 | `120`      |
@@ -489,7 +511,7 @@ The `docker-compose.yml` includes memory limits (64M limit, 32M reservation), lo
 
 **Database path is not writable:** If startup shows `database path is not writable`, fix bind mount ownership recursively with `sudo chown -R 65532:65532 ./onwatch-data` or use named volumes.
 **Container won't start:** Check `docker-compose logs -f`; verify API keys in `.env` and port 9211 availability.
-**Debugging:** The distroless image has no shell - use a sidecar: `docker run -it --rm --pid=container:onwatch --net=container:onwatch nicolaka/netshoot bash`
+**Debugging:** The default distroless image has no shell. Use the Alpine variant (`ghcr.io/onllm-dev/onwatch:alpine`) if you need `docker exec` access, or use a sidecar: `docker run -it --rm --pid=container:onwatch --net=container:onwatch nicolaka/netshoot bash`
 
 **Anthropic 429 rate limit errors:** Anthropic's `/api/oauth/usage` endpoint has aggressive rate limits (~5 requests per token). onWatch automatically handles this by refreshing the OAuth token when rate limited, which provides a fresh rate limit window. This is transparent to users - onWatch logs "Rate limit bypassed successfully" when this occurs. The workaround requires OAuth credentials (auto-detected from Claude Code); API key authentication does not support token refresh. See [issue #16](https://github.com/onllm-dev/onWatch/issues/16) and [anthropics/claude-code#31021](https://github.com/anthropics/claude-code/issues/31021) for details.
 

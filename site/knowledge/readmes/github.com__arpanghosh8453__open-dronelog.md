@@ -88,13 +88,13 @@
 ## Features
 
 - **High-Performance Analytics**: DuckDB-powered queries with automatic downsampling for large datasets. Free, open source, no subscription required.
-- **Multi-Format Support**: Import DJI logs (.txt), Litchi CSV, and Airdata CSV exports with automatic unit detection. Third-party apps (Dronelink, DroneDeploy) supported.
+- **Multi-Format Support**: Import DJI logs (.txt), Litchi CSV, and Airdata CSV exports with automatic unit detection. Third-party apps (Dronelink, DroneDeploy) supported. Optional external parser plugins can be configured via `parsers.json`.
 - **Smart Deduplication**: Prevents duplicate imports based on drone serial, battery serial, and start time.
 - **Interactive Flight Maps**: 3D terrain, map-type selection (Satellite, Topographic, OpenStreetMap), flight replay with speed control (0.5x-16x), live telemetry overlay, and RC joystick visualization.
-- **Telemetry Charts**: Height, speed, battery, cell voltages, attitude, RC signal, GPS, distance-to-home, velocity, battery full capacity, and battery remained capacity with synchronized drag-to-zoom.
+- **Telemetry Charts**: Height, speed, battery, cell voltages, attitude, RC signal, GPS, distance-to-home, velocity, battery full capacity, and battery remained capacity with synchronized drag-to-zoom, per-profile telemetry color customization, and collapsible panel controls.
 - **Local-First Storage**: All data in a local DuckDB database. No cloud upload required (except DJI key fetch during first import).
 - **Smart Tags**: Auto-tagging (Night Flight, High Speed, Low Battery, etc.) and offline reverse geocoding for location tags. Manual tags and bulk operations supported.on.
-- **Filters & Search**: Date range, drone/battery/controller/color filters, duration/altitude/distance sliders, tag filter, map area filter, and filter inversion.
+- **Filters & Search**: Date range (calendar + typed `YYYY-MM-DD` start/end quick entry), drone/battery/controller/color filters, duration/altitude/distance sliders, tag filter, map area filter, and filter inversion.
 - **Overview Dashboard**: Aggregate stats, activity heatmap, pie charts by drone/battery/duration, time-of-day radial chart, cluster map with optional heatmap layer, and top-flight highlights.
 - **Battery Health**: Per-battery health bars with cycle count tracking, serial renaming, per-minute usage history with zoom, and battery capacity history chart with multi-select battery dropdown showing full-charge capacity trends over time.
 - **Maintenance Tracking**: Configurable thresholds with color-coded progress bars and date-based maintenance recording.
@@ -212,7 +212,7 @@ Then press Enter and try opening the app again.
 1. **Import a Flight Log**: Click "Browse Files" or drag-and-drop a drone log file
 2. **Select a Flight**: Click on a flight in the sidebar
 3. **Analyze Data**: View telemetry charts and the 3D flight path on the map
-4. **Filter/Search/Sort**: Use date range, drone/device, battery serial filters, search, and sorting
+4. **Filter/Search/Sort**: Use date range (calendar or typed `YYYY-MM-DD` start/end + Go), drone/device, battery serial filters, search, and sorting
 5. **Overview Analytics**: Sidebar filters (date, drone, battery, duration) automatically apply to overview statistics
 5. **Export**: Use the Export dropdown in the stats bar (CSV/JSON/GPX/KML)
 6. **Backup & Restore**: Use Settings → Backup Database to export, or Import Backup to restore
@@ -400,6 +400,7 @@ For production deployments, a reverse proxy with TLS is essential.
 ## Configuration
 
 - **DJI API Key**: Stored locally in `config.json`. You can also provide it via `.env` or via the `settings` menu inside the application. The standalone app ships with a default key, but users should enter their own to avoid rate limits for log file decryption key fetching.
+- **External Parsers**: Optional parser plugins can be configured in `parsers.json` (app-data directory on desktop, and fixed path `/app/plugins/parsers.json` in Docker/web).
 - **Sync folder**: Set and use the `sync folder` (application interface for Desktop and ENV variable for docker) for seamless log file import and re-import with de-duplication. The files uploaded through drag and drop or browse are also collected by default in the `Uploaded` folder of application storage (customizable via settings options for Desktop and ENV variable for docker). You can use a common folder (essentially unifying the raw log files storage location), but that is not generally recommended to prevent any mishaps or file overwrites.  
 - **Database Location**: Stored in the platform-specific app data directory (e.g., AppData on Windows, Application Support on macOS, and local share on Linux). In Docker mode, data is stored in `/data/drone-logbook` (persisted via a Docker volume).
 - **API Guide**: Available API request paths and response structure is provided in the [API documentation](/docs/api-guide.md) page. 
@@ -481,13 +482,29 @@ I have shipped this project with my own API key to save you from some extra pain
 
 ## Contribution Guidelines
 
-We welcome meaningful contributions to Open DroneLog! Before implementing a new feature, please open an issue first to discuss your idea with the maintainer—this ensures alignment with the project's scope and avoids wasted effort.
+We welcome meaningful contributions to Open DroneLog! 
+
+> [!IMPORTANT]
+>
+> Before implementing a new feature or fixing an existing bug, please **open an issue first** to discuss your idea with the maintainer to ensure it aligns with the project's scope and avoid any wasted effort on both ends.
+>
+> If you are using AI to help with your contribution, please disclose this in your PR and make sure you understand the code you are submitting. Please test the desired features throughly to ensure they work as expected and no existing features are broken.
 
 For more details, see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### User Scripts
 
 Looking to extend functionality without waiting for official features? Check out the **[Discussions](https://github.com/arpanghosh8453/open-dronelog/discussions)** channel with the `User-Script` tag, where community members share custom scripts, collaborate with developers, and find useful enhancements for custom workflow.
+
+### Custom Parsers
+
+Open DroneLog supports optional external parser plugins for bringing in logs from additional formats beyond the built-in DJI/Litchi/Airdata support. You can configure parser definitions, map fields, and control how imported data is normalized.
+
+See the guide: [custom parser documentation](/docs/custom_parsers.md).
+
+### Telemetry video overlay
+
+Check out the [Open Drone Log telemetry overlay poject](https://github.com/arpanghosh8453/opendronelog-overlay) for details on how to export overlay telemetry data on your videos.
 
 
 ## Socials and Support
@@ -497,14 +514,17 @@ Looking to extend functionality without waiting for official features? Check out
         <img src="https://img.shields.io/badge/Discord-Join%20Server-5865F2?style=for-the-badge&logo=discord" alt="Discord" height="48"/>
     </a>
     &nbsp;&nbsp;
-    <a href="https://www.reddit.com/r/opendronelog/">
-        <img src="https://img.shields.io/badge/Reddit-r%2Fopendronelog-FF4500?style=for-the-badge&logo=reddit" alt="Reddit" height="48"/>
+    <a href="https://opendronelog.com/#about">
+        <img src="https://img.shields.io/badge/Contact-Get%20in%20Touch-0EA5E9?style=for-the-badge" alt="Contact" height="48"/>
     </a>
 </p>
 
 ## Love this project?
 
 I'm thrilled that you're using this dashboard. Your interest and engagement mean a lot to me! You can view and analyze more detailed DJI flight statistics with this setup than paying for any commertial solution.
+
+> [!NOTE]
+> I am a big drone enthusiast myself, and currently fundraising for a DJI Neo 2 drone for myself to test the new features of this budget friendly drone. If you'd like to support this goal, please consider [donating here](https://ko-fi.com/arpandesign/goal).
 
 Maintaining and improving this project takes a significant amount of my free time. Your support helps keep me motivated to add new features and work on similar projects that benefit the community.
 
@@ -529,6 +549,28 @@ While some parts of this codebase were written with AI assistance (Claude Opus) 
 - [dji-log-parser](https://github.com/lvauvillier/dji-log-parser) - DJI log parsing
 - [DuckDB](https://duckdb.org/) - Analytical database
 - [Tauri](https://tauri.app/) - Desktop app framework
+
+## Sponsors
+
+<table width="100%" style="table-layout: fixed;">
+    <tr>
+        <th width="33.33%"><div align="center">Platinum Supporters</div></th>
+        <th width="33.33%"><div align="center">Gold Supporters</div></th>
+        <th width="33.33%"><div align="center">Silver Supporters</div></th>
+    </tr>
+    <tr>
+        <td align="center">
+            <a href="https://opendronelog.zenithdronesolutions.com/">
+                <img src="https://opendronelog.com/sponsors/zenithdronesolutions_dark.png" alt="Zenith Drone Solutions" style="width: 160px; max-width: 100%; height: auto; margin: 8px 12px;" />
+            </a>
+        </td>
+        <td align="center"><em>-</em></td>
+        <td align="center"><em>-</em></td>
+    </tr>
+</table>
+
+#### *Want to feature your logo and sponsor this project? [Get in touch](https://opendronelog.com/#sponsors).*
+
 
 ## Star History
 

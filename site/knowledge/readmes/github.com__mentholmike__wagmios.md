@@ -1,213 +1,361 @@
-# 🚀 WAGMI: Self-Hosted Container Management with AI  
+# <img src="logo/removed-background.png" height="48" align="middle" /> WAGMIOS
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/2e3e1dec-89a3-4414-b031-6672f761ed61" width="300" height="auto">
-</p>
+### Give your agent a homelab
 
----
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docker](https://img.shields.io/badge/Docker-Ready-2496ed.svg?logo=docker)](https://www.docker.com/)
+[![Go](https://img.shields.io/badge/Go-1.21+-00ADD8.svg?logo=go)](https://golang.org/)
 
-## 👷‍♂️ Building  
-🌐 [os.wagmilabs.fun](https://os.wagmilabs.fun)  
-🌐 [wagmilabs.fun](https://wagmilabs.fun)  
+**WAGMIOS** is a self-hosted Docker management platform built native for **OpenClaw agents**. Give your agent a scoped API key and it can manage your homelab — install apps, start/stop containers, pull images — with every action visible and auditable. Scope = permission. No sudo, no daemon access, just the exact access you grant.
 
----
-
-## 📌 Table of Contents  
-- [📚 Introduction](#-introduction)  
-- [✨ Features](#-features)  
-- [💬 W.I.L.L.O.W](#-willow)  
-- [⚡ Installation](#-installation)  
-- [🐧 Examples](#-examples)  
-- [💾 Tested Systems](#-tested-systems)  
-- [🔜 Upcoming Features](#-upcoming-features)  
-- [🔒 Security](#-security)  
+> **Think of it as your homelab's command center.** Built for folks who want the power of Docker without memorizing every CLI flag.
 
 ---
 
-## 📚 Introduction  
-**WAGMIOS** is a **self-hosted container management system** with **AI-powered automation**.  
-It enables you to efficiently manage your containers with **W.I.L.L.O.W**, an AI assistant that optimizes your workflow.
+## ✨ What It Does
+
+- **🚀 One-Click Apps** — Install 34+ self-hosted apps from the [WAGMIOS Marketplace](https://marketplace.wagmilabs.fun) in seconds. Plex, Jellyfin, Ollama, Home Assistant, and more.
+- **🐳 Container Management** — List, create, start, stop, restart, and delete containers through a clean REST API.
+- **🔐 Scope-Based Permissions** — Give AI agents exactly the permissions they need. Nothing blanket. If the key doesn't have `containers:delete`, the agent can't delete anything.
+- **🤖 OpenClaw-Native** — Built for OpenClaw agents. Every action is visible and auditable.
+- **⚡ Real-Time Activity** — WebSocket-powered activity feed shows you everything happening in your homelab.
 
 ---
 
-## ✨ Features  
-- ✅ **Fully Self-Hosted** – Manage everything on your own infrastructure  
-- ✅ **Customizable Homepage** – Bookmark your favorite sites  
-- ✅ **Docker Marketplace & UI** – Easily browse, install, and manage containers  
-- ✅ **AI-Powered Management** – Seamless integration with **W.I.L.L.O.W**  
-- ✅ **Supports Home Assistant & Jenkins** – More integrations coming soon!  
+## 🏃 Quick Start
 
----
+### Option 1 — Pull from Docker Hub (Recommended)
 
-## 💬 W.I.L.L.O.W  
+No build step. Images are pre-built for both x86_64 and ARM64.
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/012fd163-2d84-4eca-a087-9898475e7229">
-</p>
+```bash
+# Download docker-compose.yaml
+curl -O https://raw.githubusercontent.com/mentholmike/wagmios/main/docker-compose.yaml
 
-**W.I.L.L.O.W (Workflow Intelligent Localized Learning & Optimized Worker)** is an **AI-powered agent** designed to streamline container management.  
-She acts as an **oracle**, guiding you through container setup and integrations.  
-
-🔗 **Learn more:** [Read the full article](https://medium.com/@webdevmike01/introducing-w-i-l-l-o-w-827c3e965ef6)  
-
----
-
-## ⚡ Installation  
-
-1️⃣ **Ensure Docker is Installed**  
-   - Get the latest version here: [Docker Installation Guide](https://docs.docker.com/engine/install/)  
-
-2️⃣ **Clone the Repository**  
-   ```sh
-   git clone https://github.com/mentholmike/wagmios.git
-   ```
-
-3️⃣ **Navigate to the Project Directory**  
-   ```sh
-   cd wagmios
-   ```
-
-4️⃣ **Run Docker Compose**  
-   ```sh
-   sudo docker compose up -d
-   ```
-
-## 👷‍♂️ Alternative Build Using Docker Hub  
-
-Prefer using Docker Hub?
-
-1️⃣ **Pull the Image**
-
-```sh
-docker pull itzmizzle/wagmi:latest
+# Start everything
+docker compose up -d
 ```
 
-2️⃣ **Create the Yaml File**  
-```yaml
-version: '3.8'
+### Option 2 — Build from Source
 
-services:
-  frontend:
-    image: itzmizzle/wagmi:frontend-latest
-    container_name: wagmios-frontend
-    ports:
-      - "5174:5174"
-    depends_on:
-      - backend
-    environment:
-      - VITE_API_URL=http://localhost:5179
-    networks:
-      - wagmios-network
-    restart: unless-stopped
-    volumes:
-      - frontend_data:/app/data
+Clone the repo and build locally with Docker.
 
-  backend:
-    image: itzmizzle/wagmi:backend-latest
-    container_name: wagmios-backend
-    ports:
-      - "5179:5179"
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock
-      - backend_data:/app/data
-    environment:
-      - PORT=5179
-      - WILLOW_URL=http://willow:5678
-    networks:
-      - wagmios-network
-
-  willow:
-    image: n8nio/n8n
-    container_name: willow
-    restart: always
-    ports:
-      - "5678:5678"
-    environment:
-      - N8N_SECURE_COOKIE=false
-      - N8N_DEFAULT_WORKFLOW_STATE=active
-      - N8N_LOG_LEVEL=info
-      - DB_TYPE=postgresdb
-      - DB_POSTGRESDB_HOST=postgres
-      - DB_POSTGRESDB_DATABASE=willow_memories
-      - DB_POSTGRESDB_USER=willow
-      - DB_POSTGRESDB_PASSWORD=wagmios
-    volumes:
-      - willow_data:/home/node/.n8n
-    depends_on:
-      - postgres
-    networks:
-      - wagmios-network
-
-  postgres:
-    image: postgres:latest
-    container_name: postgres
-    restart: always
-    ports:
-      - "5443:5432"
-    environment:
-      - POSTGRES_USER=willow
-      - POSTGRES_PASSWORD=wagmios
-      - POSTGRES_DB=willow_memories
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    networks:
-      - wagmios-network
-
-networks:
-  wagmios-network:
-    driver: bridge
-
-volumes:
-  willow_data:
-  postgres_data:
-  frontend_data:
-  backend_data:
+```bash
+git clone https://github.com/mentholmike/wagmios.git
+cd wagmios
+docker compose up -d --build
 ```
 
-3️⃣ **Run Docker Compose**  
+> **Note:** Building from source requires Docker on your machine. On ARM64 (Apple Silicon, ARM Linux) no extra setup is needed — the images build for both architectures automatically.
 
-```sh
-sudo docker compose up -d
+### 3. Open the UI
+
+| Service | URL |
+|---------|-----|
+| **Frontend** | http://localhost:5174 |
+| **Backend API** | http://localhost:5179 |
+| **Health** | http://localhost:5179/health |
+
+### 4. Get Your API Key
+
+On first launch, the Setup Wizard walks you through:
+1. Name your API key (e.g. `openclaw-agent`, `home-assistant`)
+2. Pick the permissions you want to grant
+3. Copy your key and keep it safe
+
+---
+
+## 🔑 The Scope System Explained
+
+Every WAGMIOS API key has **scopes** — granular permissions that control exactly what an agent can do.
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  Your API Key Scopes                                        │
+├─────────────────────────────────────────────────────────────┤
+│  ✅ containers:read     → list containers, view logs        │
+│  ✅ containers:write    → start, stop, create containers    │
+│  ✅ containers:delete  → remove containers                  │
+│  ✅ images:read        → list Docker images                 │
+│  ✅ images:write       → pull and delete images             │
+│  ✅ marketplace:read  → browse the app marketplace          │
+│  ✅ marketplace:write → install and manage apps             │
+└─────────────────────────────────────────────────────────────┘
+```
+
+**The rule is simple:** if the key doesn't have the scope, the API returns `SCOPE_REQUIRED`. The agent can't work around it.
+
+---
+
+## 🤖 For AI Agents
+
+WAGMIOS is designed to be controlled by AI agents through its API.
+
+**Example dialogue:**
+
+```
+User: "Delete the test-nginx container"
+Agent: "I need containers:delete scope to do that. 
+        Go to Settings → Agent Permissions → toggle ON containers:delete → Save.
+        Let me know when it's enabled."
+
+User: "Done."
+Agent: *deletes the container* → "Done. Container deleted."
+```
+
+**What agents can do with WAGMIOS:**
+- Install and manage apps from the marketplace
+- Start/stop containers based on your requests
+- Monitor your homelab's status
+- Pull Docker images
+
+**What agents should only do through WAGMIOS:**
+- Access Docker (the skill makes every action visible and auditable)
+- Escalate their own permissions
+- Delete system containers (wagmios-backend, wagmios-frontend)
+- Read/write files outside the containers directory
+
+---
+
+## 🏪 WAGMIOS Marketplace
+
+Browse 34+ pre-configured apps at [marketplace.wagmilabs.fun](https://marketplace.wagmilabs.fun) or directly in the app.
+
+### Media & Entertainment
+| App | Port | What It Is |
+|-----|------|------------|
+| Plex | 32400 | Stream movies, TV, music to any device |
+| Jellyfin | 8096 | Free, open-source media server |
+| Immich | 2283 | Self-hosted photo backup from your phone |
+
+### Home Automation
+| App | Port | What It Is |
+|-----|------|------------|
+| Home Assistant | 8123 | Open source smart home platform |
+
+### AI & Local Models
+| App | Port | What It Is |
+|-----|------|------------|
+| Ollama | 11434 | Run Llama, Mistral, and other open-source AI models locally |
+| Open WebUI | 8080 | Chat interface for Ollama |
+
+###arr Stack
+| App | Port | What It Is |
+|-----|------|------------|
+| Sonarr | 8989 | Automatically download TV shows |
+| Radarr | 7878 | Automatically download movies |
+| Prowlarr | 9696 | Manage all your torrent indexers in one place |
+
+### Monitoring
+| App | Port | What It Is |
+|-----|------|------------|
+| Uptime Kuma | 3001 | Beautiful server monitoring dashboard |
+| Grafana | 3000 | Visualize metrics and logs |
+| Prometheus | 9090 | Time series database for metrics |
+
+### Security
+| App | Port | What It Is |
+|-----|------|------------|
+| Vaultwarden | 80 | Self-hosted Bitwarden password manager |
+
+### Networking
+| App | Port | What It Is |
+|-----|------|------------|
+| Nginx | 80 | Web server and reverse proxy |
+| Pi-hole | 80 | Block ads network-wide |
+| AdGuard Home | 3000 | DNS-level ad blocking |
+| WireGuard | 51820 | Fast, modern VPN |
+
+### And More...
+Transmission, qBittorrent, Nextcloud, Filebrowser, Minecraft, n8n, RSSHub, and more.
+
+---
+
+## 🛠️ API Reference
+
+**Base URL:** `http://localhost:5179`
+
+**Auth:** All requests require the `X-API-Key` header.
+
+### Containers
+
+| Method | Endpoint | Scope Required |
+|--------|----------|---------------|
+| List | `GET /api/containers` | `containers:read` |
+| Logs | `GET /api/containers/{id}/logs` | `containers:read` |
+| Start | `POST /api/containers/{id}/start` | `containers:write` |
+| Stop | `POST /api/containers/{id}/stop` | `containers:write` |
+| Restart | `POST /api/containers/{id}/restart` | `containers:write` |
+| Delete | `DELETE /api/containers/{id}/delete` | `containers:delete` |
+
+### Images
+
+| Method | Endpoint | Scope Required |
+|--------|----------|---------------|
+| List | `GET /api/images` | `images:read` |
+| Pull | `POST /api/images/pull` | `images:write` |
+| Delete | `DELETE /api/images/{id}` | `images:write` |
+
+### Marketplace
+
+| Method | Endpoint | Scope Required |
+|--------|----------|---------------|
+| Browse | `GET /api/marketplace` | `marketplace:read` |
+| Install | `POST /api/marketplace/create` | `marketplace:write` |
+| Start | `POST /api/marketplace/start` | `marketplace:write` |
+
+### Auth
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| Status | `GET /api/auth/status` | Check key scopes |
+| Settings | `GET /api/settings` | Key metadata |
+
+---
+
+## 🐳 Docker Management
+
+### Start / Stop
+
+```bash
+# Start
+docker compose up -d
+
+# Stop
+docker compose down
+
+# View logs
+docker compose logs -f backend
+docker compose logs -f frontend
+```
+
+### Updating
+
+**If you used Option 1 (Docker Hub):**
+```bash
+docker compose down
+docker compose pull
+docker compose up -d
+```
+
+**If you built from source:**
+```bash
+docker compose down
+docker compose pull  # fetch latest Hub images
+docker compose up -d --build
+```
+
+### Data Persistence
+
+WAGMIOS uses named Docker volumes:
+
+| Volume | What It Stores |
+|--------|---------------|
+| `wagmios_data` | API keys, settings, app data |
+| `frontend_data` | Frontend assets |
+
+Marketplace apps are stored in `~/.wagmios/containers/` on the host.
+
+### Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PORT` | `5179` | Backend port |
+| `WAGMIOS_DATA_DIR` | `/app/data` | Data directory |
+| `VITE_API_URL` | — | Frontend → Backend URL (auto-set in compose) |
+
+---
+
+## 🏗️ Tech Stack
+
+| Layer | Technology |
+|-------|------------|
+| **Backend** | Go (`net/http`, `gorilla/mux`) |
+| **Frontend** | Vue 3 + Vite + TypeScript |
+| **Database** | JSON files (keys, settings) |
+| **Container Runtime** | Docker (via socket) |
+| **UI** | TailwindCSS, custom dark mode |
+
+---
+
+## 📁 Project Structure
+
+```
+wagmios/
+├── backend-go/          # Go API server
+│   └── internal/
+│       ├── api/         # Container/image endpoints
+│       ├── auth/        # Key store, middleware, scope validation
+│       ├── marketplace/ # App catalog and install handlers
+│       └── activity/   # WebSocket activity feed
+├── frontend/            # Vue.js UI
+│   └── src/
+│       ├── components/  # Vue components
+│       ├── api.ts       # API client
+│       └── App.vue      # Main app
+├── logo/                # Project logos
+├── docker-compose.yaml  # Run instructions
+├── Dockerfile.backend    # Backend build
+└── Dockerfile.frontend  # Frontend build
 ```
 
 ---
 
-## 🐧 Examples  
+## 🤝 Contributing
+
+Contributions welcome! Whether it's:
+- Reporting a bug
+- Suggesting a new marketplace app
+- Submitting a PR
+
+Open an issue or PR on [GitHub](https://github.com/mentholmike/wagmios).
+
+---
+
+## 📄 License
+
+MIT License — do what you want with it.
+
+---
+
+## 🤖 OpenClaw Skill
+
+Give your OpenClaw agent a homelab. Install the skill directly into your agent:
+
+```bash
+/clawhub install wagmios
+```
+
+The skill tells your agent how to:
+- Authenticate with WAGMIOS using your API key
+- List, start, stop, and manage containers
+- Browse and install apps from the WAGMIOS Marketplace
+- Pull and manage Docker images
+- Work within scope-based permissions (no sudo, no workarounds)
+
+> **Your agent needs an API key with the right scopes to use WAGMIOS.** The skill will guide key setup on first use.
+
+**Skill URL:** https://clawhub.ai/mentholmike/wagmios
+
+---
+
+## 🔗 Links
+
+| Resource | URL |
+|----------|-----|
+| **Main Repo** | https://github.com/mentholmike/wagmios |
+| **Marketplace** | https://marketplace.wagmilabs.fun |
+| **Documentation** | https://wiki.wagmilabs.fun |
+| **OpenClaw Skill** | https://clawhub.ai/mentholmike/wagmios |
+| **Docker Hub** | https://hub.docker.com/r/itzmizzle/wagmi |
+| **Issues** | https://github.com/mentholmike/wagmios/issues |
+
+---
 
 <p align="center">
-  <img width="1423" alt="Screenshot 2025-03-03 at 4 50 21 PM" src="https://github.com/user-attachments/assets/ff90b6cc-cb9e-47f3-aa76-ff43f4d54c1c">
+  <img src="logo/removed-background.png" height="120" />
 </p>
 
 <p align="center">
-  <img width="1431" alt="Screenshot 2025-02-22 at 5 47 46 PM" src="https://github.com/user-attachments/assets/794cf926-0d12-42e4-abfa-60e269795a0f">
+  <em>🤖 🤝 🦞</em>
 </p>
-
-<p align="center">
-  <img width="1178" alt="Screenshot 2025-03-03 at 4 55 42 PM" src="https://github.com/user-attachments/assets/7903dc46-f23c-42d9-b715-1411c3d14f41">
-</p>
-
----
-
-## 💾 Tested Systems  
-
-✅ **Ubuntu** (multiple versions)  
-✅ **Debian (Bookworm)** – Works on Raspberry Pi  
-✅ **LXC Containers** – Requires root privileges for **Gluetun**  
-✅ **Mac & WSL for Linux** – *Known issue: overestimates disk storage*  
-
----
-
-## 🔜 Upcoming Features  
-
-- **Deeper integration** with **W.I.L.L.O.W**  
-- **Expanded AI automation** for container management  
-- **New integrations** for Kubernetes & cloud services  
-
----
-
-## 🔒 Security  
-
-⚠️ **This project is still in active development.** It is currently intended for **private/home usage**.  
-⚠️ **If deploying on a VPS, be cautious of exposing your IP!**  
-
----

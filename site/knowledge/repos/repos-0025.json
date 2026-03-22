@@ -1,23 +1,8 @@
 {
   "chunk": 25,
   "count": 26,
-  "generated_at": "2026-03-15T05:11:07Z",
+  "generated_at": "2026-03-22T04:58:29Z",
   "items": [
-    {
-      "repo_key": "github.com/zblesk/obskurnee",
-      "repo_url": "github.com/zblesk/obskurnee",
-      "host": "github.com",
-      "owner": "zblesk",
-      "repo": "obskurnee",
-      "app_references": [
-        "obskurnee"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__zblesk__obskurnee.md",
-      "readme_download_url": null,
-      "readme_sha256": "d9efbfa338281e6d81584fbcdf95f30ead47928b003d3ffded13adb1b0be89bc",
-      "error": null
-    },
     {
       "repo_key": "github.com/zitadel/zitadel",
       "repo_url": "github.com/zitadel/zitadel",
@@ -72,9 +57,9 @@
       "app_references": [
         "z-wave-js-ui"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__zwave-js__zwave-js-ui.md",
-      "readme_download_url": "https://raw.githubusercontent.com/zwave-js/zwave-js-ui/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8e9dd2b0ae8b71e04eaf7530445f5af2576e8cc7b09304f2d563389458b690ec",
       "error": null
     },
@@ -289,10 +274,10 @@
       "error": "worker_exception: Invalid URL 'gitlab.com/rtraceio/web/flink/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/rtraceio/web/flink/-/raw/main/README.md?"
     },
     {
-      "repo_key": "gitlab.com/smoores/storyteller",
-      "repo_url": "gitlab.com/smoores/storyteller",
+      "repo_key": "gitlab.com/storyteller-platform/storyteller",
+      "repo_url": "gitlab.com/storyteller-platform/storyteller",
       "host": "gitlab.com",
-      "owner": "smoores",
+      "owner": "storyteller-platform",
       "repo": "storyteller",
       "app_references": [
         "storyteller"
@@ -301,7 +286,7 @@
       "readme_path": null,
       "readme_download_url": null,
       "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'gitlab.com/smoores/storyteller/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/smoores/storyteller/-/raw/main/README.md?"
+      "error": "worker_exception: Invalid URL 'gitlab.com/storyteller-platform/storyteller/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/storyteller-platform/storyteller/-/raw/main/README.md?"
     },
     {
       "repo_key": "gitlab.com/timvisee/send",
@@ -377,6 +362,21 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "sr.ht/~sircmpwn/sourcehut",
+      "repo_url": "sr.ht/~sircmpwn/sourcehut",
+      "host": "sr.ht",
+      "owner": "~sircmpwn",
+      "repo": "sourcehut",
+      "app_references": [
+        "sourcehut"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'sr.ht/~sircmpwn/sourcehut/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://sr.ht/~sircmpwn/sourcehut/-/raw/main/README.md?"
     },
     {
       "repo_key": "we.phorge.it/source/phorge",
