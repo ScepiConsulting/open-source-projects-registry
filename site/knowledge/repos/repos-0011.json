@@ -1,8 +1,53 @@
 {
   "chunk": 11,
   "count": 50,
-  "generated_at": "2026-03-22T04:58:29Z",
+  "generated_at": "2026-03-29T05:16:53Z",
   "items": [
+    {
+      "repo_key": "github.com/danielbrendel/hortusfox-web",
+      "repo_url": "github.com/danielbrendel/hortusfox-web",
+      "host": "github.com",
+      "owner": "danielbrendel",
+      "repo": "hortusfox-web",
+      "app_references": [
+        "hortusfox"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__danielbrendel__hortusfox-web.md",
+      "readme_download_url": null,
+      "readme_sha256": "06db79531b9eaef45c0dd587ad57974402943c18a302781821b14473c3fd92a9",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/danny-avila/LibreChat",
+      "repo_url": "github.com/danny-avila/LibreChat",
+      "host": "github.com",
+      "owner": "danny-avila",
+      "repo": "LibreChat",
+      "app_references": [
+        "librechat"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__danny-avila__LibreChat.md",
+      "readme_download_url": null,
+      "readme_sha256": "cac93d529e88f1db08121ad41abde215ab43fbfba6538b9a092db977fc7b734b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dannybouwers/trala",
+      "repo_url": "github.com/dannybouwers/trala",
+      "host": "github.com",
+      "owner": "dannybouwers",
+      "repo": "trala",
+      "app_references": [
+        "trala"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dannybouwers__trala.md",
+      "readme_download_url": null,
+      "readme_sha256": "b162860a35c2c9e968ef9c6e7691b22dda1759ed315db2dcf14450541b07e0f9",
+      "error": null
+    },
     {
       "repo_key": "github.com/databasus/databasus",
       "repo_url": "github.com/databasus/databasus",
@@ -15,7 +60,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__databasus__databasus.md",
       "readme_download_url": "https://raw.githubusercontent.com/databasus/databasus/main/README.md",
-      "readme_sha256": "e6d80f1a51769d082120f0bec736057b58f0e2fbe4d0459495c90cf2af710b87",
+      "readme_sha256": "f2db2408b413c910e012f28a9551175847e258147e696d0eec9d95fb9dd5bbbc",
       "error": null
     },
     {
@@ -72,10 +117,10 @@
       "app_references": [
         "cloudbeaver"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dbeaver__cloudbeaver.md",
-      "readme_download_url": null,
-      "readme_sha256": "bba75ba09347d198ebdfaf4110c252d1934a0e130f453b0631c300dfe27adae7",
+      "readme_download_url": "https://raw.githubusercontent.com/dbeaver/cloudbeaver/devel/README.md",
+      "readme_sha256": "e02ae7d1d59978a61f7d4777e3274c1eb322a4905c74fb240ee4d519e02bc29c",
       "error": null
     },
     {
@@ -207,10 +252,10 @@
       "app_references": [
         "zipline"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__diced__zipline.md",
-      "readme_download_url": null,
-      "readme_sha256": "ec4bb0bdd986172597b81dec9d2303e579514119ccba8901433f8612a3b51e5a",
+      "readme_download_url": "https://raw.githubusercontent.com/diced/zipline/trunk/README.md",
+      "readme_sha256": "00eacf66a4e6182b652403d3c6ebf734fb6f93f592857082ec35d35a5126637f",
       "error": null
     },
     {
@@ -297,9 +342,9 @@
       "app_references": [
         "discourse"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__discourse__discourse.md",
-      "readme_download_url": "https://raw.githubusercontent.com/discourse/discourse/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "2cd0c9edb07fd333bd30beda74a50923a4fd4b0dde796394551223e003b0de1a",
       "error": null
     },
@@ -357,9 +402,9 @@
       "app_references": [
         "nps-enhanced"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__djylb__nps.md",
-      "readme_download_url": "https://raw.githubusercontent.com/djylb/nps/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4b0bdca068c4829042810affa69077d94cdcaf747b415538bdd3bc6f51acd41e",
       "error": null
     },
@@ -462,9 +507,9 @@
       "app_references": [
         "docuseal"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__docusealco__docuseal.md",
-      "readme_download_url": "https://raw.githubusercontent.com/docusealco/docuseal/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "17a0d4a7743d59ca2a1201f6099e118c0487fb2f8b4cae0669acbea5f694a415",
       "error": null
     },
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__duplicati__duplicati.md",
       "readme_download_url": null,
       "readme_sha256": "3bce44887e50b39070ed0f75ac90b52a44f3e30b4050ce093b471a4685f36d38",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/eclipse-mosquitto/mosquitto",
-      "repo_url": "github.com/eclipse-mosquitto/mosquitto",
-      "host": "github.com",
-      "owner": "eclipse-mosquitto",
-      "repo": "mosquitto",
-      "app_references": [
-        "mosquitto"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__eclipse-mosquitto__mosquitto.md",
-      "readme_download_url": null,
-      "readme_sha256": "a214fc32f8d23e629bb6175677d97d9fdd681a9f0fc373abd39c3024204b6b71",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/eduardolat/pgbackweb",
-      "repo_url": "github.com/eduardolat/pgbackweb",
-      "host": "github.com",
-      "owner": "eduardolat",
-      "repo": "pgbackweb",
-      "app_references": [
-        "pg-back-web"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__eduardolat__pgbackweb.md",
-      "readme_download_url": null,
-      "readme_sha256": "f8a1b47d422166f85fb3b39b91c1f1af21caa8f9d508265f20c76e3faa797d30",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/eikek/docspell",
-      "repo_url": "github.com/eikek/docspell",
-      "host": "github.com",
-      "owner": "eikek",
-      "repo": "docspell",
-      "app_references": [
-        "docspell"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__eikek__docspell.md",
-      "readme_download_url": null,
-      "readme_sha256": "48a17edad2649b969886280fc17fe20e98eef55a841664a66ae43c07b85f3858",
       "error": null
     }
   ]

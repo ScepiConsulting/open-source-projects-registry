@@ -1,8 +1,53 @@
 {
   "chunk": 13,
   "count": 50,
-  "generated_at": "2026-03-22T04:58:29Z",
+  "generated_at": "2026-03-29T05:16:53Z",
   "items": [
+    {
+      "repo_key": "github.com/fredrikburmester/streamystats",
+      "repo_url": "github.com/fredrikburmester/streamystats",
+      "host": "github.com",
+      "owner": "fredrikburmester",
+      "repo": "streamystats",
+      "app_references": [
+        "streamystats"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__fredrikburmester__streamystats.md",
+      "readme_download_url": null,
+      "readme_sha256": "c841cc6c918ae5219a1198701491e75782f43f8874e79ac38b3ee92ca0702fde",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/freescout-help-desk/freescout",
+      "repo_url": "github.com/freescout-help-desk/freescout",
+      "host": "github.com",
+      "owner": "freescout-help-desk",
+      "repo": "freescout",
+      "app_references": [
+        "freescout"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__freescout-help-desk__freescout.md",
+      "readme_download_url": "https://raw.githubusercontent.com/freescout-help-desk/freescout/dist/README.md",
+      "readme_sha256": "e031a1ca2279c8afd318d310d68e9ec4a0801024feb0b7cbb6118606b1c04808",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/friendica/friendica",
+      "repo_url": "github.com/friendica/friendica",
+      "host": "github.com",
+      "owner": "friendica",
+      "repo": "friendica",
+      "app_references": [
+        "friendica"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__friendica__friendica.md",
+      "readme_download_url": null,
+      "readme_sha256": "7f67f7ac5e4bd8b1328d46fce0e61cf89c166edd540f3c96f7a2b7f97475a41a",
+      "error": null
+    },
     {
       "repo_key": "github.com/fscorrupt/posterizarr",
       "repo_url": "github.com/fscorrupt/posterizarr",
@@ -12,9 +57,9 @@
       "app_references": [
         "posterizarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__fscorrupt__posterizarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/fscorrupt/posterizarr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a3490f9cb97d8ebc04e547bc4fa88cbb50f2705cc1c226c3f7012352a393b00a",
       "error": null
     },
@@ -87,9 +132,9 @@
       "app_references": [
         "notediscovery"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gamosoft__NoteDiscovery.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gamosoft/NoteDiscovery/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c0a75e24f330099386f32e8c77b9f7766229a372472eaabdde80aa64df2e0e49",
       "error": null
     },
@@ -162,9 +207,9 @@
       "app_references": [
         "cyberchef"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gchq__CyberChef.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gchq/CyberChef/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "697df6b7942152b339215dd796c960387b0b6415e73b06b09f66e896a8ae2d21",
       "error": null
     },
@@ -192,9 +237,9 @@
       "app_references": [
         "gerbera"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gerbera__gerbera.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gerbera/gerbera/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "81d109f2ec65d534295a4e878f71b9dc4543fa8a937b0a4fae3847201d869abd",
       "error": null
     },
@@ -252,10 +297,10 @@
       "app_references": [
         "homepage"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gethomepage__homepage.md",
-      "readme_download_url": null,
-      "readme_sha256": "21431dfb8bdff92f8315a1c5c05b63178303b8e6e352710d7471ab9c4eb03065",
+      "readme_download_url": "https://raw.githubusercontent.com/gethomepage/homepage/dev/README.md",
+      "readme_sha256": "adc1cfdeb2115c283f943a53d1ebe795e212be43e688e65000ebe3bbf48b2c60",
       "error": null
     },
     {
@@ -267,10 +312,10 @@
       "app_references": [
         "maxun"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__getmaxun__maxun.md",
-      "readme_download_url": null,
-      "readme_sha256": "f7ddde11b86b41d565f6be15f756bfb8ba040b96fcd5834bf5459722056f8de0",
+      "readme_download_url": "https://raw.githubusercontent.com/getmaxun/maxun/develop/README.md",
+      "readme_sha256": "74869160f36423965167422554e4681ae0e33dc81c68b87f70fc32af055bf31c",
       "error": null
     },
     {
@@ -372,10 +417,10 @@
       "app_references": [
         "postiz"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gitroomhq__postiz-app.md",
-      "readme_download_url": null,
-      "readme_sha256": "c8fb4cd75dd2399ad5813284d6f5af0c28837ef7a8aff5bc2272195761f004f3",
+      "readme_download_url": "https://raw.githubusercontent.com/gitroomhq/postiz-app/main/README.md",
+      "readme_sha256": "7bc0b38cfb7645bde1940a1ae39aca16a4cbcdf8e5a1d00d37733d7d462d74e0",
       "error": null
     },
     {
@@ -477,9 +522,9 @@
       "app_references": [
         "nexterm"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gnmyt__Nexterm.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gnmyt/Nexterm/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "df21f3392fa3bd785995aba912462560ce9d15ed7e1fae24796c3e56ab7ae346",
       "error": null
     },
@@ -525,7 +570,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__go-vikunja__vikunja.md",
       "readme_download_url": "https://raw.githubusercontent.com/go-vikunja/vikunja/main/README.md",
-      "readme_sha256": "e49ad0f4ee75a75abbbccab8352db1827036bf84a28856e0feb436336a46f919",
+      "readme_sha256": "e24a1fdbe38afca8fccca4109832da8dff1666ba8f3a3a7e86125af15b959f7b",
       "error": null
     },
     {
@@ -642,10 +687,10 @@
       "app_references": [
         "loki"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__grafana__loki.md",
-      "readme_download_url": null,
-      "readme_sha256": "d58aa2e3a8ff770e95e2df25f8ab38397e911d17d2501f0a3034de381f7a7663",
+      "readme_download_url": "https://raw.githubusercontent.com/grafana/loki/main/README.md",
+      "readme_sha256": "af9e356ba4d99300f4e145be9c0b5885587b2ba8dbba89e2a5f149cd3572c04a",
       "error": null
     },
     {
@@ -657,10 +702,10 @@
       "app_references": [
         "gramps"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gramps-project__gramps.md",
-      "readme_download_url": null,
-      "readme_sha256": "9da15ee10e1d936a6dc3724388dfccf54fdd4c0f8ad03c9a3fc824a66056b53c",
+      "readme_download_url": "https://raw.githubusercontent.com/gramps-project/gramps/master/README.md",
+      "readme_sha256": "9372736cc0bae2fbcbaa73b3761015ea847ebfa685abcd92ccf8075d4fbd8a9b",
       "error": null
     },
     {
@@ -702,55 +747,10 @@
       "app_references": [
         "grist"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gristlabs__grist-core.md",
-      "readme_download_url": null,
-      "readme_sha256": "8d14c82b74ef91c2517ea8057c4480656a0500df6c0e451b7508353536f59483",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/grocy/grocy",
-      "repo_url": "github.com/grocy/grocy",
-      "host": "github.com",
-      "owner": "grocy",
-      "repo": "grocy",
-      "app_references": [
-        "grocy"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__grocy__grocy.md",
-      "readme_download_url": null,
-      "readme_sha256": "afec4a26b8386bf628a531166d2c7cfc5887c89fd146b17f3838f5bcac4da33b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/grokability/snipe-it",
-      "repo_url": "github.com/grokability/snipe-it",
-      "host": "github.com",
-      "owner": "grokability",
-      "repo": "snipe-it",
-      "app_references": [
-        "snipe-it"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__grokability__snipe-it.md",
-      "readme_download_url": null,
-      "readme_sha256": "ed92c88d4c012d9e0f318836f87a344a333b6243d5607850f768bc20eb0d0eb4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/growchief/growchief",
-      "repo_url": "github.com/growchief/growchief",
-      "host": "github.com",
-      "owner": "growchief",
-      "repo": "growchief",
-      "app_references": [
-        "growchief"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__growchief__growchief.md",
-      "readme_download_url": null,
-      "readme_sha256": "54efa247393dfdae9d0e7939cc2a84c7b7ddc3a0d94fff7954eda10212d4ee63",
+      "readme_download_url": "https://raw.githubusercontent.com/gristlabs/grist-core/main/README.md",
+      "readme_sha256": "9e677ef774f867976aa57c164b1e813f33e2d9cf736261499acf8ddec250fa88",
       "error": null
     }
   ]

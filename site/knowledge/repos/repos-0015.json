@@ -1,8 +1,53 @@
 {
   "chunk": 15,
   "count": 50,
-  "generated_at": "2026-03-22T04:58:29Z",
+  "generated_at": "2026-03-29T05:16:53Z",
   "items": [
+    {
+      "repo_key": "github.com/jamesread/Faridoon",
+      "repo_url": "github.com/jamesread/Faridoon",
+      "host": "github.com",
+      "owner": "jamesread",
+      "repo": "Faridoon",
+      "app_references": [
+        "faridoon"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__jamesread__Faridoon.md",
+      "readme_download_url": null,
+      "readme_sha256": "7443a2055f9eb215161675a5256e8b3e420cfef75c45bc6945c2f6de76f58fdf",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/jamesread/StencilBox",
+      "repo_url": "github.com/jamesread/StencilBox",
+      "host": "github.com",
+      "owner": "jamesread",
+      "repo": "StencilBox",
+      "app_references": [
+        "stencilbox"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__jamesread__StencilBox.md",
+      "readme_download_url": null,
+      "readme_sha256": "722eb3bfca349b1fe730cdbe96a42865abb9fb3e63698b6e2742e16e2381b591",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/janeczku/calibre-web",
+      "repo_url": "github.com/janeczku/calibre-web",
+      "host": "github.com",
+      "owner": "janeczku",
+      "repo": "calibre-web",
+      "app_references": [
+        "calibre-web"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__janeczku__calibre-web.md",
+      "readme_download_url": null,
+      "readme_sha256": "feb9051b9a3b11b3fd9e64375704cd0a888a496fca6d11f0dfc72a0135dd8f1f",
+      "error": null
+    },
     {
       "repo_key": "github.com/jasonraimondi/url-to-png",
       "repo_url": "github.com/jasonraimondi/url-to-png",
@@ -57,9 +102,9 @@
       "app_references": [
         "moocup"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__jellydeck__moocup.md",
-      "readme_download_url": "https://raw.githubusercontent.com/jellydeck/moocup/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6c1a752e9ccc334fa681dbd6820fe9bbbe160a9477789d64c260a3a61d5db9d7",
       "error": null
     },
@@ -267,10 +312,10 @@
       "app_references": [
         "habitsync"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jofoerster__habitsync.md",
-      "readme_download_url": null,
-      "readme_sha256": "2f26958789fcc4dc79d505ff0fbd98823487ac97ad691bfcd6e14e4343a45ade",
+      "readme_download_url": "https://raw.githubusercontent.com/jofoerster/habitsync/main/README.md",
+      "readme_sha256": "02ba610bcd5b00a4d9354f953012a30550c52afe1d11d7fe4dccd1454be89f7d",
       "error": null
     },
     {
@@ -282,9 +327,9 @@
       "app_references": [
         "airtrail"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__johanohly__AirTrail.md",
-      "readme_download_url": "https://raw.githubusercontent.com/johanohly/AirTrail/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "17294c549445d6d65394e505f47ab159b70de694739cec3299e7fd189d085ce2",
       "error": null
     },
@@ -330,7 +375,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jon4hz__jellysweep.md",
       "readme_download_url": "https://raw.githubusercontent.com/jon4hz/jellysweep/main/README.md",
-      "readme_sha256": "e545fe92f28610a07adb3412fceb326ffea8488222bac2ca897e1bb696063034",
+      "readme_sha256": "04b35041a3bbd527a27f7ac494ba45a04701184bf6ae137c8464ca9e1c1578f4",
       "error": null
     },
     {
@@ -402,10 +447,10 @@
       "app_references": [
         "workout-tracker"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jovandeginste__workout-tracker.md",
-      "readme_download_url": null,
-      "readme_sha256": "dab9c2170c5a696126d5b6fc45347ae2a11bb6cf828722e32dd1d5ba473af25a",
+      "readme_download_url": "https://raw.githubusercontent.com/jovandeginste/workout-tracker/master/README.md",
+      "readme_sha256": "1badf050a0438323c45be6c272184cb17d48dc16a3805bcc1271b47c5fb9b156",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__kestra-io__kestra.md",
       "readme_download_url": null,
       "readme_sha256": "1eabde85d9850eb123250c045fecec53fad7f4fad9d5fef38a7db14f37bdc456",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/keycloak/keycloak",
-      "repo_url": "github.com/keycloak/keycloak",
-      "host": "github.com",
-      "owner": "keycloak",
-      "repo": "keycloak",
-      "app_references": [
-        "keycloak"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__keycloak__keycloak.md",
-      "readme_download_url": null,
-      "readme_sha256": "cb39f76a50de6ccae8ab98280aeff4061a3daf211702ebc14b3f9e290a47d966",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/kieraneglin/pinchflat",
-      "repo_url": "github.com/kieraneglin/pinchflat",
-      "host": "github.com",
-      "owner": "kieraneglin",
-      "repo": "pinchflat",
-      "app_references": [
-        "pinchflat"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__kieraneglin__pinchflat.md",
-      "readme_download_url": null,
-      "readme_sha256": "f2c06ecebed213b84f3cde8147976461fa3b4555e90f61e47a88962546ce262e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/kikootwo/ReadMeABook",
-      "repo_url": "github.com/kikootwo/ReadMeABook",
-      "host": "github.com",
-      "owner": "kikootwo",
-      "repo": "ReadMeABook",
-      "app_references": [
-        "readmeabook"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__kikootwo__ReadMeABook.md",
-      "readme_download_url": null,
-      "readme_sha256": "01aa9fa7b80d02f0c82f6cdf0989a67cb54b111a34a577107024309d33390020",
       "error": null
     }
   ]

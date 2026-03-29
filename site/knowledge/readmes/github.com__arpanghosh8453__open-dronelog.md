@@ -21,8 +21,35 @@
 
 <p align="center">A high-performance application for analyzing drone flight logs (DJI and Litchi CSV formats). Available as a Tauri v2 desktop app or a Docker-deployable web app. Built with DuckDB and React.</p>
 
+<video src="https://github.com/user-attachments/assets/50e9f58b-5e91-44c3-a053-2224a52dab76" width="100%" autoplay loop muted playsinline controls></video>
+
 > [!IMPORTANT]
 > *DJI is a registered trademark of SZ DJI Technology Co., Ltd. DroneLogbook® is a registered trademark of DroneAnalytics Inc. Litchi is a trademark of VC Technology Ltd. Airdata or Airdata UAV is a trademark of Airdata UAV, Inc. This project is independent and is not affiliated with, sponsored by, authorized by, or endorsed by SZ DJI Technology Co., Ltd., DroneAnalytics Inc., VC Technology Ltd., Airdata UAV, Inc., or their affiliates.*
+
+## Contents
+
+- [Features](#features)
+- [Accessing flight log files](#accessing-flight-log-files)
+  - [DJI Flight Logs](#dji-flight-logs)
+  - [Litchi CSV Exports](#litchi-csv-exports)
+- [Setup and installation (Windows/MacOS)](#setup-and-installation-windowsmacos)
+  - [Try the Webapp First](#try-the-webapp-first-no-installation-required)
+  - [macOS Users: "Damaged File" Error Fix](#macos-users-damaged-file-error-fix)
+- [Usage](#usage)
+- [Building from source (Linux users)](#building-from-source-linux-users)
+- [Docker deployment (Self-hosted Web)](#docker-deployment-self-hosted-web)
+- [Profiles and Password Protection](#profiles-and-password-protection)
+- [Security Warning (Web/Docker)](#security-warning-webdocker)
+- [Configuration](#configuration)
+- [Context Management](#context-management)
+- [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [How to obtain your own DJI Developer API key](#how-to-obtain-your-own-dji-developer-api-key)
+- [Contribution Guidelines](#contribution-guidelines)
+- [Socials and Support](#socials-and-support)
+- [Love this project?](#love-this-project)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
 
 <p align="center">
     <img src="screenshots/Comparison.png" alt="Comparison chart" width="900" />
@@ -60,30 +87,6 @@
 <p align="center">
     <img src="screenshots/flight_report.png" alt="Flight report" width="900" />
 </p>
-
-## Contents
-
-- [Features](#features)
-- [Accessing flight log files](#accessing-flight-log-files)
-  - [DJI Flight Logs](#dji-flight-logs)
-  - [Litchi CSV Exports](#litchi-csv-exports)
-- [Setup and installation (Windows/MacOS)](#setup-and-installation-windowsmacos)
-  - [Try the Webapp First](#try-the-webapp-first-no-installation-required)
-  - [macOS Users: "Damaged File" Error Fix](#macos-users-damaged-file-error-fix)
-- [Usage](#usage)
-- [Building from source (Linux users)](#building-from-source-linux-users)
-- [Docker deployment (Self-hosted Web)](#docker-deployment-self-hosted-web)
-- [Profiles and Password Protection](#profiles-and-password-protection)
-- [Security Warning (Web/Docker)](#security-warning-webdocker)
-- [Configuration](#configuration)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [How to obtain your own DJI Developer API key](#how-to-obtain-your-own-dji-developer-api-key)
-- [Contribution Guidelines](#contribution-guidelines)
-- [Socials and Support](#socials-and-support)
-- [Love this project?](#love-this-project)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ## Features
 
@@ -406,6 +409,20 @@ For production deployments, a reverse proxy with TLS is essential.
 - **API Guide**: Available API request paths and response structure is provided in the [API documentation](/docs/api-guide.md) page. 
 - **Log Files**: App logs are written to the platform-specific log directory and surfaced in Settings. In Docker mode, logs are written to stdout.
 
+## Context Management
+
+This project uses a modular, machine-parsable context system under `context/` for agentic development.
+
+- Setup and workflow guide: [`docs/context-management.md`](docs/context-management.md)
+- Context root documentation: [`context/README.md`](context/README.md)
+
+Core commands:
+
+```bash
+npm run context:build
+npm run context:check
+```
+
 ## Tech Stack
 
 ### Backend (Rust)
@@ -542,13 +559,16 @@ AGPL-3.0 - see [LICENSE](LICENSE) for details.
 
 ## Declaration
 
-While some parts of this codebase were written with AI assistance (Claude Opus) for convinience, the entirety of OpenDroneLog is thoughtfully architected, manually tested before every release, and managed by me in my free time. Long-term maintenance remain my priority with this project as it grows. The `context.json` file provides a machine parsable high quality summary of the project overview, which is updated alongside the project for future references.  
+While some parts of this codebase were written with AI assistance (Claude Opus 4.6 and GPT-5.3-Codex) for convinience, the entirety of OpenDroneLog is thoughtfully architected, manually tested before every release, and managed by me in my free time. Long-term maintenance remain my priority with this project as it grows. See [`docs/context-management.md`](docs/context-management.md) for more details on how the context management works for this project. This schema is given for people interested in building on top of this project with agentic workflow.  
 
 ## Acknowledgments
 
 - [dji-log-parser](https://github.com/lvauvillier/dji-log-parser) - DJI log parsing
 - [DuckDB](https://duckdb.org/) - Analytical database
 - [Tauri](https://tauri.app/) - Desktop app framework
+- [Esri World Imagery](https://www.esri.com/en-us/arcgis/products/arcgis-online/basemaps) - Satellite map tiles
+- [OpenStreetMap](https://www.openstreetmap.org/copyright) - Base map data and contributors
+- [OpenTopoMap](https://opentopomap.org/about) - Topographic map tiles and style (CC-BY-SA)
 
 ## Sponsors
 

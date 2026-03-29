@@ -30,12 +30,13 @@ However you try it, you'll quickly see that Grist is a hybrid database/spreadshe
 
 This difference can confuse people coming directly from Excel or Google Sheets. Give it a chance! There's also a [Grist for Spreadsheet Users](https://www.getgrist.com/blog/grist-for-spreadsheet-users/) article to help get you oriented. If you're coming from Airtable, you'll find the model familiar (and there's also our [Grist vs Airtable](https://www.getgrist.com/blog/grist-v-airtable/) article for a direct comparison).
 
-Here are some specific feature highlights of Grist:
+Here are some specific feature highlights of Grist (🇫🇷 marks heavy French govt. contributions):
 
   * Python formulas.
     - Full [Python syntax is supported](https://support.getgrist.com/formulas/#python), including the standard library.
     - Many [Excel functions](https://support.getgrist.com/functions/) also available.
-    - An [AI Assistant](https://www.getgrist.com/ai-formula-assistant/) specifically tuned for formula generation (using OpenAI gpt-3.5-turbo or [Llama](https://ai.meta.com/llama/) via <a href="https://github.com/abetlen/llama-cpp-python">llama-cpp-python</a>).
+    - An [AI Formula Assistant](https://support.getgrist.com/ai-assistant-legacy/) specifically tuned for formula generation (works with OpenAI, [Llama](https://ai.meta.com/llama/), and many other models via [OpenRouter](https://openrouter.ai/) or any OpenAI-compatible endpoint).
+    - A [formula timer](https://support.getgrist.com/formula-timer/) for diagnosing slow formulas.
   * A portable, self-contained format.
     - Based on SQLite, the most widely deployed database engine.
     - Any tool that can read SQLite can read numeric and text data from a Grist file.
@@ -46,39 +47,55 @@ Here are some specific feature highlights of Grist:
   * Convenient editing and formatting features.
     - Choices and [choice lists](https://support.getgrist.com/col-types/#choice-list-columns), for adding colorful tags to records.
     - [References](https://support.getgrist.com/col-refs/#creating-a-new-reference-list-column) and reference lists, for cross-referencing records in other tables.
+    - [Two-way references](https://support.getgrist.com/col-refs/#two-way-references) that automatically synchronize between tables.
     - [Attachments](https://support.getgrist.com/col-types/#attachment-columns), to include media or document files in records.
     - Dates and times, toggles, and special numerics such as currency all have specialized editors and formatting options.
     - [Conditional Formatting](https://support.getgrist.com/conditional-formatting/), letting you control the style of cells with formulas to draw attention to important information.
+    - [Markdown formatting](https://support.getgrist.com/col-types/#markdown) in text cells.
   * Drag-and-drop dashboards.
     - [Charts](https://support.getgrist.com/widget-chart/), [card views](https://support.getgrist.com/widget-card/) and a [calendar widget](https://support.getgrist.com/widget-calendar/) for visualization.
     - [Summary tables](https://support.getgrist.com/summary-tables/) for summing and counting across groups.
     - [Widget linking](https://support.getgrist.com/linking-widgets/) streamlines filtering and editing data.
     Grist has a unique approach to visualization, where you can lay out and link distinct widgets to show together,
     without cramming mixed material into a table.
-    - [Filter bar](https://support.getgrist.com/search-sort-filter/#filter-buttons) for quick slicing and dicing.
+    - [Filter bar](https://support.getgrist.com/search-sort-filter/#pinning-filters) for quick slicing and dicing.
+    - Duplicate widgets to quickly build variations of a view.
+    - [Compare documents](https://support.getgrist.com/copying-docs/#trying-out-changes) to see what changed.
   * [Incremental imports](https://support.getgrist.com/imports/#updating-existing-records).
     - Import a CSV of the last three months activity from your bank...
     - ...and import new activity a month later without fuss or duplication.
   * [Native forms](https://support.getgrist.com/widget-form/). Create forms that feed directly into your spreadsheet without fuss.
+    - Supports file attachments, hidden fields, and pre-population via URL parameters.
   * Integrations.
-    - A [REST API](https://support.getgrist.com/api/), [Zapier actions/triggers](https://support.getgrist.com/integrators/#integrations-via-zapier), and support from similar [integrators](https://support.getgrist.com/integrators/).
-    - Import/export to Google drive, Excel format, CSV.
-    - Link data with [custom widgets](https://support.getgrist.com/widget-custom/#_top), hosted externally.
-    - Configurable outgoing webhooks.
+    - A [REST API](https://support.getgrist.com/api/) with an interactive [API console](https://docs.getgrist.com/apiconsole), [Zapier actions/triggers](https://zapier.com/apps/grist/integrations), and support from similar [integrators](https://support.getgrist.com/integrators/).
+    - Import/export to Google Drive, Excel format, CSV. [Import directly from Airtable.](https://support.getgrist.com/imports/#import-from-airtable)
+    - Link data with [custom widgets](https://support.getgrist.com/widget-custom/), hosted externally.
+    - Configurable outgoing [webhooks](https://support.getgrist.com/webhooks/), with support for authorization headers, column-specific triggers, and formula conditions.
+    - [Service accounts](https://support.getgrist.com/api/#tag/service-accounts) for fine-tuned API access (🇫🇷).
+    - [SCIM](https://support.getgrist.com/install/scim/) for standard user and group provisioning (🇫🇷).
   * [Many templates](https://templates.getgrist.com/) to get you started, from investment research to organizing treasure hunts.
   * Access control options.
     - (You'll need SSO logins set up to make use of these options; [`grist-omnibus`](https://github.com/gristlabs/grist-omnibus) has a prepackaged solution if configuring this feels daunting)
     - Share [individual documents](https://support.getgrist.com/sharing/), workspaces, or [team sites](https://support.getgrist.com/team-sharing/).
     - Control access to [individual rows, columns, and tables](https://support.getgrist.com/access-rules/).
     - Control access based on cell values and user attributes.
+    - [OIDC](https://support.getgrist.com/install/oidc/) (🇫🇷) and [SAML](https://support.getgrist.com/install/saml/) support for single sign-on.
+  * Collaboration.
+    - [Comments](https://support.getgrist.com/sharing/#comments) on cells, with threaded replies and @-mentions.
+    - See who else is viewing a document in real time.
+    - [Suggest changes](https://support.getgrist.com/sharing/#suggestions) for others to review and approve, inspired by source control workflows.
   * Self-maintainable.
     - Useful for intranet operation and specific compliance requirements.
+    - [Sign in with getgrist.com](https://support.getgrist.com/install/sign-in-with-grist/) for easy authentication without running your own auth server.
+    - Store [attachments externally](https://support.getgrist.com/document-settings/#external-attachments) in S3-compatible storage to keep `.grist` files small (🇫🇷).
+    - [HTTP long polling](https://support.getgrist.com/newsletters/2024-04/#networking-improvements) as an alternative to WebSockets for restrictive network environments (🇫🇷).
   * Sandboxing options for untrusted documents.
     - On Linux or with Docker, you can enable [gVisor](https://github.com/google/gvisor) sandboxing at the individual document level.
     - On macOS, you can use native sandboxing.
-    - On any OS, including Windows, you can use a wasm-based sandbox.
-  * Translated to many languages.
-  * `F1` key brings up some quick help. This used to go without saying, but in general Grist has good keyboard support.
+    - On any OS, including Windows, you can use a Wasm-based sandbox via [Deno](https://deno.com/) and [Pyodide](https://pyodide.org/).
+  * Translated to many languages (🇫🇷).
+  * A [high-contrast theme](https://support.getgrist.com/newsletters/2025-05/#high-contrast-theme) meeting WCAG level AA requirements (🇫🇷).
+  * `F1` key brings up some quick help. This used to go without saying, but in general Grist has good keyboard support (🇫🇷).
   * We post progress on [𝕏 or Twitter or whatever](https://twitter.com/getgrist) and publish [monthly newsletters](https://support.getgrist.com/newsletters/).
 
 If you are curious about where Grist is heading, see [our roadmap](https://github.com/gristlabs/grist-core/projects/1), drop a question in [our forum](https://community.getgrist.com), or browse [our extensive documentation](https://support.getgrist.com).
@@ -101,7 +118,7 @@ If you evaluate Grist by using the hosted version at [getgrist.com](https://getg
     - It uses a special set of administrative endpoints not present on `grist-core`.
     - If you're going to be running a large Grist installation, with employees coming and going, you may care about this.
   * [Grist Assistant](https://support.getgrist.com/assistant/#assistant) (2025)
-    - An AI Formula Assistant - limited to working with formulas - is present in `grist-core`, but the newer Assistant can help with a wider range of tasks like building tables and dashboards and modifying data.
+    - An AI Formula Assistant - limited to working with formulas - is present in `grist-core`, but the newer Assistant can help with a wider range of tasks like building tables and dashboards, styling and formatting, explaining access rules, and modifying data.
     - If you have many users who need help building documents or working with data, you may care about this one.
   * [Invite Notifications](https://support.getgrist.com/self-managed/#how-do-i-set-up-email-notifications) (2025)
     - When a user is added to a document, or a workspace, or a site, with email notifications they will get emailed a link to access the resource.
@@ -387,7 +404,7 @@ Grist can be configured in many ways. Here are the main environment variables it
 | GRIST_ENABLE_SERVICE_ACCOUNTS | enables the `service accounts` feature. This feature allows users to create special service accounts that they can manage and to whom they can grant restricted access to chosen resources. Useful as a way to get fine-grained api keys for use with third party automations. Unset by default |
 | GRIST_ENABLE_REQUEST_FUNCTION | enables the REQUEST function. This function performs HTTP requests in a similar way to `requests.request`. This function presents a significant security risk, since it can let users call internal endpoints when Grist is available publicly. This function can also cause performance issues. Unset by default. |
 | GRIST_HEADERS_TIMEOUT_MS | if set, override nodes's server.headersTimeout flag. |
-| GRIST_HIDE_UI_ELEMENTS | comma-separated list of UI features to disable. Allowed names of parts: `helpCenter`, `billing`, `templates`, `createSite`, `multiSite`, `multiAccounts`, `importFromAirtable`, `sendToDrive`, `tutorials`, `supportGrist`, `themes`. If a part also exists in GRIST_UI_FEATURES, it will still be disabled. |
+| GRIST_HIDE_UI_ELEMENTS | comma-separated list of UI features to disable. Allowed names of parts: `helpCenter`, `billing`, `templates`, `createSite`, `multiSite`, `multiAccounts`, `importFromAirtable`, `sendToDrive`, `tutorials`, `supportGrist`, `themes`, `automations`. If a part also exists in GRIST_UI_FEATURES, it will still be disabled. |
 | GRIST_HOST | hostname to use when listening on a port. |
 | GRIST_PROXY_FOR_UNTRUSTED_URLS | Full URL of proxy for delivering webhook payloads. Default value is `direct` for delivering payloads without proxying. |
 | HTTPS_PROXY or https_proxy | Full URL of reverse web proxy (corporate proxy) for fetching the custom widgets repository or the OIDC config from the issuer. |
@@ -435,7 +452,7 @@ Grist can be configured in many ways. Here are the main environment variables it
 | GRIST_THROTTLE_CPU | if set, CPU throttling is enabled |
 | GRIST_TRUST_PLUGINS | if set, plugins are expect to be served from the same host as the rest of the Grist app, rather than from a distinct host. Ordinarily, plugins are served from a distinct host so that the cookies used by the Grist app are not automatically available to them. Enable this only if you understand the security implications. |
 | GRIST_USER_ROOT | an extra path to look for plugins in - Grist will scan for plugins in `$GRIST_USER_ROOT/plugins`. |
-| GRIST_UI_FEATURES | comma-separated list of UI features to enable. Allowed names of parts: `helpCenter`, `billing`, `templates`, `createSite`, `multiSite`, `multiAccounts`, `importFromAirtable`, `sendToDrive`, `tutorials`, `supportGrist`, `themes`. If a part also exists in GRIST_HIDE_UI_ELEMENTS, it won't be enabled. |
+| GRIST_UI_FEATURES | comma-separated list of UI features to enable. Allowed names of parts: `helpCenter`, `billing`, `templates`, `createSite`, `multiSite`, `multiAccounts`, `importFromAirtable`, `sendToDrive`, `tutorials`, `supportGrist`, `themes`, `automations`. If a part also exists in GRIST_HIDE_UI_ELEMENTS, it won't be enabled. Note: `importFromAirtable` and `automations` are enabled by default even without being listed here; use GRIST_HIDE_UI_ELEMENTS to disable them. |
 | GRIST_UNTRUSTED_PORT | if set, plugins will be served from the given port. This is an alternative to setting APP_UNTRUSTED_URL. |
 | GRIST_WIDGET_LIST_URL | a url pointing to a widget manifest, by default https://github.com/gristlabs/grist-widget/releases/download/latest/manifest.json is used |
 | GRIST_LOG_HTTP | When set to `true`, log HTTP requests and responses information. Defaults to `false`. |

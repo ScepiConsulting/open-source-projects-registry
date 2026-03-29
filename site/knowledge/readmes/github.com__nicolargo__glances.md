@@ -253,7 +253,7 @@ Gateway to other services 🌐
 Glances can export stats to:
 
 - files: ``CSV`` and ``JSON``
-- databases:  ``InfluxDB``, ``ElasticSearch``, ``PostgreSQL/TimeScale``, ``Cassandra``, ``CouchDB``, ``OpenTSDB``, ``Prometheus``, ``StatsD``, ``Riemann`` and ``Graphite``
+- databases:  ``InfluxDB``, ``ElasticSearch``, ``PostgreSQL/TimeScale``, ``Cassandra``, ``ClickHouse``, ``CouchDB``, ``OpenTSDB``, ``Prometheus``, ``StatsD``, ``Riemann`` and ``Graphite``
 - brokers: ``RabbitMQ/ActiveMQ``, ``NATS``, ``ZeroMQ`` and ``Kafka``
 - others: ``RESTful`` endpoint
 
@@ -589,6 +589,7 @@ Extra dependencies:
 - ``batinfo`` (for battery monitoring)
 - ``bernhard`` (for the Riemann export module)
 - ``cassandra-driver`` (for the Cassandra export module)
+- ``clickhouse-connect`` (for the ClickHouse export module)
 - ``chevron`` (for the action script feature)
 - ``docker`` (for the Containers Docker monitoring support)
 - ``elasticsearch`` (for the Elastic Search export module)

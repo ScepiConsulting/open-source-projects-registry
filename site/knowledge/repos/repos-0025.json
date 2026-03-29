@@ -1,8 +1,53 @@
 {
   "chunk": 25,
-  "count": 26,
-  "generated_at": "2026-03-22T04:58:29Z",
+  "count": 30,
+  "generated_at": "2026-03-29T05:16:54Z",
   "items": [
+    {
+      "repo_key": "github.com/zane-ops/zane-ops",
+      "repo_url": "github.com/zane-ops/zane-ops",
+      "host": "github.com",
+      "owner": "zane-ops",
+      "repo": "zane-ops",
+      "app_references": [
+        "zaneops"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__zane-ops__zane-ops.md",
+      "readme_download_url": null,
+      "readme_sha256": "73ec20ce5a4a46bf4eda6addea0242e3a0fecdbe4688a4c4bed926d0cadabbe6",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/zapdos-labs/unblink",
+      "repo_url": "github.com/zapdos-labs/unblink",
+      "host": "github.com",
+      "owner": "zapdos-labs",
+      "repo": "unblink",
+      "app_references": [
+        "unblink"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__zapdos-labs__unblink.md",
+      "readme_download_url": null,
+      "readme_sha256": "70e8add0309c92291fcd07f9d1b8073466ba7e792ed952433eb349d73f9ad916",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/zblesk/obskurnee",
+      "repo_url": "github.com/zblesk/obskurnee",
+      "host": "github.com",
+      "owner": "zblesk",
+      "repo": "obskurnee",
+      "app_references": [
+        "obskurnee"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__zblesk__obskurnee.md",
+      "readme_download_url": null,
+      "readme_sha256": "d9efbfa338281e6d81584fbcdf95f30ead47928b003d3ffded13adb1b0be89bc",
+      "error": null
+    },
     {
       "repo_key": "github.com/zitadel/zitadel",
       "repo_url": "github.com/zitadel/zitadel",
@@ -27,10 +72,10 @@
       "app_references": [
         "kyoo"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__zoriya__Kyoo.md",
-      "readme_download_url": null,
-      "readme_sha256": "388f661616c6e9d2b2fe3e4e00db8910a9f12f4fca63277496c7ac95fc4fe82e",
+      "readme_download_url": "https://raw.githubusercontent.com/zoriya/Kyoo/master/README.md",
+      "readme_sha256": "a091649766a60a0ab55158c6a1658b22490c4b79d6c97d603a5fa546b1b15da0",
       "error": null
     },
     {
@@ -182,6 +227,21 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'gitlab.com/elementfm/docs/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/elementfm/docs/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/g33kphr33k/musicgrabber",
+      "repo_url": "gitlab.com/g33kphr33k/musicgrabber",
+      "host": "gitlab.com",
+      "owner": "g33kphr33k",
+      "repo": "musicgrabber",
+      "app_references": [
+        "music-grabber"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/g33kphr33k/musicgrabber/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/g33kphr33k/musicgrabber/-/raw/main/README.md?"
     },
     {
       "repo_key": "gitlab.com/gitlab-org/gitlab-foss",

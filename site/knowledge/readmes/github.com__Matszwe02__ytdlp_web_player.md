@@ -53,26 +53,33 @@ App should be accessible at [http://localhost:5000](http://localhost:5000)
   ```sh
   docker compose up
   ```
-- Modify `compose.yml`'s environment variables as needed
 - For automatic app updates, see `compose.yml`
+- To enable HTTPS, see `compose.yml`
+  - then you can access the app with `https://localhost:5001`
+  - your browser will warn you about not secure connection, you need to click on allow
 
 ## 2. Run locally
 
-- Create and activate a virtual environment and install `requirements.txt`
-- Copy `example.env` to `.env`, modify as needed
-- Ensure you have `ffmpeg` in PATH (typing `ffmpeg` in console should display ffmpeg info)
+- Create and activate a virtual environment in `src/` and install `requirements.txt`
+- Install and ensure you have `ffmpeg` in PATH (typing `ffmpeg` in console should display ffmpeg info)
+  - Install and ensure you have `deno` or `node` in PATH (optional)
 - run with `python3 main.py`
+
+
+## Configure
+
+- Copy `src/example.env` to `src/.env`, modify as needed
+- If you want to add your own cookies, create `src/cookies.txt` file and enable in `compose.yml` if using docker
+    - Keep in mind that cookies work the same way as your account credentails - anyone having them may [mess up your account](https://youtu.be/yGXaAWbzl5A).\
+    So I only recommend putting throwaway accounts here.\
+    Extension in current version also sends your cookies to the server, but they are deleted when video is cleaned up.
 
 
 # Troubleshooting
 
-## I can't install PWA / application
+## I can't install PWA / embed it as an iframe / extension does not load
 
-You need HTTPS for this. You'll need to set up a proxy for that. A good temporary solution is to set up a vscode dev tunnel for port `5000`, which generates a temporary HTTPS link for your app.
-
-## I can't embed it as an iframe
-
-You also need HTTPS for this.
+You need HTTPS for this, see [Docker section](#1-docker-preferred)
 
 ## I can't play some videos
 

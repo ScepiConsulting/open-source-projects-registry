@@ -16,17 +16,17 @@ A modern web application designed to enhance your Jellyfin music library experie
 
 ---
 
-## ✨ Features
+## Features
 
-- **🌐 Modern Web Interface**: Browse your music collection with a sleek, responsive UI
-- **🎵 Jellyfin Integration**: Works seamlessly with your existing Jellyfin music library
-- **🎨 Artist Visualization**: Beautiful artist pages with backdrop images and album covers
-- **🔍 Smart Filtering**: Filter releases by year and other metadata
-- **📢 Discord Integration**: Get notified about new releases through Discord webhooks
-- **🔄 Automatic Updates**: Regular checks for new releases with configurable intervals
-- **🐳 Docker Support**: Easy deployment with Docker and Docker Compose
-- **💪 Multi-Architecture**: Supports both AMD64 and ARM64 architectures (including Raspberry Pi)
-## 📁 Required Folder Structure
+- **Modern Web Interface**: Browse your music collection with a sleek, responsive UI
+- **Jellyfin Integration**: Works seamlessly with your existing Jellyfin music library
+- **Artist Visualization**: Beautiful artist pages with backdrop images and album covers
+- **Smart Filtering**: Filter releases by year and other metadata
+- **Discord Integration**: Get notified about new releases through Discord webhooks
+- **Automatic Updates**: Regular checks for new releases with configurable intervals
+- **Docker Support**: Easy deployment with Docker and Docker Compose
+- **Multi-Architecture**: Supports both AMD64 and ARM64 architectures (including Raspberry Pi)
+## Required Folder Structure
 
 Trackly is designed to work with Jellyfin's music library organization. The backdrop and cover/folder images are used for the web interface and can be in PNG, JPG, JPEG,or WebP format. Your music folder must follow this structure:
 
@@ -51,7 +51,7 @@ Trackly is designed to work with Jellyfin's music library organization. The back
         └── music files...
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 > **Important**: Each Trackly container can only track one music library. If you need to track multiple music libraries, you'll need to set up separate containers for each library.
 
@@ -72,7 +72,7 @@ cd trackly
 docker-compose up -d
 ```
 
-## ⚙️ Configuration
+## Configuration
 
 ### Environment Variables
 These can be configured in the docker-compose.yml file:
@@ -86,7 +86,7 @@ These can be configured in the docker-compose.yml file:
 - `/music`: Mount your Jellyfin music directory here
 - `/data`: Persistent storage for application data
 
-## 🛠️ Technical Stack
+## Technical Stack
 
 - React + Vite
 - Tailwind CSS
@@ -95,23 +95,19 @@ These can be configured in the docker-compose.yml file:
 - Docker
 - Discord Webhooks (Optional)
 
-## 👥 Contributing
+## Contributing
 
 We welcome contributions! Whether it's:
 
-- 🐛 Reporting bugs
-- 💡 Suggesting features
-- 📝 Improving documentation
-- 🔍 Submitting fixes
-- ✨ Adding new features
+- Reporting bugs, suggesting features, improving documentation, submitting fixes, or helping mantain the project!
 
 Please check our [GitHub Issues](https://github.com/7eventy7/trackly/issues) before submitting new ones.
 
-## 📝 License
+## License
 
 MIT License - feel free to use this project for any purpose.
 
-## ⭐ Star History
+## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=7eventy7/trackly&type=Date&theme=dark)](https://star-history.com/#7eventy7/trackly&Date)
 
@@ -119,6 +115,6 @@ MIT License - feel free to use this project for any purpose.
 
 <div align="center">
 
-Made with ❤️ by [7eventy7](https://github.com/7eventy7)
+Made with love by [7eventy7](https://github.com/7eventy7)
 
 </div>

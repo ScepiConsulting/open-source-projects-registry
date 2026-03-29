@@ -372,6 +372,7 @@ Prior versions of Jackett are no longer supported.
  * DiscFan [![(invite needed)][inviteneeded]](#)
  * DocsPedia
  * Drugari
+ * DS-Reloaded
  * dubhe (天枢) [![(invite needed)][inviteneeded]](#)
  * Ebooks-Shares [![(invite needed)][inviteneeded]](#)
  * Empornium (EMP) [![(invite needed)][inviteneeded]](#)
@@ -411,7 +412,7 @@ Prior versions of Jackett are no longer supported.
  * Hawke-uno (HUNO)
  * HD Dolby [![(invite needed)][inviteneeded]](#)
  * HD Zero
- * HD-Club [![(invite needed)][inviteneeded]](#)
+ * HD-Club
  * HD-Forever (HDF)
  * HD-Olimpo [![(invite needed)][inviteneeded]](#)
  * HD-Only (HDO)
@@ -527,7 +528,7 @@ Prior versions of Jackett are no longer supported.
  * OnlyEncodes+
  * OshenPT
  * OurBits (HDPter)
- * P2PBG
+ * P2PBG [PAY2DL]
  * Panda
  * Party-Tracker
  * PassThePopcorn (PTP) [![(invite needed)][inviteneeded]](#)
@@ -538,6 +539,7 @@ Prior versions of Jackett are no longer supported.
  * PixelCove (Ultimate Gamer)
  * PiXELHD (PxHD) [![(invite needed)][inviteneeded]](#)
  * PlayletPT [![(invite needed)][inviteneeded]](#)
+ * Podzemlje
  * Polish Torrent (PTT)
  * PolishTracker [![(invite needed)][inviteneeded]](#)
  * Pornbay [![(invite needed)][inviteneeded]](#)
@@ -606,7 +608,6 @@ Prior versions of Jackett are no longer supported.
  * Spirit of Revolution [![(invite needed)][inviteneeded]](#)
  * SportsCult
  * SpringSunday (SSD) [![(invite needed)][inviteneeded]](#)
- * SugoiMusic
  * Superbits (SBS)
  * Swarmazon
  * Tangmen (唐门)

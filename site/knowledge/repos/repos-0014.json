@@ -1,8 +1,53 @@
 {
   "chunk": 14,
   "count": 50,
-  "generated_at": "2026-03-22T04:58:29Z",
+  "generated_at": "2026-03-29T05:16:53Z",
   "items": [
+    {
+      "repo_key": "github.com/grocy/grocy",
+      "repo_url": "github.com/grocy/grocy",
+      "host": "github.com",
+      "owner": "grocy",
+      "repo": "grocy",
+      "app_references": [
+        "grocy"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__grocy__grocy.md",
+      "readme_download_url": null,
+      "readme_sha256": "afec4a26b8386bf628a531166d2c7cfc5887c89fd146b17f3838f5bcac4da33b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/grokability/snipe-it",
+      "repo_url": "github.com/grokability/snipe-it",
+      "host": "github.com",
+      "owner": "grokability",
+      "repo": "snipe-it",
+      "app_references": [
+        "snipe-it"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__grokability__snipe-it.md",
+      "readme_download_url": null,
+      "readme_sha256": "ed92c88d4c012d9e0f318836f87a344a333b6243d5607850f768bc20eb0d0eb4",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/growchief/growchief",
+      "repo_url": "github.com/growchief/growchief",
+      "host": "github.com",
+      "owner": "growchief",
+      "repo": "growchief",
+      "app_references": [
+        "growchief"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__growchief__growchief.md",
+      "readme_download_url": null,
+      "readme_sha256": "54efa247393dfdae9d0e7939cc2a84c7b7ddc3a0d94fff7954eda10212d4ee63",
+      "error": null
+    },
     {
       "repo_key": "github.com/gssariev/overr-syncerr",
       "repo_url": "github.com/gssariev/overr-syncerr",
@@ -42,10 +87,10 @@
       "app_references": [
         "yubal"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__guillevc__yubal.md",
-      "readme_download_url": null,
-      "readme_sha256": "6c474767577a31dc418262732246f8a1cd828a9a947739777c4644edddec3120",
+      "readme_download_url": "https://raw.githubusercontent.com/guillevc/yubal/master/README.md",
+      "readme_sha256": "4b7296e3534129ebb20756960fb8d6a119373d21fea0990b6a734fd79d9baa49",
       "error": null
     },
     {
@@ -207,9 +252,9 @@
       "app_references": [
         "traefik-log-dashboard"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__hhftechnology__traefik-log-dashboard.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hhftechnology/traefik-log-dashboard/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7ccfe61365958f6c972e45677613573d0e440a80601d83ce7c95ae44e675ab49",
       "error": null
     },
@@ -312,10 +357,10 @@
       "app_references": [
         "hoodik"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hudikhq__hoodik.md",
-      "readme_download_url": null,
-      "readme_sha256": "afd9e7080c6b2a861a474ebb672fdbe4f37f6b890334f3be9f010dfb8b67668d",
+      "readme_download_url": "https://raw.githubusercontent.com/hudikhq/hoodik/master/README.md",
+      "readme_sha256": "9af38014430d5b8759f1da992958db7e723ad8af4f13067e4bddaa80eb683056",
       "error": null
     },
     {
@@ -327,9 +372,9 @@
       "app_references": [
         "huginn"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__huginn__huginn.md",
-      "readme_download_url": "https://raw.githubusercontent.com/huginn/huginn/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c0d2f9ee1d0ef08ccd111b8a6e3978079792ca76fcb8ed64865d996565308169",
       "error": null
     },
@@ -657,9 +702,9 @@
       "app_references": [
         "trip"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__itskovacs__trip.md",
-      "readme_download_url": "https://raw.githubusercontent.com/itskovacs/trip/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "654f6c1c32307e1e0a046a60262707cff8e781d5e1bfb2c47bb26bdfd5a702bc",
       "error": null
     },
@@ -705,52 +750,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jamcalli__Pulsarr.md",
       "readme_download_url": "https://raw.githubusercontent.com/jamcalli/Pulsarr/master/README.md",
-      "readme_sha256": "aa3e707ddebc14e06a0e920efd66984801ad19bda01feb9cefccc7f2227bb7c8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jamesread/Faridoon",
-      "repo_url": "github.com/jamesread/Faridoon",
-      "host": "github.com",
-      "owner": "jamesread",
-      "repo": "Faridoon",
-      "app_references": [
-        "faridoon"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jamesread__Faridoon.md",
-      "readme_download_url": null,
-      "readme_sha256": "7443a2055f9eb215161675a5256e8b3e420cfef75c45bc6945c2f6de76f58fdf",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jamesread/StencilBox",
-      "repo_url": "github.com/jamesread/StencilBox",
-      "host": "github.com",
-      "owner": "jamesread",
-      "repo": "StencilBox",
-      "app_references": [
-        "stencilbox"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jamesread__StencilBox.md",
-      "readme_download_url": null,
-      "readme_sha256": "722eb3bfca349b1fe730cdbe96a42865abb9fb3e63698b6e2742e16e2381b591",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/janeczku/calibre-web",
-      "repo_url": "github.com/janeczku/calibre-web",
-      "host": "github.com",
-      "owner": "janeczku",
-      "repo": "calibre-web",
-      "app_references": [
-        "calibre-web"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__janeczku__calibre-web.md",
-      "readme_download_url": null,
-      "readme_sha256": "feb9051b9a3b11b3fd9e64375704cd0a888a496fca6d11f0dfc72a0135dd8f1f",
+      "readme_sha256": "1acacd3f6c74e4a2f79faf93c08f79e1e4aa713db26d24b25d980e9f286ffad8",
       "error": null
     }
   ]

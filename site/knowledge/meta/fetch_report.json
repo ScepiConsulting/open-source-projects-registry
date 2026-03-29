@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-03-22T04:58:28Z",
+  "generated_at": "2026-03-29T05:16:53Z",
   "summary": {
-    "apps": 1247,
-    "repos": 1226,
-    "readme_ok": 127,
-    "readme_not_modified": 1053,
-    "readme_error": 46
+    "apps": 1251,
+    "repos": 1230,
+    "readme_ok": 113,
+    "readme_not_modified": 1070,
+    "readme_error": 47
   },
   "failed_repos": [
     {
@@ -167,6 +167,11 @@
       "repo_key": "gitlab.com/elementfm/docs",
       "repo_url": "gitlab.com/elementfm/docs",
       "error": "worker_exception: Invalid URL 'gitlab.com/elementfm/docs/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/elementfm/docs/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/g33kphr33k/musicgrabber",
+      "repo_url": "gitlab.com/g33kphr33k/musicgrabber",
+      "error": "worker_exception: Invalid URL 'gitlab.com/g33kphr33k/musicgrabber/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/g33kphr33k/musicgrabber/-/raw/main/README.md?"
     },
     {
       "repo_key": "gitlab.com/gitlab-org/gitlab-foss",

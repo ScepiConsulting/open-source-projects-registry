@@ -5,7 +5,7 @@
 <h1 align="center">BunkerM - AI Powered MQTT Management Platform</h1>
 
 <p align="center">
-  The world's first all-in-one, self-hosted MQTT broker manager with built-in AI assistant, smart anomaly detection, and local automation agents.
+  The world's first self-hosted Mosquitto MQTT management platform with AI capabilities out of the box.
 </p>
 
 <p align="center">

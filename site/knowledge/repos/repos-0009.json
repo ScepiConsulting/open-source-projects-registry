@@ -1,8 +1,38 @@
 {
   "chunk": 9,
   "count": 50,
-  "generated_at": "2026-03-22T04:58:29Z",
+  "generated_at": "2026-03-29T05:16:53Z",
   "items": [
+    {
+      "repo_key": "github.com/bigbluebutton/bigbluebutton",
+      "repo_url": "github.com/bigbluebutton/bigbluebutton",
+      "host": "github.com",
+      "owner": "bigbluebutton",
+      "repo": "bigbluebutton",
+      "app_references": [
+        "bigbluebutton"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__bigbluebutton__bigbluebutton.md",
+      "readme_download_url": null,
+      "readme_sha256": "93a00b7591b7dfdd73e1b5cb83003800ac99a05c6b411be9f6860a6c0be557f3",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/bigcapitalhq/bigcapital",
+      "repo_url": "github.com/bigcapitalhq/bigcapital",
+      "host": "github.com",
+      "owner": "bigcapitalhq",
+      "repo": "bigcapital",
+      "app_references": [
+        "bigcapital"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__bigcapitalhq__bigcapital.md",
+      "readme_download_url": null,
+      "readme_sha256": "6bda0019943b8e9b5aa494ceed01440b35a4a5f11c50b34fe3837a106f08e56b",
+      "error": null
+    },
     {
       "repo_key": "github.com/bilde2910/Hauk",
       "repo_url": "github.com/bilde2910/Hauk",
@@ -304,6 +334,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/bulwarkmail/webmail",
+      "repo_url": "github.com/bulwarkmail/webmail",
+      "host": "github.com",
+      "owner": "bulwarkmail",
+      "repo": "webmail",
+      "app_references": [
+        "bulwark"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__bulwarkmail__webmail.md",
+      "readme_download_url": "https://raw.githubusercontent.com/bulwarkmail/webmail/main/README.md",
+      "readme_sha256": "aa405fc97a3b7b96fba16b315e7d9246e26f17980e6544b1031a4046c4274154",
+      "error": null
+    },
+    {
       "repo_key": "github.com/bunkeriot/BunkerM",
       "repo_url": "github.com/bunkeriot/BunkerM",
       "host": "github.com",
@@ -315,7 +360,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__bunkeriot__BunkerM.md",
       "readme_download_url": "https://raw.githubusercontent.com/bunkeriot/BunkerM/main/README.md",
-      "readme_sha256": "950ef174c9f79581e60066bfc12e2b864a6b1e32c2d1a1be10e832bc2ed5804a",
+      "readme_sha256": "244c1c406ed6d27889dd38b41f6a40fada1533cd460b9d967b781b18acd1c5ba",
       "error": null
     },
     {
@@ -417,9 +462,9 @@
       "app_references": [
         "shelfmark"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__calibrain__shelfmark.md",
-      "readme_download_url": "https://raw.githubusercontent.com/calibrain/shelfmark/main/readme.md",
+      "readme_download_url": null,
       "readme_sha256": "02d74a831daa2bb98b6df201b8d4eb1b4729f7752bf2fd602004aa7a19d65f72",
       "error": null
     },
@@ -447,9 +492,9 @@
       "app_references": [
         "apprise"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__caronc__apprise.md",
-      "readme_download_url": "https://raw.githubusercontent.com/caronc/apprise/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "0c921e5457d49f973348cdd913ba0506a0c41746b99645327be03a56b861b8f0",
       "error": null
     },
@@ -702,55 +747,10 @@
       "app_references": [
         "tududi"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__chrisvel__tududi.md",
-      "readme_download_url": null,
-      "readme_sha256": "c1a5ec1b51d74a3cc4dbe23d64fbe961db110d34d7652b5ea66be2c27f008621",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/chroxify/feedbase",
-      "repo_url": "github.com/chroxify/feedbase",
-      "host": "github.com",
-      "owner": "chroxify",
-      "repo": "feedbase",
-      "app_references": [
-        "feedbase"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__chroxify__feedbase.md",
-      "readme_download_url": null,
-      "readme_sha256": "962336e59472b9985eb96a59ab305e43ccf6f5e220e936516e53bb03c0f18dd8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/chroxify/haptic",
-      "repo_url": "github.com/chroxify/haptic",
-      "host": "github.com",
-      "owner": "chroxify",
-      "repo": "haptic",
-      "app_references": [
-        "haptic"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__chroxify__haptic.md",
-      "readme_download_url": null,
-      "readme_sha256": "6212bfdaf280d763f265a8fb76c841d483f953172a5c83dc85870db462c9232d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/cially/cially",
-      "repo_url": "github.com/cially/cially",
-      "host": "github.com",
-      "owner": "cially",
-      "repo": "cially",
-      "app_references": [
-        "cially"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__cially__cially.md",
-      "readme_download_url": null,
-      "readme_sha256": "c4ced5106eaa3853d44d13dc4be976c20991a8c62cf6c60eb8912526e8501a3f",
+      "readme_download_url": "https://raw.githubusercontent.com/chrisvel/tududi/main/README.md",
+      "readme_sha256": "1902c7f30c2779e6ddee311d079b992507e791a94f7c052ee0fc428382d809ca",
       "error": null
     }
   ]

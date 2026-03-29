@@ -19,7 +19,8 @@ PAM. It aims to be simple to both set up and operate, with very secure defaults 
 options, if you need the flexibility. It puts heavy emphasis on Passkeys and a very strong security
 in general. The project is written in Rust to be as memory efficient, secure and fast as possible,
 and it can run on basically any hardware. If you need Single Sign-On support for IoT or headless CLI
-tools, it's got you covered as well.\
+tools, it's got you covered as well.
+
 You get High-Availability, client branding, UI translation, a nice Admin UI, Events and Auditing,
 and many more features. By default, it runs on top of [Hiqlite](https://github.com/sebadob/hiqlite)
 and does not depend on an external database (Postgres as an alternative) to make it even simpler to
@@ -226,7 +227,7 @@ setting for very quick and easy local testing and taking a first look. By settin
 a demo config is being loaded at startup.
 
 ```
-docker run -it --rm -e LOCAL_TEST=true -p 8443:8443 ghcr.io/sebadob/rauthy:0.34.3
+docker run -it --rm -e LOCAL_TEST=true -p 8443:8443 ghcr.io/sebadob/rauthy:0.35.0
 ```
 
 > [!CAUTION]

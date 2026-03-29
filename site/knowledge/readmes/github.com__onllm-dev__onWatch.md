@@ -18,7 +18,7 @@ See history, get alerts, and open a local web dashboard before you hit throttlin
 
 **Compatibility & Docs**
 
-[![Version](https://img.shields.io/badge/Version-v2.11.17-0EA5E9?style=for-the-badge)](https://github.com/onllm-dev/onwatch/releases/tag/v2.11.17)
+[![Version](https://img.shields.io/badge/Version-v2.11.31-0EA5E9?style=for-the-badge)](https://github.com/onllm-dev/onwatch/releases/tag/v2.11.31)
 [![Go 1.25+](https://img.shields.io/badge/Go-1.25+-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev)
 [![Platform](https://img.shields.io/badge/macOS%20%7C%20Linux%20%7C%20Windows-orange?style=for-the-badge&logo=apple&logoColor=white)](#quick-start)
 [![pkg.go.dev](https://img.shields.io/badge/pkg.go.dev-reference-007D9C?style=for-the-badge&logo=go&logoColor=white)](https://pkg.go.dev/github.com/onllm-dev/onwatch/v2)
@@ -301,6 +301,7 @@ Additional environment variables:
 | `CODEX_TOKEN`            | Codex OAuth access token (recommended for Codex-only)  |
 | `COPILOT_TOKEN`          | GitHub Copilot PAT with `copilot` scope (Beta)         |
 | `MINIMAX_API_KEY`        | MiniMax Coding Plan API key                            |
+| `MINIMAX_REGION`         | MiniMax region: `global` (default) or `cn`              |
 | `GEMINI_ENABLED`         | Enable Gemini CLI quota tracking (Beta, auto-detected)   |
 | `GEMINI_REFRESH_TOKEN`   | Gemini OAuth refresh token (for Docker/headless)         |
 | `GEMINI_ACCESS_TOKEN`    | Gemini OAuth access token (for Docker/headless)          |
@@ -312,6 +313,7 @@ Additional environment variables:
 | `SYNTHETIC_API_KEY`      | Synthetic API key                                      |
 | `ZAI_API_KEY`            | Z.ai API key                                           |
 | `ZAI_BASE_URL`           | Z.ai base URL (default: `https://api.z.ai/api`)        |
+| `ZAI_REGION`             | Z.ai region: `global` (default) or `cn`                 |
 | `ONWATCH_ADMIN_USER`     | Dashboard username (default: `admin`)                  |
 | `ONWATCH_ADMIN_PASS`     | Initial dashboard password (default: `changeme`)       |
 | `ONWATCH_LOG_LEVEL`      | Log level: debug, info, warn, error                    |
@@ -474,9 +476,11 @@ Copy `.env.docker.example` to `.env` and set provider keys as needed. onWatch ca
 | ----------------------- | ------------------------------------------ | ---------- |
 | `SYNTHETIC_API_KEY`     | Synthetic API key                          | --         |
 | `ZAI_API_KEY`           | Z.ai API key                               | --         |
+| `ZAI_REGION`            | Z.ai region: `global` (default) or `cn`    | `global`   |
 | `ANTHROPIC_TOKEN`       | Anthropic token (auto-detected if not set) | --         |
 | `CODEX_TOKEN`           | Codex OAuth access token (recommended; required for Codex-only) | -- |
 | `MINIMAX_API_KEY`       | MiniMax Coding Plan API key                | --         |
+| `MINIMAX_REGION`        | MiniMax region: `global` (default) or `cn` | `global`   |
 | `GEMINI_REFRESH_TOKEN`  | Gemini OAuth refresh token (Beta)          | --         |
 | `ONWATCH_ADMIN_USER`    | Dashboard username                         | `admin`    |
 | `ONWATCH_ADMIN_PASS`    | Dashboard password                         | `changeme` |

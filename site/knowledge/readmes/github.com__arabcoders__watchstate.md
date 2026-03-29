@@ -10,17 +10,10 @@ box, this tool supports `Jellyfin`, `Plex` and `Emby` media servers.
 
 # Updates
 
-### 2025-10-29
+### 2026-03-26
 
-After more than **3.5 years**, **2.2k+ commits**, **900+ stars**, and **1 million+ downloads**, we’re happy to announce
-the first stable release of **WatchState v1.0.0**.
-
-This milestone marks the project’s maturity and reliability for production use. We extend our thanks to everyone who
-provided feedback, reported bugs, and helped refine the tool your input has been invaluable.
-
-The current feature set and stability meet our goals, so future work will focus on **maintenance and bug fixes**.
-Feedback and suggestions remain welcome, but **major new features** may be limited as we prioritize **stability and
-long-term reliability**.
+Unfortunately, due to changes from plex regarding their API, we can no longer generate access tokens for external users i.e. `invited users`, thus we had to disable and remove
+support from WatchState. This change only effects external users, home/managed users are not affected. Please see [this issue](https://github.com/arabcoders/watchstate/issues/793) for more details.
 
 Please refer to [NEWS](/NEWS.md) for the latest updates and changes.
 

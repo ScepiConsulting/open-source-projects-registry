@@ -1,8 +1,53 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-03-22T04:58:29Z",
+  "generated_at": "2026-03-29T05:16:53Z",
   "items": [
+    {
+      "repo_key": "github.com/eclipse-mosquitto/mosquitto",
+      "repo_url": "github.com/eclipse-mosquitto/mosquitto",
+      "host": "github.com",
+      "owner": "eclipse-mosquitto",
+      "repo": "mosquitto",
+      "app_references": [
+        "mosquitto"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__eclipse-mosquitto__mosquitto.md",
+      "readme_download_url": null,
+      "readme_sha256": "a214fc32f8d23e629bb6175677d97d9fdd681a9f0fc373abd39c3024204b6b71",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/eduardolat/pgbackweb",
+      "repo_url": "github.com/eduardolat/pgbackweb",
+      "host": "github.com",
+      "owner": "eduardolat",
+      "repo": "pgbackweb",
+      "app_references": [
+        "pg-back-web"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__eduardolat__pgbackweb.md",
+      "readme_download_url": null,
+      "readme_sha256": "f8a1b47d422166f85fb3b39b91c1f1af21caa8f9d508265f20c76e3faa797d30",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/eikek/docspell",
+      "repo_url": "github.com/eikek/docspell",
+      "host": "github.com",
+      "owner": "eikek",
+      "repo": "docspell",
+      "app_references": [
+        "docspell"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__eikek__docspell.md",
+      "readme_download_url": null,
+      "readme_sha256": "48a17edad2649b969886280fc17fe20e98eef55a841664a66ae43c07b85f3858",
+      "error": null
+    },
     {
       "repo_key": "github.com/eikek/sharry",
       "repo_url": "github.com/eikek/sharry",
@@ -102,10 +147,10 @@
       "app_references": [
         "wallos"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ellite__Wallos.md",
-      "readme_download_url": null,
-      "readme_sha256": "2f163c367d6a9aee40ad799f68b3a17ea631dd8ce68fe523c4dff4fe175c0cf6",
+      "readme_download_url": "https://raw.githubusercontent.com/ellite/Wallos/main/README.md",
+      "readme_sha256": "1ee27ff430cf7384323a15191164ee2f8b9c05a5fd487f4965d454cc1e97ee16",
       "error": null
     },
     {
@@ -163,10 +208,10 @@
         "ente-auth",
         "ente-photos"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ente-io__ente.md",
-      "readme_download_url": null,
-      "readme_sha256": "c5ed2bf00c05714859248de7c61afcbe7184a150c8a23a701d69c3d7440d3bba",
+      "readme_download_url": "https://raw.githubusercontent.com/ente-io/ente/main/README.md",
+      "readme_sha256": "106991f210760c338e3e16423dd4321980cb9eebe6f71dccccb99f8fe5c2acb4",
       "error": null
     },
     {
@@ -178,9 +223,9 @@
       "app_references": [
         "lightweight-music-server"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__epoupon__lms.md",
-      "readme_download_url": "https://raw.githubusercontent.com/epoupon/lms/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "0c942b3d2f4069261f04aec3a297b739eca046a3def4dae2897b59c7e26ccc1f",
       "error": null
     },
@@ -193,10 +238,10 @@
       "app_references": [
         "ergo"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ergochat__ergo.md",
-      "readme_download_url": null,
-      "readme_sha256": "3154696d04c0359197027da9ecb81d2a7feb475ff7a459e18d1ac49424806e3b",
+      "readme_download_url": "https://raw.githubusercontent.com/ergochat/ergo/master/README.md",
+      "readme_sha256": "8da1b97690dc33dec56687b0c3e3aaffa946ae5c24e1c9d6e1704875882c6f5a",
       "error": null
     },
     {
@@ -208,10 +253,10 @@
       "app_references": [
         "filerise"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__error311__FileRise.md",
-      "readme_download_url": null,
-      "readme_sha256": "2ec6eaaae5c55def31a4d6bb4cb565020e7cd68c8ef8199d6ef9542f6a24e1c9",
+      "readme_download_url": "https://raw.githubusercontent.com/error311/FileRise/master/README.md",
+      "readme_sha256": "cf66aaae29f0f8c50756145db3015cabf31a6075fe9a2cae7ef409dfad5175a4",
       "error": null
     },
     {
@@ -223,9 +268,9 @@
       "app_references": [
         "esphome"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__esphome__esphome.md",
-      "readme_download_url": "https://raw.githubusercontent.com/esphome/esphome/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1c54cf43c54cc139720bd37f349fd4372c38fee2d36bd4664f863bb91cdf2b31",
       "error": null
     },
@@ -301,7 +346,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__event-catalog__eventcatalog.md",
       "readme_download_url": "https://raw.githubusercontent.com/event-catalog/eventcatalog/main/README.md",
-      "readme_sha256": "752a4d582c7324b5952aee4353180bf3a0b0bc89be881fc35475a514896dbe32",
+      "readme_sha256": "ac0afed280aeef57a6f11f9c0e9024f2d8996790e32e761f7b5eeb69a14f7b01",
       "error": null
     },
     {
@@ -511,7 +556,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__figranium__figranium.md",
       "readme_download_url": "https://raw.githubusercontent.com/figranium/figranium/main/README.md",
-      "readme_sha256": "24c10a4532073a3eb281f8a432700022931f068585b4551a24d5b16cfee657a3",
+      "readme_sha256": "2c27c753554c5e4a5ddaf478abd6f3bed17d77ce125a3a70e7d8a3aec2c63969",
       "error": null
     },
     {
@@ -598,9 +643,9 @@
       "app_references": [
         "gocron"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__flohoss__gocron.md",
-      "readme_download_url": "https://raw.githubusercontent.com/flohoss/gocron/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "83f8173269a6a07ee68aab94bb4a532d6e057d74280574edead31e082e6eba1e",
       "error": null
     },
@@ -658,9 +703,9 @@
       "app_references": [
         "pangolin"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__fosrl__pangolin.md",
-      "readme_download_url": "https://raw.githubusercontent.com/fosrl/pangolin/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "527dfc715a6ec5abf2aba96036b4ed0df582f766dbd25c5b583cddc244fb5be9",
       "error": null
     },
@@ -703,55 +748,10 @@
       "app_references": [
         "frappe-erpnext"
       ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__frappe__erpnext.md",
-      "readme_download_url": null,
-      "readme_sha256": "709f84a1d8ef170c362070a80a717cb4a779b66b7202738820d9f836deb42c9a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/fredrikburmester/streamystats",
-      "repo_url": "github.com/fredrikburmester/streamystats",
-      "host": "github.com",
-      "owner": "fredrikburmester",
-      "repo": "streamystats",
-      "app_references": [
-        "streamystats"
-      ],
       "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__fredrikburmester__streamystats.md",
-      "readme_download_url": "https://raw.githubusercontent.com/fredrikburmester/streamystats/main/README.md",
-      "readme_sha256": "c841cc6c918ae5219a1198701491e75782f43f8874e79ac38b3ee92ca0702fde",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/freescout-help-desk/freescout",
-      "repo_url": "github.com/freescout-help-desk/freescout",
-      "host": "github.com",
-      "owner": "freescout-help-desk",
-      "repo": "freescout",
-      "app_references": [
-        "freescout"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__freescout-help-desk__freescout.md",
-      "readme_download_url": null,
-      "readme_sha256": "8643cfb0100753f997f722d3e8f2ed8ec5ac7f0ea58abf3cd4d4255c0c215e16",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/friendica/friendica",
-      "repo_url": "github.com/friendica/friendica",
-      "host": "github.com",
-      "owner": "friendica",
-      "repo": "friendica",
-      "app_references": [
-        "friendica"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__friendica__friendica.md",
-      "readme_download_url": null,
-      "readme_sha256": "7f67f7ac5e4bd8b1328d46fce0e61cf89c166edd540f3c96f7a2b7f97475a41a",
+      "readme_path": "knowledge/readmes/github.com__frappe__erpnext.md",
+      "readme_download_url": "https://raw.githubusercontent.com/frappe/erpnext/develop/README.md",
+      "readme_sha256": "2aedda5c295e7074b1a086ce601285cbc01b4b2f7a277b524b3bc828f271acc2",
       "error": null
     }
   ]

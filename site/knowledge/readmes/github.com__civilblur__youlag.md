@@ -15,9 +15,13 @@
 
 
 ## About
-Youlag is an extension for [FreshRSS](https://github.com/FreshRSS/FreshRSS), allowing you to browse YouTube and article feeds through a modernized design that incorporates quality-of-life features.
+Youlag is an extension for [FreshRSS](https://github.com/FreshRSS/FreshRSS), allowing you to browse YouTube and article RSS feeds through a modernized design that incorporates quality-of-life features.
 
-Optimized for both watching videos and reading articles.
+It is designed for a distraction-free experience, for people who want to be intentional about their viewing habits.
+
+## Why?
+
+Subscribe to creators via RSS without a Google account, stay free of algorithms, and access your subscriptions from any device. Youlag can also be used just for article reading.
 
 ## Table of Content
 - [Features](#features)
@@ -31,7 +35,7 @@ Optimized for both watching videos and reading articles.
 
 - 📺 **Videos & Articles**
   - Browse YouTube subscriptions through a video-tailored inferface
-  - Mini player: keep video in corner while reading articles
+  - Miniplayer: keep video in corner while reading articles
   - Video chapters navigation
   - Replace clickbait thumbnails with screen captures
   - Modernized article viewing experience
@@ -39,10 +43,11 @@ Optimized for both watching videos and reading articles.
   - Block YouTube shorts
   - Apply video mode layout to chosen categories
   - Switch between YouTube and Invidious playback sources
+  - Hide video-description intros with links to avoid sponsored content
 - 🖥️ **Desktop & Mobile**
-  - Mobile: Swipe down in video mode to activate mini player
+  - Mobile: Swipe down in video mode to activate miniplayer
+  - Mobile: Swipe to open/close sidebar
   - Use `Esc` key or the browser's `Back` navigation to exit videos and articles
-  - Mobile friendly, better one-handed navigation
 - 📰 **FreshRSS features**
   - Subscribe to YouTube creators without needing an account
   - Manage article and video RSS feeds

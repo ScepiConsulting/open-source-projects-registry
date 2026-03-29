@@ -1,8 +1,23 @@
 {
   "chunk": 3,
   "count": 50,
-  "generated_at": "2026-03-22T04:58:29Z",
+  "generated_at": "2026-03-29T05:16:53Z",
   "items": [
+    {
+      "repo_key": "github.com/DumbWareio/DumbWhoIs",
+      "repo_url": "github.com/DumbWareio/DumbWhoIs",
+      "host": "github.com",
+      "owner": "DumbWareio",
+      "repo": "DumbWhoIs",
+      "app_references": [
+        "dumbwhois"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbWhoIs.md",
+      "readme_download_url": null,
+      "readme_sha256": "a754136aa2bccff6cd4d662e77bde24a987b19a640976410a8951e316eba5695",
+      "error": null
+    },
     {
       "repo_key": "github.com/Dusk-Labs/dim",
       "repo_url": "github.com/Dusk-Labs/dim",
@@ -342,10 +357,10 @@
       "app_references": [
         "puter"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__HeyPuter__puter.md",
-      "readme_download_url": null,
-      "readme_sha256": "6176cf25c64cd859e8ebb9b28a9dfdce326415c9019f8e0e3697105ffd34ef00",
+      "readme_download_url": "https://raw.githubusercontent.com/HeyPuter/puter/main/README.md",
+      "readme_sha256": "48b058cd1f120bc7599ad40b3e2d8602e9215742ba4b22c21fc468e678e98fcf",
       "error": null
     },
     {
@@ -447,9 +462,9 @@
       "app_references": [
         "edit-mind"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__IliasHad__edit-mind.md",
-      "readme_download_url": "https://raw.githubusercontent.com/IliasHad/edit-mind/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d4c71bd8056865d2a160104fea33cc8d67199b7e4b4d9d364c0e9dd8f6d3be58",
       "error": null
     },
@@ -492,10 +507,10 @@
       "app_references": [
         "invoiceshelf"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__InvoiceShelf__InvoiceShelf.md",
-      "readme_download_url": null,
-      "readme_sha256": "508f472a61265c5478cc4d2e2c8b00a496b6577f50b672fd4c7fbfc698d09526",
+      "readme_download_url": "https://raw.githubusercontent.com/InvoiceShelf/InvoiceShelf/master/readme.md",
+      "readme_sha256": "d863f49c1068c8234e93b54585cb6f5cf02e379ccb1f65a1bb059a3b253a9571",
       "error": null
     },
     {
@@ -522,9 +537,9 @@
       "app_references": [
         "8mb-local"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__JMS1717__8mb.local.md",
-      "readme_download_url": "https://raw.githubusercontent.com/JMS1717/8mb.local/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "006e20ec1f405fb1dcb68cd8c780ef51316c4b44070c039d723866c7e9a9349e",
       "error": null
     },
@@ -540,7 +555,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Jackett__Jackett.md",
       "readme_download_url": "https://raw.githubusercontent.com/Jackett/Jackett/master/README.md",
-      "readme_sha256": "acad6802700e96dc3b6db13d7fa167cfd6cc29d5ab5992cacf82f44b9dea349e",
+      "readme_sha256": "fafdf1cf3d22eda1948e2ec72b4ca79ea1aef91a9ad8960a13b03b6306989b92",
       "error": null
     },
     {
@@ -552,9 +567,9 @@
       "app_references": [
         "sortarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Jaredharper1__Sortarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Jaredharper1/Sortarr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ab8e26e3c33e93b6926c9521d8e418a3221739b78ead1185793da844eb5575b0",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__LLukas22__Jellyswarrm.md",
       "readme_download_url": null,
       "readme_sha256": "09674e6294d6654919e85b96c72e60d9033d0160fb81f7bb34f08e1a3fe38a7c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/LMS-Community/slimserver",
-      "repo_url": "github.com/LMS-Community/slimserver",
-      "host": "github.com",
-      "owner": "LMS-Community",
-      "repo": "slimserver",
-      "app_references": [
-        "lyrion-music-server"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__LMS-Community__slimserver.md",
-      "readme_download_url": null,
-      "readme_sha256": "f089a7bb71c959ccafb79066dae10bfcfbb6412bc67e7c48588b5c5b8d4f533a",
       "error": null
     }
   ]

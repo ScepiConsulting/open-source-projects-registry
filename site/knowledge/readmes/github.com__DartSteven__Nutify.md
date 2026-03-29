@@ -1,25 +1,3 @@
-> [!IMPORTANT]
-> **Internal testing images available**
->
-> I have published new internal testing Docker images with several new features (including **multi-UPS support**):
->
-> ```
-> docker pull dartsteven/nutify-internal-testing:0.2.0.Int.Testing.v.31-amd64
-> docker pull dartsteven/nutify-internal-testing:0.2.0.Int.Testing.v.24-mac-arm64
-> docker pull dartsteven/nutify-internal-testing:0.2.0.Int.Testing.v.24-raspberrypi5-arm64
-> docker pull dartsteven/nutify-internal-testing:0.2.0.Int.Testing.v.24-raspberrypi4-armv7
-> ```
->
-> I’m looking for people willing to **test these builds and report feedback**.
->
-> Before testing, please carefully read this discussion:
-> https://github.com/DartSteven/Nutify/discussions/126#discussioncomment-16036762
->
-> The goal is to gather feedback before releasing **version 0.2.0**, which should be published soon. Testing and bug reports are extremely helpful to make sure everything works correctly before the public release.
-
-
-
-
 <p align="right">
 <a href="https://www.buymeacoffee.com/DartSteven" target="_blank">
   <img src="https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&amp;&amp;slug=DartSteven&amp;button_colour=FFDD00&amp;font_colour=000000&amp;font_family=Cookie&amp;outline_colour=000000&amp;coffee_colour=ffffff" width="160"/>
@@ -27,225 +5,71 @@
 </p>
 
 <div align="center">
-  <img src="pic/Nutify-Logo.png" alt="Nutify Official Logo" width="200"/>
+  <img src="pic/Nutify_Logo.png" alt="Nutify official logo" width="200"/>
 </div>
 
 <p align="center">
-  <a href="https://buymeacoffee.com/DartSteven" target="_blank">
-    <img alt="Buy Me a Coffee" src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-Support%20Me-FFDA33">
-  </a>
-  <a href="https://github.com/DartSteven/Nutify/discussions/42" target="_blank">
-    <img alt="Help Testing" src="https://img.shields.io/static/v1.svg?label=Help&message=Me&color=red">
+  <a href="https://github.com/DartSteven/Nutify/blob/main/changelog.md" target="_blank">
+    <img alt="Changelog" src="https://img.shields.io/badge/changelog-0.2.0-green">
   </a>
   <a href="https://github.com/DartSteven/Nutify/wiki" target="_blank">
-    <img alt="Wiki" src="https://img.shields.io/badge/ReadMe-018EF5?logo=readme&logoColor=fff">
+    <img alt="Wiki" src="https://img.shields.io/badge/wiki-updated-0ea5e9">
   </a>
-  <a href="https://github.com/DartSteven/Nutify/blob/main/changelog.txt" target="_blank">
-    <img alt="Changelog" src="https://img.shields.io/static/v1.svg?label=Change&message=log&color=green">
-  </a>
-  <a href="https://github.com/DartSteven/Nutify/discussions/46" target="_blank">
-    <img alt="Multi Monitor ?" src="https://img.shields.io/static/v1.svg?label=Multi&message=UPS?&color=green">
-  </a>
-
-
-<p align="center">Join our Discord channel for any issues, questions, information, or testing!</p>
-<p align="center">
-  <a href="https://discord.gg/mDAYVH9M" target="_blank">
-    <img alt="Nutify Bugs" src="https://img.shields.io/badge/Discord-Bugs-red?logo=discord&logoColor=white">
-  </a>
-  <a href="https://discord.gg/mDAYVH9M" target="_blank">
-    <img alt="Nutify Help" src="https://img.shields.io/badge/Discord-Help-blue?logo=discord&logoColor=white">
-  </a>
-  <a href="https://discord.gg/mDAYVH9M" target="_blank">
-    <img alt="Nutify Support" src="https://img.shields.io/badge/Discord-Support-green?logo=discord&logoColor=white">
+  <a href="https://github.com/DartSteven/Nutify/discussions" target="_blank">
+    <img alt="Discussions" src="https://img.shields.io/badge/community-discussions-orange">
   </a>
 </p>
 
-  
-</p>
+<h1 align="center">Nutify - UPS Monitoring System</h1>
 
-<p align="center"> If you like Nutify, please give it a ⭐️ on GitHub to help the project grow! </p>
-
-# Nutify - UPS Monitoring System
-
-
-
-Nutify is a comprehensive monitoring system designed to track the health and performance of your Uninterruptible Power Supply (UPS) devices. It provides real-time insights into critical UPS metrics, allowing you to ensure the continuous operation and protection of your valuable equipment. Nutify collects data, generates detailed reports, and visualizes key parameters through interactive charts, all accessible via a user-friendly web interface.
-
-
+Nutify is an open-source UPS monitoring and management platform built on top of <a href="https://networkupstools.org">Network UPS Tools (NUT)</a>. It provides real-time status, historical telemetry, alerts, scheduled reports, and interactive charts through a modern web interface. From single-UPS setups to mixed local/remote multi-UPS fleets, Nutify helps you configure, monitor, and operate your power infrastructure from one place.
+Join our <a href="https://discord.gg/ry82VdKK">Discord</a> community for support, testing, and feature discussions. If Nutify helps you, please consider starring the project on GitHub.
 
 <p align="center">
-  <img src="pic/Page-Top.png" alt="Setup Wizard - Mode Selection" width="300"/>
-  <img src="pic/Page-Energy.png" alt="Setup Wizard - Complete" width="300"/>
+  <img src="pic/Readme/Main-Light.jpg" alt="Energy dashboard" width="640"/>
 </p>
 
 <p align="center">
-  <img src="pic/Page-Power.png" alt="Setup Wizard - Mode Selection" width="300"/>
-  <img src="pic/Page-Battery.png" alt="Setup Wizard - Complete" width="300"/>
+  <img src="pic/Readme/Battery-Light.jpg" alt="Battery dashboard" width="220"/>
+  <img src="pic/Readme/Power-Light.jpg" alt="Power dashboard" width="220"/>
+  <img src="pic/Readme/Voltage-Light.jpg" alt="Voltage dashboard" width="245"/>
 </p>
-
-
-
-> **🆕 LATEST DOCKER IMAGES**  
-> Use these tags to always get the latest version:  
-> • AMD64/x86_64: `dartsteven/nutify:amd64-latest`  
-> • ARM64/aarch64: `dartsteven/nutify:arm64-latest`  
-
-
-> **📊 Is Nutify working with your UPS?**  
-> Please share your experience in the [Discussions](https://github.com/DartSteven/Nutify/discussions) section under "Nutify UPS Compatibility List". Your feedback helps the community!
-
-## Latest Version
-
-**Current Version**: 0.1.7 (07/07/2025)
-
-For a detailed list of changes and improvements, please see the [changelog.txt](changelog.txt) file.
-
-
-⚠️ **IMPORTANT: Latest Updates in v0.1.7** ⚠️
-
-Version 0.1.7 introduces significant improvements including:
-
-- **User Authentication System:** Multi-user login with configurable permissions for individual pages and options
-- **Enhanced Security:** Comprehensive permission system for all configuration areas
-- **Improved Setup Wizard:** Fixed UI issues and enhanced user experience
-- **System Stability:** Upgraded to NUT 2.8.3 and improved core architecture
-- **Better Reporting:** Fixed time/battery reports with enhanced pandas integration
-
-👉 **For detailed information on new features and migration, please see the [Nutify Wiki](https://github.com/DartSteven/Nutify/wiki).**
-
-
-## Key Features
-
-* **Real-time UPS Monitoring:** Continuously collects and displays data from your UPS devices
-* **User Authentication System:** Multi-user login with granular permission control for individual pages and configuration areas
-* **Detailed Reports:** Generates comprehensive reports on UPS performance with enhanced pandas integration
-* **Interactive Charts:** Visualizes UPS data using interactive charts
-* **Setup Wizard:** Enhanced configuration wizard with improved UI and navigation
-* **Customizable Dashboards:** Provides a web-based dashboard to view real-time data
-* **Data Persistence:** Stores historical UPS data in a SQLite database with improved schema
-* **Dockerized Deployment:** Easily deployable using Docker and Docker Compose
-* **Flexible Deployment Modes:** Run as a complete NUT server or as a lightweight client connecting to a remote NUT server
-* **Robust Mode Detection:** Multi-layered CLIENT/SERVER mode detection with automatic fallback mechanisms
-* **Enhanced Notification System:** Database-driven notifications with multiple channels (Email, Ntfy, Webhooks)
-* **Discord Integration:** Send notifications directly to Discord channels
-* **System Monitoring:** Real-time RAM and CPU usage widgets in the dashboard header
-* **Multi-account Email Support:** Configure multiple email accounts for notifications with simplified provider setup
-* **Energy Monitoring:** Detailed analysis of energy consumption
-* **Battery Management:** Monitoring of battery status and performance
-* **Event Management:** Logging and notification of UPS events
-* **UPS Commands:** Interface to send commands to the UPS with permission control
-* **Dark/Light Theme:** Customizable interface with both dark and light themes
-* **Automated Reports:** Scheduled reports with detailed UPS status and improved accuracy
-* **Push Notifications:** Integration with Ntfy for instant mobile alerts
-* **Webhook Integration:** Flexible HTTP callbacks for third-party system integration
-* **Advanced Configuration:** Fine-grained control over NUT settings and polling with user-based access
-
-## Authentication Controls (Optional)
-
-Nutify supports an environment variable to disable login entirely:
-
-* `DISABLE_AUTH=true` to disable the login system (no login prompt, permissions bypassed).
-* `SKIP_PERMCHECK=true` to skip USB permission changes (useful for rootless containers).
-
-You can reset the primary admin password via the CLI (recommended if you lose access):
-
-```bash
-python -m core.auth.reset_admin_password --username admin
-```
-
-Omit `--username` to target the primary admin (ID 1) automatically, and omit `--password`
-to be prompted securely in the terminal.
-* **Connection Recovery:** Automatic reconnection and recovery from UPS communication failures
-* **Optimized Event Handling:** Native Python integration with upsmon.conf for improved stability and responsiveness
-* **WebSocket-based Real-time Data:** Efficient caching system significantly reducing CPU and RAM usage
-* **Modular Architecture:** Extensible design with clean separation of concerns
-* **Professional Branding:** Official logo and favicon for consistent identity across platforms
-* **Expanded UPS Support:** Added drivers for a wider range of UPS models
-* **Enhanced Security:** User authentication and permission system protecting configuration areas
-
-## Quick Start
-
-To run Nutify using Docker Compose:
-
-1. Create a `docker-compose.yaml` file with the following minimal configuration:
-
-```yaml
-services:
-  nut:
-    image: dartsteven/nutify:arm64-latest  # Use amd64-latest or armv7-latest based on your architecture
-    container_name: Nutify
-    privileged: true
-    cap_add:
-      - SYS_ADMIN
-      - SYS_RAWIO
-      - MKNOD
-    devices:
-      - /dev/bus/usb:/dev/bus/usb:rwm
-    device_cgroup_rules:
-      - 'c 189:* rwm'
-    volumes:
-      - ./Nutify/logs:/app/nutify/logs
-      - ./Nutify/instance:/app/nutify/instance
-      - ./Nutify/ssl:/app/ssl
-      - ./Nutify/etc/nut:/etc/nut
-      - /dev:/dev:rw              # Full /dev access improves hotplug handling
-      - /run/udev:/run/udev:ro    # Access to udev events
-    environment:
-    # - DISABLE_AUTH=true         # Disable the login system (no login prompt, permissions bypassed)
-    # - SKIP_PERMCHECK=true       # Skip USB permission change for rootless implementations
-      - SECRET_KEY=test1234567890 # for password encryption and decryption in the database
-      - UDEV=1                    # Improve USB detection
-    ports:
-      - 3493:3493
-      - 5050:5050
-      - 443:443
-    restart: always
-    user: root
-```
-
-2. Start Nutify:
-   ```bash
-   docker-compose up -d
-   ```
-
-3. Access the Setup Wizard:
-   Open your web browser and navigate to `http://localhost:5050`
-
-4. Follow the Setup Wizard for initial configuration:
-   - Select your **Timezone**.
-   - Choose the **Operating Mode**: 
-     - `SERVER` (Standalone): If the UPS is directly connected to this machine.
-     - `CLIENT` (Netclient): If connecting to a remote NUT server.
-   - Enter a **Name** for your UPS (e.g., `myups`).
-   - Configure the connection details (driver, port, etc.). The wizard can attempt **Automatic Detection** or allow **Manual Configuration**.
-   - Review your settings.
-   - **Save & Restart** to apply the configuration.
-
-## Web-Based Configuration
-
-Nutify 0.1.6 introduces a new setup wizard that simplifies the entire configuration process. Instead of manually editing the docker-compose.yaml file, you can now:
-
-1. **Start with minimal configuration**: Only a few environment variables are needed in docker-compose.yaml
-2. **Access the web interface**: Navigate to the web UI after starting the container
-3. **Follow the setup wizard**: Step-by-step configuration for your UPS setup
-4. **Configure all settings via the UI**: No need to restart containers when changing settings
-
-The setup wizard allows you to configure:
-- UPS connection type (Standalone/Netwrok Server - Network Client)
-- Manual Configuration or Auto-detect with nut-scanner
-- Driver selection from the extensive list of supported drivers
-- Connection parameters (hostname, port, etc.)
-
-
-
-Here are some examples of the Setup Wizard screens:
 
 <p align="center">
-  <img src="pic/15.Setup.png" alt="Setup Wizard - Mode Selection" width="300"/>
-  <img src="pic/19.SetupDone.png" alt="Setup Wizard - Complete" width="300"/>
+  <img src="pic/Readme/Energy-Light.jpg" alt="Energy dashboard" width="220"/>
+  <img src="pic/Readme/EnergyDetails-Light.jpg" alt="Energy Details dashboard" width="275"/>
 </p>
 
+## What's New In 0.2.0
+
+- Multi-UPS monitoring promoted as a first-class workflow across setup, dashboard, APIs, and reporting.
+- New profile-aware setup wizard (`single` and `multi`) with topology flow (`remote_only`, `local_only`, `mixed`).
+- New dedicated Multi-UPS page with per-target status and active target switching.
+- Settings split into two scopes:
+  - `Options` / target scope (`/settings?view=target`)
+  - `Settings/System` / global scope (`/settings?view=system`)
+- New `Operations` section for formula and runtime variable mapping logic.
+- Enhanced `Remapper` workflow for canonical variable mapping per target.
+- Canonical multi-target telemetry flow on `ups_monitor_data` with target-aware storage strategies.
+
+<p align="center">
+  <img src="pic/Readme/Multi-UPS-Light.jpg" alt="Monitor Multi-UPS" width="600"/>
+</p>
+
+
+## Current Version
+
+- Version: `0.2.0`
+
+> [!WARNING]
+> Version `0.2.0` is **not backward compatible** with previous releases.
+>  
+> The database must be **recreated from scratch**.
+>  
+> To avoid incompatible or dirty data, it is strongly recommended to start from a completely clean environment using a **new empty folder**.
+> Do not reuse files or data from older versions.
+
+For full details, see [changelog.md](changelog.md).
 
 ## Supported Architectures
 
@@ -253,11 +77,95 @@ Nutify is available for multiple hardware platforms:
 
 | Architecture | Docker Image Tag | Devices |
 |--------------|------------------|---------|
-| 🖥️ **AMD64/x86_64** | `dartsteven/nutify:amd64-latest` | Standard PCs, servers, most cloud VMs |
-| 🍓 **ARM64/aarch64** | `dartsteven/nutify:arm64-latest` | Raspberry Pi 4, Pi 400, Compute Module 4, Apple M1/M2 Macs |
+| 🖥️ **AMD64/x86_64** | dartsteven/nutify:latest-amd64 | Standard PCs, servers, most cloud VMs |
+| 🍎 **Apple Silicon (ARM64)** | dartsteven/nutify:latest-mac-arm64  | Apple M1/M2/M3+ Macs running Docker |
+| 🍓 **Raspberry Pi 4 – 32-bit OS required** | dartsteven/nutify:latest-raspberrypi4-armv7 | For Raspberry Pi 4 running a 32-bit OS |
+| 🍓 **Raspberry Pi 4 / 5 – 64-bit OS required** | dartsteven/nutify:latest-raspberrypi5-arm64 | For Raspberry Pi 4 or 5 running a 64-bit OS |
 
+## Quick Start (Docker)
 
-You can also use specific version tags (e.g., `dartsteven/nutify:amd64-0.1.6`) if you need a particular version.
+```yaml
+services:
+  nut:
+    # Container image
+    image: dartsteven/nutify:latest-amd64        # Nutify image version
+    container_name: Nutify                       # Static container name for easy reference
+
+    # Privileges required for 
+    # direct UPS and USB device access
+    privileged: true                             # Broad hardware access for NUT and USB integration
+    cap_add:
+      - SYS_ADMIN                                # Extended system administration capabilities
+      - SYS_RAWIO                                # Raw hardware I/O access
+      - MKNOD                                    # Create special device files if needed
+
+    # USB device mapping
+    devices:
+      - /dev/bus/usb:/dev/bus/usb:rwm            # Map host USB bus into the container
+    device_cgroup_rules:
+      - 'c 189:* rwm'                            # Allow all USB character devices
+
+    # Persistent storage and host integration
+    volumes:
+      - ./Nutify/logs:/app/nutify/logs           # Application logs
+      - ./Nutify/instance:/app/nutify/instance   # Persistent app data and runtime files
+      - ./Nutify/ssl:/app/ssl                    # SSL certificates and private keys
+      - ./Nutify/etc/nut:/etc/nut                # NUT configuration directory
+      - /dev:/dev:rw                             # Full device tree access for hardware detection
+      - /run/udev:/run/udev:ro                   # Udev event access for hotplug monitoring
+
+    # Runtime environment
+    environment:
+      - SECRET_KEY=test1234567890                # Secret key used for sessions and encrypted values
+      - UDEV=1                                   # Enable udev-aware USB detection mode
+      - SSL_ENABLED=false                        # true or false, default is false
+     
+     # DNS resolvers
+    dns:
+      - 1.1.1.1                                  # Cloudflare DNS
+      - 8.8.8.8                                  # Google DNS
+    dns_opt:
+      - timeout:2                                # DNS timeout per query
+      - attempts:2                               # Retry count before failure
+
+    # Exposed ports
+    ports:
+      - 3493:3493                                # NUT daemon communication port
+      - 5050:5050                                # Nutify application port
+      - 443:443                                  # HTTPS secure web access
+
+    restart: always                              # Keep the service running across failures/reboots
+    user: root                                   # Root required for full device and NUT access
+```
+
+Run:
+
+```bash
+docker compose up -d
+```
+
+Then open:
+
+- `http://localhost:5050`
+
+## Web-Based Configuration
+
+The setup wizard allows you to configure:
+- Monitoring profile (`Single Monitor` or `Multi Monitor`)
+- Fleet topology based on the selected profile:
+  - Single: `Standalone`, `Network Server`, or `Network Client`
+  - Multi: `Remote NUT Only`, `Local Targets Only`, or `Mixed Local + Remote`
+- Connection method: `Manual Configuration` or `Auto-detect with nut-scanner`
+- Driver selection from the supported NUT driver catalog
+- Local and remote connection parameters (`host`, `port`, `username`, `password`, `ups identifier`)
+- Per-target metadata:
+  - `Target Display Name (UI label)`
+  - `Target Timezone`
+  - `Target Currency`
+  - `Polling Interval`
+- Validation flow with test actions before save (`Test Target`, `Test & Save Primary Target`)
+- Final configuration preview and controlled restart to apply generated NUT files
+
 
 ## Tested UPS Models
 
@@ -265,7 +173,7 @@ Nutify aims for broad compatibility with UPS devices supported by Network UPS To
 
 **Is your UPS model working with Nutify but not listed here?** Please help us expand this list by sharing your experience in the
 
-[UPS Compatibility List discussion](https://github.com/DartSteven/Nutify/discussions/category/general)
+[UPS Compatibility List discussion](https://github.com/DartSteven/Nutify/discussions/16)
 
 Knowing which models work helps the entire community.
 
@@ -284,16 +192,6 @@ For detailed documentation, including:
 ## License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Screenshots
-
-
-<p align="center">
-  <img src="pic/dark.png" alt="Dark Theme" width="300"/>
-  <img src="pic/light.png" alt="Light Theme" width="300"/>
-  <img src="pic/15.Setup.png" alt="Setup Wizard - Complete" width="300"/>
-</p>
-
 
 ## Support the Project
 
