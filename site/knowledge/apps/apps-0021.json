@@ -1,8 +1,75 @@
 {
   "chunk": 21,
   "count": 50,
-  "generated_at": "2026-03-29T05:16:53Z",
+  "generated_at": "2026-04-05T05:18:12Z",
   "items": [
+    {
+      "reference": "slash",
+      "name": "Slash",
+      "website": "github.com/yourselfhosted/slash",
+      "description": "Open source link shortener and sharing app",
+      "repo_url": "github.com/yourselfhosted/slash",
+      "repo_key": "github.com/yourselfhosted/slash",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "URL Shortener"
+      ],
+      "readme_path": "knowledge/readmes/github.com__yourselfhosted__slash.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "aa50e95ca067b1e031438b16091cda0f9cfd6af400609e436c925f99f3ee8c33"
+      }
+    },
+    {
+      "reference": "slink",
+      "name": "Slink",
+      "website": "docs.slinkapp.io",
+      "description": "Self-hosted image sharing platform",
+      "repo_url": "github.com/andrii-kryvoviaz/slink",
+      "repo_key": "github.com/andrii-kryvoviaz/slink",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "26",
+      "license": null,
+      "tags": [
+        "Image Sharing"
+      ],
+      "readme_path": "knowledge/readmes/github.com__andrii-kryvoviaz__slink.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "d9d8d96e98cb25430940f04154c5eeb3917863c965aaaee1da42aedea0d44691"
+      }
+    },
+    {
+      "reference": "slskd",
+      "name": "slskd",
+      "website": "slskd.org",
+      "description": "Web app for the Soulseek file-sharing network",
+      "repo_url": "github.com/slskd/slskd",
+      "repo_key": "github.com/slskd/slskd",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "1",
+      "license": null,
+      "tags": [
+        "Downloads",
+        "Music"
+      ],
+      "readme_path": "knowledge/readmes/github.com__slskd__slskd.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "a61c8e287ad12467bd6f08178e32988657be7b5bc518740f52fdca18b06aab9d"
+      }
+    },
     {
       "reference": "smokeping",
       "name": "SmokePing",
@@ -12,7 +79,7 @@
       "repo_key": "github.com/oetiker/SmokePing",
       "stars": null,
       "forks": 10,
-      "updated_at": "26",
+      "updated_at": "25",
       "license": null,
       "tags": [
         "Monitoring"
@@ -21,8 +88,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "7edc6aefc8d18adb2a22f70b5b5761d3408d46988c2cf7d54159568bacc307c5"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "35dd1f09ea85b1f3a316132ec97ec31ad7abb70dc878c4b5d9a4c6fd3476a116"
       }
     },
     {
@@ -34,7 +101,7 @@
       "repo_key": "codeberg.org/grunfink/snac2",
       "stars": null,
       "forks": 15,
-      "updated_at": "1",
+      "updated_at": "0",
       "license": null,
       "tags": [
         "ActivityPub / Fediverse"
@@ -43,8 +110,8 @@
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "3713267c839e9cb611a8432162a95f6751dc19acbcb333cee6f9a76a521f3b37"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "39425e5af1238a6d972d63b51ca980abd8ed5fd1d89d5275bcbe6bdb4c800ef1"
       }
     },
     {
@@ -56,7 +123,7 @@
       "repo_key": "github.com/SnapDrop/snapdrop",
       "stars": null,
       "forks": 11,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Local File Sharing"
@@ -65,8 +132,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "3ee379283309f34c4be4556858d412f6b303d2535b50d50ac670ce139f422142"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "8db0f0e2f609e4e5ee1277b6c44be83bbe981e3e09a6411c0e0e7b8d5891e1f9"
       }
     },
     {
@@ -78,7 +145,7 @@
       "repo_key": "github.com/the-djmaze/snappymail",
       "stars": null,
       "forks": 0,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Email"
@@ -87,8 +154,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "5418a021b6840c3079eaf30ffbb18258ce4f87363f7da2d3c9316d7298938316"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "bcd8dabe2a93dd50e8169eca6105c315f4038d05971c31d672af8540b7e9f5ca"
       }
     },
     {
@@ -100,7 +167,7 @@
       "repo_key": "github.com/snikket-im/snikket-server",
       "stars": null,
       "forks": 1,
-      "updated_at": "23",
+      "updated_at": "22",
       "license": null,
       "tags": [
         "Messaging"
@@ -109,8 +176,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "169070edb3437819e69ac9b6de80cad8b87cce97a43efbcfa83f1675f87c29c8"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "b142bf610ccd0570775c1546be9727585af5b92639eebed5bbcc546204e22881"
       }
     },
     {
@@ -122,17 +189,17 @@
       "repo_key": "github.com/grokability/snipe-it",
       "stars": null,
       "forks": 0,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Tracking"
       ],
       "readme_path": "knowledge/readmes/github.com__grokability__snipe-it.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "166952211ca635ca7382fd23dcf363434782bbdf3a34e8060aaec5becebf3dc3"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "2fcf012b0ded5b0d1e54fd0a85119f7f86eba937adafbe5927f8ab9d299b3735"
       }
     },
     {
@@ -144,7 +211,7 @@
       "repo_key": "github.com/cojocaru-david/snippetslibrary.com",
       "stars": null,
       "forks": 8,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Code Snippets"
@@ -153,8 +220,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "26fbcc1f80b270acd468ad74618d9e77c01d7330bbb41adb46dd165bfa92b01d"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "931d18bcde76554e9db02d82497fbeaaf7129d940d840811e4a65fb9c5464d19"
       }
     },
     {
@@ -166,7 +233,7 @@
       "repo_key": "gitlab.com/jaywink/socialhome",
       "stars": null,
       "forks": 0,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "ActivityPub / Fediverse"
@@ -175,8 +242,8 @@
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "c87a9cb5fb90e635ab488d29bb47c13cc02319c0fa43fcdfaba8663be4cd5800"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "843e022a0c8cce16802e2ad7f0ea7297cfd7e58e35e9a4e4e831717473649bb2"
       }
     },
     {
@@ -188,7 +255,7 @@
       "repo_key": "github.com/chkpwd/sofe",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "*arr",
@@ -198,8 +265,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "f26e84cf4bef82b49350698507e887678274874ee0b93451c6994c29733dab1d"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "11d7605143768dcaaa028618cd4f50a63eb746ed3fb31a0b7e02da8592542f2f"
       }
     },
     {
@@ -211,7 +278,7 @@
       "repo_key": "github.com/charmbracelet/soft-serve",
       "stars": null,
       "forks": 15,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Git"
@@ -220,8 +287,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "d8c5391132eefd45b05957198b7eb859344176d43290d076bf27eed1e6e50c35"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "915a26da612363a7480020b8c4048dcbad03d4140dcd838e74da259cb186e39c"
       }
     },
     {
@@ -233,7 +300,7 @@
       "repo_key": "github.com/SolidInvoice/SolidInvoice",
       "stars": null,
       "forks": 15,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Accounting"
@@ -242,8 +309,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "5898aed1fb73d416c565db0f35b42c23de1ee0794031f916b181f59e02ec445d"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "984b6fd83132b449c4696509c0cadf4294d1f26d2e51e1c5f9bfeed1243575d5"
       }
     },
     {
@@ -255,7 +322,7 @@
       "repo_key": "github.com/solidtime-io/solidtime",
       "stars": null,
       "forks": 0,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Time Tracking",
@@ -265,8 +332,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "d53e2ae75146951c45f3c3c01a0b444d12830999a2eabe9a0eb493311c498e74"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "20c6c01d45b312ed472c2c0afd5770674032200ebc7661f2f4b30d91ab8e24f5"
       }
     },
     {
@@ -278,7 +345,7 @@
       "repo_key": "github.com/SonarSource/sonarqube",
       "stars": null,
       "forks": 14,
-      "updated_at": "20",
+      "updated_at": "19",
       "license": null,
       "tags": [
         "Development",
@@ -288,8 +355,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "f55aa2820bc83b285fcb20f2e34c2d31aeae290b61b0fb6ac77f755b02bb76b8"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "e54d07d4c0fc6d7c3ded999b06238b5c3af1ae619aac546c752225de04fc7223"
       }
     },
     {
@@ -301,7 +368,7 @@
       "repo_key": "github.com/Sonarr/Sonarr",
       "stars": null,
       "forks": 11,
-      "updated_at": "2",
+      "updated_at": "1",
       "license": null,
       "tags": [
         "*arr",
@@ -312,8 +379,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "fdd19ad826eb7872522f3ffc55252a87b411d46903ec982dbd14056719c3c832"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "df41e9dc722566c985ee320b150a4111a35a98fe0730a6e1bee0fbd4f6c3ebe7"
       }
     },
     {
@@ -325,7 +392,7 @@
       "repo_key": "github.com/TheWicklowWolf/SonaShow",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "*arr",
@@ -335,8 +402,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "5d6c4c8c0cc6b7e6939b4a15640a46a8eef75c55292b317c196811ae67ad0439"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "e3aa97d1bcc2a91a8ece9d0ab57667580d43fc7435167ff9b725625dbe3889d2"
       }
     },
     {
@@ -348,7 +415,7 @@
       "repo_key": "github.com/Dodelidoo-Labs/sonobarr",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "*arr",
@@ -358,8 +425,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "0ab266f7579d7ede2e6375081fd63d654f5b111b81b3f9d52bda134487561bc6"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "dbed71111dd8aa94d86f4bfa92cba175cf99ad45c2a5506795ffa1fa6bf7e6ec"
       }
     },
     {
@@ -371,17 +438,17 @@
       "repo_key": "github.com/Jaredharper1/Sortarr",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "*arr"
       ],
       "readme_path": "knowledge/readmes/github.com__Jaredharper1__Sortarr.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "b25ca2d0299d9dcb047767f010e2c433b61e7bbc45904a7c32ad635d406b1b09"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "6dd3b2ef6003f00846376516188fa3b65a5c233144d61a11a2b58a7c2d462b5e"
       }
     },
     {
@@ -393,7 +460,7 @@
       "repo_key": "github.com/biolds/sosse",
       "stars": null,
       "forks": 0,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Monitoring",
@@ -403,8 +470,31 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "d4f0da67b172c52ac392efa47f3f99ddcdc722bf18fea2ac09d4a800b26fee24"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "1eae9329710917de95fefb234bb2dbbb4d8a5ffa3459616ef7dd54aa831cc0cc"
+      }
+    },
+    {
+      "reference": "soulbeet",
+      "name": "Soulbeet",
+      "website": "github.com/terry90/soulbeet",
+      "description": "Music downloads and discovery",
+      "repo_url": "github.com/terry90/soulbeet",
+      "repo_key": "github.com/terry90/soulbeet",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "31",
+      "license": null,
+      "tags": [
+        "Downloads",
+        "Music"
+      ],
+      "readme_path": "knowledge/readmes/github.com__terry90__soulbeet.md",
+      "readme_status": "ok",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "fa3b7aa6343fb758335d4695e30d0f4bf29468b7cf0224be23e6597083111b18"
       }
     },
     {
@@ -416,7 +506,7 @@
       "repo_key": "github.com/Nezreka/SoulSync",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "*arr",
@@ -424,11 +514,11 @@
         "Music"
       ],
       "readme_path": "knowledge/readmes/github.com__Nezreka__SoulSync.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "61eaf842549f51de5e825b9069e5171f0bdd705b23b3f87310a06d4b793311b1"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "9346ab111fb77da25e186540094190634573df6bd9eb9b02a080d6628dd8dfb3"
       }
     },
     {
@@ -450,8 +540,8 @@
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "3051b1b9ce22327da4cd2690f4723d02b65787bae7102839930a9ac0aadacfe3"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "cb9dccf9d157e370c6c5d49cabc8ee22fb42ad6b96b217664eebbaa0c304ed1f"
       }
     },
     {
@@ -463,7 +553,7 @@
       "repo_key": "github.com/spacebarchat/spacebarchat",
       "stars": null,
       "forks": 0,
-      "updated_at": "25",
+      "updated_at": "24",
       "license": null,
       "tags": [
         "Messaging",
@@ -473,8 +563,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "fe96eb1f1aec794d1b87bb36b61ee3f8f308d07efc77a90303926d2cb27b19ea"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "0cea0fa8d3bb6fc05015872a9e7a54adb79d66bfe1e5a09e0b4626030fc76569"
       }
     },
     {
@@ -486,7 +576,7 @@
       "repo_key": "github.com/magweter/spacepad",
       "stars": null,
       "forks": 8,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Tracking"
@@ -495,8 +585,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "09df05021bb89d7d3059fba5736b46c4f28c9f81a65968ba10a10d70b4729e3d"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "530e4deb0fb89d3652593456f24eacd55b0706aa462c47a58aab405ab5438386"
       }
     },
     {
@@ -508,7 +598,7 @@
       "repo_key": "github.com/CodeWithCJ/SparkyBudget",
       "stars": null,
       "forks": 8,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Budgeting"
@@ -517,8 +607,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "f68505373e14a3e5b5452af034530e05a89cfb0552c8d74aa0abe6f3df7e4b86"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "318f43f97a862dd81a96356f33dbd0636504418a7d1189d3f0b9824537124532"
       }
     },
     {
@@ -530,7 +620,7 @@
       "repo_key": "github.com/CodeWithCJ/SparkyFitness",
       "stars": null,
       "forks": 8,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Fitness"
@@ -539,8 +629,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "fb5b024692b17f2794efd817ae81457f4da4770689d3695c7a17ff16be43a0cf"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "bdab29e1b1d6523457de01610a2d4ebf7e56091e5a2b97408cc9dd1364a1463f"
       }
     },
     {
@@ -552,7 +642,7 @@
       "repo_key": "github.com/speaches-ai/speaches",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Artificial Intelligence",
@@ -563,8 +653,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "55e8ef630832d46aa59575a6bfdb1a7b100714da3a1595c130356c794e1a89bc"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "08bccbe20175bd2efb9f68a814a4db65507714b8a7412b507fe3dcd83ca8adb9"
       }
     },
     {
@@ -576,7 +666,7 @@
       "repo_key": "github.com/murtaza-nasir/speakr",
       "stars": null,
       "forks": 0,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Transcription"
@@ -585,8 +675,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "76656e8adb4da1a47290e45364949e758d25265eef26e969c6eae275038a0d5c"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "7fa660bf97a464524b8245ca75e7d74be9053c202f68bd28bd05a239da7b1f29"
       }
     },
     {
@@ -598,7 +688,7 @@
       "repo_key": "github.com/davideshay/groceries",
       "stars": null,
       "forks": 15,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Grocery Lists"
@@ -607,8 +697,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "a748ddddbef04df139ccd9ec7d6d18a899a1b631bacd7c483144bd80bc4e6076"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "9b8a72ef9d1824074ebd4f9e1fa278a1b060cd76b9903f8523f4747130f60265"
       }
     },
     {
@@ -620,7 +710,7 @@
       "repo_key": "github.com/alexjustesen/speedtest-tracker",
       "stars": null,
       "forks": 15,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Speed Test"
@@ -629,8 +719,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "b3fb5ad873028a79dc8b520b3d87189ed1778dc66d4daf6d1a55dd1fab73fe21"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "bd739e4b012d5de55935314823e757ed66155e678d298a0444e19a007a3ae4f2"
       }
     },
     {
@@ -642,7 +732,7 @@
       "repo_key": "github.com/lamarios/SpendSpentSpent",
       "stars": null,
       "forks": 0,
-      "updated_at": "7",
+      "updated_at": "6",
       "license": null,
       "tags": [
         "Budgeting",
@@ -652,8 +742,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "34a86b1f3de8e555016ee96d6e063bb8b3cf70f4a77eb8c360ae73448725a24a"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "76f556358b6ea0f6fd02aab3238a4ba066d0a47843f437badbf844acf0c2fbf9"
       }
     },
     {
@@ -665,7 +755,7 @@
       "repo_key": "github.com/spliit-app/spliit",
       "stars": null,
       "forks": 15,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Budgeting"
@@ -674,8 +764,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "09694daa2e1be18854b3abea8032c89daf40bce6c95aa2b20e5a120abb6c4f16"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "a11a6629b1f5fe9d9548d23d357e756b844035bec8f7cb417e231111477b5adf"
       }
     },
     {
@@ -687,7 +777,7 @@
       "repo_key": "github.com/Donkie/Spoolman",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "3D Printing",
@@ -697,8 +787,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "e45cdca23b1edcb982191e71584040db6d596d75caafc8a3cdf02160c764fc47"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "5f1323c45b43fb48e449d08c92ebf7d480e74901dc8eccb4654296ff2620f946"
       }
     },
     {
@@ -710,7 +800,7 @@
       "repo_key": "github.com/Raiper34/spooty",
       "stars": null,
       "forks": 15,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Downloads",
@@ -720,8 +810,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "de1b7a4e1500ca3e4b9525ace96f1c3d977a714cf87e2da96e06498c2d8f282a"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "0e8617c4e84190efd26915669a19305cc41bf43ffe12e96a1ea64f29bbe91df6"
       }
     },
     {
@@ -733,7 +823,7 @@
       "repo_key": "lavaforge.org/spotizerr/spotizerr",
       "stars": null,
       "forks": 11,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Downloads",
@@ -743,8 +833,8 @@
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "60eaa0aef206c928b2ca8fad1eb0b572a4cde3343d1bc61bcbb686112c4271fc"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "7a41b7027599a25fa97122745d18448cca754ddf38e79e3dcbdf0987eaa03a1b"
       }
     },
     {
@@ -756,7 +846,7 @@
       "repo_key": "github.com/Oak-and-Sprout/sprout-track",
       "stars": null,
       "forks": 8,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Tracking"
@@ -765,8 +855,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "914d22faee7e09df6a2fef6dc0f451ad1b4031e8007f5f1ac15fc6012d13365f"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "12cc2e8fc232a9cea19d23e2f4152c84b9d5d388fa8e61fdaef127a545fb5e90"
       }
     },
     {
@@ -778,7 +868,7 @@
       "repo_key": "github.com/SquirrelCorporation/SquirrelServersManager",
       "stars": null,
       "forks": 0,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Docker",
@@ -788,8 +878,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "1af4b966889f9276f6c05e742d5fecf9537ffb1c0a4b59cea9f67a4b8089844b"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "0c74c2648aac377a47a2d63ec97adc66ba01d7396da8cfc7415d33977c2e5768"
       }
     },
     {
@@ -801,7 +891,7 @@
       "repo_key": "github.com/nirui/sshwifty",
       "stars": null,
       "forks": 0,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Remote Access",
@@ -811,8 +901,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "aafef6f37366dbab7d7c2a61e82f44064ea7db1f256d7fd8fe3d2944bd57f961"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "6817f484f28cd88404544962ddf338dd25a243d19fd84240400c0913f30e7460"
       }
     },
     {
@@ -824,7 +914,7 @@
       "repo_key": "open.greenhost.net/stackspin/stackspin",
       "stars": null,
       "forks": 0,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Deployment"
@@ -833,8 +923,8 @@
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "dd4f6ae88cc54a1392822beffb57640c7e726c4cd90067ec1a087c0c6fbcafba"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "f3c5d24880efe1d35f8934c560d3cda8977316fc4fc7b102e8ccd0884df74c68"
       }
     },
     {
@@ -846,7 +936,7 @@
       "repo_key": "github.com/stalwartlabs/stalwart",
       "stars": null,
       "forks": 8,
-      "updated_at": "32",
+      "updated_at": "31",
       "license": null,
       "tags": [
         "Email"
@@ -855,8 +945,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "a90a3aab3fe44296242a2ddfd99307dcfec5059c92be20dfaeb9b688bae65002"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "c068ddb2a8e68d6dffc87486c47cf19fa843d6ceedbec9cd3e88be593bde2acb"
       }
     },
     {
@@ -868,7 +958,7 @@
       "repo_key": "github.com/standardnotes/app",
       "stars": null,
       "forks": 0,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Note-Taking"
@@ -877,8 +967,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "e672c45f881bf82c9582bf81e277584f04577c497631a748de06e255957b1a29"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "b3dcb4d1d4c7d48c08a3f4490181a13764a9a5b7e02884732ca3f73c18536472"
       }
     },
     {
@@ -890,7 +980,7 @@
       "repo_key": "github.com/notclickable-jordan/starbase-80",
       "stars": null,
       "forks": 15,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Dashboard"
@@ -899,8 +989,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "366edddd2f84a2f53bc5ef729068f203b4b44d5375bb806de16262adb6c11ddf"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "c834d3a6d3e60a9ca0c4e51b675645316396f2c682b5ebbfa526e6ba0dab176b"
       }
     },
     {
@@ -912,18 +1002,18 @@
       "repo_key": "github.com/stashapp/stash",
       "stars": null,
       "forks": 0,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Photos",
         "Videos"
       ],
       "readme_path": "knowledge/readmes/github.com__stashapp__stash.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "570b48f87024dfd703642d9f40b05265d889f989c46705005fda126f0e543fc0"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "5bf7058de1fa03934d3de6eb7e1c9e2284d1e2b8ea94159e0576caff6afda4b0"
       }
     },
     {
@@ -935,7 +1025,7 @@
       "repo_key": "github.com/statamic/cms",
       "stars": null,
       "forks": 8,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Blog",
@@ -945,8 +1035,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "e25d919082e76b5039324275638e0ba1a19391dd24a21413af850c9bad971eb4"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "4ee815c379a4163984705307264e6a4fc10496cb6703da1fa20789f2858478cf"
       }
     },
     {
@@ -958,7 +1048,7 @@
       "repo_key": "github.com/robiningelbrecht/statistics-for-strava",
       "stars": null,
       "forks": 0,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Fitness",
@@ -968,8 +1058,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "595a0010e108c1d82666662ce26643d41f3cdf24f0965cc1be6cc0ab4cce2644"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "bae8c9e9684a0ae02b14a9f959be414a9f1df95166792ca17d6b232f70389a0a"
       }
     },
     {
@@ -981,7 +1071,7 @@
       "repo_key": "github.com/statping-ng/statping-ng",
       "stars": null,
       "forks": 11,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Monitoring",
@@ -992,8 +1082,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "70363e52f3614bb2177c71aef80fe3fe80ce607360aed078432713864ea29283"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "4a5afa35dcc8f41eb4a5d969a125d7e7e4b23292b2eb31f2649da547c1669768"
       }
     },
     {
@@ -1005,7 +1095,7 @@
       "repo_key": "github.com/Steam-Headless/docker-steam-headless",
       "stars": null,
       "forks": 10,
-      "updated_at": "33",
+      "updated_at": "32",
       "license": null,
       "tags": [
         "Gaming"
@@ -1014,8 +1104,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "af069bb9d734586b1daff587fbbf1ff6162712659109b90ac13361713ced3bf9"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "e9df2d0fa7827b118c9bd68ce15ba0a4259f82af1af60e284cb85c318bc09809"
       }
     },
     {
@@ -1027,7 +1117,7 @@
       "repo_key": "github.com/jamesread/StencilBox",
       "stars": null,
       "forks": 0,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Static Site"
@@ -1036,99 +1126,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "14cb583fa0ae217c7d996383faddcf3f2cf0208c97e337a1cd89c384fc1a66f2"
-      }
-    },
-    {
-      "reference": "step-ca",
-      "name": "step-ca",
-      "website": "smallstep.com/certificates",
-      "description": "Online certificate authority",
-      "repo_url": "github.com/smallstep/certificates",
-      "repo_key": "github.com/smallstep/certificates",
-      "stars": null,
-      "forks": 1,
-      "updated_at": "15",
-      "license": null,
-      "tags": [
-        "Reverse Proxy",
-        "Server Management"
-      ],
-      "readme_path": "knowledge/readmes/github.com__smallstep__certificates.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "a7ae7851a5c1f06c443e20242668f0eb614e3501596c35903372cdf41a9a211d"
-      }
-    },
-    {
-      "reference": "sticky",
-      "name": "Sticky",
-      "website": "www.sticky.today",
-      "description": "Digital sticky note application for organizing thoughts, ideas, and tasks",
-      "repo_url": "github.com/hamzasaleem2/sticky",
-      "repo_key": "github.com/hamzasaleem2/sticky",
-      "stars": null,
-      "forks": 15,
-      "updated_at": "39",
-      "license": null,
-      "tags": [
-        "Note-Taking",
-        "Tasks and To-Do Lists"
-      ],
-      "readme_path": "knowledge/readmes/github.com__hamzasaleem2__sticky.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "b4f7b55db1ed4088d16aaff89601144784dc5347ee66de810ca202c2e7f96cba"
-      }
-    },
-    {
-      "reference": "stirling-pdf",
-      "name": "Stirling PDF",
-      "website": "stirling.com",
-      "description": "Perform various operations on PDF files",
-      "repo_url": "github.com/Stirling-Tools/Stirling-PDF",
-      "repo_key": "github.com/Stirling-Tools/Stirling-PDF",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "39",
-      "license": null,
-      "tags": [
-        "Document Management",
-        "PDF"
-      ],
-      "readme_path": "knowledge/readmes/github.com__Stirling-Tools__Stirling-PDF.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "4b0680d9fbe1ec739c41e7850b3b9a99bee468041ed5a903bb9ecc34e51f13b3"
-      }
-    },
-    {
-      "reference": "stoat",
-      "name": "Stoat",
-      "website": "github.com/stoatchat/stoatchat",
-      "description": "Open source, user-first chat platform",
-      "repo_url": "github.com/stoatchat/stoatchat",
-      "repo_key": "github.com/stoatchat/stoatchat",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "32",
-      "license": null,
-      "tags": [
-        "Messaging"
-      ],
-      "readme_path": "knowledge/readmes/github.com__stoatchat__stoatchat.md",
-      "readme_status": "ok",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "7695e8f8bbf3d5bb57a0b4b60fc0a2cbc6d5510010373c8c17d6b1fba65cf35f"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "9023ce674ccd3185f523a9da6d0ba7b68bdd67e434fb7641f44ee33f9d703af2"
       }
     }
   ]

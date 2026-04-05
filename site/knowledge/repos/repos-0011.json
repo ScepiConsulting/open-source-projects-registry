@@ -1,8 +1,23 @@
 {
   "chunk": 11,
   "count": 50,
-  "generated_at": "2026-03-29T05:16:53Z",
+  "generated_at": "2026-04-05T05:18:12Z",
   "items": [
+    {
+      "repo_key": "github.com/danielbrendel/dnyHelpRealm",
+      "repo_url": "github.com/danielbrendel/dnyHelpRealm",
+      "host": "github.com",
+      "owner": "danielbrendel",
+      "repo": "dnyHelpRealm",
+      "app_references": [
+        "helprealm"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__danielbrendel__dnyHelpRealm.md",
+      "readme_download_url": null,
+      "readme_sha256": "8d4c6193ac8c858d819186938011423945401db67850b2ea8ba3239e5657fc99",
+      "error": null
+    },
     {
       "repo_key": "github.com/danielbrendel/hortusfox-web",
       "repo_url": "github.com/danielbrendel/hortusfox-web",
@@ -27,10 +42,10 @@
       "app_references": [
         "librechat"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__danny-avila__LibreChat.md",
-      "readme_download_url": null,
-      "readme_sha256": "cac93d529e88f1db08121ad41abde215ab43fbfba6538b9a092db977fc7b734b",
+      "readme_download_url": "https://raw.githubusercontent.com/danny-avila/LibreChat/main/README.md",
+      "readme_sha256": "aa125c875a597da0967e75388cf4bad3e01bb5228af07f5e0a59f6cafe15b680",
       "error": null
     },
     {
@@ -57,9 +72,9 @@
       "app_references": [
         "databasus"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__databasus__databasus.md",
-      "readme_download_url": "https://raw.githubusercontent.com/databasus/databasus/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f2db2408b413c910e012f28a9551175847e258147e696d0eec9d95fb9dd5bbbc",
       "error": null
     },
@@ -117,9 +132,9 @@
       "app_references": [
         "cloudbeaver"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dbeaver__cloudbeaver.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dbeaver/cloudbeaver/devel/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e02ae7d1d59978a61f7d4777e3274c1eb322a4905c74fb240ee4d519e02bc29c",
       "error": null
     },
@@ -162,10 +177,10 @@
       "app_references": [
         "reitti"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dedicatedcode__reitti.md",
-      "readme_download_url": null,
-      "readme_sha256": "80109bcb8b6bbeb500b7a73cceab33404333570201c79f7279cc20f721530a41",
+      "readme_download_url": "https://raw.githubusercontent.com/dedicatedcode/reitti/main/README.md",
+      "readme_sha256": "6914ded4f5e7c74cc8ba45ce937078b35c2e3eb483fa4300cdf521ce92b6a72e",
       "error": null
     },
     {
@@ -255,7 +270,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__diced__zipline.md",
       "readme_download_url": "https://raw.githubusercontent.com/diced/zipline/trunk/README.md",
-      "readme_sha256": "00eacf66a4e6182b652403d3c6ebf734fb6f93f592857082ec35d35a5126637f",
+      "readme_sha256": "b99bdf172568f947dd1f86daeb55651a6fa5b8b30d261738bc70e35023b740b7",
       "error": null
     },
     {
@@ -282,10 +297,10 @@
       "app_references": [
         "tootik"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dimkr__tootik.md",
-      "readme_download_url": null,
-      "readme_sha256": "feb097dfbc6bfa1a29ec455fb1d3fa237d1190f8911445be7381d889860e6251",
+      "readme_download_url": "https://raw.githubusercontent.com/dimkr/tootik/main/README.md",
+      "readme_sha256": "25523201e81b5fa7867d60dc409b9a8cb8c952b1c30c7d75595b220109700038",
       "error": null
     },
     {
@@ -327,10 +342,10 @@
       "app_references": [
         "directus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__directus__directus.md",
-      "readme_download_url": null,
-      "readme_sha256": "334e819082f5f681df85411e3bf76736e8c414d8062ede76fd1caf602b740b29",
+      "readme_download_url": "https://raw.githubusercontent.com/directus/directus/main/readme.md",
+      "readme_sha256": "2930931f52714b13ffe3c9ac30e76a8c975abd06779552a164ddcd1c8246c71f",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__dullage__flatnotes.md",
       "readme_download_url": null,
       "readme_sha256": "f96051fc03f5021d987502cb136abf35b48110dea5945ad85748e8eb63935ca9",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/duplicati/duplicati",
-      "repo_url": "github.com/duplicati/duplicati",
-      "host": "github.com",
-      "owner": "duplicati",
-      "repo": "duplicati",
-      "app_references": [
-        "duplicati"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__duplicati__duplicati.md",
-      "readme_download_url": null,
-      "readme_sha256": "3bce44887e50b39070ed0f75ac90b52a44f3e30b4050ce093b471a4685f36d38",
       "error": null
     }
   ]

@@ -40,17 +40,21 @@ Discover all the features [here](https://poznote.com/index.html#features)
 - [Install](#install)
 - [Access](#access)
 - [Change Settings](#change-settings)
-- [Authentication](#authentication)
 - [Update application](#update-application)
+- [Authentication](#authentication)
+- [Note types](#note-types)
+- [Personalization](#personalization)
 - [Multi-users](#multi-users)
-- [Backup / Export](#backup--export)
 - [Git Synchronization](#git-synchronization)
+- [Backup / Export](#backup--export)
 - [Restore / Import](#restore--import)
+- [Public Sharing](#public-sharing)
+- [Admin Tools](#admin-tools)
 - [PWA](#pwa)
 - [Offline View](#offline-view)
 - [Multiple Instances](#multiple-instances)
 - [MCP Server](#mcp-server)
-- [Chrome Extension](#poznote-extension)
+- [Chrome Extension](#chrome-extension)
 - [API Documentation](#api-documentation)
 - [Tech Stack](#tech-stack)
 
@@ -228,9 +232,6 @@ Most settings can be modified directly in the application through the settings p
 - **Authentication** - Initial/default passwords and login configuration
 - **Web Server** - HTTP port configuration
 - **OIDC / SSO Authentication** - OpenID Connect integration
-- **Settings Access Control** - Restrict or password-protect settings page
-- **Import Limits** - Maximum files for imports
-- **Git Sync** - GitHub and Forgejo synchronization
 - **MCP Server** - AI assistant integration
 
 Passwords can be changed directly in the application from `Settings > Change Password`. The `.env` authentication variables remain available to define the initial or fallback passwords used when no custom password has been set for a user.
@@ -254,26 +255,55 @@ Save the file and restart Poznote to apply changes:
 docker compose up -d
 ```
 
+## Update application
+
+Navigate to your Poznote directory:
+```bash
+cd poznote
+```
+
+Stop the running container before updating:
+```bash
+docker compose down
+```
+
+Download the latest Docker Compose configuration:
+```bash
+curl -o docker-compose.yml https://raw.githubusercontent.com/timothepoznanski/poznote/main/docker-compose.yml
+```
+
+Download the latest .env.template:
+```bash
+curl -o .env.template https://raw.githubusercontent.com/timothepoznanski/poznote/main/.env.template
+```
+
+Review `.env.template` and add any new variables to your `.env` file if needed:
+```bash
+sdiff .env .env.template
+```
+
+Download the latest Poznote Webserver and Poznote MCP images:
+```bash
+docker compose pull
+```
+
+Start the updated container:
+```bash
+docker compose up -d
+```
+
+Your data is preserved in the `./data` directory and will not be affected by the update.
 
 ## Authentication
 
+Poznote supports multiple authentication methods including local accounts and external identity providers.
+
 <details>
-<summary><strong>Traditional Authentication</strong></summary>
+<summary><strong>Local Accounts Authentication</strong></summary>
 <br>
 
 Poznote authenticates users against their profile using a username or email address and a password.
 
-#### Password resolution order
-
-When a user signs in, Poznote checks passwords in this order:
-
-1. A custom bcrypt password hash stored in the master database for that user.
-2. Fallback values from `.env`:
-  - `POZNOTE_PASSWORD` for the administrator profile
-  - `POZNOTE_PASSWORD_USER` for standard users
-  - `POZNOTE_PASSWORD_{USERNAME}` for per-user overrides
-
-This means `.env` acts as the default or seed credential source, while a password changed from the interface takes priority afterward.
 
 #### Default account
 
@@ -286,11 +316,10 @@ Rename this account after the first login.
 
 #### Password management
 
-- Users can change their own password from `Settings > Change Password`.
-- Administrators can set a custom password for any user or reset that user back to their `.env` password from `Settings > User Management`.
-- The `Remember me` option keeps the session for 30 days.
+- Users can change their own password from **Settings > Change Password**.
+- Administrators can set a custom password for any user or reset that user back to their `.env` password from **Settings > User Management**.
+- The **Remember me** option keeps the session for 30 days.
 - Changing a password invalidates existing remember-me cookies for that user.
-
 
 #### Configuration
 
@@ -306,6 +335,18 @@ POZNOTE_PASSWORD_USER=user-secret
 POZNOTE_PASSWORD_ALICE=alice-secret
 POZNOTE_PASSWORD_BOB=bob-secret
 ```
+
+#### Password resolution order
+
+When a user signs in, Poznote checks passwords in this order:
+
+1. A custom bcrypt password hash stored in the master database for that user.
+2. Fallback values from `.env`:
+  - `POZNOTE_PASSWORD` for the administrator profile
+  - `POZNOTE_PASSWORD_USER` for standard users
+  - `POZNOTE_PASSWORD_{USERNAME}` for per-user overrides
+
+This means `.env` acts as the default or seed credential source, while a password changed from the interface takes priority afterward.
 
 </details>
 
@@ -360,44 +401,120 @@ If auto-provisioning is enabled, Poznote generates a username from the OIDC clai
 
 </details>
 
-## Update application
+## Note types
 
-Navigate to your Poznote directory:
-```bash
-cd poznote
-```
+Poznote supports two primary note formats, each tailored for different workflows.
 
-Stop the running container before updating:
-```bash
-docker compose down
-```
+<details>
+<summary><strong>HTML Notes</strong></summary>
+&nbsp;
 
-Download the latest Docker Compose configuration:
-```bash
-curl -o docker-compose.yml https://raw.githubusercontent.com/timothepoznanski/poznote/main/docker-compose.yml
-```
+*   **Editor:** Direct WYSIWYG (What You See Is What You Get) editing.
+*   **Storage:** Saved as `.html` files in the user data directory. Since they are standard HTML, they can be opened directly in any web browser.
+*   **Exclusive Features:**
+    *   **Excalidraw:** Integrated drawing board for hand-drawn diagrams and sketches.
+    *   **Rich Formatting:** Native support for text colors, highlighting, and standard HTML elements.
+    *   **Interactive UI:** Direct manipulation of elements in the editor.
+</details>
 
-Download the latest .env.template:
-```bash
-curl -o .env.template https://raw.githubusercontent.com/timothepoznanski/poznote/main/.env.template
-```
+<details>
+<summary><strong>Markdown Notes</strong></summary>
+&nbsp;
 
-Review `.env.template` and add any new variables to your `.env` file if needed:
-```bash
-sdiff .env .env.template
-```
+*   **Editor:** Markdown syntax editor with real-time preview.
+*   **Storage:** Saved as `.md` files in the user data directory.
+*   **Exclusive Features:**
+    *   **Mermaid Diagrams:</strong> Native support for generating diagrams (flowcharts, sequence, etc.) via ` ```mermaid ` code blocks.
+    *   **Math Equations:** Robust LaTeX support for mathematical formulas using `$ inline $` and `$$ block $$` syntax.
+    *   **Portability:** Standard Markdown format compatible with any external editor or static site generator.
+</details>
 
-Download the latest Poznote Webserver and Poznote MCP images:
-```bash
-docker compose pull
-```
+<details>
+<summary><strong>Task Lists</strong></summary>
+&nbsp;
 
-Start the updated container:
-```bash
-docker compose up -d
-```
+*   **Usage:** Manage tasks and projects with interactive checklists.
+*   **Workflow:** Track progress with checkboxes that can be toggled directly in the editor or the notes list.
+*   **Public Collaboration:** Task lists can be shared via a public URL. If edit permissions are granted, external collaborators can check items off the list without needing a Poznote account.
+</details>
 
-Your data is preserved in the `./data` directory and will not be affected by the update.
+<details>
+<summary><strong>Shortcuts</strong></summary>
+&nbsp;
+
+*   **Functionality:** Create a reference to an existing note in another location.
+*   **Use Case:** Allows a note to be referenced in two different places simultaneously. For example, a note can live in a classification folder while its shortcut appears on a Kanban board for active tracking.
+</details>
+
+<details>
+<summary><strong>Templates</strong></summary>
+&nbsp;
+
+*   **Functionality:** Create pre-filled notes to standardize your documentation.
+*   **Usage:** Notes marked as templates can be duplicated to create new notes with the same structure, tags, and content, saving time on repetitive tasks.
+</details>
+
+## Personalization
+
+Poznote offers several built-in personalization options directly from the application, without requiring any configuration file changes.
+
+<details>
+<summary><strong>Display Settings</strong></summary>
+<br>
+
+Under **Settings > Display**, you can configure:
+
+- **Theme:** switch between light and dark mode
+- **Font size:** adjust text size for notes, sidebar, and code blocks
+- **Note sorting:** choose how notes are ordered in the list
+- **Task list insert order:** control where new tasks are inserted
+- **Show creation date:** toggle the creation date badge on notes
+- **Show folder note counts:** display the number of notes in each folder
+- **Show notes after folders:** list notes without folders below the folder list
+- **Index icon scaling:** resize icons in the note index
+- **Note content width:** control the max width of the note editor area
+- **Code block word wrap:** enable or disable word wrap in code blocks
+
+</details>
+
+<details>
+<summary><strong>Workspace Background Image</strong></summary>
+<br>
+
+You can set a background image per workspace — upload a custom image and adjust its opacity from the Display settings to give each workspace its own visual identity.
+
+</details>
+
+<details>
+<summary><strong>Element Visibility</strong></summary>
+<br>
+
+Poznote allows you to declutter the interface by hiding elements you don't use.
+
+Configure it in **Settings > Appearance > UI Customization**.
+
+- **Granular Control:** Toggle visibility for home cards, toolbar actions, slash menu items, and more.
+- **Per-User:** Each user can have their own unique interface layout.
+- **Searchable:** Easily find the element you want to hide using the filter in the configuration modal.
+
+</details>
+
+<details>
+<summary><strong>Custom CSS Overrides</strong></summary>
+<br>
+
+If you want to adjust fonts, spacing, or other visual details beyond the built-in options, you can load an extra stylesheet on every HTML page.
+
+Configure it in **Settings > Appearance > Custom CSS path**.
+
+Notes:
+
+- Enter only the filename, for example `custom.css`.
+- The file must be placed in `src/css/`, and Poznote will load it as `css/custom.css`.
+- Poznote appends a cache-busting `v=` parameter automatically when the target file exists locally.
+- The stylesheet is injected near the end of `<head>`, so it can override the default application styles.
+
+</details>
 
 ## Multi-users
 
@@ -424,6 +541,45 @@ data/
     ├── 2/                       # User ID 2
     └── ...
 ```
+
+## Git Synchronization
+
+Poznote supports automatic and manual synchronization with **GitHub** or **Forgejo**. Each user configures their own repository independently. There is no shared global repository.
+
+<details>
+<summary><strong>How to configure Git Sync</strong></summary>
+<br>
+
+**Step 1 — Enable the feature (admin, in Settings > Advanced Settings)**
+
+Toggle **Git Sync** to enabled in the **Advanced Settings** section of the Settings page. This will reveal the **Git Sync** menu in the sidebar for all users.
+
+---
+
+**Step 2 — Each user configures their own repo (Settings > Git Sync)**
+
+| Field | Description |
+|---|---|
+| Provider | `GitHub` or `Forgejo` |
+| API Base URL | GitHub: auto-filled (read-only). Forgejo: your instance URL, e.g. `https://forgejo.example.com/api/v1` |
+| Access Token | GitHub PAT (`ghp_...`) or Forgejo token (Settings > Applications) |
+| Repository | `owner/repo` format |
+| Branch | Default: `main` |
+| Author Name / Email | Used for commit metadata |
+
+> 🔒 Access tokens are encrypted at rest using AES-256-GCM. Set `POZNOTE_APP_SECRET` in your `.env` (generated with `openssl rand -hex 32`) to ensure the encryption key survives container rebuilds. If not set, a key is auto-generated and stored in `data/.app_secret`.
+
+---
+
+**Automatic sync**
+
+When enabled by the user, Poznote will automatically:
+- **Pull** on login
+- **Push** on every note create, update, or delete
+
+Manual push/pull is also available from the **Sync Status** page (cloud icon in the header).
+
+</details>
 
 ## Backup / Export
 
@@ -486,6 +642,7 @@ Export individual notes using the **Export** button in the note toolbar:
 For automated scheduled backups via API, you can use the included `backup-poznote.sh` script.
 
 **IMPORTANT:** Only administrators can create backups via the API.
+Use the current password of the admin profile you authenticate with. If that profile has a custom password set in Poznote, the `.env` fallback password is no longer valid for API calls until the custom password is reset.
 
 **Script location:** `backup-poznote.sh` in the `tools` folder of the Poznote repository
 
@@ -516,7 +673,7 @@ bash backup-poznote.sh '<poznote_url>' '<admin_username>' '<admin_password>' '<t
 **Parameters explained:**
 - `'https://poznote.example.com'` - Your Poznote instance URL
 - `'admin'` - Admin username for authentication (must be an admin)
-- `'admin_password'` - Admin password (POZNOTE_PASSWORD from .env)
+- `'admin_password'` - Current admin password for the API profile (custom password or `.env` fallback)
 - `'Nina'` - Target username to backup
 - `'/root/backups'` - Parent directory where backups will be stored (creates `backups-poznote-<username>` folder)
 - `'30'` - Number of backups to keep (older ones are automatically deleted)
@@ -534,58 +691,10 @@ bash backup-poznote.sh '<poznote_url>' '<admin_username>' '<admin_password>' '<t
 
 </details>
 
-## Git Synchronization
-
-Poznote supports automatic and manual synchronization with **GitHub** or **Forgejo**. Each user configures their own repository independently. There is no shared global repository.
-
-<details>
-<summary><strong>How to configure Git Sync</strong></summary>
-<br>
-
-**Step 1 — Enable the feature (admin, in `.env`)**
-
-```bash
-POZNOTE_GIT_SYNC_ENABLED=true
-```
-
-That's the only `.env` setting required. Token, repository, and provider are configured per-user.
-
----
-
-**Step 2 — Each user configures their own repo (Settings > Git Sync)**
-
-| Field | Description |
-|---|---|
-| Provider | `GitHub` or `Forgejo` |
-| API Base URL | GitHub: auto-filled (read-only). Forgejo: your instance URL, e.g. `https://forgejo.example.com/api/v1` |
-| Access Token | GitHub PAT (`ghp_...`) or Forgejo token (Settings > Applications) |
-| Repository | `owner/repo` format |
-| Branch | Default: `main` |
-| Author Name / Email | Used for commit metadata |
-
-> 🔒 Access tokens are encrypted at rest using AES-256-GCM. Set `POZNOTE_APP_SECRET` in your `.env` (generated with `openssl rand -hex 32`) to ensure the encryption key survives container rebuilds. If not set, a key is auto-generated and stored in `data/.app_secret`.
-
----
-
-**Automatic sync**
-
-When enabled by the user, Poznote will automatically:
-- **Pull** on login
-- **Push** on every note create, update, or delete
-
-Manual push/pull is also available from the **Sync Status** page (cloud icon in the header).
-
-</details>
 
 ## Restore / Import
 
-**Via Web Interface (Settings > Restore/Import):**
-- All users can restore backups to their own profile
-- Supports complete backup restoration and individual file imports
-
-**Via API (Administrators only):**
-- Restore via REST API v1 endpoint `POST /api/v1/backups/{filename}/restore`
-- Requires admin credentials
+Poznote provides flexible restoration options through the web interface (**Settings > Restore/Import**) or programmatically via the REST API for administrators. Users can restore their own profile data from a full ZIP backup or import individual files, while administrators can manage restorations across the entire system.
 
 <a id="complete-restore"></a>
 <details>
@@ -607,7 +716,7 @@ Upload the complete backup ZIP to restore everything:
 Import one or more HTML, Markdown or text notes directly:
 
   - Support `.html`, `.md`, `.markdown` or `.txt` files types
-  - Up to 50 files can be selected at once, configurable via `POZNOTE_IMPORT_MAX_INDIVIDUAL_FILES` in your `.env`
+  - Up to 50 files can be selected at once, configurable in Settings > Advanced Settings > Import Limits
 
 </details>
 
@@ -619,7 +728,7 @@ Import one or more HTML, Markdown or text notes directly:
 Import a ZIP archive containing multiple notes:
 
   - Support `.html`, `.md`, `.markdown` or `.txt` files types
-  - ZIP archives can contain up to 300 files, configurable via `POZNOTE_IMPORT_MAX_ZIP_FILES` in your `.env`
+  - ZIP archives can contain up to 300 files, configurable in Settings > Advanced Settings > Import Limits
   - When importing a ZIP archive, Poznote automatically detects and recreates the folder structure
 
 </details>
@@ -631,20 +740,12 @@ Import a ZIP archive containing multiple notes:
 
 Import a ZIP archive containing multiple notes from Obsidian:
 
-  - ZIP archives can contain up to 300 files, configurable via `POZNOTE_IMPORT_MAX_ZIP_FILES` in your `.env`
+  - ZIP archives can contain up to 300 files, configurable in Settings > Advanced Settings > Import Limits
   - Poznote automatically detects and recreates the folder structure
   - Poznote automatically detects existing tags to create
   - Poznote automatically imports images if they are at the zip file root
 
 </details>
-
-## Admin Tools
-
-Admins can access additional tools via Settings > Admin Tools:
-
-- **Disaster Recovery** - Reconstruct the entire user index from data folders in case of system corruption or database loss.
-- **Base64 Image Converter** - Convert inline Base64 encoded images to attachments.
-- **Orphan attachments scanner** - Scan and clean up orphaned attachment files.
 
 <a id="import-standard-notes"></a>
 <details>
@@ -727,6 +828,27 @@ updated: 2024-01-20 15:45:00
 
 </details>
 
+## Public Sharing
+
+Poznote allows you to share individual notes or entire folders with anyone. 
+
+  - **Standard Notes:** Share in **Read-only** mode with anyone via a public link.
+  - **Task Lists:** Enhanced control with three permission levels: **Read-only**, **Just checkable** (allows checking items without full edit rights), or **Fully modifiable**.
+  - **Visibility:** Limit sharing to the public (anyone with the link) or restrict access to registered users of your Poznote instance.
+  - **Password Protection:** Secure your shared content by adding a mandatory password to the public URL for an extra layer of security.
+
+## Admin Tools
+
+Administrators have access to a suite of maintenance and management tools under **Settings > Admin Tools**:
+
+- **User Management:** Create, manage, and delete user profiles, or reset passwords.
+- **Git Sync Control:** Globally enable or disable Git synchronization features.
+- **Import Limits:** Configure the maximum number of files allowed for individual or ZIP imports.
+- **Custom CSS path:** Define a global custom stylesheet to override the application's appearance.
+- **Rebuild Master Database:** Reconstruct the user index from data folders in case of system corruption or database loss.
+- **Base64 Image Converter:** Convert inline Base64 encoded images within notes to proper file attachments.
+- **Orphan attachments scanner:** Scan and clean up storage by identifying attachment files that are no longer referenced in any notes.
+
 ## PWA
 
 Poznote can be installed as a **Progressive Web App (PWA)** in compatible browsers (Chrome, Edge, Safari on iOS, etc.).
@@ -790,7 +912,7 @@ For installation, configuration, and setup instructions, see the [MCP Server doc
 
 ## Chrome Extension
 
-The **Poznote URL Saver** is a browser extension that allows you to quickly save the URL of the current page to your Poznote instance with a single click.
+The **Poznote URL Saver** is a browser extension that allows you to quickly save the URL or even a full-page screenshot of the current page to your Poznote instance with a single click.
 
 <p align="center">
   <img src="images/chrome-extension.png" alt="Poznote Chrome Extension" width="50%">
@@ -798,783 +920,31 @@ The **Poznote URL Saver** is a browser extension that allows you to quickly save
 
 Install the extension directly from the Chrome Web Store → [Install extension](https://chromewebstore.google.com/detail/bmjclfamahegmgillaghhmnbkjebipbh?utm_source=item-share-cb)
 
+> ℹ️ **Note:** Version 1.3 of the extension is currently awaiting validation by the Google Chrome Web Store.
+
 ## API Documentation
 
-Poznote provides a RESTful API v1 for programmatic access to notes, folders, workspaces, tags, and attachments.
+Poznote provides a comprehensive RESTful API v1 for programmatic access to notes, folders, workspaces, tags, attachments, backups, settings, and more.
 
-**Base URL:** `/api/v1`
+For the complete API reference with all endpoints, parameters, and curl examples, see the **[REST API Documentation](docs/API-REST.md)**.
+
+### Quick Start
+
+```bash
+# List all notes for user ID 1
+curl -u 'username:password' -H "X-User-ID: 1" \
+  http://YOUR_SERVER/api/v1/notes
+
+# Create a note
+curl -X POST -u 'username:password' -H "X-User-ID: 1" \
+  -H "Content-Type: application/json" \
+  -d '{"heading": "My Note", "content": "Hello!", "type": "markdown"}' \
+  http://YOUR_SERVER/api/v1/notes
+```
 
 ### Interactive Documentation (Swagger)
 
-Access the **Swagger UI** directly from Poznote from `Settings > API Documentation` and browse all endpoints, view request/response schemas, and test API calls interactively.
-
-### Multi-User Mode
-
-Poznote supports multiple user profiles, each with their own isolated data. For API calls that access **user data** (notes, folders, workspaces, tags, attachments, backups, settings, etc.), you must include the `X-User-ID` header:
-
-```bash
-# Get notes for user ID 1
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes
-```
-
-**Endpoints that do NOT require the `X-User-ID` header:**
-- **Admin endpoints**: `/api/v1/admin/*`
-- **Public endpoints**: `/api/v1/users/profiles`
-- **System endpoints**: `/api/v1/system/*` (version, updates, i18n)
-
-Use `GET /api/v1/users/profiles` to list available user profiles and their IDs.
-
-### Command Line Examples (Curl)
-
-Ready-to-use curl commands for every API operation.
-
-<details>
-<summary><strong>📝 Notes Management</strong></summary>
-<br>
-
-**List Notes**
-
-List all notes for a user:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes
-```
-
-Filter notes by workspace, folder, tag, or search:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api/v1/notes?workspace=Personal&folder=Projects&tag=important"
-```
-
-**List Notes with Attachments**
-
-List all notes that have file attachments:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/with-attachments
-```
-
-**Get Note Content**
-
-Get a specific note by ID:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123
-```
-
-Resolve a note by title (reference) inside a workspace:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api/v1/notes/resolve?reference=My+Note&workspace=Personal"
-```
-
-**Create Note**
-
-Create a new note with title, content, tags, folder and workspace:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "heading": "My New Note",
-    "content": "This is the content of my note",
-    "tags": "work,important",
-    "folder_id": 12,
-    "workspace": "Personal",
-    "type": "markdown"
-  }' \
-  http://YOUR_SERVER/api/v1/notes
-```
-
-**Update Note**
-
-Update an existing note by ID:
-```bash
-curl -X PATCH -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "heading": "Updated Title",
-    "content": "Updated content here",
-    "tags": "work,updated"
-  }' \
-  http://YOUR_SERVER/api/v1/notes/123
-```
-
-**Delete Note**
-
-Move a note to trash:
-```bash
-curl -X DELETE -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123
-```
-
-Permanently delete (bypass trash):
-```bash
-curl -X DELETE -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api/v1/notes/123?permanent=true"
-```
-
-**Restore Note**
-
-Restore a note from trash:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123/restore
-```
-
-**Duplicate Note**
-
-Create a copy of an existing note:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123/duplicate
-```
-
-**Update Tags**
-
-Replace all tags on a note:
-```bash
-curl -X PUT -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"tags": "work,urgent,meeting"}' \
-  http://YOUR_SERVER/api/v1/notes/123/tags
-```
-
-**Toggle Favorite**
-
-Toggle favorite status:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123/favorite
-```
-
-**Move Note to Folder**
-
-Move a note to a different folder:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"folder_id": 45}' \
-  http://YOUR_SERVER/api/v1/notes/123/folder
-```
-
-Remove from folder (move to root):
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123/remove-folder
-```
-
-</details>
-
-<details>
-<summary><strong>🔗 Note Sharing</strong></summary>
-<br>
-
-**Get Share Status**
-
-Check if a note is shared:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123/share
-```
-
-**Create Share Link**
-
-Create a share link for a note:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "theme": "light",
-    "indexable": false,
-    "password": "optional-password"
-  }' \
-  http://YOUR_SERVER/api/v1/notes/123/share
-```
-
-**Update Share Settings**
-
-Update share settings:
-```bash
-curl -X PATCH -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"theme": "dark", "indexable": true}' \
-  http://YOUR_SERVER/api/v1/notes/123/share
-```
-
-**Revoke Share Link**
-
-Remove sharing access:
-```bash
-curl -X DELETE -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123/share
-```
-
-**List All Shared Notes**
-
-Get list of all shared notes:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/shared
-```
-
-Filter by workspace:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api/v1/shared?workspace=Personal"
-```
-
-</details>
-
-<details>
-<summary><strong>📂 Folder Sharing</strong></summary>
-<br>
-
-**Get Folder Share Status**
-
-Check if a folder is shared:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/folders/5/share
-```
-
-**Create Folder Share Link**
-
-Share a folder (all notes in the folder will also be shared):
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "theme": "light",
-    "indexable": 0,
-    "password": "optional-password"
-  }' \
-  http://YOUR_SERVER/api/v1/folders/5/share
-```
-
-With custom token:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "custom_token": "my-shared-folder"
-  }' \
-  http://YOUR_SERVER/api/v1/folders/5/share
-```
-
-**Update Folder Share Settings**
-
-Update share settings:
-```bash
-curl -X PATCH -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"indexable": 1, "password": "new-password"}' \
-  http://YOUR_SERVER/api/v1/folders/5/share
-```
-
-**Revoke Folder Share Link**
-
-Revoke folder sharing (all notes in the folder will also be unshared):
-```bash
-curl -X DELETE -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/folders/5/share
-```
-
-</details>
-
-<details>
-<summary><strong>🗑️ Trash Management</strong></summary>
-<br>
-
-**List Trash**
-
-Get all notes in trash:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/trash
-```
-
-Filter by workspace:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api/v1/trash?workspace=Personal"
-```
-
-**Empty Trash**
-
-Permanently delete all notes in trash:
-```bash
-curl -X DELETE -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/trash
-```
-
-**Permanently Delete Note**
-
-Delete a specific note from trash:
-```bash
-curl -X DELETE -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/trash/123
-```
-
-</details>
-
-<details>
-<summary><strong>📁 Folders Management</strong></summary>
-<br>
-
-**List Folders**
-
-List all folders in a workspace:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api/v1/folders?workspace=Personal"
-```
-
-Get folder tree (nested structure):
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api/v1/folders?workspace=Personal&tree=true"
-```
-
-**Get Folder Counts**
-
-Get note counts for all folders:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api/v1/folders/counts?workspace=Personal"
-```
-
-**Create Folder**
-
-Create a new folder:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "My Projects",
-    "workspace": "Personal"
-  }' \
-  http://YOUR_SERVER/api/v1/folders
-```
-
-Create a subfolder:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "name": "2024",
-    "workspace": "Personal",
-    "parent_id": 12
-  }' \
-  http://YOUR_SERVER/api/v1/folders
-```
-
-**Rename Folder**
-
-Rename an existing folder:
-```bash
-curl -X PATCH -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"name": "New Folder Name"}' \
-  http://YOUR_SERVER/api/v1/folders/12
-```
-
-**Move Folder**
-
-Move folder to a different parent:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"parent_id": 56}' \
-  http://YOUR_SERVER/api/v1/folders/34/move
-```
-
-Move to root (no parent):
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"parent_id": null}' \
-  http://YOUR_SERVER/api/v1/folders/34/move
-```
-
-Move to another workspace (recursive):
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"target_workspace": "New Workspace", "parent_id": null}' \
-  http://YOUR_SERVER/api/v1/folders/34/move
-```
-
-**Update Folder Icon**
-
-Set a custom icon:
-```bash
-curl -X PUT -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"icon": "fa-folder-open"}' \
-  http://YOUR_SERVER/api/v1/folders/12/icon
-```
-
-**Empty Folder**
-
-Move all notes in folder to trash:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/folders/12/empty
-```
-
-**Delete Folder**
-
-Delete a folder:
-```bash
-curl -X DELETE -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/folders/12
-```
-
-</details>
-
-<details>
-<summary><strong>🗂️ Workspaces Management</strong></summary>
-<br>
-
-**List Workspaces**
-
-Get all workspaces:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/workspaces
-```
-
-**Create Workspace**
-
-Create a new workspace:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"name": "MyProject"}' \
-  http://YOUR_SERVER/api/v1/workspaces
-```
-
-**Rename Workspace**
-
-Rename an existing workspace:
-```bash
-curl -X PATCH -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"new_name": "NewName"}' \
-  http://YOUR_SERVER/api/v1/workspaces/OldName
-```
-
-**Delete Workspace**
-
-Delete a workspace:
-```bash
-curl -X DELETE -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/workspaces/OldWorkspace
-```
-
-</details>
-
-<details>
-<summary><strong>🏷️ Tags Management</strong></summary>
-<br>
-
-**List Tags**
-
-Get all unique tags:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/tags
-```
-
-Filter by workspace:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api/v1/tags?workspace=Personal"
-```
-
-</details>
-
-<details>
-<summary><strong>📎 Attachments Management</strong></summary>
-<br>
-
-**List Attachments**
-
-Get all attachments for a note:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123/attachments
-```
-
-**Upload Attachment**
-
-Upload a file to a note:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  -F "file=@/path/to/file.pdf" \
-  http://YOUR_SERVER/api/v1/notes/123/attachments
-```
-
-**Download Attachment**
-
-Download a specific attachment:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123/attachments/456 \
-  -o downloaded-file.pdf
-```
-
-**Delete Attachment**
-
-Delete an attachment:
-```bash
-curl -X DELETE -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/notes/123/attachments/456
-```
-
-</details>
-
-<details>
-<summary><strong>💾 Backup Management</strong></summary>
-<br>
-
-**List Backups**
-
-Get a list of all backup files:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/backups
-```
-
-**Create Backup**
-
-Create a complete backup:
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/backups
-```
-
-**Download Backup**
-
-Download a specific backup file:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/backups/poznote_backup_2025-01-05_12-00-00.zip \
-  -o backup.zip
-```
-
-**Restore Backup**
-
-Restore a backup file (replaces all current user data):
-```bash
-curl -X POST -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/backups/poznote_backup_2025-01-05_12-00-00.zip/restore
-```
-
-**Delete Backup**
-
-Delete a backup file:
-```bash
-curl -X DELETE -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/backups/poznote_backup_2025-01-05_12-00-00.zip
-```
-
-</details>
-
-<details>
-<summary><strong>📤 Export Management</strong></summary>
-<br>
-
-> Note: Export endpoints remain as legacy URLs for file downloads.
-
-**Export Note**
-
-Export a note as HTML or Markdown:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api_export_note.php?id=123&format=html" \
-  -o exported-note.html
-```
-
-**Export Folder**
-
-Export a folder as ZIP:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api_export_folder.php?folder_id=123" \
-  -o folder-export.zip
-```
-
-**Export Structured Notes**
-
-Export all notes preserving folder hierarchy:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  "http://YOUR_SERVER/api_export_structured.php?workspace=Personal" \
-  -o structured-export.zip
-```
-
-**Export All Notes**
-
-Export all note files as ZIP:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api_export_entries.php \
-  -o all-notes.zip
-```
-
-**Export All Attachments**
-
-Export all attachments as ZIP:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api_export_attachments.php \
-  -o all-attachments.zip
-```
-
-</details>
-
-<details>
-<summary><strong>⚙️ Settings</strong></summary>
-<br>
-
-**Get Setting**
-
-Get a setting value:
-```bash
-curl -u 'username:password' -H "X-User-ID: 1" \
-  http://YOUR_SERVER/api/v1/settings/language
-```
-
-**Update Setting**
-
-Set a setting value:
-```bash
-curl -X PUT -u 'username:password' -H "X-User-ID: 1" \
-  -H "Content-Type: application/json" \
-  -d '{"value": "fr"}' \
-  http://YOUR_SERVER/api/v1/settings/language
-```
-
-</details>
-
-<details>
-<summary><strong>ℹ️ System Information</strong></summary>
-<br>
-
-> Note: System endpoints do not require the `X-User-ID` header.
-
-**Get Version**
-
-Get current version and system info:
-```bash
-curl -u 'username:password' \
-  http://YOUR_SERVER/api/v1/system/version
-```
-
-**Check for Updates**
-
-Check if a newer version is available:
-```bash
-curl -u 'username:password' \
-  http://YOUR_SERVER/api/v1/system/updates
-```
-
-**Get Translations**
-
-Get translation strings:
-```bash
-curl -u 'username:password' \
-  http://YOUR_SERVER/api/v1/system/i18n
-```
-
-</details>
-
-<details>
-<summary><strong>👥 User Management (Admin Only)</strong></summary>
-<br>
-
-User management endpoints are for administrators only and do **not** require the `X-User-ID` header.
-
-**List All User Profiles (Public)**
-
-Get list of active user profiles (no authentication required):
-```bash
-curl http://YOUR_SERVER/api/v1/users/profiles
-```
-
-**List All Users with Statistics**
-
-Get detailed list of all users with storage info (admin only):
-```bash
-curl -u 'username:password' \
-  http://YOUR_SERVER/api/v1/admin/users
-```
-
-**Get Specific User**
-
-Get detailed information about a user:
-```bash
-curl -u 'username:password' \
-  http://YOUR_SERVER/api/v1/admin/users/1
-```
-
-**Create New User**
-
-Create a new user profile:
-```bash
-curl -X POST -u 'username:password' \
-  -H "Content-Type: application/json" \
-  -d '{"username": "newuser"}' \
-  http://YOUR_SERVER/api/v1/admin/users
-```
-
-**Update User**
-
-Update user properties (username, active status, admin status):
-```bash
-curl -X PATCH -u 'username:password' \
-  -H "Content-Type: application/json" \
-  -d '{
-    "username": "renameduser",
-    "active": true,
-    "is_admin": false
-  }' \
-  http://YOUR_SERVER/api/v1/admin/users/2
-```
-
-**Delete User**
-
-Delete a user profile (without data):
-```bash
-curl -X DELETE -u 'username:password' \
-  http://YOUR_SERVER/api/v1/admin/users/2
-```
-
-Delete a user profile and all their data:
-```bash
-curl -X DELETE -u 'username:password' \
-  "http://YOUR_SERVER/api/v1/admin/users/2?delete_data=true"
-```
-
-**Get System Statistics**
-
-Get aggregated statistics for all users:
-```bash
-curl -u 'username:password' \
-  http://YOUR_SERVER/api/v1/admin/stats
-```
-
-**Repair Master Database**
-
-Scan and rebuild the master database registry:
-```bash
-curl -X POST -u 'username:password' \
-  http://YOUR_SERVER/api/v1/admin/repair
-```
-
-</details>
+Access the **Swagger UI** directly from Poznote at `Settings > API Documentation` to browse all endpoints, view request/response schemas, and test API calls interactively.
 
 ## Tech Stack
 

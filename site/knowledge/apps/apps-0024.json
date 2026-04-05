@@ -1,8 +1,122 @@
 {
   "chunk": 24,
   "count": 50,
-  "generated_at": "2026-03-29T05:16:53Z",
+  "generated_at": "2026-04-05T05:18:12Z",
   "items": [
+    {
+      "reference": "vaultwarden",
+      "name": "Vaultwarden",
+      "website": "github.com/dani-garcia/vaultwarden",
+      "description": "Unofficial Bitwarden-compatible server",
+      "repo_url": "github.com/dani-garcia/vaultwarden",
+      "repo_key": "github.com/dani-garcia/vaultwarden",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "31",
+      "license": null,
+      "tags": [
+        "2FA",
+        "Password Manager"
+      ],
+      "readme_path": "knowledge/readmes/github.com__dani-garcia__vaultwarden.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "3f385abb6bc52d341a7a29666d8b10bf96b22d4ed0b38e2c8d12931d1098b6e2"
+      }
+    },
+    {
+      "reference": "vector",
+      "name": "Vector",
+      "website": "vector.dev",
+      "description": "High-performance observability data pipeline",
+      "repo_url": "github.com/vectordotdev/vector",
+      "repo_key": "github.com/vectordotdev/vector",
+      "stars": null,
+      "forks": 16,
+      "updated_at": "31",
+      "license": null,
+      "tags": [
+        "Observability"
+      ],
+      "readme_path": "knowledge/readmes/github.com__vectordotdev__vector.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "f9b72c1bbd19ceae517e35420a618059fda53ab871afb3b7cbeaa8f262ac80ec"
+      }
+    },
+    {
+      "reference": "velld",
+      "name": "Velld",
+      "website": "velld.vercel.app",
+      "description": "Database backup management and automation",
+      "repo_url": "github.com/dendianugerah/velld",
+      "repo_key": "github.com/dendianugerah/velld",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Backups",
+        "Database"
+      ],
+      "readme_path": "knowledge/readmes/github.com__dendianugerah__velld.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "0bee5eafa195b80ee7dc9c11faf3e6cf0ff13c3cf846b2d8051444c4ba5cbb10"
+      }
+    },
+    {
+      "reference": "vernemq",
+      "name": "VerneMQ",
+      "website": "vernemq.com",
+      "description": "Distributed MQTT message broker",
+      "repo_url": "github.com/vernemq/vernemq",
+      "repo_key": "github.com/vernemq/vernemq",
+      "stars": null,
+      "forks": 1,
+      "updated_at": "12",
+      "license": null,
+      "tags": [
+        "Home Automation",
+        "Internet of Things",
+        "Smart Home"
+      ],
+      "readme_path": "knowledge/readmes/github.com__vernemq__vernemq.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "53e25906f1a175b69ac61025605387294fd562109c89d51c6f90f431399d4ccc"
+      }
+    },
+    {
+      "reference": "versitygw",
+      "name": "VersityGW",
+      "website": "www.versity.com/products/versitygw/",
+      "description": "File system and S3 object interface bridge",
+      "repo_url": "github.com/versity/versitygw",
+      "repo_key": "github.com/versity/versitygw",
+      "stars": null,
+      "forks": 1,
+      "updated_at": "14",
+      "license": null,
+      "tags": [
+        "Object Storage"
+      ],
+      "readme_path": "knowledge/readmes/github.com__versity__versitygw.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "7b9e394337c71243bed94fb2229d9caea223e3f7e5a2296f7466ef9009c79721"
+      }
+    },
     {
       "reference": "vert",
       "name": "VERT",
@@ -12,7 +126,7 @@
       "repo_key": "github.com/VERT-sh/VERT",
       "stars": null,
       "forks": 0,
-      "updated_at": "34",
+      "updated_at": "33",
       "license": null,
       "tags": [
         "File Conversion"
@@ -21,8 +135,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "7df1ec69b75c0e995d537a31b41c89da460e7571ca511c2282b32181670d0f0f"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "77f802b69b5b7961963437941901051f248dbf1862b914bc4125860ac4f5ddc7"
       }
     },
     {
@@ -34,18 +148,18 @@
       "repo_key": "github.com/VictoriaMetrics/VictoriaMetrics",
       "stars": null,
       "forks": 1,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Database",
         "Monitoring"
       ],
       "readme_path": "knowledge/readmes/github.com__VictoriaMetrics__VictoriaMetrics.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "ed8e60073fc222670574b1cd45f7ed46d4988686ff1e605677d2d251561848b8"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "bb46d04ff33b1fa65add37e4b02234759b65216c3b3502d0175460b4046537d5"
       }
     },
     {
@@ -57,7 +171,7 @@
       "repo_key": "github.com/go-vikunja/vikunja",
       "stars": null,
       "forks": 0,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Kanban",
@@ -65,11 +179,11 @@
         "Tasks and To-Do Lists"
       ],
       "readme_path": "knowledge/readmes/github.com__go-vikunja__vikunja.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "f71dd80c84aa08c71acb6bc82b4685125699b980fb1f379fc676d86500ab7983"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "f925f8ac11b2b04ee3cf4b027bee673fc92bc196255be7da0f1362ea580658b0"
       }
     },
     {
@@ -81,7 +195,7 @@
       "repo_key": "github.com/vinceanalytics/vince",
       "stars": null,
       "forks": 0,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Web Analytics"
@@ -90,8 +204,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "6f4403018153d35b4cbdbf6013be05dc2afdf05183615246ff9fd4f89b970aa8"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "f1ee3b504a35ee12abf80582485f6b4caf6d3fbded13a5c4f27914e08f7337a3"
       }
     },
     {
@@ -103,7 +217,7 @@
       "repo_key": "github.com/ardoviniandrea/ViniPlay",
       "stars": null,
       "forks": 8,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Media Streaming"
@@ -112,8 +226,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "e813b442d3d73deaccb8d276e8847d310cb4566b316d192240cf86e985e6cb38"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "62c124d30abe688dcf68591cb7e77004b5b0d1b340b21e7e0bc5d21a47b3f9a0"
       }
     },
     {
@@ -136,8 +250,8 @@
       "readme_status": null,
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "ea039d41dc9122049e73107ac419453bf84768ef5f1a5f4e2a9389aec3eed5ec"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "fac41dc9ba0a4b68ec3b9450a0f7bb7732a2316ea49cd3e86c1d35de78c5c00f"
       }
     },
     {
@@ -149,7 +263,7 @@
       "repo_key": "github.com/roflcoopter/viseron",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "NVR",
@@ -159,8 +273,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "a1bbcaf26414df7586cbff9b1225dea31c1396c90db4bdc2380cec81bb35dcdd"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "4ba7972996bec101d48d4f9232a43d02177c1a12175927e2a3562bafeb7a0451"
       }
     },
     {
@@ -182,8 +296,8 @@
       "readme_status": null,
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "70a47cbc483afaba573d71ebcf3c1120d14ecc28e56685b524e740ebf8369555"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "6287e3692cdbbae45cc90983bf06a05d84a824b254dae6ad4a471298c06bce8b"
       }
     },
     {
@@ -195,7 +309,7 @@
       "repo_key": "github.com/vitodeploy/vito",
       "stars": null,
       "forks": 0,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Deployment",
@@ -205,8 +319,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "87cdc06a57caee50d4fba6664547c95d3ee9e65e6ca73b7ff2170fdc6818858b"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "24f52c959135450b0c4f57a32c3d1ab05a74a2f1189d4c4aefbaaf1f168d173a"
       }
     },
     {
@@ -218,7 +332,7 @@
       "repo_key": "github.com/ChocoMeow/Vocard",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Music",
@@ -228,8 +342,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "b63778d2ba776d0112b0f50dfca9e679910cdeeefea84a886aa0fb8cc6778d4b"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "32b619f11a13cf8b3cefe1ac2a21172f3dd24d1de95f90fedab0871811d328a0"
       }
     },
     {
@@ -241,7 +355,7 @@
       "repo_key": "github.com/voidauth/voidauth",
       "stars": null,
       "forks": 0,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Authentication"
@@ -250,8 +364,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "f9e41da855e866a725a2f337240147d829ee20597bc3bc6291e68daeb90f25e4"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "3aae10a6f041fcedcc0915f4ce1987abb1b3dbdc7983dbc5beba2b443a812f08"
       }
     },
     {
@@ -263,7 +377,7 @@
       "repo_key": "github.com/l4rm4nd/VoucherVault",
       "stars": null,
       "forks": 11,
-      "updated_at": "19",
+      "updated_at": "18",
       "license": null,
       "tags": [
         "Tracking"
@@ -272,8 +386,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "aab9b79c481f2b17ae200816646a8e7135818fce7024970a3dd7e63c630b7af9"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "e51129fceb0c2bc260e4c13b87c81f4c8ba5aba77935f7ba8a6b9d5172b15c88"
       }
     },
     {
@@ -285,7 +399,7 @@
       "repo_key": "github.com/VueTorrent/VueTorrent",
       "stars": null,
       "forks": 11,
-      "updated_at": "40",
+      "updated_at": "39",
       "license": null,
       "tags": [
         "Front End"
@@ -294,8 +408,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "b36cfb148896e8f901067ed2187d1f735f5da0ad64b2717b761c064232c6f24e"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "969e5ce3d96f9c14c70951a68a4d82ce00e2d49c0d96ec6467274c4ae2c69ef5"
       }
     },
     {
@@ -307,17 +421,17 @@
       "repo_key": "github.com/mentholmike/wagmios",
       "stars": null,
       "forks": 1,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Deployment"
       ],
       "readme_path": "knowledge/readmes/github.com__mentholmike__wagmios.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "5ba46566440cb1b82c94477d2a5c95fb37feadbe8794aae954668e6d53860756"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "992b9fe77011f24845e8d8308556a3d16a7bea6d9a7911658c0efe53a58a093e"
       }
     },
     {
@@ -329,18 +443,18 @@
       "repo_key": "github.com/muety/wakapi",
       "stars": null,
       "forks": 15,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Development",
         "Time Tracking"
       ],
       "readme_path": "knowledge/readmes/github.com__muety__wakapi.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "ce95f4eaef701aa1a180706a2a01b359cc55a9fe346873cdc80afe5e68054846"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "5e71b5f539312df2bfefafdd3e7f7358d32d3a38000b7ffe98a877c3d8ab5591"
       }
     },
     {
@@ -352,18 +466,18 @@
       "repo_key": "github.com/wallabag/wallabag",
       "stars": null,
       "forks": 15,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Bookmarks",
         "Read Later"
       ],
       "readme_path": "knowledge/readmes/github.com__wallabag__wallabag.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "97cf1e47f99b555eebd6ed64e1351efb2af23176486844f71b578d492989d0df"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "56e5b5401eff6d2a1cfebbadd7a0b196a34772718dc877799748e9df31331d35"
       }
     },
     {
@@ -375,18 +489,18 @@
       "repo_key": "github.com/ellite/Wallos",
       "stars": null,
       "forks": 11,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Subscriptions",
         "Tracking"
       ],
       "readme_path": "knowledge/readmes/github.com__ellite__Wallos.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "a3dcf624e9d859e42f1b3dd924486145064d403099caf971c86bf66d334c9135"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "a5c3d4482193447644369423eb5f7fd72869e63c8b3389863dcca2802ab1f787"
       }
     },
     {
@@ -398,7 +512,7 @@
       "repo_key": "github.com/open-wanderer/wanderer",
       "stars": null,
       "forks": 0,
-      "updated_at": "19",
+      "updated_at": "18",
       "license": null,
       "tags": [
         "Tracking"
@@ -407,8 +521,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "dcad6d1b2c93f95f71e7729ad5c1008cf2ca32fd34c62a0647364b4a91f989d4"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "ab062f7d1563c95373b99935de50ed07f533bfdcb5cc530362f93ab0c5301d4f"
       }
     },
     {
@@ -420,7 +534,7 @@
       "repo_key": "github.com/meceware/wapy.dev",
       "stars": null,
       "forks": 8,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Subscriptions"
@@ -429,8 +543,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "8d82b7f38c41ed042eeb6ac2c0ce5ec595e87df3970d5ffa3f4b4ec53b39299c"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "97f028dc8a748c01fcc1f505750193d81472b20df01346796a190ca4e2d2df41"
       }
     },
     {
@@ -442,18 +556,18 @@
       "repo_key": "github.com/warp-tech/warpgate",
       "stars": null,
       "forks": 1,
-      "updated_at": "32",
+      "updated_at": "31",
       "license": null,
       "tags": [
         "Remote Access",
         "Server Management"
       ],
       "readme_path": "knowledge/readmes/github.com__warp-tech__warpgate.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "d2a066d99bfe0013bbafa3fab73f7dd74242226d0ef6f7cf1bb48d53ff87d02f"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "27dc8b5fdbb55e402042b2e4fbb7241c21cd1a8d389386cba4e8f634e8396d70"
       }
     },
     {
@@ -465,17 +579,17 @@
       "repo_key": "github.com/sassanix/Warracker",
       "stars": null,
       "forks": 0,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Tracking"
       ],
       "readme_path": "knowledge/readmes/github.com__sassanix__Warracker.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "184a3797945e325d9d851ef2ede88e93f107a8448cc18151b6f77bc206444e83"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "f3ed02f64a24aba9944840c8ee67b4c1238b020cf09ae68bbcf91637585968f8"
       }
     },
     {
@@ -487,17 +601,17 @@
       "repo_key": "github.com/matze/wastebin",
       "stars": null,
       "forks": 15,
-      "updated_at": "32",
+      "updated_at": "31",
       "license": null,
       "tags": [
         "Pastebin"
       ],
       "readme_path": "knowledge/readmes/github.com__matze__wastebin.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "7e2d306b73d24463feae68c13b09563844ddfd003344fbe4c46724f082ef9d09"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "b2449c91deb6b75b0c768f264f8c7246a1d96dcdd2196cd48ebebaacef395262"
       }
     },
     {
@@ -509,7 +623,7 @@
       "repo_key": "github.com/sbondCo/Watcharr",
       "stars": null,
       "forks": 11,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "*arr",
@@ -519,8 +633,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "b6c0d16e30930c505421d95a74a4dac61165425a34c2efe93944eb50e2a5b6a3"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "093ec11880b6c843d22e00b6582c1056a821398885e884e320cc57ff6ae4698b"
       }
     },
     {
@@ -532,17 +646,17 @@
       "repo_key": "github.com/arabcoders/watchstate",
       "stars": null,
       "forks": 15,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Media Streaming"
       ],
       "readme_path": "knowledge/readmes/github.com__arabcoders__watchstate.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "9cc4eabad881ff9ec1cb91b9558068e69ee21c01dc3c33bb92eeed3d549c17f7"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "360af6a348f2d780de11c08072e6d9c8b6015fafd44e0c7438c66ad5114ec273"
       }
     },
     {
@@ -554,7 +668,7 @@
       "repo_key": "github.com/aceberg/WatchYourLAN",
       "stars": null,
       "forks": 15,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Monitoring"
@@ -563,8 +677,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "667a85017a3167884dc9841025b422984748406be50f8eaff73c79b62881b9f2"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "a67057a1f4fa7db762a465e9544706e82bf1e9f467ce4d737c8f306675d168da"
       }
     },
     {
@@ -576,7 +690,7 @@
       "repo_key": "github.com/Lissy93/web-check",
       "stars": null,
       "forks": 15,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Security"
@@ -585,8 +699,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "1367e5f73aba3539da1ba92ead4b66494f773906e2fe324ed0ac0a8d1e001ce0"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "7569322c75de4fbe650a954daa8b4ca0023c680d2e3ea85a60178d3604bb8fb5"
       }
     },
     {
@@ -608,8 +722,8 @@
       "readme_status": null,
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "4c5653c4b7aa8aa684ec17966fcc32dd714991e78d795644396377604c00510c"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "ae3b87f0cfc953be4bc6c449ccad5c714330db709eba8755cef1500fad514bd7"
       }
     },
     {
@@ -621,7 +735,7 @@
       "repo_key": "github.com/adnanh/webhook",
       "stars": null,
       "forks": 15,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Webhooks"
@@ -630,8 +744,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "7882ec77bb2d870e496e29635112daf5c0eb352a4ec8bfd37dad7d872a66bad7"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "fd1b2953719fdee26606fbf97015b5c22a9666062e8bcef49689019a5225a021"
       }
     },
     {
@@ -643,18 +757,18 @@
       "repo_key": "github.com/WeblateOrg/weblate",
       "stars": null,
       "forks": 11,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Development",
         "Language"
       ],
       "readme_path": "knowledge/readmes/github.com__WeblateOrg__weblate.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "91c4e3e830c564393f0a6216fd903002d82a13ae7246974c2cb3ac92c02f056b"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "322b88463bda1d452f90c8dd4d36df55ddb13587efdbac180849d8732de3e217"
       }
     },
     {
@@ -666,7 +780,7 @@
       "repo_key": "github.com/webmin/webmin",
       "stars": null,
       "forks": 4,
-      "updated_at": "19",
+      "updated_at": "18",
       "license": null,
       "tags": [
         "Server Management"
@@ -675,8 +789,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "a9412eb98fc8c8abdc510686bf8ee0e213ea501c3670e83e533af8c759f51df0"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "ee4c42a25351ec2ac797e9b3a6deecff381852115184afd01de23cfa3ce580e5"
       }
     },
     {
@@ -688,7 +802,7 @@
       "repo_key": "github.com/linuxserver/docker-webtop",
       "stars": null,
       "forks": 11,
-      "updated_at": "33",
+      "updated_at": "32",
       "license": null,
       "tags": [
         "Web Desktop"
@@ -697,8 +811,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "47093daff03cd30c514a4264ab4343debad0b452c87da7e3c84f932029d2d418"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "01fb2847c5b87079759cf78fa2ff586eac9427c10d49a8691ccfeb7a0ab14944"
       }
     },
     {
@@ -710,7 +824,7 @@
       "repo_key": "github.com/fisharebest/webtrees",
       "stars": null,
       "forks": 11,
-      "updated_at": "27",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Genealogy / Family Trees"
@@ -719,8 +833,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "e94cd36a90976a0344cd54bd5344d012294ff1fc6615283019a2632046c53ccf"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "415dea2ff7b6b4a8ac02d9efd44bf0bf00bde3f53bd12879c94442a3c2091731"
       }
     },
     {
@@ -732,7 +846,7 @@
       "repo_key": "github.com/Cirx08/WeddingShare",
       "stars": null,
       "forks": 11,
-      "updated_at": "2",
+      "updated_at": "1",
       "license": null,
       "tags": [
         "File Sharing",
@@ -742,8 +856,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "c676799a47f92b059d15da33afbcbb1e096235196abb4ab42a2ae58ccecd759a"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "ac09a67e65c67937115ffec50d492049a4358a584853640c525a3f81dc94ef89"
       }
     },
     {
@@ -755,7 +869,7 @@
       "repo_key": "github.com/wekan/wekan",
       "stars": null,
       "forks": 15,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Kanban",
@@ -765,8 +879,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "97b785cbcaa51498d950b48256eb5b1a8cafddbb52d4b5bd1b35ca62f6c09329"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "464bb972e31e359770db0a2258e2e9ac6cfe8026555dd24a3682263dda158fd5"
       }
     },
     {
@@ -778,7 +892,7 @@
       "repo_key": "github.com/butlerx/wetty",
       "stars": null,
       "forks": 15,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Remote Access",
@@ -788,8 +902,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "4a3fff80fa9109143d5f1d97ed87c0869bef4f731a50e1558ae7feb9ce1f26e3"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "9fb2a30434346ef0cd754bbfddf87bcae92c651aed3c5b2de1e80e4854f486c1"
       }
     },
     {
@@ -801,7 +915,7 @@
       "repo_key": "github.com/wg-easy/wg-easy",
       "stars": null,
       "forks": 0,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Remote Access",
@@ -811,8 +925,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "9b4798106b7c0ab582c785c1f40ea1a3b042c486196ef1708ec2679d92d13e58"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "9158231a4b29595b75aedc1b475df36e5866a477786f79b5317229d78caed35e"
       }
     },
     {
@@ -824,18 +938,18 @@
       "repo_key": "github.com/WGDashboard/WGDashboard",
       "stars": null,
       "forks": 1,
-      "updated_at": "40",
+      "updated_at": "39",
       "license": null,
       "tags": [
         "Remote Access",
         "VPN"
       ],
       "readme_path": "knowledge/readmes/github.com__WGDashboard__WGDashboard.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "b9d96a77b374a5ca249b78126473d68d2ebc5949037fc901034353cb5b8e6463"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "ef3750c9970de456c9ab57fbe4844b0c444eae5654b5c52beb7bb5ee8e87a5ff"
       }
     },
     {
@@ -847,7 +961,7 @@
       "repo_key": "github.com/wger-project/wger",
       "stars": null,
       "forks": 0,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Fitness",
@@ -858,8 +972,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "e0a33ec05ccc6d56692f12f68bba7771a0e757d1fdddefba5bcb7f7cc7b4e518"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "9bb5958efb2a5e5a209c1520b1898146287de8be5c6ebeac419dd4df65ea1152"
       }
     },
     {
@@ -871,7 +985,7 @@
       "repo_key": "github.com/clidey/whodb",
       "stars": null,
       "forks": 1,
-      "updated_at": "15",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Database"
@@ -880,8 +994,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "048e46d483805cfe18006e1d2664456ec672aaf133a0f459b9443943f89544ae"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "31ca42f3380e7c1afd4a9e4d49f07bcb4a76767111564bafa6ea5cc83602a5e1"
       }
     },
     {
@@ -893,17 +1007,17 @@
       "repo_key": "github.com/benbusby/whoogle-search",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Search Engines"
       ],
       "readme_path": "knowledge/readmes/github.com__benbusby__whoogle-search.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "4092263baba18be005bf937b8417c8dafc5de563448de8787bd457b8a5025a2e"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "58cc9b882303c393933a516c4c061d45d6cffbd5b3fe09e28309f0c531b2fcce"
       }
     },
     {
@@ -915,7 +1029,7 @@
       "repo_key": "github.com/Beast12/who-rang",
       "stars": null,
       "forks": 8,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Artificial Intelligence",
@@ -925,8 +1039,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "15964d99e86421d4c01e08a03a3bfdbe1ad0d56b1a51a5a1644ab563da9eb5ab"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "912beabdf104ae8ca8589b411dbf3323afb449fb155f5c823aded81b96235f6b"
       }
     },
     {
@@ -938,7 +1052,7 @@
       "repo_key": "github.com/leomoon-studios/wiki-go",
       "stars": null,
       "forks": 11,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Wiki"
@@ -947,8 +1061,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "b8c0ca38087c14cbabc7a28489fb5ee03924c97dbf4531e9b98d2a3e21babdbc"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "287c5dc5755700aaf7436b81882a6565a7c1c5cb198151d6e79add08e7289c93"
       }
     },
     {
@@ -960,17 +1074,17 @@
       "repo_key": "github.com/requarks/wiki",
       "stars": null,
       "forks": 0,
-      "updated_at": "40",
+      "updated_at": "39",
       "license": null,
       "tags": [
         "Wiki"
       ],
       "readme_path": "knowledge/readmes/github.com__requarks__wiki.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "790b51ac7cc9fecda14fda8329a3ff21fae716b9f465f36b692f6b123804f7c9"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "bd43ed5f77001b7928e11ab62c0ad81e314103bac1e8c10520240480d064c84e"
       }
     },
     {
@@ -982,7 +1096,7 @@
       "repo_key": "github.com/Zavy86/WikiDocs",
       "stars": null,
       "forks": 15,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Wiki"
@@ -991,8 +1105,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "0118a0a4ecdd141bdb19d620971000a57b851c944b0044c6241d0954f31d80e7"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "c26ebc4e6dc69b83d73756922dff7b96f91ff39a201bac1d226d6307f3820942"
       }
     },
     {
@@ -1004,7 +1118,7 @@
       "repo_key": "github.com/HeyWillow/willow",
       "stars": null,
       "forks": 1,
-      "updated_at": "1",
+      "updated_at": "0",
       "license": null,
       "tags": [
         "Smart Home",
@@ -1014,121 +1128,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "950e29983ebf412c693eb5c0ea250fe5f265e43ce4a2fc1ec7108f46eb2bc9ba"
-      }
-    },
-    {
-      "reference": "windmill",
-      "name": "Windmill",
-      "website": "windmill.dev",
-      "description": "Developer infrastructure for internal tools",
-      "repo_url": "github.com/windmill-labs/windmill",
-      "repo_key": "github.com/windmill-labs/windmill",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "19",
-      "license": null,
-      "tags": [
-        "Development Infrastructure",
-        "Workflow Automation"
-      ],
-      "readme_path": "knowledge/readmes/github.com__windmill-labs__windmill.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "7e3b9a6e4c4bf1f0260fd78af1c465ab51f13d9030bc4f838225371a2994a850"
-      }
-    },
-    {
-      "reference": "wingfit",
-      "name": "Wingfit",
-      "website": "wingfit.fr",
-      "description": "Minimal fitness app for workout tracking",
-      "repo_url": "github.com/itskovacs/wingfit",
-      "repo_key": "github.com/itskovacs/wingfit",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "39",
-      "license": null,
-      "tags": [
-        "Fitness",
-        "Tracking"
-      ],
-      "readme_path": "knowledge/readmes/github.com__itskovacs__wingfit.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "48d81d319e692d6b81ae909e472e6c9926336ed6462e682491b552cace2f6336"
-      }
-    },
-    {
-      "reference": "wiredoor",
-      "name": "Wiredoor",
-      "website": "www.wiredoor.net",
-      "description": "Expose applications running in private or local networks",
-      "repo_url": "github.com/wiredoor/wiredoor",
-      "repo_key": "github.com/wiredoor/wiredoor",
-      "stars": null,
-      "forks": 1,
-      "updated_at": "39",
-      "license": null,
-      "tags": [
-        "Remote Access",
-        "VPN"
-      ],
-      "readme_path": "knowledge/readmes/github.com__wiredoor__wiredoor.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "bf2751cae8d45964b18f47252cb61d40cdef5824c8fbf8b065c212a516df26d8"
-      }
-    },
-    {
-      "reference": "cmintey-wishlist",
-      "name": "Wishlist",
-      "website": "github.com/cmintey/wishlist",
-      "description": "Self-hosted wishlists for family and friends",
-      "repo_url": "github.com/cmintey/wishlist",
-      "repo_key": "github.com/cmintey/wishlist",
-      "stars": null,
-      "forks": 15,
-      "updated_at": "39",
-      "license": null,
-      "tags": [
-        "Wish Lists"
-      ],
-      "readme_path": "knowledge/readmes/github.com__cmintey__wishlist.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "877d341824fbe2485d82ded96d366c1be395bd80ddbdc5b4c705192d41456a03"
-      }
-    },
-    {
-      "reference": "withoutbg",
-      "name": "withoutbg",
-      "website": "withoutbg.com/",
-      "description": "AI-powered image background removal",
-      "repo_url": "github.com/withoutbg/withoutbg",
-      "repo_key": "github.com/withoutbg/withoutbg",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "30",
-      "license": null,
-      "tags": [
-        "Photos"
-      ],
-      "readme_path": "knowledge/readmes/github.com__withoutbg__withoutbg.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "1a7856a2549805340db5e02a8bd116440a6171e34d2b71004568821577230649"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "daf4360976356b7b852badf056d1be164fdf3c27eb443bb587cf05d6274ed2d4"
       }
     }
   ]

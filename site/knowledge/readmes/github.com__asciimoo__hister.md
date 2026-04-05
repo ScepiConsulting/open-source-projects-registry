@@ -14,7 +14,7 @@ Hister is a general purpose web search engine providing automatic full-text inde
 
 - **Privacy-focused**: Keep your browsing history indexed locally - don't use remote search engines if it isn't necessary
 - **Full-text indexing**: Search through the actual content of web pages you've visited
-- **Advanced search capabilities**: Utilize a powerful [query language](https://hister.org/documentation/query-language/) for precise results
+- **Advanced search capabilities**: Utilize a powerful [query language](https://hister.org/docs/query-language/) for precise results
 - **Efficient retrieval**: Use keyword aliases to quickly find content
 - **Flexible content management**: Configure blacklist and priority rules for better control
 
@@ -22,7 +22,7 @@ Hister is a general purpose web search engine providing automatic full-text inde
 
 ## Development
 
-**Requirements**: Go 1.16 and NPM
+**Requirements**: latest Go and NPM
 
 - Clone the repository
 - Build with `./manage.sh build` (or `go generate ./...; go build`)

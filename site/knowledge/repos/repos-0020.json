@@ -1,8 +1,38 @@
 {
   "chunk": 20,
   "count": 50,
-  "generated_at": "2026-03-29T05:16:53Z",
+  "generated_at": "2026-04-05T05:18:12Z",
   "items": [
+    {
+      "repo_key": "github.com/owncloud/core",
+      "repo_url": "github.com/owncloud/core",
+      "host": "github.com",
+      "owner": "owncloud",
+      "repo": "core",
+      "app_references": [
+        "owncloud"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__owncloud__core.md",
+      "readme_download_url": null,
+      "readme_sha256": "08e8426d4847c1641c2d1d5846ef255a5207e10539e2c6786c556ec213728e30",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/owncloud/ocis",
+      "repo_url": "github.com/owncloud/ocis",
+      "host": "github.com",
+      "owner": "owncloud",
+      "repo": "ocis",
+      "app_references": [
+        "owncloud-infinite-scale"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__owncloud__ocis.md",
+      "readme_download_url": null,
+      "readme_sha256": "40c32c6a2ef4675da7e67fffc87f29b5ec3925ca9dc2a75cf81abb7662c99566",
+      "error": null
+    },
     {
       "repo_key": "github.com/owntracks/frontend",
       "repo_url": "github.com/owntracks/frontend",
@@ -192,10 +222,10 @@
       "app_references": [
         "penpot"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__penpot__penpot.md",
-      "readme_download_url": null,
-      "readme_sha256": "993040e8adfd48eb117bbad7f84a662e4944eac34338d34a57aedc5f1c7c6116",
+      "readme_download_url": "https://raw.githubusercontent.com/penpot/penpot/develop/README.md",
+      "readme_sha256": "e1c395466906343aec2bacb54ba86b869d46a11ce61863f1e3dcaea9a97edbc3",
       "error": null
     },
     {
@@ -267,9 +297,9 @@
       "app_references": [
         "password-pusher"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
-      "readme_download_url": "https://raw.githubusercontent.com/pglombardo/PasswordPusher/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "07bf693ca357bf6c0668d54361c22c2443d58a9c664081dc6cc7273face3de7a",
       "error": null
     },
@@ -297,10 +327,10 @@
       "app_references": [
         "photoview"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__photoview__photoview.md",
-      "readme_download_url": null,
-      "readme_sha256": "8100a2bd8de1bd293a841e2cae587052f0ea0ddc783e719caa3eb02fe863c80f",
+      "readme_download_url": "https://raw.githubusercontent.com/photoview/photoview/master/README.md",
+      "readme_sha256": "e121a36df86b8615015a4a482d12c627e2e5a04561d9a244f4ac7841b0f19f67",
       "error": null
     },
     {
@@ -327,10 +357,10 @@
       "app_references": [
         "pi-hole"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pi-hole__pi-hole.md",
-      "readme_download_url": null,
-      "readme_sha256": "f4f35c346dd4ff29e6c077ad1aa49cdded63d1108b35eb36d29259313f1d41ac",
+      "readme_download_url": "https://raw.githubusercontent.com/pi-hole/pi-hole/master/README.md",
+      "readme_sha256": "0967ddc0ed23f5e46ba066410485edc8a33ffacc5dd7afd907594a3bc5c651b8",
       "error": null
     },
     {
@@ -342,10 +372,10 @@
       "app_references": [
         "mybibliotecha"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pickles4evaaaa__mybibliotheca.md",
-      "readme_download_url": null,
-      "readme_sha256": "548b5fd44363ddabecde9df3d050769d80ca2db0ce1336a8bbda315b5b0c86df",
+      "readme_download_url": "https://raw.githubusercontent.com/pickles4evaaaa/mybibliotheca/main/README.md",
+      "readme_sha256": "2564bba4b3fbce4d9af5288e38826af79e3f4901caa7ef680b942d7d4adcd596",
       "error": null
     },
     {
@@ -387,10 +417,10 @@
       "app_references": [
         "invoice-builder"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__piratuks__invoice-builder.md",
-      "readme_download_url": null,
-      "readme_sha256": "f46cd62674a0d26c7739815d8f355e86f2631f7c1c32584df521149683be2bed",
+      "readme_download_url": "https://raw.githubusercontent.com/piratuks/invoice-builder/main/README.md",
+      "readme_sha256": "40d09e7236e29f4c9612ea3561b2bdb3b564900c1a3aae969e4bb746fbfbcdc1",
       "error": null
     },
     {
@@ -420,7 +450,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pixlcore__xyops.md",
       "readme_download_url": "https://raw.githubusercontent.com/pixlcore/xyops/main/README.md",
-      "readme_sha256": "8a984f6d4bd8fe230eb966a006a128a7ea7fae2fccdc9305f35966281dc6eb6d",
+      "readme_sha256": "b9c3ade2701e1423600827f2c3c1aecdd5f31b5e73119293f60c966e5363399a",
       "error": null
     },
     {
@@ -597,9 +627,9 @@
       "app_references": [
         "projectsend"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__projectsend__projectsend.md",
-      "readme_download_url": "https://raw.githubusercontent.com/projectsend/projectsend/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7926e49ebd0d46f70168d3e57688939888eacda15f711ac199d309c29f903321",
       "error": null
     },
@@ -612,10 +642,10 @@
       "app_references": [
         "prometheus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__prometheus__prometheus.md",
-      "readme_download_url": null,
-      "readme_sha256": "8e3a3b626523d6fd5425b6af0cc62c68f72778a353c2b1d2b8589d855d15a868",
+      "readme_download_url": "https://raw.githubusercontent.com/prometheus/prometheus/main/README.md",
+      "readme_sha256": "294f98a15a62e1b1ab6ee6b73059145831524f35daf7c8c0da3b107e3e92ce38",
       "error": null
     },
     {
@@ -721,36 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__pyload__pyload.md",
       "readme_download_url": null,
       "readme_sha256": "0b73464b935c0065c4bae8d872516b5f16cc44026087682fc22402b87c581011",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pymedusa/Medusa",
-      "repo_url": "github.com/pymedusa/Medusa",
-      "host": "github.com",
-      "owner": "pymedusa",
-      "repo": "Medusa",
-      "app_references": [
-        "py-medusa"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pymedusa__Medusa.md",
-      "readme_download_url": null,
-      "readme_sha256": "b8a70b0ccbcd1b995bfd62d0ec6adb42a91869f64d3d8277b254ffc650519137",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/qarmin/czkawka",
-      "repo_url": "github.com/qarmin/czkawka",
-      "host": "github.com",
-      "owner": "qarmin",
-      "repo": "czkawka",
-      "app_references": [
-        "czkawka"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__qarmin__czkawka.md",
-      "readme_download_url": "https://raw.githubusercontent.com/qarmin/czkawka/master/README.md",
-      "readme_sha256": "e334cd3eeb4dc8bdfe15dde7815a5cb974ab0cdf5d8ac6b2bd8b26385bd701e0",
       "error": null
     }
   ]

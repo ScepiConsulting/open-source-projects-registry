@@ -20,6 +20,8 @@
   &nbsp;
   <a href="https://www.npmjs.com/package/manifest"><img src="https://img.shields.io/npm/dw/manifest?color=cb3837" alt="npm downloads" /></a>
   &nbsp;
+  <a href="https://hub.docker.com/r/manifestdotbuild/manifest"><img src="https://img.shields.io/docker/pulls/manifestdotbuild/manifest?color=2496ED&label=docker%20pulls" alt="Docker pulls" /></a>
+  &nbsp;
   <a href="https://github.com/mnfst/manifest/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/mnfst/manifest/ci.yml?branch=main&label=CI" alt="CI status" /></a>
   &nbsp;
   <a href="https://app.codecov.io/gh/mnfst/manifest"><img src="https://img.shields.io/codecov/c/github/mnfst/manifest?label=coverage" alt="Codecov" /></a>
@@ -56,9 +58,13 @@ openclaw gateway restart
 
 Dashboard opens at **http://127.0.0.1:2099**. The plugin starts an embedded server, runs the dashboard locally, and registers itself as a provider automatically. No account or API key needed.
 
-### Cloud vs local
+### Docker
 
-Pick cloud version for quick setup and multi-device access. Pick local version for keeping all your data on your machine or for using local models like Ollama.
+Our <a href="https://hub.docker.com/r/manifestdotbuild/manifest">Manifest Docker Image</a> allows you to self-host Manifest router in your own infrastructure.
+
+### Which version choose?
+
+Pick cloud version for quick setup and multi-device access. Pick local version for keeping all your data on your machine or for using local models like Ollama. Pick Docker for self-hosting on your own infrastructure.
 
 Not sure which one to choose? Start with cloud.
 

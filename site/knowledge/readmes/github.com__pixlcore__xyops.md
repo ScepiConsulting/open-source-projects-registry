@@ -33,16 +33,6 @@ Most automation platforms focus on workflow orchestration -- they run tasks, but
 
 See our **[Self-Hosting Guide](https://docs.xyops.io/hosting)** for installation details.
 
-Just want to test out xyOps locally really quick?  One-liner Docker command:
-
-```sh
-docker run --detach --init --restart unless-stopped -v xy-data:/opt/xyops/data -v /local/path/to/xyops-conf:/opt/xyops/conf -v /var/run/docker.sock:/var/run/docker.sock -e TZ="America/Los_Angeles" -e XYOPS_xysat_local="true" -p 5522:5522 -p 5523:5523 --name "xyops01" --hostname "xyops01" ghcr.io/pixlcore/xyops:latest
-```
-
-Please change `/local/path/to/xyops-conf` to a suitable location for the xyOps configuration to live on the host machine.
-
-Then open http://localhost:5522 in your browser, and use username `admin` and password `admin`.
-
 ## Pricing
 
 ### Free Tier

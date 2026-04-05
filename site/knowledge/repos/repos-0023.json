@@ -1,8 +1,38 @@
 {
   "chunk": 23,
   "count": 50,
-  "generated_at": "2026-03-29T05:16:54Z",
+  "generated_at": "2026-04-05T05:18:12Z",
   "items": [
+    {
+      "repo_key": "github.com/stephondoestech/unraid-config-guardian",
+      "repo_url": "github.com/stephondoestech/unraid-config-guardian",
+      "host": "github.com",
+      "owner": "stephondoestech",
+      "repo": "unraid-config-guardian",
+      "app_references": [
+        "unraid-guardian"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__stephondoestech__unraid-config-guardian.md",
+      "readme_download_url": null,
+      "readme_sha256": "534b33496d178dbeae46dd1c754bade4a9de5d6f342957b86a34c33d8f322123",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/steveiliop56/tinyauth",
+      "repo_url": "github.com/steveiliop56/tinyauth",
+      "host": "github.com",
+      "owner": "steveiliop56",
+      "repo": "tinyauth",
+      "app_references": [
+        "tinyauth"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__steveiliop56__tinyauth.md",
+      "readme_download_url": "https://raw.githubusercontent.com/steveiliop56/tinyauth/main/README.md",
+      "readme_sha256": "878f92bf85ae79d7d7b907fd558886670f4a02b79dd786046294172a6d4ae6c1",
+      "error": null
+    },
     {
       "repo_key": "github.com/stoatchat/stoatchat",
       "repo_url": "github.com/stoatchat/stoatchat",
@@ -15,7 +45,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__stoatchat__stoatchat.md",
       "readme_download_url": "https://raw.githubusercontent.com/stoatchat/stoatchat/main/README.md",
-      "readme_sha256": "f1b042bfe271d8e3c9c56cc77142a19bc708d6fa8c2778ef820ae131e87616dd",
+      "readme_sha256": "7b19453b98684863e2814ccf8e290dc274d1b36bb0d6b202e1a951583271a650",
       "error": null
     },
     {
@@ -42,9 +72,9 @@
       "app_references": [
         "storybook"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__storybookjs__storybook.md",
-      "readme_download_url": "https://raw.githubusercontent.com/storybookjs/storybook/next/README.md",
+      "readme_download_url": null,
       "readme_sha256": "0e03c7906e9d2c72cbc8ecbec24059c691e7a2c7ac9d20fe402d375ee22dad12",
       "error": null
     },
@@ -72,10 +102,10 @@
       "app_references": [
         "stump"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__stumpapp__stump.md",
-      "readme_download_url": null,
-      "readme_sha256": "bb5971c40138d77ec31d63ccbaf62a0caa7400e8a595bfe57c3e5a488b32f5ee",
+      "readme_download_url": "https://raw.githubusercontent.com/stumpapp/stump/main/README.md",
+      "readme_sha256": "9b4b5879fe362b45301854b77bf67e19750150ac4d2c890eaf1b910c04919037",
       "error": null
     },
     {
@@ -102,10 +132,10 @@
       "app_references": [
         "clean-slate"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__successible__cleanslate.md",
-      "readme_download_url": null,
-      "readme_sha256": "ce594c7a7dc0c15170ce296d1d90002d4219bec0962336573736ce8bc08c994a",
+      "readme_download_url": "https://raw.githubusercontent.com/successible/cleanslate/main/README.md",
+      "readme_sha256": "9d6e0f56732e513872b370cf23cec44f2ce080f9d4b9c6b618b8931c1c9f1f4a",
       "error": null
     },
     {
@@ -330,7 +360,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__tech-kev__SharedMoments.md",
       "readme_download_url": "https://raw.githubusercontent.com/tech-kev/SharedMoments/main/README.md",
-      "readme_sha256": "392ca20eb9b8dce050f1e8c753873288f68b92158cb16a48084bab6d0fa08016",
+      "readme_sha256": "a187fcaec339493684d3e39ede4c19d6b86fd7efbba507a7f6b85fb426ab40bf",
       "error": null
     },
     {
@@ -372,10 +402,25 @@
       "app_references": [
         "mqtt-web-interface"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__terdia__mqttui.md",
-      "readme_download_url": "https://raw.githubusercontent.com/terdia/mqttui/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8710ca08c78696db6fc54802af80334e3b8c8b03b75707cc1501e808ce2fda08",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/terry90/soulbeet",
+      "repo_url": "github.com/terry90/soulbeet",
+      "host": "github.com",
+      "owner": "terry90",
+      "repo": "soulbeet",
+      "app_references": [
+        "soulbeet"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__terry90__soulbeet.md",
+      "readme_download_url": "https://raw.githubusercontent.com/terry90/soulbeet/master/README.md",
+      "readme_sha256": "c8de31e34e84ce47501ab264a687d924d6a20d1674e64de61bc38397ab7b9712",
       "error": null
     },
     {
@@ -612,10 +657,10 @@
       "app_references": [
         "cap-captcha"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__tiagozip__cap.md",
-      "readme_download_url": null,
-      "readme_sha256": "7b83029ecb0bf8eed59841e733541cced298c4f5203fc523e3647e06747bb1a2",
+      "readme_download_url": "https://raw.githubusercontent.com/tiagozip/cap/main/README.md",
+      "readme_sha256": "2ace365e609f344f71908fe429a2406b8f1382107659111c04cf681c56be037a",
       "error": null
     },
     {
@@ -631,6 +676,21 @@
       "readme_path": "knowledge/readmes/github.com__tiehfood__thrifty.md",
       "readme_download_url": null,
       "readme_sha256": "83c0548d3cb218df2553a09052bb236fa4ed87177ccbb715136b6f6271d88f23",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/timothepoznanski/poznote",
+      "repo_url": "github.com/timothepoznanski/poznote",
+      "host": "github.com",
+      "owner": "timothepoznanski",
+      "repo": "poznote",
+      "app_references": [
+        "poznote"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__timothepoznanski__poznote.md",
+      "readme_download_url": "https://raw.githubusercontent.com/timothepoznanski/poznote/main/README.md",
+      "readme_sha256": "6f8b52f539d52e2ceb8ef404bd1ee038373677b9cde5adfbc010c3b4f56391fc",
       "error": null
     },
     {
@@ -691,66 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__toeverything__AFFiNE.md",
       "readme_download_url": null,
       "readme_sha256": "aec16e8a48e400da64f524cc65ba5f2110e083e0d3072ed8afe6da5f32f72370",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/towfiqi/serpbear",
-      "repo_url": "github.com/towfiqi/serpbear",
-      "host": "github.com",
-      "owner": "towfiqi",
-      "repo": "serpbear",
-      "app_references": [
-        "serpbear"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__towfiqi__serpbear.md",
-      "readme_download_url": null,
-      "readme_sha256": "9ff3faef64ab6dab1dea6778fd413c5960dc1a51133ae9529b49fb3937918555",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/traccar/traccar",
-      "repo_url": "github.com/traccar/traccar",
-      "host": "github.com",
-      "owner": "traccar",
-      "repo": "traccar",
-      "app_references": [
-        "traccar"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__traccar__traccar.md",
-      "readme_download_url": null,
-      "readme_sha256": "42e91edbf985c2fa8631458292a9a23d4d11eaf7118eb55edcc56e8ebc773ff1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/traefik/traefik",
-      "repo_url": "github.com/traefik/traefik",
-      "host": "github.com",
-      "owner": "traefik",
-      "repo": "traefik",
-      "app_references": [
-        "traefik"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__traefik__traefik.md",
-      "readme_download_url": null,
-      "readme_sha256": "987749c67507f616845c9903f8016ae453a3c36b59064f56e399d93f8b6f7852",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/traggo/server",
-      "repo_url": "github.com/traggo/server",
-      "host": "github.com",
-      "owner": "traggo",
-      "repo": "server",
-      "app_references": [
-        "traggo"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__traggo__server.md",
-      "readme_download_url": null,
-      "readme_sha256": "aae6a07d24f3487057b28baf8245d26056fa36748bb4227b85cc8a6789e4155d",
       "error": null
     }
   ]

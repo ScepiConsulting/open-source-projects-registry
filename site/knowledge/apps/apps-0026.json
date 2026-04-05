@@ -1,8 +1,121 @@
 {
   "chunk": 26,
-  "count": 1,
-  "generated_at": "2026-03-29T05:16:53Z",
+  "count": 6,
+  "generated_at": "2026-04-05T05:18:12Z",
   "items": [
+    {
+      "reference": "zitadel",
+      "name": "Zitadel",
+      "website": "zitadel.com",
+      "description": "Identity infrastructure simplified",
+      "repo_url": "github.com/zitadel/zitadel",
+      "repo_key": "github.com/zitadel/zitadel",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "14",
+      "license": null,
+      "tags": [
+        "Authentication",
+        "Identity Management"
+      ],
+      "readme_path": "knowledge/readmes/github.com__zitadel__zitadel.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "f20e57772dc4d375e7b2eadb070319484c0a15d547b483dd1aba0336d55acebc"
+      }
+    },
+    {
+      "reference": "zoneminder",
+      "name": "ZoneMinder",
+      "website": "http://www.zoneminder.com/",
+      "description": "Open source closed-circuit television app",
+      "repo_url": "github.com/ZoneMinder/zoneminder",
+      "repo_key": "github.com/ZoneMinder/zoneminder",
+      "stars": null,
+      "forks": 10,
+      "updated_at": "26",
+      "license": null,
+      "tags": [
+        "NVR",
+        "Video Surveillance"
+      ],
+      "readme_path": "knowledge/readmes/github.com__ZoneMinder__zoneminder.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "9fd6a1878937b5d7803201e82daa06fdda0750ef881eea805640a4ad93e438f0"
+      }
+    },
+    {
+      "reference": "zoraxy",
+      "name": "Zoraxy",
+      "website": "zoraxy.aroz.org",
+      "description": "General purpose reverse proxy and forwarding tool for networking noobs",
+      "repo_url": "github.com/tobychui/zoraxy",
+      "repo_key": "github.com/tobychui/zoraxy",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "18",
+      "license": null,
+      "tags": [
+        "Reverse Proxy"
+      ],
+      "readme_path": "knowledge/readmes/github.com__tobychui__zoraxy.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "b671a14c3cd7775f988a6b1013f922fff27b4ecf18adf69217b59fdc4daba1c2"
+      }
+    },
+    {
+      "reference": "zot-registry",
+      "name": "Zot",
+      "website": "zotregistry.dev",
+      "description": "OCI-native container image registry, simplified",
+      "repo_url": "github.com/project-zot/zot",
+      "repo_key": "github.com/project-zot/zot",
+      "stars": null,
+      "forks": 1,
+      "updated_at": "14",
+      "license": null,
+      "tags": [
+        "Container Registry"
+      ],
+      "readme_path": "knowledge/readmes/github.com__project-zot__zot.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "47ac84ab93d98b18e1530e3d68548998c16836dd0664ab545a07d9bc578b57e7"
+      }
+    },
+    {
+      "reference": "ztnet",
+      "name": "ZTNET",
+      "website": "ztnet.network",
+      "description": "Self-hosted ZeroTier network controller",
+      "repo_url": "github.com/sinamics/ztnet",
+      "repo_key": "github.com/sinamics/ztnet",
+      "stars": null,
+      "forks": 11,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Remote Access",
+        "VPN"
+      ],
+      "readme_path": "knowledge/readmes/github.com__sinamics__ztnet.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "7ab806790a61fc69dc8e545fe1cd89e01ee389cd645555188b2eda4cd464e7c4"
+      }
+    },
     {
       "reference": "zulip",
       "name": "Zulip",
@@ -12,7 +125,7 @@
       "repo_key": "github.com/zulip/zulip",
       "stars": null,
       "forks": 1,
-      "updated_at": "30",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Messaging"
@@ -21,8 +134,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-03-29T05:09:50Z",
-        "row_hash": "96ecdce4166a68542681b68144fd3925f7297b8071d3ced9b3288c99bb9b0f1a"
+        "fetched_at": "2026-04-05T05:10:58Z",
+        "row_hash": "851395028cca29ec2705260a7cc26bdad3bc26cf50693207a95ce7c240bb2270"
       }
     }
   ]

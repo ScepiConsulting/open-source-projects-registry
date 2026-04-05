@@ -23,19 +23,22 @@ If you don't need the web GUI of NPMplus, you may also have a look at caddy: htt
 - ML-KEM support (also hardened TLS settings enforced)
 - https for the NPMplus interface
 - Goaccess included
-- punycode domain support
-- zstd and brotli
+- easier punycode domain support
+- zstd and brotli compression
 - basic security headers always send
 - allow empty ports to support loadbalancing
 - proxy protocol support
-- improved nginx build and nginx templates
+- improved nginx build (with aws-lc and custom patches) and nginx templates with keep-alive to upstreams
+- tls certificate compression (zlib-ng+brotli) and optional encrypted client hello (ech) support
+- mTLS ca cert upload support
 - file and php server support (and fancyindex)
 - option to edit custom certs
 - gravatars are cached locally and fetched by the backend (better privacy by not exposing you directly to gravatar)
 - qrcodes for totp are generated locally in your browser instead of using a third-party api (better privacy/security by not exposing you and the secret to the third-party api)
 - re-added some things that where removed with upstreams new frontend
-- use secure cookied instead of local storage to save the token
+- use secure cookied instead of local storage to save the token combined with a Content-Security-Policy
 - Password reset (only sqlite) using `docker exec -it npmplus password-reset.js USER_EMAIL PASSWORD`
+- Swagger UI under /api/docs
 - many other things, see this README.md and the compose.yaml
 
 ## Compatibility (to Upstream)
@@ -160,16 +163,19 @@ status_codes:
   DENY: 403
 ```
 3. Set the AUTH_REQUEST_ANUBIS_UPSTREAM env in the NPMplus compose.yaml and select anubis in the Auth Request selection, no custom/advanced config/locations needed
-4. You can override the "allow", "checking" and "blocked" images used by default by setting the `AUTH_REQUEST_ANUBIS_USE_CUSTOM_IMAGES` env to true and putting put your custom images as happy.webp, pensive.webp and reject.webp to /opt/npmplus/anubis
+4. You can override the "allow", "checking" and "blocked" images used by default by putting put your custom images as happy.webp, pensive.webp and reject.webp to /opt/npmplus/anubis and restarting NPMplus
 
 ### Tinyauth
 1. Set the AUTH_REQUEST_TINYAUTH_UPSTREAM and AUTH_REQUEST_TINYAUTH_DOMAIN env in the NPMplus compose.yaml and select tinyauth in the Auth Request selection, no custom/advanced config/locations needed
 
+### OAuth2Proxy
+1. Set the AUTH_REQUEST_OAUTH2PROXY_UPSTREAM env in the NPMplus compose.yaml and select oauth2proxy in the Auth Request selection, no custom/advanced config/locations needed
+
 ### Authelia (modern)
 1. Set the AUTH_REQUEST_AUTHELIA_UPSTREAM env in the NPMplus compose.yaml and select authelia (modern) in the Auth Request selection, no custom/advanced config/locations needed
 
-### Authentik
-1. Set the AUTH_REQUEST_AUTHENTIK_UPSTREAM env (and optional AUTH_REQUEST_AUTHENTIK_DOMAIN env if you use the "domain level" variant in authentik, do not set this env if you use the "single application" variant) in the NPMplus compose.yaml and select authentik/authentik-send-basic-auth in the Auth Request selection, no custom/advanced config/locations needed
+### Authentik (single application)
+1. Set the AUTH_REQUEST_AUTHENTIK_UPSTREAM env in the NPMplus compose.yaml and select authentik/authentik-send-basic-auth in the Auth Request selection, no custom/advanced config/locations needed
 
 ## Load Balancing
 1. Open and edit this file: `/opt/npmplus/custom_nginx/http_top.conf` (or `/opt/npmplus/custom_nginx/stream_top.conf` for streams), if you changed /opt/npmplus to a different path make sure to change the path to fit
@@ -344,17 +350,8 @@ If you need to run scripts before NPMplus launches put them under: `/opt/npmplus
 - if enabled to the crowdsec (container) lapi
 - if you see more/others please report them
 
-## Features and Project Goal of Upstream
-I created this project to fill a personal need to provide users with an easy way to accomplish reverse proxying hosts with TLS termination and it had to be so easy that a monkey could do it. This goal hasn't changed. While advanced configuration options are available, they remain entirely optional. The core idea is to keep things as simple as possible, lowering the barrier to entry for everyone.
-- Beautiful and Secure Admin Interface based on [Tabler](https://tabler.github.io)
-- Easily create forwarding domains, redirections, streams and 404 hosts without knowing anything about Nginx
-- Free trusted TLS certificates using Certbot (Let's Encrypt/other CAs) or provide your own custom TLS certificates
-- Access Lists and basic HTTP Authentication for your hosts
-- Advanced Nginx configuration available for super users
-- User management, permissions and audit log
-
 ## Contributing
-All are welcome to create pull requests for this project, but this does not mean that they will be merged, so better ask if your PR would be merged before creating one (via Discussion), typos and translation are excluded from this.
+All are welcome to create pull requests for this project, but this does not mean that they will be merged, so better ask if your PR would be merged before creating one (via Discussion), typos and translations are excluded from this.
 
 # Please report issues first to this fork before reporting them to the upstream repository
 ## Getting Help

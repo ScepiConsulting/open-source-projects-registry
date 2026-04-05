@@ -162,7 +162,7 @@ Open **http://localhost:9211** and log in with your `.env` credentials.
 - **Anthropic** -- Dynamic quota cards (5-Hour, 7-Day, 7-Day Sonnet, Monthly, etc.) with utilization percentages, OAuth token auto-refresh, and automatic rate limit bypass via token rotation
 - **Codex** -- Dynamic quota cards (LLMs, Review Requests) with OAuth auth-state refresh, historical cycle analytics, and **multi-account support (Beta)** for tracking multiple ChatGPT accounts
 - **GitHub Copilot (Beta)** -- Premium Interactions, Chat, and Completions quota cards with monthly reset tracking
-- **MiniMax Coding Plan** -- Shared quota pool tracking for M2, M2.1, and M2.5 models with 5-hour rolling window reset cycles
+- **MiniMax Coding Plan** -- Shared quota pool tracking for M2, M2.1, and M2.5 models with 5-hour rolling window reset cycles and **multi-account support** for tracking multiple MiniMax subscriptions via the dashboard UI
 - **Gemini CLI (Beta)** -- Per-model quota tracking for Gemini 2.5/3.x Pro, Flash, and Flash Lite models with 24-hour reset cycles
 - **Antigravity** -- Multi-model quota cards (Claude, Gemini, GPT) with grouped quota pools, logging history, and cycle overview
 - **All** -- Side-by-side view of all configured providers
@@ -232,17 +232,22 @@ onWatch auto-detects your Claude Code credentials from the system keychain (macO
 
 Set `CODEX_TOKEN` in your `.env` (recommended for Codex-only installs). You can retrieve it from `~/.codex/auth.json` (`tokens.access_token`) or from `$CODEX_HOME/auth.json` if you use a custom Codex home. onWatch re-reads Codex credentials while running, so token rotation is picked up automatically. Full walkthrough: [Codex Setup Guide](docs/CODEX_SETUP.md).
 
-### How do I track my GitHub Copilot premium request usage?
+### How do I track my GitHub Copilot usage?
 
-Set `COPILOT_TOKEN` in your `.env` with a GitHub Personal Access Token (classic) that has the `copilot` scope. Generate one at [github.com/settings/tokens](https://github.com/settings/tokens). onWatch polls the GitHub Copilot internal API to track premium interactions, chat, and completions quotas with monthly reset cycle detection. This feature is in beta and uses an undocumented API.
+Set `COPILOT_TOKEN` in your `.env` with a GitHub Personal Access Token (classic) that has the `copilot` scope. Generate one at [github.com/settings/tokens](https://github.com/settings/tokens). onWatch polls the GitHub Copilot internal API to track Interactions, Chat, and Completions quotas with monthly reset cycle detection. Works with both free and paid plans. This feature is in beta and uses an undocumented API.
+
 
 ### How do I track my MiniMax Coding Plan usage?
 
-Set `MINIMAX_API_KEY` in your `.env` with your MiniMax Coding Plan API key. Get your key from the [MiniMax Console](https://platform.minimax.io). onWatch tracks the shared quota pool across all MiniMax models (M2, M2.1, M2.5) with 5-hour rolling window reset cycles. Full walkthrough: [MiniMax Setup Guide](docs/MINIMAX_SETUP.md).
+Set `MINIMAX_API_KEY` in your `.env` with your MiniMax Coding Plan API key. Get your key from the [MiniMax Console](https://platform.minimax.io). onWatch tracks the shared quota pool across all MiniMax models (M2, M2.1, M2.5) with 5-hour rolling window reset cycles. To track multiple MiniMax subscriptions, add additional accounts via the dashboard Settings > MiniMax > Add Account. Each account polls independently with its own API key and region. Full walkthrough: [MiniMax Setup Guide](docs/MINIMAX_SETUP.md).
+
+### How do I track my OpenRouter usage?
+
+Set `OPENROUTER_API_KEY` in your `.env` with your OpenRouter API key. Get one from [openrouter.ai/keys](https://openrouter.ai/keys). onWatch polls the OpenRouter auth key endpoint to track total credits usage, daily/weekly/monthly spending, credit limits, and remaining balance. Works with both free and paid accounts.
 
 ### Does onWatch work with Cline, Roo Code, Kilo Code, or Claude Code?
 
-Yes. onWatch monitors the API provider (Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, Gemini CLI, or Antigravity), not the coding tool. Any tool that uses a Synthetic, Z.ai, Anthropic, Codex, Copilot, MiniMax, Gemini CLI, or Antigravity API key -- including Cline, Roo Code, Kilo Code, Claude Code, Codex CLI, Cursor, GitHub Copilot, MiniMax Coding Plan, Gemini CLI, Antigravity, and others -- will have its usage tracked automatically.
+Yes. onWatch monitors the API provider (Synthetic, Z.ai, Anthropic, Codex, GitHub Copilot, MiniMax, OpenRouter, Gemini CLI, or Antigravity), not the coding tool. Any tool that uses a Synthetic, Z.ai, Anthropic, Codex, Copilot, MiniMax, OpenRouter, Gemini CLI, or Antigravity API key -- including Cline, Roo Code, Kilo Code, Claude Code, Codex CLI, Cursor, GitHub Copilot, MiniMax Coding Plan, OpenRouter, Gemini CLI, Antigravity, and others -- will have its usage tracked automatically.
 
 ### Does onWatch send any data to external servers?
 
@@ -578,3 +583,39 @@ If onWatch saves you time, consider buying me a coffee:
 - [Z.ai](https://z.ai) for the API
 - [Chart.js](https://www.chartjs.org/) for charts
 - [modernc.org/sqlite](https://pkg.go.dev/modernc.org/sqlite) for pure Go SQLite
+
+---
+
+## Uninstall
+
+**Homebrew (macOS & Linux):**
+```bash
+onwatch stop
+brew uninstall onwatch
+rm -rf ~/.onwatch
+```
+
+**Manual install (macOS):**
+```bash
+onwatch stop
+rm -rf ~/.onwatch
+sed -i '' '/# onWatch/d; /\.onwatch/d' ~/.zshrc ~/.bash_profile 2>/dev/null
+```
+
+**Manual install (Linux):**
+```bash
+onwatch stop
+rm -rf ~/.onwatch
+sed -i '/# onWatch/d; /\.onwatch/d' ~/.zshrc ~/.bashrc ~/.bash_profile 2>/dev/null
+# If using systemd user service:
+systemctl --user stop onwatch && systemctl --user disable onwatch && rm -f ~/.config/systemd/user/onwatch.service && systemctl --user daemon-reload
+# If using systemd system service:
+sudo systemctl stop onwatch && sudo systemctl disable onwatch && sudo rm -f /etc/systemd/system/onwatch.service && sudo systemctl daemon-reload
+```
+
+**Windows (PowerShell):**
+```powershell
+.\onwatch.exe stop
+$p = [Environment]::GetEnvironmentVariable("Path","User"); [Environment]::SetEnvironmentVariable("Path",($p -split ";" | Where-Object {$_ -notlike "*\.onwatch*"}) -join ";","User")
+Remove-Item -Recurse -Force $env:USERPROFILE\.onwatch
+```

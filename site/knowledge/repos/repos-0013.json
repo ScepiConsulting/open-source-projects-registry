@@ -1,8 +1,23 @@
 {
   "chunk": 13,
   "count": 50,
-  "generated_at": "2026-03-29T05:16:53Z",
+  "generated_at": "2026-04-05T05:18:12Z",
   "items": [
+    {
+      "repo_key": "github.com/frappe/erpnext",
+      "repo_url": "github.com/frappe/erpnext",
+      "host": "github.com",
+      "owner": "frappe",
+      "repo": "erpnext",
+      "app_references": [
+        "frappe-erpnext"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__frappe__erpnext.md",
+      "readme_download_url": null,
+      "readme_sha256": "2aedda5c295e7074b1a086ce601285cbc01b4b2f7a277b524b3bc828f271acc2",
+      "error": null
+    },
     {
       "repo_key": "github.com/fredrikburmester/streamystats",
       "repo_url": "github.com/fredrikburmester/streamystats",
@@ -27,9 +42,9 @@
       "app_references": [
         "freescout"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__freescout-help-desk__freescout.md",
-      "readme_download_url": "https://raw.githubusercontent.com/freescout-help-desk/freescout/dist/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e031a1ca2279c8afd318d310d68e9ec4a0801024feb0b7cbb6118606b1c04808",
       "error": null
     },
@@ -57,10 +72,10 @@
       "app_references": [
         "posterizarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__fscorrupt__posterizarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "a3490f9cb97d8ebc04e547bc4fa88cbb50f2705cc1c226c3f7012352a393b00a",
+      "readme_download_url": "https://raw.githubusercontent.com/fscorrupt/posterizarr/main/README.md",
+      "readme_sha256": "479c880cf55d9eadcf609d11eddc4dde770bc049d7f651beef978ad7f65d019d",
       "error": null
     },
     {
@@ -252,10 +267,10 @@
       "app_references": [
         "arcane"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__getarcaneapp__arcane.md",
-      "readme_download_url": null,
-      "readme_sha256": "fc3b410c2ed770412d2470609949724945055d0690da71121a31d8b300eafa44",
+      "readme_download_url": "https://raw.githubusercontent.com/getarcaneapp/arcane/main/README.md",
+      "readme_sha256": "729bd5c6c4bbe30a9db0ce8e808efbb857e321066df717c793059dd397ff2ba7",
       "error": null
     },
     {
@@ -297,9 +312,9 @@
       "app_references": [
         "homepage"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gethomepage__homepage.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gethomepage/homepage/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "adc1cfdeb2115c283f943a53d1ebe795e212be43e688e65000ebe3bbf48b2c60",
       "error": null
     },
@@ -312,9 +327,9 @@
       "app_references": [
         "maxun"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__getmaxun__maxun.md",
-      "readme_download_url": "https://raw.githubusercontent.com/getmaxun/maxun/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "74869160f36423965167422554e4681ae0e33dc81c68b87f70fc32af055bf31c",
       "error": null
     },
@@ -420,7 +435,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gitroomhq__postiz-app.md",
       "readme_download_url": "https://raw.githubusercontent.com/gitroomhq/postiz-app/main/README.md",
-      "readme_sha256": "7bc0b38cfb7645bde1940a1ae39aca16a4cbcdf8e5a1d00d37733d7d462d74e0",
+      "readme_sha256": "4ebbc499eb84e450f8e76954c8b6ee6845b739d343348fe1f4bdd0cde00b1b03",
       "error": null
     },
     {
@@ -537,10 +552,10 @@
       "app_references": [
         "gitea"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__go-gitea__gitea.md",
-      "readme_download_url": null,
-      "readme_sha256": "70e059f58a0ea1edd62b2e835d6524b3beb0258a8109c69bd1df47be1dae2df6",
+      "readme_download_url": "https://raw.githubusercontent.com/go-gitea/gitea/main/README.md",
+      "readme_sha256": "136a91a44329f31a8ab9ec9cd9b786bb3248672571a530c348b3cb8635430d2b",
       "error": null
     },
     {
@@ -567,9 +582,9 @@
       "app_references": [
         "vikunja"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__go-vikunja__vikunja.md",
-      "readme_download_url": "https://raw.githubusercontent.com/go-vikunja/vikunja/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e24a1fdbe38afca8fccca4109832da8dff1666ba8f3a3a7e86125af15b959f7b",
       "error": null
     },
@@ -687,9 +702,9 @@
       "app_references": [
         "loki"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__grafana__loki.md",
-      "readme_download_url": "https://raw.githubusercontent.com/grafana/loki/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "af9e356ba4d99300f4e145be9c0b5885587b2ba8dbba89e2a5f149cd3572c04a",
       "error": null
     },
@@ -705,7 +720,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gramps-project__gramps.md",
       "readme_download_url": "https://raw.githubusercontent.com/gramps-project/gramps/master/README.md",
-      "readme_sha256": "9372736cc0bae2fbcbaa73b3761015ea847ebfa685abcd92ccf8075d4fbd8a9b",
+      "readme_sha256": "7358ca7e64802257930c927b63022fd22376dc67b4b2aa229cce59557ef84624",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__gregtwallace__certwarden.md",
       "readme_download_url": null,
       "readme_sha256": "4d6366a58c6577ea21ebbc64711cf2f607c306f21682a30995a12ddb9e000d24",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/gristlabs/grist-core",
-      "repo_url": "github.com/gristlabs/grist-core",
-      "host": "github.com",
-      "owner": "gristlabs",
-      "repo": "grist-core",
-      "app_references": [
-        "grist"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__gristlabs__grist-core.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gristlabs/grist-core/main/README.md",
-      "readme_sha256": "9e677ef774f867976aa57c164b1e813f33e2d9cf736261499acf8ddec250fa88",
       "error": null
     }
   ]

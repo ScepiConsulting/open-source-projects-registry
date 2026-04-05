@@ -1,8 +1,23 @@
 {
   "chunk": 14,
   "count": 50,
-  "generated_at": "2026-03-29T05:16:53Z",
+  "generated_at": "2026-04-05T05:18:12Z",
   "items": [
+    {
+      "repo_key": "github.com/gristlabs/grist-core",
+      "repo_url": "github.com/gristlabs/grist-core",
+      "host": "github.com",
+      "owner": "gristlabs",
+      "repo": "grist-core",
+      "app_references": [
+        "grist"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__gristlabs__grist-core.md",
+      "readme_download_url": "https://raw.githubusercontent.com/gristlabs/grist-core/main/README.md",
+      "readme_sha256": "6ef925fe45c59c72ff08ba116e6fe0783b7a2111097a0937e53c31c864b8963d",
+      "error": null
+    },
     {
       "repo_key": "github.com/grocy/grocy",
       "repo_url": "github.com/grocy/grocy",
@@ -27,10 +42,10 @@
       "app_references": [
         "snipe-it"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__grokability__snipe-it.md",
-      "readme_download_url": null,
-      "readme_sha256": "ed92c88d4c012d9e0f318836f87a344a333b6243d5607850f768bc20eb0d0eb4",
+      "readme_download_url": "https://raw.githubusercontent.com/grokability/snipe-it/master/README.md",
+      "readme_sha256": "21a7d8f761917a69f53a6ee77267b4c74105388b02ca636af993665c91f7df13",
       "error": null
     },
     {
@@ -87,9 +102,9 @@
       "app_references": [
         "yubal"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__guillevc__yubal.md",
-      "readme_download_url": "https://raw.githubusercontent.com/guillevc/yubal/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4b7296e3534129ebb20756960fb8d6a119373d21fea0990b6a734fd79d9baa49",
       "error": null
     },
@@ -297,10 +312,10 @@
       "app_references": [
         "homarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__homarr-labs__homarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "6949594fcd33ea7d53cd5c4b1dda9fc4932227c63dc053c7ce06319b916fae74",
+      "readme_download_url": "https://raw.githubusercontent.com/homarr-labs/homarr/dev/docs/README.md",
+      "readme_sha256": "f2738dcac1cffb0537060595448349930d5e8f63b543f2a15a30d82411b5028d",
       "error": null
     },
     {
@@ -327,10 +342,10 @@
       "app_references": [
         "hook0"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hook0__hook0.md",
-      "readme_download_url": null,
-      "readme_sha256": "995159229773177c46a6250c8e8c100ac0b64903672e61252f0cf364dc83d246",
+      "readme_download_url": "https://raw.githubusercontent.com/hook0/hook0/master/README.md",
+      "readme_sha256": "1d30b4156e6fc86ac58bccbb35337c38098a010c6355f1f76f1b4394d5ac1348",
       "error": null
     },
     {
@@ -357,9 +372,9 @@
       "app_references": [
         "hoodik"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__hudikhq__hoodik.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hudikhq/hoodik/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "9af38014430d5b8759f1da992958db7e723ad8af4f13067e4bddaa80eb683056",
       "error": null
     },
@@ -372,10 +387,10 @@
       "app_references": [
         "huginn"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__huginn__huginn.md",
-      "readme_download_url": null,
-      "readme_sha256": "c0d2f9ee1d0ef08ccd111b8a6e3978079792ca76fcb8ed64865d996565308169",
+      "readme_download_url": "https://raw.githubusercontent.com/huginn/huginn/master/README.md",
+      "readme_sha256": "8a9187bbd3480d2800504216f7b2740a9f99aec14c4536c999691fed32992cd2",
       "error": null
     },
     {
@@ -657,10 +672,10 @@
       "app_references": [
         "invoicerr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__invoicerr-app__invoicerr.md",
-      "readme_download_url": null,
-      "readme_sha256": "5dc6d1b5bee62e017b0f31eca1562cd5b4b729b2379b0d652d69f5091031a1dd",
+      "readme_download_url": "https://raw.githubusercontent.com/invoicerr-app/invoicerr/main/README.md",
+      "readme_sha256": "a43fb03754bdfcfc3a8162e4575da37920d799531e8c99095b869daf27962900",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__iv-org__invidious.md",
       "readme_download_url": null,
       "readme_sha256": "ffb5121453d6f0cac87b578f45643629388cb8af0194e90f7e6933c2ca42595c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jamcalli/Pulsarr",
-      "repo_url": "github.com/jamcalli/Pulsarr",
-      "host": "github.com",
-      "owner": "jamcalli",
-      "repo": "Pulsarr",
-      "app_references": [
-        "pulsarr"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__jamcalli__Pulsarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/jamcalli/Pulsarr/master/README.md",
-      "readme_sha256": "1acacd3f6c74e4a2f79faf93c08f79e1e4aa713db26d24b25d980e9f286ffad8",
       "error": null
     }
   ]

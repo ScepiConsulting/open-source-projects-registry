@@ -30,9 +30,10 @@
 
 - [Features](#features)
 - [Accessing flight log files](#accessing-flight-log-files)
-  - [DJI Flight Logs](#dji-flight-logs)
-  - [Litchi CSV Exports](#litchi-csv-exports)
-- [Setup and installation (Windows/MacOS)](#setup-and-installation-windowsmacos)
+  - [Automated Sync Bridge](#automated-sync-windowsmac)
+  - [Manual Log Collection](#manual-log-collection)
+  - [Airdata Exports](#airdata-exports)
+- [Setup and installation (Windows/MacOS/Android)](#setup-and-installation-windowsmacos)
   - [Try the Webapp First](#try-the-webapp-first-no-installation-required)
   - [macOS Users: "Damaged File" Error Fix](#macos-users-damaged-file-error-fix)
 - [Usage](#usage)
@@ -58,31 +59,16 @@
     <img src="screenshots/interface_dark.png" alt="Interface (dark)" width="900" />
 </p>
 <p align="center">
-    <img src="screenshots/interface_light.png" alt="Interface (light)" width="900" />
-</p>
-<p align="center">
     <img src="screenshots/individual_stats.png" alt="Individual stats" width="900" />
-</p>
-<p align="center">
-    <img src="screenshots/individual_stats_light.png" alt="Individual stats (light)" width="900" />
 </p>
 <p align="center">
     <img src="screenshots/weather_preview.png" alt="Weather preview" width="900" />
 </p>
 <p align="center">
-    <img src="screenshots/telemetry_1.png" alt="Telemetry charts" width="900" />
-</p>
-<p align="center">
-    <img src="screenshots/telemetry_2.png" alt="Telemetry charts 2" width="900" />
-</p>
-<p align="center">
     <img src="screenshots/map_dark.png" alt="Flight map replay (dark)" width="900" />
 </p>
 <p align="center">
-    <img src="screenshots/map_light.png" alt="Flight map replay (light)" width="900" />
-</p>
-<p align="center">
-    <img src="screenshots/flight_map_2.png" alt="Flight map 2" width="900" />
+    <img src="screenshots/mobile-interface.png" alt="Mobile app interface" width="900" />
 </p>
 <p align="center">
     <img src="screenshots/flight_report.png" alt="Flight report" width="900" />
@@ -111,13 +97,28 @@
 
 ## Accessing flight log files
 
-### DJI Flight Logs
+You first need to collect the supported flight log files that you can import to this application.
 
-You first need to collect the DJI flight log files that you can import to this application. This project supports modern DJI log files in the `.txt` format. For DJI fly apps on Android or RC remotes, they are usually in `Internal Storage > Android > data > dji.go.v5 > files > FlightRecord`. For iOS, Connect your iPhone/iPad to a computer, open iTunes/Finder, select the device, go to the "File Sharing" tab, select the DJI app, and copy the "Logs" folder. If you are already using other online sync applications, you can download the original logs files directly from there too. 
+### Automated Sync (Windows/Mac)
+
+You can sync your DJI flight logs directly from the mobile (Android/iPhone) or RC/RC-2/RC-Pro directly and seamlessly using the `Litchi Hub Bridge` companion app on your Windows/Mac desktop or laptop. This is a free application that lets you sync your flight logs from the phone's DJI Fly app or the RC devices directly to a local folder. 
+
+<img width="200" height="68" alt="image" src="https://github.com/user-attachments/assets/1e1d9235-881a-434a-86b1-03a437c7d8ed" />
+
+#### Download Here - [Windows](https://apps.microsoft.com/detail/9mz7gp4zqlhj) | [MacOS](https://litchi-apks.s3.us-east-1.amazonaws.com/Litchi-Hub-Bridge-mac.dmg)
+
+After installation, run it and check the tray menu (it usually gets minimizedto tray after start) - Right click on tray icon and pick settings - Check the `Start with Windows` in `General` tab and go to `Flight Logs Sync` tab to pick a local folder where the logs will be synced. Select the `Auto sync on device connection` for a seamless experience. After this setup, as soon as you plug in your RC or Android/iPhone (should be unlocked and mounted to your desktop/laptop) which you use to fly your drones, it will automatically search for the relevant folders and copy the .txt logs from there to your selected local folder. 
+
+<img width="915" height="396" alt="image" src="https://github.com/user-attachments/assets/3d080d15-8a87-4126-b85e-a4de09ff688f" />
+
+> [!TIP]
+> After you set up Open Drone Log, you will have an option to pick a Sync folder from where the application (Open Drone Log) syncs files on startup for new log files. If you select the same log folder for both application, you will not have to find or copy new logs manually anymore - it syncs automatically with your Oopen Drone Log application!
+
+### Manual Log collection
+
+This project supports modern DJI log files in the `.txt` format. For DJI fly apps on Android or RC remotes, they are usually in `Internal Storage > Android > data > dji.go.v5 > files > FlightRecord`. For iOS, Connect your iPhone/iPad to a computer, open iTunes/Finder, select the device, go to the "File Sharing" tab, select the DJI app, and copy the "Logs" folder. If you are already using other online sync applications, you can download the original logs files directly from there too. 
 
 You can find more details resources from this simple [google search](https://www.google.com/search?q=where+can+i+find+the+DJI+log+files&oq=where+can+i+find+the+DJI+log+files)
-
-### Litchi CSV Exports
 
 Litchi flight logs can be exported as CSV files from the Litchi app.  Litchi-imported flights are automatically tagged with "Litchi" for easy filtering.
 
@@ -161,6 +162,19 @@ There is no installation step if you want to use the standalone binary builds, j
 * **`Open.DroneLog-(version).x86_64.rpm`**: Package for **Fedora, CentOS, and Red Hat** systems.
 * **`Open.DroneLog_(version)_amd64.AppImage`**: Universal portable app. Runs on any Linux distro without installing.
 * **`open-dronelog_linux_x86_64`**: Command-line binary. For advanced terminal users only.
+
+### Android APK Releases
+
+Recommended for most users:
+* **`open-dronelog_(version)_android-universal.apk`**: Universal APK that works on most Android devices.
+
+Advanced / smaller download option:
+* **`open-dronelog_(version)_arm64-v8a_android.apk`**: Modern 64-bit ARM phones/tablets (most current Android devices).
+* **`open-dronelog_(version)_armeabi-v7a_android.apk`**: Older 32-bit ARM devices.
+* **`open-dronelog_(version)_x86_64_android.apk`**: 64-bit x86 devices/emulators.
+* **`open-dronelog_(version)_x86_android.apk`**: 32-bit x86 devices/emulators.
+
+If you are unsure which one to use, install the **universal APK**.
 
 ###  General / Verification
 * **`checksums.txt`**: Security file. Use to verify your downloaded files aren't corrupted or tampered with.
@@ -246,6 +260,13 @@ npm run tauri
 ## Docker deployment (Self-hosted Web)
 
 The app can also be deployed as a self-hosted web application using Docker. This uses an Axum REST backend instead of Tauri IPC, with Nginx serving the frontend and proxying API requests.
+
+> [!TIP]
+> For hosted/server deployments where you want a dedicated desktop/mobile uploader that watches a local folder and syncs logs to your hosted ODL server automatically, use the companion utility: [opendronelog-sync](https://github.com/arpanghosh8453/opendronelog-sync).
+
+<p align="center">
+    <img src="screenshots/ODL-sync-interface-dark.png" alt="ODL Sync utility" width="900" />
+</p>
 
 > [!IMPORTANT]
 > This Web interface is primarily designed for Desktop or larger screen viewing. Basic mobile responsiveness is available but the full experience is best on larger screens.

@@ -4,9 +4,9 @@
   <img src="./media/logo.png" width="100" alt="Scanopy Logo">
 </p>
 
-**Network documentation that updates itself.**
+**Clean network diagrams. One-time setup, zero upkeep.**
 
-Scanopy scans your network, discovers hosts and services, and generates a live topology diagram that stays current automatically. One daemon, no per-device agents, no manual upkeep.
+Scanopy scans your network, identifies hosts and services, and generates an interactive visualization showing how everything connects, letting you easily create and maintain network documentation.
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/mayanayza/netvisor-server?style=for-the-badge&logo=docker)  ![Github Stars](https://img.shields.io/github/stars/scanopy/scanopy?style=for-the-badge&logo=github
 )<br>
