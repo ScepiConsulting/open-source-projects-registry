@@ -1,8 +1,83 @@
 {
   "chunk": 14,
   "count": 50,
-  "generated_at": "2026-04-05T05:18:12Z",
+  "generated_at": "2026-04-12T05:29:52Z",
   "items": [
+    {
+      "repo_key": "github.com/grafana/grafana",
+      "repo_url": "github.com/grafana/grafana",
+      "host": "github.com",
+      "owner": "grafana",
+      "repo": "grafana",
+      "app_references": [
+        "grafana"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__grafana__grafana.md",
+      "readme_download_url": null,
+      "readme_sha256": "a95c5dfcec36ae00098542f62112855fd0b57751a230915e45b3187568ffde74",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/grafana/loki",
+      "repo_url": "github.com/grafana/loki",
+      "host": "github.com",
+      "owner": "grafana",
+      "repo": "loki",
+      "app_references": [
+        "loki"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__grafana__loki.md",
+      "readme_download_url": null,
+      "readme_sha256": "af9e356ba4d99300f4e145be9c0b5885587b2ba8dbba89e2a5f149cd3572c04a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/gramps-project/gramps",
+      "repo_url": "github.com/gramps-project/gramps",
+      "host": "github.com",
+      "owner": "gramps-project",
+      "repo": "gramps",
+      "app_references": [
+        "gramps"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__gramps-project__gramps.md",
+      "readme_download_url": null,
+      "readme_sha256": "7358ca7e64802257930c927b63022fd22376dc67b4b2aa229cce59557ef84624",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/gravitational/teleport",
+      "repo_url": "github.com/gravitational/teleport",
+      "host": "github.com",
+      "owner": "gravitational",
+      "repo": "teleport",
+      "app_references": [
+        "teleport"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__gravitational__teleport.md",
+      "readme_download_url": null,
+      "readme_sha256": "9099095bba8afde8d01e363770bfd4534ad2698e3e644c668465fc5af13308fb",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/gregtwallace/certwarden",
+      "repo_url": "github.com/gregtwallace/certwarden",
+      "host": "github.com",
+      "owner": "gregtwallace",
+      "repo": "certwarden",
+      "app_references": [
+        "cert-warden"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__gregtwallace__certwarden.md",
+      "readme_download_url": null,
+      "readme_sha256": "4d6366a58c6577ea21ebbc64711cf2f607c306f21682a30995a12ddb9e000d24",
+      "error": null
+    },
     {
       "repo_key": "github.com/gristlabs/grist-core",
       "repo_url": "github.com/gristlabs/grist-core",
@@ -12,9 +87,9 @@
       "app_references": [
         "grist"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gristlabs__grist-core.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gristlabs/grist-core/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6ef925fe45c59c72ff08ba116e6fe0783b7a2111097a0937e53c31c864b8963d",
       "error": null
     },
@@ -42,9 +117,9 @@
       "app_references": [
         "snipe-it"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__grokability__snipe-it.md",
-      "readme_download_url": "https://raw.githubusercontent.com/grokability/snipe-it/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "21a7d8f761917a69f53a6ee77267b4c74105388b02ca636af993665c91f7df13",
       "error": null
     },
@@ -244,6 +319,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/hhftechnology/crowdsec_manager",
+      "repo_url": "github.com/hhftechnology/crowdsec_manager",
+      "host": "github.com",
+      "owner": "hhftechnology",
+      "repo": "crowdsec_manager",
+      "app_references": [
+        "crowdsec-manager"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__hhftechnology__crowdsec_manager.md",
+      "readme_download_url": "https://raw.githubusercontent.com/hhftechnology/crowdsec_manager/main/README.md",
+      "readme_sha256": "fa11d52f25112770b824b28a815bd7a06ee7f80c864cbebb6c507e603abf2e9f",
+      "error": null
+    },
+    {
       "repo_key": "github.com/hhftechnology/middleware-manager",
       "repo_url": "github.com/hhftechnology/middleware-manager",
       "host": "github.com",
@@ -315,7 +405,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__homarr-labs__homarr.md",
       "readme_download_url": "https://raw.githubusercontent.com/homarr-labs/homarr/dev/docs/README.md",
-      "readme_sha256": "f2738dcac1cffb0537060595448349930d5e8f63b543f2a15a30d82411b5028d",
+      "readme_sha256": "e452777c6c8e9ede51da8472ae03606de2101661464f9b4bc07b20f5f936acef",
       "error": null
     },
     {
@@ -342,9 +432,9 @@
       "app_references": [
         "hook0"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__hook0__hook0.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hook0/hook0/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1d30b4156e6fc86ac58bccbb35337c38098a010c6355f1f76f1b4394d5ac1348",
       "error": null
     },
@@ -372,10 +462,10 @@
       "app_references": [
         "hoodik"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hudikhq__hoodik.md",
-      "readme_download_url": null,
-      "readme_sha256": "9af38014430d5b8759f1da992958db7e723ad8af4f13067e4bddaa80eb683056",
+      "readme_download_url": "https://raw.githubusercontent.com/hudikhq/hoodik/master/README.md",
+      "readme_sha256": "2d40b100934d9ef8cd27e83594a790c564e9185a0b6458041c3dfc100ca58f75",
       "error": null
     },
     {
@@ -387,9 +477,9 @@
       "app_references": [
         "huginn"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__huginn__huginn.md",
-      "readme_download_url": "https://raw.githubusercontent.com/huginn/huginn/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8a9187bbd3480d2800504216f7b2740a9f99aec14c4536c999691fed32992cd2",
       "error": null
     },
@@ -492,10 +582,10 @@
       "app_references": [
         "omnitools"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__iib0011__omni-tools.md",
-      "readme_download_url": null,
-      "readme_sha256": "d90db8bc3b385702fee3063d9828ec217df405f9bfeb72b450ba8b8939fba94e",
+      "readme_download_url": "https://raw.githubusercontent.com/iib0011/omni-tools/main/README.md",
+      "readme_sha256": "d0b5f46e3d2358a99f7bca6f6187c01ea35a79165162779f3ee67b848ef812fe",
       "error": null
     },
     {
@@ -522,10 +612,10 @@
       "app_references": [
         "immich-power-tools"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__immich-power-tools__immich-power-tools.md",
-      "readme_download_url": null,
-      "readme_sha256": "380b94ff1d71a6bc802258fe9b4f32f5f2fefa293b8288ab0dfd97e20d9d6fe8",
+      "readme_download_url": "https://raw.githubusercontent.com/immich-power-tools/immich-power-tools/main/README.md",
+      "readme_sha256": "4b398097fa4b480585623d4d8fbe7065ce2779897f08d393d1c756c2fa3385b3",
       "error": null
     },
     {
@@ -661,96 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__invoiceninja__invoiceninja.md",
       "readme_download_url": null,
       "readme_sha256": "fb1f30f7a0020cb8a64b7a6b5aee938d6da4e5258cbb9c54a56d0f63668ec8b0",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/invoicerr-app/invoicerr",
-      "repo_url": "github.com/invoicerr-app/invoicerr",
-      "host": "github.com",
-      "owner": "invoicerr-app",
-      "repo": "invoicerr",
-      "app_references": [
-        "invoicerr"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__invoicerr-app__invoicerr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/invoicerr-app/invoicerr/main/README.md",
-      "readme_sha256": "a43fb03754bdfcfc3a8162e4575da37920d799531e8c99095b869daf27962900",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/iongpt/boxarr",
-      "repo_url": "github.com/iongpt/boxarr",
-      "host": "github.com",
-      "owner": "iongpt",
-      "repo": "boxarr",
-      "app_references": [
-        "boxarr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__iongpt__boxarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "5edc9409d3e4d00e1c67bf2980090404a7e33f6531928572737c65cb437fa446",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ironcalc/IronCalc",
-      "repo_url": "github.com/ironcalc/IronCalc",
-      "host": "github.com",
-      "owner": "ironcalc",
-      "repo": "IronCalc",
-      "app_references": [
-        "ironcalc"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__ironcalc__IronCalc.md",
-      "readme_download_url": null,
-      "readme_sha256": "399cb2c8f16199cfc3c547ef2129dccb29889c2b5914a624bb22d4ebe99a33cb",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/itskovacs/trip",
-      "repo_url": "github.com/itskovacs/trip",
-      "host": "github.com",
-      "owner": "itskovacs",
-      "repo": "trip",
-      "app_references": [
-        "trip"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__itskovacs__trip.md",
-      "readme_download_url": null,
-      "readme_sha256": "654f6c1c32307e1e0a046a60262707cff8e781d5e1bfb2c47bb26bdfd5a702bc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/itskovacs/wingfit",
-      "repo_url": "github.com/itskovacs/wingfit",
-      "host": "github.com",
-      "owner": "itskovacs",
-      "repo": "wingfit",
-      "app_references": [
-        "wingfit"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__itskovacs__wingfit.md",
-      "readme_download_url": null,
-      "readme_sha256": "08de31c2add75e7d12b5d755b52224770c5936f12ce03f2c8160eed707ce0c35",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/iv-org/invidious",
-      "repo_url": "github.com/iv-org/invidious",
-      "host": "github.com",
-      "owner": "iv-org",
-      "repo": "invidious",
-      "app_references": [
-        "invidious"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__iv-org__invidious.md",
-      "readme_download_url": null,
-      "readme_sha256": "ffb5121453d6f0cac87b578f45643629388cb8af0194e90f7e6933c2ca42595c",
       "error": null
     }
   ]

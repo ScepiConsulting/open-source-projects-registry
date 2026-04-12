@@ -1,8 +1,23 @@
 {
   "chunk": 3,
   "count": 50,
-  "generated_at": "2026-04-05T05:18:12Z",
+  "generated_at": "2026-04-12T05:29:52Z",
   "items": [
+    {
+      "repo_key": "github.com/DumbWareio/DumbPad",
+      "repo_url": "github.com/DumbWareio/DumbPad",
+      "host": "github.com",
+      "owner": "DumbWareio",
+      "repo": "DumbPad",
+      "app_references": [
+        "dumbpad"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbPad.md",
+      "readme_download_url": null,
+      "readme_sha256": "9784a5cde8ec94a4a4c07b12587c60a1b79f10b411f6c26285a96c85893f0394",
+      "error": null
+    },
     {
       "repo_key": "github.com/DumbWareio/DumbWhoIs",
       "repo_url": "github.com/DumbWareio/DumbWhoIs",
@@ -75,7 +90,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__EinAeffchen__Omoide.md",
       "readme_download_url": "https://raw.githubusercontent.com/EinAeffchen/Omoide/master/README.md",
-      "readme_sha256": "24e77ff15a8b2a2bbf566df01a33ca87792e170a68bad5240082a99c5a55023b",
+      "readme_sha256": "89572b0141a10e3f0f238271c2bce6c036de7b7bf788c7ee9edd4294d4893bda",
       "error": null
     },
     {
@@ -150,7 +165,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__FoxxMD__multi-scrobbler.md",
       "readme_download_url": "https://raw.githubusercontent.com/FoxxMD/multi-scrobbler/master/README.md",
-      "readme_sha256": "e1356a837d5b51dcfca68550412e362cf891c8d701941bc50ccd486ecc5c64f5",
+      "readme_sha256": "06beb3dc86648ffc4ab08bec2a2971435b35f0d1159b70b8aa6e2cd99d775df6",
       "error": null
     },
     {
@@ -162,9 +177,9 @@
       "app_references": [
         "dawarich"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Freika__dawarich.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Freika/dawarich/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a1b7261fb4c39e57818820593bd4821cd8cfca79af624cd96cd3bdc7404f339c",
       "error": null
     },
@@ -180,7 +195,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__FreshRSS__FreshRSS.md",
       "readme_download_url": "https://raw.githubusercontent.com/FreshRSS/FreshRSS/edge/README.md",
-      "readme_sha256": "4f8983d5712d2834182119bc036ee2a52dbc258d19f5bd44254b399359a4e56f",
+      "readme_sha256": "10f13ba58c39987c94739ffd446176e96d32fa14c6b6ff5b263933b8673bfc48",
       "error": null
     },
     {
@@ -402,10 +417,10 @@
       "app_references": [
         "chronoframe"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__HoshinoSuzumi__chronoframe.md",
-      "readme_download_url": null,
-      "readme_sha256": "fca5cabb3df7fd711e107e1f755fb9c2a55ce310a0493fb0f36407152e2110ea",
+      "readme_download_url": "https://raw.githubusercontent.com/HoshinoSuzumi/chronoframe/main/README.md",
+      "readme_sha256": "4aa2822a3885c153bee24ace7c872e9743f89bd458358f786c544f9a73cff238",
       "error": null
     },
     {
@@ -462,10 +477,10 @@
       "app_references": [
         "edit-mind"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__IliasHad__edit-mind.md",
-      "readme_download_url": null,
-      "readme_sha256": "d4c71bd8056865d2a160104fea33cc8d67199b7e4b4d9d364c0e9dd8f6d3be58",
+      "readme_download_url": "https://raw.githubusercontent.com/IliasHad/edit-mind/main/README.md",
+      "readme_sha256": "a57751847672cf0277b273b2c44f8100aa1d262dcacddd5d715162689a6d966b",
       "error": null
     },
     {
@@ -477,9 +492,9 @@
       "app_references": [
         "infisical"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Infisical__infisical.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Infisical/infisical/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "597ee0fab618375ddd912cf0ef08e9feccdc313a609d16e013dff39e94493ad3",
       "error": null
     },
@@ -555,7 +570,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Jackett__Jackett.md",
       "readme_download_url": "https://raw.githubusercontent.com/Jackett/Jackett/master/README.md",
-      "readme_sha256": "42873776cbf270bd460f1ebd0531fa840c533a299f922e1fb6d1dc42157ef9e2",
+      "readme_sha256": "99845caf702851efc86082deef40d39abf54ab323d07522b0b04ae5943e71142",
       "error": null
     },
     {
@@ -567,9 +582,9 @@
       "app_references": [
         "sortarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Jaredharper1__Sortarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Jaredharper1/Sortarr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "5feec47798e8c99413ed6303d7846f2c63e98228ddc8db17a2cb5e2908e25f15",
       "error": null
     },
@@ -627,10 +642,10 @@
       "app_references": [
         "kavita"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Kareadita__Kavita.md",
-      "readme_download_url": null,
-      "readme_sha256": "de21a13bf2d08e2b14958ba178f36f43ac3cd05632423892f30ff2ba2031e28b",
+      "readme_download_url": "https://raw.githubusercontent.com/Kareadita/Kavita/develop/README.md",
+      "readme_sha256": "371b638a3acefcf21ee7d2db5fa54d1ead93bfca524019370db69685530b2c80",
       "error": null
     },
     {
@@ -672,9 +687,9 @@
       "app_references": [
         "kometa"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Kometa-Team__Kometa.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Kometa-Team/Kometa/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4d6a6df97eaf08ac2878ff05c2a2052cae2e95ab6ff4e73be31ec55bfeae929b",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__LANCommander__LANCommander.md",
       "readme_download_url": null,
       "readme_sha256": "6639ff48dcd78eebd7ac304453aed7700414affaf9cc24675d18a13a35492727",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/LLukas22/Jellyswarrm",
-      "repo_url": "github.com/LLukas22/Jellyswarrm",
-      "host": "github.com",
-      "owner": "LLukas22",
-      "repo": "Jellyswarrm",
-      "app_references": [
-        "jellyswarrm"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__LLukas22__Jellyswarrm.md",
-      "readme_download_url": null,
-      "readme_sha256": "09674e6294d6654919e85b96c72e60d9033d0160fb81f7bb34f08e1a3fe38a7c",
       "error": null
     }
   ]

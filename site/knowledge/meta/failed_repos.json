@@ -35,6 +35,11 @@
     "error": "worker_exception: Invalid URL 'codeberg.org/karrot/karrot-backend/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/karrot/karrot-backend/-/raw/main/README.md?"
   },
   {
+    "repo_key": "codeberg.org/nwithan8/plex-prerolls",
+    "repo_url": "codeberg.org/nwithan8/plex-prerolls",
+    "error": "worker_exception: Invalid URL 'codeberg.org/nwithan8/plex-prerolls/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/nwithan8/plex-prerolls/-/raw/main/README.md?"
+  },
+  {
     "repo_key": "codeberg.org/pods-blitz/pods-blitz",
     "repo_url": "codeberg.org/pods-blitz/pods-blitz",
     "error": "worker_exception: Invalid URL 'codeberg.org/pods-blitz/pods-blitz/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/pods-blitz/pods-blitz/-/raw/main/README.md?"
@@ -118,6 +123,11 @@
     "repo_key": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
     "repo_url": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
     "error": "worker_exception: Invalid URL 'gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md?"
+  },
+  {
+    "repo_key": "github.com/TomBursch/kitchenowl",
+    "repo_url": "github.com/TomBursch/kitchenowl",
+    "error": "github_readme_http_404"
   },
   {
     "repo_key": "github.com/shibaobun/cannery",

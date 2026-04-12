@@ -12,6 +12,8 @@
 
 Hoodik is a lightweight, self-hosted, end-to-end encrypted cloud storage server. All encryption and decryption happens in your browser — the server never sees your plaintext data. Built with Rust (Actix-web) on the backend and Vue 3 on the frontend.
 
+🌐 **[hoodik.io](https://hoodik.io)** — Website &nbsp;|&nbsp; 📱 **[Android App](https://play.google.com/store/apps/details?id=com.hudikhq.hoodik)** &nbsp;|&nbsp; ⚡ **[VPS Setup Guide](https://hoodik.io/get-started)**
+
 <p align="center">
   <img src="./screenshot.png" alt="Hoodik screenshot" />
 </p>
@@ -22,11 +24,13 @@ Hoodik is a lightweight, self-hosted, end-to-end encrypted cloud storage server.
 
 - **End-to-end encryption** — files are encrypted in the browser before upload and decrypted after download using a hybrid RSA + AEGIS-128L scheme
 - **Secure search** — file metadata is tokenized and hashed so the server can match search queries without storing plaintext names
+- **Encrypted notes** — create and edit rich markdown notes with a WYSIWYG editor; content is encrypted, auto-saved, and searchable just like uploaded files
 - **Public sharing links** — share files via a link; the file key is never exposed to the recipient
 - **Two-factor authentication** — optional TOTP-based 2FA per user
 - **Admin dashboard** — manage users, sessions, invitations, and application settings
 - **Chunked transfers** — files are split into encrypted chunks for concurrent upload/download
 - **SQLite or PostgreSQL** — SQLite out of the box, PostgreSQL via a single environment variable
+- **S3-compatible storage** — store encrypted chunks on any S3-compatible service (AWS, MinIO, Backblaze B2, Wasabi) instead of local disk
 - **Docker-first** — single container deployment; multi-arch images (amd64, armv6, armv7, arm64)
 
 ---
@@ -36,6 +40,8 @@ Hoodik is a lightweight, self-hosted, end-to-end encrypted cloud storage server.
 ### File storage
 
 Each user gets an RSA-2048 key pair on registration. The private key is stored encrypted with your passphrase — the server cannot read it.
+
+> ⚠️ **Store your private key somewhere safe** (e.g. a password manager). If you forget your password, the private key is the only way to recover your account and decrypt your files.
 
 When you upload a file:
 1. A random symmetric key is generated for the file (key size depends on the cipher).
@@ -177,56 +183,84 @@ When `MAILER_TYPE=none` (the default), accounts are activated automatically and 
 | `SMTP_DEFAULT_FROM_EMAIL` | | Sender email address |
 | `SMTP_DEFAULT_FROM_NAME` | | Sender display name (optional, defaults to `Hoodik`) |
 
+### Storage provider
+
+By default, encrypted file chunks are stored on the local filesystem inside `DATA_DIR`. Set `STORAGE_PROVIDER=s3` to use any S3-compatible object storage instead.
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `STORAGE_PROVIDER` | `local` | `local` or `s3` |
+| `S3_BUCKET` | | Bucket name |
+| `S3_REGION` | `us-east-1` | AWS region |
+| `S3_ENDPOINT` | *(AWS default)* | Custom endpoint for S3-compatible services (MinIO, Backblaze B2, Wasabi, etc.) |
+| `S3_ACCESS_KEY` | | Access key ID |
+| `S3_SECRET_KEY` | | Secret access key |
+| `S3_PATH_STYLE` | `false` | Path-style addressing (required for MinIO) |
+| `S3_PREFIX` | | Optional key prefix to namespace objects within a shared bucket |
+
+> **Note:** `DATA_DIR` is still required when using S3 — it holds the SQLite database (if not using PostgreSQL) and other local state. Only the encrypted file chunks move to S3.
+
+Example with MinIO:
+
+```shell
+docker run --name hoodik -d \
+  -e DATA_DIR='/data' \
+  -e APP_URL='https://my-app.example.com' \
+  -e STORAGE_PROVIDER='s3' \
+  -e S3_BUCKET='hoodik' \
+  -e S3_ENDPOINT='http://minio:9000' \
+  -e S3_ACCESS_KEY='minioadmin' \
+  -e S3_SECRET_KEY='minioadmin' \
+  -e S3_PATH_STYLE='true' \
+  --volume "$(pwd)/data:/data" \
+  -p 5443:5443 \
+  hudik/hoodik:latest
+```
+
+### Migrating from local storage to S3
+
+If you already have data stored locally and want to switch to S3:
+
+> **Important:** Stop the Hoodik server before running the migration to avoid data inconsistencies. If files are being uploaded while chunks are being migrated, some chunks may be missed.
+
+1. Stop the running Hoodik instance.
+
+2. Add the S3 environment variables to your `docker-compose.yml` (keep `STORAGE_PROVIDER=local` for now).
+
+3. Run the migration:
+
+   ```shell
+   docker exec hoodik hoodik migrate-storage
+   ```
+
+   Or as a one-off container:
+
+   ```shell
+   docker run --rm \
+     -v hoodik-data:/data \
+     -e DATA_DIR=/data \
+     -e S3_BUCKET=my-bucket \
+     -e S3_REGION=eu-central-1 \
+     -e S3_ACCESS_KEY=... \
+     -e S3_SECRET_KEY=... \
+     hudik/hoodik migrate-storage
+   ```
+
+   The command uploads all chunk files from `DATA_DIR` to S3. It is idempotent — already-uploaded files are skipped, so it is safe to re-run if interrupted.
+
+4. Set `STORAGE_PROVIDER=s3` and restart:
+
+   ```shell
+   docker compose up -d
+   ```
+
+5. Verify everything works. The local chunk files can be kept as a backup until you are confident.
+
 ---
 
 ## Development
 
-### Prerequisites
-
-- Rust (stable, ≥ 1.91) via [rustup](https://rustup.rs/)
-- Node.js 22 (see [.nvmrc](.nvmrc)) and [Yarn](https://yarnpkg.com/) (`npm install -g yarn`)
-- [wasm-pack](https://rustwasm.github.io/wasm-pack/installer/)
-- [cargo-watch](https://crates.io/crates/cargo-watch) (`cargo install cargo-watch`)
-- [just](https://just.systems/) (`cargo install just`)
-
-### First-time setup
-
-```shell
-just setup   # installs JS deps, copies .env.example → .env, builds WASM, installs Playwright chromium
-```
-
-### Running locally
-
-```shell
-just dev         # frontend (Vite :5173) + backend (:5443) with hot-reload
-
-just dev-web     # Vite dev server only
-just dev-api     # Rust backend only (cargo-watch)
-```
-
-The frontend talks to the backend at `APP_URL` (default `https://localhost:5443`). The backend serves the compiled frontend as static files in production.
-
-### Building for production
-
-```shell
-just build       # WASM → web bundle → Rust binary
-```
-
----
-
-## Testing
-
-```shell
-just test              # Rust unit tests + frontend unit tests
-just test-rust         # All Rust tests (unit + integration)
-just test-web          # Frontend unit tests (Vitest)
-
-just e2e               # End-to-end tests (Playwright) — builds backend, starts it, then runs
-just e2e-ui            # Interactive Playwright UI for debugging
-
-just lint              # Clippy + ESLint
-just check-types       # TypeScript type-check
-```
+See [DEVELOPMENT.md](./DEVELOPMENT.md) for setup instructions, available `just` recipes, testing, and CI.
 
 ---
 

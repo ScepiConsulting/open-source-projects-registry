@@ -24,14 +24,15 @@
       <img alt="GitHub stars" src="https://img.shields.io/github/stars/shaneisrael/fireshare">
     </a>
     <br />
-    <br />
-    <a href="https://v.fireshare.net">Live Demo</a>
-    ·
-    <a href="https://github.com/ShaneIsrael/fireshare/issues">Report a Bug</a>
-    ·
-    <a href="https://www.paypal.com/paypalme/shaneisrael">Buy us a Coffee!</a>
+    <p align="center">
+      <a href="https://www.buymeacoffee.com/shaneisrael"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174" /></a>
+    </p>
+    <p align="center">
+      <a href="https://v.fireshare.net">Live Demo</a>
+      ·
+      <a href="https://github.com/ShaneIsrael/fireshare/issues">Report a Bug</a>
+    </p>
   </p>
-</p>
 
 ## Key Features
 
@@ -44,17 +45,25 @@
 - Video Cropping
 - Video Tags for improved search and categorization
 - Open Graph metadata for rich link previews
+- [Notifications to Discord and others](./Notifications.md)
 - RSS feed for new public videos
-- LDAP support
-- Optional video transcoding with CPU or NVIDIA GPU
+- [LDAP support](./LDAP.md)
+- Optional [video transcoding with CPU or GPU](#transcoding-optional)
 
-<h3 align="center">Dashboard</h3>
+# Navigation
+
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Demo](#demo)
+- [Contributing](#contributing)
+
+<h4 align="center">Dashboard</h4>
 
 ---
 
 ![card-view][card-view]
 
-<h3 align="center">Automatic Game Organization</h3>
+<h4 align="center">Automatic Game Organization</h3h4>
 
 ---
 
@@ -62,17 +71,17 @@
 
 ![folders-game][folders-game]
 
-<h3 align="center">Video Details</h3>
+<h4 align="center">Video Details</h4>
 
 ---
 
 ![edit][edit]
 
-<h3 align="center">Open Graph Support</h3>
+<h4 align="center">Public / Private Uploading</h4>
 
 ---
 
-<center><img src=".github/images/ogg-data.png" alt="Open graph preview" /></center>
+![uploading][uploading]
 
 ## Installation
 
@@ -100,9 +109,10 @@ Then open `http://localhost:8080`.
 
 ```sh
 docker run --name fireshare \
-  -v $(pwd)/fireshare:/data:rw \
-  -v $(pwd)/fireshare_processed:/processed:rw \
-  -v /path/to/my_game_clips:/videos:rw \
+  -v $(pwd)/fireshare/data:/data:rw \
+  -v $(pwd)/fireshare/processed:/processed:rw \
+  -v /path/to/my/videos:/videos:rw \
+  -v /path/to/my/images:/images:rw \
   -p 8080:80 \
   -e ADMIN_PASSWORD=your-admin-password \
   -d shaneisrael/fireshare:latest
@@ -111,6 +121,12 @@ docker run --name fireshare \
 Open `http://localhost:8080`.
 
 ## Configuration
+
+- [LDAP](#ldap)
+- [Transcoding](#transcoding-optional)
+- [Docker ENV Variables](#docker-environment-variables)
+
+### LDAP
 
 - LDAP setup: [LDAP.md](./LDAP.md)
 
@@ -157,6 +173,10 @@ When GPU mode is enabled, Fireshare selects the best available encoder:
 - H.264 with CPU — Most compatible, faster encoding
 - AV1 with CPU — Best compression, slower
 
+### Docker Environment Variables
+
+See [EnvironmentVariables.md](./EnvironmentVariables.md) for the full list of available environment variables.
+
 ## Local Development
 
 Requirements: Python 3, Node.js, and npm.
@@ -195,26 +215,7 @@ If you update models, create a migration and review it before opening a pull req
 
 ## Troubleshooting
 
-### Playback Problems
-
-If playback is unstable:
-
-- Reduce source file size/bitrate
-- Verify upload bandwidth on the host
-- Prefer browser-friendly formats (MP4/H.264 is safest)
-- Consider enabling transcoding for better compatibility
-- Test in another browser to rule out codec/browser limitations
-
-### Upload Fails Behind Nginx
-
-Increase proxy limits/timeouts, for example:
-
-```nginx
-client_max_body_size 0;
-proxy_read_timeout 999999s;
-```
-
-If you use a different proxy, apply equivalent upload size and timeout settings there.
+See [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) for a full guide covering installation issues, playback problems, permission errors, transcoding, LDAP, and more.
 
 ---
 
@@ -222,3 +223,4 @@ If you use a different proxy, apply equivalent upload size and timeout settings 
 [folders]: .github/images/folders.png
 [folders-game]: .github/images/folders-game.png
 [edit]: .github/images/edit-details.png
+[uploading]: .github/images/uploading.png

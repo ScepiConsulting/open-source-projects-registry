@@ -1,7 +1,7 @@
 {
   "chunk": 1,
   "count": 50,
-  "generated_at": "2026-04-05T05:18:12Z",
+  "generated_at": "2026-04-12T05:29:51Z",
   "items": [
     {
       "repo_key": "akkoma.dev/AkkomaGang/akkoma",
@@ -107,6 +107,21 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'codeberg.org/karrot/karrot-backend/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/karrot/karrot-backend/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/nwithan8/plex-prerolls",
+      "repo_url": "codeberg.org/nwithan8/plex-prerolls",
+      "host": "codeberg.org",
+      "owner": "nwithan8",
+      "repo": "plex-prerolls",
+      "app_references": [
+        "plex-prerolls"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'codeberg.org/nwithan8/plex-prerolls/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/nwithan8/plex-prerolls/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/pods-blitz/pods-blitz",
@@ -447,10 +462,10 @@
       "app_references": [
         "1panel"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__1Panel-dev__1Panel.md",
-      "readme_download_url": null,
-      "readme_sha256": "ac8c8602da5a0e90057e0846959e6d33c861c5a598c81ba79bc93dde88fef0b5",
+      "readme_download_url": "https://raw.githubusercontent.com/1Panel-dev/1Panel/dev-v2/README.md",
+      "readme_sha256": "24315bc1509443978283ebd80480798cd617f2abce829330f0734c681a2e1eb7",
       "error": null
     },
     {
@@ -525,7 +540,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__9001__copyparty.md",
       "readme_download_url": "https://raw.githubusercontent.com/9001/copyparty/hovudstraum/README.md",
-      "readme_sha256": "278a467269724c0028d98ef7277a919ef5c7f921b921095dd85ac5d662ea581a",
+      "readme_sha256": "fdd0ed8fbc9756b9f743d7b011861bbc67686f599aa442675d23728cd8e07758",
       "error": null
     },
     {
@@ -672,10 +687,10 @@
       "app_references": [
         "archivebox"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ArchiveBox__ArchiveBox.md",
-      "readme_download_url": null,
-      "readme_sha256": "50721ed0828ade22375b71cfbb8c77da881a8206066414228ec8c4a868c67315",
+      "readme_download_url": "https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/dev/README.md",
+      "readme_sha256": "a86bf550afb20e5309317dab2573c1a067e9499e2e9807da50cc58f99b76fc0b",
       "error": null
     },
     {
@@ -687,10 +702,10 @@
       "app_references": [
         "meelo"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Arthi-chaud__Meelo.md",
-      "readme_download_url": null,
-      "readme_sha256": "cad2cd961b4e8bd0e3a7b7aa5a4c41d55311a5cb61f0ab6c5638a16cf8dae1a0",
+      "readme_download_url": "https://raw.githubusercontent.com/Arthi-chaud/Meelo/main/README.md",
+      "readme_sha256": "6168d75eb6cfdde80d1b4f745e4e475b6686fc48f71fae9f4c68b3401c5d9484",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__AzuraCast__AzuraCast.md",
       "readme_download_url": null,
       "readme_sha256": "12eabef1397259483df2d57c93ea3b2c85a64eba0ff6f21d30aa0c1f2fbe39a6",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/BaldissaraMatheus/Tasks.md",
-      "repo_url": "github.com/BaldissaraMatheus/Tasks.md",
-      "host": "github.com",
-      "owner": "BaldissaraMatheus",
-      "repo": "Tasks.md",
-      "app_references": [
-        "tasks-md"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__BaldissaraMatheus__Tasks.md.md",
-      "readme_download_url": null,
-      "readme_sha256": "5a1124c7954fac286a4f3e7c31f9e5d4c60a99e034004a676a1495fcc93fd814",
       "error": null
     }
   ]

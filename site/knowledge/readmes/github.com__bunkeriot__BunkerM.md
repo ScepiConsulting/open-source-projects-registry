@@ -2,10 +2,10 @@
   <img src="frontend/public/BunkerM_Logo.png" alt="BunkerM Logo" width="220" />
 </p>
 
-<h1 align="center">BunkerM - AI Powered MQTT Management Platform</h1>
+<h1 align="center">BunkerM - Mosquitto MQTT Management UI</h1>
 
 <p align="center">
-  The world's first self-hosted Mosquitto MQTT management platform with AI capabilities out of the box.
+  The world's first all-in-one, self-hosted MQTT broker manager with built-in AI assistant, smart anomaly detection, and local automation agents.
 </p>
 
 <p align="center">
@@ -57,9 +57,11 @@
   - [Broker Dashboard](#broker-dashboard)
   - [ACL & Client Management](#-acl--client-management)
   - [MQTT Explorer](#-mqtt-explorer)
+  - [Message History & Replay](#-message-history--replay)
   - [Smart Anomaly Detection](#-smart-anomaly-detection)
   - [Agents — Schedulers & Watchers](#-agents--schedulers--watchers)
-  - [BunkerAI — AI Assistant](#-bunkerai--ai-assistant)
+  - [Local LLM — Private AI via LM Studio](#️-local-llm--private-ai-via-lm-studio)
+  - [BunkerAI — Cloud AI Assistant](#-bunkerai--cloud-ai-assistant)
   - [Cloud Bridge Integrations](#-cloud-bridge-integrations)
 - [Feature Comparison](#-feature-comparison)
 - [Community vs BunkerAI](#-bunkerm-community-vs-bunkerai)
@@ -74,12 +76,7 @@
 
 **BunkerM** is a free, open-source, containerized MQTT management platform. It bundles **Eclipse Mosquitto** with a full-featured web dashboard, packaging everything into a single Docker container — one command to get a production-ready MQTT broker with a management UI.
 
-
-![BunkerM Dashboard (Light)](docs/assets/images/dashboard-light.png)
-
-![Connected Clients](docs/assets/images/connected-clients.png)
-
-On top of the core broker management, BunkerM includes a **local statistical engine** (smart anomaly detection) and a **local automation engine** (schedulers and watchers) that run entirely inside your container. **BunkerAI** is the AI intelligence layer — an optional cloud service that adds a natural-language assistant to your BunkerM instance, reachable via Telegram, Slack, or a built-in web chat.
+On top of the core broker management, BunkerM includes a **local statistical engine** (smart anomaly detection), a **local automation engine** (schedulers and watchers), and a **local AI engine** (LM Studio integration) — all running entirely inside your container. **BunkerAI** is the optional cloud AI layer that adds a more powerful natural-language assistant reachable via Telegram, Slack, or the built-in web chat.
 
 **What you get out of the box:**
 
@@ -87,10 +84,12 @@ On top of the core broker management, BunkerM includes a **local statistical eng
 - Web-based ACL management — clients, roles, groups, topic permissions
 - Real-time monitoring dashboard, connected clients, and event logs
 - MQTT Explorer — live topic tree with publish-from-browser
+- **Message History & Replay** — every MQTT message stored locally in SQLite, searchable and replayable
 - Statistical anomaly detection (Z-score, EWMA, spike, silence detectors)
 - Local automation agents — cron schedulers and condition-based watchers
+- **Local LLM AI assistant** via [LM Studio](https://lmstudio.ai) — fully private, no cloud required
 - AWS IoT Core and Azure IoT Hub bridge configuration
-- Optional BunkerAI subscription — natural-language assistant powered by Claude
+- Optional BunkerAI subscription — cloud AI assistant with Telegram, Slack, and unlimited interactions
 
 ---
 
@@ -184,10 +183,6 @@ volumes:
 
 Real-time overview of your broker health:
 
-![Broker Logs](docs/assets/images/broker-logs.png)
-
-![Client Logs](docs/assets/images/client-logs.png)
-
 - Connected clients count and history
 - Message publish/receive rates
 - Byte throughput (in/out)
@@ -200,17 +195,11 @@ Real-time overview of your broker health:
 
 Full dynamic security management powered by Mosquitto's Dynamic Security plugin:
 
-![Dynamic Security](docs/assets/images/dynamic-security.png)
-
 #### Client Management
 - Create, update, and delete MQTT clients
 - Set credentials (username + password hash)
 - Enable / disable clients individually
 - Assign clients to groups
-
-![Add Client](docs/assets/images/add-client.png)
-
-![Connected Clients](docs/assets/images/connected-clients.png)
 
 #### Role Management
 - Create roles with fine-grained topic ACL rules
@@ -218,17 +207,12 @@ Full dynamic security management powered by Mosquitto's Dynamic Security plugin:
 - Wildcard topic support (`#`, `+`)
 - ACL types: `publishClientSend`, `subscribeLiteral`, and more
 
-
 #### Group Management
 - Create groups and assign roles to them
 - Add / remove clients from groups
 - Set role priorities within groups
 
-![ACL Groups](docs/assets/images/ACL-group.png)
-
 #### ACL Import / Export
-
-
 Back up and restore your complete security configuration in one click:
 - **Export** — downloads a JSON snapshot of all clients (including password hashes), roles, and groups
 - **Import** — upload a previously exported JSON to fully restore your configuration; the broker reloads automatically
@@ -238,14 +222,66 @@ Back up and restore your complete security configuration in one click:
 
 ### 🔭 MQTT Explorer
 
-![MQTT Explorer](docs/assets/images/MQTT-explorer.png)
-
 Inspect and interact with live broker traffic directly from the browser:
 
 - **Live topic tree** — full hierarchy of all active topics, refreshed every 3 seconds
 - **Per-topic metadata** — latest value, message count, QoS, retain flag, last-updated timestamp
 - **Search & filter** — instantly narrow the tree by typing a topic path fragment
 - **Publish panel** — send messages from the browser: pick a client, enter a topic, choose payload type (RAW / JSON / XML with built-in validation), set QoS and retain flag
+
+---
+
+### 📼 Message History & Replay
+
+Every MQTT message published through your broker is automatically captured and stored in a local SQLite database — no configuration required. History starts accumulating from the moment BunkerM starts, and it keeps running silently in the background.
+
+#### What gets stored
+
+All messages published to the broker are captured, excluding internal `$SYS/` diagnostics. Each record stores:
+
+| Field | Description |
+|-------|-------------|
+| Timestamp | Millisecond-precision UTC time of receipt |
+| Topic | Full topic path |
+| Payload | Message content (binary payloads stored as base64) |
+| QoS | Quality of service level (0 / 1 / 2) |
+| Retain flag | Whether the message was retained |
+| Size | Payload size in bytes |
+
+#### Querying history
+
+Navigate to **Logs → Message History** in the sidebar to access:
+
+- **Stats overview** — total stored messages, unique topic count, database size on disk, and retention window
+- **Topic filter** — dropdown populated from all topics seen by the broker, with message counts
+- **Free-text search** — matches against topic path or payload content
+- **Paginated table** — 100 messages per page, newest-first, with full metadata
+
+#### Replay
+
+Every message row has a **Replay** button. Click it to open a dialog pre-filled with the original topic and payload. You can edit the payload, choose QoS and retain flag, then publish directly back to the broker — useful for retesting device logic or simulating conditions.
+
+#### Retention limits
+
+By default, BunkerM keeps up to **50,000 messages** and **7 days** of history. Older messages are pruned automatically. These limits are configurable via environment variables:
+
+```bash
+-e HISTORY_MAX_MESSAGES=50000   # max records in the database
+-e HISTORY_MAX_AGE_DAYS=7       # max age of any stored message
+```
+
+#### Storage
+
+History is stored in a SQLite file at `/var/lib/history/history.db` inside the container. To persist history across container restarts, mount a Docker volume:
+
+```bash
+docker run -d \
+  -p 1900:1900 -p 2000:2000 \
+  -v history_data:/var/lib/history \
+  bunkeriot/bunkerm:latest
+```
+
+The Docker Compose file already includes this volume by default.
 
 ---
 
@@ -310,18 +346,43 @@ Monitor MQTT topics and trigger actions when conditions are met:
 
 ---
 
-### 🧠 BunkerAI — AI Assistant
+### 🖥️ Local LLM — Private AI via LM Studio
 
+BunkerM Community includes a built-in **Local LLM** integration. Connect any model running in [LM Studio](https://lmstudio.ai) to get a fully private, offline-capable AI assistant that understands your live broker state and can take actions on your behalf — no cloud account or subscription required.
 
+#### How it works
 
-**BunkerAI** is the AI intelligence layer for BunkerM. Subscribe at [bunkerai.dev](https://bunkerai.dev) to unlock a natural-language assistant that reads your live broker data, publishes messages, and creates automation agents — all through plain English conversation.
+On every chat message, BunkerM injects a live snapshot of your broker (connected clients, active topics with their latest payloads, broker stats, registered ACL clients) directly into the model's context. The model can then respond accurately to questions about your live MQTT environment and execute actions through BunkerM's internal APIs.
 
-> BunkerM handles your local broker. BunkerAI handles the intelligence.
+#### Capabilities
+
+- **Plain-English device control** — say "turn off my room light" and the AI figures out the right topic and payload from your annotations and context, then publishes it
+- **ACL management** — create, enable, disable, delete MQTT clients and batch-create multiple clients at once
+- **Live topic queries** — "What is the current value of the door sensor?" returns the actual retained payload
+- **Broker awareness** — ask about connected clients, message rates, subscriptions, and uptime
+
+#### Setup
+
+1. Install [LM Studio](https://lmstudio.ai) and load a model (Qwen2.5-7B-Instruct or Llama-3-Instruct recommended)
+2. Start the LM Studio local server (default port: 1234)
+3. In BunkerM go to **Settings → Integrations → Local LLM**, enter `http://host.docker.internal:1234`, fetch models, and save
+4. Switch to **Local LLM** mode in **AI → Chat**
+
+> Full guide: [bunkerai.dev/docs/local-llm](https://bunkerai.dev/docs/local-llm)
+
+---
+
+### 🧠 BunkerAI — Cloud AI Assistant
+
+**BunkerAI** is the optional cloud AI layer for BunkerM. Subscribe at [bunkerai.dev](https://bunkerai.dev) to unlock a more powerful natural-language assistant with cross-channel memory, Telegram and Slack integrations, and higher interaction limits.
+
+> BunkerM handles your local broker. BunkerAI handles the cloud intelligence.
 
 #### Capabilities
 - **READ** — query live broker stats, topic payloads, connected clients, anomaly alerts, and topic annotations
 - **WRITE** — publish MQTT messages by describing the intent ("turn on light 1", "set thermostat to 22°C")
 - **CREATE** — build schedulers and watchers through natural conversation ("alert me if temperature exceeds 80")
+- **MANAGE** — full ACL management, broker configuration, and agent control through plain English
 
 #### Channels
 
@@ -399,6 +460,7 @@ Forward MQTT traffic to major cloud providers:
 | Broker Dashboard & Stats | ✓ | ✓ | ✓ |
 | Connected Clients Listing | ✓ | ✓ | ✓ |
 | Real-time MQTT Event Logs | ✓ | ✓ | ✓ |
+| Message History & Replay (50K messages, 7d) | ✓ | ✓ | ✓ |
 | Statistical Anomaly Detection | ✓ | ✓ | ✓ |
 | AI Metrics Engine (1h / 24h baselines) | ✓ | ✓ | ✓ |
 | Smart Alert Feed with Severity Levels | ✓ | ✓ | ✓ |

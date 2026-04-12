@@ -80,7 +80,7 @@
 - **Multi-Format Support**: Import DJI logs (.txt), Litchi CSV, and Airdata CSV exports with automatic unit detection. Third-party apps (Dronelink, DroneDeploy) supported. Optional external parser plugins can be configured via `parsers.json`.
 - **Smart Deduplication**: Prevents duplicate imports based on drone serial, battery serial, and start time.
 - **Interactive Flight Maps**: 3D terrain, map-type selection (Satellite, Topographic, OpenStreetMap), flight replay with speed control (0.5x-16x), live telemetry overlay, and RC joystick visualization.
-- **Telemetry Charts**: Height, speed, battery, cell voltages, attitude, RC signal, GPS, distance-to-home, velocity, battery full capacity, and battery remained capacity with synchronized drag-to-zoom, per-profile telemetry color customization, and collapsible panel controls.
+- **Telemetry Charts**: Height, speed, battery, cell voltages, attitude, RC signal, GPS, distance-to-home, velocity, battery full capacity, and battery remaining capacity with synchronized drag-to-zoom, per-profile telemetry color customization, and collapsible panel controls.
 - **Local-First Storage**: All data in a local DuckDB database. No cloud upload required (except DJI key fetch during first import).
 - **Smart Tags**: Auto-tagging (Night Flight, High Speed, Low Battery, etc.) and offline reverse geocoding for location tags. Manual tags and bulk operations supported.on.
 - **Filters & Search**: Date range (calendar + typed `YYYY-MM-DD` start/end quick entry), drone/battery/controller/color filters, duration/altitude/distance sliders, tag filter, map area filter, and filter inversion.
@@ -103,11 +103,13 @@ You first need to collect the supported flight log files that you can import to 
 
 You can sync your DJI flight logs directly from the mobile (Android/iPhone) or RC/RC-2/RC-Pro directly and seamlessly using the `Litchi Hub Bridge` companion app on your Windows/Mac desktop or laptop. This is a free application that lets you sync your flight logs from the phone's DJI Fly app or the RC devices directly to a local folder. 
 
-<img width="200" height="68" alt="image" src="https://github.com/user-attachments/assets/1e1d9235-881a-434a-86b1-03a437c7d8ed" />
+<a href="https://flylitchi.com/hub-bridge" target="_blank" rel="noopener noreferrer">
+    <img width="200" height="68" alt="image" src="https://github.com/user-attachments/assets/1e1d9235-881a-434a-86b1-03a437c7d8ed" />
+</a>
 
 #### Download Here - [Windows](https://apps.microsoft.com/detail/9mz7gp4zqlhj) | [MacOS](https://litchi-apks.s3.us-east-1.amazonaws.com/Litchi-Hub-Bridge-mac.dmg)
 
-After installation, run it and check the tray menu (it usually gets minimizedto tray after start) - Right click on tray icon and pick settings - Check the `Start with Windows` in `General` tab and go to `Flight Logs Sync` tab to pick a local folder where the logs will be synced. Select the `Auto sync on device connection` for a seamless experience. After this setup, as soon as you plug in your RC or Android/iPhone (should be unlocked and mounted to your desktop/laptop) which you use to fly your drones, it will automatically search for the relevant folders and copy the .txt logs from there to your selected local folder. 
+After installation, run it and check the tray menu (it usually gets minimizedto tray after start) - Right click on tray icon and pick settings - Check the `Start with Windows` in `General` tab and go to `Flight Logs Sync` tab to pick a local folder where the logs will be synced. Select the `Auto-sync when a device connects` for a seamless experience. After this setup, as soon as you plug in your RC or Android/iPhone (should be unlocked and mounted to your desktop/laptop) which you use to fly your drones, it will automatically search for the relevant folders and copy the .txt logs from there to your selected local folder. 
 
 <img width="915" height="396" alt="image" src="https://github.com/user-attachments/assets/3d080d15-8a87-4126-b85e-a4de09ff688f" />
 
@@ -148,7 +150,6 @@ There is no installation step if you want to use the standalone binary builds, j
 
 ###  Windows (64-bit)
 * **`Open.DroneLog_(version)_x64-setup.exe`**: Standard installer. **Best for most users.**
-* **`open-dronelog_windows_x64.exe`**: Portable version. Runs instantly without installing.
 * **`Open.DroneLog_(version)_x64_en-US.msi`**: Enterprise installer. For IT admins deploying to multiple PCs.
 
 ###  macOS
@@ -201,14 +202,14 @@ Want to quickly test the tool before committing to a full installation? Try the 
 <img width="320" height="311" alt="image" src="https://github.com/user-attachments/assets/2787ffff-9961-433c-898a-b548c738f1a2" />
 
 > [!IMPORTANT]
-> If you see **"Drone Logbook is damaged and can't be opened"** on macOS, this is a Gatekeeper security warning for unsigned apps, **not a corrupted file**. Apple charges $99/year for developer signing, so we provide these free workarounds instead.
+> If you see **"Open DroneLog is damaged and can't be opened"** on macOS, this is a Gatekeeper security warning for unsigned apps, **not a corrupted file**. Apple charges $99/year for developer signing, so we provide these free workarounds instead.
 
 #### Method 1: Right-Click to Open
 
 This is the simplest method and works for most users:
 
 1. **Locate the app** in your Applications folder (or wherever you placed it after downloading)
-2. **Right-click** (or Control+click) on "Drone Logbook.app"
+2. **Right-click** (or Control+click) on "Open Dronelog.app"
 3. **Select "Open"** from the context menu
 4. **Click "Open"** in the dialog that appears
 
@@ -324,6 +325,7 @@ When `KEEP_UPLOADED_FILES=true` is set, original log files are preserved in an `
 | `SYNC_INTERVAL` | (not set)              | Cron expression for scheduled sync (e.g., `0 0 */8 * * *` for every 8 hours)|
 | `KEEP_UPLOADED_FILES` | `true`      | When `true`, keeps copies of uploaded log files in the `uploaded` folder    |
 | `PROFILE_CREATION_PASS` | (not set) | Master password required for creating or deleting profiles in web/Docker mode. When unset, anyone can create and delete profiles. |
+| `DEFAULT_PROFILE_PASSWORD` | (not set) | Optional one-time initializer for the `default` profile password at startup. If a default password already exists, it is not overwritten and startup logs that initialization was skipped. If unset or empty (and no existing password), the default profile remains unprotected. |
 | `SESSION_TTL_HOURS` | `24`           | Session token lifetime in hours. After expiry the user must re-authenticate. |
 
 ### Automatic log sync (Docker)

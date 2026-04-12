@@ -608,9 +608,11 @@ and if you want to use config files instead of commandline args (good!) then her
 
 hiding specific subfolders  by mounting another volume on top of them
 
-for example `-v /mnt::r -v /var/empty:web/certs:r` mounts the server folder `/mnt` as the webroot, but another volume is mounted at `/web/certs` -- so visitors can only see the contents of `/mnt` and `/mnt/web` (at URLs `/` and `/web`), but not `/mnt/web/certs` because URL `/web/certs` is mapped to `/var/empty`
+for example `-v /mnt::r -v /var/empty:web/certs:` (note: no permissions) mounts the server folder `/mnt` as the webroot, but another volume is mounted at `/web/certs` -- so visitors can only see the contents of `/mnt` and `/mnt/web` (at URLs `/` and `/web`), but not `/mnt/web/certs` because URL `/web/certs` is mapped to `/var/empty`
 
 the example config file right above this section may explain this better; the first volume `/` is mapped to `/srv` which means http://127.0.0.1:3923/music would try to read `/srv/music` on the server filesystem, but since there's another volume at `/music` mapped to `/mnt/music` then it'll go to `/mnt/music` instead
+
+so, to shadow a file/folder, define a volume but leave out the `accs:` section
 
 > ℹ️ this also works for single files, because files can also be volumes
 
@@ -2747,6 +2749,12 @@ services.copyparty = {
   };
   # you may increase the open file limit for the process
   openFilesLimit = 8192;
+  
+  # override the package used by the module to add dependencies, e.g. for hooks
+  package = pkgs.copyparty.override {
+    # provides exiftool for bin/hooks/image-noexif.py
+    extraPackages = [ pkgs.exiftool ];
+  };
 };
 ```
 

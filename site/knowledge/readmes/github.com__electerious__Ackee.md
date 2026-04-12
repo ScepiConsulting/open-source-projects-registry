@@ -62,7 +62,7 @@ Ackee features a [GraphQL API](docs/API.md) that allows you to build custom tool
 
 ### Options
 
-Ackee uses environment variables and supports [`.env` files](https://www.npmjs.com/package/dotenv) in the root of the project if you want to store all variables in one file. [Options &#187;](docs/Options.md)
+Ackee uses environment variables and supports `.env` files in the root of the project if you want to store all variables in one file. [Options &#187;](docs/Options.md)
 
 ## Miscellaneous
 

@@ -108,7 +108,7 @@ Download the latest Poznote Webserver and Poznote MCP images :
 docker compose pull
 ```
 
-Start Poznote container:
+Start Poznote containers:
 ```powershell
 docker compose up -d
 ```
@@ -156,7 +156,7 @@ Download the latest Poznote Webserver and Poznote MCP images:
 docker compose pull
 ```
 
-Start Poznote container:
+Start Poznote containers:
 ```bash
 docker compose up -d
 ```
@@ -203,7 +203,7 @@ Download the latest Poznote Webserver and Poznote MCP images:
 docker compose pull
 ```
 
-Start Poznote container:
+Start Poznote containers:
 ```bash
 docker compose up -d
 ```
@@ -227,7 +227,7 @@ Rename the default administrator account after the first login.
 
 ## Change Settings
 
-Most settings can be modified directly in the application through the settings page. Some system settings can only be changed in the `.env` file and require a container restart.
+Most settings can be modified directly in the application through the settings page. Some system settings can only be changed in the `.env` file and require recreating the affected containers.
 
 - **Authentication** - Initial/default passwords and login configuration
 - **Web Server** - HTTP port configuration
@@ -243,17 +243,19 @@ Navigate to your Poznote directory:
 cd poznote
 ```
 
-Stop the running Poznote container:
+Stop the running Poznote containers:
 ```bash
 docker compose down
 ```
 
 Edit your `.env` file with your preferred text editor.
 
-Save the file and restart Poznote to apply changes:
+Save the file and start the Poznote containers again to apply changes:
 ```bash
 docker compose up -d
 ```
+
+If you change environment variables for a running service without bringing the stack down first, recreate the affected container instead of using `docker compose restart`. A restart keeps the container's existing environment.
 
 ## Update application
 
@@ -262,7 +264,7 @@ Navigate to your Poznote directory:
 cd poznote
 ```
 
-Stop the running container before updating:
+Stop the running containers before updating:
 ```bash
 docker compose down
 ```
@@ -287,7 +289,7 @@ Download the latest Poznote Webserver and Poznote MCP images:
 docker compose pull
 ```
 
-Start the updated container:
+Start the updated containers:
 ```bash
 docker compose up -d
 ```
@@ -503,16 +505,18 @@ Configure it in **Settings > Appearance > UI Customization**.
 <summary><strong>Custom CSS Overrides</strong></summary>
 <br>
 
-If you want to adjust fonts, spacing, or other visual details beyond the built-in options, you can load an extra stylesheet on every HTML page.
+If you want to adjust fonts, spacing, or other visual details beyond the built-in options, you can upload an extra stylesheet that is applied to every HTML page for all users.
 
-Configure it in **Settings > Appearance > Custom CSS path**.
+Configure it in **Settings > Appearance > Custom CSS**.
 
 Notes:
 
-- Enter only the filename, for example `custom.css`.
-- The file must be placed in `src/css/`, and Poznote will load it as `css/custom.css`.
-- Poznote appends a cache-busting `v=` parameter automatically when the target file exists locally.
+- Click **Upload CSS file** to select a `.css` file from your computer.
+- The file is uploaded and stored in `data/css/` (your Docker volume), so it survives image updates.
+- Click **Remove** to delete the file and disable the custom stylesheet.
+- Poznote appends a cache-busting `v=` parameter automatically.
 - The stylesheet is injected near the end of `<head>`, so it can override the default application styles.
+- Only administrators can upload or remove the custom CSS file.
 
 </details>
 
@@ -844,7 +848,7 @@ Administrators have access to a suite of maintenance and management tools under 
 - **User Management:** Create, manage, and delete user profiles, or reset passwords.
 - **Git Sync Control:** Globally enable or disable Git synchronization features.
 - **Import Limits:** Configure the maximum number of files allowed for individual or ZIP imports.
-- **Custom CSS path:** Define a global custom stylesheet to override the application's appearance.
+- **Custom CSS:** Upload a global custom stylesheet to override the application's appearance. The file is stored in your data volume (`data/css/`) and survives image updates.
 - **Rebuild Master Database:** Reconstruct the user index from data folders in case of system corruption or database loss.
 - **Base64 Image Converter:** Convert inline Base64 encoded images within notes to proper file attachments.
 - **Orphan attachments scanner:** Scan and clean up storage by identifying attachment files that are no longer referenced in any notes.
@@ -908,7 +912,13 @@ Poznote includes a Model Context Protocol (MCP) server that enables AI assistant
 - "List all notes in my Poznote workspace"
 - "Update note 42 with new information"
 
-For installation, configuration, and setup instructions, see the [MCP Server documentation](docs/MCP-SERVER.md).
+<p align="center">
+  <img src="docs/mcp-poznote.gif" alt="Poznote MCP Server demo" width="100%">
+</p>
+
+For setup and usage instructions, see the [MCP Server documentation](docs/MCP-SERVER.md).
+
+Debug logging for the MCP server is controlled with `POZNOTE_DEBUG=true` or `POZNOTE_DEBUG=false` in `.env`. Only the exact lowercase values `true` and `false` are recognized. After changing it, recreate the `mcp-server` container; a simple restart does not reload updated `.env` values.
 
 ## Chrome Extension
 
@@ -919,8 +929,6 @@ The **Poznote URL Saver** is a browser extension that allows you to quickly save
 </p>
 
 Install the extension directly from the Chrome Web Store → [Install extension](https://chromewebstore.google.com/detail/bmjclfamahegmgillaghhmnbkjebipbh?utm_source=item-share-cb)
-
-> ℹ️ **Note:** Version 1.3 of the extension is currently awaiting validation by the Google Chrome Web Store.
 
 ## API Documentation
 
@@ -983,5 +991,5 @@ Poznote prioritizes simplicity and portability - no complex frameworks, no heavy
 - **Nginx + PHP-FPM** - High-performance web server with FastCGI Process Manager
 - **Alpine Linux** - Secure, lightweight base image
 - **Docker** - Containerization for easy deployment and portability
-- **Python 3.12 (Alpine)** - MCP server runtime with httpx, fastmcp, and mcp libraries for AI assistant integration
+- **Python 3.12 (Alpine)** - MCP server runtime with httpx, uvicorn, fastmcp, and mcp libraries for AI assistant integration
 </details>

@@ -1,8 +1,100 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-04-05T05:18:12Z",
+  "generated_at": "2026-04-12T05:29:51Z",
   "items": [
+    {
+      "reference": "lidarr",
+      "name": "Lidarr",
+      "website": "http://lidarr.audio/",
+      "description": "Music collection and download manager",
+      "repo_url": "github.com/Lidarr/Lidarr",
+      "repo_key": "github.com/Lidarr/Lidarr",
+      "stars": null,
+      "forks": 11,
+      "updated_at": "1",
+      "license": null,
+      "tags": [
+        "*arr",
+        "Media Management",
+        "Music"
+      ],
+      "readme_path": "knowledge/readmes/github.com__Lidarr__Lidarr.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "b55a9fe6417737103ac5bb4f7ceeeb0d7cb7f5f9425fbe4d04dad1eb3d458431"
+      }
+    },
+    {
+      "reference": "lidify",
+      "name": "Lidify",
+      "website": "github.com/TheWicklowWolf/Lidify",
+      "description": "Web interface for finding similar artists based on Lidarr metadata",
+      "repo_url": "github.com/TheWicklowWolf/Lidify",
+      "repo_key": "github.com/TheWicklowWolf/Lidify",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "29",
+      "license": null,
+      "tags": [
+        "*arr",
+        "Music"
+      ],
+      "readme_path": "knowledge/readmes/github.com__TheWicklowWolf__Lidify.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "33b0714054e5c4f0a42c616a7c1e82c63b25526f587b38a2eec0646e9b36be63"
+      }
+    },
+    {
+      "reference": "lightweight-music-server",
+      "name": "Lightweight Music Server",
+      "website": "http://lms-demo.poupon.dev",
+      "description": "Music streaming software with a web interface",
+      "repo_url": "github.com/epoupon/lms",
+      "repo_key": "github.com/epoupon/lms",
+      "stars": null,
+      "forks": 11,
+      "updated_at": "2",
+      "license": null,
+      "tags": [
+        "Music",
+        "Music Streaming"
+      ],
+      "readme_path": "knowledge/readmes/github.com__epoupon__lms.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "a0a8225a5f0db1de872cb95845480e7c85a3ebf10916d0ced8bc5bdb4d5edaf1"
+      }
+    },
+    {
+      "reference": "limesurvey",
+      "name": "LimeSurvey",
+      "website": "www.limesurvey.org",
+      "description": "Survey software with advanced features",
+      "repo_url": "github.com/LimeSurvey/LimeSurvey",
+      "repo_key": "github.com/LimeSurvey/LimeSurvey",
+      "stars": null,
+      "forks": 8,
+      "updated_at": "20",
+      "license": null,
+      "tags": [
+        "Surveys and Forms"
+      ],
+      "readme_path": "knowledge/readmes/github.com__LimeSurvey__LimeSurvey.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "2756e66b5045cc70cd2d465d04b5300ae3fda20e84719dec4e370489ed8e7db1"
+      }
+    },
     {
       "reference": "lingarr",
       "name": "Lingarr",
@@ -22,8 +114,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "75bce3fabaa8f8c16c51c1f8b29c7a9f45b76ba65000d899f049d7385a7a7d85"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "6e6e0bfc7794658488d9abf03558ee74b589b5bba4aad0e10c44f7d9b939fabc"
       }
     },
     {
@@ -44,8 +136,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "debab24539552fdb7ea1cfd0fc91033f1e9c9fe3a7dc84a4429f03a62d5be560"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "eb29462f84332a01b2763c473d5142d05156d625358a9c95ec18adc092783ad8"
       }
     },
     {
@@ -67,8 +159,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "368fe194c1c8591706c6cbeffd8ee84133ad1c2bd132b90df61a5999a1e507d2"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "0fe529e8cb0d7a5d5dae5277ca6e63c26bddf565fb1dbc8ba1380e864f4b5b81"
       }
     },
     {
@@ -90,8 +182,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "3d5ec5236d43698f5955446ba8d517bf0e7458844b30f42a11a176cf72b7ebb4"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "cbeada0edb008f9baa566c3d344dddece420670b13075de3fb2512f8d335d8fc"
       }
     },
     {
@@ -112,8 +204,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "214388288cf327e5d6d135c8ec573edfc82d6f085544ffcdf0233e5ab227c583"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "34abf353fba8271dcb7d9a585c6c40cfceb6b5323d0cdf2b5fc85929ea1c590b"
       }
     },
     {
@@ -135,8 +227,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "73c548e640d12759e2317950fecbda8f8483a88665c41d34a20cc95937083433"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "6d999d6a88e89c4b1f6101b68d252c2996b9709c089a971b2c5670a02a450c3a"
       }
     },
     {
@@ -157,8 +249,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "2302c63152e9c28040324e009e87bdb2ca47dd8bae321415f06c73ebdd72b79e"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "ae3c8c207e16aae60ce6d464d663106dec3a45157d218c5a2e0286419976c0ad"
       }
     },
     {
@@ -180,8 +272,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "01e82e69b78e37d138244312aa603452d72d2692f4ae9e2e4ce294fc7d41c230"
+        "fetched_at": "2026-04-12T05:22:38Z",
+        "row_hash": "04e72099529e9a6ce04aa513933e540f2910b6d0b57bd910e2cf0942b9cf7aeb"
       }
     },
     {
@@ -200,11 +292,11 @@
         "Audiobooks"
       ],
       "readme_path": "knowledge/readmes/github.com__Listenarrs__Listenarr.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "0b5ff2015872b36c58730a0bacc34ab851294e88b8be5e1a0381ebb28b97a78a"
+        "fetched_at": "2026-04-12T05:22:38Z",
+        "row_hash": "387d0a5ce74bc21a4df5551219b800f1831245ecbd8c35611227559aded5bc52"
       }
     },
     {
@@ -225,8 +317,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "89000abac0be242c9e7f01f6f9c70d22f3fae1794f99da908e670110eb8526c0"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "234378d8d7de3f630091ef60f70122ff61918aa915cd9007cf54c3c3f6b25499"
       }
     },
     {
@@ -247,8 +339,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "5a2877946a1bd2c69625fc4adf5dc9233e2fe58caa60cfc5369fa63e7a5886a9"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "f5ed27c0bdb710a1df96230b86620311e1df19cad8a09400a1b06b9c0f1cf324"
       }
     },
     {
@@ -269,8 +361,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "9c5a31c3cb73787dc9262e226dc4070ecf726b81359f51088e70bb6f113e69e2"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "4ddef6878e1b9ce4ee2d08bf1196abc75b4690f17028a17bf365c2fb2f872adc"
       }
     },
     {
@@ -291,8 +383,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "7feddea76802bf44cce1e627dd62794cfcc3c06835ff677ad11e9d28aa689c93"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "1458c4aa46300b756ecc59b33f99e135aafd2e7afa865d06a31a285d8b99ec7c"
       }
     },
     {
@@ -315,8 +407,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "e37832073178862b5cd1f25ece22713472fe3d57ceb394bd98451cb13d6ef89c"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "c41a663ab36a75c0fb32a6db7742f5f4b7a01fe48133a25fd1662359c7d99df7"
       }
     },
     {
@@ -337,8 +429,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "f62db5d382fb99d87a5ac7c6316a2800d82fa6dea72b6782dae7078e3532ce8e"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "c0306602efd4424cf84317406019ddc810d8d9d9a92140bd50dce3e7ca78f147"
       }
     },
     {
@@ -359,8 +451,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "34496052e027781afc88174d9c4512e4c830e4df0821d1d7dc837b2d39d6b4de"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "99ad818fa12c8749ec389f878685c078df74e44ea9e4b606907afb69ed536812"
       }
     },
     {
@@ -382,8 +474,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "8c88c8927c5efd08404c9f7bfd581810ecd2f98451b6157a6f1eacaaaf51150e"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "3a818cf52f8172d91b64248d16269bb8dcc004fc7ae335a5a5d02f847b8f0c38"
       }
     },
     {
@@ -404,8 +496,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "a3204df6e09c5ea05c63828fedcf6d73cfb53e281c8f60451a83cc21bf900106"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "7687fb6f4aea2943650a05c2f882b1ee421da478f5980e352f4b36cbb913a7f9"
       }
     },
     {
@@ -426,8 +518,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "21407979451c9cd71cce416b30b74e2866cbdcdb94457245afef72c2d067b27f"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "e139db5df1bcf36fc1506e371c8d32319129776d12d36ced7b827a3ab4e9f4e6"
       }
     },
     {
@@ -448,8 +540,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "0811dc95b9800bfe29eb0bdab1563d3ea8e6bac30444baaf468876aa90501500"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "6b6f5edfedb732d24d4a4db61adde7fd5af25bc7acb391be425fd808bda2f20b"
       }
     },
     {
@@ -468,11 +560,11 @@
         "Logs"
       ],
       "readme_path": "knowledge/readmes/github.com__mr-karan__logchef.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "ae32a27b174261666c91f5e519b5840be22782cf49ffc6115b710d3ea6e68ff7"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "c7d816670ed0524bd2e904865600586e234ae83479bce6adaa5025d383a4f3d2"
       }
     },
     {
@@ -493,8 +585,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "32103c660b7cc681e5a7eb417d818f4c4721ff48b954b814b99b8f70aad30059"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "2ad5818a60be0b33fe0462f4ddc20ebef4accecafb60027273dbe199d3b2b666"
       }
     },
     {
@@ -516,8 +608,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "9e80849df30026b40e72dc285faa9d2fbb7ac0424812745b86b87c6235071148"
+        "fetched_at": "2026-04-12T05:22:38Z",
+        "row_hash": "49758a4221132c860c0bacc3005ed4e658413987d3ac95d3b2245644aab82326"
       }
     },
     {
@@ -539,8 +631,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "00c0434770fe863498ea074e44f566c623e67beee391157c44e6f5b54fccf948"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "5327af23b0e55cd84353b83a95ebb8cb15057969ec4d9314114a30c794d2fd2f"
       }
     },
     {
@@ -561,8 +653,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "83d653f221f81b0603cf0df8f83d928528e21798c1fb708a0ae5962b2f01f6e1"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "324d8e9ea9fad6730ffb318cbfbeafe3a92d94725265dc401370c3eac78a495b"
       }
     },
     {
@@ -584,8 +676,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "ff567d3679696549c8a68fd82946a8cac7b5a30a600f249fca189c30a4e5537a"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "8a9c4734937acc98f2d88c8480022cc037bfab66054be00249df5ccb0d6f360c"
       }
     },
     {
@@ -606,8 +698,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "40584b0f590cdaa9f0bb62b29b1ca4fd28ed5f1e30b21fd3fb54a3902f624402"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "f7ac2bc3dd2ff19d94d34f29d23fdc2894569397023341a28f39cc3c45227520"
       }
     },
     {
@@ -628,8 +720,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "ed40984af3591f555a91ff8786447df3997109d65407dc93c9f635e5ae6060be"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "aa7a629442e9a304c2c994fc955267fda1d67bbb1ecbca172894e39d24d8687a"
       }
     },
     {
@@ -650,8 +742,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "97ae402479dceac68fdb4b0d25dc1eacdd5b1f9a3367b968e29060ae6471ddac"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "4d0fcdb26500b3eca5754caa181a12eb961cc102fdee6c5fbbdbac826770bfb9"
       }
     },
     {
@@ -674,8 +766,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "864538882436a65c14ae63e194ef4ad62ac4784424e8ef8711eeb7115659f0e5"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "375ea04c013d4b91405d4a82875f073e80999be37adb019fe9b0a09e2e54410b"
       }
     },
     {
@@ -696,8 +788,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "48c0c698bb8f5ff3468da1ef9288a80f077914e40ec05fc4ed79efc8aa0fb457"
+        "fetched_at": "2026-04-12T05:22:38Z",
+        "row_hash": "ab538061b484d7719ec855ca152de44af0eac0be89c9a7597fe8bba97e2afd9c"
       }
     },
     {
@@ -715,11 +807,11 @@
         "Calendar"
       ],
       "readme_path": "knowledge/readmes/github.com__Opisek__luna.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "a0487050a89b9346cf2c6fe6417d11b6fbfc7a631720aaacd4ef6a7070e91bb9"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "7123db1dcd3e4d1f3a78df5a447f2a5b589accad6c6be02eb9fe82521bb1b579"
       }
     },
     {
@@ -740,8 +832,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "cc816f826a522e36053e2355fc0b031697eb45bc93a75fd9617c691869c7eee8"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "98f0fd40101f684695122cc35e22c8d0ed9361aa9c06dc97ee0362ea65d7b495"
       }
     },
     {
@@ -762,8 +854,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "798842f58209021e72d71096233673e941b9d64fc0696eca220c0397950c4193"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "2cd78e4335dc6d280cf179f7ed1ba14b7c5e4e07244788e184ed6834575e5aa6"
       }
     },
     {
@@ -784,8 +876,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "63a1d0d2b9949fcc00579bbdfd1916e27a7b57ab4d1f20d64fa75bcd8ea8aa97"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "74e6ae3d1b853cae2a2b0dea4af1510e4a19b67675b806eb041d4feb1cf64193"
       }
     },
     {
@@ -806,8 +898,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "50788abbea91fa086b06639f787694cbf490192b9a48415a366116654ce50d7d"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "d5f3758bfec6ccf565ddd12e323ead9fc2e24d79f5ef441599c097f15808cdfe"
       }
     },
     {
@@ -828,8 +920,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "d45037f74588fce874a630c78b77367abba5bc639d4adc7eac61a5c1419ce327"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "f7a3d4873dc5ed8673b1cdcdd70e3a71b361d7e2ac56bee6aa4a69336f09c107"
       }
     },
     {
@@ -850,8 +942,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "1acaa6bb35a887b54883abaa43e84c80810aa92670195405d16438f3dc5c1c14"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "01c1c1d5404e0f26a0f0d22772f163529437e5ae6f3b4c1f93cfb4c1721ac571"
       }
     },
     {
@@ -869,11 +961,11 @@
         "Media Streaming"
       ],
       "readme_path": "knowledge/readmes/github.com__m3ue__m3u-editor.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "aa76c9003ba6ff75c41f85ee0b09605b07f3ae0b5b5d29daeb2955c8263d8ee1"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "687e474cab61197b16f30f04936d51846365fd0b9df3ba93ad17e1927943f909"
       }
     },
     {
@@ -894,8 +986,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "9fe531242b04a751f266e9e60438827fe8f264757f0f50f13a406b1e40d29957"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "17e047ce17b7e1b89618e7d527c07e588ec4a397c75c27766b34aed5aa6378fa"
       }
     },
     {
@@ -918,8 +1010,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "b3b693c4bc24f4a6a9fa92e50ddeff16212c85dcefc990ac730ad3d5ebf45a9c"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "bf2afde3afe9e37c6d81b7d3508270100fe87db072ef15cb98218efdf5fc6f37"
       }
     },
     {
@@ -941,8 +1033,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "483eadcf13dcc68f98fbd16936348eed00fcb8de5169a1686749b79971b0547a"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "ac4c05a4da8d2700217a619bbe933f481cd553226de552925e9c8ccc34d3119d"
       }
     },
     {
@@ -963,8 +1055,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "665817bdc79f57f897d33da75dc143af0318772cb865aa8f009848eca2cd7cb7"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "11053afaf7d6da0d258da9c127d1e78c47085bd2e2ff6e99aa8d770e1ea38915"
       }
     },
     {
@@ -985,8 +1077,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "073b05051257dc0c36fc1219fffac489bee0afcead8e4cba115fd739f29d2c4e"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "f5dade3fee05f36e8f2fdef909de8bf9f57d1da677abf2326180667ec16a8336"
       }
     },
     {
@@ -1007,8 +1099,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "66276acfbeab37b58020bb8e46404208974dc28f28f91b8ef849567f8e46ad9d"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "91e6f63ffe1e720719f9f65b178a65e8a4ca787af052cd8ad7ccc2130b30ffda"
       }
     },
     {
@@ -1027,102 +1119,11 @@
         "Automation"
       ],
       "readme_path": "knowledge/readmes/github.com__Maintainerr__Maintainerr.md",
-      "readme_status": "ok",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "21a1ab6a44d90ec061b35ebd0b30edca60f6d230aaa3bc1435eae9fcc871d8e2"
-      }
-    },
-    {
-      "reference": "maker-management-platform",
-      "name": "Maker Management Platform",
-      "website": "github.com/Maker-Management-Platform/agent",
-      "description": "Digital asset manger for 3D printing",
-      "repo_url": "github.com/Maker-Management-Platform/agent",
-      "repo_key": "github.com/Maker-Management-Platform/agent",
-      "stars": null,
-      "forks": 3,
-      "updated_at": "14",
-      "license": null,
-      "tags": [
-        "3D Printing"
-      ],
-      "readme_path": "knowledge/readmes/github.com__Maker-Management-Platform__agent.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "59518a87d00c5f5e860776cef1151f843a507392ed35a24731e83073fdec9b78"
-      }
-    },
-    {
-      "reference": "maloja",
-      "name": "Maloja",
-      "website": "maloja.krateng.ch",
-      "description": "Music scrobble database for personal listening",
-      "repo_url": "github.com/krateng/maloja",
-      "repo_key": "github.com/krateng/maloja",
-      "stars": null,
-      "forks": 11,
-      "updated_at": "29",
-      "license": null,
-      "tags": [
-        "Music",
-        "Scrobble",
-        "Statistics"
-      ],
-      "readme_path": "knowledge/readmes/github.com__krateng__maloja.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "13f162cbc95b5f065769652ce25f8bd0901b903d5cd0167af7aaf83178ee37b8"
-      }
-    },
-    {
-      "reference": "managarr",
-      "name": "Managarr",
-      "website": "github.com/Dark-Alex-17/managarr",
-      "description": "TUI and CLI tool for managing *arr apps",
-      "repo_url": "github.com/Dark-Alex-17/managarr",
-      "repo_key": "github.com/Dark-Alex-17/managarr",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "31",
-      "license": null,
-      "tags": [
-        "*arr"
-      ],
-      "readme_path": "knowledge/readmes/github.com__Dark-Alex-17__managarr.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "75adc8e66d69dd6de8d32a266cc9722f492bca4134d42eeccc2799e733b27612"
-      }
-    },
-    {
-      "reference": "manage-my-damn-life",
-      "name": "Manage My Damn Life",
-      "website": "intri.in/manage-my-damn-life/",
-      "description": "A self-hosted frontend for managing your CalDAV tasks and calendars",
-      "repo_url": "github.com/intri-in/manage-my-damn-life-nextjs",
-      "repo_key": "github.com/intri-in/manage-my-damn-life-nextjs",
-      "stars": null,
-      "forks": 11,
-      "updated_at": "20",
-      "license": null,
-      "tags": [
-        "Calendar",
-        "Tasks and To-Do Lists"
-      ],
-      "readme_path": "knowledge/readmes/github.com__intri-in__manage-my-damn-life-nextjs.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-05T05:10:58Z",
-        "row_hash": "f50ca872caa77b1193cc512300640c409b6616dd224fa5aea4b9b3ddf5f0ddca"
+        "fetched_at": "2026-04-12T05:22:37Z",
+        "row_hash": "0d016d5face673632e288d97d7748093b4f8d4d1e6cdd92009a66c23b10fd447"
       }
     }
   ]

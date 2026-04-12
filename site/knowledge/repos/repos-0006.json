@@ -1,8 +1,38 @@
 {
   "chunk": 6,
   "count": 50,
-  "generated_at": "2026-04-05T05:18:12Z",
+  "generated_at": "2026-04-12T05:29:52Z",
   "items": [
+    {
+      "repo_key": "github.com/Simounet/flox",
+      "repo_url": "github.com/Simounet/flox",
+      "host": "github.com",
+      "owner": "Simounet",
+      "repo": "flox",
+      "app_references": [
+        "flox"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__Simounet__flox.md",
+      "readme_download_url": null,
+      "readme_sha256": "4aa6ac089d1dc209c98991712d96196f466ca4f4f25e56d766af615dbd9e8506",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/SimpleHomelab/Deployrr",
+      "repo_url": "github.com/SimpleHomelab/Deployrr",
+      "host": "github.com",
+      "owner": "SimpleHomelab",
+      "repo": "Deployrr",
+      "app_references": [
+        "deployrr"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__SimpleHomelab__Deployrr.md",
+      "readme_download_url": "https://raw.githubusercontent.com/SimpleHomelab/Deployrr/main/README.md",
+      "readme_sha256": "0ed5535cb9f37368ddba787b817b147b50ce8371ba5825b38228836e7faa147d",
+      "error": null
+    },
     {
       "repo_key": "github.com/SinTan1729/chhoto-url",
       "repo_url": "github.com/SinTan1729/chhoto-url",
@@ -274,6 +304,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/TM9657/flow-like",
+      "repo_url": "github.com/TM9657/flow-like",
+      "host": "github.com",
+      "owner": "TM9657",
+      "repo": "flow-like",
+      "app_references": [
+        "flow-like"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__TM9657__flow-like.md",
+      "readme_download_url": "https://raw.githubusercontent.com/TM9657/flow-like/dev/README.md",
+      "readme_sha256": "e92b1c31df18f1210f51e2d1feb2e347b6c9f9ec93401474eebe7bcf56726ab5",
+      "error": null
+    },
+    {
       "repo_key": "github.com/TYPO3/typo3",
       "repo_url": "github.com/TYPO3/typo3",
       "host": "github.com",
@@ -402,10 +447,10 @@
       "app_references": [
         "termix"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Termix-SSH__Termix.md",
-      "readme_download_url": null,
-      "readme_sha256": "db7cbe1db74ed6561764b08f78411a4bc90f71c156d7e821e0545fa205215c6d",
+      "readme_download_url": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/README.md",
+      "readme_sha256": "319826e151fbec0adda58319300bf818660d4b1d6c89f227acf423b795833102",
       "error": null
     },
     {
@@ -432,10 +477,10 @@
       "app_references": [
         "tinyfeed"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__TheBigRoomXXL__tinyfeed.md",
-      "readme_download_url": null,
-      "readme_sha256": "b752580c65f7a02ae8f834216ed62019eb36f880195aff37620adf253279e1bf",
+      "readme_download_url": "https://raw.githubusercontent.com/TheBigRoomXXL/tinyfeed/main/README.md",
+      "readme_sha256": "6735250c779f2d72526b5791d1756870c2ef3b10e75a7b08963a2c2a3c45c008",
       "error": null
     },
     {
@@ -582,11 +627,11 @@
       "app_references": [
         "kitchenowl"
       ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__TomBursch__kitchenowl.md",
+      "readme_status": "error",
+      "readme_path": null,
       "readme_download_url": null,
-      "readme_sha256": "f9dedaa5f945914ec5d191e781568b785ffdbf833eef1e4f8893375595d04fac",
-      "error": null
+      "readme_sha256": null,
+      "error": "github_readme_http_404"
     },
     {
       "repo_key": "github.com/ToolJet/ToolJet",
@@ -657,9 +702,9 @@
       "app_references": [
         "gatus"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__TwiN__gatus.md",
-      "readme_download_url": "https://raw.githubusercontent.com/TwiN/gatus/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "309ab046f819c8ea13b05c69f097bfe5e70c0a2db1dadcea968be4417c012b8f",
       "error": null
     },
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__V1ck3s__octo-fiesta.md",
       "readme_download_url": null,
       "readme_sha256": "f16ff41c15340a1e47ef317530b1a2da5d5f78e2f8400bb34952874170996c9b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/VERT-sh/VERT",
-      "repo_url": "github.com/VERT-sh/VERT",
-      "host": "github.com",
-      "owner": "VERT-sh",
-      "repo": "VERT",
-      "app_references": [
-        "vert"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__VERT-sh__VERT.md",
-      "readme_download_url": null,
-      "readme_sha256": "237ebe7e3b804abd04a9bdcd573515a0cf6982fd9b27c8b3ff455978dc861754",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ValueMelody/melody-auth",
-      "repo_url": "github.com/ValueMelody/melody-auth",
-      "host": "github.com",
-      "owner": "ValueMelody",
-      "repo": "melody-auth",
-      "app_references": [
-        "melody-auth"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__ValueMelody__melody-auth.md",
-      "readme_download_url": null,
-      "readme_sha256": "6b71532f49081c861be47620859c317e99f1cfaa8d99e35492820ea50f3ce7d1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/VictoriaMetrics/VictoriaMetrics",
-      "repo_url": "github.com/VictoriaMetrics/VictoriaMetrics",
-      "host": "github.com",
-      "owner": "VictoriaMetrics",
-      "repo": "VictoriaMetrics",
-      "app_references": [
-        "victoriametrics"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__VictoriaMetrics__VictoriaMetrics.md",
-      "readme_download_url": null,
-      "readme_sha256": "2ccbc458437f643662ee1044e4fa9ebab32c43a14ab8e695aebc91e82fd53ce8",
       "error": null
     }
   ]

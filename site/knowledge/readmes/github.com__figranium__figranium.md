@@ -1,12 +1,12 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/figranium/figranium/main/figranium_banner.png" alt="Figranium Banner">
+  <img src="https://raw.githubusercontent.com/figranium/figranium/main/banner.png" alt="Figranium Banner">
 </div>
 
 # Figranium — Deterministic Control for an Agentic World
 
-Figranium (formerly Doppelganger) is a self‑hosted, block-first automation control plane built for teams that want predictable, auditable browser workflows without pushing sensitive data to third‑party SaaS. It bundles a React/Vite frontend, an Express/Playwright backend, helper scripts, and optional CLI tooling so you can sketch blocks, inject JavaScript, rotate proxies, and run everything locally.
+Figranium is a self‑hosted, block-first automation control plane built for teams that want predictable, auditable browser workflows without pushing sensitive data to third‑party SaaS. It bundles a React/Vite frontend, an Express/Playwright backend, helper scripts, and optional CLI tooling so you can sketch blocks, inject JavaScript, rotate proxies, and run everything locally.
 
-<img src="https://raw.githubusercontent.com/figranium/figranium/main/figranium_screenshot.png" alt="Figranium Demo" width="100%">
+<img src="https://raw.githubusercontent.com/figranium/figranium/main/screenshot.png" alt="Figranium Demo" width="100%">
 
 # What You Get
 
@@ -130,7 +130,7 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 | `SESSION_SECRET` | Signs session cookies. Required. | — |
 | `ALLOWED_IPS` | Comma list for basic IP allowlisting. | none (open) |
 | `TRUST_PROXY` | Honor `X-Forwarded-*` when behind a reverse proxy. | `0` |
-| `ALLOW_PRIVATE_NETWORKS` | Allow scraping local/private IPs (SSRF risk). | `true` |
+| `ALLOW_PRIVATE_NETWORKS` | Allow scraping local/private IPs (SSRF risk). | `false` |
 | `VITE_DEV_PORT` | Port for front-end dev server. | `5173` |
 | `VITE_BACKEND_PORT` | Backend port for proxying + scripts. | `11345` |
 | `DB_TYPE` | Optional database type overriding disk storage. Set to `postgres` to use PostgreSQL. | — |
@@ -216,7 +216,7 @@ If enabled, provide the `x-api-key` header or `Authorization: Bearer <key>`. For
 ### Data Management API
 *   **`GET /api/data/captures`**: List generated screenshots, videos, and downloads.
 *   **`DELETE /api/data/captures/:name`**: Delete a specific capture.
-*   **`POST /api/clear-screenshots`**: Removes all files in `public/captures`.
+*   **`POST /api/clear-screenshots`**: Removes all files in `public/captures` and `data/recordings`.
 *   **`POST /api/clear-cookies`**: Clears stored browser session cookies.
 
 # Task Scripting Tips
