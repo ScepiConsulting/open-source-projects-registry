@@ -17,10 +17,10 @@
 
 #### Join the community
 
-[![Discord](https://img.shields.io/discord/1466834119873925263?label=discord&logo=discord)](https://discord.gg/MzBXz5v5XB)
+[![Discord](https://img.shields.io/discord/1466834119873925263?label=discord&logo=discord)](https://discord.gg/XjgVyXrcEH)
 
 > [!WARNING]
-> Zerobyte is still in version 0.x.x and is subject to major changes from version to version. I am developing the core features and collecting feedbacks. Expect bugs! Please open issues or feature requests
+> Zerobyte is still in version 0.x.x and is subject to major changes from version to version. I am developing the core features and collecting feedbacks. Please open issues for bugs or feature requests
 
 <p align="center">
 <a href="https://www.buymeacoffee.com/nicotsx" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
@@ -29,6 +29,12 @@
 ## Intro
 
 Zerobyte is a backup automation tool that helps you save your data across multiple storage backends. Built on top of Restic, it provides an modern web interface to schedule, manage, and monitor encrypted backups of your remote storage.
+
+## Documentation
+
+The official documentation website is available at [zerobyte.app](https://zerobyte.app).
+
+It contains up-to-date setup guides, configuration reference, and usage documentation for running Zerobyte in production.
 
 ### Features
 
@@ -44,7 +50,7 @@ In order to run Zerobyte, you need to have Docker and Docker Compose installed o
 ```yaml
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.33
+    image: ghcr.io/nicotsx/zerobyte:v0.34
     container_name: zerobyte
     restart: unless-stopped
     cap_add:
@@ -97,7 +103,7 @@ Zerobyte can be customized using environment variables. Below are the available 
 | :-------------------- | :---------------------------------------------------------------------------------------------------------------------------------------- | :--------------------- |
 | `BASE_URL`            | **Required.** The base URL of your Zerobyte instance (e.g., `https://zerobyte.example.com`). See [Authentication](#authentication) below. | (none)                 |
 | `APP_SECRET`          | **Required.** A random secret key (32+ chars) used to encrypt sensitive data in the database. Generate with `openssl rand -hex 32`.       | (none)                 |
-| `APP_SECRET_FILE`     | Path to a file containing `APP_SECRET`, useful with Docker or Kubernetes secrets. Mutually exclusive with `APP_SECRET`.                     | (none)                 |
+| `APP_SECRET_FILE`     | Path to a file containing `APP_SECRET`, useful with Docker or Kubernetes secrets. Mutually exclusive with `APP_SECRET`.                   | (none)                 |
 | `PORT`                | The port the web interface and API will listen on.                                                                                        | `4096`                 |
 | `RESTIC_HOSTNAME`     | The hostname used by Restic when creating snapshots. Automatically detected if a custom hostname is set in Docker.                        | `zerobyte`             |
 | `TZ`                  | Timezone for the container (e.g., `Europe/Zurich`). **Crucial for accurate backup scheduling.**                                           | `UTC`                  |
@@ -105,7 +111,7 @@ Zerobyte can be customized using environment variables. Below are the available 
 | `TRUSTED_ORIGINS`     | Comma-separated list of extra trusted origins for CORS (e.g., `http://localhost:3000,http://example.com`).                                | (none)                 |
 | `LOG_LEVEL`           | Logging verbosity. Options: `debug`, `info`, `warn`, `error`.                                                                             | `info`                 |
 | `SERVER_IDLE_TIMEOUT` | Idle timeout for the server in seconds.                                                                                                   | `60`                   |
-| `RCLONE_CONFIG_DIR`   | Path to the rclone config directory inside the container. Change this if running as a non-root user.                                      | `/root/.config/rclone` |
+| `RCLONE_CONFIG_DIR`   | Path to the directory containing `rclone.conf` inside the container. Change this if running as a non-root user.                           | `/root/.config/rclone` |
 | `PROVISIONING_PATH`   | Path to a JSON file with operator-managed repositories and volumes to sync at startup.                                                    | (none)                 |
 
 ### Provisioned Resources
@@ -117,6 +123,8 @@ Provisioned resources:
 - appear in the normal repositories and volumes screens
 - can resolve credential fields from environment variables or `/run/secrets/*` during startup sync
 
+The complete provisioning documentation is available at [zerobyte.app/docs/guides/provisioning](https://zerobyte.app/docs/guides/provisioning).
+
 See `examples/provisioned-resources/README.md` for a full example.
 
 ### Simplified setup (No remote mounts)
@@ -126,7 +134,7 @@ If you only need to back up locally mounted folders and don't require remote sha
 ```yaml
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.33
+    image: ghcr.io/nicotsx/zerobyte:v0.34
     container_name: zerobyte
     restart: unless-stopped
     ports:
@@ -165,7 +173,7 @@ If you want to track a local directory on the same server where Zerobyte is runn
 ```diff
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.33
+    image: ghcr.io/nicotsx/zerobyte:v0.34
     container_name: zerobyte
     restart: unless-stopped
     cap_add:
@@ -240,7 +248,7 @@ Zerobyte can use [rclone](https://rclone.org/) to support 40+ cloud storage prov
    ```diff
    services:
      zerobyte:
-       image: ghcr.io/nicotsx/zerobyte:v0.33
+       image: ghcr.io/nicotsx/zerobyte:v0.34
        container_name: zerobyte
        restart: unless-stopped
        cap_add:
@@ -258,7 +266,7 @@ Zerobyte can use [rclone](https://rclone.org/) to support 40+ cloud storage prov
    +     - ~/.config/rclone:/root/.config/rclone:ro
    ```
 
-   > **Note for non-root users:** If your container runs as a different user (e.g., TrueNAS apps), mount your config to the appropriate location and set `RCLONE_CONF_DIR`:
+   > **Note for non-root users:** If your container runs as a different user (e.g., TrueNAS apps), mount your config to the appropriate location and set `RCLONE_CONFIG_DIR`:
    >
    > ```yaml
    > environment:

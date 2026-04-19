@@ -13,10 +13,6 @@
   ![GitHub Stars](https://img.shields.io/github/stars/jamcalli/pulsarr?style=flat-square)
 </div>
 
-<div align="center">
-  <sub><a href="#transparency">AI Transparency</a></sub>
-</div>
-
 ---
 
 Pulsarr bridges Plex watchlists with Sonarr and Radarr for real-time media monitoring and automated content acquisition, **all from within the Plex app, no extra logins required.**
@@ -90,7 +86,7 @@ Standalone builds with easy installers are available for Linux, macOS, and Windo
 
 | Platform | Install Method |
 |----------|---------------|
-| **Linux** | `curl -fsSL https://raw.githubusercontent.com/jamcalli/Pulsarr/master/scripts/installers/linux/install.sh \| sudo bash` |
+| **Linux** | `curl -fsSL https://raw.githubusercontent.com/jamcalli/Pulsarr/master/scripts/installers/linux/install.sh \| sudo bash` (automatically selects `baseline` variant for older CPUs without AVX2) |
 | **Windows** | Download and run `pulsarr-vX.X.X-windows-x64-setup.exe` from the [latest release](https://github.com/jamcalli/pulsarr/releases/latest) (use `baseline` variant for older CPUs without AVX2) |
 | **macOS** | Download `pulsarr-vX.X.X-macos-{arch}.dmg` from the [latest release](https://github.com/jamcalli/pulsarr/releases/latest) |
 

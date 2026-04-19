@@ -8,13 +8,13 @@
 
 > **IMPORTANT**: Configure file sharing in slskd to avoid Soulseek bans. Set up shared folders at `http://localhost:5030/shares`.
 
-**Community**: [Discord](https://discord.gg/wGvKqVQwmy) | **Support**: [GitHub Issues](https://github.com/Nezreka/SoulSync/issues) | **Donate**: [Ko-fi](https://ko-fi.com/boulderbadgedad)
+**Community**: [Discord](https://discord.gg/wGvKqVQwmy) | [Reddit](https://old.reddit.com/r/ssync/) | **Website**: [ssync.net](https://www.ssync.net/) | **Support**: [GitHub Issues](https://github.com/Nezreka/SoulSync/issues) | **Donate**: [Ko-fi](https://ko-fi.com/boulderbadgedad)
 
 ---
 
 ## What It Does
 
-SoulSync bridges streaming services to your media server with automated discovery:
+SoulSync bridges streaming services to your music library with automated discovery:
 
 1. **Monitors artists** → Automatically detects new releases from your watchlist
 2. **Generates playlists** → Release Radar, Discovery Weekly, Seasonal, Decade/Genre mixes, Cache-powered discovery
@@ -23,7 +23,7 @@ SoulSync bridges streaming services to your media server with automated discover
 5. **Enriches metadata** → 10 enrichment workers (Spotify, MusicBrainz, iTunes, Deezer, Discogs, AudioDB, Last.fm, Genius, Tidal, Qobuz)
 6. **Tags consistently** → Picard-style MusicBrainz release preflight ensures all album tracks get the same release ID
 7. **Organizes files** → Custom templates for clean folder structures
-8. **Syncs media server** → Plex, Jellyfin, or Navidrome stay updated automatically
+8. **Manages library** → Plex, Jellyfin, Navidrome, or SoulSync Standalone (no media server required)
 9. **Scrobbles plays** → Automatic scrobbling to Last.fm and ListenBrainz from your media server
 
 ---
@@ -177,6 +177,14 @@ SoulSync bridges streaming services to your media server with automated discover
 **Database Storage Visualization** — Donut chart showing per-table storage breakdown
 
 **Import System** — Tag-first matching, auto-grouped album cards, staging folder workflow
+- Auto-Import worker: recursive scan, single file support, AcoustID fingerprinting fallback
+- Confidence-gated: 90%+ auto-imports, 70-90% queued for review
+
+**SoulSync Standalone Mode** — Use SoulSync without Plex, Jellyfin, or Navidrome
+- Downloads and imports write directly to the library database
+- Filesystem scanner for incremental and deep scan of Transfer folder
+- Pre-populated enrichment IDs from download context (Spotify, Deezer, MusicBrainz)
+- Select in Settings → Connections → Standalone
 
 **Template Organization** — `$albumartist/$album/$track - $title` and 10+ variables
 
@@ -219,8 +227,8 @@ PUID/PGID are exposed in the template — set them to match your Unraid permissi
 ```bash
 git clone https://github.com/Nezreka/SoulSync
 cd SoulSync
-pip install -r requirements-webui.txt
-python web_server.py
+pip install -r requirements.txt
+gunicorn -c gunicorn.conf.py wsgi:application
 # Open http://localhost:8008
 ```
 
@@ -229,6 +237,7 @@ For local development and tests:
 ```bash
 pip install -r requirements-dev.txt
 pytest
+gunicorn -c gunicorn.dev.conf.py wsgi:application
 ```
 
 ---
@@ -271,9 +280,9 @@ Open SoulSync at `http://localhost:8008` and go to Settings.
 **Download Source**: Choose your preferred source (Soulseek, Deezer, Tidal, Qobuz, HiFi, YouTube, or Hybrid)
 
 **Paths**:
-- **Download Path**: Container path to slskd's download folder (e.g., `/app/downloads`)
-- **Transfer Path**: Where organized music goes (e.g., `/app/Transfer`)
-- **Staging Path**: Optional import folder (e.g., `/app/Staging`)
+- **Input Folder**: Container path to slskd's download folder (e.g., `/app/downloads`)
+- **Output Folder**: Where organized music goes (e.g., `/app/Transfer`)
+- **Import Folder**: Optional folder for importing existing music (e.g., `/app/Staging`)
 
 **Media Server** (optional): Use your machine's actual IP (not `localhost` — that means inside the container)
 
@@ -284,9 +293,9 @@ Open SoulSync at `http://localhost:8008` and go to Settings.
 | Config | `/app/config` | Your config folder |
 | Logs | `/app/logs` | Your logs folder |
 | Database | `/app/data` | Named volume (recommended) |
-| Downloads | `/app/downloads` | Same folder slskd downloads to |
-| Transfer | `/app/Transfer` | Where organized music goes |
-| Staging | `/app/Staging` | Optional import folder |
+| Input | `/app/downloads` | Same folder slskd downloads to |
+| Output | `/app/Transfer` | Where organized music goes |
+| Import | `/app/Staging` | Optional folder for importing music |
 
 **Important:** Use a named volume for the database (`soulsync_database:/app/data`). Direct host path mounts to `/app/data` can overwrite Python module files.
 

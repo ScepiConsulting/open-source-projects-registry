@@ -1,8 +1,23 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-04-12T05:29:52Z",
+  "generated_at": "2026-04-19T05:35:12Z",
   "items": [
+    {
+      "repo_key": "github.com/dribdat/dribdat",
+      "repo_url": "github.com/dribdat/dribdat",
+      "host": "github.com",
+      "owner": "dribdat",
+      "repo": "dribdat",
+      "app_references": [
+        "dribdat"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dribdat__dribdat.md",
+      "readme_download_url": null,
+      "readme_sha256": "45b4bb044b3e15fb17a0fea933b638d3e69827974dcddab720bdfe43d275352c",
+      "error": null
+    },
     {
       "repo_key": "github.com/drivebase/drivebase",
       "repo_url": "github.com/drivebase/drivebase",
@@ -12,10 +27,10 @@
       "app_references": [
         "drivebase"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__drivebase__drivebase.md",
-      "readme_download_url": null,
-      "readme_sha256": "36e53e6e3379f44b85c9f05be92bf848af9d88b0c13b363cbd22f273a6c6283b",
+      "readme_download_url": "https://raw.githubusercontent.com/drivebase/drivebase/main/README.md",
+      "readme_sha256": "b1b6aac6fcf029762cac42491277f7e2e03c2f518f08f69d90296e9eda6a2aa6",
       "error": null
     },
     {
@@ -177,9 +192,9 @@
       "app_references": [
         "ackee"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__electerious__Ackee.md",
-      "readme_download_url": "https://raw.githubusercontent.com/electerious/Ackee/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "00795a0c854f7b1f3db078c6e992bba6f8b416464e0227aea662130d2ba6c203",
       "error": null
     },
@@ -313,9 +328,9 @@
       "app_references": [
         "ergo"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ergochat__ergo.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ergochat/ergo/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1beb6f0c2f7947c0e75fc844dd2e9f7bded3e3d43f1aa9324d7b6f588e1d4207",
       "error": null
     },
@@ -358,9 +373,9 @@
       "app_references": [
         "espocrm"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__espocrm__espocrm.md",
-      "readme_download_url": "https://raw.githubusercontent.com/espocrm/espocrm/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e5ca2172c873df8f4b98794f0f2743297b54253663966ad80aa74508bafe7f58",
       "error": null
     },
@@ -380,18 +395,18 @@
       "error": null
     },
     {
-      "repo_key": "github.com/ether/etherpad-lite",
-      "repo_url": "github.com/ether/etherpad-lite",
+      "repo_key": "github.com/ether/etherpad",
+      "repo_url": "github.com/ether/etherpad",
       "host": "github.com",
       "owner": "ether",
-      "repo": "etherpad-lite",
+      "repo": "etherpad",
       "app_references": [
         "etherpad"
       ],
       "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__ether__etherpad-lite.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ether/etherpad-lite/develop/README.md",
-      "readme_sha256": "d83f9188194e070fb281ef5ffcac35849ee3c8a35a6bb2705891ebe4780a2206",
+      "readme_path": "knowledge/readmes/github.com__ether__etherpad.md",
+      "readme_download_url": "https://raw.githubusercontent.com/ether/etherpad/develop/README.md",
+      "readme_sha256": "b75c2565ba97a543ce06bbc5e332fc6c5f831006d158d79ae4d036e0dc0f70d2",
       "error": null
     },
     {
@@ -403,9 +418,9 @@
       "app_references": [
         "evcc"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__evcc-io__evcc.md",
-      "readme_download_url": "https://raw.githubusercontent.com/evcc-io/evcc/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f53719fd23f9ba4de54580c05bd65af1ae3d9811520cd4fb7f887e7c14e56783",
       "error": null
     },
@@ -433,10 +448,10 @@
       "app_references": [
         "evershop"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__evershopcommerce__evershop.md",
-      "readme_download_url": null,
-      "readme_sha256": "ab24a6c57a826afc6eb7f2df914a77d5707c7416bde13201e7938e0bca74e6e7",
+      "readme_download_url": "https://raw.githubusercontent.com/evershopcommerce/evershop/dev/README.md",
+      "readme_sha256": "586f206e25b23bd5a459b3029ddd4a1439acfc60b4fb009829e451c839b8a276",
       "error": null
     },
     {
@@ -448,10 +463,10 @@
       "app_references": [
         "bracket"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__evroon__bracket.md",
-      "readme_download_url": null,
-      "readme_sha256": "945a1315f3101b4c567acc8286d9d184278bb1ee7e3228ee9bb7e222b99825f9",
+      "readme_download_url": "https://raw.githubusercontent.com/evroon/bracket/master/README.md",
+      "readme_sha256": "fdb12400addd1467815bd6734aeb7ac0025b3e55dad57fdd0f4853d9b813bd1e",
       "error": null
     },
     {
@@ -545,6 +560,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/fbuchner/meerkat-crm",
+      "repo_url": "github.com/fbuchner/meerkat-crm",
+      "host": "github.com",
+      "owner": "fbuchner",
+      "repo": "meerkat-crm",
+      "app_references": [
+        "meerkat-crm"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__fbuchner__meerkat-crm.md",
+      "readme_download_url": "https://raw.githubusercontent.com/fbuchner/meerkat-crm/main/README.md",
+      "readme_sha256": "7827dcd1e163b5d304bd943e7a1b76c616381a960e97750de4604fb0ac3d2c0b",
+      "error": null
+    },
+    {
       "repo_key": "github.com/fccview/cronmaster",
       "repo_url": "github.com/fccview/cronmaster",
       "host": "github.com",
@@ -631,7 +661,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__figranium__figranium.md",
       "readme_download_url": "https://raw.githubusercontent.com/figranium/figranium/main/README.md",
-      "readme_sha256": "757a9d209fb306f516cdb6df0066327a6e3d46a4295d284968a419a452479e51",
+      "readme_sha256": "94b1b7e56022df97deb5dfcb47958622a1a72c5fb1c4be4442e7469c996fd563",
       "error": null
     },
     {
@@ -722,36 +752,6 @@
       "readme_path": "knowledge/readmes/github.com__flohoss__gocron.md",
       "readme_download_url": null,
       "readme_sha256": "83f8173269a6a07ee68aab94bb4a532d6e057d74280574edead31e082e6eba1e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/fluxerapp/fluxer",
-      "repo_url": "github.com/fluxerapp/fluxer",
-      "host": "github.com",
-      "owner": "fluxerapp",
-      "repo": "fluxer",
-      "app_references": [
-        "fluxer"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__fluxerapp__fluxer.md",
-      "readme_download_url": null,
-      "readme_sha256": "06c3a552deea3a0e533f07621b0176a4e6aab176d2d82672b43fb725a239c277",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/foldergram/foldergram",
-      "repo_url": "github.com/foldergram/foldergram",
-      "host": "github.com",
-      "owner": "foldergram",
-      "repo": "foldergram",
-      "app_references": [
-        "foldergram"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__foldergram__foldergram.md",
-      "readme_download_url": "https://raw.githubusercontent.com/foldergram/foldergram/main/README.md",
-      "readme_sha256": "72bc170a61665854e5fbddf05eff66318ef4b5044cd735aad5804f41fd67b7a9",
       "error": null
     }
   ]

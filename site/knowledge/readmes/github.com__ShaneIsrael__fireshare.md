@@ -28,7 +28,7 @@
       <a href="https://www.buymeacoffee.com/shaneisrael"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" height="41" width="174" /></a>
     </p>
     <p align="center">
-      <a href="https://v.fireshare.net">Live Demo</a>
+      <a href="https://demo.fireshare.net">Live Demo</a>
       ·
       <a href="https://github.com/ShaneIsrael/fireshare/issues">Report a Bug</a>
     </p>
@@ -45,9 +45,9 @@
 - Video Cropping
 - Video Tags for improved search and categorization
 - Open Graph metadata for rich link previews
-- [Notifications to Discord and others](./Notifications.md)
+- [Notifications to Discord and others](./docs/Notifications.md)
 - RSS feed for new public videos
-- [LDAP support](./LDAP.md)
+- [LDAP support](./docs/LDAP.md)
 - Optional [video transcoding with CPU or GPU](#transcoding-optional)
 
 # Navigation
@@ -92,8 +92,10 @@ Required mounts:
 1. `/data` - internal database
 2. `/processed` - generated metadata (posters, metadata files)
 3. `/videos` - source video directory to scan
+4. `/images` - source image directory to scan
 
-If your clips are in `/path/to/my_game_clips/`, mount that path to `/videos` in the container.
+If your clips are in `/path/to/my/clips/`, mount that path to `/videos` in the container.
+If your images are in `/path/to/my/images/`, mount that path to `/images` in the container.
 
 ### Docker Compose
 
@@ -128,7 +130,7 @@ Open `http://localhost:8080`.
 
 ### LDAP
 
-- LDAP setup: [LDAP.md](./LDAP.md)
+- LDAP setup: [LDAP.md](./docs/LDAP.md)
 
 ### Transcoding (Optional)
 
@@ -175,7 +177,7 @@ When GPU mode is enabled, Fireshare selects the best available encoder:
 
 ### Docker Environment Variables
 
-See [EnvironmentVariables.md](./EnvironmentVariables.md) for the full list of available environment variables.
+See [EnvironmentVariables.md](./docs/EnvironmentVariables.md) for the full list of available environment variables.
 
 ## Local Development
 
@@ -215,7 +217,19 @@ If you update models, create a migration and review it before opening a pull req
 
 ## Troubleshooting
 
-See [TROUBLESHOOTING.md](./TROUBLESHOOTING.md) for a full guide covering installation issues, playback problems, permission errors, transcoding, LDAP, and more.
+See [TROUBLESHOOTING.md](./docs/TROUBLESHOOTING.md) for a full guide covering installation issues, playback problems, permission errors, transcoding, LDAP, and more.
+
+## Star History
+
+If you like the project consider giving it a star. Stars help increase visibility which in turn helps me improve the application.
+
+<a href="https://www.star-history.com/?repos=shaneisrael%2Ffireshare&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=shaneisrael/fireshare&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=shaneisrael/fireshare&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=shaneisrael/fireshare&type=date&legend=top-left" />
+ </picture>
+</a>
 
 ---
 

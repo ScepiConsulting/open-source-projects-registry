@@ -35,6 +35,7 @@
   - [Airdata Exports](#airdata-exports)
 - [Setup and installation (Windows/MacOS/Android)](#setup-and-installation-windowsmacos)
   - [Try the Webapp First](#try-the-webapp-first-no-installation-required)
+  - [Hosting Open Drone Log for Teams](#hosting-open-drone-log-for-teams)
   - [macOS Users: "Damaged File" Error Fix](#macos-users-damaged-file-error-fix)
 - [Usage](#usage)
 - [Building from source (Linux users)](#building-from-source-linux-users)
@@ -196,6 +197,16 @@ Want to quickly test the tool before committing to a full installation? Try the 
 - **No data persistence** – your data is processed locally in the browser and not stored on any server
 
 > **Note:** For the full experience with multi-flight management, database persistence, filtering, overview analytics, and backup/restore capabilities, use the desktop app or self-hosted Docker deployment. 
+
+### Hosting Open Drone Log for Teams
+
+If you are using Open Drone Log for a team with multiple drone operators, and want a common hosted instance where everyone can import their logs from their own machine to the server, without managing your own self-hosted server, an easy option is [PikaPods](https://www.pikapods.com/pods?run=opendronelog). They host and manage the application in a container, and you get a unique URL for your own hosted instance of Open Drone Log for a monthly fee **less than $2 USD!**
+
+<p align="center">
+    <a href="https://www.pikapods.com/pods?run=opendronelog">
+        <img src="https://img.shields.io/badge/Deploy%20with-PikaPods-0A7A46?style=for-the-badge&logo=pikapods&logoColor=white" alt="Deploy with PikaPods" height="48"/>
+    </a>
+</p>
 
 ### macOS Users: "Damaged File" Error Fix
 

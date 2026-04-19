@@ -115,7 +115,7 @@ want [one-way](guides/one-way-sync.md) or [two-way](guides/two-way-sync.md) sync
 
 Once you have added your backends and imported your data you should see something like
 
-![WebUI](/screenshots/index.png)
+![WebUI](/screenshots/index.jpg)
 
 ### Supported import methods
 

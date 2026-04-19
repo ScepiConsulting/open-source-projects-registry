@@ -1,12 +1,147 @@
 {
   "chunk": 26,
-  "count": 11,
-  "generated_at": "2026-04-12T05:29:51Z",
+  "count": 17,
+  "generated_at": "2026-04-19T05:35:12Z",
   "items": [
+    {
+      "reference": "yunohost",
+      "name": "YunoHost",
+      "website": "yunohost.org",
+      "description": "App platform for easy installation and management",
+      "repo_url": "github.com/YunoHost/yunohost",
+      "repo_key": "github.com/YunoHost/yunohost",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "29",
+      "license": null,
+      "tags": [
+        "Deployment",
+        "Platform"
+      ],
+      "readme_path": "knowledge/readmes/github.com__YunoHost__yunohost.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "1f15b7147f5ea4cd8b51ee78d5172d7ff0b7c767b11b2a3739fa6674fb4b275c"
+      }
+    },
+    {
+      "reference": "z-wave-js-ui",
+      "name": "Z-Wave JS UI",
+      "website": "zwave-js.github.io/zwave-js-ui",
+      "description": "Full featured Z-Wave control panel UI and MQTT gateway",
+      "repo_url": "github.com/zwave-js/zwave-js-ui",
+      "repo_key": "github.com/zwave-js/zwave-js-ui",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "39",
+      "license": null,
+      "tags": [
+        "Internet of Things"
+      ],
+      "readme_path": "knowledge/readmes/github.com__zwave-js__zwave-js-ui.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "dac06fbb3149a6240ae017fa50f555d978b77873425e53a985dea8162f72b556"
+      }
+    },
+    {
+      "reference": "zabbix",
+      "name": "Zabbix",
+      "website": "www.zabbix.com/",
+      "description": "Real-time monitoring of IT components and services",
+      "repo_url": "github.com/zabbix/zabbix",
+      "repo_key": "github.com/zabbix/zabbix",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "15",
+      "license": null,
+      "tags": [
+        "Monitoring",
+        "Uptime"
+      ],
+      "readme_path": "knowledge/readmes/github.com__zabbix__zabbix.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "15730bcd53c21bf245984dbb9e938fbf7918018b58e4dc9b71fcc9ffd736b355"
+      }
+    },
+    {
+      "reference": "zammad",
+      "name": "Zammad",
+      "website": "zammad.org",
+      "description": "Powerful helpdesk solution",
+      "repo_url": "github.com/zammad/zammad",
+      "repo_key": "github.com/zammad/zammad",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "30",
+      "license": null,
+      "tags": [
+        "Support / Ticketing"
+      ],
+      "readme_path": "knowledge/readmes/github.com__zammad__zammad.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "a58b49d2a8d0a99b15ad8a3a63f5b10217fab51cbe11a6070fdc907701895c21"
+      }
+    },
+    {
+      "reference": "zaneops",
+      "name": "ZaneOps",
+      "website": "zaneops.dev",
+      "description": "Platform for deploying static sites, web apps, databases, and CRON jobs",
+      "repo_url": "github.com/zane-ops/zane-ops",
+      "repo_key": "github.com/zane-ops/zane-ops",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "29",
+      "license": null,
+      "tags": [
+        "Deployment",
+        "Static Site"
+      ],
+      "readme_path": "knowledge/readmes/github.com__zane-ops__zane-ops.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "984efcf248ee331c598bca917ffa7acb93035ec781c6ff43e879ae8463e29b89"
+      }
+    },
+    {
+      "reference": "zen-notes",
+      "name": "Zen Notes",
+      "website": "www.sheshbabu.com/zen/",
+      "description": "Simple Markdown note-taking app",
+      "repo_url": "github.com/sheshbabu/zen",
+      "repo_key": "github.com/sheshbabu/zen",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "20",
+      "license": null,
+      "tags": [
+        "Note-Taking"
+      ],
+      "readme_path": "knowledge/readmes/github.com__sheshbabu__zen.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "7041ff53153dee225b852ad1147458f4ee05b4af3de5a9839ae0bb2402be7214"
+      }
+    },
     {
       "reference": "zerobyte",
       "name": "Zerobyte",
-      "website": "github.com/nicotsx/zerobyte",
+      "website": "zerobyte.app",
       "description": "Backup automation with remote storage support",
       "repo_url": "github.com/nicotsx/zerobyte",
       "repo_key": "github.com/nicotsx/zerobyte",
@@ -21,8 +156,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "a9c71479be6f160733eadfc00fc431c8bef2f782cec7255c5b6d3c33ebf9c855"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "eeb5d72f0d608d8dfe3e05472f24b4686719574b9a1b0f3ec631fb9f8e895a32"
       }
     },
     {
@@ -43,8 +178,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "43071aa35f809cb783ff610619bafda4708dd94953707b5c57ee0c3bb4e61da6"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "ae5ae94e7dc8744335ca6aa827186db74ce908b8a9ab1872e9df846e88d5c18b"
       }
     },
     {
@@ -65,8 +200,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "c722050ce6338f81a3c1b74f105b92b14acf3629d2581856759f40eb4dd74562"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "c36c949ac66fd29908645356b610f9e4179957c7dba7a5314abacfd7ba0db2cb"
       }
     },
     {
@@ -87,8 +222,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "f2f4dc9d9da454001114305011bd4a02b41a5e6abc3510ffe36f2b49ed9ee6b1"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "7c2eabe9647cf7bec958675cb665c93ecf8afa9d6762fddb77ad6c3d8739a735"
       }
     },
     {
@@ -111,8 +246,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "8e378b9a0a133161774f5a9b83aed6cb796012c98a47deb941f80698bc3d32ac"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "83cf053b903b5a3833d83bb5999466583eb3e58ab32edd7213bf3ac1e858c589"
       }
     },
     {
@@ -134,8 +269,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "57668794a2b24388344bd2e47f5f38d1a2ba8aadcb245854ed6e38f311327ab4"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "9bc9a706c2ccd8d93c37469d3118db3f3c9841a7e0d821b2b82f46617d164af4"
       }
     },
     {
@@ -157,8 +292,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "f0e9c178f96e8ee4304217e42697504b13af384e07f4da70792688495c26ff0c"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "c2f5d7e22127088525b609506c5fccf39e89c1c99f3a175a421eea52b926fd5e"
       }
     },
     {
@@ -179,8 +314,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "004c4b3f976820da15699c7219c1bb26f7b0676151c8f6015d0a585554dbf552"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "00c99392572dac13473a654e6be38d5bd64c16ec8f2720fcd50cb814c33a424e"
       }
     },
     {
@@ -201,8 +336,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "fad8f0607f5b98e1c96618412c7c6577d67b765a7ed2b112fefd0f5adb123bfa"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "46d3c0bf0108f1fca18b614f881f586ebe10ead306c95c9fbfebec9ca317dc13"
       }
     },
     {
@@ -224,8 +359,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "6d5aa62d8ccde2c5be5d9152cf43f7d1e0c8ba112b123474a32a9c2ba1c5ac22"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "b96804f5ac7ed02b0723905ef6b99779ff099cadec84a6337a5061d15e75e5b5"
       }
     },
     {
@@ -246,8 +381,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-12T05:22:37Z",
-        "row_hash": "0a054431e3eeaafcc909d664e107f472859f1ae2971e644c9960bf1bb95aada8"
+        "fetched_at": "2026-04-19T05:27:57Z",
+        "row_hash": "9d9ec7bbdbc4c1f6c03b78d2b956525e50dc7639267f3309796115bcb11808e2"
       }
     }
   ]

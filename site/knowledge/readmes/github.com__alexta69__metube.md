@@ -82,7 +82,7 @@ Certain values can be set via environment variables, using the `-e` parameter on
 * __HTTPS__: Use `https` instead of `http` (__CERTFILE__ and __KEYFILE__ required). Defaults to `false`.
 * __CERTFILE__: HTTPS certificate file path.
 * __KEYFILE__: HTTPS key file path.
-* __CORS_ALLOWED_ORIGINS__: Comma-separated list of origins permitted to make cross-origin requests to the MeTube API. When unset or empty, all cross-origin requests are denied. This must be configured for [bookmarklets](#-bookmarklet) and any other browser-based tools that contact MeTube from a different origin. Example: `https://www.youtube.com,https://www.vimeo.com`.
+* __CORS_ALLOWED_ORIGINS__: Comma-separated list of origins permitted to make cross-origin requests to the MeTube API. When unset or empty, all cross-origin requests are denied. Set to `*` to allow all origins. This must be configured for [browser extensions](#-browser-extensions), [bookmarklets](#-bookmarklet), and any other browser-based tools that contact MeTube from a different origin. For browser extensions use `*` (see below); for bookmarklets you can list specific sites, e.g. `https://www.youtube.com,https://www.vimeo.com`.
 * __ROBOTS_TXT__: A path to a `robots.txt` file mounted in the container.
 
 ### 🏠 Basic Setup
@@ -103,6 +103,8 @@ MeTube lets you customize how [yt-dlp](https://github.com/yt-dlp/yt-dlp) behaves
 3. **Per-download overrides** — free-form options entered in the UI for a single download.
 
 When a download starts, these layers are combined in order. If the same option appears in more than one layer, the more specific one wins: per-download overrides beat presets, and presets beat global options.
+
+In JSON presets and overrides, setting an option to **`null`** clears that option for that download (for example, `"download_archive": null` overrides a global archive path so the archive is not used). This follows yt-dlp’s usual meaning of `None` for that option.
 
 ### Option format
 
@@ -204,6 +206,8 @@ When a download starts, the final set of yt-dlp options is built in this order:
 2. Apply each selected **preset** in order (later presets overwrite earlier ones for conflicting keys).
 3. Apply any **per-download overrides** on top (overwrite everything else for conflicting keys).
 
+MeTube always forces its own flat-extract behaviour during the initial metadata fetch (`extract_flat`, `noplaylist`, etc.); presets cannot override those keys for that phase.
+
 **Example:** Suppose your global options set `"writesubtitles": false`, but you select a preset that sets `"writesubtitles": true`. Subtitles will be written for that download because the preset overrides the global setting. If you additionally enter `{"writesubtitles": false}` in the per-download overrides field, that value wins and subtitles will not be written.
 
 ### Configuration cookbooks
@@ -227,6 +231,8 @@ In case you need to use your browser's cookies with MeTube, for example to downl
 ## 🔌 Browser extensions
 
 Browser extensions allow right-clicking videos and sending them directly to MeTube. If you're on an HTTPS page, your MeTube instance must be behind an HTTPS reverse proxy (see below) for extensions to work.
+
+Since browser extensions make requests from their own origin (`chrome-extension://...` or `moz-extension://...`), you must set `CORS_ALLOWED_ORIGINS=*` for them to work.
 
 __Chrome:__ contributed by [Rpsl](https://github.com/rpsl). You can install it from [Google Chrome Webstore](https://chrome.google.com/webstore/detail/metube-downloader/fbmkmdnlhacefjljljlbhkodfmfkijdh) or use developer mode and install [from sources](https://github.com/Rpsl/metube-browser-extension).
 

@@ -27,11 +27,11 @@ using the "feature request" template.
 ## But why another URL shortener?
 
 Most URL shorteners are either bloated with unnecessary features, or are a pain to set up.
-Even fewer are written with simplicity and lightness in mind. When I saw the `simply-shorten`
-project (linked below), I really liked the idea but thought that it missed some features. Also,
-I didn't like the fact that a simple app like this had a ~200 MB docker image (mostly due to the
-included java runtime). So, I decided to rewrite it in Rust and add some features to it that I
-thought were essential (e.g. hit counting).
+Even fewer are written with simplicity and lightness in mind. When I saw the
+[`simply-shorten`](https://gitlab.com/draganczukp/simply-shorten) project, I really liked the
+idea but thought that it missed some features. Also, I didn't like the fact that a simple app
+like this had a ~200 MB docker image (mostly due to the included java runtime). So, I decided
+to rewrite it in Rust and add some features to it that I thought were essential (e.g. hit counting).
 
 ## What does the name mean?
 
@@ -114,11 +114,11 @@ Password: `chhoto-url-demo-pass`
 
 # Notes
 
-- It started as a fork of [`simply-shorten`](https://gitlab.com/draganczukp/simply-shorten).
 - The list of adjectives and names used for random short url generation is a modified
   version of [this list used by docker](https://github.com/moby/moby/blob/master/pkg/namesgenerator/names-generator.go).
-- It is highly recommended that you [enable WAL mode](./INSTALLATION.md/#use_wal_mode-).
+- It is highly recommended that you [enable WAL mode](./INSTALLATION.md#chhoto_sqlite_use_wal_mode).
 - Although it's unlikely, it's possible that your database is mangled after some update. For mission critical use cases,
   it's recommended to keep regular versioned backups of the database, and sticking to a minor release tag e.g. 5.8.
-- If you intend to have more than a few thousand short links, it's strongly recommended that you use the UID `slug_style`
-  with a `slug_length` of 16 or more. Otherwise, generating new links will start to fail after a while.
+- If you intend to have more than a few thousand short links, it's strongly recommended that you use the UID
+  [`CHHOTO_SLUG_STYLE`](./INSTALLATION.md#chhoto_slug_style) with a [`CHHOTO_SLUG_LENGTH`](./INSTALLATION.md#chhoto_slug_length)
+  of 16 or more. Otherwise, generating new links will start to fail after a while.

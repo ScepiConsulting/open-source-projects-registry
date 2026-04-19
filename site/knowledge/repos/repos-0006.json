@@ -1,8 +1,23 @@
 {
   "chunk": 6,
   "count": 50,
-  "generated_at": "2026-04-12T05:29:52Z",
+  "generated_at": "2026-04-19T05:35:12Z",
   "items": [
+    {
+      "repo_key": "github.com/SigNoz/signoz",
+      "repo_url": "github.com/SigNoz/signoz",
+      "host": "github.com",
+      "owner": "SigNoz",
+      "repo": "signoz",
+      "app_references": [
+        "signoz"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__SigNoz__signoz.md",
+      "readme_download_url": null,
+      "readme_sha256": "9927507efc10566752a49bc8782d96895ec5b7e44d85d4982d0cf8a4766a60e4",
+      "error": null
+    },
     {
       "repo_key": "github.com/Simounet/flox",
       "repo_url": "github.com/Simounet/flox",
@@ -27,9 +42,9 @@
       "app_references": [
         "deployrr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__SimpleHomelab__Deployrr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/SimpleHomelab/Deployrr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "0ed5535cb9f37368ddba787b817b147b50ce8371ba5825b38228836e7faa147d",
       "error": null
     },
@@ -42,10 +57,10 @@
       "app_references": [
         "chhoto-url"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__SinTan1729__chhoto-url.md",
-      "readme_download_url": null,
-      "readme_sha256": "760526b7e34bceb02b79f772f2da2edb2e680674b246cee3e02a4dc06891a547",
+      "readme_download_url": "https://raw.githubusercontent.com/SinTan1729/chhoto-url/main/README.md",
+      "readme_sha256": "68a24a9b93370c719fd6194f8d548fafaf109f9273ee8bce4129e19761884526",
       "error": null
     },
     {
@@ -132,10 +147,10 @@
       "app_references": [
         "sonarqube"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__SonarSource__sonarqube.md",
-      "readme_download_url": null,
-      "readme_sha256": "6d3ca18d55b4c14e537deaa9d110195ac9f20677ffd9bcece8d1165750808e82",
+      "readme_download_url": "https://raw.githubusercontent.com/SonarSource/sonarqube/master/README.md",
+      "readme_sha256": "ac806386b6cd9c0fff1a7749d964352d155539ef6fa5e93fbd8ec4bf98539397",
       "error": null
     },
     {
@@ -222,10 +237,10 @@
       "app_references": [
         "stirling-pdf"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Stirling-Tools__Stirling-PDF.md",
-      "readme_download_url": null,
-      "readme_sha256": "22d7544411284de6192dda74f056ccc95cd33ec81547ff203cc7b568a685fafb",
+      "readme_download_url": "https://raw.githubusercontent.com/Stirling-Tools/Stirling-PDF/main/README.md",
+      "readme_sha256": "2c25f497c53e4128584b2b7ed23bca1ace3edbb4831eb31de67d4bcf60fb7978",
       "error": null
     },
     {
@@ -312,9 +327,9 @@
       "app_references": [
         "flow-like"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__TM9657__flow-like.md",
-      "readme_download_url": "https://raw.githubusercontent.com/TM9657/flow-like/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e92b1c31df18f1210f51e2d1feb2e347b6c9f9ec93401474eebe7bcf56726ab5",
       "error": null
     },
@@ -450,7 +465,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Termix-SSH__Termix.md",
       "readme_download_url": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/README.md",
-      "readme_sha256": "319826e151fbec0adda58319300bf818660d4b1d6c89f227acf423b795833102",
+      "readme_sha256": "4ad9a1a944308d49f157882a3aa29ab6e5f3f7addfd4896bb4bb04748f277609",
       "error": null
     },
     {
@@ -477,9 +492,9 @@
       "app_references": [
         "tinyfeed"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__TheBigRoomXXL__tinyfeed.md",
-      "readme_download_url": "https://raw.githubusercontent.com/TheBigRoomXXL/tinyfeed/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6735250c779f2d72526b5791d1756870c2ef3b10e75a7b08963a2c2a3c45c008",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__Unpackerr__unpackerr.md",
       "readme_download_url": null,
       "readme_sha256": "21257bc25cb5fe5cec332c176a62829cb0c7ff3b46fcd9b93c95a688cb3adaf4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/V1ck3s/octo-fiesta",
-      "repo_url": "github.com/V1ck3s/octo-fiesta",
-      "host": "github.com",
-      "owner": "V1ck3s",
-      "repo": "octo-fiesta",
-      "app_references": [
-        "octo-fiesta"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__V1ck3s__octo-fiesta.md",
-      "readme_download_url": null,
-      "readme_sha256": "f16ff41c15340a1e47ef317530b1a2da5d5f78e2f8400bb34952874170996c9b",
       "error": null
     }
   ]

@@ -9,8 +9,9 @@
 <br>
 [![Alternate Source](https://img.shields.io/static/v1?label=Alt+Source&message=Git&color=ef391a&logo=git)](https://source.bookstackapp.com/)
 [![Repo Stats](https://img.shields.io/static/v1?label=GitHub+project&message=stats&color=f27e3f)](https://gh-stats.bookstackapp.com/)
-[![Discord](https://img.shields.io/static/v1?label=Discord&message=chat&color=738adb&logo=discord)](https://www.bookstackapp.com/links/discord)
+[![Community Discussions](https://img.shields.io/static/v1?label=Community&message=Discussions&color=4d36c4&logo=zulip)](https://community.bookstackapp.com/)
 [![Mastodon](https://img.shields.io/static/v1?label=Mastodon&message=@bookstack&color=595aff&logo=mastodon)](https://www.bookstackapp.com/links/mastodon)
+[![Discord](https://img.shields.io/static/v1?label=Discord&message=chat&color=738adb&logo=discord)](https://www.bookstackapp.com/links/discord)
 <br>
 [![PeerTube](https://img.shields.io/static/v1?label=PeerTube&message=bookstack@foss.video&color=f2690d&logo=peertube)](https://foss.video/c/bookstack)
 [![YouTube](https://img.shields.io/static/v1?label=YouTube&message=bookstackapp&color=ff0000&logo=youtube)](https://www.youtube.com/bookstackapp)
@@ -20,11 +21,10 @@ A platform for storing and organising information and documentation. Details for
 * [Installation Instructions](https://www.bookstackapp.com/docs/admin/installation)
 * [Documentation](https://www.bookstackapp.com/docs)
 * [Demo Instance](https://demo.bookstackapp.com)
-    * [Admin Login](https://demo.bookstackapp.com/login?email=admin@example.com&password=password)
 * [Screenshots](https://www.bookstackapp.com/#screenshots) 
 * [BookStack Blog](https://www.bookstackapp.com/blog)
 * [Issue List](https://github.com/BookStackApp/BookStack/issues)
-* [Discord Chat](https://www.bookstackapp.com/links/discord)
+* [Community Discussions](https://community.bookstackapp.com/)
 * [Support Options](https://www.bookstackapp.com/support/)
 
 ## 📚 Project Definition
@@ -124,8 +124,9 @@ Feel free to [create issues](https://github.com/BookStackApp/BookStack/issues/ne
 Pull requests are welcome but, unless it's a small tweak, it may be best to open the pull request early or create an issue for your intended change to discuss how it will fit into the project and plan out the merge. Just because a feature request exists, or is tagged, does not mean that feature would be accepted into the core project.
 
 Pull requests should be created from the `development` branch since they will be merged back into `development` once done. Please do not build from or request a merge into the `release` branch as this is only for publishing releases. If you are looking to alter CSS or JavaScript content please edit the source files found in `resources/`. Any CSS or JS files within `public` are built from these source files and therefore should not be edited directly.
+See the [Development & Testing](#-development--testing) section above for further development guidance.
 
-The project's code of conduct [can be found here](https://github.com/BookStackApp/BookStack/blob/development/.github/CODE_OF_CONDUCT.md).
+The project's community rules, including those for raising issues and making code contributions, [can be found here](https://www.bookstackapp.com/about/community-rules/).
 
 ## 🔒 Security
 

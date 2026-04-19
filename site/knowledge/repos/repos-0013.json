@@ -1,8 +1,38 @@
 {
   "chunk": 13,
   "count": 50,
-  "generated_at": "2026-04-12T05:29:52Z",
+  "generated_at": "2026-04-19T05:35:12Z",
   "items": [
+    {
+      "repo_key": "github.com/fluxerapp/fluxer",
+      "repo_url": "github.com/fluxerapp/fluxer",
+      "host": "github.com",
+      "owner": "fluxerapp",
+      "repo": "fluxer",
+      "app_references": [
+        "fluxer"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__fluxerapp__fluxer.md",
+      "readme_download_url": null,
+      "readme_sha256": "06c3a552deea3a0e533f07621b0176a4e6aab176d2d82672b43fb725a239c277",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/foldergram/foldergram",
+      "repo_url": "github.com/foldergram/foldergram",
+      "host": "github.com",
+      "owner": "foldergram",
+      "repo": "foldergram",
+      "app_references": [
+        "foldergram"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__foldergram__foldergram.md",
+      "readme_download_url": null,
+      "readme_sha256": "72bc170a61665854e5fbddf05eff66318ef4b5044cd735aad5804f41fd67b7a9",
+      "error": null
+    },
     {
       "repo_key": "github.com/formbricks/formbricks",
       "repo_url": "github.com/formbricks/formbricks",
@@ -42,10 +72,10 @@
       "app_references": [
         "pangolin"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__fosrl__pangolin.md",
-      "readme_download_url": null,
-      "readme_sha256": "8507cdd855c834ca5b30fb1ffc2032d092baf7f7e44d39881c1b4a632e20ab58",
+      "readme_download_url": "https://raw.githubusercontent.com/fosrl/pangolin/main/README.md",
+      "readme_sha256": "b42fab5d72e52710ac56489a86eaf6f3c45d73f7e5d4f4cc1601b1f701871624",
       "error": null
     },
     {
@@ -87,10 +117,25 @@
       "app_references": [
         "frappe-erpnext"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__frappe__erpnext.md",
-      "readme_download_url": "https://raw.githubusercontent.com/frappe/erpnext/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1a09109e484335846f30d575eac37facd14e8141228a129c07dab92b3d792834",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/frederikemmer/MediaLyze",
+      "repo_url": "github.com/frederikemmer/MediaLyze",
+      "host": "github.com",
+      "owner": "frederikemmer",
+      "repo": "MediaLyze",
+      "app_references": [
+        "medialyze"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__frederikemmer__MediaLyze.md",
+      "readme_download_url": "https://raw.githubusercontent.com/frederikemmer/MediaLyze/main/README.md",
+      "readme_sha256": "aff958a6ddb6ae43ea19c129889dd2d085e5b07d2cfaa309cca4fadf8a6538eb",
       "error": null
     },
     {
@@ -225,7 +270,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gamosoft__NoteDiscovery.md",
       "readme_download_url": "https://raw.githubusercontent.com/gamosoft/NoteDiscovery/main/README.md",
-      "readme_sha256": "e914b3f1b646a54d33d361da455d89d49a3a9d846daa60d531420b038df5855a",
+      "readme_sha256": "d746fea2285a79ed409b8ebe8d0af7cd58df6fb353dce9e61982779f02d8cd02",
       "error": null
     },
     {
@@ -282,10 +327,10 @@
       "app_references": [
         "gaseous"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gaseous-project__gaseous-server.md",
-      "readme_download_url": null,
-      "readme_sha256": "86bbe000c9d08272c1162d136657bcf962a27905c4608c5e150904179473fa3a",
+      "readme_download_url": "https://raw.githubusercontent.com/gaseous-project/gaseous-server/main/README.MD",
+      "readme_sha256": "b14eb680fa5542f1d0fd3c8e3546f9d7d438a44f23e1d5a7a84bbe0c919d7aab",
       "error": null
     },
     {
@@ -477,10 +522,10 @@
       "app_references": [
         "ghostfolio"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ghostfolio__ghostfolio.md",
-      "readme_download_url": null,
-      "readme_sha256": "3a60ee5b988fee66977a668668369b5c37210cdae1ffa06ae991edfef540a870",
+      "readme_download_url": "https://raw.githubusercontent.com/ghostfolio/ghostfolio/main/README.md",
+      "readme_sha256": "3c89ae4d5607c042681575917a3d173482b69954e23905071af778b6854544a5",
       "error": null
     },
     {
@@ -567,10 +612,10 @@
       "app_references": [
         "unifi-voucher-site"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__glenndehaan__unifi-voucher-site.md",
-      "readme_download_url": null,
-      "readme_sha256": "fa7212a8976a8459178a076f51b33ef5812079ecc243cc4447226d71ef1f08f1",
+      "readme_download_url": "https://raw.githubusercontent.com/glenndehaan/unifi-voucher-site/master/README.md",
+      "readme_sha256": "7efb36f4394b2c8d4e409c582d5f5f31d22b2f92558ad8e1074ab2bfb65515c5",
       "error": null
     },
     {
@@ -657,9 +702,9 @@
       "app_references": [
         "vikunja"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__go-vikunja__vikunja.md",
-      "readme_download_url": "https://raw.githubusercontent.com/go-vikunja/vikunja/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "34f1255b223b23a3b9426b7b80f4fbe2013b9f70f5e655210647cf7fee66fe1b",
       "error": null
     },
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__goniszewski__grimoire.md",
       "readme_download_url": null,
       "readme_sha256": "2282b5377b3c4fc51c7dada6edfa0bc2b4f3a22c2531e21ba4bffbd196070243",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/google/cadvisor",
-      "repo_url": "github.com/google/cadvisor",
-      "host": "github.com",
-      "owner": "google",
-      "repo": "cadvisor",
-      "app_references": [
-        "cadvisor"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__google__cadvisor.md",
-      "readme_download_url": null,
-      "readme_sha256": "2cf581be206be33250ffe7e6964ed1d6f6fd5c5b2e6fcff7867fe4ddef3105cc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/gotify/server",
-      "repo_url": "github.com/gotify/server",
-      "host": "github.com",
-      "owner": "gotify",
-      "repo": "server",
-      "app_references": [
-        "gotify"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__gotify__server.md",
-      "readme_download_url": null,
-      "readme_sha256": "73ccc68b3c7ed34b5c355e73cd55b0fac2a592caa198097523ea0124cf4886e8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/gotson/komga",
-      "repo_url": "github.com/gotson/komga",
-      "host": "github.com",
-      "owner": "gotson",
-      "repo": "komga",
-      "app_references": [
-        "komga"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__gotson__komga.md",
-      "readme_download_url": null,
-      "readme_sha256": "f9e1638de50553f3f29c7a748e9444446638aab1c0030d28d7f84f45b3660c27",
       "error": null
     }
   ]

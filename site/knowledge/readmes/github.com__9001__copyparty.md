@@ -184,7 +184,7 @@ enable thumbnails (images/audio/video), media indexing, and audio transcoding by
 * **Alpine:** `apk add py3-pillow ffmpeg`
 * **Debian:** `apt install --no-install-recommends python3-pil ffmpeg`
 * **Fedora:** rpmfusion + `dnf install python3-pillow ffmpeg --allowerasing`
-* **FreeBSD:** `pkg install py39-sqlite3 py39-pillow ffmpeg`
+* **FreeBSD:** `pkg install py311-sqlite3 py311-pillow ffmpeg`
 * **MacOS:** `port install py-Pillow ffmpeg`
 * **MacOS** (alternative): `brew install pillow ffmpeg`
 * **Windows:** `python -m pip install --user -U Pillow`

@@ -142,6 +142,7 @@ Prior versions of Jackett are no longer supported.
  * OneJAV
  * OpenSharing
  * PC-torrent
+ * PandaCD
  * plugintorrent
  * PornoTorrent
  * PornRips
@@ -216,6 +217,7 @@ Prior versions of Jackett are no longer supported.
  * HDGalaKtik
  * HellTorrents [PAY2DL]
  * HunTorrent
+ * Hydracker
  * Il CorSaRo Blu
  * ilDraGoNeRo
  * Kinorun
@@ -280,7 +282,6 @@ Prior versions of Jackett are no longer supported.
  * alingPT
  * AlphaRatio (AR)
  * AmigosShareClub (ASC)
- * Anime No Sekai (ANSK)
  * AnimeBytes (AB)
  * AnimeTorrents (AnT)
  * AnimeTorrents.ro (Anime Torrents Romania)
@@ -390,6 +391,7 @@ Prior versions of Jackett are no longer supported.
  * Free Farm (自由农场)
  * FunFile (FF)
  * FunkyTorrents (FT) [![(invite needed)][inviteneeded]](#)
+ * funZone
  * FutureTorrent [PAY2DL]
  * Fuzer (FZ)
  * G3MINI TR4CK3R
@@ -490,6 +492,7 @@ Prior versions of Jackett are no longer supported.
  * Matrix
  * MeseVilág (Fairytale World)
  * MetalGuru [![(invite needed)][inviteneeded]](#)
+ * MidnightScene
  * Milkie (ME)
  * MMA-Torrents [![(invite needed)][inviteneeded]](#)
  * MNV (Max-New-Vision)
@@ -605,6 +608,7 @@ Prior versions of Jackett are no longer supported.
  * Spirit of Revolution [![(invite needed)][inviteneeded]](#)
  * SportsCult
  * SpringSunday (SSD) [![(invite needed)][inviteneeded]](#)
+ * SunnyPT [![(invite needed)][inviteneeded]](#)
  * Superbits (SBS)
  * Swarmazon
  * Tangmen (唐门)

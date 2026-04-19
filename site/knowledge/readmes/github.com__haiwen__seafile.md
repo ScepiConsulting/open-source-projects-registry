@@ -2,6 +2,7 @@
 
 Seafile is an open source cloud storage system with privacy protection and teamwork features. Collections of files are called libraries. Each library can be synced separately. A library can also be encrypted with a user chosen password. Seafile also allows users to create groups and easily sharing files into groups.
 
+Beyond sync and share, Seafile provides advanced metadata management features and handy collaboration features.
 
 ## Feature Summary
 
@@ -33,16 +34,18 @@ Seafile has the following features:
 1. Library encryption with a user chosen password.
 2. Client side encryption when using the desktop syncing.
 
-### Online documents and knowledge management (New)
+### Metadata Management
 
-* Online Markdown editing in WYSIWYG way
-* A draft review workflow for online documents
-* Metadata management, including
-  * File labels
-  * Related documents
-* Wiki mode
-* Realtime notifications
+* Extensible file properties, like file owner, deadline, status
+* Flexible file views to match your use cases, including table view, Kanban view, gallery view, map view and statistics view
+* File tags with parent-child hierarchy
 
+### Collaboration
+
+* Integration with Online Office Suites, including OnlyOffice, Collabora
+* SeaDoc: a built-in collaborative document editor
+* Wiki: built-in knowledge bases
+* Integrarion with Excalidraw for collaborative white-board
 
 ## Source repositories for Seafile components
 
@@ -64,7 +67,7 @@ For this reason, the sync client daemon repository is still the "front page" for
 Build and Run
 =============
 
-See <https://manual.seafile.com/build_seafile/server>
+See [https://manual.seafile.com/build_seafile/server](https://manual.seafile.com/latest/develop/server/)
 
 Bug and Feature Request Reports
 ===============================
@@ -88,7 +91,7 @@ Internationalization (I18n)
 Change Logs
 ===========
 
-See <https://manual.seafile.com/changelog/server-changelog/>
+See https://manual.seafile.com/latest/changelog/server-changelog/
 
 
 Why Open Source
@@ -100,7 +103,7 @@ Our primary goal is to build a first-class product. We think this goal can only 
 Contributing
 ===========
 
-For more information read [Contribution](https://manual.seafile.com/contribution/).
+For more information read [Contribution](https://manual.seafile.com/latest/introduction/contribution/).
 
 
 License

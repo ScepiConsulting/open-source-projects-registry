@@ -67,7 +67,7 @@ mkvpriority:
   container_name: mkvpriority
   user: ${PUID}:${PGID}
   environment:
-    WEBHOOK_RECEIVER: "true"
+    WEBHOOK_PORT: '8080'
     MKVPRIORITY_ARGS: >
       --archive /config/archive.db
   volumes:
@@ -90,7 +90,7 @@ mkvpriority:
   container_name: mkvpriority
   user: ${PUID}:${PGID}
   environment:
-    WEBHOOK_RECEIVER: "true"
+    WEBHOOK_PORT: '8080'
     MKVPRIORITY_ARGS: >
       --config /config/anime.toml::anime
       --archive /config/archive.db
@@ -113,7 +113,7 @@ mkvpriority:
   container_name: mkvpriority
   user: ${PUID}:${PGID}
   environment:
-    WEBHOOK_RECEIVER: "true"
+    WEBHOOK_PORT: '8080'
     MKVPRIORITY_ARGS: >
       --archive /config/archive.db
     SONARR_URL: http://sonarr:8989
@@ -141,7 +141,9 @@ mkvpriority:
   environment:
     TZ: "America/New_York"
     CRON_SCHEDULE: "0 0 * * *"
-    MKVPRIORITY_ARGS: -a /config/archive.db /media
+    CRON_TARGET_PATHS: /media
+    MKVPRIORITY_ARGS: >
+      --archive /config/archive.db
   volumes:
     - /path/to/media:/media
     - /path/to/mkvpriority/config:/config
@@ -156,7 +158,7 @@ mkvpriority:
 [`mkvtoolnix`](https://mkvtoolnix.download/) must be installed on your system for `mkvpropedit` (unless you are using the Docker image).
 
 ```text
-usage: mkvpriority [-h] -c TOML_PATH[::TAG] [-a DB_PATH] [-v] [-x] [-q] [-p] [-n] [-r] [-e] [INPUT_PATH[::TAG] ...]
+usage: mkvpriority [-h] [-c TOML_PATH[::TAG]] [-a DB_PATH] [-v] [-x] [-q] [-p] [-n] [-r] [-e] [INPUT_PATH[::TAG] ...]
 
 positional arguments:
   INPUT_PATH[::TAG]     files or directories
@@ -180,9 +182,6 @@ To use MKVPriority without Docker, run the following `pip` command:
 ```bash
 pip install 'git+ssh://git@github.com/kennethsible/mkvpriority.git'
 ```
-
-> [!NOTE]
-> If the CLI tool is not installed in your environment (e.g. `docker exec`), use `python -m mkvpriority`.
 
 ### Subtitle Extractor
 
