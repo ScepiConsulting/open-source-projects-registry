@@ -4,9 +4,9 @@
   <img src="./media/logo.png" width="100" alt="Scanopy Logo">
 </p>
 
-**Network documentation that updates itself.**
+**Network documentation, without the drawing.**
 
-Scanopy scans your network, discovers hosts and services, and generates a live topology diagram that stays current automatically. One daemon, no per-device agents, no manual upkeep.
+Scanopy replaces manual network diagrams with a continuously maintained model of what's actually running. A single daemon scans on a schedule and produces four views from each scan: L2 (physical), L3 (logical), workloads, and applications. Unlike diagrams drawn in draw.io that go stale the week they're saved, or IaC state that misses drift and resources provisioned outside the pipeline, Scanopy reflects the current state of your infrastructure. Export as SVG, Mermaid, or Confluence; embed live maps; or feed the model into your existing source of truth.
 
 ![Docker Pulls](https://img.shields.io/docker/pulls/mayanayza/netvisor-server?style=for-the-badge&logo=docker)  ![Github Stars](https://img.shields.io/github/stars/scanopy/scanopy?style=for-the-badge&logo=github
 )<br>
@@ -18,27 +18,46 @@ Scanopy scans your network, discovers hosts and services, and generates a live t
 
 > 💡 **Prefer not to self-host?** [Get a free trial](https://scanopy.net) of Scanopy Cloud
 
-<p align="center">
-  <img src="./media/hero.png" width="1200" alt="Example Visualization">
-</p>
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="./media/l2.png" alt="L2 view" />
+      <p align="center"><strong>L2 (Physical)</strong><br/><sub>Every switch, every port, every link.</sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="./media/l3.png" alt="L3 view" />
+      <p align="center"><strong>L3 (Logical)</strong><br/><sub>Subnets, VLANs, and how hosts bridge them.</sub></p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="./media/wl.png" alt="Workloads view" />
+      <p align="center"><strong>Workloads</strong><br/><sub>Bare metal to hypervisors to containers.</sub></p>
+    </td>
+    <td width="50%" valign="top">
+      <img src="./media/app.png" alt="Applications view" />
+      <p align="center"><strong>Applications</strong><br/><sub>Services and their dependencies, grouped by application.</sub></p>
+    </td>
+  </tr>
+</table>
 
-## ✨ Key Features
+## ✨ Features
 
-- **Automatic Discovery**: Scans networks to identify hosts, services, and their relationships
-- **200+ Service Definitions**: Auto-detects databases, web servers, containers, network infrastructure, monitoring tools, and enterprise applications
-- **Interactive Topology**: Generates visual network diagrams with extensive customization options
-- **Distributed Scanning**: Deploy daemons across network segments to map complex topologies
-- **Docker Integration**: Discovers containerized services automatically
-- **Organization Management**: Multi-user support with role-based permissions
-- **Scheduled Discovery**: Automated scanning to keep documentation current
+- **Automatic discovery**: Maps hosts and services by scanning the network. One scanner, no per-device agents.
+- **230+ service definitions**: Auto-detects databases, web servers, containers, network infrastructure, and enterprise applications.
+- **Four views from one scan**: L2 (physical), L3 (logical), workloads, and application dependencies.
+- **Distributed scanning**: Deploy daemons across segments to map multi-site and multi-VLAN topologies.
+- **Docker & SNMP integration**: Native discovery for containerized services and network hardware.
+- **Scheduled rescans**: Documentation stays current as infrastructure changes.
+- **Multi-user + RBAC**: Organization management, role-based access, and shareable live views for teammates or external stakeholders.
 
 ## 🎯 Perfect For
 
-- **Home Lab Enthusiasts**: Document your ever-growing infrastructure
-- **IT Professionals**: Maintain accurate network inventory without manual spreadsheets  
-- **System Administrators**: Visualize complex multi-VLAN environments
-- **DevOps Teams**: Map containerized services and their dependencies
-- **MSPs**: Manage multiple client networks with your team
+- **Platform & DevOps teams**: Trace service dependencies without APM. Map containers, VMs, and hardware in one model.
+- **Network engineers**: Multi-VLAN, multi-site topology diagrams derived from SNMP, LLDP, and ARP. No manual drawing.
+- **IT operations**: Keep inventory, topology, and dependencies current across teams and sites.
+- **MSPs**: Per-client documentation with shareable live views.
+- **Home labs**: Document your infrastructure without opening draw.io.
 
 ## 📋 Licensing
 **Self-hosted ([AGPL-3.0](LICENSE.md)):** Free for all use. Requires source disclosure for network services and copyleft compliance.   
@@ -76,7 +95,7 @@ For detailed setup options and configuration, see the [Installation Guide](https
 
 ## 🚀 Demo
 
-**[demo.scanopy.net](https://demo.scanopy.net/)**
+**[demo.scanopy.net](https://demo.scanopy.net/)**. Hosted demo app with a sample dataset. Try the full UI without installing anything.
 
 ## 🤝 Contributing
 

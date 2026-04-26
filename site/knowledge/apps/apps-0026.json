@@ -1,8 +1,147 @@
 {
   "chunk": 26,
-  "count": 17,
-  "generated_at": "2026-04-19T05:35:12Z",
+  "count": 23,
+  "generated_at": "2026-04-26T05:45:46Z",
   "items": [
+    {
+      "reference": "youtarr",
+      "name": "Youtarr",
+      "website": "github.com/DialmasterOrg/Youtarr",
+      "description": "Automated YouTube downloads and management",
+      "repo_url": "github.com/DialmasterOrg/Youtarr",
+      "repo_key": "github.com/DialmasterOrg/Youtarr",
+      "stars": null,
+      "forks": 12,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "*arr",
+        "Downloads"
+      ],
+      "readme_path": "knowledge/readmes/github.com__DialmasterOrg__Youtarr.md",
+      "readme_status": "ok",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "abb6b72a81459c71c0b9dd8c4184c875055b30cbe3e63b21562be0e2881d4aac"
+      }
+    },
+    {
+      "reference": "youtubedl-material",
+      "name": "YoutubeDL-Material",
+      "website": "github.com/Tzahi12345/YoutubeDL-Material",
+      "description": "YouTube downloader built on Material Design",
+      "repo_url": "github.com/Tzahi12345/YoutubeDL-Material",
+      "repo_key": "github.com/Tzahi12345/YoutubeDL-Material",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Downloads",
+        "Videos"
+      ],
+      "readme_path": "knowledge/readmes/github.com__Tzahi12345__YoutubeDL-Material.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "0abe3bc9c7727cb4ccecad6aa9dc5e231b14a9913a0db270447e7a4afefbb3b5"
+      }
+    },
+    {
+      "reference": "yt-dlp-web-player",
+      "name": "YT-DLP Web Player",
+      "website": "github.com/Matszwe02/ytdlp_web_player",
+      "description": "Web video player powered by yt-dlp",
+      "repo_url": "github.com/Matszwe02/ytdlp_web_player",
+      "repo_key": "github.com/Matszwe02/ytdlp_web_player",
+      "stars": null,
+      "forks": 10,
+      "updated_at": "20",
+      "license": null,
+      "tags": [
+        "Media Streaming",
+        "Videos"
+      ],
+      "readme_path": "knowledge/readmes/github.com__Matszwe02__ytdlp_web_player.md",
+      "readme_status": "ok",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "a6a56248af37a99b4b3fe58716d387e87936240a7c0b18a1607eac5d1be1ce10"
+      }
+    },
+    {
+      "reference": "ytdl-sub",
+      "name": "ytdl-sub",
+      "website": "ytdl-sub.readthedocs.io",
+      "description": "Download videos and metadata from YouTube",
+      "repo_url": "github.com/jmbannon/ytdl-sub",
+      "repo_key": "github.com/jmbannon/ytdl-sub",
+      "stars": null,
+      "forks": 11,
+      "updated_at": "29",
+      "license": null,
+      "tags": [
+        "Downloads",
+        "Videos"
+      ],
+      "readme_path": "knowledge/readmes/github.com__jmbannon__ytdl-sub.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "f8acd4a206ad7e191f9a79027a529b98a9d1728769d8db3af4018439b86253cb"
+      }
+    },
+    {
+      "reference": "ytptube",
+      "name": "YTPTube",
+      "website": "github.com/arabcoders/ytptube",
+      "description": "Web-based GUI for yt-dlp",
+      "repo_url": "github.com/arabcoders/ytptube",
+      "repo_key": "github.com/arabcoders/ytptube",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "29",
+      "license": null,
+      "tags": [
+        "Downloads",
+        "Front End",
+        "Videos"
+      ],
+      "readme_path": "knowledge/readmes/github.com__arabcoders__ytptube.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "74ed98ea3101bb07e28812ed15fa6a2d12630243768d2ed635ea42a1ab357aa9"
+      }
+    },
+    {
+      "reference": "yubal",
+      "name": "yubal",
+      "website": "github.com/guillevc/yubal",
+      "description": "YouTube Music album downloader with metadata tagging",
+      "repo_url": "github.com/guillevc/yubal",
+      "repo_key": "github.com/guillevc/yubal",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "29",
+      "license": null,
+      "tags": [
+        "Downloads",
+        "Music"
+      ],
+      "readme_path": "knowledge/readmes/github.com__guillevc__yubal.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "8f1882e9cdde744b60c9efc46b2c9096ea132124a1e5e2b029e24bf4ab2e8a9d"
+      }
+    },
     {
       "reference": "yunohost",
       "name": "YunoHost",
@@ -22,8 +161,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "1f15b7147f5ea4cd8b51ee78d5172d7ff0b7c767b11b2a3739fa6674fb4b275c"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "cc7d16e7c44c23dacc3cd7aaa7c073984718923b72cd93e6f608979a8f85c493"
       }
     },
     {
@@ -44,8 +183,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "dac06fbb3149a6240ae017fa50f555d978b77873425e53a985dea8162f72b556"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "4b19146c31a99ef8d3b30c00fce3bc8b6402194dfb516d9e870d4d344dc10ef4"
       }
     },
     {
@@ -67,8 +206,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "15730bcd53c21bf245984dbb9e938fbf7918018b58e4dc9b71fcc9ffd736b355"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "a79700cc8c805e8a4d41034fff5080d33561cd431847817864055f2b33ad144d"
       }
     },
     {
@@ -89,8 +228,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "a58b49d2a8d0a99b15ad8a3a63f5b10217fab51cbe11a6070fdc907701895c21"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "21ba343b97fc3c857166e3c0f461fd38cab5f4963e527803a3753af8356ad6cc"
       }
     },
     {
@@ -112,8 +251,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "984efcf248ee331c598bca917ffa7acb93035ec781c6ff43e879ae8463e29b89"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "1d2a32ecd4b8282fc2397a79637b036791e0db41b53cbb2a280e7fe8fc661c40"
       }
     },
     {
@@ -134,8 +273,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "7041ff53153dee225b852ad1147458f4ee05b4af3de5a9839ae0bb2402be7214"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "12977449e007f396808d4ddb9704720e756e7aef3d63a2cfe09a0173edb65c4b"
       }
     },
     {
@@ -156,8 +295,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "eeb5d72f0d608d8dfe3e05472f24b4686719574b9a1b0f3ec631fb9f8e895a32"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "94e964504e5217cd31a200d32ebec4c268edd03352a51f8f11f3675abacb7eb1"
       }
     },
     {
@@ -178,8 +317,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "ae5ae94e7dc8744335ca6aa827186db74ce908b8a9ab1872e9df846e88d5c18b"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "888b287cf8f339b1ace154b4811a975bfdc7699c025bad4c9a94d52ff701768e"
       }
     },
     {
@@ -200,8 +339,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "c36c949ac66fd29908645356b610f9e4179957c7dba7a5314abacfd7ba0db2cb"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "8a9cc9f83a89f92ce3cb97727c5a6741fa2323bbd1a48c63b8e09bf63780c1be"
       }
     },
     {
@@ -222,8 +361,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "7c2eabe9647cf7bec958675cb665c93ecf8afa9d6762fddb77ad6c3d8739a735"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "7350da7868b762136b7eb64859e42121fad21c29b1dbf5da94c7f1d56869c0b3"
       }
     },
     {
@@ -246,8 +385,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "83cf053b903b5a3833d83bb5999466583eb3e58ab32edd7213bf3ac1e858c589"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "8f8c06e4ff2e831110ad3a0a356ab320b04dcadc0105f9443a0e71ee64e87f0c"
       }
     },
     {
@@ -269,8 +408,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "9bc9a706c2ccd8d93c37469d3118db3f3c9841a7e0d821b2b82f46617d164af4"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "c0b023a2e5bdca745b006f41fb2b129d891d60644ad98bce5bc9e9b3d08081e6"
       }
     },
     {
@@ -292,8 +431,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "c2f5d7e22127088525b609506c5fccf39e89c1c99f3a175a421eea52b926fd5e"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "fba9af649860a39aee2a25c962a18f11514059ae1454976ffd29b86db44e98a0"
       }
     },
     {
@@ -314,8 +453,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "00c99392572dac13473a654e6be38d5bd64c16ec8f2720fcd50cb814c33a424e"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "9b6152bd14f4b125cff8743ff701485d64aa08da1987f6aa21b2699f784c1b10"
       }
     },
     {
@@ -336,8 +475,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "46d3c0bf0108f1fca18b614f881f586ebe10ead306c95c9fbfebec9ca317dc13"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "824f3818baa1546681038a273f61bfb32a471c6678b1a7889cf47588d4ed6178"
       }
     },
     {
@@ -359,8 +498,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "b96804f5ac7ed02b0723905ef6b99779ff099cadec84a6337a5061d15e75e5b5"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "6e1891812fe3849f1fe297a490149ea60126d732794c46e25dfd2950c4ab90ce"
       }
     },
     {
@@ -381,8 +520,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-19T05:27:57Z",
-        "row_hash": "9d9ec7bbdbc4c1f6c03b78d2b956525e50dc7639267f3309796115bcb11808e2"
+        "fetched_at": "2026-04-26T05:38:19Z",
+        "row_hash": "a0ac0f5ea6f3f84a42faf3c056836288e522d2dcd63fd6e905f32828cee73dd2"
       }
     }
   ]

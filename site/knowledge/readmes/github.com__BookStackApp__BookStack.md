@@ -72,7 +72,7 @@ Big thanks to these companies for supporting the project.
 <td align="center"><a href="https://www.stellarhosted.com/bookstack/" target="_blank">
     <img width="240" src="https://www.bookstackapp.com/images/sponsors/stellarhosted.png" alt="Stellar Hosted">
 </a></td>
-<td align="center" style="text-align: center"><a href="https://nws.netways.de/apps/bookstack/" target="_blank">
+<td align="center" style="text-align: center"><a href="https://nws.netways.de" target="_blank">
     <img width="240" src="https://www.bookstackapp.com/images/sponsors/netways.png" alt="NETWAYS Web Services">
 </a></td>
 </tr>

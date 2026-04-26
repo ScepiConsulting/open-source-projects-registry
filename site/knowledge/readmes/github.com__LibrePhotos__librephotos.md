@@ -1,12 +1,12 @@
 [![Discord](https://img.shields.io/badge/Discord-LibrePhotos-5865F2?style=plastic&logo=discord&logoColor=white)][discord] [![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&style=plastic&up_color=blue&up_message=online&url=https%3A%2F%2Flibrephotos.com)](https://librephotos.com/)
-[![Read the docs](https://img.shields.io/static/v1?label=Read&message=the%20docs&color=blue&style=plastic)](https://docs.librephotos.com/) [![GitHub contributors](https://img.shields.io/github/contributors/librephotos/librephotos?style=plastic)](https://github.com/LibrePhotos/librephotos/graphs/contributors) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=plastic)](https://github.com/LibrePhotos/librephotos/blob/dev/LICENSE)
+[![Read the docs](https://img.shields.io/static/v1?label=Read&message=the%20docs&color=blue&style=plastic)](https://docs.librephotos.com/) [![GitHub contributors](https://img.shields.io/github/contributors/librephotos/librephotos?style=plastic)](https://github.com/LibrePhotos/librephotos/graphs/contributors) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=plastic)](LICENSE)
 <a href="https://hosted.weblate.org/engage/librephotos/">
 <img src="https://hosted.weblate.org/widgets/librephotos/-/librephotos-frontend/svg-badge.svg" alt="Translation status" />
 </a>
 
 # LibrePhotos
 
-![](https://github.com/LibrePhotos/librephotos/blob/dev/screenshots/mockups_main_fhd.png?raw=true)
+![](https://github.com/LibrePhotos/librephotos/blob/dev/apps/backend/screenshots/mockups_main_fhd.png?raw=true)
 <sub>Mockup designed by rawpixel.com / Freepik</sub>
 
 A self-hosted, open-source photo management service with automatic face recognition, object detection, and semantic search — powered by modern machine learning.
@@ -15,6 +15,20 @@ A self-hosted, open-source photo management service with automatic face recognit
 - Latest **development** demo is available here: https://demo2.librephotos.com/ (same user/password)
 - You can watch development videos on [Niaz Faridani-Rad's channel](https://www.youtube.com/channel/UCZJ2pk2BPKxwbuCV9LWDR0w)
 - You can join our [Discord][discord].
+
+## Repository layout
+
+This is a monorepo that consolidates what was previously five separate repositories.
+
+| Path | What it is | Previous repo |
+|---|---|---|
+| [`apps/backend/`](apps/backend/) | Django 5 API, machine-learning pipelines, background jobs | `librephotos` |
+| [`apps/frontend/`](apps/frontend/) | React 18 + Vite web client, i18next localization | `librephotos-frontend` |
+| [`apps/mobile/`](apps/mobile/) | React Native mobile client (Android) | `librephotos-mobile` |
+| [`apps/docs/`](apps/docs/) | Docusaurus site published to https://docs.librephotos.com | `librephotos.docs` |
+| [`deploy/`](deploy/) | Dockerfiles, Compose configs, proxy, Kubernetes manifests | `librephotos-docker` |
+
+Commit history from all five repositories is preserved — `git log --follow apps/<app>/<file>` works across the move.
 
 ## Installation
 
@@ -86,24 +100,25 @@ After starting LibrePhotos, interactive API docs are available at:
 - **Swagger UI:** `http://localhost:3000/api/swagger`
 - **ReDoc:** `http://localhost:3000/api/redoc`
 
+## Development
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) and the per-app READMEs:
+- [Backend](apps/backend/README.md)
+- [Frontend](apps/frontend/README.md)
+- [Mobile](apps/mobile/README.md)
+- [Docs site](apps/docs/README.md)
+
+The Docker Compose-based dev environment lives in [`deploy/compose/`](deploy/compose/) and is described in the [development install guide](https://docs.librephotos.com/docs/development/dev-install).
+
 ## How to help out
 
 - ⭐ **Star** this repository if you like this project!
 - 🚀 **Developing**: Get started in less than 30 minutes by following [this guide](https://docs.librephotos.com/docs/development/dev-install). Also see our [CONTRIBUTING.md](CONTRIBUTING.md) for detailed development setup, code quality standards, and PR guidelines.
-- 🗒️ **Documentation**: Improving the documentation is as simple as submitting a pull request [here](https://github.com/LibrePhotos/librephotos.docs)
+- 🗒️ **Documentation**: Improving the documentation is as simple as submitting a pull request [here](https://github.com/LibrePhotos/librephotos/tree/dev/apps/docs)
 - 🧪 **Testing**: If you want to help find bugs, use the ```dev``` tag and update it regularly. If you find a bug, open an issue.
 - 🧑‍🤝‍🧑 **Outreach**: Talk about this project with other people and help them to get started too!
 - 🌐 **Translations**: Make LibrePhotos accessible to more people with [weblate](https://hosted.weblate.org/engage/librephotos/).
 - 💸 [**Donate**](https://github.com/sponsors/derneuere) to the developers of LibrePhotos
-
-## Related Projects
-
-| Repository | Description |
-|------------|-------------|
-| [librephotos-frontend](https://github.com/LibrePhotos/librephotos-frontend) | React/TypeScript web frontend |
-| [librephotos-docker](https://github.com/LibrePhotos/librephotos-docker) | Docker Compose deployment configurations |
-| [librephotos.docs](https://github.com/LibrePhotos/librephotos.docs) | Documentation website source |
-| [librephotos-mobile](https://github.com/LibrePhotos/librephotos-mobile) | Mobile application |
 
 ## License
 

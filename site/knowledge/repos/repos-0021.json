@@ -1,8 +1,53 @@
 {
   "chunk": 21,
   "count": 50,
-  "generated_at": "2026-04-19T05:35:13Z",
+  "generated_at": "2026-04-26T05:45:46Z",
   "items": [
+    {
+      "repo_key": "github.com/postalserver/postal",
+      "repo_url": "github.com/postalserver/postal",
+      "host": "github.com",
+      "owner": "postalserver",
+      "repo": "postal",
+      "app_references": [
+        "postal"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__postalserver__postal.md",
+      "readme_download_url": null,
+      "readme_sha256": "cd12bd3c9dae6282fcad76a214c341a698ca3425a4070ede411de1d6dc157bf0",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/project-zot/zot",
+      "repo_url": "github.com/project-zot/zot",
+      "host": "github.com",
+      "owner": "project-zot",
+      "repo": "zot",
+      "app_references": [
+        "zot-registry"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__project-zot__zot.md",
+      "readme_download_url": null,
+      "readme_sha256": "83a12ebead2caa5543f2a5ece78be5a168d781e1977583aa0a3a63b6ef98f5ce",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/projectsend/projectsend",
+      "repo_url": "github.com/projectsend/projectsend",
+      "host": "github.com",
+      "owner": "projectsend",
+      "repo": "projectsend",
+      "app_references": [
+        "projectsend"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__projectsend__projectsend.md",
+      "readme_download_url": null,
+      "readme_sha256": "7926e49ebd0d46f70168d3e57688939888eacda15f711ac199d309c29f903321",
+      "error": null
+    },
     {
       "repo_key": "github.com/prometheus/prometheus",
       "repo_url": "github.com/prometheus/prometheus",
@@ -15,7 +60,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__prometheus__prometheus.md",
       "readme_download_url": "https://raw.githubusercontent.com/prometheus/prometheus/main/README.md",
-      "readme_sha256": "16638cea47b13215641132abc3ae1e1ae803bae84026df2438f7ffe14a7d7e2b",
+      "readme_sha256": "f09d7125e7723c30e05b490edc361f63245365eeff39f2ec3ad6f38da5216f38",
       "error": null
     },
     {
@@ -45,7 +90,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__psviderski__uncloud.md",
       "readme_download_url": "https://raw.githubusercontent.com/psviderski/uncloud/main/README.md",
-      "readme_sha256": "5d61cbec4ec058ebabb3776b69254b304d6699e903b77a4f35840c87bd893d6d",
+      "readme_sha256": "23c3d213b9c81e6da7d2a7301bbabebc02e770b635c49af631f1ff4aa4d76a91",
       "error": null
     },
     {
@@ -57,10 +102,10 @@
       "app_references": [
         "unregistry"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__psviderski__unregistry.md",
-      "readme_download_url": null,
-      "readme_sha256": "98b37cd11044697faddac5a5e9842c9456b122f8875507925b18080ba485e8e6",
+      "readme_download_url": "https://raw.githubusercontent.com/psviderski/unregistry/main/README.md",
+      "readme_sha256": "b5824dd4d49135e6102b0e406a56314a834dc6d09f4e7992cd81f37fee416a82",
       "error": null
     },
     {
@@ -117,10 +162,10 @@
       "app_references": [
         "pyload"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pyload__pyload.md",
-      "readme_download_url": null,
-      "readme_sha256": "0b73464b935c0065c4bae8d872516b5f16cc44026087682fc22402b87c581011",
+      "readme_download_url": "https://raw.githubusercontent.com/pyload/pyload/develop/README.md",
+      "readme_sha256": "16b4924b9c3b00941f24b689b1ba1a7b22e7bb608c81a067372636b052a38905",
       "error": null
     },
     {
@@ -150,7 +195,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__qarmin__czkawka.md",
       "readme_download_url": "https://raw.githubusercontent.com/qarmin/czkawka/master/README.md",
-      "readme_sha256": "437be0f3e8b7319f4d7366db45ce2718dc7fd453428acf72997f9aac20bd5d08",
+      "readme_sha256": "d1a950621429fde9aac7a52e757be2e38e5cef6b1f455b9f2c11e2e3be9a5e82",
       "error": null
     },
     {
@@ -180,7 +225,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__qdm12__ddns-updater.md",
       "readme_download_url": "https://raw.githubusercontent.com/qdm12/ddns-updater/master/README.md",
-      "readme_sha256": "c5030f90ff3bf88528af52a58a740e42a80d63ea28dab6da567fe9b9c161fa8d",
+      "readme_sha256": "b2284d29e3a076f43866af5bd06e846cf2ecc6e098ad6ca6530ede4c8b16c90e",
       "error": null
     },
     {
@@ -210,7 +255,22 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__qwibitai__nanoclaw.md",
       "readme_download_url": "https://raw.githubusercontent.com/qwibitai/nanoclaw/main/README.md",
-      "readme_sha256": "425c7fa829d972e5975b037ade8b24ca8d60b4a3fafe1ff781f74a7496522a93",
+      "readme_sha256": "b3044a48467826075995a14c330bf53d0047f6a9d1bd4b516a625e65ab1c4735",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/raffomania/ties",
+      "repo_url": "github.com/raffomania/ties",
+      "host": "github.com",
+      "owner": "raffomania",
+      "repo": "ties",
+      "app_references": [
+        "ties-link-sharing"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__raffomania__ties.md",
+      "readme_download_url": "https://raw.githubusercontent.com/raffomania/ties/main/README.md",
+      "readme_sha256": "97887f6bc71d9d1e7e4d357064788eea931cba40209836b8c78e0c2d7024ed34",
       "error": null
     },
     {
@@ -267,10 +327,10 @@
       "app_references": [
         "rclone"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__rclone__rclone.md",
-      "readme_download_url": null,
-      "readme_sha256": "79437f0a7f7ee4445fa3dcb7e057a96bfe17861912457029032d4fd2a11a52f4",
+      "readme_download_url": "https://raw.githubusercontent.com/rclone/rclone/master/README.md",
+      "readme_sha256": "67da305275cd92fc53e4ea883ced9d14cc7e038e6020f82a59dd38da671bf349",
       "error": null
     },
     {
@@ -327,10 +387,10 @@
       "app_references": [
         "redlib"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__redlib-org__redlib.md",
-      "readme_download_url": null,
-      "readme_sha256": "27628d44b57be55f0005a01ac3842069e1005ba85d7e264fb18becf66f785f78",
+      "readme_download_url": "https://raw.githubusercontent.com/redlib-org/redlib/main/README.md",
+      "readme_sha256": "2b17adf3495f15099a2ba20045cd91c149927307b75ee00cbef8d6a5462a93dd",
       "error": null
     },
     {
@@ -345,7 +405,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__relaticle__relaticle.md",
       "readme_download_url": "https://raw.githubusercontent.com/relaticle/relaticle/main/README.md",
-      "readme_sha256": "04945736d1d9be34ab0ace5e80b60209287233558a814061a857c6556154e9de",
+      "readme_sha256": "662e3f6b8d4cebd45842a5d3622f0febcb202d8224beb21d9a5d22649747a0da",
       "error": null
     },
     {
@@ -691,66 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__runtipi__runtipi.md",
       "readme_download_url": null,
       "readme_sha256": "4a266a97914e215cd0e5af4bf3222ab5890046570cfd088dd4b41f6ed5ab7388",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/rustfs/rustfs",
-      "repo_url": "github.com/rustfs/rustfs",
-      "host": "github.com",
-      "owner": "rustfs",
-      "repo": "rustfs",
-      "app_references": [
-        "rustfs"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__rustfs__rustfs.md",
-      "readme_download_url": "https://raw.githubusercontent.com/rustfs/rustfs/main/README.md",
-      "readme_sha256": "8c56e753829179b77b99f571e7ef6e47bca6dce509eded82651eb89cfdf6956f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/rustmailer/bichon",
-      "repo_url": "github.com/rustmailer/bichon",
-      "host": "github.com",
-      "owner": "rustmailer",
-      "repo": "bichon",
-      "app_references": [
-        "bichon"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__rustmailer__bichon.md",
-      "readme_download_url": null,
-      "readme_sha256": "6b38fbd23bb867564f70b3958fdf7c241f452fc95a2a3bd4a03020301b03cfaa",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ryanlelek/Raneto",
-      "repo_url": "github.com/ryanlelek/Raneto",
-      "host": "github.com",
-      "owner": "ryanlelek",
-      "repo": "Raneto",
-      "app_references": [
-        "raneto"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__ryanlelek__Raneto.md",
-      "readme_download_url": null,
-      "readme_sha256": "35558cd16873b43cbcd338133e317f8b8b098e603b2e5bdf7ed025d86ee69895",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/rybbit-io/rybbit",
-      "repo_url": "github.com/rybbit-io/rybbit",
-      "host": "github.com",
-      "owner": "rybbit-io",
-      "repo": "rybbit",
-      "app_references": [
-        "rybbit"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__rybbit-io__rybbit.md",
-      "readme_download_url": null,
-      "readme_sha256": "3c8822348e1c6d564a0e7d46109dc283a0609e4d45ee5f333142818f2f71a171",
       "error": null
     }
   ]

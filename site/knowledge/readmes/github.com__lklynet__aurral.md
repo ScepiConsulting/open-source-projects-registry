@@ -12,6 +12,7 @@ Self-hosted music discovery, request management, flows, and playlist importing f
 ## Quick Links
 
 - [Docker image](https://ghcr.io/lklynet/aurral)
+- [Contributing guide](CONTRIBUTING.md)
 - [Flows and Playlists guide](flows-and-playlists.md)
 - [Spotify import helper](https://aurral.org/aurral-convert)
 - [Discord community](https://discord.gg/cpPYfgVURJ)
@@ -113,7 +114,8 @@ Relevant links:
 ### Required
 
 - Lidarr reachable from Aurral
-- Last.fm API key, with username if you want scrobbling-based discovery
+- Last.fm API key for metadata, images, and recommendation lookups
+- Last.fm or ListenBrainz account if you want listening-history-based discovery
 - MusicBrainz contact email for the required User-Agent policy
 
 ### Recommended stack for new users

@@ -77,3 +77,7 @@ Learn more at the [NLnet project page](https://nlnet.nl/project/Loops).
 Thanks to the Fastly Fast Forward program, Loops uses Fastly CDN and Object Storage to serve videos globally for free.
 
 [<img src="https://github.com/user-attachments/assets/f1499b1f-c05f-480a-a5d5-dbebcb0e20fd" alt="Fastly Fast Forward logo" width="50%" />](https://www.fastly.com/fast-forward)
+
+## Stargazing
+
+[![Star History Chart](https://api.star-history.com/svg?repos=joinloops/loops-server&type=Date)](https://star-history.com/#joinloops/loops-server&Date)

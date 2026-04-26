@@ -60,6 +60,11 @@
     "error": "worker_exception: Invalid URL 'codeberg.org/rimu/pyfedi/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/rimu/pyfedi/-/raw/main/README.md?"
   },
   {
+    "repo_key": "codeberg.org/shibao/cannery",
+    "repo_url": "codeberg.org/shibao/cannery",
+    "error": "worker_exception: Invalid URL 'codeberg.org/shibao/cannery/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/shibao/cannery/-/raw/main/README.md?"
+  },
+  {
     "repo_key": "codeberg.org/shroff/phylum",
     "repo_url": "codeberg.org/shroff/phylum",
     "error": "worker_exception: Invalid URL 'codeberg.org/shroff/phylum/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/shroff/phylum/-/raw/main/README.md?"
@@ -123,16 +128,6 @@
     "repo_key": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
     "repo_url": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
     "error": "worker_exception: Invalid URL 'gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md?"
-  },
-  {
-    "repo_key": "github.com/TomBursch/kitchenowl",
-    "repo_url": "github.com/TomBursch/kitchenowl",
-    "error": "github_readme_http_404"
-  },
-  {
-    "repo_key": "github.com/shibaobun/cannery",
-    "repo_url": "github.com/shibaobun/cannery",
-    "error": "github_readme_http_404"
   },
   {
     "repo_key": "gitlab.com/LazyLibrarian/LazyLibrarian",

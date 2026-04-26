@@ -1,8 +1,98 @@
 {
   "chunk": 25,
-  "count": 46,
-  "generated_at": "2026-04-19T05:35:13Z",
+  "count": 50,
+  "generated_at": "2026-04-26T05:45:46Z",
   "items": [
+    {
+      "repo_key": "github.com/wekan/wekan",
+      "repo_url": "github.com/wekan/wekan",
+      "host": "github.com",
+      "owner": "wekan",
+      "repo": "wekan",
+      "app_references": [
+        "wekan"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__wekan__wekan.md",
+      "readme_download_url": null,
+      "readme_sha256": "b603137a407c2adea0023da10a76e0348796abc5e83aa2bbead147f4e9316759",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/wezm/feedlynx",
+      "repo_url": "github.com/wezm/feedlynx",
+      "host": "github.com",
+      "owner": "wezm",
+      "repo": "feedlynx",
+      "app_references": [
+        "feedlynx"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__wezm__feedlynx.md",
+      "readme_download_url": null,
+      "readme_sha256": "fa0feff0c8e1085bd1f7e80712d43b09e61be7d8937d69035734c16886c7c298",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/wg-easy/wg-easy",
+      "repo_url": "github.com/wg-easy/wg-easy",
+      "host": "github.com",
+      "owner": "wg-easy",
+      "repo": "wg-easy",
+      "app_references": [
+        "wg-easy"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__wg-easy__wg-easy.md",
+      "readme_download_url": null,
+      "readme_sha256": "455df55391862bc1bd5f253a753687d02c187e6411d4f38bbcffd43c4fccd646",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/wger-project/wger",
+      "repo_url": "github.com/wger-project/wger",
+      "host": "github.com",
+      "owner": "wger-project",
+      "repo": "wger",
+      "app_references": [
+        "wger"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__wger-project__wger.md",
+      "readme_download_url": null,
+      "readme_sha256": "b31e7f497dd894283111cf5f8d808a3d7b5aae928a87d8b56a518b713c999234",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/windmill-labs/windmill",
+      "repo_url": "github.com/windmill-labs/windmill",
+      "host": "github.com",
+      "owner": "windmill-labs",
+      "repo": "windmill",
+      "app_references": [
+        "windmill"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__windmill-labs__windmill.md",
+      "readme_download_url": null,
+      "readme_sha256": "5915802a84e48f25bda7ce6f4cd026068939b4ea30a60d0221dd50b5967d57c8",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/wiredoor/wiredoor",
+      "repo_url": "github.com/wiredoor/wiredoor",
+      "host": "github.com",
+      "owner": "wiredoor",
+      "repo": "wiredoor",
+      "app_references": [
+        "wiredoor"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__wiredoor__wiredoor.md",
+      "readme_download_url": null,
+      "readme_sha256": "08712dd91f4f0a5eb41a005d636ba56348a8632f8d54483a58ba67c1123dbfa4",
+      "error": null
+    },
     {
       "repo_key": "github.com/withoutbg/withoutbg",
       "repo_url": "github.com/withoutbg/withoutbg",
@@ -42,9 +132,9 @@
       "app_references": [
         "woocommerce"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__woocommerce__woocommerce.md",
-      "readme_download_url": "https://raw.githubusercontent.com/woocommerce/woocommerce/trunk/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ded0a815f12a0cc488bf9a63d331566fcb8568032b09b55aae144c6890ae6f8f",
       "error": null
     },
@@ -312,9 +402,9 @@
       "app_references": [
         "kyoo"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__zoriya__Kyoo.md",
-      "readme_download_url": "https://raw.githubusercontent.com/zoriya/Kyoo/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ada1c9135ebd605ebf0d235de3724fcc44bd2e05acc6b5f68f017ea5a324b32a",
       "error": null
     },
@@ -662,36 +752,6 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "sr.ht/~sircmpwn/sourcehut",
-      "repo_url": "sr.ht/~sircmpwn/sourcehut",
-      "host": "sr.ht",
-      "owner": "~sircmpwn",
-      "repo": "sourcehut",
-      "app_references": [
-        "sourcehut"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'sr.ht/~sircmpwn/sourcehut/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://sr.ht/~sircmpwn/sourcehut/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "we.phorge.it/source/phorge",
-      "repo_url": "we.phorge.it/source/phorge",
-      "host": "we.phorge.it",
-      "owner": "source",
-      "repo": "phorge",
-      "app_references": [
-        "phorge"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'we.phorge.it/source/phorge/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://we.phorge.it/source/phorge/-/raw/main/README.md?"
     }
   ]
 }

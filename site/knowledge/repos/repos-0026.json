@@ -1,0 +1,37 @@
+{
+  "chunk": 26,
+  "count": 2,
+  "generated_at": "2026-04-26T05:45:46Z",
+  "items": [
+    {
+      "repo_key": "sr.ht/~sircmpwn/sourcehut",
+      "repo_url": "sr.ht/~sircmpwn/sourcehut",
+      "host": "sr.ht",
+      "owner": "~sircmpwn",
+      "repo": "sourcehut",
+      "app_references": [
+        "sourcehut"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'sr.ht/~sircmpwn/sourcehut/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://sr.ht/~sircmpwn/sourcehut/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "we.phorge.it/source/phorge",
+      "repo_url": "we.phorge.it/source/phorge",
+      "host": "we.phorge.it",
+      "owner": "source",
+      "repo": "phorge",
+      "app_references": [
+        "phorge"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'we.phorge.it/source/phorge/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://we.phorge.it/source/phorge/-/raw/main/README.md?"
+    }
+  ]
+}

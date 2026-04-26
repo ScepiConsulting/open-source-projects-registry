@@ -1,7 +1,7 @@
 {
   "chunk": 1,
   "count": 50,
-  "generated_at": "2026-04-19T05:35:12Z",
+  "generated_at": "2026-04-26T05:45:46Z",
   "items": [
     {
       "repo_key": "akkoma.dev/AkkomaGang/akkoma",
@@ -182,6 +182,21 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'codeberg.org/rimu/pyfedi/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/rimu/pyfedi/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/shibao/cannery",
+      "repo_url": "codeberg.org/shibao/cannery",
+      "host": "codeberg.org",
+      "owner": "shibao",
+      "repo": "cannery",
+      "app_references": [
+        "cannery"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'codeberg.org/shibao/cannery/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/shibao/cannery/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/shroff/phylum",
@@ -432,9 +447,9 @@
       "app_references": [
         "nginx-ui"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__0xJacky__nginx-ui.md",
-      "readme_download_url": "https://raw.githubusercontent.com/0xJacky/nginx-ui/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f7fc1851457ebacaac3e65033562ab8f552ff638c828b7ad7009d4aecf9c4a56",
       "error": null
     },
@@ -522,9 +537,9 @@
       "app_references": [
         "vaultls"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__7ritn__VaulTLS.md",
-      "readme_download_url": "https://raw.githubusercontent.com/7ritn/VaulTLS/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "040916a8ca8b0c823837182cc181ef2395744d619f1bdf244bb0fd048871951f",
       "error": null
     },
@@ -540,7 +555,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__9001__copyparty.md",
       "readme_download_url": "https://raw.githubusercontent.com/9001/copyparty/hovudstraum/README.md",
-      "readme_sha256": "5ed35fbe2bd93929e286e064fa13dc636118e298139588c089cbb17fb5dd20d0",
+      "readme_sha256": "27d42bc744e221034021ba7be7d3f17c4507e162e82a719dd0339050aa3223b8",
       "error": null
     },
     {
@@ -627,10 +642,10 @@
       "app_references": [
         "scrutiny"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__AnalogJ__scrutiny.md",
-      "readme_download_url": null,
-      "readme_sha256": "430ef70bd63d9ed5c0348ded289ade06ecfb30a63bb430287033151c64431834",
+      "readme_download_url": "https://raw.githubusercontent.com/AnalogJ/scrutiny/master/README.md",
+      "readme_sha256": "aa802dfed097d134b3d7a876f2586fb3938508f9f23d63e255b971d5dc4b1e9e",
       "error": null
     },
     {
@@ -687,9 +702,9 @@
       "app_references": [
         "archivebox"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ArchiveBox__ArchiveBox.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "59e26d3c56d199cab4afc62e46794fddb85de1b5d51c895cc00854218953b7f1",
       "error": null
     },
@@ -709,6 +724,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/AtalayaLabs/OxiCloud",
+      "repo_url": "github.com/AtalayaLabs/OxiCloud",
+      "host": "github.com",
+      "owner": "AtalayaLabs",
+      "repo": "OxiCloud",
+      "app_references": [
+        "oxicloud"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__AtalayaLabs__OxiCloud.md",
+      "readme_download_url": "https://raw.githubusercontent.com/AtalayaLabs/OxiCloud/main/README.md",
+      "readme_sha256": "c2f8d65f039c8bc4efe786e6ffd7aa7f92c96a8f5ff0d3d74b9b21bb4af0dc07",
+      "error": null
+    },
+    {
       "repo_key": "github.com/Atheos/Atheos",
       "repo_url": "github.com/Atheos/Atheos",
       "host": "github.com",
@@ -721,36 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__Atheos__Atheos.md",
       "readme_download_url": null,
       "readme_sha256": "e44a3bf6e058ee14d401762b44109270ba8b9afb60c2ba1944fba801c1efbbdd",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Athou/commafeed",
-      "repo_url": "github.com/Athou/commafeed",
-      "host": "github.com",
-      "owner": "Athou",
-      "repo": "commafeed",
-      "app_references": [
-        "commafeed"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Athou__commafeed.md",
-      "readme_download_url": null,
-      "readme_sha256": "1f21c44aa0c15bffc0ca59c7b6c8a2bba6beb568091c60ae13f03de1faa9d6a5",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/AzuraCast/AzuraCast",
-      "repo_url": "github.com/AzuraCast/AzuraCast",
-      "host": "github.com",
-      "owner": "AzuraCast",
-      "repo": "AzuraCast",
-      "app_references": [
-        "azuracast"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__AzuraCast__AzuraCast.md",
-      "readme_download_url": null,
-      "readme_sha256": "12eabef1397259483df2d57c93ea3b2c85a64eba0ff6f21d30aa0c1f2fbe39a6",
       "error": null
     }
   ]

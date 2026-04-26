@@ -1,8 +1,53 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-04-19T05:35:12Z",
+  "generated_at": "2026-04-26T05:45:46Z",
   "items": [
+    {
+      "repo_key": "github.com/dotnetfactory/fluid-calendar",
+      "repo_url": "github.com/dotnetfactory/fluid-calendar",
+      "host": "github.com",
+      "owner": "dotnetfactory",
+      "repo": "fluid-calendar",
+      "app_references": [
+        "fluidcalendar"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dotnetfactory__fluid-calendar.md",
+      "readme_download_url": null,
+      "readme_sha256": "b9c3ee11d76062920f631cc0e3545bce3d4de1b2103acfdca94bc254e634725d",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dovecot/core",
+      "repo_url": "github.com/dovecot/core",
+      "host": "github.com",
+      "owner": "dovecot",
+      "repo": "core",
+      "app_references": [
+        "dovecot"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dovecot__core.md",
+      "readme_download_url": null,
+      "readme_sha256": "938424abd8f099445a9d9b3a96b9d0ff08fdd80608bafd98a3cc71d0fb047f69",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/drakkan/sftpgo",
+      "repo_url": "github.com/drakkan/sftpgo",
+      "host": "github.com",
+      "owner": "drakkan",
+      "repo": "sftpgo",
+      "app_references": [
+        "sftpgo"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__drakkan__sftpgo.md",
+      "readme_download_url": null,
+      "readme_sha256": "d9165684ef33037122120ce61376c7b47ccd1f66fe3784010029ce529323c956",
+      "error": null
+    },
     {
       "repo_key": "github.com/dribdat/dribdat",
       "repo_url": "github.com/dribdat/dribdat",
@@ -30,7 +75,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__drivebase__drivebase.md",
       "readme_download_url": "https://raw.githubusercontent.com/drivebase/drivebase/main/README.md",
-      "readme_sha256": "b1b6aac6fcf029762cac42491277f7e2e03c2f518f08f69d90296e9eda6a2aa6",
+      "readme_sha256": "e50d8703a7367bbedb93551bc57cdd04ac758bde4c74f500d98933bac71f1cbb",
       "error": null
     },
     {
@@ -406,7 +451,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ether__etherpad.md",
       "readme_download_url": "https://raw.githubusercontent.com/ether/etherpad/develop/README.md",
-      "readme_sha256": "b75c2565ba97a543ce06bbc5e332fc6c5f831006d158d79ae4d036e0dc0f70d2",
+      "readme_sha256": "d76a35ff82be7015b4e63a0e0d23adad78d5045b7708157171a08a0bdcf24c7d",
       "error": null
     },
     {
@@ -448,9 +493,9 @@
       "app_references": [
         "evershop"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__evershopcommerce__evershop.md",
-      "readme_download_url": "https://raw.githubusercontent.com/evershopcommerce/evershop/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "586f206e25b23bd5a459b3029ddd4a1439acfc60b4fb009829e451c839b8a276",
       "error": null
     },
@@ -463,9 +508,9 @@
       "app_references": [
         "bracket"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__evroon__bracket.md",
-      "readme_download_url": "https://raw.githubusercontent.com/evroon/bracket/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "fdb12400addd1467815bd6734aeb7ac0025b3e55dad57fdd0f4853d9b813bd1e",
       "error": null
     },
@@ -568,9 +613,9 @@
       "app_references": [
         "meerkat-crm"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__fbuchner__meerkat-crm.md",
-      "readme_download_url": "https://raw.githubusercontent.com/fbuchner/meerkat-crm/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7827dcd1e163b5d304bd943e7a1b76c616381a960e97750de4604fb0ac3d2c0b",
       "error": null
     },
@@ -658,9 +703,9 @@
       "app_references": [
         "figranium"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__figranium__figranium.md",
-      "readme_download_url": "https://raw.githubusercontent.com/figranium/figranium/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "94b1b7e56022df97deb5dfcb47958622a1a72c5fb1c4be4442e7469c996fd563",
       "error": null
     },
@@ -707,51 +752,6 @@
       "readme_path": "knowledge/readmes/github.com__firefly-iii__firefly-iii.md",
       "readme_download_url": null,
       "readme_sha256": "e3cf2d268bd549f5cf5a6b6faf77b8d4709955f78b15a55942a30b68ce0240d4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/fisharebest/webtrees",
-      "repo_url": "github.com/fisharebest/webtrees",
-      "host": "github.com",
-      "owner": "fisharebest",
-      "repo": "webtrees",
-      "app_references": [
-        "webtrees"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__fisharebest__webtrees.md",
-      "readme_download_url": null,
-      "readme_sha256": "002ebf0766ee37e609ea21d6f0bf398d8c18d7eac300ad5a9ecab3e1bb5a6091",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/flarum/flarum",
-      "repo_url": "github.com/flarum/flarum",
-      "host": "github.com",
-      "owner": "flarum",
-      "repo": "flarum",
-      "app_references": [
-        "flarum"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__flarum__flarum.md",
-      "readme_download_url": null,
-      "readme_sha256": "697795f912c92204fc1957d3497e9d87abe28d88fa1931eda711061006b96764",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/flohoss/gocron",
-      "repo_url": "github.com/flohoss/gocron",
-      "host": "github.com",
-      "owner": "flohoss",
-      "repo": "gocron",
-      "app_references": [
-        "gocron"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__flohoss__gocron.md",
-      "readme_download_url": null,
-      "readme_sha256": "83f8173269a6a07ee68aab94bb4a532d6e057d74280574edead31e082e6eba1e",
       "error": null
     }
   ]

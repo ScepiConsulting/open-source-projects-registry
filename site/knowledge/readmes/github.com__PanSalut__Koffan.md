@@ -107,10 +107,19 @@ APP_PASSWORD=yourpassword go run main.go
 
 ## Docker
 
+> **Upgrading from 2.9.x or earlier?** The default container port changed from `80` to `8080` in 2.10.0 so the image can run as a non-root user. If you are upgrading, update your port mappings and any reverse proxy upstreams accordingly:
+>
+> - `docker run -p 80:80` → `docker run -p 80:8080`
+> - `docker run -p 3000:80` → `docker run -p 3000:8080`
+> - Reverse proxies (nginx / Caddy / Traefik): point the upstream to the container's port `8080`
+> - If you previously overrode `PORT` via env to work around the privileged port, you can drop that override
+>
+> Coolify and other auto-discovery setups that read the image's `EXPOSE` will pick up the new port on redeploy without any manual change.
+
 ### Quick Start (recommended)
 
 ```bash
-docker run -d -p 3000:80 -e APP_PASSWORD=yourpassword -v koffan-data:/data ghcr.io/pansalut/koffan:latest
+docker run -d -p 3000:8080 -e APP_PASSWORD=yourpassword -v koffan-data:/data ghcr.io/pansalut/koffan:latest
 ```
 
 App available at http://localhost:3000
@@ -119,7 +128,7 @@ App available at http://localhost:3000
 
 ```bash
 docker-compose up -d
-# App available at http://localhost:80
+# App available at http://localhost:8080
 ```
 
 ## Environment Variables
@@ -129,7 +138,7 @@ docker-compose up -d
 | `APP_ENV` | `development` | Set to `production` for secure cookies |
 | `APP_PASSWORD` | `shopping123` | Login password |
 | `DISABLE_AUTH` | `false` | Set to `true` to disable authentication (for reverse proxy setups) |
-| `PORT` | `80` (Docker) / `3000` (local) | Server port |
+| `PORT` | `8080` (Docker) / `3000` (local) | Server port |
 | `DB_PATH` | `./shopping.db` | Database file path |
 | `DEFAULT_LANG` | `en` | Default UI language (pl, en, de, es, fr, pt, uk, no, lt, el, sk, ru) |
 | `LOGIN_MAX_ATTEMPTS` | `5` | Max login attempts before lockout |
@@ -145,7 +154,7 @@ docker-compose up -d
 git clone https://github.com/PanSalut/Koffan.git
 cd Koffan
 docker build -t koffan .
-docker run -d -p 80:80 -e APP_PASSWORD=your-password -v koffan-data:/data koffan
+docker run -d -p 80:8080 -e APP_PASSWORD=your-password -v koffan-data:/data koffan
 ```
 
 ### Coolify

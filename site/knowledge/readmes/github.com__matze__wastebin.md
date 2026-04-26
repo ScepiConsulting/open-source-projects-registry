@@ -8,12 +8,14 @@ A minimal pastebin with a design shamelessly copied from
 
 <p align="center"><img src="https://raw.githubusercontent.com/matze/wastebin/master/assets/screenshot.webp"></p>
 
-<p align="center"><strong><a href="https://bin.bloerg.net">DEMO</a></strong> (resets every day)</p>
+<p align="center"><strong><a href="https://bin.bloerg.net">DEMO</a></strong> (resets every day) • <strong><a href="https://matze.github.io/wastebin/">THEMES</a></strong></p>
 
 You are reading the documentation for an **unreleased version**. You can refer
 to released versions here:
 
-**[3.4.1](https://github.com/matze/wastebin/tree/c9d717329a6e357e8a13a324bfa9a53d41ae9b35)** •
+**[3.6.0](https://github.com/matze/wastebin/tree/2a9f3b6eabe21d6c42c39d6885ed767868b12fa7)** •
+[3.5.0](https://github.com/matze/wastebin/tree/d379a6e3e73e6f1fcf23f93c9b0cc857f46acbce) •
+[3.4.1](https://github.com/matze/wastebin/tree/c9d717329a6e357e8a13a324bfa9a53d41ae9b35) •
 [3.3.0](https://github.com/matze/wastebin/tree/a297749b932ed9ff32569f3af7ee8e4a5b499834) •
 [3.2.0](https://github.com/matze/wastebin/tree/3fdec3abde4f32b92323864ffea51577ce1e625e) •
 [3.1.0](https://github.com/matze/wastebin/tree/e404ecec61eaafa1187b8d6b45282d72b076563d) •
@@ -26,6 +28,7 @@ to released versions here:
 * comes as a single binary with low memory footprint
 * compresses pastes using [zstd](https://github.com/facebook/zstd)
 * syntax highlighting for > 170 languages with [syntect](https://github.com/trishume/syntect)
+* renders Markdown pastes to HTML, including GitHub-flavored tables, task lists and admonitions
 * comes with [eight color themes](https://matze.github.io/wastebin/) in light and dark mode
 * encrypts entries using ChaCha20Poly1305 and argon2 hashed passwords
 * allows deletion after expiration, after reading or by anonymous owners
@@ -149,12 +152,31 @@ When viewing a paste, you can use
 * <kbd>y</kbd> to copy the current URL to the clipboard,
 * <kbd>c</kbd> to copy the content to the clipboard,
 * <kbd>q</kbd> to display the current URL as a QR code,
-* <kbd>p</kbd> to view the formatted paste and
-* <kbd>w</kbd> to toggle line wrapping on and off (off by default)
+* <kbd>p</kbd> to view the formatted paste,
+* <kbd>w</kbd> to toggle line wrapping on and off (off by default),
+* <kbd>m</kbd> to toggle the rendered view on Markdown pastes and
 * <kbd>?</kbd> to view the list of keybindings.
 
 To paste some text you can also use the <kbd>ctrl</kbd>+<kbd>s</kbd> key
 combination.
+
+
+### Markdown rendering
+
+Pastes created with an `md` or `markdown` extension can be viewed as rendered
+HTML at `/md/{id}`. A toggle in the paste view switches between the syntax
+highlighted source and the rendered output. The renderer supports
+GitHub-flavored Markdown, including tables, task lists and admonitions
+(`> [!NOTE]`, `> [!WARNING]`, etc.); fenced code blocks are syntax highlighted
+with the same theme as regular pastes.
+
+Raw HTML inside the Markdown source is run through the
+[ammonia](https://github.com/rust-ammonia/ammonia) sanitizer, so safe tags like
+`<details>`, `<summary>` or `<kbd>` are preserved while `<script>`, inline
+event handlers and `javascript:` URLs are stripped. To permit external images
+embedded via `![alt](https://…)`, the Content Security Policy is relaxed to
+`img-src *` for `/md/*` responses only; all other routes keep the strict
+default.
 
 
 ### Configuration

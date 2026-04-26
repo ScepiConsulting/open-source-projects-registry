@@ -1,8 +1,53 @@
 {
   "chunk": 14,
   "count": 50,
-  "generated_at": "2026-04-19T05:35:12Z",
+  "generated_at": "2026-04-26T05:45:46Z",
   "items": [
+    {
+      "repo_key": "github.com/goauthentik/authentik",
+      "repo_url": "github.com/goauthentik/authentik",
+      "host": "github.com",
+      "owner": "goauthentik",
+      "repo": "authentik",
+      "app_references": [
+        "authentik"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__goauthentik__authentik.md",
+      "readme_download_url": null,
+      "readme_sha256": "0b132191876614bef6486870f0b4c1e80edf57f17ae35e45d0eaa83505ab937b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/gogs/gogs",
+      "repo_url": "github.com/gogs/gogs",
+      "host": "github.com",
+      "owner": "gogs",
+      "repo": "gogs",
+      "app_references": [
+        "gogs"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__gogs__gogs.md",
+      "readme_download_url": null,
+      "readme_sha256": "4bb8f3ef460d228416494d74330d07397a8943b33ab59ba5fde106b67cfe35df",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/goniszewski/grimoire",
+      "repo_url": "github.com/goniszewski/grimoire",
+      "host": "github.com",
+      "owner": "goniszewski",
+      "repo": "grimoire",
+      "app_references": [
+        "grimoire"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__goniszewski__grimoire.md",
+      "readme_download_url": null,
+      "readme_sha256": "2282b5377b3c4fc51c7dada6edfa0bc2b4f3a22c2531e21ba4bffbd196070243",
+      "error": null
+    },
     {
       "repo_key": "github.com/google/cadvisor",
       "repo_url": "github.com/google/cadvisor",
@@ -237,9 +282,9 @@
       "app_references": [
         "seafile"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__haiwen__seafile.md",
-      "readme_download_url": "https://raw.githubusercontent.com/haiwen/seafile/master/README.markdown",
+      "readme_download_url": null,
       "readme_sha256": "099045faf2f21d8cab866dc215953b3adfc0b63e0d6198c98d19f1e0c74bfc2b",
       "error": null
     },
@@ -270,7 +315,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__haproxy__haproxy.md",
       "readme_download_url": "https://raw.githubusercontent.com/haproxy/haproxy/master/README.md",
-      "readme_sha256": "4bbc5488ae2d5635225eb1468ba674e9aa03afa94d98281a5c58d041fd23e600",
+      "readme_sha256": "b3a42a8320ea21942b298b69344ce4bc133570d285b25a47c0cdf122270315e3",
       "error": null
     },
     {
@@ -375,7 +420,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hhftechnology__crowdsec_manager.md",
       "readme_download_url": "https://raw.githubusercontent.com/hhftechnology/crowdsec_manager/main/README.md",
-      "readme_sha256": "e2f88bf99506befa316c62bbdb9cfbf3a346faf80f33d8a5803bfc381f40df1c",
+      "readme_sha256": "525f3cdae2a3116477a9668f6f854d75e59be677af10f9d39460b3a3b3975dee",
       "error": null
     },
     {
@@ -402,9 +447,9 @@
       "app_references": [
         "traefik-log-dashboard"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__hhftechnology__traefik-log-dashboard.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hhftechnology/traefik-log-dashboard/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "cc0757706b626f45fba327a9fd7781d7b954aba2edd57eaafdff545759e4f769",
       "error": null
     },
@@ -507,10 +552,10 @@
       "app_references": [
         "hoodik"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hudikhq__hoodik.md",
-      "readme_download_url": null,
-      "readme_sha256": "2d40b100934d9ef8cd27e83594a790c564e9185a0b6458041c3dfc100ca58f75",
+      "readme_download_url": "https://raw.githubusercontent.com/hudikhq/hoodik/master/README.md",
+      "readme_sha256": "df8c06492ad36977070c686bcd8f5e2fcfc3376672e17761fe7283cf95a8649c",
       "error": null
     },
     {
@@ -627,10 +672,10 @@
       "app_references": [
         "omnitools"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__iib0011__omni-tools.md",
-      "readme_download_url": null,
-      "readme_sha256": "d0b5f46e3d2358a99f7bca6f6187c01ea35a79165162779f3ee67b848ef812fe",
+      "readme_download_url": "https://raw.githubusercontent.com/iib0011/omni-tools/main/README.md",
+      "readme_sha256": "7055beda35b06028531b034b26f779f426f31079624e9504fd3a08a84031725f",
       "error": null
     },
     {
@@ -657,9 +702,9 @@
       "app_references": [
         "immich-power-tools"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__immich-power-tools__immich-power-tools.md",
-      "readme_download_url": "https://raw.githubusercontent.com/immich-power-tools/immich-power-tools/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "65eb45e3246a29e990f43f1b859d1d1b6995b172e2b3f916fee1e9ae1d32d3f5",
       "error": null
     },
@@ -702,55 +747,10 @@
       "app_references": [
         "influxdb"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__influxdata__influxdb.md",
-      "readme_download_url": "https://raw.githubusercontent.com/influxdata/influxdb/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ed54ece09e4f6c299e947062c7286ed5d972176c056ec9eb6997810e9e1f73d9",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/inovector/mixpost",
-      "repo_url": "github.com/inovector/mixpost",
-      "host": "github.com",
-      "owner": "inovector",
-      "repo": "mixpost",
-      "app_references": [
-        "mixpost"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__inovector__mixpost.md",
-      "readme_download_url": null,
-      "readme_sha256": "d4ac37ca5d57e6bd09624312c52a576f53304d41194a779edd8a14672ab067c4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/interaapps/pastefy",
-      "repo_url": "github.com/interaapps/pastefy",
-      "host": "github.com",
-      "owner": "interaapps",
-      "repo": "pastefy",
-      "app_references": [
-        "pastefy"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__interaapps__pastefy.md",
-      "readme_download_url": null,
-      "readme_sha256": "556a02c926e561f83fa5dace4afffba0ae7187b7cf09fe572c7b4ebbdea4f313",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/intri-in/manage-my-damn-life-nextjs",
-      "repo_url": "github.com/intri-in/manage-my-damn-life-nextjs",
-      "host": "github.com",
-      "owner": "intri-in",
-      "repo": "manage-my-damn-life-nextjs",
-      "app_references": [
-        "manage-my-damn-life"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__intri-in__manage-my-damn-life-nextjs.md",
-      "readme_download_url": null,
-      "readme_sha256": "89ba0248abe17e357deb3bd84ca66b311251511c175e84a592dda773f3efc9ae",
       "error": null
     }
   ]

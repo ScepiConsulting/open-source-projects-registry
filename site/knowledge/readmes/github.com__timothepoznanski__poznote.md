@@ -14,27 +14,22 @@
 <h3 align="center">
 Poznote is a personal note-taking and documentation platform.
 </h3>
-This project started from a simple personal need: a practical way to write, organize, and synchronize my technical and personal notes. From the beginning, the priority has been simplicity and ease of use.<br>
-
-<br>
-
-<p align="center">
-  <a href="https://poznote.com/about.html">Learn more about the project and its background on the Poznote About page</a>
-</p>
 
 <br>
 <p align="center">
-  <img src="images/poznote-light.png" alt="Poznote-light" width="100%">
+  <img src="images/pres1.png" alt="Poznote-light" width="100%">
 </p>
 
 ### Features
 
 Discover all the features [here](https://poznote.com/index.html#features).
-Detailed documentation of advanced features is available in [docs/FEATURES.md](docs/FEATURES.md).
 
-<p align="center">
-  <img src="images/poznote-features.png" alt="Poznote Features" width="100%">
-</p>
+### Demo
+
+https://demo.poznote.com
+
+**Login**: poznote<br>
+**Password**: poznote
 
 ## Table of content
 
@@ -58,6 +53,7 @@ Detailed documentation of advanced features is available in [docs/FEATURES.md](d
 - [Chrome Extension](#chrome-extension)
 - [API Documentation](#api-documentation)
 - [Tech Stack](#tech-stack)
+- [About](#about)
 
 ## Install
 
@@ -235,6 +231,7 @@ Use the `.env` file for:
 - `HTTP_WEB_PORT`
 - `POZNOTE_OIDC_CLIENT_ID`
 - `POZNOTE_OIDC_CLIENT_SECRET`
+- `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN`
 - Optional runtime overrides such as `POZNOTE_MCP_PORT` and `POZNOTE_DEBUG`
 
 Use the UI for:
@@ -242,7 +239,7 @@ Use the UI for:
 - Admin/global settings such as OIDC provider settings, Git Sync enablement, import limits, and custom CSS upload
 - User/profile settings such as local account passwords, theme, font sizes, note sorting, workspace background, and hidden UI elements
 
-With the default installation files, `.env.template` currently exposes `HTTP_WEB_PORT`, `POZNOTE_OIDC_CLIENT_ID`, and `POZNOTE_OIDC_CLIENT_SECRET`.
+With the default installation files, `.env.template` currently exposes `HTTP_WEB_PORT`, `POZNOTE_OIDC_CLIENT_ID`, `POZNOTE_OIDC_CLIENT_SECRET`, and `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN`.
 
 If a setting exists in the UI, use the UI as the source of truth. Some legacy environment fallbacks still exist internally for compatibility, but they are not the primary configuration workflow.
 
@@ -267,31 +264,6 @@ docker compose up -d
 
 ## Update application
 
-In most cases, updating Poznote is simple and does not require editing `.env`.
-
-### Simple update (default)
-
-Use this when the release notes do not mention changes to `.env`.
-
-Navigate to your Poznote directory:
-```bash
-cd poznote
-```
-
-Download the latest Poznote Webserver and Poznote MCP images:
-```bash
-docker compose pull
-```
-
-Start the updated containers:
-```bash
-docker compose up -d
-```
-
-### If the release notes mention `.env` changes
-
-When a release explicitly asks you to update `.env`, refresh the reference files and compare them before restarting:
-
 Navigate to your Poznote directory:
 ```bash
 cd poznote
@@ -312,7 +284,7 @@ Download the latest `.env.template`:
 curl -o .env.template https://raw.githubusercontent.com/timothepoznanski/poznote/main/.env.template
 ```
 
-Review `.env.template` and add any new variables to your `.env` file if needed:
+Use sdiff to review `.env.template` and add any new variables to your `.env` file if needed:
 ```bash
 sdiff .env .env.template
 ```
@@ -381,22 +353,25 @@ Poznote supports OpenID Connect (authorization code + PKCE) for single sign-on i
 3. Access can be restricted with allowed groups and, if needed, a legacy allowed users list.
 4. After authentication, Poznote links the identity in this order: `sub` (`oidc_subject`), then `preferred_username`, then `email`.
 5. If auto-create users is enabled and no profile matches, Poznote creates one automatically.
-6. If "Disable normal login" is enabled, the username/password form is hidden and the login page becomes SSO-only.
+6. If `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true`, the username/password form is hidden and the login page becomes SSO-only.
 
 #### Configuration
 
 OIDC is configured from the **admin UI**: go to **Settings > Admin Tools > OIDC / SSO**.
 
-All settings (enabled, issuer, provider name, scopes, access control, login behavior, etc.) are managed from this page and stored in the database.
+Most settings (enabled, issuer, provider name, scopes, access control, allowed groups/users, auto-create users, HTTP Basic Auth behavior, etc.) are managed from this page and stored in the database.
 
-Only `POZNOTE_OIDC_CLIENT_ID` and `POZNOTE_OIDC_CLIENT_SECRET` remain in the `.env` file for security:
+The following settings remain in the `.env` file:
 
 ```bash
 POZNOTE_OIDC_CLIENT_ID=your_client_id
 POZNOTE_OIDC_CLIENT_SECRET=your_client_secret
+POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=false
 ```
 
-> **Breaking change:** previous OIDC settings in `.env` are no longer read, except `POZNOTE_OIDC_CLIENT_ID` and `POZNOTE_OIDC_CLIENT_SECRET`. After upgrading, re-enter the other OIDC settings from the admin page.
+Use `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true` if you want to hide the local username/password form and force SSO-only login.
+
+> **Breaking change:** previous OIDC settings in `.env` are no longer read, except `POZNOTE_OIDC_CLIENT_ID`, `POZNOTE_OIDC_CLIENT_SECRET`, and `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN`. After upgrading, re-enter the other OIDC settings from the admin page.
 
 #### Access Control Example (Groups + Auto-Provision)
 
@@ -1007,3 +982,7 @@ Poznote prioritizes simplicity and portability - no complex frameworks, no heavy
 - **Docker** - Containerization for easy deployment and portability
 - **Python 3.12 (Alpine)** - MCP server runtime with httpx, uvicorn, fastmcp, and mcp libraries for AI assistant integration
 </details>
+
+## About
+
+Learn more about the project and its background on <a href="https://poznote.com/about.html"> the Poznote About page</a>.

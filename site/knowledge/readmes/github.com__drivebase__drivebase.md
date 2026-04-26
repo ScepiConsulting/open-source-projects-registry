@@ -1,128 +1,156 @@
-> [!NOTE]
-> The app is being written from scratch for efficiency and performance.
+<p align="center">
+  <img src="apps/web/public/drivebase.svg" alt="Drivebase" width="80" />
+</p>
 
-<img width="2167" height="1579" alt="drivebase-banner" src="https://github.com/user-attachments/assets/4ce62659-1f4e-42e0-8074-4f85fb14e53e" />
+<h1 align="center">Drivebase</h1>
 
 <p align="center">
-  <a href="https://github.com/drivebase/drivebase/stargazers">
-    <img src="https://img.shields.io/github/stars/drivebase/drivebase" alt="GitHub stars">
-  </a>
- <a href="https://discord.gg/5hPZwTPp68">
-    <img src="https://img.shields.io/discord/1472108078592688149" alt="Discord">
-  </a>
-   <a href="https://deepwiki.com/drivebase/drivebase">
-    <img src="https://deepwiki.com/badge.svg" alt="Documentation" />
-  </a> 
-  <a href="https://www.youtube.com/watch?v=QuKxvCgBwPg">
-    <img src="https://img.shields.io/badge/YouTube-%23FF0000.svg?logo=YouTube&logoColor=white" />
-  </a>
+  Your cloud storage. One OS. Runs anywhere.
 </p>
- 
-Drivebase is a cloud-agnostic file management platform that unifies files and folders across providers while helping people and teams maintain storage ownership, control, and flexibility.
 
-Key features include:
-
-- **Unified workspace across providers**: Browse and manage files from multiple storage providers in one place.
-- **Smart Search**: Search across all your connected providers with a single query (including text inside files and OCR).
-- **Smart Uploads**: Route files automatically to the right provider using rule-based policies.
-- **Vault (end-to-end encryption)**: Encrypt uploads before they leave your environment for stronger privacy.
-- **Self-hosted and team-ready**: Run via Docker Compose for quick setup and invite other users to collaborate.
-- **Collaboration features**: Share files and folders with granular permissions across providers.
-- **WebDAV server**: Enable users to connect remotely to Drivebase using WebDAV for file access and management.
-
-and much more!
+<p align="center">
+  <a href="https://github.com/drivebase/drivebase/releases"><img src="https://img.shields.io/github/v/release/drivebase/drivebase?style=flat-square" alt="Release" /></a>
+  <a href="https://github.com/drivebase/drivebase/blob/main/LICENSE"><img src="https://img.shields.io/github/license/drivebase/drivebase?style=flat-square" alt="License" /></a>
+  <a href="https://github.com/drivebase/drivebase/stargazers"><img src="https://img.shields.io/github/stars/drivebase/drivebase?style=flat-square" alt="Stars" /></a>
+  <a href="https://deepwiki.com/drivebase/drivebase"><img src="https://deepwiki.com/badge.svg" alt="Ask DeepWiki"></a>
+</p>
 
 ---
 
-## Sponsors
-Drivebase is sponsored by:
-<p>
-  <a href="https://www.digitalocean.com/?refcode=beb117e771e7&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge"><img src="https://web-platforms.sfo2.cdn.digitaloceanspaces.com/WWW/Badge%201.svg" alt="DigitalOcean Referral Badge" /></a>
-</p>
+Drivebase is an open-source, self-hosted platform that connects your cloud storage providers — Google Drive, S3, local filesystem, and more — under a single interface. Browse, upload, transfer, and manage files across providers without touching each service separately.
 
-> Interested in [sponsoring](https://github.com/sponsors/mxvsh) this project? Your logo could appear here.
+The UI is designed as a desktop OS shell running in the browser. Apps (Files, Providers, Settings) open as windows you can move, resize, and switch between — making it feel like a native file manager rather than a typical web dashboard.
 
+> [!WARNING]
+> **v4 is still in active development.** Expect breaking changes, incomplete features, and shifting APIs until a stable release is tagged.
 
-## Supported Providers
+## Quick Install
 
-Drivebase supports the following cloud providers:
-
-- [x] S3
-- [x] Local Storage
-- [x] Google Drive
-- [x] Dropbox
-- [x] FTP
-- [x] WebDAV
-- [x] Telegram
-- [x] Nextcloud
-- [x] Darkibox
-- [ ] sFTP
-- [ ] Box
-- [ ] OneDrive
-
-
-### Quickstart
-
-Run the following command to install Drivebase using our automated installer. It uses Docker Compose to set up your environment and generate secure keys automatically.
+Run the installer in a terminal:
 
 ```bash
 curl -fsSL https://drivebase.io/install | bash
 ```
 
-<img width="500" alt="image" src="https://github.com/user-attachments/assets/77574415-3c5b-4411-a0d7-94f0fe095307" />
+This will create a `drivebase/` directory with Docker Compose and a pre-configured `config.toml` (secrets auto-generated). After it finishes:
 
-<br/>
+```bash
+cd drivebase
+docker compose up -d
+```
 
-After you start the containers, open [http://localhost:3000](http://localhost:3000) in your browser to access the Drivebase dashboard.
+Then open `http://localhost:4000`.
 
-Login with the default credentials:
-- Email: `admin@drivebase.local`
-- Password: `admin123`
+## Features
 
-Enjoy 🚀
+- **OS-like interface** — windowed apps, a taskbar, and a desktop shell; feels like a native file manager in the browser
+- **Unified file browser** — navigate folders and files across all connected providers in one place
+- **Multi-provider support** — Google Drive, AWS S3 (and S3-compatible services), local filesystem
+- **Batch operations** — copy, move, transfer, and delete across providers with preflight conflict analysis
+- **Smart conflict resolution** — detect conflicts before they happen; resolve with overwrite, skip, rename, or manual review
+- **Real-time progress** — live operation status via server-sent events; no polling required
+- **Resumable uploads** — chunked upload sessions survive browser reloads
+- **Direct S3 uploads** — presigned multipart URLs let clients upload straight to S3, bypassing the server
+- **Storage usage** — per-provider quota and usage tracking with on-demand refresh
+- **Pluggable provider system** — clean `IStorageProvider` interface makes adding new backends straightforward
+- **GraphQL API** — every capability is exposed through a typed GraphQL API
 
-<a href="https://www.producthunt.com/products/drivebase/reviews/new?utm_source=badge-product_review&utm_medium=badge&utm_source=badge-drivebase" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/product_review.svg?product_id=1164088&theme=dark" alt="Drivebase - Unified&#0032;file&#0032;manager&#0032;for&#0032;all&#0032;your&#0032;cloud&#0032;storage&#0032;with&#0032;E2EE | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+## Supported Providers
 
-### Manual Installation
+- [x] Google Drive
+- [x] AWS S3 / S3-compatible (Cloudflare R2, Wasabi, Backblaze B2, MinIO, etc.)
+- [x] Local Filesystem
+- [ ] Dropbox
+- [ ] OneDrive
+- [ ] Box
+- [ ] Azure Blob Storage
+- [ ] SFTP
 
-For manual setup instructions, [check out](https://www.drivebase.io/docs/installation) our official documentation.
+## Tech Stack
 
+| Layer | Technology |
+|---|---|
+| Runtime | Bun |
+| Frontend | React 19, Vite, TanStack Router, Tailwind CSS 4 |
+| API | GraphQL Yoga, graphql-sse |
+| Workers | BullMQ |
+| Database | PostgreSQL (Drizzle ORM) |
+| Cache / Queue | Redis (ioredis) |
+| Auth | Better Auth (cookie-based) |
 
-## Deployment
+## Getting Started
 
-Drivebase can be deployed in various environments, including:
+### Prerequisites
 
-- **Cloud Providers**: DigitalOcean, AWS, GCP, Azure, etc.
-- **VPS**: DigitalOcean, Linode, Vultr, etc.
+- [Bun](https://bun.sh) 1.3.5 or later
+- PostgreSQL 15+
+- Redis 7+
 
-For database storage, we recommend using a managed PostgreSQL service such as [DigitalOcean](https://www.digitalocean.com/?refcode=beb117e771e7), Neon, AWS RDS, or Google Cloud SQL for better performance and reliability.
+### 1. Clone and install
 
-> [Sign up](https://m.do.co/c/beb117e771e7) now on DigitalOcean to get $200 free credits.
+```bash
+git clone https://github.com/drivebase/drivebase.git
+cd drivebase
+bun install
+```
 
-## Support
+### 2. Configure
 
-Have questions or need help? Here's how you can reach us:
+Copy the example config and fill in your values:
 
-- [Discord](https://discord.gg/5hPZwTPp68)
-- [Discussions](https://github.com/drivebase/drivebase/discussions)
-- [Telegram](https://t.me/+fWEMYD3gp61lYWZl)
-- [X](http://x.com/monawwarx)
+```bash
+cp packages/config/config.example.toml config.toml
+```
+
+Minimum required values:
+
+```toml
+[server]
+env = "prod"
+port = 4000
+host = "0.0.0.0"
+
+[db]
+url = "postgres://user:password@localhost:5432/drivebase"
+
+[redis]
+url = "redis://localhost:6379/0"
+
+[crypto]
+# Generate: openssl rand -base64 32
+masterKeyBase64 = "<base64-encoded-32-byte-key>"
+
+[auth]
+# Generate: openssl rand -hex 32
+betterAuthSecret = "<random-secret>"
+baseUrl = "http://localhost:4000"
+trustedOrigins = ["http://localhost:3000"]
+```
+
+### 3. Run migrations
+
+```bash
+bun run db:migrate
+```
+
+### 4. Start
+
+```bash
+bun run dev
+```
+
+- API: `http://localhost:4000`
+- Web UI: `http://localhost:3000`
 
 ## Contributing
 
-Please read [CONTRIBUTING.md](CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+Contributions are welcome. Please open an issue before starting significant work so we can align on direction.
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes — run `bun run typecheck` and `bun test` before pushing
+4. Open a pull request
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-
-## Star History
-
-<a href="https://www.star-history.com/#drivebase/drivebase&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=drivebase/drivebase&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=drivebase/drivebase&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=drivebase/drivebase&type=date&legend=top-left" />
- </picture>
-</a>
+[MIT](LICENSE)

@@ -1,8 +1,68 @@
 {
   "chunk": 22,
   "count": 50,
-  "generated_at": "2026-04-19T05:35:13Z",
+  "generated_at": "2026-04-26T05:45:46Z",
   "items": [
+    {
+      "repo_key": "github.com/rustfs/rustfs",
+      "repo_url": "github.com/rustfs/rustfs",
+      "host": "github.com",
+      "owner": "rustfs",
+      "repo": "rustfs",
+      "app_references": [
+        "rustfs"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__rustfs__rustfs.md",
+      "readme_download_url": null,
+      "readme_sha256": "8c56e753829179b77b99f571e7ef6e47bca6dce509eded82651eb89cfdf6956f",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/rustmailer/bichon",
+      "repo_url": "github.com/rustmailer/bichon",
+      "host": "github.com",
+      "owner": "rustmailer",
+      "repo": "bichon",
+      "app_references": [
+        "bichon"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__rustmailer__bichon.md",
+      "readme_download_url": null,
+      "readme_sha256": "6b38fbd23bb867564f70b3958fdf7c241f452fc95a2a3bd4a03020301b03cfaa",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/ryanlelek/Raneto",
+      "repo_url": "github.com/ryanlelek/Raneto",
+      "host": "github.com",
+      "owner": "ryanlelek",
+      "repo": "Raneto",
+      "app_references": [
+        "raneto"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__ryanlelek__Raneto.md",
+      "readme_download_url": null,
+      "readme_sha256": "35558cd16873b43cbcd338133e317f8b8b098e603b2e5bdf7ed025d86ee69895",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/rybbit-io/rybbit",
+      "repo_url": "github.com/rybbit-io/rybbit",
+      "host": "github.com",
+      "owner": "rybbit-io",
+      "repo": "rybbit",
+      "app_references": [
+        "rybbit"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__rybbit-io__rybbit.md",
+      "readme_download_url": null,
+      "readme_sha256": "3c8822348e1c6d564a0e7d46109dc283a0609e4d45ee5f333142818f2f71a171",
+      "error": null
+    },
     {
       "repo_key": "github.com/s1t5/mail-archiver",
       "repo_url": "github.com/s1t5/mail-archiver",
@@ -180,7 +240,22 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__scanopy__scanopy.md",
       "readme_download_url": "https://raw.githubusercontent.com/scanopy/scanopy/main/README.md",
-      "readme_sha256": "0573295d7b742c6bd66aad44eb99e83db2b68e005fa703bb0c438743f4b05156",
+      "readme_sha256": "a76973a8fe92c7537fe52e0d57318c6a87a46cdcf49b54692ee1b291898ed482",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/schej-it/timeful.app",
+      "repo_url": "github.com/schej-it/timeful.app",
+      "host": "github.com",
+      "owner": "schej-it",
+      "repo": "timeful.app",
+      "app_references": [
+        "timeful"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__schej-it__timeful.app.md",
+      "readme_download_url": "https://raw.githubusercontent.com/schej-it/timeful.app/main/README.md",
+      "readme_sha256": "a7baeb3b9786cc60fe7f01090aefac1f688483379663b132fe4f75880d8b8acb",
       "error": null
     },
     {
@@ -282,9 +357,9 @@
       "app_references": [
         "rauthy"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__sebadob__rauthy.md",
-      "readme_download_url": "https://raw.githubusercontent.com/sebadob/rauthy/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7a45ee4b99dc4144b358fb0a3ab10a0311e639aab8c3aec95fc17450003d9899",
       "error": null
     },
@@ -454,21 +529,6 @@
       "error": null
     },
     {
-      "repo_key": "github.com/shibaobun/cannery",
-      "repo_url": "github.com/shibaobun/cannery",
-      "host": "github.com",
-      "owner": "shibaobun",
-      "repo": "cannery",
-      "app_references": [
-        "cannery"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "github_readme_http_404"
-    },
-    {
       "repo_key": "github.com/shlinkio/shlink",
       "repo_url": "github.com/shlinkio/shlink",
       "host": "github.com",
@@ -526,6 +586,21 @@
       "readme_path": "knowledge/readmes/github.com__simjanos-dev__LinguaCafe.md",
       "readme_download_url": null,
       "readme_sha256": "fc7322af3550a85221989ac2e7150f0881663e03535cdc0d75864281198f7d6b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/simonw/datasette",
+      "repo_url": "github.com/simonw/datasette",
+      "host": "github.com",
+      "owner": "simonw",
+      "repo": "datasette",
+      "app_references": [
+        "datasette"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__simonw__datasette.md",
+      "readme_download_url": "https://raw.githubusercontent.com/simonw/datasette/main/README.md",
+      "readme_sha256": "e03c61a8c9f4df46373e863d5b5fa6a0869c61cc65bea2b2c24a8eb5a454d6b6",
       "error": null
     },
     {
@@ -657,9 +732,9 @@
       "app_references": [
         "slskd"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__slskd__slskd.md",
-      "readme_download_url": "https://raw.githubusercontent.com/slskd/slskd/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "2fba7630c549114d88f6e227006aea7dcf1757c9ea47b0208590a327381bc67d",
       "error": null
     },
@@ -676,81 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__smallstep__certificates.md",
       "readme_download_url": null,
       "readme_sha256": "02c6439cbcc6f0c2260bfb2b014d28cffc8d86263a9fda4a2496caad95ecb897",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/snikket-im/snikket-server",
-      "repo_url": "github.com/snikket-im/snikket-server",
-      "host": "github.com",
-      "owner": "snikket-im",
-      "repo": "snikket-server",
-      "app_references": [
-        "snikket"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__snikket-im__snikket-server.md",
-      "readme_download_url": null,
-      "readme_sha256": "4ea31a2be918c50925459be04dc12631da0ea5a28a1623cd681dc2bd09fe33fb",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/snuffyDev/Beatbump",
-      "repo_url": "github.com/snuffyDev/Beatbump",
-      "host": "github.com",
-      "owner": "snuffyDev",
-      "repo": "Beatbump",
-      "app_references": [
-        "beatbump"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__snuffyDev__Beatbump.md",
-      "readme_download_url": null,
-      "readme_sha256": "e4825092023bbdc5dd3af69f0406e6fb679fa9419c84296363a04e80a027add1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/solidtime-io/solidtime",
-      "repo_url": "github.com/solidtime-io/solidtime",
-      "host": "github.com",
-      "owner": "solidtime-io",
-      "repo": "solidtime",
-      "app_references": [
-        "solidtime"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__solidtime-io__solidtime.md",
-      "readme_download_url": "https://raw.githubusercontent.com/solidtime-io/solidtime/main/README.md",
-      "readme_sha256": "cada5d8c208b43c9b3cc1bb3fdeece60eeaf346376fe0642babed734f83c3f96",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/spacebarchat/spacebarchat",
-      "repo_url": "github.com/spacebarchat/spacebarchat",
-      "host": "github.com",
-      "owner": "spacebarchat",
-      "repo": "spacebarchat",
-      "app_references": [
-        "spacebar"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__spacebarchat__spacebarchat.md",
-      "readme_download_url": null,
-      "readme_sha256": "7b177225839ed618e3aee5119ea187543581ed0b56fdb183ab8c617e4df1c821",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/speaches-ai/speaches",
-      "repo_url": "github.com/speaches-ai/speaches",
-      "host": "github.com",
-      "owner": "speaches-ai",
-      "repo": "speaches",
-      "app_references": [
-        "speaches"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__speaches-ai__speaches.md",
-      "readme_download_url": null,
-      "readme_sha256": "6e57ba3b4ace48b4349fc3a3e3102cba06fa4e45b78f804fce221086f23a5877",
       "error": null
     }
   ]

@@ -1,8 +1,38 @@
 {
   "chunk": 20,
   "count": 50,
-  "generated_at": "2026-04-19T05:35:13Z",
+  "generated_at": "2026-04-26T05:45:46Z",
   "items": [
+    {
+      "repo_key": "github.com/opnsense/core",
+      "repo_url": "github.com/opnsense/core",
+      "host": "github.com",
+      "owner": "opnsense",
+      "repo": "core",
+      "app_references": [
+        "opnsense"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__opnsense__core.md",
+      "readme_download_url": null,
+      "readme_sha256": "0df745e2136f60b0f489ea5f402a29acc6f14c510e0dfa9608960a6952466ada",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/oppiliappan/lurker",
+      "repo_url": "github.com/oppiliappan/lurker",
+      "host": "github.com",
+      "owner": "oppiliappan",
+      "repo": "lurker",
+      "app_references": [
+        "lurker"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__oppiliappan__lurker.md",
+      "readme_download_url": null,
+      "readme_sha256": "4af5e7fb188a0bf8b8351481b9b48fc31127993aaf4d820a6900b7b85a6e5be7",
+      "error": null
+    },
     {
       "repo_key": "github.com/orhun/rustypaste",
       "repo_url": "github.com/orhun/rustypaste",
@@ -12,10 +42,10 @@
       "app_references": [
         "rustypaste"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__orhun__rustypaste.md",
-      "readme_download_url": null,
-      "readme_sha256": "aa1150fa9b2aba88efe13c2484616b7a947d7b02bf4b19587daf3a84a7669130",
+      "readme_download_url": "https://raw.githubusercontent.com/orhun/rustypaste/master/README.md",
+      "readme_sha256": "5e04e1c27c26ba3a6665b1b623c53d452a2ad13224c5795b6aab5ce042f83a3f",
       "error": null
     },
     {
@@ -72,9 +102,9 @@
       "app_references": [
         "outline"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__outline__outline.md",
-      "readme_download_url": "https://raw.githubusercontent.com/outline/outline/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c5c396be6db3926fda601f41dad03280dc9d974807e05a5c230da182a580ae77",
       "error": null
     },
@@ -244,6 +274,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/papermark/papermark",
+      "repo_url": "github.com/papermark/papermark",
+      "host": "github.com",
+      "owner": "papermark",
+      "repo": "papermark",
+      "app_references": [
+        "papermark"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__papermark__papermark.md",
+      "readme_download_url": "https://raw.githubusercontent.com/papermark/papermark/main/README.md",
+      "readme_sha256": "e42afe0b82218aac2ec4e55affe14d8532ab3795a4f48ad89c4e5edff8481fb9",
+      "error": null
+    },
+    {
       "repo_key": "github.com/papra-hq/papra",
       "repo_url": "github.com/papra-hq/papra",
       "host": "github.com",
@@ -252,10 +297,10 @@
       "app_references": [
         "papra"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__papra-hq__papra.md",
-      "readme_download_url": null,
-      "readme_sha256": "a83694db687e2e439069cf8a0a90b3b06c80c5173d285c9172d9d870541c13a5",
+      "readme_download_url": "https://raw.githubusercontent.com/papra-hq/papra/main/README.md",
+      "readme_sha256": "23d10fe7ebbf96100fbe86d36d655a5bdb6a08b0465ee5a3259d0fd19aad0e1d",
       "error": null
     },
     {
@@ -420,7 +465,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
       "readme_download_url": "https://raw.githubusercontent.com/pglombardo/PasswordPusher/master/README.md",
-      "readme_sha256": "afc8471929751c3125d77406178f3f2b63333d5e2c7ec83a11060a2433096645",
+      "readme_sha256": "f3abaca10961858865462c242be46aa7df8128a4405ed20c7478ee40b0c428e3",
       "error": null
     },
     {
@@ -642,10 +687,10 @@
       "app_references": [
         "pocketbase"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pocketbase__pocketbase.md",
-      "readme_download_url": null,
-      "readme_sha256": "0b836126977fa642fe286a309917c362f20e4d5e63bb6f3848282147c32a2ed4",
+      "readme_download_url": "https://raw.githubusercontent.com/pocketbase/pocketbase/master/README.md",
+      "readme_sha256": "52f24855e84d34624dcb41c531a9970d87560eb8ad739942507f4d46d42f5ccc",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__positive-intentions__chat.md",
       "readme_download_url": null,
       "readme_sha256": "806f5ba7cbdd293dc92b6ab0bf4e9f5282cf11ea3751a4446c8d260213417474",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/postalserver/postal",
-      "repo_url": "github.com/postalserver/postal",
-      "host": "github.com",
-      "owner": "postalserver",
-      "repo": "postal",
-      "app_references": [
-        "postal"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__postalserver__postal.md",
-      "readme_download_url": null,
-      "readme_sha256": "cd12bd3c9dae6282fcad76a214c341a698ca3425a4070ede411de1d6dc157bf0",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/project-zot/zot",
-      "repo_url": "github.com/project-zot/zot",
-      "host": "github.com",
-      "owner": "project-zot",
-      "repo": "zot",
-      "app_references": [
-        "zot-registry"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__project-zot__zot.md",
-      "readme_download_url": null,
-      "readme_sha256": "83a12ebead2caa5543f2a5ece78be5a168d781e1977583aa0a3a63b6ef98f5ce",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/projectsend/projectsend",
-      "repo_url": "github.com/projectsend/projectsend",
-      "host": "github.com",
-      "owner": "projectsend",
-      "repo": "projectsend",
-      "app_references": [
-        "projectsend"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__projectsend__projectsend.md",
-      "readme_download_url": null,
-      "readme_sha256": "7926e49ebd0d46f70168d3e57688939888eacda15f711ac199d309c29f903321",
       "error": null
     }
   ]
