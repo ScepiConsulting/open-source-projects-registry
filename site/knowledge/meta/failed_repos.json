@@ -5,14 +5,19 @@
     "error": "worker_exception: Invalid URL 'akkoma.dev/AkkomaGang/akkoma/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://akkoma.dev/AkkomaGang/akkoma/-/raw/main/README.md?"
   },
   {
-    "repo_key": "codeberg.org/Hyperpipe/Hyperpipe",
-    "repo_url": "codeberg.org/Hyperpipe/Hyperpipe",
-    "error": "worker_exception: Invalid URL 'codeberg.org/Hyperpipe/Hyperpipe/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/Hyperpipe/Hyperpipe/-/raw/main/README.md?"
+    "repo_key": "codeberg.org/bookstack/bookstack",
+    "repo_url": "codeberg.org/bookstack/bookstack",
+    "error": "worker_exception: Invalid URL 'codeberg.org/bookstack/bookstack/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/bookstack/bookstack/-/raw/main/README.md?"
   },
   {
     "repo_key": "codeberg.org/danb/rss",
     "repo_url": "codeberg.org/danb/rss",
     "error": "worker_exception: Invalid URL 'codeberg.org/danb/rss/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/danb/rss/-/raw/main/README.md?"
+  },
+  {
+    "repo_key": "codeberg.org/endurain-project/endurain",
+    "repo_url": "codeberg.org/endurain-project/endurain",
+    "error": "worker_exception: Invalid URL 'codeberg.org/endurain-project/endurain/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/endurain-project/endurain/-/raw/main/README.md?"
   },
   {
     "repo_key": "codeberg.org/flohmarkt/flohmarkt",
@@ -53,6 +58,11 @@
     "repo_key": "codeberg.org/redict/redict",
     "repo_url": "codeberg.org/redict/redict",
     "error": "worker_exception: Invalid URL 'codeberg.org/redict/redict/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/redict/redict/-/raw/main/README.md?"
+  },
+  {
+    "repo_key": "codeberg.org/ric_harvey/marp-ui",
+    "repo_url": "codeberg.org/ric_harvey/marp-ui",
+    "error": "worker_exception: Invalid URL 'codeberg.org/ric_harvey/marp-ui/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/ric_harvey/marp-ui/-/raw/main/README.md?"
   },
   {
     "repo_key": "codeberg.org/rimu/pyfedi",
@@ -128,6 +138,11 @@
     "repo_key": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
     "repo_url": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
     "error": "worker_exception: Invalid URL 'gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md?"
+  },
+  {
+    "repo_key": "github.com/Ralex91/Rahoot",
+    "repo_url": "github.com/Ralex91/Rahoot",
+    "error": "github_readme_http_403"
   },
   {
     "repo_key": "gitlab.com/LazyLibrarian/LazyLibrarian",

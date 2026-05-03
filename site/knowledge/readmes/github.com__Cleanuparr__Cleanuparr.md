@@ -1,6 +1,10 @@
+<div align="center">
+
 _Love this project? Give it a ⭐️ and let others know!_
 
 # <img width="24px" src="./Logo/256.png" alt="Cleanuparr"></img> Cleanuparr
+
+_/kliː.nʌp.ər/ — like "cleanuper", someone who does the cleanup. Not "CleanupArr" or "CleanUpArr"._
 
 ![Version](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fcleanuparr-status.pages.dev%2Fstatus.json&query=%24.version&logo=git&label=version&color=blue)
 ![Total Downloads](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fghcr-badge.elias.eu.org%2Fapi%2FCleanuparr%2FCleanuparr%2Fcleanuparr&query=%24.downloadCount&style=flat&logo=docker&label=Total%20Downloads&color=blue)
@@ -9,7 +13,9 @@ _Love this project? Give it a ⭐️ and let others know!_
 
 [![Discord](https://img.shields.io/discord/1306721212587573389?color=7289DA&label=Discord&style=for-the-badge&logo=discord)](https://discord.gg/SCtMCgtsc4)
 
-Cleanuparr is a tool for automating the cleanup of unwanted or blocked files in Sonarr, Radarr, and supported download clients like qBittorrent. It removes incomplete or blocked downloads, updates queues, and enforces blacklists or whitelists to manage file selection. After removing blocked content, Cleanuparr can also trigger a search to replace the deleted shows/movies.
+</div>
+
+Cleanuparr is an advanced download manager for the Servarr ecosystem. It works with Sonarr, Radarr, Lidarr, Readarr, and Whisparr alongside download clients like qBittorrent, Transmission, and Deluge. Beyond cleaning up stalled, blocked, and malicious downloads, it searches for missing content and quality upgrades, manages seeding, and removes orphaned files.
 
 Cleanuparr was created primarily to address malicious files, such as `*.lnk` or `*.zipx`, that were getting stuck in Sonarr/Radarr and required manual intervention. Some of the reddit posts that made Cleanuparr come to life can be found [here](https://www.reddit.com/r/sonarr/comments/1gqnx16/psa_sonarr_downloaded_a_virus/), [here](https://www.reddit.com/r/sonarr/comments/1gqwklr/sonar_downloaded_a_mkv_file_which_looked_like_a/), [here](https://www.reddit.com/r/sonarr/comments/1gpw2wa/downloaded_waiting_to_import/) and [here](https://www.reddit.com/r/sonarr/comments/1gpi344/downloads_not_importing_no_files_found/).
 
@@ -46,6 +52,7 @@ https://cleanuparr.github.io/Cleanuparr/docs/screenshots
 - **Lidarr**
 - **Readarr**
 - **Whisparr v2**
+- **Whisparr v3**
 
 ### Download Clients (latest version)
 - **qBittorrent**
@@ -76,6 +83,8 @@ docker run -d --name cleanuparr \
 ```
 
 For Docker Compose, health checks, and other installation methods, see the [Complete Installation Guide](https://cleanuparr.github.io/Cleanuparr/docs/installation/detailed), but not before reading the [Prerequisites](https://cleanuparr.github.io/Cleanuparr/docs/installation/).
+
+> Prefer not to self-host? A managed Cleanuparr instance is available via [ElfHosted](https://store.elfhosted.com/product-category/personal-stacks/?utm_source=github&utm_medium=readme&utm_campaign=cleanuparr-readme), bundled alongside Sonarr/Radarr to keep your queues tidy (7-day trial).
 
 ### 🌐 Access the Web Interface
 

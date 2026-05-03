@@ -1,8 +1,113 @@
 {
   "chunk": 19,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "repo_key": "github.com/netalertx/NetAlertX",
+      "repo_url": "github.com/netalertx/NetAlertX",
+      "host": "github.com",
+      "owner": "netalertx",
+      "repo": "NetAlertX",
+      "app_references": [
+        "netalertx"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__netalertx__NetAlertX.md",
+      "readme_download_url": null,
+      "readme_sha256": "31f3d9215bac8b333e78231b856a87d4258b887e6449573a38364131ace77dc9",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/netbirdio/netbird",
+      "repo_url": "github.com/netbirdio/netbird",
+      "host": "github.com",
+      "owner": "netbirdio",
+      "repo": "netbird",
+      "app_references": [
+        "netbird"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__netbirdio__netbird.md",
+      "readme_download_url": null,
+      "readme_sha256": "8b028bcd444fa0d5e502a253af8185fd98ddb28c5e0f1718e379d297699a7305",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/netbox-community/netbox",
+      "repo_url": "github.com/netbox-community/netbox",
+      "host": "github.com",
+      "owner": "netbox-community",
+      "repo": "netbox",
+      "app_references": [
+        "netbox"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__netbox-community__netbox.md",
+      "readme_download_url": null,
+      "readme_sha256": "42d2c2f1d0e90fa62a403a28a75d0a0a5a58e23d79f3e85122f53df1e9834dc1",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/netdata/netdata",
+      "repo_url": "github.com/netdata/netdata",
+      "host": "github.com",
+      "owner": "netdata",
+      "repo": "netdata",
+      "app_references": [
+        "netdata"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__netdata__netdata.md",
+      "readme_download_url": null,
+      "readme_sha256": "e78af62f9af72ef9a0fa0cf46a8b0252af185b5a7d94aeaf40325a8b213cd4c8",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/nextcloud/deck",
+      "repo_url": "github.com/nextcloud/deck",
+      "host": "github.com",
+      "owner": "nextcloud",
+      "repo": "deck",
+      "app_references": [
+        "nextcloud-deck"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nextcloud__deck.md",
+      "readme_download_url": null,
+      "readme_sha256": "a9bf409bf3aa92e2c734864ac0ab333f91be4e5ac08cb43286ef9a409cbe29cc",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/nextcloud/forms",
+      "repo_url": "github.com/nextcloud/forms",
+      "host": "github.com",
+      "owner": "nextcloud",
+      "repo": "forms",
+      "app_references": [
+        "nextcloud-forms"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nextcloud__forms.md",
+      "readme_download_url": null,
+      "readme_sha256": "ebea6aca3d144397d904fa7e2bf17cbeb836b229ee2eabdc80709ad1cf0c0b65",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/nextcloud/mail",
+      "repo_url": "github.com/nextcloud/mail",
+      "host": "github.com",
+      "owner": "nextcloud",
+      "repo": "mail",
+      "app_references": [
+        "nextcloud-mail"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nextcloud__mail.md",
+      "readme_download_url": null,
+      "readme_sha256": "2e31230e9a82ba11dc00fdd587ef7b6d61e70e97d7a1bc34d976af6b067859b1",
+      "error": null
+    },
     {
       "repo_key": "github.com/nextcloud/news",
       "repo_url": "github.com/nextcloud/news",
@@ -132,10 +237,10 @@
       "app_references": [
         "nginx-proxy"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nginx-proxy__nginx-proxy.md",
-      "readme_download_url": null,
-      "readme_sha256": "9d29b3aaeb81929186f8a2c60ad9b939c11a49289dad00eca298672623083481",
+      "readme_download_url": "https://raw.githubusercontent.com/nginx-proxy/nginx-proxy/main/README.md",
+      "readme_sha256": "0f4fb9040077d52e10f25755f18a39f15d46674ceb6e8abbe443258ff16b1107",
       "error": null
     },
     {
@@ -177,10 +282,10 @@
       "app_references": [
         "glances"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nicolargo__glances.md",
-      "readme_download_url": null,
-      "readme_sha256": "592f8cd6084597e2a3cddaccfa33b83536f3b53555aca01a3820d91a695b6b7e",
+      "readme_download_url": "https://raw.githubusercontent.com/nicolargo/glances/develop/README.rst",
+      "readme_sha256": "c88aebcc8a0ad361a01c64712c8e53fbeef58423ad69b6192a0939173b5a4e84",
       "error": null
     },
     {
@@ -195,7 +300,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nicotsx__zerobyte.md",
       "readme_download_url": "https://raw.githubusercontent.com/nicotsx/zerobyte/main/README.md",
-      "readme_sha256": "09d33a81cc695c9cf5d86e4c63449e42bb851ba4d65efd36f3177ff8d20bf903",
+      "readme_sha256": "0910712229b170eacd80207b49c9939c63f403ddf92830528629b6f4bfd2c22b",
       "error": null
     },
     {
@@ -255,7 +360,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nixopus__nixopus.md",
       "readme_download_url": "https://raw.githubusercontent.com/nixopus/nixopus/master/README.md",
-      "readme_sha256": "7f1703a64105007fb971a6bd8245c5ab24e587ca5dd846d89ebd30c990e865c9",
+      "readme_sha256": "5e080f6a257b183be1700814b4590b745bc7ad11cdd0ab8fcae1a2f1cfd9b99a",
       "error": null
     },
     {
@@ -297,10 +402,10 @@
       "app_references": [
         "nocobase"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nocobase__nocobase.md",
-      "readme_download_url": null,
-      "readme_sha256": "e97adf25deadd67a48c5ebe962871aec4b50602c29abc33e04a08b155ba477c8",
+      "readme_download_url": "https://raw.githubusercontent.com/nocobase/nocobase/main/README.md",
+      "readme_sha256": "bdb6eab2e2ea9349e41c9c333d6944dc2b813b0ff8d38d47897645806c455b43",
       "error": null
     },
     {
@@ -312,9 +417,9 @@
       "app_references": [
         "nocodb"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__nocodb__nocodb.md",
-      "readme_download_url": "https://raw.githubusercontent.com/nocodb/nocodb/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "2c5af20ce51f8e82a83f82229555febf174b9230564b3af36bcff54b9f6abc13",
       "error": null
     },
@@ -570,7 +675,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__onllm-dev__onWatch.md",
       "readme_download_url": "https://raw.githubusercontent.com/onllm-dev/onWatch/main/README.md",
-      "readme_sha256": "0c8f4b18ff0d9b771d36ff3953eb65593eee1b4a499b71bf46d0c396448e27e0",
+      "readme_sha256": "53468434b53f91e4b897adf202b0a140d7b50da5a6bd6a59e79a744d8204dbf2",
       "error": null
     },
     {
@@ -582,9 +687,9 @@
       "app_references": [
         "openuem"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__open-uem__openuem-console.md",
-      "readme_download_url": "https://raw.githubusercontent.com/open-uem/openuem-console/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6b424b8b9b8683659883740db70381f7324aa0319b82c1205001ade5141acd3b",
       "error": null
     },
@@ -612,9 +717,9 @@
       "app_references": [
         "open-webui"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__open-webui__open-webui.md",
-      "readme_download_url": "https://raw.githubusercontent.com/open-webui/open-webui/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4e5d75d6d4cb3d9df901c279f528c7c8d6e65febbf4a9a89d8675d7d9dafd8cc",
       "error": null
     },
@@ -645,112 +750,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__openclaw__openclaw.md",
       "readme_download_url": "https://raw.githubusercontent.com/openclaw/openclaw/main/README.md",
-      "readme_sha256": "7ebfc9e2f055274b4c4898f54dc82e573f93e86230571977ebded12fbdd2024e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/opencloud-eu/opencloud",
-      "repo_url": "github.com/opencloud-eu/opencloud",
-      "host": "github.com",
-      "owner": "opencloud-eu",
-      "repo": "opencloud",
-      "app_references": [
-        "opencloud"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__opencloud-eu__opencloud.md",
-      "readme_download_url": null,
-      "readme_sha256": "7488d6f79e878b8c69e8433bede9f3b5a177cadfebc4898fa4111f7ac0335eba",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/openemr/openemr",
-      "repo_url": "github.com/openemr/openemr",
-      "host": "github.com",
-      "owner": "openemr",
-      "repo": "openemr",
-      "app_references": [
-        "openemr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__openemr__openemr.md",
-      "readme_download_url": null,
-      "readme_sha256": "14d25916a4edf1f4c77099507c3ee6155fc42a08d63baac7c17bab52f93621bd",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/openspeedtest/Speed-Test",
-      "repo_url": "github.com/openspeedtest/Speed-Test",
-      "host": "github.com",
-      "owner": "openspeedtest",
-      "repo": "Speed-Test",
-      "app_references": [
-        "openspeedtest"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__openspeedtest__Speed-Test.md",
-      "readme_download_url": "https://raw.githubusercontent.com/openspeedtest/Speed-Test/main/README.md",
-      "readme_sha256": "ca702fe3611bf21b376fe0ae4bfb627fb13a6f8d2563efae63b886a16ea532bd",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/operacle/checkcle",
-      "repo_url": "github.com/operacle/checkcle",
-      "host": "github.com",
-      "owner": "operacle",
-      "repo": "checkcle",
-      "app_references": [
-        "checkcle"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__operacle__checkcle.md",
-      "readme_download_url": null,
-      "readme_sha256": "59ffc72241f00f27a7f4f40b0e5fdc9e1fc4f4996edf3d97f2718a155c55f36f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/operately/operately",
-      "repo_url": "github.com/operately/operately",
-      "host": "github.com",
-      "owner": "operately",
-      "repo": "operately",
-      "app_references": [
-        "operately"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__operately__operately.md",
-      "readme_download_url": null,
-      "readme_sha256": "ecf5c6caf0301518c00ffaadf14448786090d20f5043e4cd336b9d9413e17c5b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/operational-co/operational.co",
-      "repo_url": "github.com/operational-co/operational.co",
-      "host": "github.com",
-      "owner": "operational-co",
-      "repo": "operational.co",
-      "app_references": [
-        "operational"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__operational-co__operational.co.md",
-      "readme_download_url": null,
-      "readme_sha256": "d688834464a808653cd880872d82cb55961a8defea83b494819e2142766f932c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/opf/openproject",
-      "repo_url": "github.com/opf/openproject",
-      "host": "github.com",
-      "owner": "opf",
-      "repo": "openproject",
-      "app_references": [
-        "openproject"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__opf__openproject.md",
-      "readme_download_url": null,
-      "readme_sha256": "eeda2ddd87286924a978404f1c3b1f5f079a0c50daed8110ac9c14a84ed7c1a9",
+      "readme_sha256": "25d2cd622c6b9b92f95420ef0f643dd2300f0eab1ee53fc9b20b46e29a33ccee",
       "error": null
     }
   ]

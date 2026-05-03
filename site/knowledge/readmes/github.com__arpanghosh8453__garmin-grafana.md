@@ -9,6 +9,9 @@ A docker container to fetch data from Garmin servers and store the data in a loc
 > [!IMPORTANT]
 > Garmin is a registered trademark of Garmin Ltd. or its subsidiaries. Grafana is a registered trademark of Grafana Labs. This project is an independent, open-source tool and is not affiliated with, endorsed by, sponsored by, or approved by Garmin Ltd. or Grafana Labs.
 
+> [!NOTE]
+> This project repository is dynamically mirrored in [Codeberg](https://codeberg.org/arpanghosh8453/garmin-grafana) as a backup. An alternative docker image is available at [codeberg.org/arpanghosh8453/garmin-grafana](https://codeberg.org/arpanghosh8453/-/packages/container/garmin-grafana).
+
 > [!TIP]
 > If you are a **Fitbit user**, please check out the [sister project](https://github.com/arpanghosh8453/fitbit-grafana) made for Fitbit
 
@@ -346,9 +349,9 @@ If you find this project helpful, please consider:
 
 If you're experiencing any issues with running this project or have questions, feel free to [open an issue](https://github.com/arpanghosh8453/garmin-grafana/issues/new/choose) on this repository. I'll do my best to assist you.
 
-## What a Desktop App?
+## Need a Desktop App?
 
-Too complicated to self host just to see your activity data? What a completely offline Desktop solution, which can be installed from standard binaries? Here is a cross platform solution, check out [fit-dashboard](https://github.com/arpanghosh8453/fit-dashboard)
+Too complicated to self host just to see your FIT file activity data? What about a completely offline Desktop solution, which can be installed from standard binaries? Here is a cross platform solution, check out [fit-dashboard](https://github.com/arpanghosh8453/fit-dashboard)
 
 <img width="1897" height="1018" alt="individual_page" src="https://github.com/user-attachments/assets/d64eb39a-5e84-46e5-aa42-44aa6e4e9274" />
 <img width="1905" height="1019" alt="overview_page" src="https://github.com/user-attachments/assets/b9aa8762-66c1-453a-9bf6-f974e9600280" />

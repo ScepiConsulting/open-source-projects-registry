@@ -9,6 +9,9 @@ A script to fetch data from Fitbit servers using their API and store the data in
 > [!IMPORTANT]
 > *Fitbit is a registered trademark of Google LLC. Grafana is a registered trademark of Grafana Labs. This project is an independent, open-source tool and is not affiliated with, endorsed by, sponsored by, or approved by Google LLC or Grafana Labs.*
 
+> [!NOTE]
+> This project repository is dynamically mirrored in [Codeberg](https://codeberg.org/arpanghosh8453/fitbit-grafana) as a backup. An alternative docker image is available at [codeberg.org/arpanghosh8453/fitbit-grafana](https://codeberg.org/arpanghosh8453/-/packages/container/fitbit-grafana).
+
 ## Dashboard Example
 
 ![Dashboard](https://github.com/arpanghosh8453/public-fitbit-projects/blob/main/Grafana_Dashboard/Dashboard.png?raw=true)

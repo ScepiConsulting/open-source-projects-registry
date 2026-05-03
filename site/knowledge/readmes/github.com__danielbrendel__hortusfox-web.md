@@ -22,8 +22,8 @@
 <p align="center">
     <a href="https://www.hortusfox.com/support"><img src="https://img.shields.io/badge/support-00CC55?style=for-the-badge&logoColor=white" alt="support"></a>
     <a href="https://www.hortusfox.com/faq"><img src="https://img.shields.io/badge/faq-FFDE23?style=for-the-badge&logoColor=white" alt="faq"></a>
-    <a href="https://discord.gg/kc6xGmjzVS"><img src="https://img.shields.io/badge/discord-5735FF?style=for-the-badge&logoColor=white" alt="discord"></a>
-    <a href="https://bsky.app/profile/danielbrendel.com"><img src="https://img.shields.io/badge/bluesky-00A3FF?style=for-the-badge&logoColor=white" alt="bluesky"></a>
+    <a href="https://www.hortusfox.com/documentation"><img src="https://img.shields.io/badge/documentation-5735FF?style=for-the-badge&logoColor=white" alt="documentation"></a>
+    <a href="https://www.danielbrendel.com"><img src="https://img.shields.io/badge/daniel%20brendel-00A3FF?style=for-the-badge&logoColor=white" alt="Daniel Brendel"></a>
 </p>
 
 <p align="center">
@@ -53,6 +53,7 @@
   - [Weather forecast](#weather-forecast)
   - [Plant identification](#plant-identification)
   - [Plant information](#plant-information)
+- [Console commands](#console-commands)
 - [Maintenance scripts](#maintenance-scripts)
 - [Tech stack](#tech-stack)
 - [Contributing](#contributing)
@@ -364,23 +365,23 @@ Since there is a confirmation prompt once all input fields are provided, you can
 
 ## Cronjobs
 
-Cronjobs are used to regularly execute a specific task. For each cronjob you need to set the cronjob parameter with your token set via `AppModel.cronjob_pw`. The following cronjobs are available:
+Cronjobs are used to regularly execute specific tasks. For each cronjob you need to set the cronjob token via `cronpw`. Depending on the request method, you can set `cronpw` as POST data or as query parameter. The following cronjobs are available:
 
 ```sh
 # Used to inform users about overdue tasks. Should be called multiple times per day.
-GET /cronjob/tasks/overdue?cronpw={your-auth-token}
+ANY /cronjob/tasks/overdue
 
 # Used to inform users about tasks that are due tomorrow. Should be called multiple times per day.
-GET /cronjob/tasks/tomorrow?cronpw={your-auth-token}
+ANY /cronjob/tasks/tomorrow
 
 # Used to check for recurring tasks and reset them accordingly. Should be called at least once, or better multiple times per day.
-GET /cronjob/tasks/recurring?cronpw={your-auth-token}
+ANY /cronjob/tasks/recurring
 
 # Used to inform users about due calendar dates
-GET /cronjob/calendar/reminder?cronpw={your-auth-token}
+ANY /cronjob/calendar/reminder
 
 # Used to perform the automatic backup of your workspace data
-GET /cronjob/backup/auto?cronpw={your-auth-token}
+ANY /cronjob/backup/auto
 ```
 
 ## Application testing
@@ -447,11 +448,30 @@ In order to use this feature you need to create an account and get your own API 
 
 ### Plant identification
 
-The project uses the [Pl@ntNet API](https://my.plantnet.org/) to identify plants. In order to use this feature you need to create an account and get your own API key.
+The project uses the [Pl@ntNet API](https://my.plantnet.org/) to identify plants. In order to use this feature you need to create an account and get your own API key. Furthermore, returned plant name assumptions link to an image search using the [Ecosia](https://www.ecosia.org/) search engine in order to quickly view photos of a given plant.
 
 ### Plant information
 
 The project uses the [Global Biodiversity Information Facility](https://techdocs.gbif.org/en/) in order to query plant data on various occasions. As of now you do not need to obtain an extra API key in order for this to work.
+
+## Console commands
+
+HortusFox provides various console commands in addition to the inbuilt commands. These are mostly useful for development, testing or deployment purposes. Here is a list of all available app specific console commands.
+
+| Command  | Description | Parameters |
+| ------------- | ------------- | ------------- |
+| php asatru product:version | Show current product version | _none_ |
+| php asatru migrate:upgrade  | Perform upgrade from last version to current version | _none_ |
+| php asatru migrate:specific  | Perform version specific migration upgrade | `version` for the version, e.g. `5.3` |
+| php asatru calendar:classes  | Add default calendar classes | `--force` to drop all previous classes |
+| php asatru plants:attributes  | Add default plant attributes | `--force` to drop all previous attributes |
+| php asatru cache:clear  | Clear the entire cache | _none_ |
+| php asatru theme:list  | List all installed themes | _none_ |
+| php asatru theme:install  | Install a theme | `theme` name of the theme |
+| php asatru theme:remove  | Remove an installed theme | `theme` name of the theme |
+| php asatru backup:export  | Export workspace data as a backup archive | `locations=0/1` `plants=0/1` `gallery=0/1` `tasks=0/1` `inventory=0/1` `calendar=0/1` |
+| php asatru backup:import  | Import workspace data from a backup archive | `archive` `locations=0/1` `plants=0/1` `gallery=0/1` `tasks=0/1` `inventory=0/1` `calendar=0/1` |
+| php asatru aquashell:config  | Create config file for AquaShell scripts | _none_ |
 
 ## Maintenance scripts
 

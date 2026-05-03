@@ -1,8 +1,53 @@
 {
   "chunk": 14,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "repo_key": "github.com/go-gitea/gitea",
+      "repo_url": "github.com/go-gitea/gitea",
+      "host": "github.com",
+      "owner": "go-gitea",
+      "repo": "gitea",
+      "app_references": [
+        "gitea"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__go-gitea__gitea.md",
+      "readme_download_url": null,
+      "readme_sha256": "136a91a44329f31a8ab9ec9cd9b786bb3248672571a530c348b3cb8635430d2b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/go-shiori/shiori",
+      "repo_url": "github.com/go-shiori/shiori",
+      "host": "github.com",
+      "owner": "go-shiori",
+      "repo": "shiori",
+      "app_references": [
+        "shiori"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__go-shiori__shiori.md",
+      "readme_download_url": null,
+      "readme_sha256": "f7e1e6524b1e4aba3cbe440fd16dc327ce0e48cf80268e6c671b304f53c835bc",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/go-vikunja/vikunja",
+      "repo_url": "github.com/go-vikunja/vikunja",
+      "host": "github.com",
+      "owner": "go-vikunja",
+      "repo": "vikunja",
+      "app_references": [
+        "vikunja"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__go-vikunja__vikunja.md",
+      "readme_download_url": null,
+      "readme_sha256": "34f1255b223b23a3b9426b7b80f4fbe2013b9f70f5e655210647cf7fee66fe1b",
+      "error": null
+    },
     {
       "repo_key": "github.com/goauthentik/authentik",
       "repo_url": "github.com/goauthentik/authentik",
@@ -169,6 +214,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/grimmory-tools/grimmory",
+      "repo_url": "github.com/grimmory-tools/grimmory",
+      "host": "github.com",
+      "owner": "grimmory-tools",
+      "repo": "grimmory",
+      "app_references": [
+        "grimmory"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__grimmory-tools__grimmory.md",
+      "readme_download_url": "https://raw.githubusercontent.com/grimmory-tools/grimmory/develop/README.md",
+      "readme_sha256": "a4bfdef69e7c874bbc7ecf0362b88160b33d4d4e0ed29477ec1d95e4e8e1eb4d",
+      "error": null
+    },
+    {
       "repo_key": "github.com/gristlabs/grist-core",
       "repo_url": "github.com/gristlabs/grist-core",
       "host": "github.com",
@@ -267,10 +327,10 @@
       "app_references": [
         "yubal"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__guillevc__yubal.md",
-      "readme_download_url": null,
-      "readme_sha256": "4b7296e3534129ebb20756960fb8d6a119373d21fea0990b6a734fd79d9baa49",
+      "readme_download_url": "https://raw.githubusercontent.com/guillevc/yubal/master/README.md",
+      "readme_sha256": "870ab67a9bf2ad607a290ac38eaba26a78ddf88a3b0d888c1d1e5de330e7d8ba",
       "error": null
     },
     {
@@ -312,9 +372,9 @@
       "app_references": [
         "haproxy"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__haproxy__haproxy.md",
-      "readme_download_url": "https://raw.githubusercontent.com/haproxy/haproxy/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b3a42a8320ea21942b298b69344ce4bc133570d285b25a47c0cdf122270315e3",
       "error": null
     },
@@ -409,6 +469,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/hhftechnology/Dock-Dploy",
+      "repo_url": "github.com/hhftechnology/Dock-Dploy",
+      "host": "github.com",
+      "owner": "hhftechnology",
+      "repo": "Dock-Dploy",
+      "app_references": [
+        "dock-dploy"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__hhftechnology__Dock-Dploy.md",
+      "readme_download_url": "https://raw.githubusercontent.com/hhftechnology/Dock-Dploy/main/README.md",
+      "readme_sha256": "568adf9d2bc5c62114f493a3cd46ce92b87bd4dde7300825d13f06b16a91eace",
+      "error": null
+    },
+    {
       "repo_key": "github.com/hhftechnology/crowdsec_manager",
       "repo_url": "github.com/hhftechnology/crowdsec_manager",
       "host": "github.com",
@@ -417,9 +492,9 @@
       "app_references": [
         "crowdsec-manager"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__hhftechnology__crowdsec_manager.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hhftechnology/crowdsec_manager/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "525f3cdae2a3116477a9668f6f854d75e59be677af10f9d39460b3a3b3975dee",
       "error": null
     },
@@ -529,6 +604,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/html2rss/html2rss-web",
+      "repo_url": "github.com/html2rss/html2rss-web",
+      "host": "github.com",
+      "owner": "html2rss",
+      "repo": "html2rss-web",
+      "app_references": [
+        "html2rss"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__html2rss__html2rss-web.md",
+      "readme_download_url": "https://raw.githubusercontent.com/html2rss/html2rss-web/main/README.md",
+      "readme_sha256": "4397837aa79f8454b57c91d017586bd07c06324da064911aff4a0b3a174d72bd",
+      "error": null
+    },
+    {
       "repo_key": "github.com/httpjamesm/AnonymousOverflow",
       "repo_url": "github.com/httpjamesm/AnonymousOverflow",
       "host": "github.com",
@@ -552,9 +642,9 @@
       "app_references": [
         "hoodik"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__hudikhq__hoodik.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hudikhq/hoodik/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "df8c06492ad36977070c686bcd8f5e2fcfc3376672e17761fe7283cf95a8649c",
       "error": null
     },
@@ -661,96 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__ihucos__counter.dev-selfhost.md",
       "readme_download_url": null,
       "readme_sha256": "3029a16b7a026463122e06601045dcd71aa33fa0f24764236661fbebfa7c9eff",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/iib0011/omni-tools",
-      "repo_url": "github.com/iib0011/omni-tools",
-      "host": "github.com",
-      "owner": "iib0011",
-      "repo": "omni-tools",
-      "app_references": [
-        "omnitools"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__iib0011__omni-tools.md",
-      "readme_download_url": "https://raw.githubusercontent.com/iib0011/omni-tools/main/README.md",
-      "readme_sha256": "7055beda35b06028531b034b26f779f426f31079624e9504fd3a08a84031725f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/immich-app/immich",
-      "repo_url": "github.com/immich-app/immich",
-      "host": "github.com",
-      "owner": "immich-app",
-      "repo": "immich",
-      "app_references": [
-        "immich"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__immich-app__immich.md",
-      "readme_download_url": null,
-      "readme_sha256": "69ab297360bc1cfe10a78542110a176af16c44d6e3437a5fb204a0812bc24f37",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/immich-power-tools/immich-power-tools",
-      "repo_url": "github.com/immich-power-tools/immich-power-tools",
-      "host": "github.com",
-      "owner": "immich-power-tools",
-      "repo": "immich-power-tools",
-      "app_references": [
-        "immich-power-tools"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__immich-power-tools__immich-power-tools.md",
-      "readme_download_url": null,
-      "readme_sha256": "65eb45e3246a29e990f43f1b859d1d1b6995b172e2b3f916fee1e9ae1d32d3f5",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/immichFrame/ImmichFrame",
-      "repo_url": "github.com/immichFrame/ImmichFrame",
-      "host": "github.com",
-      "owner": "immichFrame",
-      "repo": "ImmichFrame",
-      "app_references": [
-        "immich-frame"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__immichFrame__ImmichFrame.md",
-      "readme_download_url": null,
-      "readme_sha256": "3aeab568c67222299c98abff97c5b34c4a0fc29fa2a31178664835944658904d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/imputnet/cobalt",
-      "repo_url": "github.com/imputnet/cobalt",
-      "host": "github.com",
-      "owner": "imputnet",
-      "repo": "cobalt",
-      "app_references": [
-        "cobalt"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__imputnet__cobalt.md",
-      "readme_download_url": null,
-      "readme_sha256": "c9a8b5059c77ebe27a502c45970442a1522f770ee9a6b2c27ed15b847da352e8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/influxdata/influxdb",
-      "repo_url": "github.com/influxdata/influxdb",
-      "host": "github.com",
-      "owner": "influxdata",
-      "repo": "influxdb",
-      "app_references": [
-        "influxdb"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__influxdata__influxdb.md",
-      "readme_download_url": null,
-      "readme_sha256": "ed54ece09e4f6c299e947062c7286ed5d972176c056ec9eb6997810e9e1f73d9",
       "error": null
     }
   ]

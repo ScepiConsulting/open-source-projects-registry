@@ -92,7 +92,6 @@ Prior versions of Jackett are no longer supported.
  * AudioBook Bay (ABB)
  * Bangumi Moe
  * BigFANGroup
- * BitRu
  * BlueRoms
  * BT.etree
  * BTdirectory (BT目录)
@@ -274,7 +273,6 @@ Prior versions of Jackett are no longer supported.
  * ABtorrents (ABT + RNS)
  * AcrossTheTasman [![(invite needed)][inviteneeded]](#)
  * Aftershock
- * AFUN
  * AGSVPT (Arctic Global Seed Vault)
  * Aidoru!Online
  * Aither
@@ -610,7 +608,6 @@ Prior versions of Jackett are no longer supported.
  * SunnyPT [![(invite needed)][inviteneeded]](#)
  * Superbits (SBS)
  * Swarmazon
- * Tangmen (唐门)
  * TangPT (躺平)
  * Tapochek
  * Tasmanit
@@ -638,7 +635,6 @@ Prior versions of Jackett are no longer supported.
  * TLFBits [![(invite needed)][inviteneeded]](#)
  * TmGHuB (TH) [![(invite needed)][inviteneeded]](#)
  * Toca Share
- * TokyoPT [![(invite needed)][inviteneeded]](#)
  * Tormac
  * Tornado
  * Torr9
@@ -671,6 +667,7 @@ Prior versions of Jackett are no longer supported.
  * U2 (U2分享園@動漫花園) [![(invite needed)][inviteneeded]](#)
  * UBits
  * UltraHD
+ * Ultrabits
  * UnlimitZ
  * upload.cx (ULCX)
  * Upscale Vault

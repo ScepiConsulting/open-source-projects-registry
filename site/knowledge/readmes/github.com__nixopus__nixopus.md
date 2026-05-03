@@ -2,7 +2,7 @@
 
 ![][image-overview]
 
-An open-source, AI-powered platform that deploys, monitors, and fixes your apps, autonomously.<br/>
+First open-source deployment platform with an autonomous AI agent to deploy, monitor, and heal your apps.<br/>
 Self-host on your own infrastructure or use [Nixopus Cloud][dashboard-link] to go live in minutes.
 
 <p align="center">
@@ -54,6 +54,18 @@ Self-host on your own infrastructure or use [Nixopus Cloud][dashboard-link] to g
 
 </details>
 
+## Demo
+
+See Nixopus in action, from deploying apps to day-to-day operations on your infrastructure.
+
+<https://github.com/user-attachments/assets/6d6f24ef-47d5-4fe2-ab63-65f0ed5f7782>
+
+<div align="right">
+
+[![][back-to-top]](#readme-top)
+
+</div>
+
 ## Getting Started & Join Our Community
 
 Nixopus is the deployment platform where an AI agent handles your entire deploy lifecycle, from analyzing your codebase and generating configs to shipping your app and fixing failures. Connect your repo, tell the agent to deploy, and go live. Learn more in the [introduction][docs-introduction] or jump to the [quickstart][docs-quickstart].
@@ -78,6 +90,7 @@ Nixopus is the deployment platform where an AI agent handles your entire deploy 
 [![][back-to-top]](#readme-top)
 
 </div>
+
 
 ## Features
 
@@ -141,17 +154,6 @@ Beyond these features, Nixopus also includes:
 
 </div>
 
-## Demo
-
-See Nixopus in action, from deploying apps to day-to-day operations on your infrastructure.
-
-<https://github.com/user-attachments/assets/6d6f24ef-47d5-4fe2-ab63-65f0ed5f7782>
-
-<div align="right">
-
-[![][back-to-top]](#readme-top)
-
-</div>
 
 ## Self Hosting
 
@@ -266,12 +268,11 @@ Nixopus is derived from the combination of "octopus" (representing flexibility a
 
 <details><summary><h4>License</h4></summary>
 
-Distributed under the FSL-1.1-ALv2 License. Visit [LICENSE.md](./LICENSE.md) or the [docs][docs-license] for more information.
+[AGPL-3.0-or-later](./LICENSE.md). Commercial license available for enterprises and teams — see [docs.nixopus.com/license][docs-license].
 
 </details>
 
-Copyright © 2025 [Nixopus][website-link]. <br />
-This project is [FSL-1.1-ALv2](./LICENSE.md) licensed.
+Copyright © 2025 [Nixopus][website-link].
 
 <!-- LINK GROUP -->
 
@@ -299,7 +300,7 @@ This project is [FSL-1.1-ALv2](./LICENSE.md) licensed.
 [github-issues-link]: https://github.com/raghavyuva/nixopus/issues
 [github-issues-shield]: https://img.shields.io/github/issues/raghavyuva/nixopus?color=ff80eb&labelColor=black&style=flat-square
 [github-license-link]: https://github.com/raghavyuva/nixopus/blob/master/LICENSE.md
-[github-license-shield]: https://img.shields.io/badge/license-FSL--1.1--ALv2-white?labelColor=black&style=flat-square
+[github-license-shield]: https://img.shields.io/badge/license-AGPL--3.0-34ad4b?labelColor=black&style=flat-square
 [github-stars-link]: https://github.com/raghavyuva/nixopus/stargazers
 [github-stars-shield]: https://img.shields.io/github/stars/raghavyuva/nixopus?color=ffcb47&labelColor=black&style=flat-square
 [github-trending-shield]: https://trendshift.io/api/badge/repositories/15336

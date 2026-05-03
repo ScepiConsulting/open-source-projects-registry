@@ -1,7 +1,7 @@
 {
   "chunk": 1,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
     {
       "repo_key": "akkoma.dev/AkkomaGang/akkoma",
@@ -19,19 +19,19 @@
       "error": "worker_exception: Invalid URL 'akkoma.dev/AkkomaGang/akkoma/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://akkoma.dev/AkkomaGang/akkoma/-/raw/main/README.md?"
     },
     {
-      "repo_key": "codeberg.org/Hyperpipe/Hyperpipe",
-      "repo_url": "codeberg.org/Hyperpipe/Hyperpipe",
+      "repo_key": "codeberg.org/bookstack/bookstack",
+      "repo_url": "codeberg.org/bookstack/bookstack",
       "host": "codeberg.org",
-      "owner": "Hyperpipe",
-      "repo": "Hyperpipe",
+      "owner": "bookstack",
+      "repo": "bookstack",
       "app_references": [
-        "hyperpipe"
+        "bookstack"
       ],
       "readme_status": "error",
       "readme_path": null,
       "readme_download_url": null,
       "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'codeberg.org/Hyperpipe/Hyperpipe/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/Hyperpipe/Hyperpipe/-/raw/main/README.md?"
+      "error": "worker_exception: Invalid URL 'codeberg.org/bookstack/bookstack/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/bookstack/bookstack/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/danb/rss",
@@ -47,6 +47,21 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'codeberg.org/danb/rss/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/danb/rss/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/endurain-project/endurain",
+      "repo_url": "codeberg.org/endurain-project/endurain",
+      "host": "codeberg.org",
+      "owner": "endurain-project",
+      "repo": "endurain",
+      "app_references": [
+        "endurain"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'codeberg.org/endurain-project/endurain/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/endurain-project/endurain/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/flohmarkt/flohmarkt",
@@ -167,6 +182,21 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'codeberg.org/redict/redict/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/redict/redict/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/ric_harvey/marp-ui",
+      "repo_url": "codeberg.org/ric_harvey/marp-ui",
+      "host": "codeberg.org",
+      "owner": "ric_harvey",
+      "repo": "marp-ui",
+      "app_references": [
+        "marpui"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'codeberg.org/ric_harvey/marp-ui/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/ric_harvey/marp-ui/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/rimu/pyfedi",
@@ -454,6 +484,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/0xchasercat/flint",
+      "repo_url": "github.com/0xchasercat/flint",
+      "host": "github.com",
+      "owner": "0xchasercat",
+      "repo": "flint",
+      "app_references": [
+        "flint"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__0xchasercat__flint.md",
+      "readme_download_url": "https://raw.githubusercontent.com/0xchasercat/flint/main/README.md",
+      "readme_sha256": "444cf3c1b98c5c8c53e8f7eb586ecea19981b07ed4622825ef666cab464884b6",
+      "error": null
+    },
+    {
       "repo_key": "github.com/0xfurai/peekaping",
       "repo_url": "github.com/0xfurai/peekaping",
       "host": "github.com",
@@ -552,9 +597,9 @@
       "app_references": [
         "copyparty"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__9001__copyparty.md",
-      "readme_download_url": "https://raw.githubusercontent.com/9001/copyparty/hovudstraum/README.md",
+      "readme_download_url": null,
       "readme_sha256": "27d42bc744e221034021ba7be7d3f17c4507e162e82a719dd0339050aa3223b8",
       "error": null
     },
@@ -642,9 +687,9 @@
       "app_references": [
         "scrutiny"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__AnalogJ__scrutiny.md",
-      "readme_download_url": "https://raw.githubusercontent.com/AnalogJ/scrutiny/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "aa802dfed097d134b3d7a876f2586fb3938508f9f23d63e255b971d5dc4b1e9e",
       "error": null
     },
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__ArchiveBox__ArchiveBox.md",
       "readme_download_url": null,
       "readme_sha256": "59e26d3c56d199cab4afc62e46794fddb85de1b5d51c895cc00854218953b7f1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Arthi-chaud/Meelo",
-      "repo_url": "github.com/Arthi-chaud/Meelo",
-      "host": "github.com",
-      "owner": "Arthi-chaud",
-      "repo": "Meelo",
-      "app_references": [
-        "meelo"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Arthi-chaud__Meelo.md",
-      "readme_download_url": null,
-      "readme_sha256": "6168d75eb6cfdde80d1b4f745e4e475b6686fc48f71fae9f4c68b3401c5d9484",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/AtalayaLabs/OxiCloud",
-      "repo_url": "github.com/AtalayaLabs/OxiCloud",
-      "host": "github.com",
-      "owner": "AtalayaLabs",
-      "repo": "OxiCloud",
-      "app_references": [
-        "oxicloud"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__AtalayaLabs__OxiCloud.md",
-      "readme_download_url": "https://raw.githubusercontent.com/AtalayaLabs/OxiCloud/main/README.md",
-      "readme_sha256": "c2f8d65f039c8bc4efe786e6ffd7aa7f92c96a8f5ff0d3d74b9b21bb4af0dc07",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Atheos/Atheos",
-      "repo_url": "github.com/Atheos/Atheos",
-      "host": "github.com",
-      "owner": "Atheos",
-      "repo": "Atheos",
-      "app_references": [
-        "atheos"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Atheos__Atheos.md",
-      "readme_download_url": null,
-      "readme_sha256": "e44a3bf6e058ee14d401762b44109270ba8b9afb60c2ba1944fba801c1efbbdd",
       "error": null
     }
   ]

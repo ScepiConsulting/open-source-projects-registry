@@ -39,9 +39,10 @@ Try the [live demo](https://dailytxt.phitux.de) 🚀
 - **Markdown**: You can write your entries in markdown and see a live preview.
 - **Tags**: You can add tags to your entries for better organization.
 - **Search**: You can search for any word, tag or filename in your entries.
+- **Map**: You can pin locations for each day and see them on a map. It also shows GPX files if available.
 - **Custom Templates**: You can create and use custom templates for your entries.
 - **Read Mode**: A distraction-free mode for reading your entries of each month.
-- **Multi-Language**: DailyTxT is currently available in <ins>**🇺🇸 English, 🇩🇪 German, 🇫🇷 French, 🇨🇿 Czech, 🇳🇴 Norwegian, 🇨🇳 Simplified Chinese, 🇹🇼 Traditional-Chinese (Taiwan), 🇮🇹 Italian, 🇳🇱 Dutch, 🇦🇩 Catalan**</ins>. New languages can be added easily, see [TRANSLATION.md](TRANSLATION.md) for instructions.
+- **Multi-Language**: DailyTxT is currently available in <ins>**🇺🇸 English, 🇩🇪 German, 🇫🇷 French, 🇨🇿 Czech, 🇳🇴 Norwegian, 🇨🇳 Simplified Chinese, 🇹🇼 Traditional-Chinese (Taiwan), 🇮🇹 Italian, 🇳🇱 Dutch, 🇦🇩 Catalan**, **🇯🇵 Japanese**</ins>. New languages can be added easily, see [TRANSLATION.md](TRANSLATION.md) for instructions.
 - **Export to HTML**: You can export your entries (including uploaded files) to HTML format.
 - **Mobile**: Responsive design for easy use on mobile screen. Additionally: allows installation as a PWA (Progressive Web App) to your Homescreen.
 - **Multi-User**: You can create multiple User Accounts. Each account uses its own encryption key.
@@ -167,6 +168,25 @@ The old version 1 is moved to the [v1 branch](https://github.com/PhiTux/DailyTxT
 
 
 ---
+### 2.6.1 (2026-05-01)
+```
+- Updated translations for chinese (simplified and traditional) [1]
+```
+[1]: Thanks to [@nothing-body](https://github.com/nothing-body)  
+
+
+### 2.6.0 (2026-04-30)
+```
+- Added option to change order of days in read mode
+- CSS fixes 
+```
+
+### 2.5.1 (2026-04-29)
+```
+- Bugfix for map-search (wrong language parameter)
+- Bugfix for date-selection when switching from read-mode to write-mode
+```
+
 
 ### 2.5.0 (2026-04-19) 
 ```

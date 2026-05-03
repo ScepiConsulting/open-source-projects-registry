@@ -1,8 +1,68 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "repo_key": "github.com/dokku/dokku",
+      "repo_url": "github.com/dokku/dokku",
+      "host": "github.com",
+      "owner": "dokku",
+      "repo": "dokku",
+      "app_references": [
+        "dokku"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__dokku__dokku.md",
+      "readme_download_url": "https://raw.githubusercontent.com/dokku/dokku/master/README.md",
+      "readme_sha256": "fd749f9234d7d27ec158ceaaa45b0f24326ebed85a909e9844e9304fe9916a96",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dokuwiki/dokuwiki",
+      "repo_url": "github.com/dokuwiki/dokuwiki",
+      "host": "github.com",
+      "owner": "dokuwiki",
+      "repo": "dokuwiki",
+      "app_references": [
+        "dokuwiki"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dokuwiki__dokuwiki.md",
+      "readme_download_url": null,
+      "readme_sha256": "670940c5c5b08881811a6ee39ac22c46d07bda874ad13d70190952f90de8f2ca",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/domainmod/domainmod",
+      "repo_url": "github.com/domainmod/domainmod",
+      "host": "github.com",
+      "owner": "domainmod",
+      "repo": "domainmod",
+      "app_references": [
+        "domainmod"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__domainmod__domainmod.md",
+      "readme_download_url": null,
+      "readme_sha256": "d8ab9759d6f9815a7b4632d3ef2e1fcf3d0e9159ca5d8440ff48e382b2bd5ac1",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/donetick/donetick",
+      "repo_url": "github.com/donetick/donetick",
+      "host": "github.com",
+      "owner": "donetick",
+      "repo": "donetick",
+      "app_references": [
+        "donetick"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__donetick__donetick.md",
+      "readme_download_url": null,
+      "readme_sha256": "7dc087db918bbc68ce9174546b9b5656054cd78704151cb862ec689b6be729f7",
+      "error": null
+    },
     {
       "repo_key": "github.com/dotnetfactory/fluid-calendar",
       "repo_url": "github.com/dotnetfactory/fluid-calendar",
@@ -72,9 +132,9 @@
       "app_references": [
         "drivebase"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__drivebase__drivebase.md",
-      "readme_download_url": "https://raw.githubusercontent.com/drivebase/drivebase/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e50d8703a7367bbedb93551bc57cdd04ac758bde4c74f500d98933bac71f1cbb",
       "error": null
     },
@@ -319,21 +379,6 @@
       "error": null
     },
     {
-      "repo_key": "github.com/endurain-project/endurain",
-      "repo_url": "github.com/endurain-project/endurain",
-      "host": "github.com",
-      "owner": "endurain-project",
-      "repo": "endurain",
-      "app_references": [
-        "endurain"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__endurain-project__endurain.md",
-      "readme_download_url": null,
-      "readme_sha256": "244e71036862eeaf4b851a431016947c0517436e1efa3e7d0905ec874948aac6",
-      "error": null
-    },
-    {
       "repo_key": "github.com/ente-io/ente",
       "repo_url": "github.com/ente-io/ente",
       "host": "github.com",
@@ -451,7 +496,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ether__etherpad.md",
       "readme_download_url": "https://raw.githubusercontent.com/ether/etherpad/develop/README.md",
-      "readme_sha256": "d76a35ff82be7015b4e63a0e0d23adad78d5045b7708157171a08a0bdcf24c7d",
+      "readme_sha256": "ca57499b70de26ce0a8e19b2eec6d05a3a6c410884f3394536c74e144a8dd725",
       "error": null
     },
     {
@@ -658,10 +703,10 @@
       "app_references": [
         "hollo"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__fedify-dev__hollo.md",
-      "readme_download_url": null,
-      "readme_sha256": "8e77953a5ec0f17e0e1147e638c56b0e96a340c62565144811ccd113c0c912f9",
+      "readme_download_url": "https://raw.githubusercontent.com/fedify-dev/hollo/main/README.md",
+      "readme_sha256": "e5554be314bea83164378ef08099246a568033b5f52315c2e4f5041c76096f01",
       "error": null
     },
     {
@@ -707,51 +752,6 @@
       "readme_path": "knowledge/readmes/github.com__figranium__figranium.md",
       "readme_download_url": null,
       "readme_sha256": "94b1b7e56022df97deb5dfcb47958622a1a72c5fb1c4be4442e7469c996fd563",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/filebrowser/filebrowser",
-      "repo_url": "github.com/filebrowser/filebrowser",
-      "host": "github.com",
-      "owner": "filebrowser",
-      "repo": "filebrowser",
-      "app_references": [
-        "file-browser"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__filebrowser__filebrowser.md",
-      "readme_download_url": null,
-      "readme_sha256": "ee55dc02d2ad5c5532649b0c8a2c3612ae6706a80d0e6001ea61895624049b36",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/filegator/filegator",
-      "repo_url": "github.com/filegator/filegator",
-      "host": "github.com",
-      "owner": "filegator",
-      "repo": "filegator",
-      "app_references": [
-        "filegator"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__filegator__filegator.md",
-      "readme_download_url": null,
-      "readme_sha256": "683df39857d17e42dc8defe0e0c121ec9b5020ef9185a6457a1f73396e21556a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/firefly-iii/firefly-iii",
-      "repo_url": "github.com/firefly-iii/firefly-iii",
-      "host": "github.com",
-      "owner": "firefly-iii",
-      "repo": "firefly-iii",
-      "app_references": [
-        "firefly-iii"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__firefly-iii__firefly-iii.md",
-      "readme_download_url": null,
-      "readme_sha256": "e3cf2d268bd549f5cf5a6b6faf77b8d4709955f78b15a55942a30b68ce0240d4",
       "error": null
     }
   ]

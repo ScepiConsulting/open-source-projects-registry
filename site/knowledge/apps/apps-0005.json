@@ -1,8 +1,32 @@
 {
   "chunk": 5,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "reference": "dailytxt",
+      "name": "DailyTXT",
+      "website": "hub.docker.com/r/phitux/dailytxt/",
+      "description": "Encrypted daily diary and journaling app",
+      "repo_url": "github.com/PhiTux/DailyTxT",
+      "repo_key": "github.com/PhiTux/DailyTxT",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "33",
+      "license": null,
+      "tags": [
+        "Note-Taking",
+        "Remote Access",
+        "Web Server"
+      ],
+      "readme_path": "knowledge/readmes/github.com__PhiTux__DailyTxT.md",
+      "readme_status": "ok",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "7ab42136e3750b3e58d077a49b71a2fdaba75dcd6d80db29bf53bac3840e0e9a"
+      }
+    },
     {
       "reference": "damselfly",
       "name": "Damselfly",
@@ -15,14 +39,16 @@
       "updated_at": "1",
       "license": null,
       "tags": [
+        "Bookmarks",
+        "Media Streaming",
         "Photos"
       ],
       "readme_path": "knowledge/readmes/github.com__Webreaper__Damselfly.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "4332452299d80951639bdcb898673d1e69ed4c6b3b83bfa43e011d8299d9c99b"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "92fe883026591dbee3e9ed342bc23b7b6e34e6b8d444f97c0c7049712034e2ee"
       }
     },
     {
@@ -37,14 +63,15 @@
       "updated_at": "38",
       "license": null,
       "tags": [
-        "Dashboard"
+        "Dashboard",
+        "Email"
       ],
       "readme_path": "knowledge/readmes/github.com__MauriceNino__dashdot.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "7dbfa8c4d0a2c7e417e199ca8c35557b959243fbbb525d4cefb0612a0b714ed0"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "1a8558151e773f5e0bb1aa80c524506bfafb430a8ae50f3e151781d606f8bd97"
       }
     },
     {
@@ -59,14 +86,15 @@
       "updated_at": "33",
       "license": null,
       "tags": [
-        "Dashboard"
+        "Dashboard",
+        "Email"
       ],
       "readme_path": "knowledge/readmes/github.com__codewec__dashlit.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "4807108a9a4e5e1f00cdb3b5ccd07d21f6f67dc7335b4b6b0055b04dbbb4ac77"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "0793b1f0c962f8a4245f71e5206cfaa7310d26df5a69c8f1065c5fb8f8b74635"
       }
     },
     {
@@ -81,14 +109,15 @@
       "updated_at": "38",
       "license": null,
       "tags": [
-        "Dashboard"
+        "Dashboard",
+        "Database"
       ],
       "readme_path": "knowledge/readmes/github.com__andreasmolnardev__dashwise.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "d84459728f68520e077a000417bd6c980b6ea9ec8281a26faaad6628544fcb0b"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "ea743b996047a2e27a7eadb4eb1c2d2739cdc304ce6a7bf46772542c9f63bf48"
       }
     },
     {
@@ -103,14 +132,15 @@
       "updated_at": "39",
       "license": null,
       "tags": [
-        "Dashboard"
+        "Dashboard",
+        "Search Engines"
       ],
       "readme_path": "knowledge/readmes/github.com__Lissy93__dashy.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "8fd40fbd7a62ff2934d871b3a1bbf60536521525e808e3db3e86391aa8cbe4c6"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "77ba6406d3442f0f4507f4fc56196ad923b3d4061155ccf8db9757b3177cfa30"
       }
     },
     {
@@ -125,14 +155,15 @@
       "updated_at": "38",
       "license": null,
       "tags": [
+        "Analytics",
         "Messaging"
       ],
       "readme_path": "knowledge/readmes/github.com__balzack__databag.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "b77ef8df636276261e914231b876fbcf36142fc9027e9e2d98502ac567675367"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "65b10783867812cdb3c9f121319ebf99817f30944d245cf45a04a59a26b09041"
       }
     },
     {
@@ -151,11 +182,11 @@
         "Database"
       ],
       "readme_path": "knowledge/readmes/github.com__databasus__databasus.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "2e81a753d0f20cffce0d1628a770cbc2ff7d9f2ac90afcad59e70fafbfa5c384"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "6e547ba192edaa55c0d9dab596cf054784ab1dae05aa883865f8de25650a57de"
       }
     },
     {
@@ -174,11 +205,11 @@
         "Visualization"
       ],
       "readme_path": "knowledge/readmes/github.com__simonw__datasette.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "8b35b11bc7d84b210ba26659305b33d4ff1e14bbcc2a4d9babbf514079c3b65a"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "9f61f9b80ea1fe3ee46689b9c9be8d1f9e3ba9d8a54949f7ae0646ad767468b9"
       }
     },
     {
@@ -193,14 +224,15 @@
       "updated_at": "26",
       "license": null,
       "tags": [
-        "Calendar"
+        "Calendar",
+        "Server Management"
       ],
       "readme_path": null,
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "3dc5af90f8c522dd6c3b9870c970a0dd668c0560a66fbfc278c10b33ff6069cf"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "c64859a0ac8bbcbb7a612f7138b4017e4b52b5b3ef9f83a7ef9a29f2efd72263"
       }
     },
     {
@@ -215,14 +247,15 @@
       "updated_at": "26",
       "license": null,
       "tags": [
-        "CalDAV/CarDAV"
+        "CalDAV/CarDAV",
+        "Email"
       ],
       "readme_path": "knowledge/readmes/github.com__tchapi__davis.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "abc2d9e7a07e24f9c2eff856bc0bba7054729b72a7b6efd04e7d234711d792f4"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "dcbec3dae37e20123363e40fff2b8998f2210ed6993ff496645b414c4b20b240"
       }
     },
     {
@@ -237,14 +270,15 @@
       "updated_at": "30",
       "license": null,
       "tags": [
-        "GPS"
+        "GPS",
+        "Note-Taking"
       ],
       "readme_path": "knowledge/readmes/github.com__Freika__dawarich.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "fc2ff5a3fddc4fd686527a409b6c58f37e3fc1c9b6f82f879facb5811e8aaa43"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "066ef116395cee069cd2450f08ff145812dcdf34d832ce5c3ad59bf7ad24fc56"
       }
     },
     {
@@ -265,8 +299,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "94410c1c34076e80b7438108009334d38131c63e6a00325839ca84d6e76c445d"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "18230f0b66916e45ee6c037ce74caddd3c6681151be1e098b493e94410912052"
       }
     },
     {
@@ -281,14 +315,15 @@
       "updated_at": "25",
       "license": null,
       "tags": [
-        "DNS"
+        "DNS",
+        "Dashboard"
       ],
       "readme_path": "knowledge/readmes/github.com__ddclient__ddclient.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "dbe15446ee7644106302def4cb6a06111d992d6b0ed1a09949fce29caf0178cd"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "81fae7062e41538f36601633d006adb1d50786980c3f58c27cdaafbfbb6faf47"
       }
     },
     {
@@ -312,8 +347,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "8893cc5658a5d3f1ab1d60a15501bf0891da62b67389f952ec189ec065785cf7"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "e2a3e54d95c16898586312912cef5800e7a3a1cb85f29571dfc0ee23c40a3890"
       }
     },
     {
@@ -335,8 +370,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "0ea7da737b567879d74119250dab73766c58765b8b980ae7f923a2a002d1a623"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "5f66068187f1c7fea330832824823c0a196a90fa4949763f9da0853833df2c0d"
       }
     },
     {
@@ -358,8 +393,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "fc47f7a31bb3c3512acee24fe458e842bafc7dd1b0f7ce3b668edf4083e9f082"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "13e3a4733c68c2b46615b49552c20a77e45663e9cceaa83618f7c2fd8dc385f0"
       }
     },
     {
@@ -383,8 +418,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "074dd6479d6fd50e83fea727b6cd9957b737d83cefbd145b3ab562108289871a"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "9da6e51077ccfeecaaadea514311b49282bf03d23660bb2f0c5826637af125f4"
       }
     },
     {
@@ -406,8 +441,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "07f09edf3b201efec8d37c5b9e4281f125b23cdbfc988d759ebdb8ef4ad6e1a9"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "d29863febc96dfe1d791e77737f1de1a7efc4c0ea00e72ccc84e360cfeb74f04"
       }
     },
     {
@@ -422,14 +457,17 @@
       "updated_at": "31",
       "license": null,
       "tags": [
-        "Media Streaming"
+        "Audiobooks",
+        "Budgeting",
+        "Media Streaming",
+        "Monitoring"
       ],
       "readme_path": "knowledge/readmes/github.com__Dusk-Labs__dim.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "e8cc6ecf4c69d469b6df6a31ef2e8c01daf80e490ba2fe54816e91a0c957a5c0"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "a03ff4b077fc08241496b62d511505f4d3d69fb6eac9cc01cc1e8968f83a6df9"
       }
     },
     {
@@ -451,8 +489,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "e5f7b14eaec81be236ac8134d1d70dc84c4dd528a20546e31a2d273c834b58b3"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "0b3d3c8a6979d23f772e752bd93118513fd565d1e9cf37aa989a3326794442f0"
       }
     },
     {
@@ -467,14 +505,15 @@
       "updated_at": "30",
       "license": null,
       "tags": [
-        "Forums"
+        "Forums",
+        "Remote Access"
       ],
       "readme_path": "knowledge/readmes/github.com__discourse__discourse.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "29820613c96c9917fbde0e2b3f969045772a55fff9774cf47b2719a37812f393"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "418258ba75c0c51c51644397f3c2b0bd32bbcf00b721560b6d01ad819d73b3c0"
       }
     },
     {
@@ -496,8 +535,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "e6de2e7fa91dc930585fd72930cfe9c3abb7103d74b2ce8fea25e72e8a5ad865"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "71a645d5d3c1bef78ffba6d709d0938adbbcad92a8ebd57da5f28bcfc035d826"
       }
     },
     {
@@ -513,14 +552,17 @@
       "license": null,
       "tags": [
         "*arr",
-        "Media Streaming"
+        "Audiobooks",
+        "Budgeting",
+        "Media Streaming",
+        "Monitoring"
       ],
       "readme_path": "knowledge/readmes/github.com__Dispatcharr__Dispatcharr.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "19b88b65c5c38c64b084675cb113663d21d9477ddf27fa20c35341847410f08f"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "a673b94bca3bf7de4f1619fc58bd1f8ff59ec9f9005b8aab63eb8a6e4ab7eb78"
       }
     },
     {
@@ -535,14 +577,16 @@
       "updated_at": "38",
       "license": null,
       "tags": [
-        "Marketing"
+        "Marketing",
+        "Uptime",
+        "Workflow Automation"
       ],
       "readme_path": "knowledge/readmes/github.com__dittofeed__dittofeed.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "9d238b5576e34c95f3b00ee28da3c5b92bdd6cab23603a262de6b6ed75534dec"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "91f87c0738e33dc7f5165806e9b6a7df806e60a1ab4f139d964823cc93a942db"
       }
     },
     {
@@ -564,8 +608,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "fc0572b382fbd7c88d952afd0f767b8271446c7caaa9e24afd89af5bb2ef1adc"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "64f662e60d27793983258d68f12714588728cd8924a8431e38ba3095cd19fb81"
       }
     },
     {
@@ -587,8 +631,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "756a3d2fb2acbef8bd17f896afedafcc364787539371c5e735137940836786e7"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "07a449acdbd52749fd58fddd3d899974f7f6b9a04e6d8057e0c192e80a7bb7c6"
       }
     },
     {
@@ -603,14 +647,40 @@
       "updated_at": "20",
       "license": null,
       "tags": [
+        "Note-Taking",
+        "Notifications",
+        "Password Manager",
         "Surveys and Forms"
       ],
       "readme_path": "knowledge/readmes/github.com__jhpyle__docassemble.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "08ea20cbcef3bc6296b233bf482b4c84550f0476c40a789bf939c42c29ca477d"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "1c037b34a45b46520e7c0f1d367db9dd6bb76cc798501ba9ee24b337c9db617d"
+      }
+    },
+    {
+      "reference": "dock-dploy",
+      "name": "Dock-Dploy",
+      "website": "docker-compose.hhf.technology",
+      "description": "Visually build and manage Docker Compose files",
+      "repo_url": "github.com/hhftechnology/Dock-Dploy",
+      "repo_key": "github.com/hhftechnology/Dock-Dploy",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Deployment",
+        "Docker"
+      ],
+      "readme_path": "knowledge/readmes/github.com__hhftechnology__Dock-Dploy.md",
+      "readme_status": "ok",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "04e35a187011f9449da441727b009e303c8c7574e5cb826d360ea21c1132840d"
       }
     },
     {
@@ -629,11 +699,11 @@
         "Updates"
       ],
       "readme_path": "knowledge/readmes/github.com__mag37__dockcheck.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "dc0f36aa9bb92e9be4f87b84ae8cb56278e35701af897551e137194ce1c83bca"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "2d7b1dc6000431e1ba719979891a746e089a01aca38bbfbc9ef7bcd70575edf7"
       }
     },
     {
@@ -655,8 +725,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "8b391071e9ef63185b5de0bcb09ee6c22872b450c0fafe93a2e3ab9905596cd9"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "d11cb1acf7d367039e71a92808e7cf42c9cb28f75e04774ccada6eafb7cff09e"
       }
     },
     {
@@ -679,8 +749,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "cf6e1ae14d8488a7bf86db33f06e988fdaca1de73c274a8c526f74e46cc34f6a"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "3297de37ded0e5deaa588ec20f56bbf4ed2972bac671dcd527ef9b070c4fdc23"
       }
     },
     {
@@ -702,8 +772,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "2265d975d0a3836d1a27b54447193ae45a082d8289e903a768027c932731fd82"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "03548759b11418cab50a1e4492e58d454a6d01388b53a858a7177fe2f4e509cc"
       }
     },
     {
@@ -725,8 +795,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "db926b9519e92f0fb9ac0d0a032129b8c46b7a23b2085d464f0e5b3c37d47283"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "5cf64292fdb73511b498e457858d19ca7bc3fc88b16efe939fcb770be6dd8c8d"
       }
     },
     {
@@ -748,8 +818,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "dbd17072de0d5a6c7d167b97b9824a4cd91885ea0d7b73a8763a8ab6dc633d2e"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "cd97ae8c704b165c4f9df51d3768a1b75df5f5d8fcc1d325ee01f15a43570e1c"
       }
     },
     {
@@ -764,14 +834,15 @@
       "updated_at": "38",
       "license": null,
       "tags": [
-        "Deployment"
+        "Deployment",
+        "Search Engines"
       ],
       "readme_path": "knowledge/readmes/github.com__undernightcore__dockerizalo.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "3288004283814a91d907b42eb48ecf9d35a0beef6cc194a67cc45200b5aa63f1"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "d94fbb3625db0426ab00197116a4891f6b68c16d6d7d620bd129be794a0c889f"
       }
     },
     {
@@ -790,11 +861,11 @@
         "Reverse Proxy"
       ],
       "readme_path": "knowledge/readmes/github.com__ChrispyBacon-dev__DockFlare.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "f185641b3dda95237879183b1bd340a78cfbbf8961a42de32bc815a30f91187c"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "2ea00cb690146136664e5075696c69d1bf1dc25e57de24984702275dababc598"
       }
     },
     {
@@ -817,8 +888,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "6c992daaa1baa2a5c390b9df489d5fef4981fe2371d539c3e5ee91cc648293f8"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "7273f94ea7637096d99878c8ed7e58872049a3daee2b2d19ddfe2121fae185d4"
       }
     },
     {
@@ -837,11 +908,11 @@
         "Docker"
       ],
       "readme_path": "knowledge/readmes/github.com__Finsys__dockhand.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "cc95f895f0edf7ae069d0486d79762e65d91cbeba426d04df617181b7817ae34"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "b851812b6923df92953de77e72511e789b769f95b22dece53e20188e8d989f1e"
       }
     },
     {
@@ -863,8 +934,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "c5777fca1afffbe390d655ebc5c0e95d253c0bd4024828c1768f6d9b636789f4"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "d61ff36167c956046611b2899a493fb03958aa5d416b861011900306c5b4c5c1"
       }
     },
     {
@@ -886,8 +957,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "a3a018e43670e1147b16b993027ece4fc223174aa898707900bdef703b61acc2"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "3d603cfa26ffde20715f2047e5786973ff014e20399e061d7c245d0290c75874"
       }
     },
     {
@@ -910,8 +981,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "d33094a61aa54224a8d8e31d76a13089f79ebc049e6a62524f9c3388a4f3049a"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "d8e332bf5da02613404b4229788e9aef0659034386150c891d325bd3fb988c96"
       }
     },
     {
@@ -933,8 +1004,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "fa23630f4a807668234d3b0ff5ae153a1d0b219a96ca6dda33aebead0aa8d7b4"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "0fb313f9b66168861a5457931b2f9f05e519f6c826859fa0418dcb64939cad2a"
       }
     },
     {
@@ -953,11 +1024,11 @@
         "VPN"
       ],
       "readme_path": "knowledge/readmes/github.com__marvinvr__docktail.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "b38c12f5bf4cb2244de136524535b112e2de7c0c12354bb62548b1c0fcee75bb"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "8397eee3fb964cdcf7efc98c45f1b7730b78cbb425e018773a6328ba6d5921fa"
       }
     },
     {
@@ -979,8 +1050,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "d8150cbe3f9add3b9e110986e6a72a2c638068f7e3846b26da9c2be36aaf5118"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "b440493a155c05c6c51ade02573066dca5de5e33bc69ddcb2cc156981e040428"
       }
     },
     {
@@ -1002,8 +1073,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "29aebb238cb5f530b153202288cedda77c2abede3ca8e1aaeffa8876064ca0d3"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "bd4e81e7c389e5bb40a42a0b9c6494dbbb1d3e76a430492655ed9680b1f24cb6"
       }
     },
     {
@@ -1022,11 +1093,11 @@
         "Docker"
       ],
       "readme_path": "knowledge/readmes/github.com__kimdre__doco-cd.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "7afa1a73165338d6f717de4dff1bf40ec87578efcbec2b82abb8fa74e8bd31e8"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "b5f716fc1400429cf394ea4649727af097d206202c944a27ffa8579bfca3ca25"
       }
     },
     {
@@ -1048,8 +1119,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "3029c6c2ad9acc151e484ce9ecbe697e9f1f582b48384a7821dd5eee10c5b89b"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "9df76ef2409d54b94b9ffa0ee8a33f7d04c51b6246b2262886eea829d901edab"
       }
     },
     {
@@ -1064,14 +1135,15 @@
       "updated_at": "11",
       "license": null,
       "tags": [
-        "Document Management"
+        "Document Management",
+        "Medical"
       ],
       "readme_path": "knowledge/readmes/github.com__eikek__docspell.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "620b064c4dd6f3b874e610c9f0963b10bf4b3b17aa664971e07553f1bd126771"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "7eca257f5ad0565a2a48c323f6f8300c6b673f67a7b6250fa3f3089f7c38d445"
       }
     },
     {
@@ -1086,58 +1158,15 @@
       "updated_at": "38",
       "license": null,
       "tags": [
-        "Document Signing"
+        "Document Signing",
+        "Search Engines"
       ],
       "readme_path": "knowledge/readmes/github.com__documenso__documenso.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "630deb6c5acd1bd7d3d5d3db00aa357aee385332a61760a38f546a75880c3464"
-      }
-    },
-    {
-      "reference": "docusaurus",
-      "name": "Docusaurus",
-      "website": "docusaurus.io",
-      "description": "Easy to maintain open source docs",
-      "repo_url": "github.com/facebook/docusaurus",
-      "repo_key": "github.com/facebook/docusaurus",
-      "stars": null,
-      "forks": 15,
-      "updated_at": "38",
-      "license": null,
-      "tags": [
-        "Wiki"
-      ],
-      "readme_path": "knowledge/readmes/github.com__facebook__docusaurus.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "53ef01c92a13294e553847c718405e0a775a87e802597e93edc7f810480e1da9"
-      }
-    },
-    {
-      "reference": "docuseal",
-      "name": "DocuSeal",
-      "website": "www.docuseal.com",
-      "description": "Create, fill, and sign digital documents",
-      "repo_url": "github.com/docusealco/docuseal",
-      "repo_key": "github.com/docusealco/docuseal",
-      "stars": null,
-      "forks": 0,
-      "updated_at": "30",
-      "license": null,
-      "tags": [
-        "Document Signing"
-      ],
-      "readme_path": "knowledge/readmes/github.com__docusealco__docuseal.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-04-26T05:38:19Z",
-        "row_hash": "7f759153ccc7af56d5703faef2a047bd40c7ac4a6e3488aa3e6774e221cfa614"
+        "fetched_at": "2026-05-03T05:57:50Z",
+        "row_hash": "3bafbd763211570b93a49e5a7809eac6686a56e046c04a5fead83fe7265d728d"
       }
     }
   ]

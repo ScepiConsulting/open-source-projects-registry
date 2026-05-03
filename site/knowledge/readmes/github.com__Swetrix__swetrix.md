@@ -47,6 +47,7 @@ We've been building Swetrix since 2021 with a goal to make web analytics simple 
 - **Privacy‑first and cookieless**: GDPR‑compliant by design. We don't use cookies, cross-device tracking, all the data is stored anonymised. Read more in our [Data Policy](https://swetrix.com/data-policy) page.
 - **Lightweight and fast**: a small tracking script and a snappy, real‑time dashboard.
 - **Core insights that matter**: top pages, geolocation, map visualisation, devices, traffic sources and UTM campaigns.
+- **Network intelligence**: break traffic down by ISP, organisation, usage type (residential, business, hosting, cellular...) and connection type to spot bot/datacenter traffic and understand who your audience really is.
 - **Custom events and properties**: track conversions, sales, or key user actions with your own semantics.
 - **Session analytics and user flows**: understand journeys and behaviour across your site.
 - **Funnels**: visualise drop‑offs and improve conversion rates.
@@ -54,7 +55,7 @@ We've been building Swetrix since 2021 with a goal to make web analytics simple 
 - **Error tracking**: capture client‑side errors with details and aggregated views.
 - **Shareable analytics**: public or password‑protected dashboards; invite teammates with roles, or manage access with organisations.
 - **Data portability**: export to CSV and access data via our [developer API](https://docs.swetrix.com/statistics-api).
-- **Alerts & notifications (Cloud)**: get notified on thresholds via Slack, Telegram or Discord.
+- **Alerts & notifications (Cloud)**: get notified on thresholds via Email, Slack, Telegram, Discord, generic outbound webhook or browser web push, with per-alert custom message templates.
 - **Feature flags**: manage feature rollouts and conduct safe releases.
 - **Experiments (Cloud)**: run A/B tests and experiments to optimize your site.
 - **Revenue analytics (Cloud)**: track MRR, churn and other financial metrics.
@@ -86,9 +87,9 @@ Cloud vs Community Edition
 | **Core analytics (traffic, events, sessions, funnels, performance, errors)** | ✅ Included                                                                                                                                                                       | ✅ Included                                                                                                                                                     |
 | **Advanced features (Revenue, Experiments, AI)**                             | ✅ Included                                                                                                                                                                       | ⚠️ Not included                                                                                                                                                 |
 | **Teams & sharing**                                                          | ✅ Organisations to manage multiple projects and users with permissions setup; invite people to your projects directly, or share a public or password protected link with people. | ⚠️ Only direct project invites, password protected links and public projects are supported.                                                                     |
-| **Alerts & notifications**                                                   | ✅ Yes (Slack/Telegram/Discord)                                                                                                                                                   | ⚠️ Not included                                                                                                                                                 |
+| **Alerts & notifications**                                                   | ✅ Yes (Email, Slack, Telegram, Discord, webhook, web push)                                                                                                                       | ⚠️ Not included                                                                                                                                                 |
 | **Email reports**                                                            | ✅ Yes (weekly/monthly/quarterly)                                                                                                                                                 | ⚠️ Not included                                                                                                                                                 |
-| **Geo analytics**                                                            | ✅ Swetrix Cloud uses premium GeoIP database to provide consistent and accurate country and city level geolocation data.                                                          | ⚠️ Less accurate, DB-IP City Lite Database; you need to pay for the full database if you want better accuracy.                                                  |
+| **Geo & network analytics**                                                  | ✅ Swetrix Cloud uses a premium GeoIP database to provide consistent and accurate country / region / city geolocation, plus ISP, organisation, usage type and connection type.    | ⚠️ Less accurate, DB-IP City Lite Database (country / region / city only); you need a paid MaxMind or DB-IP database for ISP and network-intelligence breakdowns. |
 | **Release schedule**                                                         | ✅ Continuously developed with updates deployed as soon as they are ready                                                                                                         | ℹ️ Periodic open‑source releases, latest features are not available immediately.                                                                                |
 | **Support**                                                                  | ✅ Premium support from the people who build and maintain Swetrix                                                                                                                 | ⚠️ Official support is not included. Community‑driven support on Discord or other forums only.                                                                  |
 | **Costs**                                                                    | ✅ We're an independent and bootstrapped business, your money directly supports Swetrix development.                                                                              | ⚠️ You pay for the server costs and maintenance, backups, domains and other selfhosting costs, with money going to 3rd party services with no connection to us. |
@@ -106,13 +107,6 @@ The [browser tracking script](https://github.com/Swetrix/swetrix-js) is built wi
 See our [contributing guide](./CONTRIBUTING.MD) to get started. We welcome any contribution to the project!
 
 Feel free to go through our [open issues](https://github.com/Swetrix/swetrix/issues) and pick any task you want to work on.
-
-### Translations
-
-We welcome translation contributions.
-
-- We manage translations on our [Crowdin](https://crowdin.com/project/swetrix) page.
-- If you'd like to help regularly or add a new language, open an issue and we'll guide you through our translation workflow.
 
 ## ⭐️ Star History
 

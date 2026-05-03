@@ -1,8 +1,143 @@
 {
   "chunk": 26,
-  "count": 2,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "count": 11,
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "repo_key": "gitlab.com/jaywink/socialhome",
+      "repo_url": "gitlab.com/jaywink/socialhome",
+      "host": "gitlab.com",
+      "owner": "jaywink",
+      "repo": "socialhome",
+      "app_references": [
+        "socialhome"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/jaywink/socialhome/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/jaywink/socialhome/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/mayan-edms/mayan-edms",
+      "repo_url": "gitlab.com/mayan-edms/mayan-edms",
+      "host": "gitlab.com",
+      "owner": "mayan-edms",
+      "repo": "mayan-edms",
+      "app_references": [
+        "mayan-edms"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/mayan-edms/mayan-edms/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/mayan-edms/mayan-edms/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/rtraceio/web",
+      "repo_url": "gitlab.com/rtraceio/web/flink",
+      "host": "gitlab.com",
+      "owner": "rtraceio",
+      "repo": "web",
+      "app_references": [
+        "flink"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/rtraceio/web/flink/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/rtraceio/web/flink/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/storyteller-platform/storyteller",
+      "repo_url": "gitlab.com/storyteller-platform/storyteller",
+      "host": "gitlab.com",
+      "owner": "storyteller-platform",
+      "repo": "storyteller",
+      "app_references": [
+        "storyteller"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/storyteller-platform/storyteller/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/storyteller-platform/storyteller/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/timvisee/send",
+      "repo_url": "gitlab.com/timvisee/send",
+      "host": "gitlab.com",
+      "owner": "timvisee",
+      "repo": "send",
+      "app_references": [
+        "send-visee"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/timvisee/send/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/timvisee/send/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.opencode.de/opentalk/ot-setup",
+      "repo_url": "gitlab.opencode.de/opentalk/ot-setup",
+      "host": "gitlab.opencode.de",
+      "owner": "opentalk",
+      "repo": "ot-setup",
+      "app_references": [
+        "opentalk"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.opencode.de/opentalk/ot-setup/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.opencode.de/opentalk/ot-setup/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "lavaforge.org/spotizerr/spotizerr",
+      "repo_url": "lavaforge.org/spotizerr/spotizerr",
+      "host": "lavaforge.org",
+      "owner": "spotizerr",
+      "repo": "spotizerr",
+      "app_references": [
+        "spotizerr"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'lavaforge.org/spotizerr/spotizerr/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://lavaforge.org/spotizerr/spotizerr/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "open.greenhost.net/stackspin/stackspin",
+      "repo_url": "open.greenhost.net/stackspin/stackspin",
+      "host": "open.greenhost.net",
+      "owner": "stackspin",
+      "repo": "stackspin",
+      "app_references": [
+        "stackspin"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'open.greenhost.net/stackspin/stackspin/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://open.greenhost.net/stackspin/stackspin/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "salsa.debian.org/freedombox-team/freedombox",
+      "repo_url": "salsa.debian.org/freedombox-team/freedombox",
+      "host": "salsa.debian.org",
+      "owner": "freedombox-team",
+      "repo": "freedombox",
+      "app_references": [
+        "freedombox"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md?"
+    },
     {
       "repo_key": "sr.ht/~sircmpwn/sourcehut",
       "repo_url": "sr.ht/~sircmpwn/sourcehut",

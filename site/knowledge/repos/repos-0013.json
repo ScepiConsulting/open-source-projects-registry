@@ -1,8 +1,53 @@
 {
   "chunk": 13,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "repo_key": "github.com/filebrowser/filebrowser",
+      "repo_url": "github.com/filebrowser/filebrowser",
+      "host": "github.com",
+      "owner": "filebrowser",
+      "repo": "filebrowser",
+      "app_references": [
+        "file-browser"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__filebrowser__filebrowser.md",
+      "readme_download_url": null,
+      "readme_sha256": "ee55dc02d2ad5c5532649b0c8a2c3612ae6706a80d0e6001ea61895624049b36",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/filegator/filegator",
+      "repo_url": "github.com/filegator/filegator",
+      "host": "github.com",
+      "owner": "filegator",
+      "repo": "filegator",
+      "app_references": [
+        "filegator"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__filegator__filegator.md",
+      "readme_download_url": null,
+      "readme_sha256": "683df39857d17e42dc8defe0e0c121ec9b5020ef9185a6457a1f73396e21556a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/firefly-iii/firefly-iii",
+      "repo_url": "github.com/firefly-iii/firefly-iii",
+      "host": "github.com",
+      "owner": "firefly-iii",
+      "repo": "firefly-iii",
+      "app_references": [
+        "firefly-iii"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__firefly-iii__firefly-iii.md",
+      "readme_download_url": null,
+      "readme_sha256": "e3cf2d268bd549f5cf5a6b6faf77b8d4709955f78b15a55942a30b68ce0240d4",
+      "error": null
+    },
     {
       "repo_key": "github.com/fisharebest/webtrees",
       "repo_url": "github.com/fisharebest/webtrees",
@@ -12,10 +57,10 @@
       "app_references": [
         "webtrees"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__fisharebest__webtrees.md",
-      "readme_download_url": null,
-      "readme_sha256": "002ebf0766ee37e609ea21d6f0bf398d8c18d7eac300ad5a9ecab3e1bb5a6091",
+      "readme_download_url": "https://raw.githubusercontent.com/fisharebest/webtrees/main/README.md",
+      "readme_sha256": "4d4daec83fff2a5f469013d546f0bfbbb22b6dcc0b51276a59cc88c321e67564",
       "error": null
     },
     {
@@ -42,9 +87,9 @@
       "app_references": [
         "gocron"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__flohoss__gocron.md",
-      "readme_download_url": "https://raw.githubusercontent.com/flohoss/gocron/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "027278eb561cdbec9acacf60f808792e2f4fd96b3bfde89af92d324d0076aaba",
       "error": null
     },
@@ -120,7 +165,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__fosrl__pangolin.md",
       "readme_download_url": "https://raw.githubusercontent.com/fosrl/pangolin/main/README.md",
-      "readme_sha256": "56be2f4d96ac829e151054e56aa943d51ef78d8797bb1b5f9185c885eb47bfd5",
+      "readme_sha256": "46f99f3dd725f92b2e9176692e53b3b49444cfa5b2285154067e201220e0d175",
       "error": null
     },
     {
@@ -165,7 +210,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__frappe__erpnext.md",
       "readme_download_url": "https://raw.githubusercontent.com/frappe/erpnext/develop/README.md",
-      "readme_sha256": "0344e652b1171f268731971355b3effb84c047c125feb0f7548acff7c94dd9b7",
+      "readme_sha256": "c7d12496fddc6771a44d9c84dcaa6868eea52ef32aca5a6a68d5b59d88a7022b",
       "error": null
     },
     {
@@ -180,7 +225,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__frederikemmer__MediaLyze.md",
       "readme_download_url": "https://raw.githubusercontent.com/frederikemmer/MediaLyze/main/README.md",
-      "readme_sha256": "469b4dd0b77d3f86c7738acc61d563774eb84dfc7d73814967d66a0a4acffef0",
+      "readme_sha256": "bda617eee23abc7898c1f8afdd2db5cd1112fb20de7fc58997ccc3da445644e0",
       "error": null
     },
     {
@@ -237,9 +282,9 @@
       "app_references": [
         "posterizarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__fscorrupt__posterizarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/fscorrupt/posterizarr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "5eac89a17974bc14523a5a02684add9d6d19d358b792a77ad2616667f3cf4023",
       "error": null
     },
@@ -252,10 +297,10 @@
       "app_references": [
         "koito"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gabehf__Koito.md",
-      "readme_download_url": null,
-      "readme_sha256": "7a1473e4c0880c55f91a2b785d2f1f0c4afd750f95c16717c20660036ec099b7",
+      "readme_download_url": "https://raw.githubusercontent.com/gabehf/Koito/main/README.md",
+      "readme_sha256": "d374f5b8d229e475370642cdfa0aa53fbdcc7eb6cba5d3613eca199e0a441eac",
       "error": null
     },
     {
@@ -312,9 +357,9 @@
       "app_references": [
         "notediscovery"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gamosoft__NoteDiscovery.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gamosoft/NoteDiscovery/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6fead424d28a1a5315cd0a6d044def9961da50c26de1268468344dc3942f6dda",
       "error": null
     },
@@ -357,10 +402,10 @@
       "app_references": [
         "backrest"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__garethgeorge__backrest.md",
-      "readme_download_url": null,
-      "readme_sha256": "0ff287ee20d60e1ca8e8d78371d09e0c6683e68d291af03fb4a144783cea981b",
+      "readme_download_url": "https://raw.githubusercontent.com/garethgeorge/backrest/main/README.md",
+      "readme_sha256": "0f6b9544b7f27d3aab7c155357ae32e55be0cc5de58219bd4f7200696386200f",
       "error": null
     },
     {
@@ -387,10 +432,10 @@
       "app_references": [
         "cyberchef"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gchq__CyberChef.md",
-      "readme_download_url": null,
-      "readme_sha256": "697df6b7942152b339215dd796c960387b0b6415e73b06b09f66e896a8ae2d21",
+      "readme_download_url": "https://raw.githubusercontent.com/gchq/CyberChef/master/README.md",
+      "readme_sha256": "9da39b6d5d960cd26ff4d73595700edadf1a534727f2e21ce83342b4d486a9e1",
       "error": null
     },
     {
@@ -417,9 +462,9 @@
       "app_references": [
         "gerbera"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gerbera__gerbera.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gerbera/gerbera/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "794eb4f779d9633909b528bf63cf6ec61e8e50e89ae6f24acac9b6afcc137f1f",
       "error": null
     },
@@ -432,10 +477,10 @@
       "app_references": [
         "arcane"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__getarcaneapp__arcane.md",
-      "readme_download_url": null,
-      "readme_sha256": "729bd5c6c4bbe30a9db0ce8e808efbb857e321066df717c793059dd397ff2ba7",
+      "readme_download_url": "https://raw.githubusercontent.com/getarcaneapp/arcane/main/README.md",
+      "readme_sha256": "b8f148d0b9ed6b7e0718faedd3a5b1d197e7edd00010cff2fec2e01a5db209f5",
       "error": null
     },
     {
@@ -492,9 +537,9 @@
       "app_references": [
         "maxun"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__getmaxun__maxun.md",
-      "readme_download_url": "https://raw.githubusercontent.com/getmaxun/maxun/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "26e0985f112ee5d65abf169a2db2ff852d67a80c8b1a2594023b338f3a47e52e",
       "error": null
     },
@@ -567,9 +612,9 @@
       "app_references": [
         "ghostfolio"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ghostfolio__ghostfolio.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ghostfolio/ghostfolio/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e2db7f4a02a4dcc323e1b6ee549766bdd050fb03e8bf5748b164e09195f1e824",
       "error": null
     },
@@ -642,9 +687,9 @@
       "app_references": [
         "glauth"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__glauth__glauth.md",
-      "readme_download_url": "https://raw.githubusercontent.com/glauth/glauth/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b787eb76f2526b45eeed24c686182f394f8e76fd1a8f5cc0adf54afb1ad9af20",
       "error": null
     },
@@ -687,10 +732,10 @@
       "app_references": [
         "myspeed"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gnmyt__MySpeed.md",
-      "readme_download_url": null,
-      "readme_sha256": "dede3d15fea897a1735867e95a9a96660967d027c5a313548a0e183d0875bcd4",
+      "readme_download_url": "https://raw.githubusercontent.com/gnmyt/MySpeed/development/README.md",
+      "readme_sha256": "76ab6bc17e9c46843a8dfc3b415ce0302c3515752e60be71af0a5abe00611a91",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__gnmyt__Nexterm.md",
       "readme_download_url": null,
       "readme_sha256": "df21f3392fa3bd785995aba912462560ce9d15ed7e1fae24796c3e56ab7ae346",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/go-gitea/gitea",
-      "repo_url": "github.com/go-gitea/gitea",
-      "host": "github.com",
-      "owner": "go-gitea",
-      "repo": "gitea",
-      "app_references": [
-        "gitea"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__go-gitea__gitea.md",
-      "readme_download_url": null,
-      "readme_sha256": "136a91a44329f31a8ab9ec9cd9b786bb3248672571a530c348b3cb8635430d2b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/go-shiori/shiori",
-      "repo_url": "github.com/go-shiori/shiori",
-      "host": "github.com",
-      "owner": "go-shiori",
-      "repo": "shiori",
-      "app_references": [
-        "shiori"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__go-shiori__shiori.md",
-      "readme_download_url": null,
-      "readme_sha256": "f7e1e6524b1e4aba3cbe440fd16dc327ce0e48cf80268e6c671b304f53c835bc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/go-vikunja/vikunja",
-      "repo_url": "github.com/go-vikunja/vikunja",
-      "host": "github.com",
-      "owner": "go-vikunja",
-      "repo": "vikunja",
-      "app_references": [
-        "vikunja"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__go-vikunja__vikunja.md",
-      "readme_download_url": null,
-      "readme_sha256": "34f1255b223b23a3b9426b7b80f4fbe2013b9f70f5e655210647cf7fee66fe1b",
       "error": null
     }
   ]

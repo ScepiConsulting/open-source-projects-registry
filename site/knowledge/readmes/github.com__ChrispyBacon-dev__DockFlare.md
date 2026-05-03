@@ -14,7 +14,7 @@
 <a href="https://github.com/ChrispyBacon-dev/DockFlare/stargazers">
   <img src="https://img.shields.io/github/stars/ChrispyBacon-dev/DockFlare?style=for-the-badge" alt="Stars">
 </a>
-  <a href="https://github.com/ChrispyBacon-dev/DockFlare/releases"><img src="https://img.shields.io/badge/Release-v3.1.0-blue.svg?style=for-the-badge" alt="Release"></a>
+  <a href="https://github.com/ChrispyBacon-dev/DockFlare/releases"><img src="https://img.shields.io/badge/Release-v3.1.1-blue.svg?style=for-the-badge" alt="Release"></a>
   <a href="https://hub.docker.com/r/alplat/dockflare"><img src="https://img.shields.io/docker/pulls/alplat/dockflare?style=for-the-badge" alt="Docker Pulls"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=for-the-badge" alt="Python"></a>
   <a href="https://github.com/ChrispyBacon-dev/DockFlare/blob/main/LICENSE.MD"><img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=for-the-badge" alt="License"></a>
@@ -81,10 +81,14 @@ Detailed architecture guide: [https://dockflare.app/architecture](https://dockfl
 ### One-Liner Install
 
 ```bash
-curl -fsSL https://dockflare.app/install.sh | bash
+bash <(curl -fsSL https://dockflare.app/install.sh)
 ```
 
-The script checks prerequisites, creates `~/dockflare/`, writes a production-ready `docker-compose.yml`, and starts all services. Open `http://<your-server-ip>:5000` when it finishes and follow the setup wizard.
+The script will guide you through:
+1. Choosing an install directory (default: `~/dockflare/`).
+2. Choosing a local UI port (default: `5000`).
+3. Optionally configuring a Cloudflare Tunnel for DockFlare itself.
+4. Optionally enabling the Email profile (dockflare-mail-manager + dockflare-webmail).
 
 For full setup documentation, use the project docs site:
 
@@ -101,17 +105,21 @@ For full setup documentation, use the project docs site:
 - Cloudflare Account ID.
 - Cloudflare Zone ID for your primary domain.
 - Cloudflare API token with these permissions:
-  - `Account:Cloudflare Tunnel:Edit`
-  - `Account:Access: Organizations, Identity Providers, and Groups:Edit`
-  - `Account:Account Settings:Read`
-  - `Account:Access: Apps and Policies:Edit`
-  - `Account:Access: Service Tokens:Edit`
-  - `Account:Email:Edit`
-  - `Account:Workers Scripts:Edit`
-  - `Account:Workers KV Storage:Edit`
-  - `Account:R2:Edit`
-  - `Zone:Zone:Read`
-  - `Zone:DNS:Edit`
+    * `Account:Cloudflare Tunnel:Write`
+    * `Account:Account Settings:Read`
+    * `Account:Access: Apps and Policies:Write`
+    * `Account:Access: Organizations, Identity Providers, and Groups:Write`
+    * `Account:Access: Service Tokens:Write`
+    * `Zone:Zone:Read`
+    * `Zone:DNS:Write`
+
+    **For optional DockFlare Email features, add these additional permissions:**
+    * `Workers Scripts:Write`
+    * `Workers KV Storage:Write`
+    * `Workers R2 Storage:Write`
+    * `Email Routing Addresses:Write`
+    * `Email Routing Rules:Write`
+
 
 ![Cloudflare API Permissions](images/cf.png)
 
@@ -130,10 +138,10 @@ docker network create cloudflare-net
 services:
   docker-socket-proxy:
     image: tecnativa/docker-socket-proxy:v0.4.1
-    logging:
-      driver: "none"
     container_name: docker-socket-proxy
     restart: unless-stopped
+    logging:
+      driver: "none"
     environment:
       - DOCKER_HOST=unix:///var/run/docker.sock
       - CONTAINERS=1
@@ -163,14 +171,31 @@ services:
     container_name: dockflare
     restart: unless-stopped
     ports:
-      - "5000:5000"
+      - "5000:5000" # Optional: comment out once exposed via Cloudflare Tunnel with an Access Policy to restrict access to tunnel-only
+    #labels: # -- Cloudflare Tunnel Configuration (via DockFlare) OPTIONAL --
+      # Main DockFlare with access policy
+      #- dockflare.enable=true
+      #- dockflare.hostname=dockflare.TLD  # replace with your domain
+      #- dockflare.service=http://dockflare:5000
+      #- dockflare.access.group=YOUR-ACCESS-GROUP-ID  # your custom access policy
+      # -- OAuth Callback Path (Bypass Access Policy) OPTIONAL --
+      # Required if using OAuth authentication with access policies on main interface
+      #- dockflare.0.hostname=dockflare.example.tld
+      #- dockflare.0.path=/auth/google/callback
+      #- dockflare.0.service=http://dockflare:5000
+      #- dockflare.0.access.group=public-default-bypass
+
+      # Add additional callback paths for other OAuth providers as needed
+      # - dockflare.1.hostname=dockflare.example.com
+      # - dockflare.1.path=/auth/github/callback
+      # - dockflare.1.service=http://dockflare:5000
+      # - dockflare.1.access.group=public-default-bypass
     volumes:
       - dockflare_data:/app/data
     environment:
       - REDIS_URL=redis://redis:6379/0
       - REDIS_DB_INDEX=0
       - DOCKER_HOST=tcp://docker-socket-proxy:2375
-      - LOG_LEVEL=ERROR
     depends_on:
       docker-socket-proxy:
         condition: service_started
@@ -187,14 +212,52 @@ services:
     container_name: dockflare-redis
     restart: unless-stopped
     command: ["redis-server", "--save", "", "--appendonly", "no"]
+    logging:
+      driver: "none"
     volumes:
       - dockflare_redis:/data
     networks:
       - dockflare-internal
 
+  dockflare-mail-manager:
+    image: alplat/dockflare-mail-manager:stable
+    container_name: dockflare-mail-manager
+    restart: unless-stopped
+    profiles: ["email"]
+    environment:
+      - DOCKFLARE_MASTER_URL=http://dockflare:5000
+      - MAIL_DATA_PATH=/data
+    volumes:
+      - mail_data:/data
+    depends_on:
+      dockflare:
+        condition: service_started
+    networks:
+      - cloudflare-net
+      - dockflare-internal
+
+  dockflare-webmail:
+    image: alplat/dockflare-webmail:stable
+    container_name: dockflare-webmail
+    restart: unless-stopped
+    profiles: ["email"]
+    environment:
+      - DOCKFLARE_MASTER_URL=https://dockflare.TLD  # replace with your domain
+    labels:
+      - dockflare.enable=true
+      - dockflare.hostname=mail.dockflare.TLD  # replace with your domain
+      - dockflare.service=http://dockflare-webmail:80
+    depends_on:
+      dockflare-mail-manager:
+        condition: service_started
+    networks:
+      - cloudflare-net
+      - dockflare-internal
+
 volumes:
   dockflare_data:
   dockflare_redis:
+  mail_data:
 
 networks:
   cloudflare-net:
@@ -209,6 +272,14 @@ networks:
 ```bash
 docker compose up -d
 ```
+
+The Email Suite is an optional, opt-in feature and will not start by default. To include email services, add the `email` profile:
+
+```bash
+docker compose --profile email up -d
+```
+
+Email setup and provisioning guide: [Email Overview](https://github.com/ChrispyBacon-dev/DockFlare/blob/stable/dockflare/app/templates/docs/en/Email-Overview.md)
 
 3. Open `http://your-server-ip:5000` and complete the setup wizard.
 

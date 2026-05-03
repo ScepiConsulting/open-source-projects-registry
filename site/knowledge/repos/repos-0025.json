@@ -1,8 +1,128 @@
 {
   "chunk": 25,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "repo_key": "github.com/vitodeploy/vito",
+      "repo_url": "github.com/vitodeploy/vito",
+      "host": "github.com",
+      "owner": "vitodeploy",
+      "repo": "vito",
+      "app_references": [
+        "vito"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__vitodeploy__vito.md",
+      "readme_download_url": null,
+      "readme_sha256": "9aa27a22376f17527309526f39de2f378eb403d3dc4aa064447bc31563e71b05",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/voidauth/voidauth",
+      "repo_url": "github.com/voidauth/voidauth",
+      "host": "github.com",
+      "owner": "voidauth",
+      "repo": "voidauth",
+      "app_references": [
+        "voidauth"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__voidauth__voidauth.md",
+      "readme_download_url": null,
+      "readme_sha256": "8dd97d65f341283f83903d1420011096ffd3d331afa8ddd5c37cbef75346d95a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/vrtmrz/obsidian-livesync",
+      "repo_url": "github.com/vrtmrz/obsidian-livesync",
+      "host": "github.com",
+      "owner": "vrtmrz",
+      "repo": "obsidian-livesync",
+      "app_references": [
+        "obsidian-livesync"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__vrtmrz__obsidian-livesync.md",
+      "readme_download_url": null,
+      "readme_sha256": "f0d5ea08b968e0daf1c8f7961df38bb2b153c106905fae2f74c2508bbc9b885c",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/wallabag/wallabag",
+      "repo_url": "github.com/wallabag/wallabag",
+      "host": "github.com",
+      "owner": "wallabag",
+      "repo": "wallabag",
+      "app_references": [
+        "wallabag"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__wallabag__wallabag.md",
+      "readme_download_url": null,
+      "readme_sha256": "0dd89f0f2c9e197ae8ef1b5d9f650b3f11384eb951c1d9be38c724ffdc4df4f8",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/warp-tech/warpgate",
+      "repo_url": "github.com/warp-tech/warpgate",
+      "host": "github.com",
+      "owner": "warp-tech",
+      "repo": "warpgate",
+      "app_references": [
+        "warpgate"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__warp-tech__warpgate.md",
+      "readme_download_url": null,
+      "readme_sha256": "eb3401f77d66547c794fd0f2e8a40a0ba3db7a1647bfddcc75cf96a00f86b510",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/wasi-master/13ft",
+      "repo_url": "github.com/wasi-master/13ft",
+      "host": "github.com",
+      "owner": "wasi-master",
+      "repo": "13ft",
+      "app_references": [
+        "13ft-ladder"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__wasi-master__13ft.md",
+      "readme_download_url": null,
+      "readme_sha256": "a44700be50bc35cc5cfe569b3f143edb4f71b7e08f51175db4d7292721c26203",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/we-promise/sure",
+      "repo_url": "github.com/we-promise/sure",
+      "host": "github.com",
+      "owner": "we-promise",
+      "repo": "sure",
+      "app_references": [
+        "sure-finance"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__we-promise__sure.md",
+      "readme_download_url": "https://raw.githubusercontent.com/we-promise/sure/main/README.md",
+      "readme_sha256": "224efdf7e4377c16be7aaa8d8dda01078dfb0d08a82dfc7e884f142e5f17eddb",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/webmin/webmin",
+      "repo_url": "github.com/webmin/webmin",
+      "host": "github.com",
+      "owner": "webmin",
+      "repo": "webmin",
+      "app_references": [
+        "webmin"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__webmin__webmin.md",
+      "readme_download_url": null,
+      "readme_sha256": "531eee75dde78e822fd32778ef7c60add51324239df6a528f4a1930f794cda25",
+      "error": null
+    },
     {
       "repo_key": "github.com/wekan/wekan",
       "repo_url": "github.com/wekan/wekan",
@@ -12,10 +132,10 @@
       "app_references": [
         "wekan"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__wekan__wekan.md",
-      "readme_download_url": null,
-      "readme_sha256": "b603137a407c2adea0023da10a76e0348796abc5e83aa2bbead147f4e9316759",
+      "readme_download_url": "https://raw.githubusercontent.com/wekan/wekan/main/README.md",
+      "readme_sha256": "2f4fff6e79a4685583b02bde532a64b2797f112a87b6b7cb47d0ec2f4b214d49",
       "error": null
     },
     {
@@ -379,6 +499,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/zensical/zensical",
+      "repo_url": "github.com/zensical/zensical",
+      "host": "github.com",
+      "owner": "zensical",
+      "repo": "zensical",
+      "app_references": [
+        "zensical"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__zensical__zensical.md",
+      "readme_download_url": "https://raw.githubusercontent.com/zensical/zensical/master/README.md",
+      "readme_sha256": "a2b4fb5e8ae8b7c7fcdb0c0c044663c4f2743750478745832990bf7e471b5a71",
+      "error": null
+    },
+    {
       "repo_key": "github.com/zitadel/zitadel",
       "repo_url": "github.com/zitadel/zitadel",
       "host": "github.com",
@@ -417,10 +552,10 @@
       "app_references": [
         "zulip"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__zulip__zulip.md",
-      "readme_download_url": null,
-      "readme_sha256": "7150faf314e5fa8911387285a99ebaf9dc1271d1d3fd8d4e18a9f2cf07b9badd",
+      "readme_download_url": "https://raw.githubusercontent.com/zulip/zulip/main/README.md",
+      "readme_sha256": "797053375431ea51df3c156d114ab7fbfdbe8398a0bb8a2d2dc076612b70f34b",
       "error": null
     },
     {
@@ -617,141 +752,6 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'gitlab.com/imn1/richy/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/imn1/richy/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "gitlab.com/jaywink/socialhome",
-      "repo_url": "gitlab.com/jaywink/socialhome",
-      "host": "gitlab.com",
-      "owner": "jaywink",
-      "repo": "socialhome",
-      "app_references": [
-        "socialhome"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'gitlab.com/jaywink/socialhome/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/jaywink/socialhome/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "gitlab.com/mayan-edms/mayan-edms",
-      "repo_url": "gitlab.com/mayan-edms/mayan-edms",
-      "host": "gitlab.com",
-      "owner": "mayan-edms",
-      "repo": "mayan-edms",
-      "app_references": [
-        "mayan-edms"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'gitlab.com/mayan-edms/mayan-edms/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/mayan-edms/mayan-edms/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "gitlab.com/rtraceio/web",
-      "repo_url": "gitlab.com/rtraceio/web/flink",
-      "host": "gitlab.com",
-      "owner": "rtraceio",
-      "repo": "web",
-      "app_references": [
-        "flink"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'gitlab.com/rtraceio/web/flink/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/rtraceio/web/flink/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "gitlab.com/storyteller-platform/storyteller",
-      "repo_url": "gitlab.com/storyteller-platform/storyteller",
-      "host": "gitlab.com",
-      "owner": "storyteller-platform",
-      "repo": "storyteller",
-      "app_references": [
-        "storyteller"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'gitlab.com/storyteller-platform/storyteller/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/storyteller-platform/storyteller/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "gitlab.com/timvisee/send",
-      "repo_url": "gitlab.com/timvisee/send",
-      "host": "gitlab.com",
-      "owner": "timvisee",
-      "repo": "send",
-      "app_references": [
-        "send-visee"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'gitlab.com/timvisee/send/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/timvisee/send/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "gitlab.opencode.de/opentalk/ot-setup",
-      "repo_url": "gitlab.opencode.de/opentalk/ot-setup",
-      "host": "gitlab.opencode.de",
-      "owner": "opentalk",
-      "repo": "ot-setup",
-      "app_references": [
-        "opentalk"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'gitlab.opencode.de/opentalk/ot-setup/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.opencode.de/opentalk/ot-setup/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "lavaforge.org/spotizerr/spotizerr",
-      "repo_url": "lavaforge.org/spotizerr/spotizerr",
-      "host": "lavaforge.org",
-      "owner": "spotizerr",
-      "repo": "spotizerr",
-      "app_references": [
-        "spotizerr"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'lavaforge.org/spotizerr/spotizerr/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://lavaforge.org/spotizerr/spotizerr/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "open.greenhost.net/stackspin/stackspin",
-      "repo_url": "open.greenhost.net/stackspin/stackspin",
-      "host": "open.greenhost.net",
-      "owner": "stackspin",
-      "repo": "stackspin",
-      "app_references": [
-        "stackspin"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'open.greenhost.net/stackspin/stackspin/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://open.greenhost.net/stackspin/stackspin/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "salsa.debian.org/freedombox-team/freedombox",
-      "repo_url": "salsa.debian.org/freedombox-team/freedombox",
-      "host": "salsa.debian.org",
-      "owner": "freedombox-team",
-      "repo": "freedombox",
-      "app_references": [
-        "freedombox"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md?"
     }
   ]
 }

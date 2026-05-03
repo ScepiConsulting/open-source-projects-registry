@@ -1,8 +1,53 @@
 {
   "chunk": 10,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "repo_key": "github.com/cglatot/pasta",
+      "repo_url": "github.com/cglatot/pasta",
+      "host": "github.com",
+      "owner": "cglatot",
+      "repo": "pasta",
+      "app_references": [
+        "pasta"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__cglatot__pasta.md",
+      "readme_download_url": null,
+      "readme_sha256": "4ea1735d201d34909a86542a59adf6f33820b8bdc24e662a32eb49f601139623",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/cgwire/kitsu",
+      "repo_url": "github.com/cgwire/kitsu",
+      "host": "github.com",
+      "owner": "cgwire",
+      "repo": "kitsu",
+      "app_references": [
+        "kitsu"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__cgwire__kitsu.md",
+      "readme_download_url": null,
+      "readme_sha256": "671fc374a43702111440f5d7976de7e2cc65abb7acb1277e8cf991a28458883d",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/chaitin/SafeLine",
+      "repo_url": "github.com/chaitin/SafeLine",
+      "host": "github.com",
+      "owner": "chaitin",
+      "repo": "SafeLine",
+      "app_references": [
+        "safeline"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__chaitin__SafeLine.md",
+      "readme_download_url": null,
+      "readme_sha256": "93f1bbd9885fa954ddb7df10ba9ceaeae2d8c96e63bfaeb3356e1394ab1b706e",
+      "error": null
+    },
     {
       "repo_key": "github.com/charmbracelet/soft-serve",
       "repo_url": "github.com/charmbracelet/soft-serve",
@@ -267,10 +312,10 @@
       "app_references": [
         "loggifly"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__clemcer__LoggiFly.md",
-      "readme_download_url": null,
-      "readme_sha256": "9fb3a27784eea597ec9cea0fedacb93593b2e3de21546c1467852ccafed39344",
+      "readme_download_url": "https://raw.githubusercontent.com/clemcer/LoggiFly/main/README.md",
+      "readme_sha256": "d85b4a92eb127478d7181e88bcd77840ea456fad7f3b83abd44de6ff56aeefb2",
       "error": null
     },
     {
@@ -297,10 +342,10 @@
       "app_references": [
         "cloudflared"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__cloudflare__cloudflared.md",
-      "readme_download_url": null,
-      "readme_sha256": "77e74eb76fd37c108a0b73a227e71fe089028fcd48fb17cb8ca336e771084a7a",
+      "readme_download_url": "https://raw.githubusercontent.com/cloudflare/cloudflared/master/README.md",
+      "readme_sha256": "803d768cb491b29d81a19643a7ffcab57e0e0378c7759cfa7c9c115cd15649db",
       "error": null
     },
     {
@@ -405,7 +450,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__coderaiser__cloudcmd.md",
       "readme_download_url": "https://raw.githubusercontent.com/coderaiser/cloudcmd/master/README.md",
-      "readme_sha256": "9569412f7c0ba48f59ab9668e09b6a32d52474901adb7ae863525a34b5eb869c",
+      "readme_sha256": "32ac8e3d52f7a24284ec109290e72a6f102f5990bc26a80d939f2f0e7c0ac1c9",
       "error": null
     },
     {
@@ -522,10 +567,10 @@
       "app_references": [
         "converse"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__conversejs__converse.js.md",
-      "readme_download_url": null,
-      "readme_sha256": "ace341ec88354e950e176bcccb4253bb1fd0d82a96bdb1a4ce7c9178406f1183",
+      "readme_download_url": "https://raw.githubusercontent.com/conversejs/converse.js/master/README.md",
+      "readme_sha256": "61ed06a1742fb93cfcd6fa68cf557e7bfac22ca72f205dc0c925fbdcb4d304b8",
       "error": null
     },
     {
@@ -567,10 +612,10 @@
       "app_references": [
         "coolify"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__coollabsio__coolify.md",
-      "readme_download_url": null,
-      "readme_sha256": "dd39bced47b8dcc5becfd6675046a03843fc2b731d28a8b3018bbb8376c04309",
+      "readme_download_url": "https://raw.githubusercontent.com/coollabsio/coolify/v4.x/README.md",
+      "readme_sha256": "324f6cd6ebd37d20811db6c6c1b2b90bf3aad4a18af6ff6f8c6fa9d7976ea4e9",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__cronitorio__cronitor-cli.md",
       "readme_download_url": null,
       "readme_sha256": "71748255441ccabbf73f8fa4dd3039d465996e2d8d49283f56b8efe4c76532b6",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/crowdsecurity/crowdsec",
-      "repo_url": "github.com/crowdsecurity/crowdsec",
-      "host": "github.com",
-      "owner": "crowdsecurity",
-      "repo": "crowdsec",
-      "app_references": [
-        "crowdsec"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__crowdsecurity__crowdsec.md",
-      "readme_download_url": null,
-      "readme_sha256": "69522c4cc287be2cccb6b05e7a48f6e7deb684fe8262b7bda60fe302df64da2d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/cryptpad/cryptpad",
-      "repo_url": "github.com/cryptpad/cryptpad",
-      "host": "github.com",
-      "owner": "cryptpad",
-      "repo": "cryptpad",
-      "app_references": [
-        "cryptpad"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__cryptpad__cryptpad.md",
-      "readme_download_url": null,
-      "readme_sha256": "26453d42d38505412fd579f153a7c707c6e10f86f01324b9aa6ecd9a6a9c0c3e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/cshum/imagor-studio",
-      "repo_url": "github.com/cshum/imagor-studio",
-      "host": "github.com",
-      "owner": "cshum",
-      "repo": "imagor-studio",
-      "app_references": [
-        "imagor-studio"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__cshum__imagor-studio.md",
-      "readme_download_url": null,
-      "readme_sha256": "daeaea21d2d6c345a7c7b56877c70a2eabeecf29f999bb9ade13d4d8caf598b2",
       "error": null
     }
   ]

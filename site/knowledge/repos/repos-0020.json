@@ -1,8 +1,113 @@
 {
   "chunk": 20,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "repo_key": "github.com/opencloud-eu/opencloud",
+      "repo_url": "github.com/opencloud-eu/opencloud",
+      "host": "github.com",
+      "owner": "opencloud-eu",
+      "repo": "opencloud",
+      "app_references": [
+        "opencloud"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__opencloud-eu__opencloud.md",
+      "readme_download_url": null,
+      "readme_sha256": "7488d6f79e878b8c69e8433bede9f3b5a177cadfebc4898fa4111f7ac0335eba",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/openemr/openemr",
+      "repo_url": "github.com/openemr/openemr",
+      "host": "github.com",
+      "owner": "openemr",
+      "repo": "openemr",
+      "app_references": [
+        "openemr"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__openemr__openemr.md",
+      "readme_download_url": null,
+      "readme_sha256": "14d25916a4edf1f4c77099507c3ee6155fc42a08d63baac7c17bab52f93621bd",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/openspeedtest/Speed-Test",
+      "repo_url": "github.com/openspeedtest/Speed-Test",
+      "host": "github.com",
+      "owner": "openspeedtest",
+      "repo": "Speed-Test",
+      "app_references": [
+        "openspeedtest"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__openspeedtest__Speed-Test.md",
+      "readme_download_url": null,
+      "readme_sha256": "ca702fe3611bf21b376fe0ae4bfb627fb13a6f8d2563efae63b886a16ea532bd",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/operacle/checkcle",
+      "repo_url": "github.com/operacle/checkcle",
+      "host": "github.com",
+      "owner": "operacle",
+      "repo": "checkcle",
+      "app_references": [
+        "checkcle"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__operacle__checkcle.md",
+      "readme_download_url": null,
+      "readme_sha256": "59ffc72241f00f27a7f4f40b0e5fdc9e1fc4f4996edf3d97f2718a155c55f36f",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/operately/operately",
+      "repo_url": "github.com/operately/operately",
+      "host": "github.com",
+      "owner": "operately",
+      "repo": "operately",
+      "app_references": [
+        "operately"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__operately__operately.md",
+      "readme_download_url": null,
+      "readme_sha256": "ecf5c6caf0301518c00ffaadf14448786090d20f5043e4cd336b9d9413e17c5b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/operational-co/operational.co",
+      "repo_url": "github.com/operational-co/operational.co",
+      "host": "github.com",
+      "owner": "operational-co",
+      "repo": "operational.co",
+      "app_references": [
+        "operational"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__operational-co__operational.co.md",
+      "readme_download_url": null,
+      "readme_sha256": "d688834464a808653cd880872d82cb55961a8defea83b494819e2142766f932c",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/opf/openproject",
+      "repo_url": "github.com/opf/openproject",
+      "host": "github.com",
+      "owner": "opf",
+      "repo": "openproject",
+      "app_references": [
+        "openproject"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__opf__openproject.md",
+      "readme_download_url": null,
+      "readme_sha256": "eeda2ddd87286924a978404f1c3b1f5f079a0c50daed8110ac9c14a84ed7c1a9",
+      "error": null
+    },
     {
       "repo_key": "github.com/opnsense/core",
       "repo_url": "github.com/opnsense/core",
@@ -42,9 +147,9 @@
       "app_references": [
         "rustypaste"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__orhun__rustypaste.md",
-      "readme_download_url": "https://raw.githubusercontent.com/orhun/rustypaste/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "5e04e1c27c26ba3a6665b1b623c53d452a2ad13224c5795b6aab5ce042f83a3f",
       "error": null
     },
@@ -267,10 +372,10 @@
       "app_references": [
         "paperless-ngx"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__paperless-ngx__paperless-ngx.md",
-      "readme_download_url": null,
-      "readme_sha256": "61917eeabd6ef9a19047a2aca6c746dfbe75e0466a0f053bfcd1c3d106c8b970",
+      "readme_download_url": "https://raw.githubusercontent.com/paperless-ngx/paperless-ngx/dev/README.md",
+      "readme_sha256": "c53f8a4f9a6ceb243992ec10113d3c68307736ad9892351593da0bd6ae77479b",
       "error": null
     },
     {
@@ -282,9 +387,9 @@
       "app_references": [
         "papermark"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__papermark__papermark.md",
-      "readme_download_url": "https://raw.githubusercontent.com/papermark/papermark/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e42afe0b82218aac2ec4e55affe14d8532ab3795a4f48ad89c4e5edff8481fb9",
       "error": null
     },
@@ -300,7 +405,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__papra-hq__papra.md",
       "readme_download_url": "https://raw.githubusercontent.com/papra-hq/papra/main/README.md",
-      "readme_sha256": "23d10fe7ebbf96100fbe86d36d655a5bdb6a08b0465ee5a3259d0fd19aad0e1d",
+      "readme_sha256": "3251be23c26ff59ae4a2f231b5acd99e7aeb90bec1e69de6f4b2163682f8f58e",
       "error": null
     },
     {
@@ -387,10 +492,10 @@
       "app_references": [
         "penpot"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__penpot__penpot.md",
-      "readme_download_url": null,
-      "readme_sha256": "e1c395466906343aec2bacb54ba86b869d46a11ce61863f1e3dcaea9a97edbc3",
+      "readme_download_url": "https://raw.githubusercontent.com/penpot/penpot/develop/README.md",
+      "readme_sha256": "325f4eaba57d401796d29fe1297a5fcccb211d6c829c0b627609e19dea2d5b7b",
       "error": null
     },
     {
@@ -465,7 +570,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
       "readme_download_url": "https://raw.githubusercontent.com/pglombardo/PasswordPusher/master/README.md",
-      "readme_sha256": "f3abaca10961858865462c242be46aa7df8128a4405ed20c7478ee40b0c428e3",
+      "readme_sha256": "205de8a6ddaeff5e8c11f3a80c2d54b94e9081db8d233cc0c9ca7d55e0683617",
       "error": null
     },
     {
@@ -552,10 +657,10 @@
       "app_references": [
         "pinkary"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pinkary-project__pinkary.com.md",
-      "readme_download_url": null,
-      "readme_sha256": "c254c7e88192faf0b29b4966d3eb160df2f5f9fe13aaba437798a5346185830b",
+      "readme_download_url": "https://raw.githubusercontent.com/pinkary-project/pinkary.com/main/README.md",
+      "readme_sha256": "2e7a7aedd9499c8b854a305ab9e1c646d9c66d5a13ddb755991ab186d26c75d2",
       "error": null
     },
     {
@@ -646,111 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__plausible__analytics.md",
       "readme_download_url": null,
       "readme_sha256": "9d9c5a98250a1bbaf0e52032f4dba4a1a20461b21f093590793054697a6fa4ca",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pldubouilh/gossa",
-      "repo_url": "github.com/pldubouilh/gossa",
-      "host": "github.com",
-      "owner": "pldubouilh",
-      "repo": "gossa",
-      "app_references": [
-        "gossa"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pldubouilh__gossa.md",
-      "readme_download_url": null,
-      "readme_sha256": "c84d96a926f606a22ed5c9f9446a85231e76145affcc7ab797a12985d98fd405",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pocket-id/pocket-id",
-      "repo_url": "github.com/pocket-id/pocket-id",
-      "host": "github.com",
-      "owner": "pocket-id",
-      "repo": "pocket-id",
-      "app_references": [
-        "pocket-id"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pocket-id__pocket-id.md",
-      "readme_download_url": null,
-      "readme_sha256": "517b6ffe44c9b2c927da313fb47a70d456d54bf2907bffaf74b9c08cfa125edd",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pocketbase/pocketbase",
-      "repo_url": "github.com/pocketbase/pocketbase",
-      "host": "github.com",
-      "owner": "pocketbase",
-      "repo": "pocketbase",
-      "app_references": [
-        "pocketbase"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__pocketbase__pocketbase.md",
-      "readme_download_url": "https://raw.githubusercontent.com/pocketbase/pocketbase/master/README.md",
-      "readme_sha256": "52f24855e84d34624dcb41c531a9970d87560eb8ad739942507f4d46d42f5ccc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/polius/FileSync",
-      "repo_url": "github.com/polius/FileSync",
-      "host": "github.com",
-      "owner": "polius",
-      "repo": "FileSync",
-      "app_references": [
-        "filesync"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__polius__FileSync.md",
-      "readme_download_url": null,
-      "readme_sha256": "8e3536380ae7bb04411419b8955ffb2cae35451901316c7704e91c6778dc8fc3",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pommee/goaway",
-      "repo_url": "github.com/pommee/goaway",
-      "host": "github.com",
-      "owner": "pommee",
-      "repo": "goaway",
-      "app_references": [
-        "goaway"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pommee__goaway.md",
-      "readme_download_url": null,
-      "readme_sha256": "90d00d3539d635c0bb0fc66e5ab7da9fd6b98622a020d2faf704844a80317e52",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/portainer/portainer",
-      "repo_url": "github.com/portainer/portainer",
-      "host": "github.com",
-      "owner": "portainer",
-      "repo": "portainer",
-      "app_references": [
-        "portainer"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__portainer__portainer.md",
-      "readme_download_url": null,
-      "readme_sha256": "d9e5186d873d653c17f48e3621eff0229aa886d793182f4acb87c6f828e0f296",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/positive-intentions/chat",
-      "repo_url": "github.com/positive-intentions/chat",
-      "host": "github.com",
-      "owner": "positive-intentions",
-      "repo": "chat",
-      "app_references": [
-        "positive-intentions-chat"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__positive-intentions__chat.md",
-      "readme_download_url": null,
-      "readme_sha256": "806f5ba7cbdd293dc92b6ab0bf4e9f5282cf11ea3751a4446c8d260213417474",
       "error": null
     }
   ]

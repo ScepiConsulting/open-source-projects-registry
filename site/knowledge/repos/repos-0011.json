@@ -1,8 +1,53 @@
 {
   "chunk": 11,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "repo_key": "github.com/crowdsecurity/crowdsec",
+      "repo_url": "github.com/crowdsecurity/crowdsec",
+      "host": "github.com",
+      "owner": "crowdsecurity",
+      "repo": "crowdsec",
+      "app_references": [
+        "crowdsec"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__crowdsecurity__crowdsec.md",
+      "readme_download_url": null,
+      "readme_sha256": "69522c4cc287be2cccb6b05e7a48f6e7deb684fe8262b7bda60fe302df64da2d",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/cryptpad/cryptpad",
+      "repo_url": "github.com/cryptpad/cryptpad",
+      "host": "github.com",
+      "owner": "cryptpad",
+      "repo": "cryptpad",
+      "app_references": [
+        "cryptpad"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__cryptpad__cryptpad.md",
+      "readme_download_url": null,
+      "readme_sha256": "26453d42d38505412fd579f153a7c707c6e10f86f01324b9aa6ecd9a6a9c0c3e",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/cshum/imagor-studio",
+      "repo_url": "github.com/cshum/imagor-studio",
+      "host": "github.com",
+      "owner": "cshum",
+      "repo": "imagor-studio",
+      "app_references": [
+        "imagor-studio"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__cshum__imagor-studio.md",
+      "readme_download_url": "https://raw.githubusercontent.com/cshum/imagor-studio/main/README.md",
+      "readme_sha256": "8ba32ebf062dbdd5a3aa3d50ba01305c3d537e55af62f6cb4f9d9c639fceeace",
+      "error": null
+    },
     {
       "repo_key": "github.com/cu/silicon",
       "repo_url": "github.com/cu/silicon",
@@ -60,7 +105,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dagucloud__dagu.md",
       "readme_download_url": "https://raw.githubusercontent.com/dagucloud/dagu/main/README.md",
-      "readme_sha256": "6210e19f3085c2bbd01067fd96d5afc4de1ad79eea33fca6f49a28be316cfa10",
+      "readme_sha256": "f6d093ff45bf81a0dd0b779052d9b8c28e2d1e2dd1be9d84ab7e5216d0a9df1e",
       "error": null
     },
     {
@@ -72,10 +117,10 @@
       "app_references": [
         "plikshare"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__damian-krychowski__plikshare.md",
-      "readme_download_url": null,
-      "readme_sha256": "c03615f4b1d7d29b661e540cc0218ec9fff590e1b26a2e535915288fff167288",
+      "readme_download_url": "https://raw.githubusercontent.com/damian-krychowski/plikshare/main/README.md",
+      "readme_sha256": "3cba0d362294f8538beffad827c855e323532fce9bdb7d20029668bde4e5b12e",
       "error": null
     },
     {
@@ -102,10 +147,10 @@
       "app_references": [
         "vaultwarden"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dani-garcia__vaultwarden.md",
-      "readme_download_url": null,
-      "readme_sha256": "99a45ce5f5bb9a4c0914a952fa25abe19a27f027ee9cbb2ca58f0d580d7b160d",
+      "readme_download_url": "https://raw.githubusercontent.com/dani-garcia/vaultwarden/main/README.md",
+      "readme_sha256": "5c7e29e287f600fe1979d196d53f94cd8f87f9c0de1acf6481fde510fbfdd4fc",
       "error": null
     },
     {
@@ -147,10 +192,10 @@
       "app_references": [
         "hortusfox"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__danielbrendel__hortusfox-web.md",
-      "readme_download_url": null,
-      "readme_sha256": "1c47a6cb4960a7cf9f93df3fbdde215ae308a42fbf2aa7c3461d5ff728489915",
+      "readme_download_url": "https://raw.githubusercontent.com/danielbrendel/hortusfox-web/main/README.md",
+      "readme_sha256": "7ee25c81476141c0f3dcb605742496a375c6bfafb9ae793d4e2f1dbcce914a25",
       "error": null
     },
     {
@@ -192,10 +237,10 @@
       "app_references": [
         "databasus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__databasus__databasus.md",
-      "readme_download_url": null,
-      "readme_sha256": "2e65c9f9ee9803287f027008312b535b971d243fa797c7278723dcaad5c8dab7",
+      "readme_download_url": "https://raw.githubusercontent.com/databasus/databasus/main/README.md",
+      "readme_sha256": "7bf379c5c9fb26e7cbd86d5c7e997fdfe2008171cf03e4677621f44a02ca3a1a",
       "error": null
     },
     {
@@ -252,9 +297,9 @@
       "app_references": [
         "cloudbeaver"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dbeaver__cloudbeaver.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dbeaver/cloudbeaver/devel/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d941552ba155fa8cebe45595c71f1f520db41c0f6153c1ddc1df81cd394fde2c",
       "error": null
     },
@@ -319,6 +364,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/denho/faved",
+      "repo_url": "github.com/denho/faved",
+      "host": "github.com",
+      "owner": "denho",
+      "repo": "faved",
+      "app_references": [
+        "faved"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__denho__faved.md",
+      "readme_download_url": "https://raw.githubusercontent.com/denho/faved/main/README.md",
+      "readme_sha256": "2d0bb3e5aa568a602cfb0627f60058c705be3b981e1cbe4c23135d2c298972f1",
+      "error": null
+    },
+    {
       "repo_key": "github.com/deuxfleurs-org/garage",
       "repo_url": "github.com/deuxfleurs-org/garage",
       "host": "github.com",
@@ -360,7 +420,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dgtlmoon__changedetection.io.md",
       "readme_download_url": "https://raw.githubusercontent.com/dgtlmoon/changedetection.io/master/README.md",
-      "readme_sha256": "ef4c1356d097c58420f011082c86dd77a68b7e3e5283f0a0251c5ee5bcf500d5",
+      "readme_sha256": "190fa9bf80e2bb807d846083e6ecb89c865b6ab39452c2d8fa2a0f77c157a799",
       "error": null
     },
     {
@@ -537,9 +597,9 @@
       "app_references": [
         "nps-enhanced"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__djylb__nps.md",
-      "readme_download_url": "https://raw.githubusercontent.com/djylb/nps/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b8d6c76905ed890a8d3a1d188bb607e78ed0505502931f498c114c541c7372aa",
       "error": null
     },
@@ -582,9 +642,9 @@
       "app_references": [
         "isponsorblocktv"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dmunozv04__iSponsorBlockTV.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dmunozv04/iSponsorBlockTV/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b4250a1d5bc6c617585ebbc65db6f063ea7778d64dc839f6758dff1b6696f404",
       "error": null
     },
@@ -691,66 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__dokkaner__teemii.md",
       "readme_download_url": null,
       "readme_sha256": "efc8688b260bf501c2447b9ad734b5bd6a0c60adc3b4c3a074919705d409d4ae",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/dokku/dokku",
-      "repo_url": "github.com/dokku/dokku",
-      "host": "github.com",
-      "owner": "dokku",
-      "repo": "dokku",
-      "app_references": [
-        "dokku"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__dokku__dokku.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dokku/dokku/master/README.md",
-      "readme_sha256": "395613c40472180db56ded54ccc1b2b2a190b57570669ca4f18aff913a05197c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/dokuwiki/dokuwiki",
-      "repo_url": "github.com/dokuwiki/dokuwiki",
-      "host": "github.com",
-      "owner": "dokuwiki",
-      "repo": "dokuwiki",
-      "app_references": [
-        "dokuwiki"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__dokuwiki__dokuwiki.md",
-      "readme_download_url": null,
-      "readme_sha256": "670940c5c5b08881811a6ee39ac22c46d07bda874ad13d70190952f90de8f2ca",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/domainmod/domainmod",
-      "repo_url": "github.com/domainmod/domainmod",
-      "host": "github.com",
-      "owner": "domainmod",
-      "repo": "domainmod",
-      "app_references": [
-        "domainmod"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__domainmod__domainmod.md",
-      "readme_download_url": null,
-      "readme_sha256": "d8ab9759d6f9815a7b4632d3ef2e1fcf3d0e9159ca5d8440ff48e382b2bd5ac1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/donetick/donetick",
-      "repo_url": "github.com/donetick/donetick",
-      "host": "github.com",
-      "owner": "donetick",
-      "repo": "donetick",
-      "app_references": [
-        "donetick"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__donetick__donetick.md",
-      "readme_download_url": null,
-      "readme_sha256": "7dc087db918bbc68ce9174546b9b5656054cd78704151cb862ec689b6be729f7",
       "error": null
     }
   ]

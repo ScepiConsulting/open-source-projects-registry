@@ -1,8 +1,98 @@
 {
   "chunk": 17,
   "count": 50,
-  "generated_at": "2026-04-26T05:45:46Z",
+  "generated_at": "2026-05-03T06:05:30Z",
   "items": [
+    {
+      "repo_key": "github.com/linuxserver/Heimdall",
+      "repo_url": "github.com/linuxserver/Heimdall",
+      "host": "github.com",
+      "owner": "linuxserver",
+      "repo": "Heimdall",
+      "app_references": [
+        "heimdall"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__linuxserver__Heimdall.md",
+      "readme_download_url": null,
+      "readme_sha256": "3439fe18400c23ec66acbd8b6d2eb60c89f9366497156aa6a7e682f5af410e72",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/linuxserver/docker-swag",
+      "repo_url": "github.com/linuxserver/docker-swag",
+      "host": "github.com",
+      "owner": "linuxserver",
+      "repo": "docker-swag",
+      "app_references": [
+        "swag"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__linuxserver__docker-swag.md",
+      "readme_download_url": null,
+      "readme_sha256": "f688d27f08ca25d6c71d92be93cb0ae5b435d20628d5bcbdf4ef5655cb23ae09",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/linuxserver/docker-webtop",
+      "repo_url": "github.com/linuxserver/docker-webtop",
+      "host": "github.com",
+      "owner": "linuxserver",
+      "repo": "docker-webtop",
+      "app_references": [
+        "linuxserver-webtop"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__linuxserver__docker-webtop.md",
+      "readme_download_url": null,
+      "readme_sha256": "9fd1814f441bae2e0fd9479859f8b807e85385de250211d0a01a917253a0a916",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/liveblog/liveblog",
+      "repo_url": "github.com/liveblog/liveblog",
+      "host": "github.com",
+      "owner": "liveblog",
+      "repo": "liveblog",
+      "app_references": [
+        "live-blog"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__liveblog__liveblog.md",
+      "readme_download_url": null,
+      "readme_sha256": "7140fca5c838a39a16c669c5642bb6d06251b222e5f82f21126e7a9bf14e9f58",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/livebook-dev/livebook",
+      "repo_url": "github.com/livebook-dev/livebook",
+      "host": "github.com",
+      "owner": "livebook-dev",
+      "repo": "livebook",
+      "app_references": [
+        "livebook"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__livebook-dev__livebook.md",
+      "readme_download_url": null,
+      "readme_sha256": "1ba77bedda7bec908386e7f05380e8169fead4fdd7a2d1815d7782e4106a7c07",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/lklynet/aurral",
+      "repo_url": "github.com/lklynet/aurral",
+      "host": "github.com",
+      "owner": "lklynet",
+      "repo": "aurral",
+      "app_references": [
+        "aurral"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__lklynet__aurral.md",
+      "readme_download_url": null,
+      "readme_sha256": "ad6e4135e60c40f76da42a53403fe6552366f491dff2fa5c282573ad4252c55b",
+      "error": null
+    },
     {
       "repo_key": "github.com/lldap/lldap",
       "repo_url": "github.com/lldap/lldap",
@@ -120,7 +210,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__logseq__logseq.md",
       "readme_download_url": "https://raw.githubusercontent.com/logseq/logseq/master/README.md",
-      "readme_sha256": "e5d6682811031d6fb70667b995344147abda1597a83c44493a15b3d558cbba58",
+      "readme_sha256": "d95b34ee31f88cc3b7854e17acd9a996865ca2d9fdede5dcbfa921d0ecf1bdbe",
       "error": null
     },
     {
@@ -252,9 +342,9 @@
       "app_references": [
         "rallly"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__lukevella__rallly.md",
-      "readme_download_url": "https://raw.githubusercontent.com/lukevella/rallly/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a0d51cdec2b370399a17a9937dc664f9d3062ebdd995bf1cfcaa3b10ae48a7ac",
       "error": null
     },
@@ -372,10 +462,10 @@
       "app_references": [
         "dockcheck"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__mag37__dockcheck.md",
-      "readme_download_url": null,
-      "readme_sha256": "0aa84679b63cae03a680c3f57414bd62e8ca6f2f887980fe56469743af086938",
+      "readme_download_url": "https://raw.githubusercontent.com/mag37/dockcheck/main/README.md",
+      "readme_sha256": "48bec8d156947b9620320ba1891bb336a302a26f3a6a3ea7d748fc40c1f42292",
       "error": null
     },
     {
@@ -484,6 +574,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/marcpope/borgbackupserver",
+      "repo_url": "github.com/marcpope/borgbackupserver",
+      "host": "github.com",
+      "owner": "marcpope",
+      "repo": "borgbackupserver",
+      "app_references": [
+        "borg-backup-server"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__marcpope__borgbackupserver.md",
+      "readme_download_url": "https://raw.githubusercontent.com/marcpope/borgbackupserver/main/README.md",
+      "readme_sha256": "dec71e67f2907b58fcf2959b44e5a95eb6fb6934668ab4193665717066590989",
+      "error": null
+    },
+    {
       "repo_key": "github.com/markbeep/AudioBookRequest",
       "repo_url": "github.com/markbeep/AudioBookRequest",
       "host": "github.com",
@@ -522,10 +627,10 @@
       "app_references": [
         "docktail"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__marvinvr__docktail.md",
-      "readme_download_url": null,
-      "readme_sha256": "f61b15becf1a3807907081b452b0a7b661d7b491c924c582f3b8c0ed7a37690e",
+      "readme_download_url": "https://raw.githubusercontent.com/marvinvr/docktail/main/README.md",
+      "readme_sha256": "a30dc00d53ac6bbcf452b4f7da35200f83470242a2d89b2e175265cd27a846ea",
       "error": null
     },
     {
@@ -615,7 +720,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__matze__wastebin.md",
       "readme_download_url": "https://raw.githubusercontent.com/matze/wastebin/master/README.md",
-      "readme_sha256": "b66496d3e6dfa85c6fb7b9e5f90777ab9b346df179c1224c6e0226d53261e8a3",
+      "readme_sha256": "e182e99bd24e8ab6a363cce275c280bf29c790fc2dd6c800b8dacf4dfeaa29e2",
       "error": null
     },
     {
@@ -646,111 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__maxdorninger__MediaManager.md",
       "readme_download_url": null,
       "readme_sha256": "9535911469c64b0e1c18615775c29cf3142141ed9cfaa860bbc994afdb66f998",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/mayswind/ezbookkeeping",
-      "repo_url": "github.com/mayswind/ezbookkeeping",
-      "host": "github.com",
-      "owner": "mayswind",
-      "repo": "ezbookkeeping",
-      "app_references": [
-        "ezbookkeeping"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__mayswind__ezbookkeeping.md",
-      "readme_download_url": "https://raw.githubusercontent.com/mayswind/ezbookkeeping/main/README.md",
-      "readme_sha256": "9e9e4f768b2c88f36d77d20445a84d737a2f85f4b450461e0bf32fb919c24242",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/mdshack/shotshare",
-      "repo_url": "github.com/mdshack/shotshare",
-      "host": "github.com",
-      "owner": "mdshack",
-      "repo": "shotshare",
-      "app_references": [
-        "shotshare"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__mdshack__shotshare.md",
-      "readme_download_url": null,
-      "readme_sha256": "f4a9d45520082d19d7bb6e3cb89861b272dc8bfa7a5b375d72f7d025b022f1a2",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/mealie-recipes/mealie",
-      "repo_url": "github.com/mealie-recipes/mealie",
-      "host": "github.com",
-      "owner": "mealie-recipes",
-      "repo": "mealie",
-      "app_references": [
-        "mealie"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__mealie-recipes__mealie.md",
-      "readme_download_url": null,
-      "readme_sha256": "7a87d6463aba4d2050b89eb4e069b18e5b25ba268372234edbd8d6e8b34650fc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/meceware/wapy.dev",
-      "repo_url": "github.com/meceware/wapy.dev",
-      "host": "github.com",
-      "owner": "meceware",
-      "repo": "wapy.dev",
-      "app_references": [
-        "wapy-dev"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__meceware__wapy.dev.md",
-      "readme_download_url": null,
-      "readme_sha256": "d91420cd441800a6b0c3009b3d5f361a32fb2f26d55ad16341a0d1feadaab856",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/medama-io/medama",
-      "repo_url": "github.com/medama-io/medama",
-      "host": "github.com",
-      "owner": "medama-io",
-      "repo": "medama",
-      "app_references": [
-        "medama"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__medama-io__medama.md",
-      "readme_download_url": null,
-      "readme_sha256": "302c57f65f6d65ef411fb591158e38aff11a82a89ac4eced798ee2f0c505f1eb",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/mediacms-io/mediacms",
-      "repo_url": "github.com/mediacms-io/mediacms",
-      "host": "github.com",
-      "owner": "mediacms-io",
-      "repo": "mediacms",
-      "app_references": [
-        "mediacms"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__mediacms-io__mediacms.md",
-      "readme_download_url": null,
-      "readme_sha256": "4c2ca2819bf1b8b5ddd5b0e4ca5717b00ba95e5fb8961a81c5f621af203c3c44",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/medusajs/medusa",
-      "repo_url": "github.com/medusajs/medusa",
-      "host": "github.com",
-      "owner": "medusajs",
-      "repo": "medusa",
-      "app_references": [
-        "medusa"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__medusajs__medusa.md",
-      "readme_download_url": null,
-      "readme_sha256": "66c99299d390acc3694baff7d502fa063df6eaa1ca3910badad6d292996b226a",
       "error": null
     }
   ]
