@@ -2,7 +2,14 @@
 
 <img src="web/public/static/logo.webp" height="250px">
 
+[![CI](https://github.com/flohoss/gocron/actions/workflows/ci.yaml/badge.svg)](https://github.com/flohoss/gocron/actions/workflows/ci.yaml)
+[![Coverage](https://raw.githubusercontent.com/wiki/flohoss/gocron/coverage.svg)](https://github.com/flohoss/gocron/wiki/coverage.html)
+
 A task scheduler built with Go and Vue.js that allows users to specify recurring jobs via a simple YAML configuration file. The scheduler reads job definitions, executes commands at specified times using cron expressions, and passes in environment variables for each job.
+
+Tagged GitHub releases include downloadable Linux binaries. Run `./gocron_<version>_linux_<arch> --version` to inspect the embedded version metadata of a downloaded release binary.
+
+The server supports `--config /path/to/config` for a non-default configuration folder.
 
 </div>
 
@@ -25,7 +32,6 @@ A task scheduler built with Go and Vue.js that allows users to specify recurring
 - [License](#license)
 - [Development setup](#development-setup)
   - [Automatic rebuild and reload](#automatic-rebuild-and-reload)
-  - [Rebuild types](#rebuild-types)
 
 ## Features
 
@@ -70,6 +76,18 @@ services:
       - '8156:8156'
 ```
 
+By default, gocron reads `./config/config.yaml`. You can optionally override the folder with `--config /path/to/config`, and gocron will use `config.yaml` in that folder. SQLite data is stored in the same folder.
+
+### Environment overrides (`GC_`)
+
+Config values can be overridden via environment variables using the `GC_` prefix.
+
+- `GC_LOG_LEVEL=debug` overrides `log_level`
+- `GC_SERVER_PORT=9000` overrides `server.port`
+- `GC_HEALTHCHECK_TYPE=GET` overrides `healthcheck.type`
+
+Rule: dots become underscores and keys are uppercased (`server.address` -> `GC_SERVER_ADDRESS`).
+
 ## Screenshots
 
 ### Dark mode
@@ -103,7 +121,7 @@ services:
 
 The entire configuration is managed via the YAML file, including settings for the timezone, logging, and server.
 
-For a complete and working configuration example, please refer to the [`config.yaml`](/config/config.yaml) file in the repository.
+For a complete and working configuration example, please refer to the [`config/config.yaml`](config/config.yaml) file in the repository.
 
 ### Software
 
@@ -156,7 +174,21 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ```bash
 docker compose up -d
-docker compose run --rm cypress
+docker compose --profile test run --rm e2e
+docker compose down
+```
+
+### Run E2E tests
+
+```bash
+# Install e2e dependencies
+docker compose run --rm yarn-e2e install --frozen-lockfile
+
+# Run e2e tests in Docker
+docker compose --profile test run --rm e2e
+
+# Open Cypress UI from the e2e package (optional)
+docker compose run --rm yarn-e2e open
 ```
 
 ### Update Dependencies
@@ -165,6 +197,10 @@ docker compose run --rm cypress
 # Node packages
 docker compose run --rm yarn install --frozen-lockfile
 docker compose run --rm yarn upgrade --latest
+
+# E2E packages
+docker compose run --rm yarn-e2e install --frozen-lockfile
+docker compose run --rm yarn-e2e upgrade --latest
 
 # Go packages
 docker compose run --rm go get -u ./...

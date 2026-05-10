@@ -72,6 +72,36 @@ Check out our official docs site here: **[xyOps Documentation](https://docs.xyop
 
 Full documentation is also provided inside the xyOps app.  Just click the "Documentation" link in the sidebar.
 
+# Videos
+
+Visit our official YouTube channel for xyOps tutorials: [@PixlCore-Media](https://www.youtube.com/@PixlCore-Media)
+
+Watch a quick overview of xyOps to see how the platform helps teams orchestrate workflows, monitor systems, and operate with confidence:
+
+[![Watch the video](https://img.youtube.com/vi/NxZKylkKfOg/hqdefault.jpg)](https://www.youtube.com/watch?v=NxZKylkKfOg)
+
+# Community
+
+## Reddit
+
+Join our subreddit to get help from the xyOps community:
+
+https://reddit.com/r/xyOps/
+
+## Discord
+
+Join our Discord server to chat with community members in real-time:
+
+https://discord.gg/FTzqmbGbdd
+
+## Social Media
+
+Follow us on social media:
+
+- [Bluesky](https://pixlcore.bsky.social/)
+- [Mastodon](https://mastodon.social/@pixlcore)
+- [LinkedIn](https://linkedin.com/company/pixlcore)
+
 # Contributing
 
 Please read our **[Contributing Guide](https://github.com/pixlcore/xyops/blob/main/CONTRIBUTING.md)** before opening a pull request.

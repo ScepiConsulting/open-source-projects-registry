@@ -115,7 +115,6 @@ Prior versions of Jackett are no longer supported.
  * Free JAV Torrent
  * GamesTorrents
  * HDRTorrent
- * ilCorSaRoNeRo
  * Internet Archive (archive.org)
  * kickasstorrents.to
  * kickasstorrents.ws
@@ -603,6 +602,7 @@ Prior versions of Jackett are no longer supported.
  * SpeedCD
  * Speedmaster HD [![(invite needed)][inviteneeded]](#)
  * Spirit of Revolution [![(invite needed)][inviteneeded]](#)
+ * SportsCora
  * SportsCult
  * SpringSunday (SSD) [![(invite needed)][inviteneeded]](#)
  * SunnyPT [![(invite needed)][inviteneeded]](#)

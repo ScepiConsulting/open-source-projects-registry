@@ -15,6 +15,7 @@ MinusPod is a self-hosted server that removes ads before you ever hit play. It t
   - [Ad Editor Workflow](#ad-editor-workflow)
   - [Screenshots](#screenshots)
 - [Configuration](#configuration)
+- [Experiments](#experiments)
 - [Finding Podcast RSS Feeds](#finding-podcast-rss-feeds)
 - [Usage](#usage)
   - [Audiobookshelf](#audiobookshelf)
@@ -211,6 +212,40 @@ Access the web UI at `http://localhost:8000/ui/` to add and manage feeds.
 
 `MINUSPOD_MASTER_PASSPHRASE` is strongly recommended for production. Without it, provider API keys go into the database as plaintext. Setting it later migrates existing plaintext rows to `enc:v1:` encrypted storage on the next boot, with a mandatory pre-migration SQLite snapshot in `data/backups/`. Restoring a backup requires the same passphrase that created it, so pick a long random value and keep it somewhere separate from the database.
 
+### CPU-only image (no GPU)
+
+No NVIDIA GPU? Pull the CPU variant. It drops the CUDA runtime layer and the bundled NVIDIA Python wheels; the image is around 3 GB instead of ~16 GB.
+
+Reuse the same `.env` and `data/` directory as the Quick Start, then:
+
+```bash
+docker compose -f docker-compose.cpu.yml up -d
+```
+
+That pulls `ttlequals0/minuspod:cpu` (the floating CPU tag). To pin a specific release, set `MINUSPOD_VERSION=2.0.21-cpu` in your `.env`. The `:latest` tag always points at the GPU image; CPU users should track `:cpu` or a versioned `-cpu` tag.
+
+Local CPU transcription with `faster-whisper` is slow. For anything beyond a quick test, offload Whisper to a remote API in your `.env`:
+
+```
+WHISPER_BACKEND=openai-api
+WHISPER_API_BASE_URL=https://api.groq.com/openai/v1
+WHISPER_API_KEY=gsk_your_key_here
+WHISPER_API_MODEL=whisper-large-v3-turbo
+```
+
+Groq, OpenAI, or a self-hosted whisper.cpp server (see `docker-compose.whisper.yml`) all work here.
+
+<details>
+<summary>Build the CPU image locally</summary>
+
+If you are modifying `Dockerfile.cpu` or want to compile from source, uncomment the `build:` block in `docker-compose.cpu.yml` and run with `--build`:
+
+```bash
+docker compose -f docker-compose.cpu.yml up -d --build
+```
+
+</details>
+
 ## Upgrading to 2.0.0+
 
 2.0.0 is a security hardening release. A `docker pull && restart` on a 1.x data volume boots without config changes, but several defaults tightened so a few setups need env-var tweaks. Full detail in `CHANGELOG.md`.
@@ -366,10 +401,49 @@ You can set the Anthropic, OpenAI-compatible, OpenRouter, Ollama, and remote Whi
 
 Two things have to be in place first:
 
-1. `MINUSPOD_MASTER_PASSPHRASE` set in the container environment. PBKDF2 derives the encryption key from it, so treat it like any other production secret: back it up, keep it stable, don't commit it. To rotate, use Settings > Security > Provider Key Encryption (or `POST /api/v1/settings/providers/rotate-passphrase`). The call re-encrypts every stored key in one transaction, then you must update the env var to the new value before the next restart — otherwise the next boot won't decrypt anything.
+1. `MINUSPOD_MASTER_PASSPHRASE` set in the container environment. PBKDF2 derives the encryption key from it, so treat it like any other production secret: back it up, keep it stable, don't commit it. To rotate, use Settings > Security > Provider Key Encryption (or `POST /api/v1/settings/providers/rotate-passphrase`). The call re-encrypts every stored key in one transaction, then you must update the env var to the new value before the next restart -- otherwise the next boot won't decrypt anything.
 2. An admin password set in the UI, so Settings is reachable. The password gates the surface only; it isn't part of the crypto. Changing it leaves stored keys untouched.
 
 If the passphrase is missing, the key inputs collapse to a "Setup required" note, the API returns `409 provider_crypto_unavailable`, and env-var credentials keep working. GET responses never include key values, only booleans plus a `db`/`env`/`none` source marker.
+
+## Experiments
+
+The Experiments section in Settings holds opt-in features that are still being evaluated. Everything here is disabled by default. Turning a feature on does not change behavior on existing processed episodes; it applies only to subsequent processing runs.
+
+### Ad Reviewer
+
+The ad reviewer is an opt-in third LLM stage that sits between detection and audio cutting. After pass 1 detection (and again after pass 2), the reviewer takes each candidate ad along with 60 seconds of transcript on either side and decides one of three things: confirm the detection as is, adjust the start or end timestamps within a configured cap, or reject the segment as a false positive. The reviewer also gets a second look at validator-rejected detections whose confidence sits within 20 percentage points of your `min_cut_confidence` slider, and may resurrect them as real ads.
+
+When to enable it:
+
+- Comedy and fiction podcasts that include in-bit fake sponsor reads (Welcome to Night Vale was the torture test for this feature)
+- News shows that read sponsor-adjacent copy editorially without it actually being an ad break
+- Hosts who organically mention their own other shows or Patreon, where the detector flags a non-ad as promotional
+- Episodes where you have noticed the cut is starting a few seconds late or ending a few seconds early
+
+Cost is one extra LLM call per detected ad (and one extra call per rejected detection in the resurrection band). With the default Claude pass-1 model and a typical episode that produces 4 to 8 ad detections, expect a small percentage increase in per-episode token spend rather than a doubling.
+
+Settings live under Experiments → Ad Reviewer:
+
+- **Enable ad reviewer** - master toggle, off by default
+- **Review model** - `Same as pass model` reuses the pass-1 detection model on pass-1 review and the verification model on pass-2 review. You can override to a single specific model for both reviewer passes (for example, run pass-1 detection on a smaller cheap model and run reviewer on a larger model that is better at boundary work)
+- **Max boundary shift** - caps how far the reviewer can move start or end timestamps when it chooses adjust. Default 60 seconds. Enforced in code regardless of what the prompt says
+- **Review prompt** - system prompt for the confirm/adjust/reject reviewer
+- **Resurrect prompt** - system prompt for the resurrect/reject reviewer over rejected detections
+
+Reviewer activity surfaces in two places:
+
+- The episode detail page shows the original timestamps on top and a `Reviewer: MM:SS - MM:SS` line beneath when the reviewer adjusted boundaries. Reviewer-rejected ads carry a `Source: Reviewer` tag in the rejected detections list.
+- The Stats page shows an Ad Reviewer Stats card with verdict counts (confirmed, adjusted, rejected, resurrected, failed), pass-1 and pass-2 adjustment counts, average boundary shift in seconds, and resurrection count. The card hides when the reviewer has not run.
+
+### Prompt placeholders
+
+Detection, verification, and reviewer prompts use explicit placeholder substitution rather than always appending dynamic content. Available placeholders:
+
+- `{sponsor_database}` - substituted at runtime with the dynamic sponsor list (the one that grows as new sponsors are detected). Available in the system, verification, review, and resurrect prompts. If you remove this placeholder from your customized prompt, no sponsor list is injected on that prompt.
+- `{max_boundary_shift_seconds}` - review prompt only. Substituted with the current `Max boundary shift` setting. The boundary cap is enforced in code regardless of whether the placeholder is in the prompt.
+
+If you customized your system or verification prompt before this release, the upgrade automatically appends `{sponsor_database}` to your prompt so behavior is preserved. The migration is idempotent and runs once.
 
 ## Finding Podcast RSS Feeds
 
@@ -537,8 +611,8 @@ Note: The AI model is configured via the Settings UI, not environment variables.
 
 [Ollama](https://ollama.com) is an alternative to the Anthropic API. MinusPod supports both flavors:
 
-- **Local** (`http://host:11434`) — no auth, no API costs, nothing leaves the machine.
-- **Cloud** (`https://ollama.com/api`) — same OpenAI-compatible endpoints, just with `Authorization: Bearer <key>` on every request. Free tier works for this pipeline. Grab a key at [ollama.com/settings/keys](https://ollama.com/settings/keys).
+- **Local** (`http://host:11434`) -- no auth, no API costs, nothing leaves the machine.
+- **Cloud** (`https://ollama.com/api`) -- same OpenAI-compatible endpoints, just with `Authorization: Bearer <key>` on every request. Free tier works for this pipeline. Grab a key at [ollama.com/settings/keys](https://ollama.com/settings/keys).
 
 Configuration is identical either way: pick `Ollama` in Settings > LLM Provider, set the Base URL, and (for Cloud) paste the key. The key is stored encrypted. Leave it blank for local.
 
@@ -781,17 +855,7 @@ Three-hour CPU runs with the largest Whisper model hit these. When they fire, th
 ### Setup
 
 1. Get an API key from [openrouter.ai/keys](https://openrouter.ai/keys)
-2. Use the pre-configured compose file:
-
-```bash
-# Create .env
-echo "OPENROUTER_API_KEY=sk-or-v1-your-key-here" > .env
-
-# Start
-docker compose -f docker-compose.openrouter.yml up -d
-```
-
-Or add OpenRouter to an existing setup:
+2. Add these to your `.env`, then start with `docker-compose.yml` (GPU) or `docker-compose.cpu.yml` (no GPU):
 
 ```bash
 LLM_PROVIDER=openrouter
@@ -807,8 +871,6 @@ Change the model in the Settings UI or with the `OPENAI_MODEL` env var. Any [Ope
 - `google/gemini-2.5-flash-preview` -- Gemini Flash via OpenRouter
 
 All of these can be changed at runtime from the Settings UI -- no container restart needed.
-
-See [`docker-compose.openrouter.yml`](docker-compose.openrouter.yml) for a full working example.
 
 ## LLM Pricing
 
@@ -1167,7 +1229,7 @@ MINUSPOD_MASTER_PASSPHRASE=your-passphrase \
 
 Runs from inside the container or any host with the repo checked out and `cryptography` installed. `DATA_PATH` points at the running instance's data dir (default `/app/data`).
 
-**Important caveat:** the salt is per-DB, not per-passphrase. If you rotate the passphrase (`POST /api/v1/settings/providers/rotate-passphrase`), old backups made under the previous passphrase are still decryptable, because rotation re-encrypts rows under a new salt + new DEK in place. But if you lose the DB entirely (full-volume loss, fresh install) and only have backup files, you cannot decrypt them even with the original passphrase — the salt is gone. Treat the passphrase and the DB together as the recovery bundle.
+**Important caveat:** the salt is per-DB, not per-passphrase. If you rotate the passphrase (`POST /api/v1/settings/providers/rotate-passphrase`), old backups made under the previous passphrase are still decryptable, because rotation re-encrypts rows under a new salt + new DEK in place. But if you lose the DB entirely (full-volume loss, fresh install) and only have backup files, you cannot decrypt them even with the original passphrase -- the salt is gone. Treat the passphrase and the DB together as the recovery bundle.
 
 Unencrypted `.db` files are regular SQLite databases. Restore them with `sqlite3` or by copying into place on a stopped instance.
 

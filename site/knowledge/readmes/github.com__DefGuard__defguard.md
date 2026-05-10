@@ -173,7 +173,7 @@ See the [documentation](https://docs.defguard.net/) for more information.
 
 ## Community and Support
 
-Reach out to our community via [GitHub Discussions](https://github.com/DefGuard/defguard/discussions/new/choose)
+Find us on Matrix: [#defguard:teonite.com](https://matrix.to/#/#defguard:teonite.com)
 
 ## License
 

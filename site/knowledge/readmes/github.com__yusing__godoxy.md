@@ -117,7 +117,7 @@ Configure Wildcard DNS Record(s) to point to machine running `GoDoxy`, e.g.
 2. Run setup script inside the directory, or [set up manually](#manual-setup)
 
    ```shell
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/yusing/godoxy/main/scripts/setup.sh)"
+   /bin/sh -c "$(curl -fsSL https://raw.githubusercontent.com/yusing/godoxy/main/scripts/setup.sh)"
    ```
 
 3. Start the docker compose service from generated `compose.yml`:
@@ -171,16 +171,18 @@ From the WebUI, you can:
 
 ## Update / Uninstall system agent
 
+Installer supports both systemd and Alpine/OpenRC (`rc-service`) hosts.
+
 Update:
 
 ```bash
-bash -c "$(curl -fsSL https://github.com/yusing/godoxy/raw/refs/heads/main/scripts/install-agent.sh)" -- update
+sh -c "$(curl -fsSL https://github.com/yusing/godoxy/raw/refs/heads/main/scripts/install-agent.sh)" -- update
 ```
 
 Uninstall:
 
 ```bash
-bash -c "$(curl -fsSL https://github.com/yusing/godoxy/raw/refs/heads/main/scripts/install-agent.sh)" -- uninstall
+sh -c "$(curl -fsSL https://github.com/yusing/godoxy/raw/refs/heads/main/scripts/install-agent.sh)" -- uninstall
 ```
 
 ## Screenshots

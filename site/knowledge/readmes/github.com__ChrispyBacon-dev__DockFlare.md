@@ -1,6 +1,10 @@
 <p align="center">
   <a href="https://dockflare.app" title="Now you're thinking with tunnels">
-    <img src="images/bannertr.png" width="500px" alt="DockFlare Banner" />
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="images/logo-files/logo-dark.svg">
+      <source media="(prefers-color-scheme: light)" srcset="images/logo-files/logo-light.svg">
+      <img src="images/logo-files/logo-light.svg" width="500px" alt="DockFlare Logo" />
+    </picture>
   </a>
 </p>
 
@@ -14,7 +18,7 @@
 <a href="https://github.com/ChrispyBacon-dev/DockFlare/stargazers">
   <img src="https://img.shields.io/github/stars/ChrispyBacon-dev/DockFlare?style=for-the-badge" alt="Stars">
 </a>
-  <a href="https://github.com/ChrispyBacon-dev/DockFlare/releases"><img src="https://img.shields.io/badge/Release-v3.1.1-blue.svg?style=for-the-badge" alt="Release"></a>
+  <a href="https://github.com/ChrispyBacon-dev/DockFlare/releases"><img src="https://img.shields.io/badge/Release-v3.1.2-blue.svg?style=for-the-badge" alt="Release"></a>
   <a href="https://hub.docker.com/r/alplat/dockflare"><img src="https://img.shields.io/docker/pulls/alplat/dockflare?style=for-the-badge" alt="Docker Pulls"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=for-the-badge" alt="Python"></a>
   <a href="https://github.com/ChrispyBacon-dev/DockFlare/blob/main/LICENSE.MD"><img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=for-the-badge" alt="License"></a>

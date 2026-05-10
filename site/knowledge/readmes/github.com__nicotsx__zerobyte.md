@@ -50,7 +50,7 @@ In order to run Zerobyte, you need to have Docker and Docker Compose installed o
 ```yaml
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.35
+    image: ghcr.io/nicotsx/zerobyte:v0.36
     container_name: zerobyte
     restart: unless-stopped
     cap_add:
@@ -110,10 +110,31 @@ Zerobyte can be customized using environment variables. Below are the available 
 | `TRUST_PROXY`         | When `true`, trust an existing `X-Forwarded-For` header from your reverse proxy. Leave `false` for direct deployments.                    | `false`                |
 | `TRUSTED_ORIGINS`     | Comma-separated list of extra trusted origins for CORS (e.g., `http://localhost:3000,http://example.com`).                                | (none)                 |
 | `WEBHOOK_ALLOWED_ORIGINS` | Comma-separated list of HTTP origins allowed for backup webhooks and outbound HTTP notification destinations.                          | (none)                 |
+| `WEBHOOK_TIMEOUT`     | Timeout for backup webhook requests in seconds.                                                                                           | `60`                   |
 | `LOG_LEVEL`           | Logging verbosity. Options: `debug`, `info`, `warn`, `error`.                                                                             | `info`                 |
 | `SERVER_IDLE_TIMEOUT` | Idle timeout for the server in seconds.                                                                                                   | `60`                   |
 | `RCLONE_CONFIG_DIR`   | Path to the directory containing `rclone.conf` inside the container. Change this if running as a non-root user.                           | `/root/.config/rclone` |
 | `PROVISIONING_PATH`   | Path to a JSON file with operator-managed repositories and volumes to sync at startup.                                                    | (none)                 |
+
+### Webhook and Notification Network Policy
+
+Backup webhooks and outbound notification destinations that can target arbitrary network hosts are restricted by `WEBHOOK_ALLOWED_ORIGINS`.
+
+The allowlist matches exact origins only: scheme, host, and port must match. Paths are ignored, so `https://hooks.example.com/backups` allows any path on `https://hooks.example.com`, but it does not allow `http://hooks.example.com`, `https://hooks.example.com:8443`, or `https://other.example.com`.
+
+This policy applies to:
+
+- backup pre/post webhook URLs
+- Generic HTTP notification URLs
+- Gotify server URLs
+- self-hosted ntfy server URLs
+- custom Shoutrrr URLs that point at generic HTTP or SMTP network targets
+
+The public ntfy.sh service and fixed-provider notification services such as Slack, Discord, Pushover, and Telegram do not need `WEBHOOK_ALLOWED_ORIGINS`.
+
+Backup webhooks do not follow redirects. Add the final destination origin to `WEBHOOK_ALLOWED_ORIGINS` and configure that final URL directly.
+
+Webhook headers are stored as plain text and must use one `Key: Value` header per line. `WEBHOOK_TIMEOUT` controls backup pre/post webhook request timeouts; notification delivery uses the underlying provider sender behavior.
 
 ### Provisioned Resources
 
@@ -135,7 +156,7 @@ If you only need to back up locally mounted folders and don't require remote sha
 ```yaml
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.35
+    image: ghcr.io/nicotsx/zerobyte:v0.36
     container_name: zerobyte
     restart: unless-stopped
     ports:
@@ -174,7 +195,7 @@ If you want to track a local directory on the same server where Zerobyte is runn
 ```diff
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.35
+    image: ghcr.io/nicotsx/zerobyte:v0.36
     container_name: zerobyte
     restart: unless-stopped
     cap_add:
@@ -249,7 +270,7 @@ Zerobyte can use [rclone](https://rclone.org/) to support 40+ cloud storage prov
    ```diff
    services:
      zerobyte:
-       image: ghcr.io/nicotsx/zerobyte:v0.35
+       image: ghcr.io/nicotsx/zerobyte:v0.36
        container_name: zerobyte
        restart: unless-stopped
        cap_add:

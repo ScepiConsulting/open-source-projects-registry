@@ -1,22 +1,24 @@
 <h1 align="center">
   <img src=".github/images/mazanoke-app-icon.png" alt="mazanoke icon" width="120">
 
-   MAZANOKE
+MAZANOKE
+
 </h1>
 
 <h2 align="center"> A self-hosted local image optimizer that runs in your browser.</h2>
-
 
 <center>
    <img src=".github/images/v1.1.5/featured-desktop-solo-dark.jpg" alt="mazanoke desktop screen capture dark mode" width="1200">
 </center>
 
 ## About
+
 MAZANOKE is a simple image optimizer that runs in your browser, works offline, and keeps your images private without ever leaving your device.
 
 Created for everyday people and designed to be shared with family and friends, it serves as an alternative to questionable "free" online tools.
 
 ## Table of Content
+
 - [Features](#features)
 - [Install](#install)
 - [Screenshots](#screenshots)
@@ -43,15 +45,16 @@ Created for everyday people and designed to be shared with family and friends, i
 ### Docker
 
 1. Using [Docker Compose](https://docs.docker.com/compose/):
-    ```yaml
-    services:
-      mazanoke:
-        container_name: mazanoke
-        image: ghcr.io/civilblur/mazanoke:latest
-        ports:
-          - "3474:80"
-    ```
-    Available environmental variables: [Configuration](./docs/configuration.md)
+   ```yaml
+   services:
+     mazanoke:
+       container_name: mazanoke
+       image: ghcr.io/civilblur/mazanoke:latest
+       ports:
+         - "3474:80"
+       restart: unless-stopped
+   ```
+   Available environmental variables: [Configuration](./docs/configuration.md)
 1. Access the app at `http://localhost:3474`
 
 ### Local
@@ -78,12 +81,13 @@ Created for everyday people and designed to be shared with family and friends, i
    <img src=".github/images/v1.1.5/featured-desktop-solo-light.jpg" alt="mazanoke desktop screen capture light mode" width="1200">
 </center>
 
-|    |   |
-| :---: | :---: |
-| Dark mode<br><img src=".github/images/v1.1.5/capture-desktop-dark.jpg" alt="mazanoke dark mode" width="90%%"> | Light mode<br><img src=".github/images/v1.1.5/capture-desktop-light.jpg" alt="mazanoke light mode" width="90%%">  |
-| Settings<br><img src=".github/images/v1.1.5/capture-desktop-solo-settings-dark.jpg" alt="mazanoke settings" width="90%%">  | Download images<br><img src=".github/images/v1.1.5/capture-desktop-solo-output-dark.jpg" alt="mazanoke settings" width="90%%">  |
+|                                                                                                                           |                                                                                                                                |
+| :-----------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------: |
+|       Dark mode<br><img src=".github/images/v1.1.5/capture-desktop-dark.jpg" alt="mazanoke dark mode" width="90%%">       |        Light mode<br><img src=".github/images/v1.1.5/capture-desktop-light.jpg" alt="mazanoke light mode" width="90%%">        |
+| Settings<br><img src=".github/images/v1.1.5/capture-desktop-solo-settings-dark.jpg" alt="mazanoke settings" width="90%%"> | Download images<br><img src=".github/images/v1.1.5/capture-desktop-solo-output-dark.jpg" alt="mazanoke settings" width="90%%"> |
 
 ## Attributions
+
 - [Browser Image Compression](https://github.com/Donaldcwl/browser-image-compression)
 - [heic-to](https://github.com/hoppergee/heic-to), [libheif](https://github.com/strukturag/libheif), [libde265](https://github.com/strukturag/libde265)
 - [JSZip](https://github.com/Stuk/jszip)
@@ -91,4 +95,5 @@ Created for everyday people and designed to be shared with family and friends, i
 [View full list and details](./docs/ATTRIBUTIONS.md)
 
 ## License
+
 [GNU General Public License v3.0](https://github.com/civilblur/mazanoke/blob/main/README.md)

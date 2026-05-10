@@ -154,11 +154,13 @@ The table below identifies the services this tool supports and some example serv
 | [Vapid (WebPush)](https://appriseit.com/services/vapid/) | vapid://    | (TCP) 443    | vapid://subscriber/target<br/>vapid://subscriber/target?subfile=path&keyfile=path
 | [Viber](https://appriseit.com/services/viber/) | viber://    | (TCP) 443    | viber://token/target
 | [Webex Teams (Cisco)](https://appriseit.com/services/wxteams/) | wxteams://  | (TCP) 443   | wxteams://Token
+| [WeChat (WeCom)](https://appriseit.com/services/wechat/) | wechat://  | (TCP) 443   | wechat://CorpID:AppSecret@AgentID/@all<br/>wechat://CorpID:AppSecret@AgentID/UserID
 | [WeCom Bot](https://appriseit.com/services/wecombot/) | wecombot://  | (TCP) 443   | wecombot://BotKey
 | [WhatsApp](https://appriseit.com/services/whatsapp/) | whatsapp://  | (TCP) 443   | whatsapp://AccessToken@FromPhoneID/ToPhoneNo<br/>whatsapp://Template:AccessToken@FromPhoneID/ToPhoneNo
 | [WxPusher](https://appriseit.com/services/wxpusher/) | wxpusher://  | (TCP) 443   | wxpusher://AppToken@UserID1/UserID2/UserIDN<br/>wxpusher://AppToken@Topic1/Topic2/Topic3<br/>wxpusher://AppToken@UserID1/Topic1/
 | [XBMC](https://appriseit.com/services/xbmc/) | xbmc:// or xbmcs://    | (TCP) 8080 or 443   | xbmc://hostname<br />xbmc://user@hostname<br />xbmc://user:password@hostname:port
 | [XMPP](https://appriseit.com/services/xmpp/) | xmpp:// or xmpps://    | (TCP) 5222 or 5223   | xmpp://user:pass@hostname<br />xmpps://user:pass@hostname/jid<br />xmpps://user:pass@hostname/jid1/jid2@example.ca
+| [Zoom](https://appriseit.com/services/zoom/) | zoom://  | (TCP) 443   | zoom://WebhookID/Token
 | [Zulip Chat](https://appriseit.com/services/zulip/) | zulip://  | (TCP) 443   | zulip://botname@Organization/Token<br />zulip://botname@Organization/Token/Stream<br />zulip://botname@Organization/Token/Email
 
 ## SMS Notifications
@@ -336,6 +338,24 @@ apprise -vv -t "Union Test" \
 apprise -vv -t "Intersection Test" \
    --config=~/apprise.yml \
    -g devops,critical
+```
+
+Tags also support an optional **priority prefix** and **retry suffix**. In your configuration file you assign a priority to a tag like `1:alerts` or `5:alerts`. A lower number means higher urgency.
+
+* **Escalation (no prefix)**: `-g alerts` dispatches priority-1 entries first. If they all succeed, Apprise returns early and never runs the priority-5 fallbacks. A failure in the lower-priority group triggers the next group as an escalation chain.
+* **Exclusive (with prefix)**: `-g "2:alerts"` notifies *only* services whose `alerts` tag has priority 2. No other priority levels are triggered.
+* **Per-call retry**: `-g "alerts:3"` retries each matched service up to 3 times on failure (overrides the service's own retry setting for this call only).
+* **Combined**: `-g "2:alerts:3"` -- exclusive priority-2 filter with up to 3 retries.
+
+```bash
+# Escalation: priority-1 first; skip priority-5 if all succeed
+apprise -vv -t "Alert" --config=~/apprise.yml -g alerts
+
+# Exclusive: only priority-2 alert services
+apprise -vv -t "Alert" --config=~/apprise.yml -g "2:alerts"
+
+# With retry override: retry each matched service up to 3 times
+apprise -vv -t "Alert" --config=~/apprise.yml -g "alerts:3"
 
 ## CLI File Attachments
 

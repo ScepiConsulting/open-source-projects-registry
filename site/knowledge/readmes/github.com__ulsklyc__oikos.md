@@ -14,31 +14,30 @@
 
 <table>
   <tr>
-    <td align="center" width="33%">
+    <td align="center" width="50%">
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/mobile-dark/mobile-dark-dashboard-2.png">
-        <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/mobile-light/mobile-light-dashboard-2.png">
-        <img src="docs/screenshots/mobile-light/mobile-light-dashboard-2.png" alt="Dashboard" width="240">
+        <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/01-mobile-dark.png">
+        <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/01-mobile-light.png">
+        <img src="docs/screenshots/01-mobile-light.png" alt="Mobile Dashboard" width="280">
       </picture>
+      <br>
+      <sub>Mobile Dashboard</sub>
     </td>
-    <td align="center" width="33%">
+    <td align="center" width="50%">
       <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/mobile-dark/mobile-dark-tasks-2.png">
-        <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/mobile-light/mobile-light-tasks-2.png">
-        <img src="docs/screenshots/mobile-light/mobile-light-tasks-2.png" alt="Tasks" width="240">
+        <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/01-web-dark.png">
+        <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/01-web-light.png">
+        <img src="docs/screenshots/01-web-light.png" alt="Desktop Dashboard" width="480">
       </picture>
-    </td>
-    <td align="center" width="33%">
-      <picture>
-        <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/mobile-dark/mobile-dark-meal.png">
-        <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/mobile-light/mobile-light-meal.png">
-        <img src="docs/screenshots/mobile-light/mobile-light-meal.png" alt="Meals" width="240">
-      </picture>
+      <br>
+      <sub>Desktop Dashboard</sub>
     </td>
   </tr>
 </table>
 
-<p align="center"><sub>Toggle GitHub light/dark mode to see both themes.</sub></p>
+<p align="center">
+  <sub>Toggle GitHub light/dark mode to see both themes • <a href="https://ulsklyc.github.io/oikos/">View all screenshots</a></sub>
+</p>
 
 Oikos is a self-hosted web app for families who want to organize their everyday life in one place — without cloud accounts, subscriptions, or data leaving the house. It runs as a Docker container on any home server or NAS, is accessible from every device in the household, and can be installed as a PWA on phones and tablets.
 
@@ -52,15 +51,15 @@ The goal is a single, private place for everything that keeps a household runnin
 | **Shopping Lists** | Collaborative lists organized by aisle. Import ingredients from meal plans in one click. |
 | **Meal Planning** | Weekly drag-and-drop planner. Export ingredient lists directly to your shopping list. |
 | **Recipes** | Create, duplicate, and scale reusable recipes. Pre-fill meal slots from a recipe or save any meal as a recipe. |
-| **Calendar** | Two-way sync with Google Calendar (OAuth) and Apple iCloud (CalDAV). Subscribe to any public ICS/webcal URL with per-subscription color and visibility. Overlapping timed events render side-by-side. Events support file attachments (images, PDFs, Office documents). |
+| **Calendar** | Two-way sync with Google Calendar (OAuth) and multiple CalDAV accounts (iCloud, Nextcloud, Radicale, Baikal). Per-account calendar selection with checkboxes. Subscribe to any public ICS/webcal URL with per-subscription color and visibility. Overlapping timed events render side-by-side. Events support file attachments (images, PDFs, Office documents). |
 | **Documents** | Upload and manage family files (PDF, images, Office documents up to 5 MB). Grid/list view, drag-and-drop upload, 14 category tags (medical, school, identity, finance, and more), per-document visibility (family, selected members, private), archive and download. |
 | **Budget** | Track income and expenses with recurring entries, monthly trends, and CSV export. 35 predefined categories plus custom ones. Supports 15 currencies. Loans tab for instalment-based loan tracking with per-payment history and automatic paid-off detection. |
-| **Notes & Contacts** | Colored sticky notes with Markdown support. Contact directory with vCard import/export. |
-| **Birthdays** | Birthday tracker with automatic annual calendar events, age display, profile photos, and 1-day-before reminders. |
+| **Notes & Contacts** | Colored sticky notes with Markdown support. Contact directory with multi-account CardDAV sync (Nextcloud, iCloud, Radicale, Baikal), multiple phones/emails/addresses per contact, and vCard import/export. |
+| **Birthdays** | Birthday tracker with automatic annual calendar events, age display, profile photos, and customizable reminder offsets (preset or fully custom interval). |
 | **Reminders** | Time-based reminders on tasks and calendar events. In-app notification badge. |
 | **Family** | Assign family roles, profile pictures, phone, email, and birthday per member. Family details are automatically synced to Contacts and Birthdays. |
 | **API Tokens** | Named Bearer / X-API-Key tokens for external integrations. SHA-256-hashed at rest, with optional expiry. OpenAPI 3.0 spec at `/api/v1/openapi.json`. |
-| **Backup** | Admin-only database backup and restore via the Settings UI. Download a snapshot or restore from a file upload with an automatic pre-restore rollback copy. |
+| **Backup** | Admin-only database backup and restore via the Settings UI. Download a snapshot or restore from a file upload with an automatic pre-restore rollback copy. Automatic scheduled backups (configurable schedule, rotation, retention). |
 
 ## Design & Technology
 
@@ -68,7 +67,7 @@ The goal is a single, private place for everything that keeps a household runnin
 - **PWA** — installable on any device, works offline, dark mode, responsive from phone to desktop
 - **Privacy First** — SQLCipher AES-256 encrypted database, fully self-hosted, zero telemetry
 - **Zero Build Step** — pure ES modules, no bundler, no transpiler, no framework
-- **Multilingual** — 15 languages with automatic locale detection (de, en, es, fr, it, sv, el, ru, tr, zh, ja, ar, hi, pt, uk)
+- **Multilingual** — 16 languages with automatic locale detection (de, en, es, fr, it, sv, el, ru, tr, zh, ja, ar, hi, pt, uk, pl)
 
 ## Quick Start
 
