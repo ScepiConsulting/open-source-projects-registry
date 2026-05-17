@@ -1,7 +1,7 @@
 {
   "chunk": 17,
   "count": 50,
-  "generated_at": "2026-05-10T06:18:42Z",
+  "generated_at": "2026-05-17T06:30:06Z",
   "items": [
     {
       "repo_key": "github.com/linuxserver/Heimdall",
@@ -45,7 +45,52 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__linuxserver__docker-webtop.md",
       "readme_download_url": "https://raw.githubusercontent.com/linuxserver/docker-webtop/master/README.md",
-      "readme_sha256": "cc278a2dfd948d7f0f8a58c813e60386002c96fb65a9b2b0e693274cc28c5576",
+      "readme_sha256": "c6e99c6dffa1285dff46fa7462e3880a5ab202b41d867726ec662c64a7a86b72",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/lissy93/dashy",
+      "repo_url": "github.com/lissy93/dashy",
+      "host": "github.com",
+      "owner": "lissy93",
+      "repo": "dashy",
+      "app_references": [
+        "dashy"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__lissy93__dashy.md",
+      "readme_download_url": "https://raw.githubusercontent.com/lissy93/dashy/master/README.md",
+      "readme_sha256": "9a55b9c3b8469458949a7d08bd3641623564be5bdd11477e3c47e55a59cde576",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/lissy93/domain-locker",
+      "repo_url": "github.com/lissy93/domain-locker",
+      "host": "github.com",
+      "owner": "lissy93",
+      "repo": "domain-locker",
+      "app_references": [
+        "domain-locker"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__lissy93__domain-locker.md",
+      "readme_download_url": "https://raw.githubusercontent.com/lissy93/domain-locker/main/.github/README.md",
+      "readme_sha256": "d7cf6e135b57cfe7e15fff6155c05a519f1f5482ec50fa768566578d216d341c",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/lissy93/web-check",
+      "repo_url": "github.com/lissy93/web-check",
+      "host": "github.com",
+      "owner": "lissy93",
+      "repo": "web-check",
+      "app_references": [
+        "web-check"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__lissy93__web-check.md",
+      "readme_download_url": "https://raw.githubusercontent.com/lissy93/web-check/master/.github/README.md",
+      "readme_sha256": "09e90122ff65e4236156d7069bc07b5eb2171aa0d4e7bf71a9964f7787d744c1",
       "error": null
     },
     {
@@ -207,9 +252,9 @@
       "app_references": [
         "logseq"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__logseq__logseq.md",
-      "readme_download_url": "https://raw.githubusercontent.com/logseq/logseq/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d51995bc929e79368f779bb0e1559922512add07db5e5dd26776cafe0e16b205",
       "error": null
     },
@@ -342,9 +387,9 @@
       "app_references": [
         "rallly"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__lukevella__rallly.md",
-      "readme_download_url": "https://raw.githubusercontent.com/lukevella/rallly/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ea9d1cc39c03282f88a33070da486850533bfbbcfbfb6c89662cd79582a80e21",
       "error": null
     },
@@ -372,10 +417,10 @@
       "app_references": [
         "mini-qr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__lyqht__mini-qr.md",
-      "readme_download_url": null,
-      "readme_sha256": "0c4d3dfe95838525e2e582d13d976c9497fe6869643d6de258899a070ebde60f",
+      "readme_download_url": "https://raw.githubusercontent.com/lyqht/mini-qr/main/README.md",
+      "readme_sha256": "49617a695953758d20e6569a0f07f120f258bf6235fb65d21ba0b2cc1edc3304",
       "error": null
     },
     {
@@ -597,9 +642,9 @@
       "app_references": [
         "audiobookrequest"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__markbeep__AudioBookRequest.md",
-      "readme_download_url": "https://raw.githubusercontent.com/markbeep/AudioBookRequest/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "961665bd7b9bf283b948b1a7a0e37e327cc8adfac4d58fa72864e1109178333c",
       "error": null
     },
@@ -627,10 +672,10 @@
       "app_references": [
         "docktail"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__marvinvr__docktail.md",
-      "readme_download_url": null,
-      "readme_sha256": "a30dc00d53ac6bbcf452b4f7da35200f83470242a2d89b2e175265cd27a846ea",
+      "readme_download_url": "https://raw.githubusercontent.com/marvinvr/docktail/main/README.md",
+      "readme_sha256": "75c293722d3b4acc538bbb7b07eb4e9da5f5cd800453fc74b3e2885a6d116ddd",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__mattermost__mattermost.md",
       "readme_download_url": null,
       "readme_sha256": "44a585dd1a0c1309415819bbd8ae7fda5411cb994a25641d63423baa0991182e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/matze/wastebin",
-      "repo_url": "github.com/matze/wastebin",
-      "host": "github.com",
-      "owner": "matze",
-      "repo": "wastebin",
-      "app_references": [
-        "wastebin"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__matze__wastebin.md",
-      "readme_download_url": null,
-      "readme_sha256": "e182e99bd24e8ab6a363cce275c280bf29c790fc2dd6c800b8dacf4dfeaa29e2",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/mautic/mautic",
-      "repo_url": "github.com/mautic/mautic",
-      "host": "github.com",
-      "owner": "mautic",
-      "repo": "mautic",
-      "app_references": [
-        "mautic"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__mautic__mautic.md",
-      "readme_download_url": null,
-      "readme_sha256": "bf17a9ccbd55fdddcc7f6733a3cf48df99f8e3b63ed1f97ec48a7ca0713db9dc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/maxdorninger/MediaManager",
-      "repo_url": "github.com/maxdorninger/MediaManager",
-      "host": "github.com",
-      "owner": "maxdorninger",
-      "repo": "MediaManager",
-      "app_references": [
-        "mediamanager"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__maxdorninger__MediaManager.md",
-      "readme_download_url": null,
-      "readme_sha256": "9535911469c64b0e1c18615775c29cf3142141ed9cfaa860bbc994afdb66f998",
       "error": null
     }
   ]

@@ -1,38 +1,8 @@
 {
   "chunk": 8,
   "count": 50,
-  "generated_at": "2026-05-10T06:18:42Z",
+  "generated_at": "2026-05-17T06:30:06Z",
   "items": [
-    {
-      "repo_key": "github.com/akaunting/akaunting",
-      "repo_url": "github.com/akaunting/akaunting",
-      "host": "github.com",
-      "owner": "akaunting",
-      "repo": "akaunting",
-      "app_references": [
-        "akaunting"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__akaunting__akaunting.md",
-      "readme_download_url": null,
-      "readme_sha256": "9f3c69bd3060322d90a580a1ab69c748c71d5093b0f17dbc43d71eac522d4e77",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/alam00000/bentopdf",
-      "repo_url": "github.com/alam00000/bentopdf",
-      "host": "github.com",
-      "owner": "alam00000",
-      "repo": "bentopdf",
-      "app_references": [
-        "bentopdf"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__alam00000__bentopdf.md",
-      "readme_download_url": null,
-      "readme_sha256": "77c9271983f9402e9af570bf81f8b2b913cf5653a49d0d2fe47def12ad55ef9a",
-      "error": null
-    },
     {
       "repo_key": "github.com/alangrainger/immich-public-proxy",
       "repo_url": "github.com/alangrainger/immich-public-proxy",
@@ -87,9 +57,9 @@
       "app_references": [
         "tamari"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__alexbates__Tamari.md",
-      "readme_download_url": "https://raw.githubusercontent.com/alexbates/Tamari/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "57921d81037323b113026b8af418ce251b8dd4703d075226ddb6af2471fc43b1",
       "error": null
     },
@@ -102,10 +72,10 @@
       "app_references": [
         "speedtest-tracker"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__alexjustesen__speedtest-tracker.md",
-      "readme_download_url": null,
-      "readme_sha256": "0e20e7a61b46dcad043b8f26cbefea60291b462e40648beb5a3b69df5531ace7",
+      "readme_download_url": "https://raw.githubusercontent.com/alexjustesen/speedtest-tracker/1.x/README.md",
+      "readme_sha256": "102929393252bb0cf05fd4187d7d9cf666c3646dfd25f55b50c938623256afe9",
       "error": null
     },
     {
@@ -177,9 +147,9 @@
       "app_references": [
         "comic-library-utilities"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__allaboutduncan__clu-comics.md",
-      "readme_download_url": "https://raw.githubusercontent.com/allaboutduncan/clu-comics/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8aa4d091957d7dbbd4cbc33f5265401c31486e670125e591bbc8f44fe65e67ec",
       "error": null
     },
@@ -207,10 +177,10 @@
       "app_references": [
         "dozzle"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__amir20__dozzle.md",
-      "readme_download_url": null,
-      "readme_sha256": "deb2de7704f0e264ac763925eec5a575e517d6084fa16b4ee4e7252902c0f0ea",
+      "readme_download_url": "https://raw.githubusercontent.com/amir20/dozzle/master/README.md",
+      "readme_sha256": "212b87b315b38591c402d969d5fa108d3dfe3b775466f52a3fedac0cef5d0fad",
       "error": null
     },
     {
@@ -222,9 +192,9 @@
       "app_references": [
         "amnezia"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__amnezia-vpn__amnezia-client.md",
-      "readme_download_url": "https://raw.githubusercontent.com/amnezia-vpn/amnezia-client/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "3a5cc2d7af14ede069551e1ab552921de09fb27ee97bbeb8a45f38d25dff739b",
       "error": null
     },
@@ -255,7 +225,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__amruthpillai__reactive-resume.md",
       "readme_download_url": "https://raw.githubusercontent.com/amruthpillai/reactive-resume/main/README.md",
-      "readme_sha256": "1328e7b3c5ee0509a081705bb5067b316a31f03cdd1cf3f197d9caead4e1958f",
+      "readme_sha256": "55576a653afb27820c6e1734f4bbb63a1e31b44cd3a899d1485a1ded363eaad7",
       "error": null
     },
     {
@@ -286,6 +256,21 @@
       "readme_path": "knowledge/readmes/github.com__andrii-kryvoviaz__slink.md",
       "readme_download_url": null,
       "readme_sha256": "9dd3a847a46555fc7be7c8ee5ec2da166e47760c29888ab49187cb5aac420e49",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/anibridge/anibridge",
+      "repo_url": "github.com/anibridge/anibridge",
+      "host": "github.com",
+      "owner": "anibridge",
+      "repo": "anibridge",
+      "app_references": [
+        "anibridge"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__anibridge__anibridge.md",
+      "readme_download_url": "https://raw.githubusercontent.com/anibridge/anibridge/experimental/README.md",
+      "readme_sha256": "a897350aefb810f4754a8901999a3730b3b14f10c0c2d2ae0344e45dff5c7d18",
       "error": null
     },
     {
@@ -462,9 +447,9 @@
       "app_references": [
         "ytptube"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__arabcoders__ytptube.md",
-      "readme_download_url": "https://raw.githubusercontent.com/arabcoders/ytptube/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "cde75d05466c69e1b3ef8edc2a26e787d08fde3cf26735156c222a5f8b29d906",
       "error": null
     },
@@ -552,10 +537,10 @@
       "app_references": [
         "open-dronelog"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__arpanghosh8453__open-dronelog.md",
-      "readme_download_url": null,
-      "readme_sha256": "dc10907be1f303c98522845e25aeb2a66f259455e8070f0cc6e28c9ba300000b",
+      "readme_download_url": "https://raw.githubusercontent.com/arpanghosh8453/open-dronelog/main/README.md",
+      "readme_sha256": "b843c6724e8723d076bc34a578964e80872cf9407f934a4041b411b11b4858f0",
       "error": null
     },
     {
@@ -567,9 +552,9 @@
       "app_references": [
         "hister"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__asciimoo__hister.md",
-      "readme_download_url": "https://raw.githubusercontent.com/asciimoo/hister/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c9a8f91bbcd847476ed6a1b44745c6609571d7760150b8db9da56cf855a34e96",
       "error": null
     },
@@ -627,10 +612,10 @@
       "app_references": [
         "aureus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__aureuserp__aureuserp.md",
-      "readme_download_url": null,
-      "readme_sha256": "020440a4a2666b0d8b592abbdb4a34a5640e205a2333993e25722c7b6ed4304e",
+      "readme_download_url": "https://raw.githubusercontent.com/aureuserp/aureuserp/master/README.md",
+      "readme_sha256": "18a51532908ab9b0ce7f82db260b32476019295f19ff8acf112357d83baeb15d",
       "error": null
     },
     {
@@ -657,10 +642,10 @@
       "app_references": [
         "authgear"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__authgear__authgear-server.md",
-      "readme_download_url": null,
-      "readme_sha256": "2213271251fc2517e359b8d54c6775762b2c2c29f28b66af31ae4f492c2c4f8a",
+      "readme_download_url": "https://raw.githubusercontent.com/authgear/authgear-server/main/README.md",
+      "readme_sha256": "92f8251a31f6e79d3776127e8be9e72e823ca3878ebaf4121255916d1ac9cd2d",
       "error": null
     },
     {
@@ -751,6 +736,21 @@
       "readme_path": "knowledge/readmes/github.com__backuppc__backuppc.md",
       "readme_download_url": null,
       "readme_sha256": "411c3b23df2a903fa9018266c7eb9a2bca2dd8477adb7b61592ad4952019d4e6",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/bakito/adguardhome-sync",
+      "repo_url": "github.com/bakito/adguardhome-sync",
+      "host": "github.com",
+      "owner": "bakito",
+      "repo": "adguardhome-sync",
+      "app_references": [
+        "adguardhome-sync"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__bakito__adguardhome-sync.md",
+      "readme_download_url": null,
+      "readme_sha256": "8e3efb3a7d16039f79bbdd7fe0aef73d3bb2a707a17edfec8f88e5be8507cfea",
       "error": null
     }
   ]

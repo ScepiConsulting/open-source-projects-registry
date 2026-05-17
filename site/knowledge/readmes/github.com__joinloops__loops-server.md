@@ -35,7 +35,7 @@
 The [federated](https://fediverse.info) short video sharing platform.
 
 <p align="center">
-  <img src="https://pixelfed.nyc3.cdn.digitaloceanspaces.com/media/loops-readme.jpg" alt="Loops Screenshot" />
+  <img src="https://pixelfed.nyc3.cdn.digitaloceanspaces.com/media/loops-readme-v2.jpg" alt="Loops Screenshot" />
 </p>
 
 ## Installation
@@ -53,7 +53,7 @@ Check out the [translation guide](TRANSLATING.md) to learn how you can contribut
 
 ## License
 
-Loops Server is open-sourced software licensed under the AGPL license.
+Loops Server is open-sourced software licensed under the [AGPLv3 license](LICENSE).
 
 ## Communication
 

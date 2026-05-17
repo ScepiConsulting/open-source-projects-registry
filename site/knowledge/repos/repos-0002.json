@@ -1,23 +1,8 @@
 {
   "chunk": 2,
   "count": 50,
-  "generated_at": "2026-05-10T06:18:42Z",
+  "generated_at": "2026-05-17T06:30:06Z",
   "items": [
-    {
-      "repo_key": "github.com/Arthi-chaud/Meelo",
-      "repo_url": "github.com/Arthi-chaud/Meelo",
-      "host": "github.com",
-      "owner": "Arthi-chaud",
-      "repo": "Meelo",
-      "app_references": [
-        "meelo"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__Arthi-chaud__Meelo.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Arthi-chaud/Meelo/main/README.md",
-      "readme_sha256": "7b5887d0498bb33d8237e186d0f271e8e42cb48f578f7948075717b4a361844f",
-      "error": null
-    },
     {
       "repo_key": "github.com/AtalayaLabs/OxiCloud",
       "repo_url": "github.com/AtalayaLabs/OxiCloud",
@@ -267,9 +252,9 @@
       "app_references": [
         "vocard"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ChocoMeow__Vocard.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ChocoMeow/Vocard/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "2bd41829eb031a0c7f39cfc6acba1001071cd947321812a6cb4c504025f36f3d",
       "error": null
     },
@@ -297,9 +282,9 @@
       "app_references": [
         "dockflare"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ChrispyBacon-dev__DockFlare.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ChrispyBacon-dev/DockFlare/stable/README.MD",
+      "readme_download_url": null,
       "readme_sha256": "7ad86b040804cd93fefde76ce9edcf344d6b020a1c3825647a6c6a6b64171f67",
       "error": null
     },
@@ -552,9 +537,9 @@
       "app_references": [
         "defguard"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__DefGuard__defguard.md",
-      "readme_download_url": "https://raw.githubusercontent.com/DefGuard/defguard/stable/2.x/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ed275304e778696ff07f1324aac1f078651956a0909a2416f52e76e56b64cbc8",
       "error": null
     },
@@ -567,10 +552,10 @@
       "app_references": [
         "youtarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__DialmasterOrg__Youtarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "3cbe3c4b8ee43d5f8f6e8d1732917a516dd7039c7ab28e94dbe02e2af185a2cc",
+      "readme_download_url": "https://raw.githubusercontent.com/DialmasterOrg/Youtarr/main/README.md",
+      "readme_sha256": "90b5ff50745ab42a15de3312f6d68e44f53f1d2ac9fc07c85165e1ef0c9dacc1",
       "error": null
     },
     {
@@ -642,9 +627,9 @@
       "app_references": [
         "dolibarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Dolibarr__dolibarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Dolibarr/dolibarr/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1735bc2cc75d7833ecae0d3bcc3f97d00a5d7157c31bc461535bdfad6c95c86f",
       "error": null
     },
@@ -690,7 +675,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__DrewThomasson__ebook2audiobook.md",
       "readme_download_url": "https://raw.githubusercontent.com/DrewThomasson/ebook2audiobook/main/README.md",
-      "readme_sha256": "697fd591253c28df3a24c6a733d2b27b2dd81f45f88f378737eda3194568d209",
+      "readme_sha256": "b69dfea5da29d4edb20770c5990d9085b32b8b0e9c42e787125e52b09fe42706",
       "error": null
     },
     {
@@ -751,6 +736,21 @@
       "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbBudget.md",
       "readme_download_url": null,
       "readme_sha256": "facd261913f4137326e77294a2a16bee37e1dc7e3f89a9dff2826c0fde1c08c8",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/DumbWareio/DumbDo",
+      "repo_url": "github.com/DumbWareio/DumbDo",
+      "host": "github.com",
+      "owner": "DumbWareio",
+      "repo": "DumbDo",
+      "app_references": [
+        "dumbdo"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbDo.md",
+      "readme_download_url": null,
+      "readme_sha256": "bf14942396338b8ce61af8c1d55cd8f0d0d133ab401d46125e1f9068c1598ac5",
       "error": null
     }
   ]

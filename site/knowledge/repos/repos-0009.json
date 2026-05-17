@@ -1,23 +1,8 @@
 {
   "chunk": 9,
   "count": 50,
-  "generated_at": "2026-05-10T06:18:42Z",
+  "generated_at": "2026-05-17T06:30:06Z",
   "items": [
-    {
-      "repo_key": "github.com/bakito/adguardhome-sync",
-      "repo_url": "github.com/bakito/adguardhome-sync",
-      "host": "github.com",
-      "owner": "bakito",
-      "repo": "adguardhome-sync",
-      "app_references": [
-        "adguardhome-sync"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__bakito__adguardhome-sync.md",
-      "readme_download_url": "https://raw.githubusercontent.com/bakito/adguardhome-sync/main/README.md",
-      "readme_sha256": "8e3efb3a7d16039f79bbdd7fe0aef73d3bb2a707a17edfec8f88e5be8507cfea",
-      "error": null
-    },
     {
       "repo_key": "github.com/balzack/databag",
       "repo_url": "github.com/balzack/databag",
@@ -72,10 +57,10 @@
       "app_references": [
         "basic-memory"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__basicmachines-co__basic-memory.md",
-      "readme_download_url": null,
-      "readme_sha256": "98d2a215099098c5114fcb8161de3f5ddfec38995d9289115f9d696c4e71e4b1",
+      "readme_download_url": "https://raw.githubusercontent.com/basicmachines-co/basic-memory/main/README.md",
+      "readme_sha256": "41aa77e5e752972ed3cfed399cb070b095c30a8fcd45ddfda0179b0367a5d3a1",
       "error": null
     },
     {
@@ -162,9 +147,9 @@
       "app_references": [
         "bewcloud"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__bewcloud__bewcloud.md",
-      "readme_download_url": "https://raw.githubusercontent.com/bewcloud/bewcloud/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "63e38e841aff6fe3e929026328b8e284d6d21a1c21d9fecde957aa7d1f7bd9d8",
       "error": null
     },
@@ -312,9 +297,9 @@
       "app_references": [
         "black-candy"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__blackcandy-org__blackcandy.md",
-      "readme_download_url": "https://raw.githubusercontent.com/blackcandy-org/blackcandy/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8dc583a12707401d196ef00166d3e1fae687452cf917517cf08395c36f86e921",
       "error": null
     },
@@ -417,9 +402,9 @@
       "app_references": [
         "betula"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__bouncepaw__betula.md",
-      "readme_download_url": "https://raw.githubusercontent.com/bouncepaw/betula/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "de2f6b334dfd56bc97368ba18635c9d3552ee0b0477d81f60a58c0a146af8a2a",
       "error": null
     },
@@ -525,7 +510,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__bulwarkmail__webmail.md",
       "readme_download_url": "https://raw.githubusercontent.com/bulwarkmail/webmail/main/README.md",
-      "readme_sha256": "5b434289b76a66704f98090c2e442b90836d08429ac1a2797633c5a0e270b23d",
+      "readme_sha256": "909000a8c6ed25ff028f27b02e593267cd4a3028ffc50dc986ea1a2e28b96b73",
       "error": null
     },
     {
@@ -657,10 +642,10 @@
       "app_references": [
         "shelfmark"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__calibrain__shelfmark.md",
-      "readme_download_url": null,
-      "readme_sha256": "b3b769aeb9e0cf0bd53d8a30b256ca50403b7c6e3ee26c59bfb60609de8b8dc3",
+      "readme_download_url": "https://raw.githubusercontent.com/calibrain/shelfmark/main/readme.md",
+      "readme_sha256": "33eb4f28c6702e6e87454c75ad7f396d8a96f8ec4589ace8007e8d68cdd7b008",
       "error": null
     },
     {
@@ -687,9 +672,9 @@
       "app_references": [
         "apprise"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__caronc__apprise.md",
-      "readme_download_url": "https://raw.githubusercontent.com/caronc/apprise/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "13dbac78a1afcdacb79723cf14ebef76ae9cf1a182f3c673e29449940bd07cfe",
       "error": null
     },
@@ -751,6 +736,21 @@
       "readme_path": "knowledge/readmes/github.com__cerbos__cerbos.md",
       "readme_download_url": null,
       "readme_sha256": "74e67bde38df980e909f695ad7a7f4ae8581f8f66de6e9c2a25ee6ce8476247a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/cglatot/pasta",
+      "repo_url": "github.com/cglatot/pasta",
+      "host": "github.com",
+      "owner": "cglatot",
+      "repo": "pasta",
+      "app_references": [
+        "pasta"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__cglatot__pasta.md",
+      "readme_download_url": null,
+      "readme_sha256": "4ea1735d201d34909a86542a59adf6f33820b8bdc24e662a32eb49f601139623",
       "error": null
     }
   ]

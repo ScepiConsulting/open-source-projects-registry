@@ -1,8 +1,98 @@
 {
   "chunk": 20,
   "count": 50,
-  "generated_at": "2026-05-10T06:18:42Z",
+  "generated_at": "2026-05-17T06:30:06Z",
   "items": [
+    {
+      "repo_key": "github.com/onllm-dev/onWatch",
+      "repo_url": "github.com/onllm-dev/onWatch",
+      "host": "github.com",
+      "owner": "onllm-dev",
+      "repo": "onWatch",
+      "app_references": [
+        "onwatch"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__onllm-dev__onWatch.md",
+      "readme_download_url": null,
+      "readme_sha256": "53468434b53f91e4b897adf202b0a140d7b50da5a6bd6a59e79a744d8204dbf2",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/open-uem/openuem-console",
+      "repo_url": "github.com/open-uem/openuem-console",
+      "host": "github.com",
+      "owner": "open-uem",
+      "repo": "openuem-console",
+      "app_references": [
+        "openuem"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__open-uem__openuem-console.md",
+      "readme_download_url": null,
+      "readme_sha256": "6b424b8b9b8683659883740db70381f7324aa0319b82c1205001ade5141acd3b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/open-wanderer/wanderer",
+      "repo_url": "github.com/open-wanderer/wanderer",
+      "host": "github.com",
+      "owner": "open-wanderer",
+      "repo": "wanderer",
+      "app_references": [
+        "wanderer"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__open-wanderer__wanderer.md",
+      "readme_download_url": null,
+      "readme_sha256": "0c93b2948adce53b3f439b5e61e95b2094c9eb6d4d15177ab6684630851af229",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/open-webui/open-webui",
+      "repo_url": "github.com/open-webui/open-webui",
+      "host": "github.com",
+      "owner": "open-webui",
+      "repo": "open-webui",
+      "app_references": [
+        "open-webui"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__open-webui__open-webui.md",
+      "readme_download_url": null,
+      "readme_sha256": "4e5d75d6d4cb3d9df901c279f528c7c8d6e65febbf4a9a89d8675d7d9dafd8cc",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/openbao/openbao",
+      "repo_url": "github.com/openbao/openbao",
+      "host": "github.com",
+      "owner": "openbao",
+      "repo": "openbao",
+      "app_references": [
+        "openbao"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__openbao__openbao.md",
+      "readme_download_url": null,
+      "readme_sha256": "d0cff252352ee71e85b9bbca2d7567fe980d8579497f40280d0833a0170ea8b3",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/openclaw/openclaw",
+      "repo_url": "github.com/openclaw/openclaw",
+      "host": "github.com",
+      "owner": "openclaw",
+      "repo": "openclaw",
+      "app_references": [
+        "openclaw"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__openclaw__openclaw.md",
+      "readme_download_url": null,
+      "readme_sha256": "9cab1afb4a95b4e0fcf2e5ffab988024a42553d0b095edc611a1498c4de25a4b",
+      "error": null
+    },
     {
       "repo_key": "github.com/opencloud-eu/opencloud",
       "repo_url": "github.com/opencloud-eu/opencloud",
@@ -72,9 +162,9 @@
       "app_references": [
         "operately"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__operately__operately.md",
-      "readme_download_url": "https://raw.githubusercontent.com/operately/operately/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1e9377f4522acd2c69f4dedf48dab2b0014ed3f1a69c250b4a31d0338af99e1e",
       "error": null
     },
@@ -207,9 +297,9 @@
       "app_references": [
         "outline"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__outline__outline.md",
-      "readme_download_url": "https://raw.githubusercontent.com/outline/outline/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "3679fc7a134a1a38e1093ce1b0e8f82bd524968ea5e6ea230eff2b8d986f3327",
       "error": null
     },
@@ -282,10 +372,10 @@
       "app_references": [
         "owncloud-infinite-scale"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__owncloud__ocis.md",
-      "readme_download_url": null,
-      "readme_sha256": "40c32c6a2ef4675da7e67fffc87f29b5ec3925ca9dc2a75cf81abb7662c99566",
+      "readme_download_url": "https://raw.githubusercontent.com/owncloud/ocis/master/README.md",
+      "readme_sha256": "e4a20d4513f1867b37d2372ea86c416f2aab8188b3929018fb032b8231fa7f61",
       "error": null
     },
     {
@@ -661,96 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__pinkary-project__pinkary.com.md",
       "readme_download_url": null,
       "readme_sha256": "2e7a7aedd9499c8b854a305ab9e1c646d9c66d5a13ddb755991ab186d26c75d2",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pinry/pinry",
-      "repo_url": "github.com/pinry/pinry",
-      "host": "github.com",
-      "owner": "pinry",
-      "repo": "pinry",
-      "app_references": [
-        "pinry"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pinry__pinry.md",
-      "readme_download_url": null,
-      "readme_sha256": "7e648c19056951865c59755d5b6955e43b927d2fb2802f8472d1d7419119ef04",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/piratuks/invoice-builder",
-      "repo_url": "github.com/piratuks/invoice-builder",
-      "host": "github.com",
-      "owner": "piratuks",
-      "repo": "invoice-builder",
-      "app_references": [
-        "invoice-builder"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__piratuks__invoice-builder.md",
-      "readme_download_url": "https://raw.githubusercontent.com/piratuks/invoice-builder/main/README.md",
-      "readme_sha256": "a046edea03d953b64348b60b8f75b7b8b5717a36eadf6344d44db1435bc6bde8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pixelfed/pixelfed",
-      "repo_url": "github.com/pixelfed/pixelfed",
-      "host": "github.com",
-      "owner": "pixelfed",
-      "repo": "pixelfed",
-      "app_references": [
-        "pixelfed"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pixelfed__pixelfed.md",
-      "readme_download_url": null,
-      "readme_sha256": "3dbe822b6a10533ce6e7c4951c1ac8653fdfd89a52c03312b5c68b0934ab297e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pixlcore/xyops",
-      "repo_url": "github.com/pixlcore/xyops",
-      "host": "github.com",
-      "owner": "pixlcore",
-      "repo": "xyops",
-      "app_references": [
-        "xyops"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__pixlcore__xyops.md",
-      "readme_download_url": "https://raw.githubusercontent.com/pixlcore/xyops/main/README.md",
-      "readme_sha256": "10eae97128a1f79b9fc66ef14ed23e4e30f2e15ffa5486962d0ff76572eb9e1b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/plankanban/planka",
-      "repo_url": "github.com/plankanban/planka",
-      "host": "github.com",
-      "owner": "plankanban",
-      "repo": "planka",
-      "app_references": [
-        "planka"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__plankanban__planka.md",
-      "readme_download_url": null,
-      "readme_sha256": "f0c052167aa3946cefa42a7ac44a66b510a1c069223e5cac3824ef613973eb20",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/plausible/analytics",
-      "repo_url": "github.com/plausible/analytics",
-      "host": "github.com",
-      "owner": "plausible",
-      "repo": "analytics",
-      "app_references": [
-        "plausible"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__plausible__analytics.md",
-      "readme_download_url": null,
-      "readme_sha256": "9d9c5a98250a1bbaf0e52032f4dba4a1a20461b21f093590793054697a6fa4ca",
       "error": null
     }
   ]

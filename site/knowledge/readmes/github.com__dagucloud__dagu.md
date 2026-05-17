@@ -10,6 +10,7 @@
   <p>
     <a href="https://docs.dagu.sh">Docs</a> |
     <a href="https://docs.dagu.sh/writing-workflows/examples">Examples</a> |
+    <a href="./README_SCHEMA.md">Workflow Schema</a> |
     <a href="https://discord.gg/gpahPUjGRk">Support & Community</a>
   </p>
 </div>
@@ -18,11 +19,11 @@
 
 Dagu gives your automation a home. Run your existing scripts, containers, SQL jobs, and HTTP calls as visible, governed workflows with schedules, retries, logs, artifacts, human-in-the-loop, and observability without Airflow-level complexity.
 
-Keep your existing automation as shell scripts, Python scripts, containers, SSH commands, SQL jobs, HTTP calls, and AI harnesses. Define the workflow in plain YAML, run it with one binary, and get the operational layer that cron and ad hoc scripts are missing: dependencies, retries, queues, logs, artifacts, approvals, API/webhooks, and optional distributed workers.
+Keep your existing automation as shell scripts, Python scripts, containers, SSH commands, SQL jobs, HTTP calls, and AI harnesses. Define the workflow in plain YAML, run it with one binary, and get the operational layer that cron and ad hoc scripts are missing: dependencies, retries, queues, logs, artifacts, approvals, API/webhooks, optional distributed workers, and pinned external CLI tools for reproducible runs.
 
 Dagu is local-first by default. API keys, private repositories, internal documents, customer data, Slack logs, and agent artifacts can stay inside your own machine or infrastructure instead of being handed to a cloud automation SaaS.
 
-For a quick look at how workflows are defined, see the [examples](https://docs.dagu.sh/writing-workflows/examples).
+For a quick look at how workflows are defined, see the [examples](https://docs.dagu.sh/writing-workflows/examples). For a compact repository-level map of the YAML shape and current `run:`, `action:`, and `actions:` syntax, see the [Workflow Schema at a Glance](./README_SCHEMA.md).
 
 <div align="center">
   <img src="./assets/images/dagu-demo.gif" width="720" alt="Dagu demo showing the cockpit kanban view and YAML workflow editing">
@@ -64,7 +65,7 @@ Dagu is useful when teams need to consolidate scripts, cron jobs, server tasks, 
 
 **Cron and legacy script management.** Run existing shell scripts, Python scripts, HTTP calls, and scheduled jobs without rewriting them. Dagu turns hidden cron jobs into visible workflows with dependencies, run status, logs, retries, approvals, and history.
 
-**ETL and data operations.** Run PostgreSQL or SQLite queries, S3 transfers, `jq` transforms, validation steps, and reusable sub-workflows. Daily data workflows stay declarative, observable, and easy to retry when one step fails.
+**ETL and data operations.** Run PostgreSQL, SQLite, or DuckDB queries, S3 transfers, `jq` transforms, validation steps, and reusable sub-workflows. Pin portable tools such as `jq` or `yq` in the DAG so workers do not depend on whatever version happens to be installed. Daily data workflows stay declarative, observable, and easy to retry when one step fails.
 
 **Media conversion.** Run `ffmpeg`, thumbnail extraction, audio normalization, image processing, and other compute-heavy jobs. Conversion work can run across distributed workers while status, history, logs, and artifacts stay in one persistence layer for monitoring, debugging, and retries.
 
@@ -133,35 +134,26 @@ params:
 artifacts:
   enabled: true
 
-harnesses:
-  codex-cli:
-    binary: codex
-    prefix_args:
-      - exec
-      - --sandbox
-      - workspace-write
-      - --skip-git-repo-check
-    prompt_mode: arg
-
 steps:
   - id: review_pr
-    type: harness
-    command: |
-      Review the README.md file in ${REPO_URL}.
-      Write Markdown findings to ${DAG_RUN_ARTIFACTS_DIR}/review.md.
+    action: agent.run
     with:
-      provider: codex-cli
+      task: |
+        Review the README.md file in ${REPO_URL}.
+        Return concise Markdown findings.
+      max_iterations: 10
+    stdout: ${DAG_RUN_ARTIFACTS_DIR}/review.md
 
   - id: approval
-    type: noop
+    action: noop
     approval:
       prompt: Review the review.md artifact. Approve to post an issue with the findings, or reject to skip.
 
   - id: post_issue
-    command: gh issue create --title "Review Findings" --body-file "${DAG_RUN_ARTIFACTS_DIR}/review.md"
+    run: gh issue create --title "Review Findings" --body-file "${DAG_RUN_ARTIFACTS_DIR}/review.md"
 ```
 
-This workflow uses the [`harness` step type](https://docs.dagu.sh/step-types/harness#harness) and assumes you have the `codex` CLI installed and configured. It reviews a GitHub repository's README file, generates findings with Codex, and then prompts for manual [approval](https://docs.dagu.sh/writing-workflows/yaml-specification#approval) before posting an issue with the findings. GitHub CLI (`gh`) is used in the final step to create the issue.
+This workflow uses the built-in [`agent.run` action](https://docs.dagu.sh/features/agent/step) and assumes a default model is configured in Agent Settings. It reviews a GitHub repository's README file, saves the agent's final output as an artifact, and then prompts for manual [approval](https://docs.dagu.sh/writing-workflows/yaml-specification#approval) before posting an issue with the findings. GitHub CLI (`gh`) is used in the final step to create the issue.
 
 Run the workflow with:
 
@@ -304,7 +296,7 @@ params:
   - MESSAGE
 steps:
   - name: hello
-    command: echo "${MESSAGE}"
+    run: echo "${MESSAGE}"
 `), dagu.WithParams(map[string]string{
 	"MESSAGE": "hello from the host app",
 }))
@@ -330,8 +322,8 @@ See the [embedded API documentation](https://docs.dagu.sh/embedding/go-api) and 
 ```yaml
 type: chain
 steps:
-  - command: echo "Step 1"
-  - command: echo "Step 2"
+  - run: echo "Step 1"
+  - run: echo "Step 2"
 ```
 
 ### Parallel execution with dependencies
@@ -340,15 +332,15 @@ steps:
 type: graph
 steps:
   - id: extract
-    command: ./extract.sh
+    run: ./extract.sh
   - id: transform_a
-    command: ./transform_a.sh
+    run: ./transform_a.sh
     depends: [extract]
   - id: transform_b
-    command: ./transform_b.sh
+    run: ./transform_b.sh
     depends: [extract]
   - id: load
-    command: ./load.sh
+    run: ./load.sh
     depends: [transform_a, transform_b]
 ```
 
@@ -365,6 +357,22 @@ graph LR
     style D fill:#18181B,stroke:#3B82F6,stroke-width:1.6px,color:#fff
 ```
 
+### Reproducible external tools
+
+```yaml
+tools:
+  - jqlang/jq@jq-1.7.1
+
+steps:
+  - name: inspect
+    run: jq --version
+
+  - name: transform
+    run: jq '.items[] | .name' data.json
+```
+
+Dagu installs declared portable CLIs before the DAG run, exposes them on `PATH` for host command steps, and caches them on each worker. You do not need to install a separate tool manager; Dagu remains a single binary. See the [Tools documentation](https://docs.dagu.sh/writing-workflows/tools) for package syntax, immutable refs, distributed worker behavior, sub-DAG scoping, and current limitations.
+
 ### Docker step
 
 ```yaml
@@ -372,7 +380,7 @@ steps:
   - name: build
     container:
       image: node:20-alpine
-    command: npm run build
+    run: npm run build
 ```
 
 ### Kubernetes Pod execution
@@ -380,7 +388,7 @@ steps:
 ```yaml
 steps:
   - name: batch-job
-    type: kubernetes
+    action: kubernetes.run
     with:
       namespace: production
       image: my-registry/batch-processor:latest
@@ -388,7 +396,7 @@ steps:
         requests:
           cpu: "2"
           memory: "4Gi"
-    command: ./process.sh
+      command: ./process.sh
 ```
 
 ### SSH remote execution
@@ -396,12 +404,12 @@ steps:
 ```yaml
 steps:
   - name: deploy
-    type: ssh
+    action: ssh.run
     with:
       host: prod-server.example.com
       user: deploy
       key: ~/.ssh/id_rsa
-    command: cd /var/www && git pull && systemctl restart app
+      command: cd /var/www && git pull && systemctl restart app
 ```
 
 ### Sub-DAG composition
@@ -409,15 +417,24 @@ steps:
 ```yaml
 steps:
   - name: extract
-    call: etl/extract
-    params: "SOURCE=s3://bucket/data.csv"
+    action: dag.run
+    with:
+      dag: etl/extract
+      params:
+        SOURCE: s3://bucket/data.csv
   - name: transform
-    call: etl/transform
-    params: "INPUT=${extract.outputs.result}"
+    action: dag.run
+    with:
+      dag: etl/transform
+      params:
+        INPUT: ${extract.outputs.result}
     depends: [extract]
   - name: load
-    call: etl/load
-    params: "DATA=${transform.outputs.result}"
+    action: dag.run
+    with:
+      dag: etl/load
+      params:
+        DATA: ${transform.outputs.result}
     depends: [transform]
 ```
 
@@ -426,7 +443,7 @@ steps:
 ```yaml
 steps:
   - name: flaky-api-call
-    command: curl -f https://api.example.com/data
+    run: curl -f https://api.example.com/data
     retry_policy:
       limit: 3
       interval_sec: 10
@@ -445,72 +462,65 @@ catchup_window: "5h"       # Catch up missed runs when scheduler is down for up 
 timeout_sec: 3600
 handler_on:
   failure:
-    command: notify-team.sh
+    run: notify-team.sh
   exit:
-    command: cleanup.sh
+    run: cleanup.sh
 ```
 
-### Harness step with manual approval
+### Built-in agent step with manual approval
 
 ```yaml
-harnesses:
-  codex-cli:
-    binary: codex
-    prefix_args:
-      - exec
-      - --sandbox
-      - workspace-write
-      - --skip-git-repo-check
-    prompt_mode: arg
-
 steps:
   - name: review
-    type: harness
-    command: Review the README.md file and write findings to review.md.
+    action: agent.run
     with:
-      provider: codex-cli
+      task: Review the README.md file and return concise Markdown findings.
+      max_iterations: 10
+    stdout: ${DAG_RUN_ARTIFACTS_DIR}/review.md
 
   - name: approval
-    type: noop
+    action: noop
     approval:
       prompt: Review the review.md artifact. Approve to post an issue with the findings, or reject to skip.
 
   - name: post_issue
-    command: gh issue create --title "Review Findings" --body-file "${DAG_RUN_ARTIFACTS_DIR}/review.md"
+    run: gh issue create --title "Review Findings" --body-file "${DAG_RUN_ARTIFACTS_DIR}/review.md"
 ```
 
 For more examples, see the [Examples documentation](https://docs.dagu.sh/writing-workflows/examples).
 
-## Built-in and Custom Step Types
+## Built-in and Custom Actions
 
-Dagu includes built-in step types that run within the Dagu process (or worker).
+Dagu includes built-in actions that run within the Dagu process (or worker). Local shell commands use `run`.
 
-| Step type | Purpose |
+| Field / Action | Purpose |
 |----------|---------|
-| [`shell` / `command`](https://docs.dagu.sh/step-types/shell) | Shell commands and scripts (bash, sh, PowerShell, custom shells) |
-| [`docker`](https://docs.dagu.sh/step-types/docker) | Run containers with registry auth, volume mounts, and resource limits |
-| [`kubernetes` / `k8s`](https://docs.dagu.sh/step-types/kubernetes) | Execute Kubernetes Jobs with namespace, image, and resource settings |
-| [`ssh`](https://docs.dagu.sh/step-types/ssh) | Remote command execution over SSH |
-| [`sftp`](https://docs.dagu.sh/step-types/sftp) | File transfer over SFTP |
-| [`http`](https://docs.dagu.sh/step-types/http) | HTTP requests with headers, auth, and request bodies |
-| [`postgres`](https://docs.dagu.sh/step-types/sql/postgresql) / [`sqlite`](https://docs.dagu.sh/step-types/sql/sqlite) | SQL queries, imports, and exports for PostgreSQL and SQLite |
-| [`redis`](https://docs.dagu.sh/step-types/redis) | Redis commands, pipelines, and Lua scripts |
-| [`s3`](https://docs.dagu.sh/step-types/s3) | Upload, download, list, and delete S3 objects |
-| [`jq`](https://docs.dagu.sh/step-types/jq) | JSON transformation using jq expressions |
-| [`archive`](https://docs.dagu.sh/step-types/archive) | Create and extract zip/tar archives |
-| [`mail`](https://docs.dagu.sh/step-types/mail) | Send email via SMTP |
-| [`template`](https://docs.dagu.sh/step-types/template) | Text generation with template rendering |
-| [`router`](https://docs.dagu.sh/step-types/router) | Conditional step routing based on values and patterns |
-| [`dag` / `subworkflow` / `call:`](https://docs.dagu.sh/writing-workflows/control-flow) | Invoke another DAG as a sub-workflow with params and dependencies |
-| [`harness`](https://docs.dagu.sh/step-types/harness) | Run coding agent CLIs such as Claude Code, Codex, Copilot, OpenCode, and Pi |
-| [`agent`](https://docs.dagu.sh/features/agent/step) | Built-in agent step type with tool use |
+| [`run:` field](https://docs.dagu.sh/step-types/shell) | Local shell commands and scripts (bash, sh, PowerShell, custom shells) |
+| [`docker.run`](https://docs.dagu.sh/step-types/docker) | Run containers with registry auth, volume mounts, and resource limits |
+| [`kubernetes.run` / `k8s.run`](https://docs.dagu.sh/step-types/kubernetes) | Execute Kubernetes Jobs with namespace, image, and resource settings |
+| [`ssh.run`](https://docs.dagu.sh/step-types/ssh) | Remote command execution over SSH |
+| [`sftp.upload` / `sftp.download`](https://docs.dagu.sh/step-types/sftp) | File transfer over SFTP |
+| [`http.request`](https://docs.dagu.sh/step-types/http) | HTTP requests with headers, auth, and request bodies |
+| [`postgres.query`](https://docs.dagu.sh/step-types/sql/postgresql) / [`sqlite.query`](https://docs.dagu.sh/step-types/sql/sqlite) / `duckdb.query` | SQL queries, imports, and exports for PostgreSQL, SQLite, and DuckDB |
+| [`redis.<operation>`](https://docs.dagu.sh/step-types/redis) | Redis commands, pipelines, and Lua scripts |
+| [`s3.upload` / `s3.download` / `s3.list` / `s3.delete`](https://docs.dagu.sh/step-types/s3) | Upload, download, list, and delete S3 objects |
+| `file.stat` / `file.read` / `file.write` / `file.copy` / `file.move` / `file.delete` / `file.mkdir` / `file.list` | Local file operations without shell commands |
+| [`jq.filter`](https://docs.dagu.sh/step-types/jq) | JSON transformation using jq expressions |
+| [`archive.create` / `archive.extract` / `archive.list`](https://docs.dagu.sh/step-types/archive) | Create and extract zip/tar archives |
+| [`wait.duration` / `wait.until` / `wait.file` / `wait.http`](https://docs.dagu.sh/step-types/wait) | Wait for time, file state, or HTTP readiness |
+| [`mail.send`](https://docs.dagu.sh/step-types/mail) | Send email via SMTP |
+| [`template.render`](https://docs.dagu.sh/step-types/template) | Text generation with template rendering |
+| [`router.route`](https://docs.dagu.sh/step-types/router) | Conditional step routing based on values and patterns |
+| [`dag.run`](https://docs.dagu.sh/writing-workflows/control-flow) | Invoke another DAG as a sub-workflow with params and dependencies |
+| [`dag.enqueue`](https://docs.dagu.sh/writing-workflows/control-flow) | Queue another DAG asynchronously and continue after enqueue |
+| [`harness.run`](https://docs.dagu.sh/step-types/harness) | Run coding agent CLIs such as Claude Code, Codex, Copilot, OpenCode, and Pi |
+| [`agent.run`](https://docs.dagu.sh/features/agent/step) | Built-in agent action with tool use |
 
-You can also define your own reusable step types with the top-level `step_types` field. Custom step types expand to built-in step types during DAG load, so you can wrap a common shell, HTTP, SQL, or other step pattern behind a typed interface with validated input.
+You can also define reusable actions with the top-level `actions` field. Custom actions expand to built-in actions during DAG load, so you can wrap a common shell, HTTP, SQL, or other pattern behind a typed interface with validated input.
 
 ```yaml
-step_types:
-  webhook:
-    type: http
+actions:
+  webhook.send:
     input_schema:
       type: object
       additionalProperties: false
@@ -521,21 +531,23 @@ step_types:
         text:
           type: string
     template:
-      command: POST {{ .input.url }}
+      action: http.request
       with:
+        method: POST
+        url: {{ .input.url }}
         headers:
           Content-Type: application/json
         body: |
           {"text": {{ json .input.text }}}
 
 steps:
-  - type: webhook
+  - action: webhook.send
     with:
       url: https://hooks.example.com/ops
       text: deploy complete
 ```
 
-See [Custom Step Types](https://docs.dagu.sh/writing-workflows/custom-step-types) for the feature guide and [YAML Specification](https://docs.dagu.sh/writing-workflows/yaml-specification) for the exact `step_types` and `type` field behavior.
+See [Custom Actions](https://docs.dagu.sh/writing-workflows/custom-step-types) for the feature guide and [YAML Specification](https://docs.dagu.sh/writing-workflows/yaml-specification) for the exact `actions`, `action`, and `run` field behavior.
 
 ## Security and Access Control
 
@@ -700,6 +712,7 @@ See the [distributed execution documentation](https://docs.dagu.sh/server-admin/
 | `DAGU_DAGS_DIR` | `~/.config/dagu/dags` | DAG definitions directory |
 | `DAGU_LOG_DIR` | `~/.local/share/dagu/logs` | Log files |
 | `DAGU_DATA_DIR` | `~/.local/share/dagu/data` | Application state |
+| `DAGU_TOOLS_DIR` | `{DAGU_DATA_DIR}/tools` | Managed DAG tool cache |
 
 ### Authentication
 
@@ -760,7 +773,9 @@ Full configuration reference: [docs.dagu.sh/server-admin/reference](https://docs
 
 - [Getting Started](https://docs.dagu.sh/getting-started/installation) — Installation and first workflow
 - [Writing Workflows](https://docs.dagu.sh/writing-workflows/examples) — YAML syntax, scheduling, execution control
-- [Step Types](https://docs.dagu.sh/step-types/shell) — [Shell](https://docs.dagu.sh/step-types/shell), [Docker](https://docs.dagu.sh/step-types/docker), [Kubernetes](https://docs.dagu.sh/step-types/kubernetes), [HTTP](https://docs.dagu.sh/step-types/http), [SQL](https://docs.dagu.sh/step-types/sql/), [Harness](https://docs.dagu.sh/step-types/harness), [Agent Step](https://docs.dagu.sh/features/agent/step), and [Custom Step Types](https://docs.dagu.sh/writing-workflows/custom-step-types)
+- [Workflow Schema at a Glance](./README_SCHEMA.md) — Repository-level overview of the current YAML schema
+- [Tools](https://docs.dagu.sh/writing-workflows/tools) — Pin external CLI packages in DAGs for reproducible host command steps
+- [Actions](https://docs.dagu.sh/step-types/shell) — [Shell](https://docs.dagu.sh/step-types/shell), [Docker](https://docs.dagu.sh/step-types/docker), [Kubernetes](https://docs.dagu.sh/step-types/kubernetes), [HTTP](https://docs.dagu.sh/step-types/http), [SQL](https://docs.dagu.sh/step-types/sql/), [Harness](https://docs.dagu.sh/step-types/harness), [Agent Step](https://docs.dagu.sh/features/agent/step), and [Custom Actions](https://docs.dagu.sh/writing-workflows/custom-step-types)
 - [Distributed Execution](https://docs.dagu.sh/server-admin/distributed/) — Coordinator/worker setup
 - [Authentication](https://docs.dagu.sh/server-admin/authentication/) — RBAC, OIDC, API keys
 - [Git Sync](https://docs.dagu.sh/server-admin/git-sync) — Version-controlled DAG definitions

@@ -61,8 +61,11 @@ Password: `chhoto-url-demo-pass`
 - Counts number of hits for each short link in a privacy respecting way
   i.e. only the hit is recorded, and nothing else.
 - Short links can be edited after creation.
+- Each short link may have custom notes attached to it. The UI features filtering for links,
+  based on short link, long link, and notes.
 - QR codes can be generated for easy sharing.
 - Supports operation using API key, and lets the user provide hashed password and API key.
+- Has a robust JSON-RPC adjacent API.
 - Has a mobile friendly UI, and automatic dark mode.
 - Can serve a custom landing page, if needed.
 - Has a public mode, where anyone can add links without authentication. Deleting

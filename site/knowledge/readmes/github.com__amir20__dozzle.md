@@ -81,6 +81,8 @@ See the [Agent Mode](https://dozzle.dev/guide/agent) documentation for more deta
 
 Dozzle uses automatic API negotiation, which works with most Docker configurations. Dozzle also works with [Colima](https://github.com/abiosoft/colima) and [Podman](https://podman.io/).
 
+Dozzle requires Docker Engine 19.03 or newer (API version 1.40+). Older daemons are not supported by the underlying Docker SDK.
+
 ### Installation on Podman
 
 By default, Podman doesn't have a background process, but you can enable the remote socket for Dozzle to work.
@@ -143,11 +145,51 @@ There are many ways to support Dozzle:
 
 ## Building
 
-To build and test locally:
+Want to contribute? Great! Dozzle has two parts: a **Go backend** that talks to Docker, and a **Vue frontend** that runs in the browser. You don't need to know both — pick the side that matches what you want to change. For documentation fixes, no setup is needed at all; just edit the file on GitHub.
 
-1. Install [Node.js](https://nodejs.org/en/download/) and [pnpm](https://pnpm.io/installation).
-2. Install [Go](https://go.dev/doc/install).
-3. Install [protoc](https://grpc.io/docs/protoc-installation/).
-4. Install Go tools with `go install tool`.
-5. Install Node modules with `pnpm install`.
-6. Run `make dev` to start a development server with hot reload.
+### 1. Install the prerequisites
+
+You'll need [Go](https://go.dev/doc/install) (1.25+), [Node.js](https://nodejs.org/en/download/) (with [pnpm](https://pnpm.io/installation)), and [protoc](https://grpc.io/docs/protoc-installation/).
+
+On macOS, you can install everything in one go:
+
+```bash
+brew install go node pnpm protobuf
+```
+
+On Linux (Debian/Ubuntu):
+
+```bash
+sudo apt install golang nodejs protobuf-compiler
+npm install -g pnpm
+```
+
+On Windows, we recommend using [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) and following the Linux instructions.
+
+### 2. Clone and set up
+
+```bash
+git clone https://github.com/amir20/dozzle.git
+cd dozzle
+pnpm install                # installs frontend dependencies
+go install tool             # installs Go build tools listed in go.mod (air, protoc-gen-go, etc.)
+make generate               # generates TLS certificates and protobuf code (only needed once)
+```
+
+### 3. Start the dev server
+
+```bash
+make dev
+```
+
+Open [http://localhost:3100](http://localhost:3100) — you should see the Dozzle UI connected to your local Docker. Both the frontend and backend reload automatically when you save a file.
+
+### Making your first change
+
+Try editing `assets/pages/index.vue` and saving — the browser updates instantly. For backend changes, edit any `.go` file and the server will restart on its own.
+
+### Troubleshooting
+
+- **Nothing shows up at localhost:3100** — make sure Docker is running and the socket is accessible at `/var/run/docker.sock`.
+- **`make generate` fails** — confirm `protoc` is on your PATH (`protoc --version`).
+- **Still stuck?** Open a question in [GitHub Discussions](https://github.com/amir20/dozzle/discussions) — we're happy to help.

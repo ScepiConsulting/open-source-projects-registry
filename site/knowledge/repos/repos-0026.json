@@ -1,8 +1,83 @@
 {
   "chunk": 26,
-  "count": 11,
-  "generated_at": "2026-05-10T06:18:42Z",
+  "count": 16,
+  "generated_at": "2026-05-17T06:30:06Z",
   "items": [
+    {
+      "repo_key": "gitlab.com/elementfm/docs",
+      "repo_url": "gitlab.com/elementfm/docs",
+      "host": "gitlab.com",
+      "owner": "elementfm",
+      "repo": "docs",
+      "app_references": [
+        "element-fm"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/elementfm/docs/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/elementfm/docs/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/g33kphr33k/musicgrabber",
+      "repo_url": "gitlab.com/g33kphr33k/musicgrabber",
+      "host": "gitlab.com",
+      "owner": "g33kphr33k",
+      "repo": "musicgrabber",
+      "app_references": [
+        "music-grabber"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/g33kphr33k/musicgrabber/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/g33kphr33k/musicgrabber/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/gitlab-org/gitlab-foss",
+      "repo_url": "gitlab.com/gitlab-org/gitlab-foss",
+      "host": "gitlab.com",
+      "owner": "gitlab-org",
+      "repo": "gitlab-foss",
+      "app_references": [
+        "gitlab"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/gitlab-org/gitlab-foss/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/gitlab-org/gitlab-foss/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/glitchtip/glitchtip-backend",
+      "repo_url": "gitlab.com/glitchtip/glitchtip-backend",
+      "host": "gitlab.com",
+      "owner": "glitchtip",
+      "repo": "glitchtip-backend",
+      "app_references": [
+        "glitchtip"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/glitchtip/glitchtip-backend/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/glitchtip/glitchtip-backend/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/imn1/richy",
+      "repo_url": "gitlab.com/imn1/richy",
+      "host": "gitlab.com",
+      "owner": "imn1",
+      "repo": "richy",
+      "app_references": [
+        "richy"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/imn1/richy/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/imn1/richy/-/raw/main/README.md?"
+    },
     {
       "repo_key": "gitlab.com/jaywink/socialhome",
       "repo_url": "gitlab.com/jaywink/socialhome",

@@ -501,8 +501,8 @@ Available Commands:
   hide         Hide or unhide a repository
   import       Import a new repository from remote
   info         Get information about a repository
-  is-mirror    Whether a repository is a mirror
   list         List repositories
+  mirror       Set or get a repository mirror property
   private      Set or get a repository private property
   project-name Set or get the project name for a repository
   rename       Rename an existing repository

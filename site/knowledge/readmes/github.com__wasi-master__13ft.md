@@ -1,5 +1,12 @@
 # 13 Feet Ladder
 
+<img src="https://raw.githubusercontent.com/wasi-master/13ft/refs/heads/main/logo.png" align="right"
+     alt="13 Feet Ladder Logo by @mcmikemn" width="150">
+
+![build](https://github.com/wasi-master/13ft/actions/workflows/build.yaml/badge.svg)
+[![Docker Pulls](https://img.shields.io/docker/pulls/wasimaster/13ft)](https://hub.docker.com/r/wasimaster/13ft)
+[![runs](https://img.shields.io/badge/dynamic/json?url=https://github.com/ipitio/backage/raw/refs/heads/index/wasi-master/13ft/13ft.json&query=$.downloads&logo=github&logoColor=959da5&label=ghcr%20pulls&labelColor=333a41)](https://github.com/wasi-master/13ft/pkgs/container/13ft)
+
 A site similar to [12ft.io](https://12ft.io) but is self hosted and works with websites that 12ft.io doesn't work with.
 
 ## What is this?
@@ -10,11 +17,15 @@ This is a simple self hosted server that has a simple but powerful interface to 
 
 It pretends to be GoogleBot (Google's web crawler) and gets the same content that google will get. Google gets the whole page so that the content of the article can be indexed properly and this takes advantage of that.
 
+The server now displays a loading/status page while it fetches the target article and will automatically try multiple bypass methods (multi-source fallbacks) if the primary approach fails. This improves compatibility with sites that employ stronger paywalls or blocking behaviour. Feature courtesy of [@JRS1986](https://github.com/JRS1986)
+
+
 ## How do I use it?
 
 ### Using Docker
 
 Requirements:
+
 - docker
 - Docker Compose (available as `docker compose`)
 
@@ -47,7 +58,13 @@ Then run `portable.py`, click [this link](https://realpython.com/run-python-scri
 python portable.py
 ```
 
-Then open the link shown in the terminal in the browser and you'll be able to use this
+Or you can also run via gunicorn as follows:
+
+```sh
+python -m gunicorn 'portable:app'
+```
+
+Then open the link shown in the terminal in the browser and you'll be able to use this script
 
 ### Installation using venv and running under specific bind address / port
 
@@ -58,26 +75,26 @@ python -m pip install -r requirements.txt
 FLASK_APP=app/portable.py flask run --host=127.0.0.1 --port=9982
 ```
 
-
 ## Using as a Bookmarklet in Chrome:
 
 You can create a bookmarklet that performs the URL transformation by writing a small JavaScript snippet. Below is the JavaScript code for your bookmarklet:
+
 ```javascript
-javascript:(function(){window.location.href='https://13ft.wasimaster.me/'+encodeURIComponent(window.location.href);})();
+javascript: (function () {window.location.href="https://localhost:5000/" + encodeURIComponent(window.location.href);})();
 ```
-You can replace https://13ft.wasimaster.me with your own 13ft instance if desired.
+
+You can replace https://localhost:5000/ with your own 13ft instance if desired.
 
 Steps:
+
 1. Open Bookmarks Manager:
 
 2. Click on the three dots (menu) in the top-right corner of Chrome.
-Go to Bookmarks > Bookmark manager, or simply press Ctrl+Shift+O on Windows/Linux or Cmd+Option+B on Mac.
-Create a New Bookmark:
+   Go to Bookmarks > Bookmark manager, or simply press Ctrl+Shift+O on Windows/Linux or Cmd+Option+B on Mac.
+   Create a New Bookmark:
 
 3. In the Bookmark Manager, click the three-dot menu in the top-right corner of the window and select Add new bookmark.
-Enter Bookmark Details:
-    - Name: Enter a name for your bookmarklet, such as "13ft-ize". This name will show as a bookmark title in the bookmarks bar
-    - URL: Paste the JavaScript code provided above into the URL field.
+   Enter Bookmark Details: - Name: Enter a name for your bookmarklet, such as "13ft-ize". This name will show as a bookmark title in the bookmarks bar - URL: Paste the JavaScript code provided above into the URL field.
 4. Click Save.
 
 Using the Bookmarklet:
@@ -156,6 +173,28 @@ WantedBy=multi-user.target
 </VirtualHost>
 ```
 
+## Localisation
+
+The UI strings can be localised by setting the `LOCALE` environment variable before starting the app. Locale files live in `app/locales/<locale>.json`.
+
+Built-in locales:
+
+- `en` (default)
+- `de`
+- `fr`
+
+Examples:
+
+```sh
+# from app
+LOCALE=de python portable.py
+
+# or with gunicorn
+LOCALE=fr python -m gunicorn 'portable:app'
+```
+
+To add a new locale, copy `app/locales/en.json` to a new file such as `app/locales/es.json` and translate the values.
+
 ## Screenshots
 
 ### Step 1
@@ -183,3 +222,7 @@ Voilà you now have bypassed the paywall and ads
 You can also append the url at the end of the link and it will also work. (e.g if your server is running at `http://127.0.0.1:5000` then you can go to `http://127.0.0.1:5000/https://example.com` and it will read out the contents of `https://example.com`)
 
 This feature was implemented by [@atcasanova](https://github.com/atcasanova)
+
+### Logo attribution
+
+Logo courtesy of [@mcmikemn](https://github.com/mcmikemn)

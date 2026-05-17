@@ -1,8 +1,83 @@
 {
   "chunk": 23,
   "count": 50,
-  "generated_at": "2026-05-10T06:18:42Z",
+  "generated_at": "2026-05-17T06:30:06Z",
   "items": [
+    {
+      "repo_key": "github.com/simjanos-dev/LinguaCafe",
+      "repo_url": "github.com/simjanos-dev/LinguaCafe",
+      "host": "github.com",
+      "owner": "simjanos-dev",
+      "repo": "LinguaCafe",
+      "app_references": [
+        "linguacafe"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__simjanos-dev__LinguaCafe.md",
+      "readme_download_url": null,
+      "readme_sha256": "fc7322af3550a85221989ac2e7150f0881663e03535cdc0d75864281198f7d6b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/simonw/datasette",
+      "repo_url": "github.com/simonw/datasette",
+      "host": "github.com",
+      "owner": "simonw",
+      "repo": "datasette",
+      "app_references": [
+        "datasette"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__simonw__datasette.md",
+      "readme_download_url": null,
+      "readme_sha256": "e03c61a8c9f4df46373e863d5b5fa6a0869c61cc65bea2b2c24a8eb5a454d6b6",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/simonwep/ocular",
+      "repo_url": "github.com/simonwep/ocular",
+      "host": "github.com",
+      "owner": "simonwep",
+      "repo": "ocular",
+      "app_references": [
+        "ocular"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__simonwep__ocular.md",
+      "readme_download_url": null,
+      "readme_sha256": "0763cfb3933864cb43aa5b72fde3d2277b9409c1c31f41c81f229cfe96a00c0b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/simple-login/app",
+      "repo_url": "github.com/simple-login/app",
+      "host": "github.com",
+      "owner": "simple-login",
+      "repo": "app",
+      "app_references": [
+        "simplelogin"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__simple-login__app.md",
+      "readme_download_url": null,
+      "readme_sha256": "3bcf918af39377a7bcb54b0d4bcee80f16e3efb1c762b155faad1569e9a280e9",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/simplex-chat/simplex-chat",
+      "repo_url": "github.com/simplex-chat/simplex-chat",
+      "host": "github.com",
+      "owner": "simplex-chat",
+      "repo": "simplex-chat",
+      "app_references": [
+        "simplex-chat"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__simplex-chat__simplex-chat.md",
+      "readme_download_url": null,
+      "readme_sha256": "42784bc25d5011aa5e8862d3a92a9f50d86b3561f65b790fd58df05b13a17dcc",
+      "error": null
+    },
     {
       "repo_key": "github.com/simular/authman-server",
       "repo_url": "github.com/simular/authman-server",
@@ -42,10 +117,10 @@
       "app_references": [
         "decypharr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__sirrobot01__decypharr.md",
-      "readme_download_url": null,
-      "readme_sha256": "d02e12f9d0d5d01c1c779d6771800460c57839f6373105e63eb547ea461a34d1",
+      "readme_download_url": "https://raw.githubusercontent.com/sirrobot01/decypharr/main/README.md",
+      "readme_sha256": "3d838f8d5ef07f735618e82d815b34b4c3b5f135c4743a78ecaf5141535c36ed",
       "error": null
     },
     {
@@ -102,10 +177,10 @@
       "app_references": [
         "step-ca"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__smallstep__certificates.md",
-      "readme_download_url": null,
-      "readme_sha256": "02c6439cbcc6f0c2260bfb2b014d28cffc8d86263a9fda4a2496caad95ecb897",
+      "readme_download_url": "https://raw.githubusercontent.com/smallstep/certificates/master/README.md",
+      "readme_sha256": "9947ebe1e05e6e3bfac29aeb597376cde2e9a5d38fdf1454ee9c3eea41e6757c",
       "error": null
     },
     {
@@ -120,7 +195,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__snapotter-hq__SnapOtter.md",
       "readme_download_url": "https://raw.githubusercontent.com/snapotter-hq/SnapOtter/main/README.md",
-      "readme_sha256": "7a6f9e481a7f3656abff13cdef3f7468d56edcdd04982492a785129f8baf6cc6",
+      "readme_sha256": "1e71a2ad2ca7523df3c627458fc2674bb8dc93434ac41f4e2278d259f3e418d6",
       "error": null
     },
     {
@@ -237,9 +312,9 @@
       "app_references": [
         "stalwart"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__stalwartlabs__stalwart.md",
-      "readme_download_url": "https://raw.githubusercontent.com/stalwartlabs/stalwart/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a73c1e2e5a60e0b3619b8e1edc3ece479895a056f7f165f84c3befa3a8d49a29",
       "error": null
     },
@@ -312,9 +387,9 @@
       "app_references": [
         "openpanel"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__stefanpejcic__OpenPanel.md",
-      "readme_download_url": "https://raw.githubusercontent.com/stefanpejcic/OpenPanel/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "431931248f98f07533f022ee89d620c20bb8d5494934766d2bc7f5bafd0b94ec",
       "error": null
     },
@@ -432,9 +507,9 @@
       "app_references": [
         "clean-slate"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__successible__cleanslate.md",
-      "readme_download_url": "https://raw.githubusercontent.com/successible/cleanslate/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a2c991af9f9f40e6f737aca7dce0d7e8570d9c365a583cec066b6b1e1d50802f",
       "error": null
     },
@@ -657,9 +732,9 @@
       "app_references": [
         "teable"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__teableio__teable.md",
-      "readme_download_url": "https://raw.githubusercontent.com/teableio/teable/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ef7686cbd5a38f1ac32d4c3d5a83974ce16975474eed1a6a96cc970d600f834e",
       "error": null
     },
@@ -676,81 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__tech-kev__SharedMoments.md",
       "readme_download_url": null,
       "readme_sha256": "a187fcaec339493684d3e39ede4c19d6b86fd7efbba507a7f6b85fb426ab40bf",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/technomancer702/nodecast-tv",
-      "repo_url": "github.com/technomancer702/nodecast-tv",
-      "host": "github.com",
-      "owner": "technomancer702",
-      "repo": "nodecast-tv",
-      "app_references": [
-        "nodecast-tv"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__technomancer702__nodecast-tv.md",
-      "readme_download_url": null,
-      "readme_sha256": "475b01bbe3766afa0368406e222220aec2b4e09e818efa73f5981296595978cc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/teelur/budget-board",
-      "repo_url": "github.com/teelur/budget-board",
-      "host": "github.com",
-      "owner": "teelur",
-      "repo": "budget-board",
-      "app_references": [
-        "budget-board"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__teelur__budget-board.md",
-      "readme_download_url": null,
-      "readme_sha256": "25484be8ca6f23181f9cb746bce4fd1c2ac8dedc92d08db00125df490214a607",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/terdia/mqttui",
-      "repo_url": "github.com/terdia/mqttui",
-      "host": "github.com",
-      "owner": "terdia",
-      "repo": "mqttui",
-      "app_references": [
-        "mqtt-web-interface"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__terdia__mqttui.md",
-      "readme_download_url": null,
-      "readme_sha256": "8710ca08c78696db6fc54802af80334e3b8c8b03b75707cc1501e808ce2fda08",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/terry90/soulbeet",
-      "repo_url": "github.com/terry90/soulbeet",
-      "host": "github.com",
-      "owner": "terry90",
-      "repo": "soulbeet",
-      "app_references": [
-        "soulbeet"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__terry90__soulbeet.md",
-      "readme_download_url": null,
-      "readme_sha256": "fe168f1838af62a013f14e87981fdf14731f781769f04fe0ac70a4c16fe3e0b2",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/teslamate-org/teslamate",
-      "repo_url": "github.com/teslamate-org/teslamate",
-      "host": "github.com",
-      "owner": "teslamate-org",
-      "repo": "teslamate",
-      "app_references": [
-        "teslamate"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__teslamate-org__teslamate.md",
-      "readme_download_url": null,
-      "readme_sha256": "eccbe4ccdb495878460a24c4a86c09816484f0ba2562cf0f9b11d4c306d2d76e",
       "error": null
     }
   ]

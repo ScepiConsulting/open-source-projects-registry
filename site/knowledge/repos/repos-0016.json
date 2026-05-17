@@ -1,23 +1,8 @@
 {
   "chunk": 16,
   "count": 50,
-  "generated_at": "2026-05-10T06:18:42Z",
+  "generated_at": "2026-05-17T06:30:06Z",
   "items": [
-    {
-      "repo_key": "github.com/jt196/vanilla-cookbook",
-      "repo_url": "github.com/jt196/vanilla-cookbook",
-      "host": "github.com",
-      "owner": "jt196",
-      "repo": "vanilla-cookbook",
-      "app_references": [
-        "vanilla-cookbook"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jt196__vanilla-cookbook.md",
-      "readme_download_url": null,
-      "readme_sha256": "4731365cbe741c474e5b14eb49a2418608a6d42916eef8a71ba2725e3ba508d0",
-      "error": null
-    },
     {
       "repo_key": "github.com/juanfont/headscale",
       "repo_url": "github.com/juanfont/headscale",
@@ -87,10 +72,10 @@
       "app_references": [
         "self-hosted-metrics"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__kOlapsis__shm.md",
-      "readme_download_url": null,
-      "readme_sha256": "8c89d84fd862d53a21302ee3c5d0491fecb8b4e672bf0432360dcecf2c627399",
+      "readme_download_url": "https://raw.githubusercontent.com/kOlapsis/shm/main/README.md",
+      "readme_sha256": "04e28bee53bfff03491d18f554281ea178705a357e4bd584f7656e7744c417a9",
       "error": null
     },
     {
@@ -135,7 +120,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__kanbn__kan.md",
       "readme_download_url": "https://raw.githubusercontent.com/kanbn/kan/main/README.md",
-      "readme_sha256": "784b75b21300cb89a73578cc0aef4feee86437675b88c0b0d6e32ce545c9cd6b",
+      "readme_sha256": "d615775dfd368b62ff79b950e3235d9db50e7028c4bd1fe777d46e45200b8750",
       "error": null
     },
     {
@@ -177,9 +162,9 @@
       "app_references": [
         "karakeep"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__karakeep-app__karakeep.md",
-      "readme_download_url": "https://raw.githubusercontent.com/karakeep-app/karakeep/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6c7bea8dd6e686cf7eea1d6a3933ba411b60a48d2bc9157c3d91762667497bba",
       "error": null
     },
@@ -226,6 +211,21 @@
       "readme_path": "knowledge/readmes/github.com__karlomikus__bar-assistant.md",
       "readme_download_url": null,
       "readme_sha256": "285c0dd9995f0eb599aa66f1a8901c2b129c338fb6797e0fd159d69189ed5f91",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/kasmtech/KasmVNC",
+      "repo_url": "github.com/kasmtech/KasmVNC",
+      "host": "github.com",
+      "owner": "kasmtech",
+      "repo": "KasmVNC",
+      "app_references": [
+        "kasm-workspaces"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__kasmtech__KasmVNC.md",
+      "readme_download_url": "https://raw.githubusercontent.com/kasmtech/KasmVNC/master/README.md",
+      "readme_sha256": "043afa8afb44ea8b05b5e54703bd7694c5b0007ad766c9b2b2cd772f1f6f5806",
       "error": null
     },
     {
@@ -360,7 +360,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__kimdre__doco-cd.md",
       "readme_download_url": "https://raw.githubusercontent.com/kimdre/doco-cd/main/README.md",
-      "readme_sha256": "617733865c608c652e1357b9c45ddf52b8b703db0de65c1b0547ad8219c06182",
+      "readme_sha256": "c8c0c6515eaca0c6d5cbe2df9db6948b0d9d1d03617619728484483e12f4360e",
       "error": null
     },
     {
@@ -375,7 +375,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__kite-org__kite.md",
       "readme_download_url": "https://raw.githubusercontent.com/kite-org/kite/main/README.md",
-      "readme_sha256": "6d7431161cc5030bf24f59ec9457578ef737224e0dab2de72d7a0795ea01122d",
+      "readme_sha256": "fab1eee2122898836a7d5ccaa79f82ed4d4ab642fa4ac705f22acfaa5e326f62",
       "error": null
     },
     {
@@ -582,9 +582,9 @@
       "app_references": [
         "kuvasz"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__kuvasz-uptime__kuvasz.md",
-      "readme_download_url": "https://raw.githubusercontent.com/kuvasz-uptime/kuvasz/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "3bf77e22b6e626ed83c37295904ba6b79e210914095ece4bea2271128551a07c",
       "error": null
     },
@@ -702,10 +702,10 @@
       "app_references": [
         "revel"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__letsrevel__revel-backend.md",
-      "readme_download_url": null,
-      "readme_sha256": "4aae5d8ead1c70da7de44d64122bdd609dde9d0838ed1510b961056f98855f02",
+      "readme_download_url": "https://raw.githubusercontent.com/letsrevel/revel-backend/main/README.md",
+      "readme_sha256": "f7944e4c22b303fba6ad3bd0e056a3a32aeb02417b49a0cbba3a752d22555c03",
       "error": null
     },
     {

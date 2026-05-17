@@ -21,13 +21,14 @@ An app to create beautiful QR codes and scan various QR code types.
 
 - ✅ Accessible: minimally WCAG A compliant
 - 🎨 Customizable colors and styles
-- 🖼️ Export to PNG, JPG & SVG\*
+- 🖼️ Export to PNG, JPG & SVG
+- 🔤 Export to ASCII / Unicode text
 - 📋 Copy to clipboard
 - 🌓 Light/dark/system-preference mode toggle
 - 🎲 Randomize style button
 - 🌐 Available in 30+ languages
 - 💾 Save & Load QR Code config
-- 🖼️ Upload custom image for logo
+- 🖼️ Upload custom image for logo with adjustable size and margin
 - 🎭 Presets: Pre-crafted QR code styles
 - 🖌️ Frame customization: Add text labels and style the frame around your QR code
 - 🛡️ Error correction level: affects the size of the QR code and logo within. Use lower correction levels for bigger pieces of data to ensure that it can be read.
@@ -35,8 +36,9 @@ An app to create beautiful QR codes and scan various QR code types.
 - 📦 Batch data export: Import a CSV file with multiple data strings and export QR codes for them all at once. Template CSV files can be found in [`public/batch_export_templates/`](public/batch_export_templates/).
 - 📲 PWA Support: Install MiniQR as a desktop or mobile app
 - 📝 Data templates: Support for various data types including text, URLs, emails, phone numbers, SMS, WiFi credentials, vCards, locations, and calendar events
+- 🌍 UTF-8 input support: Vietnamese, CJK, Arabic, emoji, and other multibyte text
 
-\*SVG export has limited support and may not display correctly in all software. For more information, please refer to [CONTRIBUTING.md](CONTRIBUTING.md).
+See [ROADMAP.md](./ROADMAP.md) for future planned features.
 
 ## Demo
 

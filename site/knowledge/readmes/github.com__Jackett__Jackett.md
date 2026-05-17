@@ -135,7 +135,6 @@ Prior versions of Jackett are no longer supported.
  * NewStudio
  * Nipponsei
  * NoNaMe Club (NNM-Club)
- * NorTorrent
  * Nyaa.si
  * OneJAV
  * OpenSharing
@@ -279,8 +278,8 @@ Prior versions of Jackett are no longer supported.
  * AlphaRatio (AR)
  * AmigosShareClub (ASC)
  * AnimeBytes (AB)
- * AnimeTorrents (AnT)
  * AnimeTorrents.ro (Anime Torrents Romania)
+ * AnimeZ (AnimeTorrents)
  * AnimeWorld (AW)
  * Anthelion (ANT)
  * Araba Fenice (Phoenix) [![(invite needed)][inviteneeded]](#)
@@ -353,6 +352,8 @@ Prior versions of Jackett are no longer supported.
  * CrnaBerza
  * cspt (财神)
  * cyanbug (大青虫)
+ * CyclingArchiveClub [![(invite needed)][inviteneeded]](#)
+ * CZTeam
  * Darkpeers
  * Das Unerwartete (D-U)
  * DataScene (DS)
@@ -379,7 +380,6 @@ Prior versions of Jackett are no longer supported.
  * F1GP
  * FANO.IN [![(invite needed)][inviteneeded]](#)
  * Fappaizuri
- * FearNoPeer
  * Femdomcult
  * FileList (FL)
  * FinElite (FE) [![(invite needed)][inviteneeded]](#)
@@ -414,7 +414,6 @@ Prior versions of Jackett are no longer supported.
  * HD-Torrents (HDT)
  * HD-UNiT3D
  * HDArea (HDA)
- * HDBao
  * HDBits [![(invite needed)][inviteneeded]](#)
  * HDCiTY (HDC)
  * HDClone
@@ -490,6 +489,7 @@ Prior versions of Jackett are no longer supported.
  * MetalGuru [![(invite needed)][inviteneeded]](#)
  * MidnightScene
  * Milkie (ME)
+ * Milnueve
  * MMA-Torrents [![(invite needed)][inviteneeded]](#)
  * MNV (Max-New-Vision)
  * MOJBLiNK
@@ -538,6 +538,7 @@ Prior versions of Jackett are no longer supported.
  * Polish Torrent (PTT)
  * PolishTracker [![(invite needed)][inviteneeded]](#)
  * Pornbay [![(invite needed)][inviteneeded]](#)
+ * PornBytes
  * Portugas
  * Pretome
  * PrivateHD (PHD)
@@ -574,6 +575,7 @@ Prior versions of Jackett are no longer supported.
  * ReelFlix (HD4Free,LegacyHD)
  * RetroFlix
  * RetroMoviesClub (RMC)
+ * RetroToon
  * RevolutionTT [![(invite needed)][inviteneeded]](#)
  * RocketHD
  * Romanian Metal Torrents (RMT)
@@ -595,7 +597,6 @@ Prior versions of Jackett are no longer supported.
  * SiamBIT [PAY2DL]
  * Siqi
  * SkipTheCommercials
- * Slobit Media
  * SnowPT (SSPT)
  * SoulVoice (聆音Club) [![(invite needed)][inviteneeded]](#)
  * SpeedApp (SceneFZ, XtreMeZone / MYXZ, ICE Torrent)
@@ -605,6 +606,7 @@ Prior versions of Jackett are no longer supported.
  * SportsCora
  * SportsCult
  * SpringSunday (SSD) [![(invite needed)][inviteneeded]](#)
+ * SugoiMusic
  * SunnyPT [![(invite needed)][inviteneeded]](#)
  * Superbits (SBS)
  * Swarmazon
@@ -678,6 +680,7 @@ Prior versions of Jackett are no longer supported.
  * WinterSakura [![(invite needed)][inviteneeded]](#)
  * World-In-HD [![(invite needed)][inviteneeded]](#)
  * World-of-Tomorrow [![(invite needed)][inviteneeded]](#)
+ * Xingtan (杏坛) [![(invite needed)][inviteneeded]](#)
  * Xingwan (星湾) [![(invite needed)][inviteneeded]](#)
  * Xingyung (星陨阁) [![(invite needed)][inviteneeded]](#)
  * xloli (ilolicon PT)
