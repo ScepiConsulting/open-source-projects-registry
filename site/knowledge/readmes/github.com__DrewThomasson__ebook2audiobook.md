@@ -111,7 +111,7 @@ https://github.com/user-attachments/assets/81c4baad-117e-4db5-ac86-efc2b7fea921
 - 💻 **Low-resource friendly** — runs on **2 GB RAM / 1 GB VRAM (minimum)**
 - 🎵 **Audiobook output formats**: mono or stereo `aac`, `flac`, `mp3`, `m4b`, `m4a`, `mp4`, `mov`, `ogg`, `wav`, `webm`
 - 🧠 **SML tags supported** — fine-grained control of breaks, pauses, voice switching and more ([see below](#sml-tags-available))
-- 🧩 **Optional custom model** using your own trained model (XTTSv2 only, other on request)
+- 🧩 **Optional custom model** using your own trained model (XTTSv2, VITS, FAIRSEQ, PIPER, others on request)
 - 🎛️ **Fine-tuned preset models** trained by the E2A Team<br/>
      <i>(Contact us if you need additional fine-tuned models, or if you’d like to share yours to the official preset list)</i>
 
@@ -154,7 +154,7 @@ https://github.com/user-attachments/assets/81c4baad-117e-4db5-ac86-efc2b7fea921
 - `[pause:N]` — fixed pause (**N sec.**)
 - `[voice:/path/to/voice/file]...[/voice]` — switch voice from default or selected voice from GUI/CLI
 
-**Check our other repo dedicated to add SML automatically in your ebook -> [E2A-SML](https://github.com/DrewThomasson/E2A-SML)**
+**Check our other repo dedicated to add SML automatically in your ebook -> [E2A-SML](./tools/E2A-SML)**
 
 > [!IMPORTANT]
 **Before to post an install or bug issue search carefully to the opened and closed issues TAB<br>
@@ -254,7 +254,7 @@ to let the web page reconnect to the new connection socket.**
 ```bash
 usage: app.py [-h] [--session SESSION] [--share] [--headless] [--ebook EBOOK] [--ebooks_dir EBOOKS_DIR]
               [--language LANGUAGE] [--voice VOICE] [--voice_map VOICE_MAP] [--device {CPU,CUDA,MPS,ROCM,XPU,JETSON}]
-              [--tts_engine {XTTSv2,BARK,VITS,FAIRSEQ,TACOTRON2,YOURTTS,xtts,bark,vits,fairseq,tacotron,yourtts}]
+              [--tts_engine {XTTS,BARK,VITS,FAIRSEQ,TACOTRON,YOURTTS,xtts,bark,vits,fairseq,tacotron,yourtts}]
               [--custom_model CUSTOM_MODEL] [--fine_tuned FINE_TUNED] [--output_format OUTPUT_FORMAT]
               [--output_channel OUTPUT_CHANNEL] [--temperature TEMPERATURE] [--length_penalty LENGTH_PENALTY]
               [--num_beams NUM_BEAMS] [--repetition_penalty REPETITION_PENALTY] [--top_k TOP_K] [--top_p TOP_P]
@@ -268,7 +268,7 @@ options:
   --session SESSION     Session to resume the conversion in case of interruption, crash,
                             or reuse of custom models and custom cloning voices.
 
-**** The following option are for gradio/gui mode only:
+**** The following option is for gradio/gui mode only:
   --share               (Optional) Enable a public shareable Gradio link.
 
 **** The following options are for --headless mode only:
@@ -282,6 +282,10 @@ options:
                             in ./lib/lang.py sed as default if not present. All compatible language codes are in ./lib/lang.py
 
 optional parameters:
+  --translate ISO3      (Optional) Translate ebook to a target language (ISO 639-3 code, e.g. eng, fra, deu) before TTS synthesis.
+                            Uses argostranslate. The target language becomes the effective TTS language for the run.
+                            A copy of the source ebook is made with the _<iso3> suffix so translated and non-translated
+                            outputs stay isolated (independent process folder, audio chunks, and final file).
   --voice VOICE         (Optional) Path to the voice cloning file for TTS engine.
                             Uses the default voice if not present.
   --voice_map VOICE_MAP
@@ -292,8 +296,8 @@ optional parameters:
   --device {CPU,CUDA,MPS,ROCM,XPU,JETSON}
                         (Optional) Processor unit type for the conversion.
                             Default is set in ./lib/conf.py if not present. Fall back to CPU if CUDA or MPS is not available.
-  --tts_engine {XTTSv2,BARK,VITS,FAIRSEQ,TACOTRON2,YOURTTS,xtts,bark,vits,fairseq,tacotron,yourtts}
-                        (Optional) Preferred TTS engine (available are: ['XTTSv2', 'BARK', 'VITS', 'FAIRSEQ', 'TACOTRON2', 'YOURTTS', 'xtts', 'bark', 'vits', 'fairseq', 'tacotron', 'yourtts'].
+  --tts_engine {XTTS,BARK,VITS,FAIRSEQ,TACOTRON,YOURTTS,xtts,bark,vits,fairseq,tacotron,yourtts}
+                        (Optional) Preferred TTS engine (available are: ['XTTS', 'BARK', 'VITS', 'FAIRSEQ', 'TACOTRON', 'YOURTTS', 'xtts', 'bark', 'vits', 'fairseq', 'tacotron', 'yourtts'].
                             Default depends on the selected language. The tts engine should be compatible with the chosen language
   --custom_model CUSTOM_MODEL
                         (Optional) Path to the custom model zip file cntaining mandatory model files.
@@ -349,10 +353,10 @@ Linux/Mac:
     ./ebook2audiobook.command --headless --ebook '/path/to/file' --language eng
 
 SML tags available:
-        [break] — silence (random range **0.3–0.6 sec.**)
-        [pause] — silence (random range **1.0–1.6 sec.**)
-        [pause:N] — fixed pause (**N sec.**)
-        [voice:/path/to/voice/file]...[/voice] — switch voice from default or selected voice from GUI/CLI
+	[break] — silence (random range **0.3–0.6 sec.**)
+	[pause] — silence (random range **1.0–1.6 sec.**)
+	[pause:N] — fixed pause (**N sec.**)
+	[voice:/path/to/voice/file]...[/voice] — switch voice from default or selected voice from GUI/CLI
 
 ```
 
@@ -456,8 +460,6 @@ git checkout tags/VERSION_NUM # Locally/Compose -> Example: git checkout tags/v2
 - My NVIDIA/ROCm/XPU/MPS GPU isn't being detected?? -> [GPU ISSUES Wiki Page](https://github.com/DrewThomasson/ebook2audiobook/wiki/GPU-ISSUES)
 -  CPU is slow (better on server smp CPU) while GPU can have almost real time conversion.
    [Discussion about this](https://github.com/DrewThomasson/ebook2audiobook/discussions/19#discussioncomment-10879846)
-   For faster multilingual generation I would suggest my other
-   [project that uses piper-tts](https://github.com/DrewThomasson/ebook2audiobookpiper-tts) instead
    (It doesn't have zero-shot voice cloning though, and is Siri quality voices, but it is much faster on cpu).
 - "I'm having dependency issues" - Just use the docker, its fully self contained and has a headless mode,
    add `--help` parameter at the end of the docker run command for more information.
@@ -468,7 +470,6 @@ git checkout tags/VERSION_NUM # Locally/Compose -> Example: git checkout tags/v2
 - All Features open to public Contributions ⭐
 - Any help from people speaking any of the supported languages to help us improve the models ⭐
 - [x] Preview Blocks/Chapters before to start the conversion
-- [ ] Parallel sentences conversion with workers
 - [ ] Edit by sentence converted for surgical text change
 - [x] SML tags integration for voice, pause, break, and more changes 
 - [x] -h -help parameter info in different languages
@@ -485,7 +486,7 @@ git checkout tags/VERSION_NUM # Locally/Compose -> Example: git checkout tags/v2
 - [ ] Audiobookshelf integration
 
 #### Extra Options
-- [ ] Ebook Translation option
+- [x] Ebook Translation option
 - [x] Output format choices
 - [x] Batch ebook folder
 - [x] Multiprocessing conversion
@@ -493,7 +494,7 @@ git checkout tags/VERSION_NUM # Locally/Compose -> Example: git checkout tags/v2
 - [x] GPU Device detection
 - [x] Denoise any reference audio for upload voice cloning,
 - [x] Custom model upload (XTTSv2 only for now. more on request)
-- [ ]  Add Portuguese Xttsv2 model fine tuned for EU portuguese (help wanted)
+- [ ]  Add Portuguese pt_PT Xttsv2 model fine tuned for EU portuguese (help wanted)
 
 #### TTS engines
 - [x] XTTSv2
@@ -504,7 +505,7 @@ git checkout tags/VERSION_NUM # Locally/Compose -> Example: git checkout tags/v2
 - [x] YourTTS
 - [x] Tortoise
 - [x] GlowTTS
-- [ ] Piper-TTS
+- [x] Piper-TTS
 - [ ] CosyVoice (https://github.com/FunAudioLLM/CosyVoice)
 - [ ] Kokoro-TTS
 - [ ] Orpheus-TTS

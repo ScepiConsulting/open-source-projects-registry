@@ -1,8 +1,23 @@
 {
   "chunk": 14,
   "count": 50,
-  "generated_at": "2026-05-17T06:30:06Z",
+  "generated_at": "2026-05-24T06:44:10Z",
   "items": [
+    {
+      "repo_key": "github.com/go-gitea/gitea",
+      "repo_url": "github.com/go-gitea/gitea",
+      "host": "github.com",
+      "owner": "go-gitea",
+      "repo": "gitea",
+      "app_references": [
+        "gitea"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__go-gitea__gitea.md",
+      "readme_download_url": null,
+      "readme_sha256": "fdee8fa97e9203d30b6a213ca222fa04215f5aaa37796a7dee8e569eed2c1676",
+      "error": null
+    },
     {
       "repo_key": "github.com/go-shiori/shiori",
       "repo_url": "github.com/go-shiori/shiori",
@@ -42,10 +57,10 @@
       "app_references": [
         "authentik"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__goauthentik__authentik.md",
-      "readme_download_url": null,
-      "readme_sha256": "0b132191876614bef6486870f0b4c1e80edf57f17ae35e45d0eaa83505ab937b",
+      "readme_download_url": "https://raw.githubusercontent.com/goauthentik/authentik/main/README.md",
+      "readme_sha256": "59eee8719a079898e0b9b2f0cfe5c77a9078e6f774bcc14656dde4a91030cd98",
       "error": null
     },
     {
@@ -57,10 +72,10 @@
       "app_references": [
         "gogs"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gogs__gogs.md",
-      "readme_download_url": null,
-      "readme_sha256": "4bb8f3ef460d228416494d74330d07397a8943b33ab59ba5fde106b67cfe35df",
+      "readme_download_url": "https://raw.githubusercontent.com/gogs/gogs/main/README.md",
+      "readme_sha256": "b75802f5e8382784bde65249f38c49dc7ae5aa666d387bba9d22ff56ff0845b5",
       "error": null
     },
     {
@@ -207,9 +222,9 @@
       "app_references": [
         "grimmory"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__grimmory-tools__grimmory.md",
-      "readme_download_url": "https://raw.githubusercontent.com/grimmory-tools/grimmory/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "171c3a17b076795bb9c818378b8ccbc18943f2af5e4c2cb7537dfe34de4ef0c8",
       "error": null
     },
@@ -222,10 +237,10 @@
       "app_references": [
         "grist"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gristlabs__grist-core.md",
-      "readme_download_url": null,
-      "readme_sha256": "6ef925fe45c59c72ff08ba116e6fe0783b7a2111097a0937e53c31c864b8963d",
+      "readme_download_url": "https://raw.githubusercontent.com/gristlabs/grist-core/main/README.md",
+      "readme_sha256": "524be79912651d42402585b23eef62528ee65eaa433986a0963132963056f806",
       "error": null
     },
     {
@@ -252,9 +267,9 @@
       "app_references": [
         "snipe-it"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__grokability__snipe-it.md",
-      "readme_download_url": "https://raw.githubusercontent.com/grokability/snipe-it/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "743d59a55b7a0804b1dc510354f5efb6eef52b83fe311469119a383f7888cd92",
       "error": null
     },
@@ -297,9 +312,9 @@
       "app_references": [
         "filebrowser-quantum"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gtsteffaniak__filebrowser.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gtsteffaniak/filebrowser/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f7b4c6adb22876d082239a1bdba23bdbc554655cf2d66ccb2b7f1a632a330712",
       "error": null
     },
@@ -315,7 +330,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__guillevc__yubal.md",
       "readme_download_url": "https://raw.githubusercontent.com/guillevc/yubal/master/README.md",
-      "readme_sha256": "b363f577f5de2e747f24ea97e70ceb7aac79a79aad6f8c3499316f2c79dcf939",
+      "readme_sha256": "06f218cab958b7e0ecdf0bad12405114a93ec1162f8e5163f2c0191254436e34",
       "error": null
     },
     {
@@ -462,9 +477,9 @@
       "app_references": [
         "dock-dploy"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__hhftechnology__Dock-Dploy.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hhftechnology/Dock-Dploy/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e4e915d448ea1bc44159f150110c9ef5749049e5e95b3de6ad81944f2fca38cf",
       "error": null
     },
@@ -597,9 +612,9 @@
       "app_references": [
         "html2rss"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__html2rss__html2rss-web.md",
-      "readme_download_url": "https://raw.githubusercontent.com/html2rss/html2rss-web/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "73fd6a04b7be01abe2f434367168dea533316b55909d53345915a9621ec04b6e",
       "error": null
     },
@@ -642,10 +657,10 @@
       "app_references": [
         "huginn"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__huginn__huginn.md",
-      "readme_download_url": null,
-      "readme_sha256": "8a9187bbd3480d2800504216f7b2740a9f99aec14c4536c999691fed32992cd2",
+      "readme_download_url": "https://raw.githubusercontent.com/huginn/huginn/master/README.md",
+      "readme_sha256": "d003fd656bf5152d00e6234e5fba1cd0aa911306893ec861859306c1cfe452ae",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__ihucos__counter.dev-selfhost.md",
       "readme_download_url": null,
       "readme_sha256": "3029a16b7a026463122e06601045dcd71aa33fa0f24764236661fbebfa7c9eff",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/iib0011/omni-tools",
-      "repo_url": "github.com/iib0011/omni-tools",
-      "host": "github.com",
-      "owner": "iib0011",
-      "repo": "omni-tools",
-      "app_references": [
-        "omnitools"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__iib0011__omni-tools.md",
-      "readme_download_url": null,
-      "readme_sha256": "7055beda35b06028531b034b26f779f426f31079624e9504fd3a08a84031725f",
       "error": null
     }
   ]

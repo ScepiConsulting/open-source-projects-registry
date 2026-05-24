@@ -242,6 +242,11 @@ you may also want these, especially on servers:
 * [nixos module](#nixos-module) to run copyparty on NixOS hosts
 * [contrib/nginx/copyparty.conf](contrib/nginx/copyparty.conf) to [reverse-proxy](#reverse-proxy) behind nginx (for better https)
 
+because the following environment variables are commonly used in service-scripts, they are understood by copyparty:
+
+* `NOTIFY_SOCKET` as provided by systemd with service type=notify (see systemd/copyparty.service above)
+* `S6_NOTIFY_FD` for s6/dinit [`ready-notification = pipevar:S6_NOTIFY_FD`](https://skarnet.org/software/s6/notifywhenup.html)
+
 and remember to open the ports you want; here's a complete example including every feature copyparty has to offer:
 ```
 firewall-cmd --permanent --add-port={80,443,3921,3922,3923,3945,3990}/tcp  # --zone=libvirt
@@ -297,7 +302,7 @@ also see [comparison to similar software](./docs/versus.md)
     * ☑ realtime streaming of growing files (logfiles and such)
   * ☑ [thumbnails](#thumbnails)
     * ☑ ...of images using Pillow, pyvips, or FFmpeg
-    * ☑ ...of RAW images using rawpy
+    * ☑ ...of RAW images using libraw-dcraw_emu or rawpy
     * ☑ ...of videos using FFmpeg
     * ☑ ...of audio (spectrograms) using FFmpeg
     * ☑ cache eviction (max-age; maybe max-size eventually)
@@ -1181,7 +1186,7 @@ open the `[🎺]` media-player-settings tab to configure it,
   * `[flac]` converts `flac` and `wav` files into opus (if supported by browser) or mp3
   * `[aac]` converts `aac` and `m4a` files into opus (if supported by browser) or mp3
   * `[oth]` converts all other known formats into opus (if supported by browser) or mp3
-    * `aac|ac3|aif|aiff|alac|alaw|amr|ape|au|dfpwm|dts|flac|gsm|it|m4a|m4b|m4r|mo3|mod|mp2|mp3|mpc|mptm|mt2|mulaw|ogg|okt|opus|ra|s3m|tak|tta|ulaw|wav|wma|wv|xm|xpk`
+    * `aac|ac3|aif|aiff|alac|alaw|amr|ape|au|dfpwm|dts|flac|gsm|it|m4a|m4b|m4r|mka|mo3|mod|mp2|mp3|mpc|mptm|mt2|mulaw|ogg|okt|opus|ra|s3m|tak|tta|ulaw|wav|wma|wv|xm|xpk`
 * "transcode to":
   * `[opus]` produces an `opus` whenever transcoding is necessary (the best choice on Android and PCs)
   * `[awo]` is `opus` in a `weba` file, good for iPhones (iOS 17.5 and newer) but Apple is still fixing some state-confusion bugs as of iOS 18.2.1
@@ -2321,9 +2326,7 @@ if you want to change the fonts, see [./docs/rice/](./docs/rice/)
 
 become a *real* webserver  which people can access by just going to your IP or domain without specifying a port
 
-**if you're on windows,** then you just need to add the commandline argument `-p 80,443` and you're done! nice
-
-**if you're on macos,** sorry, I don't know
+**if you're on windows or macos,** then you just need to add the commandline argument `-p 80,443` and you're done! nice
 
 **if you're on Linux,** you have the following 4 options:
 
@@ -3203,7 +3206,7 @@ enable [thumbnails](#thumbnails) of...
 * **HEIF pictures:** `pyvips` or `ffmpeg` or `pillow-heif`
 * **AVIF pictures:** `pyvips` or `ffmpeg` or `pillow-avif-plugin` or pillow v11.3+
 * **JPEG XL pictures:** `pyvips` or `ffmpeg`
-* **RAW images:** `rawpy`, plus one of `pyvips` or `Pillow` (for some formats)
+* **RAW photos:** either `libraw dcraw_emu` or `rawpy`, plus either `pyvips` or `Pillow`
 
 enable sending [zeromq messages](#zeromq) from event-hooks: `pyzmq`
 
@@ -3229,6 +3232,7 @@ set any of the following environment variables to disable its associated optiona
 | -------------------- | ------------ |
 | `PRTY_NO_ARGON2`     | disable argon2-cffi password hashing |
 | `PRTY_NO_CFSSL`      | never attempt to generate self-signed certificates using [cfssl](https://github.com/cloudflare/cfssl) |
+| `PRTY_NO_DCRAW`      | disable all [libraw](https://www.libraw.org/homepage)-based thumbnail support for RAW images |
 | `PRTY_NO_FFMPEG`     | **audio transcoding** goes byebye, **thumbnailing** must be handled by Pillow/libvips |
 | `PRTY_NO_FFPROBE`    | **audio transcoding** goes byebye, **thumbnailing** must be handled by Pillow/libvips, **metadata-scanning** must be handled by mutagen |
 | `PRTY_NO_MAGIC`      | do not use [magic](https://pypi.org/project/python-magic/) for filetype detection |
@@ -3243,7 +3247,8 @@ set any of the following environment variables to disable its associated optiona
 | `PRTY_NO_PIL_WEBP`   | disable use of native webp support in Pillow |
 | `PRTY_NO_PSUTIL`     | do not use [psutil](https://pypi.org/project/psutil/) for reaping stuck hooks and plugins on Windows |
 | `PRTY_NO_PYFTPD`     | disable ftp(s) server ([pyftpdlib](https://pypi.org/project/pyftpdlib/)-based) |
-| `PRTY_NO_RAW`        | disable all [rawpy](https://pypi.org/project/rawpy/)-based thumbnail support for RAW images |
+| `PRTY_NO_RAW`        | same as `PRTY_NO_DCRAW` plus `PRTY_NO_RAWPY` |
+| `PRTY_NO_RAWPY`      | disable all [rawpy](https://pypi.org/project/rawpy/)-based thumbnail support for RAW images |
 | `PRTY_NO_VIPS`       | disable all [libvips](https://pypi.org/project/pyvips/)-based thumbnail support; will fallback to Pillow or ffmpeg |
 
 example: `PRTY_NO_PIL=1 python3 copyparty-sfx.py`

@@ -1,8 +1,23 @@
 {
   "chunk": 15,
   "count": 50,
-  "generated_at": "2026-05-17T06:30:06Z",
+  "generated_at": "2026-05-24T06:44:10Z",
   "items": [
+    {
+      "repo_key": "github.com/iib0011/omni-tools",
+      "repo_url": "github.com/iib0011/omni-tools",
+      "host": "github.com",
+      "owner": "iib0011",
+      "repo": "omni-tools",
+      "app_references": [
+        "omnitools"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__iib0011__omni-tools.md",
+      "readme_download_url": null,
+      "readme_sha256": "7055beda35b06028531b034b26f779f426f31079624e9504fd3a08a84031725f",
+      "error": null
+    },
     {
       "repo_key": "github.com/immich-app/immich",
       "repo_url": "github.com/immich-app/immich",
@@ -132,9 +147,9 @@
       "app_references": [
         "inventree"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__inventree__InvenTree.md",
-      "readme_download_url": "https://raw.githubusercontent.com/inventree/InvenTree/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e1599bb007737692ffd58387c04bd463acd8156f2eb98cb20e6a68199ebba523",
       "error": null
     },
@@ -222,10 +237,10 @@
       "app_references": [
         "trip"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__itskovacs__trip.md",
-      "readme_download_url": null,
-      "readme_sha256": "2d34e2c8e82f94c3b53903ddbf8937aaa0766480840754f9a36e1d27f030b0e9",
+      "readme_download_url": "https://raw.githubusercontent.com/itskovacs/trip/main/README.md",
+      "readme_sha256": "416878c8bd09f6163d45fb5fc4aefe3fea7b3d940f5fa24fff90be11332a6496",
       "error": null
     },
     {
@@ -387,9 +402,9 @@
       "app_references": [
         "jellyfin"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__jellyfin__jellyfin.md",
-      "readme_download_url": "https://raw.githubusercontent.com/jellyfin/jellyfin/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "914b25fd2d743e86bc7c252adad127f50dce63f023efb93934154580cbc8b36b",
       "error": null
     },
@@ -402,10 +417,10 @@
       "app_references": [
         "posteria"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jeremehancock__Posteria.md",
-      "readme_download_url": null,
-      "readme_sha256": "c11be5a0283e4b92933f4d894fb46d40740ace808de1337fade68c4438738849",
+      "readme_download_url": "https://raw.githubusercontent.com/jeremehancock/Posteria/main/README.md",
+      "readme_sha256": "beb228aff10e6326d02a92f34b31910b56ecb148bca26cbe259d837d3da38629",
       "error": null
     },
     {
@@ -627,9 +642,9 @@
       "app_references": [
         "loops"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__joinloops__loops-server.md",
-      "readme_download_url": "https://raw.githubusercontent.com/joinloops/loops-server/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1fc57bb48d5a0f7cf84cc8c00b75a8b12b76b8b7af6be61679b375428789329c",
       "error": null
     },
@@ -642,10 +657,10 @@
       "app_references": [
         "jellysweep"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jon4hz__jellysweep.md",
-      "readme_download_url": null,
-      "readme_sha256": "04b35041a3bbd527a27f7ac494ba45a04701184bf6ae137c8464ca9e1c1578f4",
+      "readme_download_url": "https://raw.githubusercontent.com/jon4hz/jellysweep/main/README.md",
+      "readme_sha256": "5ee274e32ca540861a1fbc7be8d96a6ca3c07dc288ec4f4a370a79cd69fdf0f5",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__jptrsn__zip-captions.md",
       "readme_download_url": null,
       "readme_sha256": "764ab4d520c7c124b49391f1efd11f4d361c8746f01f74ae085618138e5ae7f7",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jt196/vanilla-cookbook",
-      "repo_url": "github.com/jt196/vanilla-cookbook",
-      "host": "github.com",
-      "owner": "jt196",
-      "repo": "vanilla-cookbook",
-      "app_references": [
-        "vanilla-cookbook"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jt196__vanilla-cookbook.md",
-      "readme_download_url": null,
-      "readme_sha256": "4731365cbe741c474e5b14eb49a2418608a6d42916eef8a71ba2725e3ba508d0",
       "error": null
     }
   ]

@@ -84,7 +84,6 @@ Prior versions of Jackett are no longer supported.
  * 52BT
  * ACG.RIP
  * AniLibria
- * Anime Tosho
  * AniRena
  * AniSource
  * ApacheTorrent
@@ -191,6 +190,7 @@ Prior versions of Jackett are no longer supported.
 
  * AniDUB
  * Anime by Belka (Аниме от Белки)
+ * Anime Tosho
  * AnimeLayer
  * Best-Torrents [PAY2DL]
  * BitMagnet (Local DHT) [[site](https://github.com/bitmagnet-io/bitmagnet)]
@@ -380,6 +380,7 @@ Prior versions of Jackett are no longer supported.
  * F1GP
  * FANO.IN [![(invite needed)][inviteneeded]](#)
  * Fappaizuri
+ * FearNoPeer
  * Femdomcult
  * FileList (FL)
  * FinElite (FE) [![(invite needed)][inviteneeded]](#)
@@ -414,6 +415,7 @@ Prior versions of Jackett are no longer supported.
  * HD-Torrents (HDT)
  * HD-UNiT3D
  * HDArea (HDA)
+ * HDBao
  * HDBits [![(invite needed)][inviteneeded]](#)
  * HDCiTY (HDC)
  * HDClone
@@ -446,7 +448,6 @@ Prior versions of Jackett are no longer supported.
  * IPTorrents (IPT)
  * ItaTorrents
  * JME-REUNIT3D
- * JoyHD (JHD) [![(invite needed)][inviteneeded]](#)
  * JPopsuki
  * JPTV4us
  * KamePT [![(invite needed)][inviteneeded]](#)
@@ -497,6 +498,7 @@ Prior versions of Jackett are no longer supported.
  * MonikaDesign (MDU)
  * MoreThanTV (MTV) [![(invite needed)][inviteneeded]](#)
  * MouseBits
+ * Musopia (音乐乌托邦)
  * Muxuege [![(invite needed)][inviteneeded]](#)
  * MyAnonamouse (MAM)
  * MySpleen [![(invite needed)][inviteneeded]](#)
@@ -581,6 +583,7 @@ Prior versions of Jackett are no longer supported.
  * Romanian Metal Torrents (RMT)
  * RoTorrent (ROT)
  * Rousi.pro
+ * RunTheFrames
  * SAMARITANO
  * SBPT
  * SceneHD [![(invite needed)][inviteneeded]](#)
@@ -591,6 +594,7 @@ Prior versions of Jackett are no longer supported.
  * seedpool
  * SewerPT (下水道) [![(invite needed)][inviteneeded]](#)
  * SexTorrent
+ * Shadowbit
  * ShaKaw [![(invite needed)][inviteneeded]](#)
  * Shareisland
  * Shazbat
@@ -649,6 +653,7 @@ Prior versions of Jackett are no longer supported.
  * TorrentBD
  * TorrentBytes (TBy) [![(invite needed)][inviteneeded]](#)
  * TorrentCCF (TCCF)
+ * TorrentClaw [![(invite needed)][inviteneeded]](#)
  * TorrentDay (TD)
  * TorrentDD (TodayBit)
  * Torrenteros (TTR)
@@ -664,7 +669,6 @@ Prior versions of Jackett are no longer supported.
  * TreZzoR
  * TurkSeed (Aturk)
  * TurkTorrent (TT) [PAY2DL]
- * TV Chaos UK (TVCUK)
  * TVstore
  * U2 (U2分享園@動漫花園) [![(invite needed)][inviteneeded]](#)
  * UBits

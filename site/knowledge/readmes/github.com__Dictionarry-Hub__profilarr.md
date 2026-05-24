@@ -26,11 +26,6 @@
   </picture>
 </p>
 
-> [!WARNING]
-> V2 is not yet ready for production use. It is currently in closed beta.
-> For production use, see [Profilarr V1](https://github.com/Dictionarry-Hub/profilarr/tree/v1).
-> Join our [Discord](https://discord.gg/2A89tXZMgA) if you'd like to beta test.
-
 ## 🌍 Overview
 
 If you manage a media server, you've probably spent hours configuring quality
@@ -79,6 +74,14 @@ drifts between instances. Profilarr tries to make that easier.
 
 ## 📦 Getting Started
 
+### Requirements
+
+- Docker host with Linux kernel `3.17+`. Older kernels, including Synology DSM
+  installs on kernel `3.10`, are not supported by Profilarr v2.
+- Docker platform `linux/amd64` or `linux/arm64`
+- Sonarr `v4+`
+- Radarr `v5+`
+
 ### Production
 
 ```yaml
@@ -94,6 +97,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
+      # Uncomment ORIGIN if you use a reverse proxy to access your containers.
+      #- ORIGIN=https://profilarr.yourdomain.com
       - PARSER_HOST=parser
       - PARSER_PORT=5000
     depends_on:
@@ -113,18 +118,28 @@ services:
 > testing. Linking, syncing, and all other features work without it. Remove the
 > `parser` service and related environment variables if you don't need it.
 
-| Variable                 | Default                                                           | Description                                                    |
-| ------------------------ | ----------------------------------------------------------------- | -------------------------------------------------------------- |
-| `PUID`                   | `1000`                                                            | User ID for file permissions                                   |
-| `PGID`                   | `1000`                                                            | Group ID for file permissions                                  |
-| `UMASK`                  | `022`                                                             | File creation mask                                             |
-| `TZ`                     | `Etc/UTC`                                                         | Timezone for scheduling                                        |
-| `PORT`                   | `6868`                                                            | Web UI port                                                    |
-| `HOST`                   | `0.0.0.0`                                                         | Bind address                                                   |
-| `AUTH`                   | `on`                                                              | Auth mode (`on`, `oidc`, `off`)                                |
-| `PARSER_HOST`            | `localhost`                                                       | Parser service host                                            |
-| `PARSER_PORT`            | `5000`                                                            | Parser service port                                            |
-| `PROFILARR_BULLETIN_URL` | `https://raw.githubusercontent.com/Dictionarry-Hub/bulletin/main` | Override for the announcement feed + release manifest base URL |
+| Variable                 | Default                                                           | Description                                                                           |
+| ------------------------ | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| `PUID`                   | `1000`                                                            | User ID for file permissions                                                          |
+| `PGID`                   | `1000`                                                            | Group ID for file permissions                                                         |
+| `UMASK`                  | `022`                                                             | File creation mask                                                                    |
+| `TZ`                     | `Etc/UTC`                                                         | Timezone for scheduling                                                               |
+| `PORT`                   | `6868`                                                            | Web UI port                                                                           |
+| `HOST`                   | `0.0.0.0`                                                         | Bind address                                                                          |
+| `AUTH`                   | `on`                                                              | Auth mode (`on`, `oidc`, `off`)                                                       |
+| `OIDC_CLIENT_SECRET`     | -                                                                 | OIDC client secret (when `AUTH=oidc`)                                                 |
+| `OIDC_CLIENT_ID`         | -                                                                 | OIDC client ID (when `AUTH=oidc`)                                                     |
+| `OIDC_DISCOVERY_URL`     | -                                                                 | OIDC discovery URL (when `AUTH=oidc`)                                                 |
+| `ORIGIN`                 | -                                                                 | Public URL when running behind a reverse proxy (e.g. `https://profilarr.example.com`) |
+| `PARSER_HOST`            | `localhost`                                                       | Parser service host                                                                   |
+| `PARSER_PORT`            | `5000`                                                            | Parser service port                                                                   |
+| `PROFILARR_BULLETIN_URL` | `https://raw.githubusercontent.com/Dictionarry-Hub/bulletin/main` | Override for the announcement feed + release manifest base URL                        |
+
+> [!NOTE]
+> When using OIDC `ORIGIN=` _must_ be set to your Profilarr URL, and Profilarr
+> expects `{ORIGIN}/auth/oidc/callback` for the redirect URL
+> (e.g. `https://profilarr.example.com/auth/oidc/callback`). Many
+> IdPs will infer this automatically.
 
 See the [documentation](https://dictionarry.dev/) for full setup and
 configuration guides.

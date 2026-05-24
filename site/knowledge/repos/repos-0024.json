@@ -1,8 +1,83 @@
 {
   "chunk": 24,
   "count": 50,
-  "generated_at": "2026-05-17T06:30:06Z",
+  "generated_at": "2026-05-24T06:44:10Z",
   "items": [
+    {
+      "repo_key": "github.com/taigaio/taiga-docker",
+      "repo_url": "github.com/taigaio/taiga-docker",
+      "host": "github.com",
+      "owner": "taigaio",
+      "repo": "taiga-docker",
+      "app_references": [
+        "taiga"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__taigaio__taiga-docker.md",
+      "readme_download_url": null,
+      "readme_sha256": "f91b0e119865a2f44f2bbabe41b488721bc49fce0a827cce84ee242ce6d7d252",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/tarampampam/webhook-tester",
+      "repo_url": "github.com/tarampampam/webhook-tester",
+      "host": "github.com",
+      "owner": "tarampampam",
+      "repo": "webhook-tester",
+      "app_references": [
+        "webhook-tester"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__tarampampam__webhook-tester.md",
+      "readme_download_url": null,
+      "readme_sha256": "8ad2c642f13c1b26252f9acb66d0727293e4619a20e53ea9a7581e9923e71cdf",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/tchapi/davis",
+      "repo_url": "github.com/tchapi/davis",
+      "host": "github.com",
+      "owner": "tchapi",
+      "repo": "davis",
+      "app_references": [
+        "davis"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__tchapi__davis.md",
+      "readme_download_url": null,
+      "readme_sha256": "823965fad59fd6ff4fbe1ed6922762c76665e4787edd279f569ea25496f38a0a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/teableio/teable",
+      "repo_url": "github.com/teableio/teable",
+      "host": "github.com",
+      "owner": "teableio",
+      "repo": "teable",
+      "app_references": [
+        "teable"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__teableio__teable.md",
+      "readme_download_url": null,
+      "readme_sha256": "ef7686cbd5a38f1ac32d4c3d5a83974ce16975474eed1a6a96cc970d600f834e",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/tech-kev/SharedMoments",
+      "repo_url": "github.com/tech-kev/SharedMoments",
+      "host": "github.com",
+      "owner": "tech-kev",
+      "repo": "SharedMoments",
+      "app_references": [
+        "shared-moments"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__tech-kev__SharedMoments.md",
+      "readme_download_url": null,
+      "readme_sha256": "a187fcaec339493684d3e39ede4c19d6b86fd7efbba507a7f6b85fb426ab40bf",
+      "error": null
+    },
     {
       "repo_key": "github.com/technomancer702/nodecast-tv",
       "repo_url": "github.com/technomancer702/nodecast-tv",
@@ -162,9 +237,9 @@
       "app_references": [
         "kutt"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__thedevs-network__kutt.md",
-      "readme_download_url": "https://raw.githubusercontent.com/thedevs-network/kutt/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "720a409c8bea2b343f0e29770d848a8b56161152e985613181c9f7643fc3e25a",
       "error": null
     },
@@ -297,9 +372,9 @@
       "app_references": [
         "cap-captcha"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__tiagozip__cap.md",
-      "readme_download_url": "https://raw.githubusercontent.com/tiagozip/cap/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c22d70ce7e5c9777eb697c5eae4aca17826ba8023ad6f3bf019d430adb0d1ace",
       "error": null
     },
@@ -327,10 +402,10 @@
       "app_references": [
         "poznote"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__timothepoznanski__poznote.md",
-      "readme_download_url": null,
-      "readme_sha256": "05395cab859d5dc016fc07730e184e0b5f623c29ffae52eac87fd578530941f1",
+      "readme_download_url": "https://raw.githubusercontent.com/timothepoznanski/poznote/main/README.md",
+      "readme_sha256": "cbece820f833168011a121dd8716832990559bec859b1c2a6521efd5301a859b",
       "error": null
     },
     {
@@ -342,10 +417,10 @@
       "app_references": [
         "tinyauth"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__tinyauthapp__tinyauth.md",
-      "readme_download_url": null,
-      "readme_sha256": "74395dee2d572e395991342fba96e66ef8b9b4e67c23cde68bdc1157dc9d8f3f",
+      "readme_download_url": "https://raw.githubusercontent.com/tinyauthapp/tinyauth/main/README.md",
+      "readme_sha256": "226df0075cddbd07b276a490274636891ad0c1051a1db435828c64e405047d71",
       "error": null
     },
     {
@@ -417,9 +492,9 @@
       "app_references": [
         "serpbear"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__towfiqi__serpbear.md",
-      "readme_download_url": "https://raw.githubusercontent.com/towfiqi/serpbear/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "18e481e83580e809305ada741e4f24600ce8c66faea57a6fff590878fd2b62b1",
       "error": null
     },
@@ -477,10 +552,10 @@
       "app_references": [
         "transmute"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__transmute-app__transmute.md",
-      "readme_download_url": null,
-      "readme_sha256": "992d46efdc6ad21585ad2b69236f332368fcb848428b238a5da230d9ba60b829",
+      "readme_download_url": "https://raw.githubusercontent.com/transmute-app/transmute/main/.github/README.md",
+      "readme_sha256": "aebb6248a3a1d19db44b5c8118ad0eddd5fb090b6779eae3ac0f1b57d5164676",
       "error": null
     },
     {
@@ -510,7 +585,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ttlequals0__MinusPod.md",
       "readme_download_url": "https://raw.githubusercontent.com/ttlequals0/MinusPod/main/README.md",
-      "readme_sha256": "51fbf178fff587a63c6656d03896d16896468006a0482c624934cbdfbe11f36c",
+      "readme_sha256": "0c377aa7cae454123c3cd382e372ece5c71d079cebaf9ac91196660f0beb56a9",
       "error": null
     },
     {
@@ -552,10 +627,10 @@
       "app_references": [
         "twenty-crm"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__twentyhq__twenty.md",
-      "readme_download_url": null,
-      "readme_sha256": "28064778f242e56a7c66b5f6d21fe93cad876b3b833ea98f21ef01b7514c2d03",
+      "readme_download_url": "https://raw.githubusercontent.com/twentyhq/twenty/main/README.md",
+      "readme_sha256": "b8c15e5bda84be120f054d6c4d52445f5a9a7b9d37617b959956d4ad70b47383",
       "error": null
     },
     {
@@ -585,7 +660,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ulsklyc__oikos.md",
       "readme_download_url": "https://raw.githubusercontent.com/ulsklyc/oikos/main/README.md",
-      "readme_sha256": "a3b6b01ead68ad503498bf06729d200d70326b1c7efd7d79e00824202d8e9b2c",
+      "readme_sha256": "891f86aaca00a05cedbedb7978f4d6a6e172ffde75bb626c57d6438d9d3742e8",
       "error": null
     },
     {
@@ -642,10 +717,10 @@
       "app_references": [
         "unsloth-studio"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__unslothai__unsloth.md",
-      "readme_download_url": null,
-      "readme_sha256": "351b88864dc634bbddb3948f4e7c952c0b37a5d239e4b2ef041502a3842592d2",
+      "readme_download_url": "https://raw.githubusercontent.com/unslothai/unsloth/main/README.md",
+      "readme_sha256": "c59bce2e6679e214582346ee95fd66e85895452f6715cac51bed9635b86872dd",
       "error": null
     },
     {
@@ -657,10 +732,10 @@
       "app_references": [
         "kaneo"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__usekaneo__kaneo.md",
-      "readme_download_url": null,
-      "readme_sha256": "6615a304cdad45d9e6bace18ef2da544a28e586c8d6220cba955c379113c4670",
+      "readme_download_url": "https://raw.githubusercontent.com/usekaneo/kaneo/main/README.md",
+      "readme_sha256": "851baf4996ee579b8f7bc0457f29d96afe1a75f0059416cce3f1b3c792d98c67",
       "error": null
     },
     {
@@ -672,85 +747,10 @@
       "app_references": [
         "memos"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__usememos__memos.md",
-      "readme_download_url": "https://raw.githubusercontent.com/usememos/memos/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f498ed437dd941f4cf631d2df6db24e947b456591a95985738d9a2fa03d76daf",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/usertour/usertour",
-      "repo_url": "github.com/usertour/usertour",
-      "host": "github.com",
-      "owner": "usertour",
-      "repo": "usertour",
-      "app_references": [
-        "usertour"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__usertour__usertour.md",
-      "readme_download_url": null,
-      "readme_sha256": "838d30372a0b10192d63ebbb28199683915e9bea877a1c08223faee5bc678e3e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/valkey-io/valkey",
-      "repo_url": "github.com/valkey-io/valkey",
-      "host": "github.com",
-      "owner": "valkey-io",
-      "repo": "valkey",
-      "app_references": [
-        "valkey"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__valkey-io__valkey.md",
-      "readme_download_url": null,
-      "readme_sha256": "0eb2a325ce5addca49994f82e28fc302d0c8d60d8813d76cbd967d12379ee8d4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/vanalmsick/workout_challenge",
-      "repo_url": "github.com/vanalmsick/workout_challenge",
-      "host": "github.com",
-      "owner": "vanalmsick",
-      "repo": "workout_challenge",
-      "app_references": [
-        "workout-challenge"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__vanalmsick__workout_challenge.md",
-      "readme_download_url": null,
-      "readme_sha256": "81ae5bac024b73f54f5ca7760454a4fd7ff9f3ba9bdec37d79d591a33ade549e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/varthe/Redirecterr",
-      "repo_url": "github.com/varthe/Redirecterr",
-      "host": "github.com",
-      "owner": "varthe",
-      "repo": "Redirecterr",
-      "app_references": [
-        "redirecterr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__varthe__Redirecterr.md",
-      "readme_download_url": null,
-      "readme_sha256": "5dec95551308b39a6bc610fe94c042b76a7e9553d53b1674fd567f14cd416f21",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/vas3k/TaxHacker",
-      "repo_url": "github.com/vas3k/TaxHacker",
-      "host": "github.com",
-      "owner": "vas3k",
-      "repo": "TaxHacker",
-      "app_references": [
-        "taxhacker"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__vas3k__TaxHacker.md",
-      "readme_download_url": null,
-      "readme_sha256": "fa1ee27b46fac70e5c18c00b5486b48bbf0a774adb1d67aaa975465faceca561",
       "error": null
     }
   ]

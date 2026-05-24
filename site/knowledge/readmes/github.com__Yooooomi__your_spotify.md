@@ -100,6 +100,7 @@ You can follow the instructions [here](https://github.com/Yooooomi/your_spotify/
 | MONGO_NO_ADMIN_RIGHTS | false | Do not ask for admin right on the Mongo database |
 | PORT                  | 8080 | The port of the server, **do not** modify if you're using docker |
 | FRAME_ANCESTORS       | _not defined_ | Sites allowed to frame the website, comma separated list of URLs (`i-want-a-security-vulnerability-and-want-to-allow-all-frame-ancestors` to allow every website) |
+| SPOTIFY_API_DELAY_MS   | 2000 | Minimum delay in milliseconds between each spotify request. Can help with hitting 429 when importing data |
 
 ## Advanced CORS settings
 
@@ -153,7 +154,7 @@ The import process uses cache to limit requests to the Spotify API. By default, 
 
 - Request your **Full privacy data** to have access to your history data since the creation of the account [here](https://www.spotify.com/us/account/privacy/).
 - Head to the **Settings** page and choose the **Extended streaming history** method.
-- Input your files starting with `endsongX.json`.
+- Input your files starting with `Streaming_History_Audio_YYYY-YYYY_X.json`.
 - Start your import.
 
 ## Troubleshoot
@@ -195,3 +196,4 @@ If you have any issue or any idea that could make the project better, feel free 
 # Sponsoring
 
 I work on this project on my spare time and try to fix issues as soon as I can. If you feel generous and think this project and my investment are worth a few cents, you can consider sponsoring it with the button on the right, many thanks.
+

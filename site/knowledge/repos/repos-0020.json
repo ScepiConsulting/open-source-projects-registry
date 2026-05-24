@@ -1,8 +1,38 @@
 {
   "chunk": 20,
   "count": 50,
-  "generated_at": "2026-05-17T06:30:06Z",
+  "generated_at": "2026-05-24T06:44:10Z",
   "items": [
+    {
+      "repo_key": "github.com/omarmir/nanote",
+      "repo_url": "github.com/omarmir/nanote",
+      "host": "github.com",
+      "owner": "omarmir",
+      "repo": "nanote",
+      "app_references": [
+        "nanote"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__omarmir__nanote.md",
+      "readme_download_url": null,
+      "readme_sha256": "bbe1015d7abe88c85c575a0333ac9b53d4e9bc10b16020bbc11b91c22875cdf4",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/omeryusufyagci/fast-music-remover",
+      "repo_url": "github.com/omeryusufyagci/fast-music-remover",
+      "host": "github.com",
+      "owner": "omeryusufyagci",
+      "repo": "fast-music-remover",
+      "app_references": [
+        "fast-music-remover"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__omeryusufyagci__fast-music-remover.md",
+      "readme_download_url": null,
+      "readme_sha256": "4d91cec49d9d45cb896f4bb5bf7185375dc188eaa9c98a23ead30dd511e13b43",
+      "error": null
+    },
     {
       "repo_key": "github.com/onllm-dev/onWatch",
       "repo_url": "github.com/onllm-dev/onWatch",
@@ -87,10 +117,10 @@
       "app_references": [
         "openclaw"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__openclaw__openclaw.md",
-      "readme_download_url": null,
-      "readme_sha256": "9cab1afb4a95b4e0fcf2e5ffab988024a42553d0b095edc611a1498c4de25a4b",
+      "readme_download_url": "https://raw.githubusercontent.com/openclaw/openclaw/main/README.md",
+      "readme_sha256": "211dec6d314a0aa41bf1de3bc4fccf242bb4fa9a1126ab16118ec39dac494fab",
       "error": null
     },
     {
@@ -375,7 +405,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__owncloud__ocis.md",
       "readme_download_url": "https://raw.githubusercontent.com/owncloud/ocis/master/README.md",
-      "readme_sha256": "e4a20d4513f1867b37d2372ea86c416f2aab8188b3929018fb032b8231fa7f61",
+      "readme_sha256": "25681e7a64fd6bfb6c9410130b64159441575fc0298781c610c6f4c93c266995",
       "error": null
     },
     {
@@ -567,10 +597,10 @@
       "app_references": [
         "pelican-panel"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pelican-dev__panel.md",
-      "readme_download_url": null,
-      "readme_sha256": "fddc787d9d2d75a09ec06bc20566cddef792c3021239cd8ecf4ab819b2667c92",
+      "readme_download_url": "https://raw.githubusercontent.com/pelican-dev/panel/main/readme.md",
+      "readme_sha256": "09d9a154bc9ecda87cf3e2240ebdfd68f1120e413e9ce6397f84db288dd61c00",
       "error": null
     },
     {
@@ -657,10 +687,10 @@
       "app_references": [
         "password-pusher"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
-      "readme_download_url": null,
-      "readme_sha256": "205de8a6ddaeff5e8c11f3a80c2d54b94e9081db8d233cc0c9ca7d55e0683617",
+      "readme_download_url": "https://raw.githubusercontent.com/pglombardo/PasswordPusher/master/README.md",
+      "readme_sha256": "83c258f90ab079659109c061928e19468201c69109bab1f159066acd91b7a35a",
       "error": null
     },
     {
@@ -721,36 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__pi-hole__pi-hole.md",
       "readme_download_url": null,
       "readme_sha256": "0967ddc0ed23f5e46ba066410485edc8a33ffacc5dd7afd907594a3bc5c651b8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pickles4evaaaa/mybibliotheca",
-      "repo_url": "github.com/pickles4evaaaa/mybibliotheca",
-      "host": "github.com",
-      "owner": "pickles4evaaaa",
-      "repo": "mybibliotheca",
-      "app_references": [
-        "mybibliotecha"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pickles4evaaaa__mybibliotheca.md",
-      "readme_download_url": null,
-      "readme_sha256": "2564bba4b3fbce4d9af5288e38826af79e3f4901caa7ef680b942d7d4adcd596",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pinkary-project/pinkary.com",
-      "repo_url": "github.com/pinkary-project/pinkary.com",
-      "host": "github.com",
-      "owner": "pinkary-project",
-      "repo": "pinkary.com",
-      "app_references": [
-        "pinkary"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pinkary-project__pinkary.com.md",
-      "readme_download_url": null,
-      "readme_sha256": "2e7a7aedd9499c8b854a305ab9e1c646d9c66d5a13ddb755991ab186d26c75d2",
       "error": null
     }
   ]

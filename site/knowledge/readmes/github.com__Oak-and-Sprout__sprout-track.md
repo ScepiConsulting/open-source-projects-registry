@@ -1,8 +1,8 @@
 # Sprout Track
 
-v1.3.1 😁 - A self-hosted Next.js application for tracking baby activities, milestones, and development.
+v1.3.4 😁 - A self-hosted Next.js application for tracking baby activities, milestones, and development.
 
-![Docker Stars](https://img.shields.io/docker/stars/sprouttrack/sprout-track) ![Docker Image Size](https://img.shields.io/docker/image-size/sprouttrack/sprout-track) ![Docker Pulls](https://img.shields.io/docker/pulls/sprouttrack/sprout-track)
+![Docker Image Size](https://img.shields.io/docker/image-size/sprouttrack/sprout-track) ![Docker Pulls](https://img.shields.io/docker/pulls/sprouttrack/sprout-track)
 
 ## Live Demo
 
@@ -102,7 +102,7 @@ API key management and webhook support for external integrations like Home Assis
 
 ### More
 
-- **PWA** — Install on any device with notifications, keep-awake mode, and fullscreen
+- **PWA** — Install on any device with notifications, keep-awake mode, and fullscreen. For the best experience, use Chrome, Edge, or Safari to add the app to your home screen from the family login screen. Firefox does not fully support PWA features (icons, theme colors, and standalone mode may not work correctly).
 - **Multi-Family** - Setup separate family dashboards to allow friends and family to privately track their child
 - **Multi-Caretaker** — Each family uses individual PINs for parents, grandparents, babysitters, and daycare
 - **Family Accounts** — Track multiple babies in a shared family workspace

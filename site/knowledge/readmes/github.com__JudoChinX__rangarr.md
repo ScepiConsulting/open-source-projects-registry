@@ -20,20 +20,20 @@
   <img src="https://github.com/JudoChinX/unraid-templates/raw/main/assets/rangarr-logo.png" alt="Rangarr Logo">
 </p>
 
-**Rangarr** is a lightweight orchestration service that automates and staggers media searches across multiple *arr instances ([Radarr](https://github.com/Radarr/Radarr), [Sonarr](https://github.com/Sonarr/Sonarr), [Lidarr](https://github.com/Lidarr/Lidarr)). It helps keep your library complete without overwhelming your indexers or API limits.
+**Rangarr** is a lightweight orchestration service that automates and staggers media searches across multiple *arr instances ([Radarr](https://github.com/Radarr/Radarr), [Sonarr](https://github.com/Sonarr/Sonarr), [Lidarr](https://github.com/Lidarr/Lidarr), [Readarr](https://github.com/Readarr/Readarr), [Whisparr](https://github.com/Whisparr/Whisparr)). It helps keep your library complete without overwhelming your indexers or API limits.
 
 ## Key Features
 
-- **Multi-Instance Support:** Manage Radarr, Sonarr, and Lidarr from a single service.
+- **Multi-Instance Support:** Manage Radarr, Sonarr, Lidarr, Readarr, and Whisparr v2 from a single service.
 - **Global Slot Allocation:** Efficiently distributes search slots across all instances, ensuring no search capacity is wasted.
 - **Instance Interleaving:** Spreads search pressure evenly across multiple *arr instances and shared indexers throughout the cycle.
 - **Smart Staggering:** Prevents "thundering herd" issues by spacing out search requests.
 - **Proportional Interleaving:** Balanced searching between missing items and upgrades within each instance.
 - **Weighted Distribution:** Prioritize specific instances (e.g., prioritize Movies over Music).
-- **Season Pack Support:** Group Sonarr searches by season, with configurable count or ratio thresholds and automatic fallback to individual episode searches for seasons that are still airing.
+- **Season Pack Support:** Group Sonarr and Whisparr searches by season, with configurable count or ratio thresholds and automatic fallback to individual episode searches for seasons that are still airing.
 - **Independent Scheduling:** Run missing item searches and upgrade searches on separate, configurable intervals — poll for missing content aggressively while checking for upgrades less frequently, or any combination that fits your indexer usage.
 - **Retry Logic:** Configurable skip windows for recently searched items, with independent retry intervals for missing and upgrade searches, plus automatic startup connection retries (3 attempts, 10-second delay) to handle Docker Compose race conditions.
-- **Custom Format Score Awareness:** Finds Radarr and Sonarr items below their custom format score target — candidates *arr's Cutoff Unmet endpoint silently omits.
+- **Custom Format Score Awareness:** Finds Radarr, Sonarr, and Whisparr items below their custom format score target — candidates *arr's Cutoff Unmet endpoint silently omits.
 - **Tag Filtering:** Restrict searches to items with specific *arr tags, or exclude tagged items entirely.
 - **Active Hours:** Restrict searches to a configured time window (e.g., overnight only) to avoid peak indexer load.
 - **Flexible Configuration:** Configure via `config.yaml` with `${ENV_VAR}` expansion for secrets, or skip the file entirely and use environment variables only.
@@ -43,7 +43,7 @@
 
 Some tools in this space have done things their users didn't know about — phoning home, collecting data, making connections that were never disclosed. Rangarr exists as a direct response to that. It talks to the *arr instances you configure. It talks to nothing else.
 
-The codebase is intentionally small. There is no database, no persistence layer. If you want to verify what it does, [SECURITY.md](SECURITY.md) documents the exact threat model, and the source itself is three files you can read in an afternoon.
+The codebase is intentionally small. There is no database, no persistence layer. If you want to verify what it does, [SECURITY.md](SECURITY.md) documents the exact threat model, and the source itself is four files you can read in an afternoon.
 
 ## Quick Start
 

@@ -1,8 +1,38 @@
 {
   "chunk": 19,
   "count": 50,
-  "generated_at": "2026-05-17T06:30:06Z",
+  "generated_at": "2026-05-24T06:44:10Z",
   "items": [
+    {
+      "repo_key": "github.com/nandyalu/trailarr",
+      "repo_url": "github.com/nandyalu/trailarr",
+      "host": "github.com",
+      "owner": "nandyalu",
+      "repo": "trailarr",
+      "app_references": [
+        "trailarr"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nandyalu__trailarr.md",
+      "readme_download_url": null,
+      "readme_sha256": "3cc7f1ea9473b75742054f42e69f8c261d23dea8e4bd041a1750d8cc111f3057",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/nanocoai/nanoclaw",
+      "repo_url": "github.com/nanocoai/nanoclaw",
+      "host": "github.com",
+      "owner": "nanocoai",
+      "repo": "nanoclaw",
+      "app_references": [
+        "nanoclaw"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nanocoai__nanoclaw.md",
+      "readme_download_url": null,
+      "readme_sha256": "e9780be61e7889bb2bd00cabf8c72a3377ced52829d5ee1587566d1fc8df64fd",
+      "error": null
+    },
     {
       "repo_key": "github.com/navidrome/navidrome",
       "repo_url": "github.com/navidrome/navidrome",
@@ -87,10 +117,10 @@
       "app_references": [
         "netalertx"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__netalertx__NetAlertX.md",
-      "readme_download_url": null,
-      "readme_sha256": "31f3d9215bac8b333e78231b856a87d4258b887e6449573a38364131ace77dc9",
+      "readme_download_url": "https://raw.githubusercontent.com/netalertx/NetAlertX/main/README.md",
+      "readme_sha256": "66bba34b1fde9849ef1fac6e0812f010fc17a581354ed0478266d744d0e54fa0",
       "error": null
     },
     {
@@ -102,10 +132,10 @@
       "app_references": [
         "netbird"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__netbirdio__netbird.md",
-      "readme_download_url": null,
-      "readme_sha256": "8b028bcd444fa0d5e502a253af8185fd98ddb28c5e0f1718e379d297699a7305",
+      "readme_download_url": "https://raw.githubusercontent.com/netbirdio/netbird/main/README.md",
+      "readme_sha256": "fd598679565310b9012c117977a30b0490ad8ec12ec1374e6f3de3b1938f15d9",
       "error": null
     },
     {
@@ -312,9 +342,9 @@
       "app_references": [
         "nginx-proxy"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__nginx-proxy__nginx-proxy.md",
-      "readme_download_url": "https://raw.githubusercontent.com/nginx-proxy/nginx-proxy/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "63b42a93297358ce7c7fb1ea829f6ab6d76456466f26d34b010bbea2ad8c932d",
       "error": null
     },
@@ -375,7 +405,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nicotsx__zerobyte.md",
       "readme_download_url": "https://raw.githubusercontent.com/nicotsx/zerobyte/main/README.md",
-      "readme_sha256": "c774579d40c49e15ff0a0a0785b24a07918426f85cbefe35bf0cc262379570e3",
+      "readme_sha256": "214b83abfa286a9856174e47d727d53d32a5b20c150848dfbd00c3ee220ac12d",
       "error": null
     },
     {
@@ -417,10 +447,10 @@
       "app_references": [
         "sshwifty"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nirui__sshwifty.md",
-      "readme_download_url": null,
-      "readme_sha256": "2c9ebcffdd0c54bf83bd9ba826569266645d42b877a7a016ba7866ae70f54ab9",
+      "readme_download_url": "https://raw.githubusercontent.com/nirui/sshwifty/master/README.md",
+      "readme_sha256": "bceef052003d144c428d002b87a5f045f27509745b210d976d976b6a2fa9f52e",
       "error": null
     },
     {
@@ -567,10 +597,10 @@
       "app_references": [
         "pixelfin"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nothing2obvi__pixelfin.md",
-      "readme_download_url": null,
-      "readme_sha256": "c3c7d580317af70fda6a7f55b858a9067e1e0830d5be0350dea03ceb74206d35",
+      "readme_download_url": "https://raw.githubusercontent.com/nothing2obvi/pixelfin/main/README.md",
+      "readme_sha256": "720b97d822ac8eb2566c61f244d9b8cb2b2816327585559f80212725bdf91982",
       "error": null
     },
     {
@@ -660,7 +690,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__octelium__octelium.md",
       "readme_download_url": "https://raw.githubusercontent.com/octelium/octelium/main/README.md",
-      "readme_sha256": "eb331a0d9072d4230d77d0d35e9430433df8cc5cb43473b59b207088c8f8578a",
+      "readme_sha256": "22950437f937eca9a5560d69b109efbc3c7b35c55bbdf7e1d3cb8043a4d6619d",
       "error": null
     },
     {
@@ -720,37 +750,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__olalie__tapmap.md",
       "readme_download_url": "https://raw.githubusercontent.com/olalie/tapmap/main/README.md",
-      "readme_sha256": "4dae09172b556e2d4538042a99b4f3a40bebd377ff94d15a85effb24095a98b3",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/omarmir/nanote",
-      "repo_url": "github.com/omarmir/nanote",
-      "host": "github.com",
-      "owner": "omarmir",
-      "repo": "nanote",
-      "app_references": [
-        "nanote"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__omarmir__nanote.md",
-      "readme_download_url": null,
-      "readme_sha256": "bbe1015d7abe88c85c575a0333ac9b53d4e9bc10b16020bbc11b91c22875cdf4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/omeryusufyagci/fast-music-remover",
-      "repo_url": "github.com/omeryusufyagci/fast-music-remover",
-      "host": "github.com",
-      "owner": "omeryusufyagci",
-      "repo": "fast-music-remover",
-      "app_references": [
-        "fast-music-remover"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__omeryusufyagci__fast-music-remover.md",
-      "readme_download_url": null,
-      "readme_sha256": "4d91cec49d9d45cb896f4bb5bf7185375dc188eaa9c98a23ead30dd511e13b43",
+      "readme_sha256": "7c71e7b4952108140108d7123270b7b38dc9316a7ee26fc9e401e021c7827b8b",
       "error": null
     }
   ]

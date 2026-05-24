@@ -1,8 +1,23 @@
 {
   "chunk": 10,
   "count": 50,
-  "generated_at": "2026-05-17T06:30:06Z",
+  "generated_at": "2026-05-24T06:44:10Z",
   "items": [
+    {
+      "repo_key": "github.com/cglatot/pasta",
+      "repo_url": "github.com/cglatot/pasta",
+      "host": "github.com",
+      "owner": "cglatot",
+      "repo": "pasta",
+      "app_references": [
+        "pasta"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__cglatot__pasta.md",
+      "readme_download_url": null,
+      "readme_sha256": "4ea1735d201d34909a86542a59adf6f33820b8bdc24e662a32eb49f601139623",
+      "error": null
+    },
     {
       "repo_key": "github.com/cgwire/kitsu",
       "repo_url": "github.com/cgwire/kitsu",
@@ -42,9 +57,9 @@
       "app_references": [
         "soft-serve"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__charmbracelet__soft-serve.md",
-      "readme_download_url": "https://raw.githubusercontent.com/charmbracelet/soft-serve/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "9eb1b8cd2c6daf2fb1dc07ab0d575eae64ec6a00ef1074eaa5b8ebe6c22dd4d0",
       "error": null
     },
@@ -57,9 +72,9 @@
       "app_references": [
         "chartbrew"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__chartbrew__chartbrew.md",
-      "readme_download_url": "https://raw.githubusercontent.com/chartbrew/chartbrew/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f027d90d3da4490ce4184026fa828dc7f2525a75fda3a361ce6ea7042b4d359d",
       "error": null
     },
@@ -267,9 +282,9 @@
       "app_references": [
         "youlag"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__civilblur__youlag.md",
-      "readme_download_url": "https://raw.githubusercontent.com/civilblur/youlag/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "59656d8b232a2df876c35da4e134d5cc8ee183ad90d2cf07d6893e17f331ed0a",
       "error": null
     },
@@ -432,9 +447,9 @@
       "app_references": [
         "cloud-commander"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__coderaiser__cloudcmd.md",
-      "readme_download_url": "https://raw.githubusercontent.com/coderaiser/cloudcmd/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d424b9ea46a4a763af1bab7627f4811aa67995b2a27281af237a86bf38b7272f",
       "error": null
     },
@@ -585,7 +600,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__cooklang__cookcli.md",
       "readme_download_url": "https://raw.githubusercontent.com/cooklang/cookcli/main/README.md",
-      "readme_sha256": "cbd7b4afb9d566c029c79d209c6a240b139dce85e11df74dd0a0c759a0bf60a1",
+      "readme_sha256": "f576edbd17120ef71ad91869ec8b0d1abee12164e1366380119e56e6697f6a18",
       "error": null
     },
     {
@@ -597,10 +612,10 @@
       "app_references": [
         "coolify"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__coollabsio__coolify.md",
-      "readme_download_url": null,
-      "readme_sha256": "324f6cd6ebd37d20811db6c6c1b2b90bf3aad4a18af6ff6f8c6fa9d7976ea4e9",
+      "readme_download_url": "https://raw.githubusercontent.com/coollabsio/coolify/v4.x/README.md",
+      "readme_sha256": "1fb3e3b89d597f6831bd14aa9ee035922273215b2a980aed5a623f6428b6dc4c",
       "error": null
     },
     {
@@ -627,9 +642,9 @@
       "app_references": [
         "eddrit"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__corenting__eddrit.md",
-      "readme_download_url": "https://raw.githubusercontent.com/corenting/eddrit/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d5e20a0f19519e95197351e8592610e7a940850ac946288433c5838f5b471361",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__cronitorio__cronitor-cli.md",
       "readme_download_url": null,
       "readme_sha256": "71748255441ccabbf73f8fa4dd3039d465996e2d8d49283f56b8efe4c76532b6",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/crowdsecurity/crowdsec",
-      "repo_url": "github.com/crowdsecurity/crowdsec",
-      "host": "github.com",
-      "owner": "crowdsecurity",
-      "repo": "crowdsec",
-      "app_references": [
-        "crowdsec"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__crowdsecurity__crowdsec.md",
-      "readme_download_url": null,
-      "readme_sha256": "69522c4cc287be2cccb6b05e7a48f6e7deb684fe8262b7bda60fe302df64da2d",
       "error": null
     }
   ]

@@ -1,8 +1,23 @@
 {
   "chunk": 7,
   "count": 50,
-  "generated_at": "2026-05-17T06:30:06Z",
+  "generated_at": "2026-05-24T06:44:10Z",
   "items": [
+    {
+      "repo_key": "github.com/TwiN/gatus",
+      "repo_url": "github.com/TwiN/gatus",
+      "host": "github.com",
+      "owner": "TwiN",
+      "repo": "gatus",
+      "app_references": [
+        "gatus"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__TwiN__gatus.md",
+      "readme_download_url": null,
+      "readme_sha256": "bf49cebd39131ba12a700dd8e88d940b12176682de4986119124b4efd9b2a7f8",
+      "error": null
+    },
     {
       "repo_key": "github.com/Tzahi12345/YoutubeDL-Material",
       "repo_url": "github.com/Tzahi12345/YoutubeDL-Material",
@@ -177,9 +192,9 @@
       "app_references": [
         "weblate"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__WeblateOrg__weblate.md",
-      "readme_download_url": "https://raw.githubusercontent.com/WeblateOrg/weblate/main/README.rst",
+      "readme_download_url": null,
       "readme_sha256": "465f1eca75518bfe77a6807e0d58a82513530e472958abc2ed5371d55a7bb89d",
       "error": null
     },
@@ -297,10 +312,10 @@
       "app_references": [
         "your-spotify"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Yooooomi__your_spotify.md",
-      "readme_download_url": null,
-      "readme_sha256": "bf396244056243e7ee092d9f71196e9963008067c268b0e4bf504dc4e5a71194",
+      "readme_download_url": "https://raw.githubusercontent.com/Yooooomi/your_spotify/master/README.md",
+      "readme_sha256": "8a2514de5d28857444f000beab0565e8e073b604f236c49946506863d850bc4e",
       "error": null
     },
     {
@@ -357,9 +372,9 @@
       "app_references": [
         "anchor-notes"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ZhFahim__anchor.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ZhFahim/anchor/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "54e4e148d36b82a5dcf00a104f635a6eba8f21c5e360a3c13270574160e08f92",
       "error": null
     },
@@ -372,10 +387,10 @@
       "app_references": [
         "novus-mail"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Zhoros__NortixMail.md",
-      "readme_download_url": null,
-      "readme_sha256": "b2b68beff7b0c367f2b3c2b733faa4ada5b1ce10359fe0d57194cedd1f077e4a",
+      "readme_download_url": "https://raw.githubusercontent.com/Zhoros/NortixMail/main/README.md",
+      "readme_sha256": "d8b6581f45c5bd3db78623f542e5c8b8b0f1da19b6b147bc6d2edbe0cd86248f",
       "error": null
     },
     {
@@ -387,10 +402,10 @@
       "app_references": [
         "superbin"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Zhoros__SuperBin.md",
-      "readme_download_url": null,
-      "readme_sha256": "046bde2647b353046f0e5c32337846738eabd00b4934de6c6cd7a56a315dd82f",
+      "readme_download_url": "https://raw.githubusercontent.com/Zhoros/SuperBin/main/README.md",
+      "readme_sha256": "d9dcee0370a6f0ca9fa2759af849aecef8f3cb61239bea2f3d13e40c9b528b9a",
       "error": null
     },
     {
@@ -552,10 +567,10 @@
       "app_references": [
         "activepieces"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__activepieces__activepieces.md",
-      "readme_download_url": null,
-      "readme_sha256": "b451139495fddb567f7d3f24c1b9ee334f9ac2d027946fec1a367dae8499d646",
+      "readme_download_url": "https://raw.githubusercontent.com/activepieces/activepieces/main/README.md",
+      "readme_sha256": "958e73e60d46a94383fa9d1e70bff74c9d723b8ef8a5c3cec7bc5c853f8bd137",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__akaunting__akaunting.md",
       "readme_download_url": null,
       "readme_sha256": "9f3c69bd3060322d90a580a1ab69c748c71d5093b0f17dbc43d71eac522d4e77",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/alam00000/bentopdf",
-      "repo_url": "github.com/alam00000/bentopdf",
-      "host": "github.com",
-      "owner": "alam00000",
-      "repo": "bentopdf",
-      "app_references": [
-        "bentopdf"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__alam00000__bentopdf.md",
-      "readme_download_url": "https://raw.githubusercontent.com/alam00000/bentopdf/main/README.md",
-      "readme_sha256": "2e1b0b5dc8e5398a60e837016bb7f183c0974f6728eb5bb2bd578100a3d38115",
       "error": null
     }
   ]

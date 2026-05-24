@@ -23,7 +23,7 @@ Full documentation on [our website](https://transmute.sh/docs/)!
 | --- | --- | --- | --- |
 | <img src="https://raw.githubusercontent.com/transmute-app/transmute/refs/heads/main/assets/screenshots/converter.png" width=100%> | <img src="https://raw.githubusercontent.com/transmute-app/transmute/refs/heads/main/assets/screenshots/files.png" width=100%> | <img src="https://raw.githubusercontent.com/transmute-app/transmute/refs/heads/main/assets/screenshots/jobs.png" width=100%> | <img src="https://raw.githubusercontent.com/transmute-app/transmute/refs/heads/main/assets/screenshots/settings.png" width=100%> |
 
-This application is currently in early beta. Want to support us or follow along? Give us a star or jump in and contribute!
+Want to support us or follow along? Give us a star or jump in and contribute!
 
 > [!NOTE]
 > **This project is human-led and maintainer-reviewed.**

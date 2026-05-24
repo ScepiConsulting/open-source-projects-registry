@@ -1,3 +1,5 @@
+<!-- --8<-- [start:docs-index-intro] -->
+
 # Yamtrack
 
 ![App Tests](https://github.com/FuzzyGrim/Yamtrack/actions/workflows/app-tests.yml/badge.svg)
@@ -8,13 +10,13 @@
 
 Yamtrack is a self hosted media tracker for movies, tv shows, anime, manga, video games, books, comics, and board games.
 
-<!-- docs-site-link:start -->
+<!-- --8<-- [end:docs-index-intro] -->
 
 ## 📚 Documentation
 
 The full documentation is available at [fuzzygrim.github.io/Yamtrack](https://fuzzygrim.github.io/Yamtrack/).
 
-<!-- docs-site-link:end -->
+<!-- --8<-- [start:docs-index-body] -->
 
 ## 🚀 Demo
 
@@ -71,11 +73,11 @@ Download the default `docker-compose.yml` file from the repository, update the e
 docker compose up -d
 ```
 
-The default Compose file uses SQLite, which is enough for most personal installs. For PostgreSQL, reverse proxy settings, and local development instructions, see the [Setup documentation](https://fuzzygrim.github.io/Yamtrack/setup/).
+The default Compose file uses SQLite, which is enough for most personal installs. For full SQLite, PostgreSQL, and reverse proxy setup instructions, see the [Setup documentation](https://fuzzygrim.github.io/Yamtrack/setup/).
 
-## 💻 Local development
+## 💻 Development
 
-Local development instructions are also available in the [Setup documentation](https://fuzzygrim.github.io/Yamtrack/setup/#local-development).
+Development instructions are available in the [Development documentation](https://fuzzygrim.github.io/Yamtrack/development/).
 
 ## 💪 Support the Project
 

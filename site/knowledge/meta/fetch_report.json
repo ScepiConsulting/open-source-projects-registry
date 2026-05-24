@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-05-17T06:30:06Z",
+  "generated_at": "2026-05-24T06:44:10Z",
   "summary": {
-    "apps": 1287,
-    "repos": 1266,
-    "readme_ok": 117,
-    "readme_not_modified": 1099,
-    "readme_error": 50
+    "apps": 1292,
+    "repos": 1271,
+    "readme_ok": 123,
+    "readme_not_modified": 1097,
+    "readme_error": 51
   },
   "failed_repos": [
     {
@@ -147,6 +147,11 @@
       "repo_key": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
       "repo_url": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
       "error": "worker_exception: Invalid URL 'gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "github.com/7eventy7/trackly",
+      "repo_url": "github.com/7eventy7/trackly",
+      "error": "github_readme_http_404"
     },
     {
       "repo_key": "gitlab.com/LazyLibrarian/LazyLibrarian",

@@ -1,8 +1,83 @@
 {
   "chunk": 26,
-  "count": 16,
-  "generated_at": "2026-05-17T06:30:06Z",
+  "count": 21,
+  "generated_at": "2026-05-24T06:44:10Z",
   "items": [
+    {
+      "repo_key": "gitlab.com/Nystik/inkheart",
+      "repo_url": "gitlab.com/Nystik/inkheart",
+      "host": "gitlab.com",
+      "owner": "Nystik",
+      "repo": "inkheart",
+      "app_references": [
+        "inkheart"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/Nystik/inkheart/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/Nystik/inkheart/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/Shinobi-Systems/Shinobi",
+      "repo_url": "gitlab.com/Shinobi-Systems/Shinobi",
+      "host": "gitlab.com",
+      "owner": "Shinobi-Systems",
+      "repo": "Shinobi",
+      "app_references": [
+        "shinobi"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/Shinobi-Systems/Shinobi/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/Shinobi-Systems/Shinobi/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/comentario/comentario",
+      "repo_url": "gitlab.com/comentario/comentario",
+      "host": "gitlab.com",
+      "owner": "comentario",
+      "repo": "comentario",
+      "app_references": [
+        "comentario"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/comentario/comentario/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/comentario/comentario/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/crafty-controller/crafty-4",
+      "repo_url": "gitlab.com/crafty-controller/crafty-4",
+      "host": "gitlab.com",
+      "owner": "crafty-controller",
+      "repo": "crafty-4",
+      "app_references": [
+        "crafty-controller"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/crafty-controller/crafty-4/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/crafty-controller/crafty-4/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/davical-project/davical",
+      "repo_url": "gitlab.com/davical-project/davical",
+      "host": "gitlab.com",
+      "owner": "davical-project",
+      "repo": "davical",
+      "app_references": [
+        "davical"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/davical-project/davical/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/davical-project/davical/-/raw/main/README.md?"
+    },
     {
       "repo_key": "gitlab.com/elementfm/docs",
       "repo_url": "gitlab.com/elementfm/docs",
