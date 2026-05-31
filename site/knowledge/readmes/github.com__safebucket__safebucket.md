@@ -1,0 +1,130 @@
+<h1 align="center">
+  <a href="https://docs.safebucket.io"><img src="./assets/safebucket_banner.png" alt="SafeBucket"></a>
+</h1>
+
+<div align="center">
+
+[![GitHub Release][release-img]][release]
+[![Backend Quality][backend-img]][backend]
+[![Frontend Quality][frontend-img]][frontend]
+[![Docker Build][docker-build-img]][docker-build]
+[![Go Report Card][go-report-img]][go-report]
+[![License: Apache-2.0][license-img]][license]
+
+</div>
+
+Safebucket is an open-source file sharing platform where files never touch your server.
+Uploads and downloads go directly to your storage backend. You bring your own identity provider, your
+own storage, and your own infrastructure. Safebucket handles metadata, access control and audit logging.
+
+![SafeBucket List View](./assets/list_view.png)
+
+## Why Safebucket?
+
+- **Files bypass the server**: Clients upload and download directly from S3-compatible storage via presigned URLs. The
+  API only handles metadata and access control.
+- **SSO-first**: Authenticate users with your existing identity providers via OIDC. No need to manage passwords for your
+  team.
+- **Bucket-scoped access**: All sharing happens through buckets with explicit membership and role-based permissions (
+  owner, contributor, viewer).
+- **Swappable infrastructure**: Every component (storage, database, events, cache, notifier) can be replaced. Use AWS S3
+  or a self-hosted MinIO. Use NATS or SQS. Use PostgreSQL or SQLite, etc...
+
+## Features
+
+- Direct uploads and downloads via presigned URLs
+- Role-based access control at platform and bucket level
+- SSO via any OIDC provider, with local auth for external users
+- Email invitations with challenge-based validation
+- Real-time activity tracking and audit logs
+- Multifactor authentication (TOTP)
+- File expiration, trash with configurable retention
+- Admin dashboard with platform-wide statistics
+
+See the [full list of features](https://docs.safebucket.io/features).
+
+## Architecture
+
+![SafeBucket HLD](./assets/hld.png)
+
+## Quick Start
+
+```bash
+git clone https://github.com/safebucket/safebucket.git
+cd safebucket/deployments/local/lite
+docker compose up -d
+```
+
+- Go to http://localhost:8080
+- Log in with:
+    - login: admin@safebucket.io
+    - password: ChangeMePlease
+
+> **Note:** If you are accessing Safebucket from an external machine (e.g. Proxmox), you need to update the following
+> environment variables in the .env file with your host's IP or domain:
+> - `STORAGE__RUSTFS__EXTERNAL_ENDPOINT`
+> - `APP__ALLOWED_ORIGINS`
+> - `APP__API_URL`
+> - `APP__WEB_URL`
+
+## Verify Image Signature
+
+All published container images are signed with [cosign](https://github.com/sigstore/cosign) using keyless signing via
+GitHub Actions OIDC: no manual keys are involved.
+
+You can verify the signature of any published image using the following commands:
+
+```bash
+cosign verify \
+  --certificate-oidc-issuer=https://token.actions.githubusercontent.com \
+  --certificate-identity-regexp=https://github.com/safebucket/safebucket/ \
+  ghcr.io/safebucket/safebucket:<tag>
+```
+
+Replace `<tag>` with the image tag you want to verify (e.g., `latest`, `v1.0.0`).
+
+## Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=safebucket/safebucket&type=date&legend=top-left)](https://www.star-history.com/#safebucket/safebucket&type=date&legend=top-left)
+
+## License
+
+This project is licensed under the Apache 2.0 - see the [LICENSE](LICENSE) file for details.
+
+## Acknowledgments
+
+- Built with ❤️ using Go and React
+- UI components by [Radix UI](https://radix-ui.com) and [shadcn/ui](https://ui.shadcn.com)
+- Database ORM by [Gorm](https://gorm.io/index.html)
+- Database migrations by [Goose](https://github.com/pressly/goose)
+- Pub/sub integrations by [Watermill](https://watermill.io)
+- Configuration management by [Koanf](https://github.com/knadh/koanf)
+- Icons by [Lucide](https://lucide.dev)
+
+[release]: https://github.com/safebucket/safebucket/releases
+
+[release-img]: https://img.shields.io/github/v/release/safebucket/safebucket
+
+[backend]: https://github.com/safebucket/safebucket/actions/workflows/quality-backend.yml
+
+[backend-img]: https://github.com/safebucket/safebucket/actions/workflows/quality-backend.yml/badge.svg
+
+[frontend]: https://github.com/safebucket/safebucket/actions/workflows/quality-frontend.yml
+
+[frontend-img]: https://github.com/safebucket/safebucket/actions/workflows/quality-frontend.yml/badge.svg
+
+[docker-build]: https://github.com/safebucket/safebucket/actions/workflows/docker-build.yml
+
+[docker-build-img]: https://github.com/safebucket/safebucket/actions/workflows/docker-build.yml/badge.svg
+
+[go-report]: https://goreportcard.com/report/github.com/safebucket/safebucket
+
+[go-report-img]: https://goreportcard.com/badge/github.com/safebucket/safebucket
+
+[license]: https://github.com/safebucket/safebucket/blob/main/LICENSE
+
+[license-img]: https://img.shields.io/github/license/safebucket/safebucket
+
+[github-downloads-img]: https://img.shields.io/github/downloads/safebucket/safebucket/total
+
+[docker-pulls]: https://img.shields.io/docker/pulls/safebucket/safebucket

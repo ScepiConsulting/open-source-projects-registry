@@ -1,10 +1,14 @@
 # Immich Public Proxy
 
 <p align="center" width="100%">
+<img src="docs/ipp.svg" width="180" height="180">
+</p>
+
+<p align="center" width="100%">
 <a href="https://hub.docker.com/r/alangrainger/immich-public-proxy/tags">
     <img alt="Docker pulls" src="https://badgen.net/docker/pulls/alangrainger/immich-public-proxy?icon=docker&label=docker%20pulls&color=green&scale=1.1"></a>
 <a href="https://github.com/alangrainger/immich-public-proxy/releases/latest">
-    <img alt="Latest release" src="https://badgen.net/github/release/alangrainger/immich-public-proxy?scale=1.1"></a>
+    <img alt="Latest release" src="https://badgen.net/github/tag/alangrainger/immich-public-proxy?scale=1.1&label=release"></a>
 <a href="https://immich-demo.note.sx/share/gJfs8l4LcJJrBUpjhMnDoKXFt1Tm5vKXPbXl8BgwPtLtEBCOOObqbQdV5i0oun5hZjQ"><img alt="Open demo gallery" src="https://badgen.net/static/↗🖼️/live%20demo/green?scale=1.1"></a>
 </p>
 
@@ -16,7 +20,7 @@ serving straight out of my own Immich instance.
 Setup takes less than a minute, and you never need to touch it again as all of your sharing stays managed within Immich.
 
 <p align="center" width="100%">
-<img src="docs/ipp.svg" width="200" height="200">
+<img src="docs/screenshot.webp" width="602" height="414" border="1px solid white">
 </p>
 
 ### Table of Contents
@@ -155,18 +159,19 @@ Alternatively, you can [pass the configuration inline](docs/inline-configuration
 
 ### Immich Public Proxy options
 
-| Option                   | Type     | Description                                                                                                                                                                                                                                                                                   |
-|--------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `responseHeaders`        | `object` | Change the headers sent with your web responses. By default there is `cache-control` and CORS added.                                                                                                                                                                                          |
-| `downloadOriginalPhoto`  | `bool`   | Set to `false` if you only want people to be able to download the 'preview' quality photo, rather than your original photo.                                                                                                                                                                   |
-| `downloadedFilename`     | `int`    | The filename of the downloaded image.<br>`0` for the original filename if available, falling back to the Immich asset ID<br>`1` for the Immich asset ID number<br>`2` for a shortened version of the asset ID: `img_` plus the first 8 characters of the asset ID                             |
-| `allowDownloadAll`       | `int`    | Allow visitors to download all files as a zip, including the selective-download flow in multi-select mode.<br>`0` disable downloads<br>`1` follow Immich setting per share ([example](https://github.com/user-attachments/assets/79ea8c08-71ce-42ab-b025-10aec384938a))<br>`2` always allowed |
-| `allowSlugLinks`         | `bool`   | Enable/disable the custom URL links.                                                                                                                                                                                                                                                          |
-| `showHomePage`           | `bool`   | Set to `false` to remove the IPP shield page at `/` and at `/share`                                                                                                                                                                                                                           |
-| `gallery`                | `object` | Gallery-page options, see the [Gallery options](#gallery-options) section below.                                                                                                                                                                                                              |
-| `lightbox`               | `object` | Lightbox option, see the [Lightbox options](#lightbox-options) section below.                                                                                                                                                                                                                 |
-| `showMetadata`           | `object` | See the [Metadata](#metadata) section below.                                                                                                                                                                                                                                                  |
-| `customInvalidResponse`  | various  | Send a custom response instead of the default 404 - see [Custom responses](docs/custom-responses.md) for more details.                                                                                                                                                                        |
+| Option                                | Type     | Description                                                                                                                                                                                                                                                                                   |
+|---------------------------------------|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `responseHeaders`                     | `object` | Change the headers sent with your web responses. By default there is `cache-control` and CORS added.                                                                                                                                                                                          |
+| `downloadOriginalPhoto`               | `bool`   | Set to `false` if you only want people to be able to download the 'preview' quality photo, rather than your original photo.                                                                                                                                                                   |
+| `downloadedFilename`                  | `int`    | The filename of the downloaded image.<br>`0` for the original filename if available, falling back to the Immich asset ID<br>`1` for the Immich asset ID number<br>`2` for a shortened version of the asset ID: `img_` plus the first 8 characters of the asset ID                             |
+| `allowDownloadAll`                    | `int`    | Allow visitors to download all files as a zip, including the selective-download flow in multi-select mode.<br>`0` disable downloads<br>`1` follow Immich setting per share ([example](https://github.com/user-attachments/assets/79ea8c08-71ce-42ab-b025-10aec384938a))<br>`2` always allowed |
+| `downloadFromImmichConcurrencyLimit`  | `int`    | Maximum number of assets IPP will fetch from your Immich server in parallel when building a "download all" zip. Defaults to `8`. Lower this if your Immich server is slow or you see download timeouts on large albums; raise it for faster downloads if your server can handle the load.     |
+| `allowSlugLinks`                      | `bool`   | Enable/disable the custom URL links.                                                                                                                                                                                                                                                          |
+| `showHomePage`                        | `bool`   | Set to `false` to remove the IPP shield page at `/` and at `/share`                                                                                                                                                                                                                           |
+| `gallery`                             | `object` | Gallery-page options, see the [Gallery options](#gallery-options) section below.                                                                                                                                                                                                              |
+| `lightbox`                            | `object` | Lightbox option, see the [Lightbox options](#lightbox-options) section below.                                                                                                                                                                                                                 |
+| `showMetadata`                        | `object` | See the [Metadata](#metadata) section below.                                                                                                                                                                                                                                                  |
+| `customInvalidResponse`               | various  | Send a custom response instead of the default 404 - see [Custom responses](docs/custom-responses.md) for more details.                                                                                                                                                                        |
 
 For example, to disable the home page at `/` and at `/share` you need to change `showHomePage` to `false`:
 
@@ -183,12 +188,12 @@ For example, to disable the home page at `/` and at `/share` you need to change 
 
 Options that control how the gallery page is rendered. Configured under `ipp.gallery`.
 
-| Option               | Type   | Description                                                                                                                                                                                                          |
-|----------------------|--------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `singleImage`        | `bool` | By default a link to a single image will directly open the image file. Set to `true` if you want to show a gallery page instead for a single item.                                                                   |
-| `singleItemAutoOpen` | `bool` | When a share contains a single item and is opened on its gallery page, automatically open the lightbox on the asset. Default `true`.                                                                                 |
-| `showTitle`          | `bool` | Show a title on the gallery page. This is taken from the album title if it is an album being shared, otherwise the "Description" from the shared link will be used.                                                  |
-| `showDescription`    | `bool` | Show the album description below the title. This only applies if it is an album which is being shared.                                                                                                               |
+| Option               | Type   | Description                                                                                                                                                                                                         |
+|----------------------|--------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `singleImage`        | `bool` | By default a link to a single image will directly open the image file. Set to `true` if you want to show a gallery page instead for a single item.                                                                  |
+| `singleItemAutoOpen` | `bool` | When a share contains a single item and is opened on its gallery page, automatically open the lightbox on the asset. Default `true`.                                                                                |
+| `showTitle`          | `bool` | Show a title on the gallery page. This is taken from the album title if it is an album being shared, otherwise the "Description" from the shared link will be used.                                                 |
+| `showDescription`    | `bool` | Show the album description below the title. This only applies if it is an album which is being shared.                                                                                                              |
 | `groupByDate`        | `bool` | Group the gallery's thumbnails by month, with headers like "December 2024" above each group. Sorts photos newest-first. Items missing a creation date end up under an "Undated" bucket at the end. Default `false`. |
 
 Example: show the gallery title and group photos by month:
@@ -210,11 +215,12 @@ Example: show the gallery title and group photos by month:
 
 The gallery's lightbox is powered by [PhotoSwipe](https://photoswipe.com/). Configured under `ipp.lightbox`.
 
-| Option         | Type   | Description                                                                                                                              |
-|----------------|--------|------------------------------------------------------------------------------------------------------------------------------------------|
-| `showArrows`   | `bool` | Show the prev/next arrows on desktop. They appear when the user hovers the lightbox. Default `true`.                                     |
-| `showDownload` | `bool` | Show a download button in the lightbox toolbar. Only takes effect when downloads are also allowed by `allowDownloadAll`. Default `true`. |
-| `mobileArrows` | `bool` | Show prev/next arrows on mobile (under 640px viewport). Off by default since swipe is the natural mobile navigation.                     |
+| Option         | Type     | Description                                                                                                                              |
+|----------------|----------|------------------------------------------------------------------------------------------------------------------------------------------|
+| `showArrows`   | `bool`   | Show the prev/next arrows on desktop. They appear when the user hovers the lightbox. Default `true`.                                     |
+| `showDownload` | `bool`   | Show a download button in the lightbox toolbar. Only takes effect when downloads are also allowed by `allowDownloadAll`. Default `true`. |
+| `mobileArrows` | `bool`   | Show prev/next arrows on mobile (under 640px viewport). Off by default since swipe is the natural mobile navigation.                     |
+| `options`      | `object` | Custom [PhotoSwipe options](https://photoswipe.com/options/) to override defaults (e.g. `{"wheelToZoom": true}`).                        |
 
 Example: hide the download button inside the lightbox even though zip downloads are otherwise allowed:
 
@@ -247,14 +253,6 @@ You can customise the responses that IPP sends for invalid requests. For example
 - And so on...
 
 See [Custom responses](docs/custom-responses.md) for more details.
-
-### Serving from multiple domains
-
-If you're serving the same IPP from multiple domains, instead of setting the public URL in your docker-compose file, you can set it dynamically via a HTTP header in the request from your reverse proxy to IPP.
-
-1. Remove the `PUBLIC_BASE_URL` environment variable from your docker-compose file.
-
-2. Set a custom `publicBaseUrl` header on each request with the value of your public base URL (example `https://your-proxy-url.com`).
 
 ## Troubleshooting
 

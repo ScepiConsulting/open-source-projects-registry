@@ -1,8 +1,68 @@
 {
   "chunk": 20,
   "count": 50,
-  "generated_at": "2026-05-24T06:44:10Z",
+  "generated_at": "2026-05-31T07:04:49Z",
   "items": [
+    {
+      "repo_key": "github.com/odoo/odoo",
+      "repo_url": "github.com/odoo/odoo",
+      "host": "github.com",
+      "owner": "odoo",
+      "repo": "odoo",
+      "app_references": [
+        "odoo"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__odoo__odoo.md",
+      "readme_download_url": null,
+      "readme_sha256": "964c3dc18f056f667fd488efde0d25847aca0f7a8c99feca06d6dd6ef9657659",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/oetiker/SmokePing",
+      "repo_url": "github.com/oetiker/SmokePing",
+      "host": "github.com",
+      "owner": "oetiker",
+      "repo": "SmokePing",
+      "app_references": [
+        "smokeping"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__oetiker__SmokePing.md",
+      "readme_download_url": null,
+      "readme_sha256": "965139129e5fa21e2943514c24015042ed5e7c29dea79adb5a5dc2ad59e6579a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/offen/docker-volume-backup",
+      "repo_url": "github.com/offen/docker-volume-backup",
+      "host": "github.com",
+      "owner": "offen",
+      "repo": "docker-volume-backup",
+      "app_references": [
+        "docker-volume-backup"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__offen__docker-volume-backup.md",
+      "readme_download_url": null,
+      "readme_sha256": "fda7cb42e6bfdbe3dcf9db82d2d5d7b6d2e68be4d94b6cf982abe55d00625259",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/olalie/tapmap",
+      "repo_url": "github.com/olalie/tapmap",
+      "host": "github.com",
+      "owner": "olalie",
+      "repo": "tapmap",
+      "app_references": [
+        "tapmap"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__olalie__tapmap.md",
+      "readme_download_url": "https://raw.githubusercontent.com/olalie/tapmap/main/README.md",
+      "readme_sha256": "590b70bf2f9613204c1d9bb07b3e1304fd694130a38a6e603d5407ee487d140c",
+      "error": null
+    },
     {
       "repo_key": "github.com/omarmir/nanote",
       "repo_url": "github.com/omarmir/nanote",
@@ -120,7 +180,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__openclaw__openclaw.md",
       "readme_download_url": "https://raw.githubusercontent.com/openclaw/openclaw/main/README.md",
-      "readme_sha256": "211dec6d314a0aa41bf1de3bc4fccf242bb4fa9a1126ab16118ec39dac494fab",
+      "readme_sha256": "7ecce079e83f918c16d51d62e68efc4677e4b16bc5b390a47241d76ac8bbbbbc",
       "error": null
     },
     {
@@ -402,9 +462,9 @@
       "app_references": [
         "owncloud-infinite-scale"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__owncloud__ocis.md",
-      "readme_download_url": "https://raw.githubusercontent.com/owncloud/ocis/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "25681e7a64fd6bfb6c9410130b64159441575fc0298781c610c6f4c93c266995",
       "error": null
     },
@@ -466,6 +526,21 @@
       "readme_path": "knowledge/readmes/github.com__p0lloc__perfice.md",
       "readme_download_url": null,
       "readme_sha256": "0785da53383af9667ffddbbc97478b3fbc064affa01e7d89d31076f9f2766543",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/p2r3/convert",
+      "repo_url": "github.com/p2r3/convert",
+      "host": "github.com",
+      "owner": "p2r3",
+      "repo": "convert",
+      "app_references": [
+        "convert-to-it"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__p2r3__convert.md",
+      "readme_download_url": "https://raw.githubusercontent.com/p2r3/convert/master/README.md",
+      "readme_sha256": "df9dfb52a7433a8b37124cd5b354058ca59858fc13ef0a3b7ce6957a6bc84461",
       "error": null
     },
     {
@@ -597,9 +672,9 @@
       "app_references": [
         "pelican-panel"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__pelican-dev__panel.md",
-      "readme_download_url": "https://raw.githubusercontent.com/pelican-dev/panel/main/readme.md",
+      "readme_download_url": null,
       "readme_sha256": "09d9a154bc9ecda87cf3e2240ebdfd68f1120e413e9ce6397f84db288dd61c00",
       "error": null
     },
@@ -612,10 +687,10 @@
       "app_references": [
         "penpot"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__penpot__penpot.md",
-      "readme_download_url": null,
-      "readme_sha256": "325f4eaba57d401796d29fe1297a5fcccb211d6c829c0b627609e19dea2d5b7b",
+      "readme_download_url": "https://raw.githubusercontent.com/penpot/penpot/develop/README.md",
+      "readme_sha256": "e06b43547ad38c0187a7e597bdf3a1fd9c5f42b4f4d64cd67108bfe6756bdb98",
       "error": null
     },
     {
@@ -676,81 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__pgadmin-org__pgadmin4.md",
       "readme_download_url": null,
       "readme_sha256": "11a5875e34bd53d76015640c160a05880b103ccbc2c23a1b12c533b70ff291b1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pglombardo/PasswordPusher",
-      "repo_url": "github.com/pglombardo/PasswordPusher",
-      "host": "github.com",
-      "owner": "pglombardo",
-      "repo": "PasswordPusher",
-      "app_references": [
-        "password-pusher"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
-      "readme_download_url": "https://raw.githubusercontent.com/pglombardo/PasswordPusher/master/README.md",
-      "readme_sha256": "83c258f90ab079659109c061928e19468201c69109bab1f159066acd91b7a35a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/photoprism/photoprism",
-      "repo_url": "github.com/photoprism/photoprism",
-      "host": "github.com",
-      "owner": "photoprism",
-      "repo": "photoprism",
-      "app_references": [
-        "photoprism"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__photoprism__photoprism.md",
-      "readme_download_url": null,
-      "readme_sha256": "ca651888da01efd75e24e96d5fd0152538cce164d97cbd476ad82b425c1862d4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/photoview/photoview",
-      "repo_url": "github.com/photoview/photoview",
-      "host": "github.com",
-      "owner": "photoview",
-      "repo": "photoview",
-      "app_references": [
-        "photoview"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__photoview__photoview.md",
-      "readme_download_url": null,
-      "readme_sha256": "e121a36df86b8615015a4a482d12c627e2e5a04561d9a244f4ac7841b0f19f67",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/phpmyadmin/phpmyadmin",
-      "repo_url": "github.com/phpmyadmin/phpmyadmin",
-      "host": "github.com",
-      "owner": "phpmyadmin",
-      "repo": "phpmyadmin",
-      "app_references": [
-        "phpmyadmin"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__phpmyadmin__phpmyadmin.md",
-      "readme_download_url": null,
-      "readme_sha256": "37ea823992538a28088491803a9e6c221ed1d2f770d87d5eb5ff040d6c8d8fe7",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pi-hole/pi-hole",
-      "repo_url": "github.com/pi-hole/pi-hole",
-      "host": "github.com",
-      "owner": "pi-hole",
-      "repo": "pi-hole",
-      "app_references": [
-        "pi-hole"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pi-hole__pi-hole.md",
-      "readme_download_url": null,
-      "readme_sha256": "0967ddc0ed23f5e46ba066410485edc8a33ffacc5dd7afd907594a3bc5c651b8",
       "error": null
     }
   ]

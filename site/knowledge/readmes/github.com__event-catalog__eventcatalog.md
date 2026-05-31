@@ -2,9 +2,9 @@
 
 <img src="./images/banner.png" alt="EventCatalog overview" width="800" />
 
-## The architecture catalog for distributed systems 
+## The discovery and governance layer for event-driven systems
 
-Discover your domains, services, events, and schemas — with AI-powered discovery, interactive visualizations, and 15+ generators for Kafka, EventBridge, RabbitMQ, and more.
+Document, visualize, and govern your domains, services, events and schemas — with AI-powered search, interactive visualizations, and 15+ generators for Kafka, EventBridge, RabbitMQ, and more.
 
 [![main](https://github.com/event-catalog/eventcatalog/actions/workflows/verify-build.yml/badge.svg)](https://github.com/event-catalog/eventcatalog/actions/workflows/verify-build.yml)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/event-catalog/eventcatalog/blob/main/LICENSE)
@@ -19,7 +19,7 @@ Discover your domains, services, events, and schemas — with AI-powered discove
 <br/>
 
 <p align="center">
-  <img src="./images/overview-demo.gif" alt="EventCatalog overview" width="800" />
+  <img src="./images/visualizer-demo.gif" alt="Architecture visualiser" width="800" />
 </p>
 
 [Documentation](https://www.eventcatalog.dev/docs) | [Live Demo](https://demo.eventcatalog.dev) | [Discord](https://discord.gg/3rjaZMmrAm)
@@ -41,17 +41,17 @@ Looking for a guided walkthrough? Check out the [Getting Started](https://www.ev
 
 ## Core Features
 
-### Visualise your architecture
+### Document your architecture
 
-Interactive node graphs that map your entire system — services, events, commands, queries, domains, and how they connect.
+Document domains, services and messages across your architecture.
 
 <p align="center">
-  <img src="./images/visualizer-demo.gif" alt="Architecture visualiser" width="800" />
+  <img src="./images/overview-demo.gif" alt="EventCatalog overview" width="800" />
 </p>
 
 ### AI-powered discovery
 
-Ask questions about your architecture and business in natural language. The built-in AI chat and MCP server let you and your tools explore your catalog.
+Ask questions about your architecture and business in natural language. The built-in AI chat and MCP server let you and your tools query your catalog.
 
 <p align="center">
   <img src="./images/ai-demo.gif" alt="AI-powered discovery" width="800" />
@@ -241,6 +241,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Machul84126"><img src="https://avatars.githubusercontent.com/u/128227109?v=4?s=100" width="100px;" alt="Machul"/><br /><sub><b>Machul</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/issues?q=author%3AMachul84126" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ugostack"><img src="https://avatars.githubusercontent.com/u/81093728?v=4?s=100" width="100px;" alt="ugostack"/><br /><sub><b>ugostack</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/commits?author=ugostack" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/jdebarochez"><img src="https://avatars.githubusercontent.com/u/3436890?v=4?s=100" width="100px;" alt="Jean de Barochez"/><br /><sub><b>Jean de Barochez</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/commits?author=jdebarochez" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

@@ -1,28 +1,29 @@
 <div align="center">
   <img src="./assets/images/hero-logo.webp" width="480" alt="Dagu Logo">
   <p>
-    <a href="https://docs.dagu.sh/overview/changelog"><img src="https://img.shields.io/github/release/dagucloud/dagu.svg?style=flat-square" alt="Latest Release"></a>
-    <a href="https://github.com/dagucloud/dagu/actions/workflows/ci.yaml"><img src="https://img.shields.io/github/actions/workflow/status/dagucloud/dagu/ci.yaml?style=flat-square" alt="Build Status"></a>
-    <a href="https://discord.gg/gpahPUjGRk"><img src="https://img.shields.io/discord/1095289480774172772?style=flat-square&logo=discord" alt="Discord"></a>
-    <a href="https://bsky.app/profile/dagu-org.bsky.social"><img src="https://img.shields.io/badge/Bluesky-0285FF?style=flat-square&logo=bluesky&logoColor=white" alt="Bluesky"></a>
-  </p>
-
-  <p>
     <a href="https://docs.dagu.sh">Docs</a> |
     <a href="https://docs.dagu.sh/writing-workflows/examples">Examples</a> |
-    <a href="https://discord.gg/gpahPUjGRk">Support & Community</a>
+    <a href="https://discord.gg/gpahPUjGRk">Community</a>
   </p>
 </div>
 
-## Local-first Control Plane for Existing Ops Automation and AI Agent Workflows
+<h1>Dagu</h1>
 
-Define workflows in simple declarative YAML syntax, execute them anywhere with a single binary, compose complex pipelines from reusable sub-workflows, and distribute tasks across workers. The built-in Web UI eliminates the need for SSHing into servers to debug failed runs, check logs, or retry steps manually. All without requiring databases, message brokers, or code changes to your existing scripts. It natively supports command execution via SSH, running docker containers, kubernetes jobs, and you can extend it with custom step types for your specific use case.
+Dagu is a lightweight, self-contained alternative to Airflow or Cron with Web UI. It supports Linux / Mac / Windows. Define [DAGs](https://en.wikipedia.org/wiki/Directed_acyclic_graph) in a simple, declarative [YAML format](https://docs.dagu.sh/writing-workflows/examples). It natively supports shell commands, Docker containers, Kubernetes Jobs, remote commands via SSH, [AI-agent harnesses](https://docs.dagu.sh/step-types/harness/), and more through [Dagu Actions](https://docs.dagu.sh/dagu-actions/#dagu-actions).
 
-Built for developers who want powerful workflow orchestration without the operational overhead. For a quick feel of how it works, take a look at the [examples](https://docs.daguit.dev/writing-workflows/examples).
+It was designed to be easy to use, self-contained, and require no coding, making it ideal for small teams.
 
-- **Local-first and self-hosted:** One static binary; no databases, brokers, or sidecars. Battery included.
-- **Language-agnostic:** No need to rewrite existing scripts.
-- **AI integration:** Use your favorite AI agent through [MCP](https://docs.dagu.sh/getting-started/mcp#mcp-server) or [Skill](https://docs.dagu.sh/getting-started/ai-agent#ai-coding-tool-integration) to manage your workflows.
+**Highlights:**
+
+- Single binary file installation.
+- Declarative YAML format for defining DAGs.
+- Web UI for visually managing, retrying, and monitoring pipelines.
+- Use existing scripts or tools without any modifications.
+- Self-contained, with no need for a DBMS.
+- Built-in [MCP](https://docs.dagu.sh/mcp/clients) support for AI agents to manage workflows.
+- Simple AI workflows with [Built in Agent](https://docs.dagu.sh/features/agent/step) and [Harness](https://docs.dagu.sh/step-types/harness/) actions.
+
+## Quick Look
 
 For a quick look at how workflows are defined, see the [examples](https://docs.dagu.sh/writing-workflows/examples).
 
@@ -183,7 +184,7 @@ Run Dagu on one machine, scale out with distributed workers, or use a managed Da
 | **Local single-server** | `dagu start-all` on one machine. | Same machine. | Development, small scheduled workloads, edge jobs, and simple internal automation. |
 | **Self-hosted** | Dagu server on your infrastructure. | Local execution or distributed workers on your infrastructure. | Teams that need ownership of infrastructure. |
 | **Managed Server** | Full managed Dagu server in a dedicated, isolated gVisor instance on GKE. | Managed instance. | Teams that want Dagu operated for them without running the server themselves. |
-| **Hybrid** | Full managed Dagu Cloud server. | Private workers in your infrastructure over mTLS. | Docker steps, private networks, specialized hardware, or data-local work. |
+| **Hybrid** | Full managed Dagu server. | Private workers in your infrastructure over mTLS. | Docker steps, private networks, specialized hardware, or data-local work. |
 
 ### Licensing
 
@@ -528,6 +529,7 @@ Dagu includes built-in actions that run within the Dagu process or on the select
 | [`s3.upload` / `s3.download` / `s3.list` / `s3.delete`](https://docs.dagu.sh/step-types/s3) | Upload, download, list, and delete S3 objects |
 | [`file.stat` / `file.read` / `file.write` / `file.copy` / `file.move` / `file.delete` / `file.mkdir` / `file.list`](https://docs.dagu.sh/writing-workflows/yaml-specification#built-in-action-names) | Local file operations without shell commands |
 | [`artifact.write` / `artifact.read` / `artifact.list`](https://docs.dagu.sh/step-types/artifact) | Write, read, and list DAG-run artifacts |
+| [`state.get` / `state.set` / `state.delete` / `state.list` / `state.diff`](https://docs.dagu.sh/writing-workflows/persistent-state) | Persistent JSON state across DAG runs |
 | [`data.convert` / `data.pick`](https://docs.dagu.sh/step-types/data) | Convert and select structured data |
 | [`jq.filter`](https://docs.dagu.sh/step-types/jq) | JSON transformation using jq expressions |
 | [`archive.create` / `archive.extract` / `archive.list`](https://docs.dagu.sh/step-types/archive) | Create, extract, and list zip/tar archives |
@@ -786,6 +788,7 @@ The embedded API is experimental and may change. See the [embedded API documenta
 | `DAGU_LOG_FORMAT` | `text` | `text` or `json` |
 | `DAGU_CERT_FILE` | — | TLS certificate |
 | `DAGU_KEY_FILE` | — | TLS private key |
+| `DAGU_CORS_ALLOWED_ORIGINS` | — | Comma-separated list of allowed CORS origins (e.g. `https://app.example.com`). When unset, all origins are allowed without credentials. When set, only listed origins are allowed and credentials are enabled. |
 
 ### Paths
 
@@ -796,6 +799,7 @@ The embedded API is experimental and may change. See the [embedded API documenta
 | `DAGU_LOG_DIR` | `~/.local/share/dagu/logs` | Log files |
 | `DAGU_DATA_DIR` | `~/.local/share/dagu/data` | Application state |
 | `DAGU_TOOLS_DIR` | `{DAGU_DATA_DIR}/tools` | Managed DAG tool cache |
+| `DAGU_DAG_STATE_DIR` | `{DAGU_DATA_DIR}/dag-state` | Persistent DAG state files |
 
 ### Authentication
 

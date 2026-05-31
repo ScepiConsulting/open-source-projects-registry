@@ -1,8 +1,106 @@
 {
   "chunk": 11,
   "count": 50,
-  "generated_at": "2026-05-24T06:44:10Z",
+  "generated_at": "2026-05-31T07:04:48Z",
   "items": [
+    {
+      "reference": "jellyswarrm",
+      "name": "Jellyswarrm",
+      "website": "github.com/LLukas22/Jellyswarrm",
+      "description": "Combine multiple Jellyfin servers into one library",
+      "repo_url": "github.com/LLukas22/Jellyswarrm",
+      "repo_key": "github.com/LLukas22/Jellyswarrm",
+      "stars": null,
+      "forks": 10,
+      "updated_at": "30",
+      "license": null,
+      "tags": [
+        "Audiobooks",
+        "Budgeting",
+        "Media Streaming",
+        "Monitoring",
+        "Reverse Proxy"
+      ],
+      "readme_path": "knowledge/readmes/github.com__LLukas22__Jellyswarrm.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "7b0c6e3741f5d659a5fb9843ab3960905d80530f96c22fdb69765fc1237239c3"
+      }
+    },
+    {
+      "reference": "jellysweep",
+      "name": "Jellysweep",
+      "website": "github.com/jon4hz/jellysweep",
+      "description": "Smart cleanup tool for Jellyfin media servers",
+      "repo_url": "github.com/jon4hz/jellysweep",
+      "repo_key": "github.com/jon4hz/jellysweep",
+      "stars": null,
+      "forks": 11,
+      "updated_at": "13",
+      "license": null,
+      "tags": [
+        "Audiobooks",
+        "Budgeting",
+        "File Management",
+        "Media Streaming",
+        "Monitoring"
+      ],
+      "readme_path": "knowledge/readmes/github.com__jon4hz__jellysweep.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "d3c2e8e4f809309b1ca1463a35a4345f76456ba3b899bc254b57dd8c887acc26"
+      }
+    },
+    {
+      "reference": "jelu",
+      "name": "Jelu",
+      "website": "github.com/bayang/jelu",
+      "description": "Book tracking platform",
+      "repo_url": "github.com/bayang/jelu",
+      "repo_key": "github.com/bayang/jelu",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "20",
+      "license": null,
+      "tags": [
+        "Books",
+        "Tracking"
+      ],
+      "readme_path": "knowledge/readmes/github.com__bayang__jelu.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "0e5ed1d9057957a93a47dd8b6036128a73950ba8c595bd2c7afcb6ee247bd807"
+      }
+    },
+    {
+      "reference": "jetlog",
+      "name": "Jetlog",
+      "website": "github.com/pbogre/jetlog",
+      "description": "Personal flight tracker and viewer",
+      "repo_url": "github.com/pbogre/jetlog",
+      "repo_key": "github.com/pbogre/jetlog",
+      "stars": null,
+      "forks": 10,
+      "updated_at": "37",
+      "license": null,
+      "tags": [
+        "Flights",
+        "Tracking"
+      ],
+      "readme_path": "knowledge/readmes/github.com__pbogre__jetlog.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "9c83e43a04991a44752de39d31942ec46ff7501daab850df74e9612dff9181a6"
+      }
+    },
     {
       "reference": "jitsi-meet",
       "name": "Jitsi Meet",
@@ -12,7 +110,7 @@
       "repo_key": "github.com/jitsi/jitsi-meet",
       "stars": null,
       "forks": 1,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Video Conferencing",
@@ -22,8 +120,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "30b193090ba76f352c00680db1b58d7299434dbc434eaf2adf9e3489516d1380"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "8ecaf74760fc2bac0719fb60d84689e8dd3984ab993dc0a7b1ef202d0526ba1b"
       }
     },
     {
@@ -35,7 +133,7 @@
       "repo_key": "github.com/laurent22/joplin",
       "stars": null,
       "forks": 8,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Note-Taking",
@@ -46,8 +144,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "c425bbcef1955606e14bcc57ef2882709646112c94e2cc411de1a8e2f150e0f8"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "e2e57092713ca7d82f1b12d9626c80cc186e53849bdd9c4c9391cd9ae8298301"
       }
     },
     {
@@ -59,7 +157,7 @@
       "repo_key": "github.com/fccview/jotty",
       "stars": null,
       "forks": 0,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Note-Taking",
@@ -69,8 +167,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "5e830f133ef2d87c431fd9b567d56d9f813fa2da10f1db6081110d20d23faa0c"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "a7aa12ce589dec203a3f40a0ed4fddee650b5fa9c4add2086ae5341820e1ebb2"
       }
     },
     {
@@ -82,18 +180,18 @@
       "repo_key": "github.com/journiv/journiv-app",
       "stars": null,
       "forks": 8,
-      "updated_at": "20",
+      "updated_at": "19",
       "license": null,
       "tags": [
         "Note-Taking",
         "Tracking"
       ],
       "readme_path": "knowledge/readmes/github.com__journiv__journiv-app.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "725e516202ae85686c6d856b6cfcbe216befa33d84166984869e4a761d6256a7"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "88d171a27a448e8698fa708e60f4a9fcac07647927e1114c152709a777441cae"
       }
     },
     {
@@ -105,18 +203,17 @@
       "repo_key": "github.com/kanbn/kan",
       "stars": null,
       "forks": 0,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
-        "Kanban",
-        "Search Engines"
+        "Kanban"
       ],
       "readme_path": "knowledge/readmes/github.com__kanbn__kan.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "1e1b0b400dfe8d30d79e04bce531f08efedf8172b8d07db6d8b3f82b045da62e"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "5f53a302b621fe69b641b6fb5ebba53b185389afc15c651e22d3b39b905b20f5"
       }
     },
     {
@@ -128,7 +225,7 @@
       "repo_key": "github.com/Kanba-co/kanba",
       "stars": null,
       "forks": 15,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Kanban",
@@ -138,8 +235,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "16ba503be0338866fd883ed8b0ca60f785055464cb7a1d9814be3c77f6e141b1"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "45d002c26fbbca84907ad1ac51844688ddf1fd6a0cf64db1d94232f85d6ff6a9"
       }
     },
     {
@@ -151,7 +248,7 @@
       "repo_key": "github.com/kanboard/kanboard",
       "stars": null,
       "forks": 15,
-      "updated_at": "26",
+      "updated_at": "25",
       "license": null,
       "tags": [
         "Kanban",
@@ -161,8 +258,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "5f3b9842bf4a7a1554880d8efff6151c94f21ca0c248c4a80a62bb763ca5d599"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "826c74f5d9e0a0f5fb63d05061bb3cb8e62c92ed3b5aa38d646313cd621a3bbf"
       }
     },
     {
@@ -174,18 +271,18 @@
       "repo_key": "github.com/usekaneo/kaneo",
       "stars": null,
       "forks": 15,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Kanban",
         "Project Management"
       ],
       "readme_path": "knowledge/readmes/github.com__usekaneo__kaneo.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "d7cc651f1f9f44b5422782d32b9f10380ef2e8c44c168e81607db9af793775c5"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "f9d756f5d73adec91f58e510ee484c5fbefe4546e266f65ce4eafafd2dc555fa"
       }
     },
     {
@@ -197,7 +294,7 @@
       "repo_key": "github.com/kanidm/kanidm",
       "stars": null,
       "forks": 16,
-      "updated_at": "31",
+      "updated_at": "30",
       "license": null,
       "tags": [
         "Authentication",
@@ -207,8 +304,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "ef4652e08f3cfdf40dc64464eb57cfa8c3d25b0e4944355154f05dc0140c69e8"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "fa6333b8b87bcb4e0f3e3e86ae8992baeb3b54386010c250feda3eb764d0d1f5"
       }
     },
     {
@@ -220,7 +317,7 @@
       "repo_key": "github.com/Casvt/Kapowarr",
       "stars": null,
       "forks": 11,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "*arr",
@@ -231,8 +328,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "717134aed6928aead64768a5f22933c2baaf33bd67283164ae3a231c1031843e"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "6dcbf3187e93821a17d223939322bf05032b2b282e9145f5ed1d2ca210f86ce8"
       }
     },
     {
@@ -244,7 +341,7 @@
       "repo_key": "github.com/karakeep-app/karakeep",
       "stars": null,
       "forks": 0,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Bookmarks",
@@ -254,8 +351,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "1c281b10f0320404d69baafc0a44ff636699b5589a0ca31592c6eaddb5eeebc7"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "558c892397755d0ff74f1b16cd9b4ff9b1a42392a72c3491f36f8c8df38887fa"
       }
     },
     {
@@ -267,7 +364,7 @@
       "repo_key": "github.com/CodeJawn/karakeep-homedash",
       "stars": null,
       "forks": 11,
-      "updated_at": "20",
+      "updated_at": "19",
       "license": null,
       "tags": [
         "Bookmarks",
@@ -277,8 +374,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "3dd0a57a313be2c277966f8e84830511f7651c50ff77136f7497d806f9fbe765"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "a33aa9afab881119e772c8574dd3ba698ea51072519ab239bf2464ed688698f2"
       }
     },
     {
@@ -290,18 +387,18 @@
       "repo_key": "codeberg.org/karrot/karrot-backend",
       "stars": null,
       "forks": null,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
-        "Events",
-        "Monitoring"
+        "Budgeting",
+        "Events"
       ],
       "readme_path": null,
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "cd8fb6696f5be6e05832d8703c30113fa527b3e31725169fbf69a007085f86ef"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "79c1aa97cb0579c57cfe5fa57bdd6c9d83f4c3e5b14e9be4e8cb4b1c8fb20553"
       }
     },
     {
@@ -323,8 +420,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "569de1d0d1d46206f000590e95a33a86e43da2bde985a525d2ce6fac1d5d82c0"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "6a0df2b801e82e61dd846a04148c567ac62ff8f9cb81814dac16a553ed742ccf"
       }
     },
     {
@@ -346,8 +443,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "907a4632bd956a917ba1e77344ed3d751b6fe52f8da39ff1fff3a94aeea2968c"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "e81a25c25f2fe1ffcbac222d7dbfe0ee161041565814036597d7a0bb19720558"
       }
     },
     {
@@ -369,8 +466,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "10967c2979510ff16bde573e3098498183f443a2834746496c4e0ce069a57c6f"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "b1c7972465ce17069ebc7a31f347e8d319665c80cf7dd51d8a18d54b7f339523"
       }
     },
     {
@@ -382,18 +479,18 @@
       "repo_key": "github.com/ridafkih/keeper.sh",
       "stars": null,
       "forks": 0,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Calendar",
-        "Search Engines"
+        "Pastebin"
       ],
       "readme_path": "knowledge/readmes/github.com__ridafkih__keeper.sh.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "d38d7872a60e4eda2f4b1e02643b0f23e4cbaba52b87ec3f6e53e1721083119b"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "b18a0636ced52eb673185493bbe1473f5c3a65234d1ff067ea0c453336ccb2e5"
       }
     },
     {
@@ -405,7 +502,7 @@
       "repo_key": "github.com/pentacent/keila",
       "stars": null,
       "forks": 0,
-      "updated_at": "10",
+      "updated_at": "9",
       "license": null,
       "tags": [
         "Landing Page",
@@ -415,8 +512,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "b1f0b4efd42a1016a7134f1b7e86294c9bb0d8f67e2f9453a838f6f6ee414542"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "77cc6db61f506bb5e30c171b612949be2a4d1626f08eec7ee6b2b3a6f4eb9257"
       }
     },
     {
@@ -428,7 +525,7 @@
       "repo_key": "github.com/rajnandan1/kener",
       "stars": null,
       "forks": 15,
-      "updated_at": "33",
+      "updated_at": "32",
       "license": null,
       "tags": [
         "Email",
@@ -438,20 +535,20 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "7260a0ce3cbc0f45eb8f3d0eafd65d6bfb8fde52de407bc3607f97b25f9bd773"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "c99993e169a65c5cde705e3863df46972f9e7dd1ca248f5dd17acc93d4356d02"
       }
     },
     {
       "reference": "kestra",
       "name": "Kestra",
-      "website": "kestra.io",
+      "website": "go.kestra.io/home",
       "description": "Event-driven declarative orchestrator",
       "repo_url": "github.com/kestra-io/kestra",
       "repo_key": "github.com/kestra-io/kestra",
       "stars": null,
       "forks": 1,
-      "updated_at": "19",
+      "updated_at": "18",
       "license": null,
       "tags": [
         "Analytics",
@@ -461,8 +558,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "625285c5b3c94bcc9e11f30881c6aabd18014e187d38a049e5718bd6dd04e730"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "69a13cecaff85bc67b2564528367bb85c37c1f60577d06f554791ef47822b735"
       }
     },
     {
@@ -474,18 +571,18 @@
       "repo_key": "github.com/keycloak/keycloak",
       "stars": null,
       "forks": 1,
-      "updated_at": "19",
+      "updated_at": "18",
       "license": null,
       "tags": [
         "Authentication",
         "Identity Management"
       ],
       "readme_path": "knowledge/readmes/github.com__keycloak__keycloak.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "c597baa82e562e71f417822808e84cfde7c45f35dd3a061db77bde500e5fc578"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "e34b70f3e3233a56705a60c548635fcae0f2f8848bb3da970ba6b2d8da7551ba"
       }
     },
     {
@@ -497,7 +594,7 @@
       "repo_key": "github.com/leafac/kill-the-newsletter",
       "stars": null,
       "forks": 15,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Newsletters",
@@ -507,8 +604,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "488c2b361f227392b46113745b9ab1ad66badb558a4ce3e36b1419c4103cafbc"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "ce8ac74d79f2478587e8af1166a85fc16b43a3febd01906668b8e01c3eb72638"
       }
     },
     {
@@ -520,7 +617,7 @@
       "repo_key": "github.com/kimai/kimai",
       "stars": null,
       "forks": 0,
-      "updated_at": "26",
+      "updated_at": "25",
       "license": null,
       "tags": [
         "Cloud Storage",
@@ -529,11 +626,11 @@
         "Time Tracking"
       ],
       "readme_path": "knowledge/readmes/github.com__kimai__kimai.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "23b5b97dc009cf8404cf40b67a6660d6e7a01110daec7875d21856b9b833a150"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "78a4f21f7252b418fbe6b962275a97ada6531a8a942a594b0a52280839f79e88"
       }
     },
     {
@@ -545,7 +642,7 @@
       "repo_key": "github.com/Kinto/kinto",
       "stars": null,
       "forks": 8,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Cloud Storage",
@@ -555,8 +652,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "110200b5520e081bf8056112f3af00fd398d888ba0f67da0bacd119bcd34d44c"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "81627b284dbeb31e3fbf99094a83806ceba5bc23ee812503d4323d7e4159965a"
       }
     },
     {
@@ -578,8 +675,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "e7ebfd65ea15b98d2e2fc8942b7e31289659c095a10db4205847653389d954a2"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "2cfadad1c73aca136d446a5ed7df8eaeb22f72c69c8d2ea0ce09969e2f0878d2"
       }
     },
     {
@@ -591,7 +688,7 @@
       "repo_key": "github.com/kite-org/kite",
       "stars": null,
       "forks": 1,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Monitoring",
@@ -601,8 +698,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "0778a56ecd12e3a71a98d4aad0b431b7c1042f4ac5c297ea12a8baec91d19065"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "1b46cc215270e4c89349e22bd83dc4d7792858de57849ea461745c9953111e3d"
       }
     },
     {
@@ -614,18 +711,18 @@
       "repo_key": "github.com/cgwire/kitsu",
       "stars": null,
       "forks": 0,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
-        "Server Management",
+        "Search Engines",
         "Video Editing"
       ],
       "readme_path": "knowledge/readmes/github.com__cgwire__kitsu.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "c0649d268a63ecc6ff90de49a8b16c546d156a6ca1c77dcb73b599ba2ebbad28"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "26cd4013c3f64a751404139fa2422b3085168564662249852b798f4750438242"
       }
     },
     {
@@ -637,18 +734,18 @@
       "repo_key": "github.com/koel/koel",
       "stars": null,
       "forks": 15,
-      "updated_at": "26",
+      "updated_at": "25",
       "license": null,
       "tags": [
         "Music",
         "Music Streaming"
       ],
       "readme_path": "knowledge/readmes/github.com__koel__koel.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "4c46eaea0c277c4416febfd7e38d41a5e40eaf947413b529c1de737a8165c4ce"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "3a8fb05ee007d135409f3bf5cfd6db29104e160b264cab5c7c244a33269e8851"
       }
     },
     {
@@ -660,7 +757,7 @@
       "repo_key": "github.com/PanSalut/Koffan",
       "stars": null,
       "forks": 8,
-      "updated_at": "18",
+      "updated_at": "17",
       "license": null,
       "tags": [
         "Contacts",
@@ -670,8 +767,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "6d0335d6deb18424e9d2675dbae5701b89c9bb7c8826f8e9aa6aa36def133184"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "fc65048c12434f1122b7d49f41e8c66e84b958794a3c29856026fc01f1582cac"
       }
     },
     {
@@ -683,18 +780,18 @@
       "repo_key": "github.com/benjaminjonard/koillection",
       "stars": null,
       "forks": 15,
-      "updated_at": "26",
+      "updated_at": "25",
       "license": null,
       "tags": [
         "Email",
         "Tracking"
       ],
       "readme_path": "knowledge/readmes/github.com__benjaminjonard__koillection.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "fa19ea62170cbf9b05bdee569b588a47f5f78d930afe1afe61bc8149105bcf18"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "10062a124f0f261a1219c6853df2c8bd45ac815696b91e49a1e7eea5559bb40a"
       }
     },
     {
@@ -706,18 +803,18 @@
       "repo_key": "github.com/gabehf/Koito",
       "stars": null,
       "forks": 15,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Music",
         "Scrobble"
       ],
       "readme_path": "knowledge/readmes/github.com__gabehf__Koito.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "28dce51996bc7979fbc78898a23b5ed55126826f3b0828ff76f589f982ebcbb3"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "f1802632fe7ee11d7331f88b54ff5f8bcfc6334110ac5308a2c4bb0f4193686e"
       }
     },
     {
@@ -729,7 +826,7 @@
       "repo_key": "github.com/Kometa-Team/Kometa",
       "stars": null,
       "forks": 15,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Automation",
@@ -739,8 +836,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "3c5ddd8ad377a01c7f87886474eeabf7a0e85e28d2a72dba6e84822b5b5aeb67"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "fb83a3650743a83a01f69e73c72eb0095fb560d08c57300771ddd48cc47fd755"
       }
     },
     {
@@ -752,7 +849,7 @@
       "repo_key": "github.com/gotson/komga",
       "stars": null,
       "forks": 15,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Books",
@@ -762,8 +859,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "0884e58a3963a5b8406b897ce64a64902e377df2ca03220f58a8c31053477824"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "fd1baebb342e6ba13d7453a55dc88cf772eae5b7c3b8f38b316f8d9f8262a856"
       }
     },
     {
@@ -775,7 +872,7 @@
       "repo_key": "github.com/moghtech/komodo",
       "stars": null,
       "forks": 11,
-      "updated_at": "31",
+      "updated_at": "30",
       "license": null,
       "tags": [
         "Deployment",
@@ -786,8 +883,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "e63f71f82ec16e6d5027a7556c62a276c4348bb5dc0b1749efc7ffa4c68e9d6b"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "321b5777a934e7806feb1fc53abfc10b564bc9f6beb0cb74d5556223dacfd556"
       }
     },
     {
@@ -799,7 +896,7 @@
       "repo_key": "github.com/galaksiotech/kontoj",
       "stars": null,
       "forks": 15,
-      "updated_at": "20",
+      "updated_at": "19",
       "license": null,
       "tags": [
         "Email",
@@ -809,8 +906,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "47200777936758078e8c404cdeb853e199ff4e81531fc584b1027e39a5c2e350"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "3df19b562ea30cd8b26523b22d31922ded040b09df7d13013e12dde875d8a5bc"
       }
     },
     {
@@ -822,7 +919,7 @@
       "repo_key": "github.com/kopia/kopia",
       "stars": null,
       "forks": 1,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Analytics",
@@ -832,8 +929,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "156ead08ca2fd1591a0d7d30766fd4439f90062fbd516a23227415a2c8c3538d"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "9730a073e2d814b1cacde8b295e04036dd70c5a896fe287ff4f6b138b46ba34f"
       }
     },
     {
@@ -845,7 +942,7 @@
       "repo_key": "github.com/krakend/krakend-ce",
       "stars": null,
       "forks": 1,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Analytics",
@@ -855,8 +952,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "28c1d4abb6dff6ae34b41dce19429081f25edf1e3ea67933f419634837bf3ea0"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "5bcc820929eab0dae0c116d2584d7bafc6e1c613250920ab17381cb5df27fe44"
       }
     },
     {
@@ -868,7 +965,7 @@
       "repo_key": "github.com/kritihq/kriti-images",
       "stars": null,
       "forks": 15,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Email",
@@ -878,8 +975,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "c41bd0da5bedf2bbe59e4da35ff2479668c0579eec072f1cdd9ea3b9c8b53cc7"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "94fa0be4f2c7fbb70a83b9368c26b772e02147db4228c6b4e946ab1b9ca8105c"
       }
     },
     {
@@ -898,11 +995,11 @@
         "Social Media"
       ],
       "readme_path": "knowledge/readmes/github.com__toddsundsted__ktistec.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "5c3c3cc01d24885eb12a056b26d1043daa44445c7d4955aef42203888744e85e"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "86c27d0f4638bb3b5a591d2f3ae0ca098f412b153a84b08d3b5941f0683d591a"
       }
     },
     {
@@ -914,7 +1011,7 @@
       "repo_key": "github.com/kubero-dev/kubero",
       "stars": null,
       "forks": 11,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Database",
@@ -924,8 +1021,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "b79d39d99c9dbc5d07319e773433864f7da03ac0aa914c639b7af59ffc83b28f"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "6b16933f708248712b10dbf6b9a8b9237ddc0863e3fe70b1443a8bfad93eb162"
       }
     },
     {
@@ -937,7 +1034,7 @@
       "repo_key": "github.com/kubetail-org/kubetail",
       "stars": null,
       "forks": 1,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Analytics",
@@ -947,8 +1044,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "0e0f134dbdcfd5a4233f1cd6411cd9028df3803ab188df19ed9f07d80df65207"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "98cef316fedcd23f06decf9c577875d463530f8fdcde783d9b0ff093cd613b74"
       }
     },
     {
@@ -960,7 +1057,7 @@
       "repo_key": "github.com/thedevs-network/kutt",
       "stars": null,
       "forks": 15,
-      "updated_at": "20",
+      "updated_at": "19",
       "license": null,
       "tags": [
         "Email",
@@ -970,8 +1067,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "61d395fc92b2dca96078683022a0545d4f07723fae1cda8f370f91e7988d4333"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "eb8b815997bc49b4a95d4270100e33df1112dfa062808e75c35bf3661b3c6cdd"
       }
     },
     {
@@ -983,7 +1080,7 @@
       "repo_key": "github.com/kuvasz-uptime/kuvasz",
       "stars": null,
       "forks": 1,
-      "updated_at": "21",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Analytics",
@@ -993,8 +1090,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "a772335bc483ead14b8248b72ab67a0aedf994196135d3c807f4bccee1829780"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "01c26f2638843eabb6797d497aead0499f40e264e5bfd76c6293f29887d0f57f"
       }
     },
     {
@@ -1006,7 +1103,7 @@
       "repo_key": "github.com/zoriya/Kyoo",
       "stars": null,
       "forks": 11,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Media Streaming",
@@ -1017,8 +1114,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "653bb20a56ed16feae00c8ef4aee7e8ffaab5b453c0a23a87ce813168eedefda"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "7a8a788c00cebfff3984669bb61ea502ab60f3ed866e01d00c4ed61ac31b0a13"
       }
     },
     {
@@ -1030,7 +1127,7 @@
       "repo_key": "github.com/AnthonyGress/lab-dash",
       "stars": null,
       "forks": 11,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Dashboard",
@@ -1040,8 +1137,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "0075d177e95af23c65f77a861bbab1fde3ad0d0118c4d09906642a934bbff19b"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "86a71ec9638113b2b58a376b8697fcaaa1c42acc1d3bde4161dca1a0515fb572"
       }
     },
     {
@@ -1063,102 +1160,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "8d525be9c46ec5b42b1966568df5904dca2fb1a542aaf730db89438a17c9ae5c"
-      }
-    },
-    {
-      "reference": "laudspeaker",
-      "name": "Laudspeaker",
-      "website": "laudspeaker.com/?ref=github",
-      "description": "Customer and product engagement platform",
-      "repo_url": "github.com/laudspeaker/laudspeaker",
-      "repo_key": "github.com/laudspeaker/laudspeaker",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "38",
-      "license": null,
-      "tags": [
-        "Customer Engagement",
-        "Uptime",
-        "Workflow Automation"
-      ],
-      "readme_path": "knowledge/readmes/github.com__laudspeaker__laudspeaker.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "4f1860b4d44362da3ddf30bfccca157df9e6820da82244c600a83662af276b47"
-      }
-    },
-    {
-      "reference": "lazylibrarian",
-      "name": "LazyLibrarian",
-      "website": "lazylibrarian.gitlab.io/",
-      "description": "Follow authors and manage ebook collections",
-      "repo_url": "gitlab.com/LazyLibrarian/LazyLibrarian",
-      "repo_key": "gitlab.com/LazyLibrarian/LazyLibrarian",
-      "stars": null,
-      "forks": 11,
-      "updated_at": "29",
-      "license": null,
-      "tags": [
-        "Automation",
-        "Books"
-      ],
-      "readme_path": null,
-      "readme_status": "error",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "9f412cb2467ecc48788dfc297931326a561fb34cb5fa146a0ed084427c4708bb"
-      }
-    },
-    {
-      "reference": "leantime",
-      "name": "Leantime",
-      "website": "leantime.io",
-      "description": "Goals-focused project management system",
-      "repo_url": "github.com/Leantime/leantime",
-      "repo_key": "github.com/Leantime/leantime",
-      "stars": null,
-      "forks": 0,
-      "updated_at": "26",
-      "license": null,
-      "tags": [
-        "Project Management",
-        "Spreadsheet",
-        "Visualization"
-      ],
-      "readme_path": "knowledge/readmes/github.com__Leantime__leantime.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "3063429c4b4aabb4cc61ba1d4b18c36d5c44174a1e41b56eeb50eabd9acd44d7"
-      }
-    },
-    {
-      "reference": "leed",
-      "name": "Leed",
-      "website": "github.com/LeedRSS/Leed",
-      "description": "Free and minimal RSS aggregator",
-      "repo_url": "github.com/LeedRSS/Leed",
-      "repo_key": "github.com/LeedRSS/Leed",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "26",
-      "license": null,
-      "tags": [
-        "Feed Reader",
-        "RSS"
-      ],
-      "readme_path": "knowledge/readmes/github.com__LeedRSS__Leed.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "c626a058875e67fd070bf4a4183747a4faa5f0baca781db21bebe54d6583affa"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "6b0247ba1cdf42c5f2ae4553f5d62a3a8e94208e97ca6562bdc72217dd7c9013"
       }
     }
   ]

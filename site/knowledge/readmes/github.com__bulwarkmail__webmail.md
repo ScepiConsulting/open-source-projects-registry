@@ -12,7 +12,7 @@ A modern, self-hosted webmail client for [Stalwart Mail Server](https://stalw.ar
 
 [![License: AGPL v3](https://img.shields.io/badge/license-AGPL%20v3-blue.svg?logo=gnu&logoColor=white)](LICENSE)
 [![Discord](https://img.shields.io/discord/1482128142939455674?color=7289da&label=discord&logo=discord&logoColor=white)](https://discord.gg/tYCujymGrT)
-[![Version](https://img.shields.io/badge/version-1.7.1-green.svg?logo=git&logoColor=white)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-1.7.2-green.svg?logo=git&logoColor=white)](CHANGELOG.md)
 [![Docker](https://img.shields.io/badge/docker-ghcr.io%2Fbulwarkmail%2Fwebmail-blue?logo=docker&logoColor=white)](https://ghcr.io/bulwarkmail/webmail)
 [![Grafana](https://img.shields.io/badge/grafana-dashboard-orange?logo=grafana&logoColor=white)](https://grafana.external.bulwarkmail.org/)
 
@@ -211,6 +211,12 @@ LOGIN_COMPANY_NAME=My Company
 LOGIN_WEBSITE_URL=https://example.com
 LOGIN_IMPRINT_URL=https://example.com/imprint
 LOGIN_PRIVACY_POLICY_URL=https://example.com/privacy
+
+# Per-domain overrides (optional). When the webmail is served on multiple
+# hostnames, each host can override any subset of the branding fields above.
+# Match is on the request Host (or X-Forwarded-Host). Use "*.example.com" to
+# match any subdomain. Unset fields fall back to the global values.
+DOMAIN_BRANDING=[{"host":"maildomain1.com","loginCompanyName":"Company One","loginLogoLightUrl":"/branding/one.svg"},{"host":"maildomain2.com","loginCompanyName":"Company Two"}]
 ```
 
 </details>

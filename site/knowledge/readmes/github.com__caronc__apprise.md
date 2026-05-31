@@ -68,6 +68,7 @@ The table below identifies the services this tool supports and some example serv
 | [BlueSky](https://appriseit.com/services/bluesky/) | bluesky://  | (TCP) 443   | bluesky://Handle:AppPw<br />bluesky://Handle:AppPw/TargetHandle<br />bluesky://Handle:AppPw/TargetHandle1/TargetHandle2/TargetHandleN
 | [Brevo](https://appriseit.com/services/brevo/) | brevo://  | (TCP) 443   | brevo://APIToken:FromEmail/<br />brevo://APIToken:FromEmail/ToEmail<br />brevo://APIToken:FromEmail/ToEmail1/ToEmail2/ToEmailN/
 | [Chanify](https://appriseit.com/services/chanify/) | chantify://    | (TCP) 443    | chantify://token
+| [Amazon Chime](https://appriseit.com/services/chime/) | chime://   | (TCP) 443   | chime://WebhookID/Token
 | [Discord](https://appriseit.com/services/discord/)  | discord://   | (TCP) 443   | discord://webhook_id/webhook_token<br />discord://avatar@webhook_id/webhook_token
 | [Dot.](https://appriseit.com/services/dot/)  | dot:// | (TCP) 443 | dot://apikey@device_id/text/<br />dot://apikey@device_id/image/<br />**Note**: `device_id` is the Quote/0 hardware serial
 | [Emby](https://appriseit.com/services/emby/)  | emby:// or embys:// | (TCP) 8096 | emby://user@hostname/<br />emby://user:password@hostname
@@ -78,9 +79,11 @@ The table below identifies the services this tool supports and some example serv
 | [Flock](https://appriseit.com/services/flock/) | flock://    | (TCP) 443    | flock://token<br/>flock://botname@token<br/>flock://app_token/u:userid<br/>flock://app_token/g:channel_id<br/>flock://app_token/u:userid/g:channel_id
 | [Google Chat](https://appriseit.com/services/googlechat/) | gchat://    | (TCP) 443    | gchat://workspace/key/token
 | [Gotify](https://appriseit.com/services/gotify/) | gotify:// or gotifys://   | (TCP) 80 or 443    | gotify://hostname/token<br />gotifys://hostname/token?priority=high
+| [GroupMe](https://appriseit.com/services/groupme/) | groupme://   | (TCP) 443   | groupme://bot_id<br />groupme://bot_id/access_token
 | [Growl](https://appriseit.com/services/growl/)  | growl://   | (UDP) 23053   | growl://hostname<br />growl://hostname:portno<br />growl://password@hostname<br />growl://password@hostname:port</br>**Note**: you can also use the get parameter _version_ which can allow the growl request to behave using the older v1.x protocol. An example would look like: growl://hostname?version=1
 | [Guilded](https://appriseit.com/services/guilded/)  | guilded://   | (TCP) 443   | guilded://webhook_id/webhook_token<br />guilded://avatar@webhook_id/webhook_token
 | [Home Assistant](https://appriseit.com/services/homeassistant/)       | hassio:// or hassios://   | (TCP) 8123 or 443 | hassio://hostname/accesstoken<br />hassio://user@hostname/accesstoken<br />hassio://user:password@hostname:port/accesstoken<br />hassio://hostname/optional/path/accesstoken
+| [HumHub](https://appriseit.com/services/humhub/) | humhub:// or humhubs:// | (TCP) 80 or 443 | humhubs://token@hostname/container_id<br />humhubs://user:password@hostname/container_id<br />humhubs://token@hostname/id1/id2/id3
 | [IFTTT](https://appriseit.com/services/ifttt/) | ifttt://    | (TCP) 443    | ifttt://webhooksID/Event<br />ifttt://webhooksID/Event1/Event2/EventN<br/>ifttt://webhooksID/Event1/?+Key=Value<br/>ifttt://webhooksID/Event1/?-Key=value1
 | [IRC](https://appriseit.com/services/irc/) | irc:// or ircs://   | (TCP) 6667 or 6697 | ircs://user:pass@irc.server/@user<br /> ircs://user:pass@irc.server/#channel?join=true&mode=nickserv<br/>ircs://user:pass@znc.server/@user1/@user2/@user3/#channel1
 | [Jellyfin](https://appriseit.com/services/jellyfin/)  | jellyfin:// or jellyfins:// | (TCP) 8096 | jellyfin://user@hostname/<br />jellyfins://user:password@hostname
@@ -96,7 +99,6 @@ The table below identifies the services this tool supports and some example serv
 | [Matrix](https://appriseit.com/services/matrix/) | matrix:// or matrixs://  | (TCP) 80 or 443 | matrix://hostname<br />matrix://user@hostname<br />matrixs://user:pass@hostname:port/#room_alias<br />matrixs://user:pass@hostname:port/!room_id<br />matrixs://user:pass@hostname:port/#room_alias/!room_id/#room2<br />matrixs://token@hostname:port/?webhook=matrix<br />matrix://user:token@hostname/?webhook=slack&format=markdown
 | [Mattermost](https://appriseit.com/services/mattermost/) | mmost:// or mmosts:// | (TCP) 8065 | mmost://hostname/authkey<br />mmost://hostname:80/authkey<br />mmost://user@hostname:80/authkey<br />mmost://hostname/authkey?channel=channel<br />mmosts://hostname/authkey<br />mmosts://user@hostname/authkey<br />
 | [Microsoft Power Automate / Workflows (MSTeams)](https://appriseit.com/services/workflows/) | workflows://  | (TCP) 443   | workflows://WorkflowID/Signature/
-| [Microsoft Teams](https://appriseit.com/services/msteams/) | msteams://  | (TCP) 443   | msteams://TokenA/TokenB/TokenC/
 | [Misskey](https://appriseit.com/services/misskey/) | misskey:// or misskeys://| (TCP) 80 or 443  | misskey://access_token@hostname
 | [MQTT](https://appriseit.com/services/mqtt/) | mqtt://  or mqtts:// | (TCP) 1883 or 8883   | mqtt://hostname/topic<br />mqtt://user@hostname/topic<br />mqtts://user:pass@hostname:9883/topic
 | [Nextcloud](https://appriseit.com/services/nextcloud/) | ncloud:// or nclouds:// | (TCP) 80 or 443 | ncloud://adminuser:pass@host/User<br/>nclouds://adminuser:pass@host/User1/User2/UserN
@@ -104,7 +106,7 @@ The table below identifies the services this tool supports and some example serv
 | [Notica](https://appriseit.com/services/notica/) | notica://  | (TCP) 443   | notica://Token/
 | [NotificationAPI](https://appriseit.com/services/notificationapi/) | napi://  | (TCP) 443   | napi://ClientID/ClientSecret/Target<br />napi://ClientID/ClientSecret/Target1/Target2/TargetN<br />napi://MessageType@ClientID/ClientSecret/Target
 | [Notifiarr](https://appriseit.com/services/notifiarr/) | notifiarr:// | (TCP) 443 | notifiarr://apikey/#channel<br />notifiarr://apikey/#channel1/#channel2/#channeln
-| [Notifico](https://appriseit.com/services/notifico/) | notifico://  | (TCP) 443   | notifico://ProjectID/MessageHook/
+| [Notifico](https://appriseit.com/services/notifico/) | notifico:// or notificos://  | (TCP) 80 or 443   | notifico://ProjectID/MessageHook/<br />notifico://host/ProjectID/MessageHook/<br />notificos://host/ProjectID/MessageHook/
 | [ntfy](https://appriseit.com/services/ntfy/) | ntfy://  | (TCP) 80 or 443   | ntfy://topic/<br/>ntfys://topic/
 | [Octopush](https://appriseit.com/services/octopush/) | octopush:// | (TCP) 443 | octopush://APILogin/APIKey/TargetPhoneNo<br />octopush://Sender:APILogin/APIKey/TargetPhoneNo<br />octopush://Sender:APILogin/APIKey/TargetPhoneNo1/TargetPhoneNo2/TargetPhoneNoN
 | [Office 365](https://appriseit.com/services/office365/) | o365://  | (TCP) 443   | o365://TenantID:AccountEmail/ClientID/ClientSecret<br />o365://TenantID:AccountEmail/ClientID/ClientSecret/TargetEmail<br />o365://TenantID:AccountEmail/ClientID/ClientSecret/TargetEmail1/TargetEmail2/TargetEmailN

@@ -1,8 +1,53 @@
 {
   "chunk": 10,
   "count": 50,
-  "generated_at": "2026-05-24T06:44:10Z",
+  "generated_at": "2026-05-31T07:04:49Z",
   "items": [
+    {
+      "repo_key": "github.com/causefx/Organizr",
+      "repo_url": "github.com/causefx/Organizr",
+      "host": "github.com",
+      "owner": "causefx",
+      "repo": "Organizr",
+      "app_references": [
+        "organizr"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__causefx__Organizr.md",
+      "readme_download_url": null,
+      "readme_sha256": "ca23275dac0f25c3bfda3dc0fa8b0393ecdd4dc29614c94c01b4f85e65f667f7",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/cenodude/CrossWatch",
+      "repo_url": "github.com/cenodude/CrossWatch",
+      "host": "github.com",
+      "owner": "cenodude",
+      "repo": "CrossWatch",
+      "app_references": [
+        "crosswatch"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__cenodude__CrossWatch.md",
+      "readme_download_url": "https://raw.githubusercontent.com/cenodude/CrossWatch/main/README.md",
+      "readme_sha256": "ed745c33a9065fc361b03292f2f26c57047bc9af38dbcd93cebdfddb13a9c09e",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/cerbos/cerbos",
+      "repo_url": "github.com/cerbos/cerbos",
+      "host": "github.com",
+      "owner": "cerbos",
+      "repo": "cerbos",
+      "app_references": [
+        "cerbos"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__cerbos__cerbos.md",
+      "readme_download_url": null,
+      "readme_sha256": "74e67bde38df980e909f695ad7a7f4ae8581f8f66de6e9c2a25ee6ce8476247a",
+      "error": null
+    },
     {
       "repo_key": "github.com/cglatot/pasta",
       "repo_url": "github.com/cglatot/pasta",
@@ -447,10 +492,10 @@
       "app_references": [
         "cloud-commander"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__coderaiser__cloudcmd.md",
-      "readme_download_url": null,
-      "readme_sha256": "d424b9ea46a4a763af1bab7627f4811aa67995b2a27281af237a86bf38b7272f",
+      "readme_download_url": "https://raw.githubusercontent.com/coderaiser/cloudcmd/master/README.md",
+      "readme_sha256": "7a7cdfb55c21dd7f65e25e5a518e50e033ba4f914fba8b3f6ff676b91325a736",
       "error": null
     },
     {
@@ -597,9 +642,9 @@
       "app_references": [
         "cookcli"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__cooklang__cookcli.md",
-      "readme_download_url": "https://raw.githubusercontent.com/cooklang/cookcli/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f576edbd17120ef71ad91869ec8b0d1abee12164e1366380119e56e6697f6a18",
       "error": null
     },
@@ -615,7 +660,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__coollabsio__coolify.md",
       "readme_download_url": "https://raw.githubusercontent.com/coollabsio/coolify/v4.x/README.md",
-      "readme_sha256": "1fb3e3b89d597f6831bd14aa9ee035922273215b2a980aed5a623f6428b6dc4c",
+      "readme_sha256": "66415c8965246aff51858bfdf7abfa5446624795b49000898e0da54593e6eaf0",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__crocodilestick__Calibre-Web-Automated.md",
       "readme_download_url": null,
       "readme_sha256": "a57685050d485fe1c8e6017e0f9fd68b7e1bfecda6a70efdaaed2fb26445dd7a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/crocofied/CoreObs",
-      "repo_url": "github.com/crocofied/CoreObs",
-      "host": "github.com",
-      "owner": "crocofied",
-      "repo": "CoreObs",
-      "app_references": [
-        "corecontrol"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__crocofied__CoreObs.md",
-      "readme_download_url": null,
-      "readme_sha256": "39b02511056b3153dade852d4cb485fe94e34998846dfbb1bd0ffb5ac2a0a922",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/crocofied/PortNote",
-      "repo_url": "github.com/crocofied/PortNote",
-      "host": "github.com",
-      "owner": "crocofied",
-      "repo": "PortNote",
-      "app_references": [
-        "portnote"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__crocofied__PortNote.md",
-      "readme_download_url": null,
-      "readme_sha256": "82d5d11b21949baf21591f3cb2911f36cc519248c5b85d3062f175efec6c6def",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/cronitorio/cronitor-cli",
-      "repo_url": "github.com/cronitorio/cronitor-cli",
-      "host": "github.com",
-      "owner": "cronitorio",
-      "repo": "cronitor-cli",
-      "app_references": [
-        "crontab-guru"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__cronitorio__cronitor-cli.md",
-      "readme_download_url": null,
-      "readme_sha256": "71748255441ccabbf73f8fa4dd3039d465996e2d8d49283f56b8efe4c76532b6",
       "error": null
     }
   ]

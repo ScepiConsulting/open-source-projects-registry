@@ -60,11 +60,6 @@ services:
       CLIENT_ENDPOINT: http://localhost:3000
       SPOTIFY_PUBLIC: __your_spotify_client_id__
       SPOTIFY_SECRET: __your_spotify_secret__
-  mongo:
-    container_name: mongo
-    image: mongo:6
-    volumes:
-      - ./your_spotify_db:/data/db
 
   web:
     image: yooooomi/your_spotify_client
@@ -73,9 +68,14 @@ services:
       - "3000:3000"
     environment:
       API_ENDPOINT: http://localhost:8080
-```
 
-> Some ARM-based devices might have trouble with Mongo >= 5. I suggest you use the image **mongo:4.4**.
+  mongo:
+    container_name: mongo
+    image: mongo:8
+    volumes:
+      - ./your_spotify_db:/data/db
+
+```
 
 ## Installing locally (not recommended)
 
@@ -100,7 +100,6 @@ You can follow the instructions [here](https://github.com/Yooooomi/your_spotify/
 | MONGO_NO_ADMIN_RIGHTS | false | Do not ask for admin right on the Mongo database |
 | PORT                  | 8080 | The port of the server, **do not** modify if you're using docker |
 | FRAME_ANCESTORS       | _not defined_ | Sites allowed to frame the website, comma separated list of URLs (`i-want-a-security-vulnerability-and-want-to-allow-all-frame-ancestors` to allow every website) |
-| SPOTIFY_API_DELAY_MS   | 2000 | Minimum delay in milliseconds between each spotify request. Can help with hitting 429 when importing data |
 
 ## Advanced CORS settings
 

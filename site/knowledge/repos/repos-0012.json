@@ -1,8 +1,53 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-05-24T06:44:10Z",
+  "generated_at": "2026-05-31T07:04:49Z",
   "items": [
+    {
+      "repo_key": "github.com/dohsimpson/HabitTrove",
+      "repo_url": "github.com/dohsimpson/HabitTrove",
+      "host": "github.com",
+      "owner": "dohsimpson",
+      "repo": "HabitTrove",
+      "app_references": [
+        "habittrove"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dohsimpson__HabitTrove.md",
+      "readme_download_url": null,
+      "readme_sha256": "928353386e2095e61c686abb94ad925e2cd3791f66b4afbc81196e0e5fc64c45",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dohsimpson/TaskTrove",
+      "repo_url": "github.com/dohsimpson/TaskTrove",
+      "host": "github.com",
+      "owner": "dohsimpson",
+      "repo": "TaskTrove",
+      "app_references": [
+        "tasktrove"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dohsimpson__TaskTrove.md",
+      "readme_download_url": null,
+      "readme_sha256": "70608c00620e3ba837206bd0b82bc58b8a71fa42358b1a1c27329b57868a4774",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dokkaner/teemii",
+      "repo_url": "github.com/dokkaner/teemii",
+      "host": "github.com",
+      "owner": "dokkaner",
+      "repo": "teemii",
+      "app_references": [
+        "teemii"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dokkaner__teemii.md",
+      "readme_download_url": null,
+      "readme_sha256": "efc8688b260bf501c2447b9ad734b5bd6a0c60adc3b4c3a074919705d409d4ae",
+      "error": null
+    },
     {
       "repo_key": "github.com/dokku/dokku",
       "repo_url": "github.com/dokku/dokku",
@@ -12,10 +57,10 @@
       "app_references": [
         "dokku"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dokku__dokku.md",
-      "readme_download_url": null,
-      "readme_sha256": "fa74b6e3b786eaba298479a73b403f6f8f9c5a9e048dfaab2f32950da5816065",
+      "readme_download_url": "https://raw.githubusercontent.com/dokku/dokku/master/README.md",
+      "readme_sha256": "5ce5c375181f617401afddbfcf513d23627f1dc704bff40c5e2218877da7220d",
       "error": null
     },
     {
@@ -72,10 +117,10 @@
       "app_references": [
         "fluidcalendar"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dotnetfactory__fluid-calendar.md",
-      "readme_download_url": null,
-      "readme_sha256": "b9c3ee11d76062920f631cc0e3545bce3d4de1b2103acfdca94bc254e634725d",
+      "readme_download_url": "https://raw.githubusercontent.com/dotnetfactory/fluid-calendar/main/README.md",
+      "readme_sha256": "18a1033e6362f863da88d95838cddeb8108912fd0a2486cf332673c0672f3a68",
       "error": null
     },
     {
@@ -132,10 +177,10 @@
       "app_references": [
         "drivebase"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__drivebase__drivebase.md",
-      "readme_download_url": null,
-      "readme_sha256": "b458f0645d18229f8bce4865da792122d6e7bf99d024333eb9fa52d30bb3e5ca",
+      "readme_download_url": "https://raw.githubusercontent.com/drivebase/drivebase/main/README.md",
+      "readme_sha256": "e598f4ec7da63c2e56681a35dab85d38efc81c67ce98f5da8dc6a1169fb26d98",
       "error": null
     },
     {
@@ -388,9 +433,9 @@
         "ente-auth",
         "ente-photos"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ente-io__ente.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ente-io/ente/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "df197c594e6381be9fb4494d7329a1a43acff9c730bc11d735478fcc538673a3",
       "error": null
     },
@@ -508,9 +553,9 @@
       "app_references": [
         "evcc"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__evcc-io__evcc.md",
-      "readme_download_url": "https://raw.githubusercontent.com/evcc-io/evcc/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "9c003de122ed712227d54e3735c76246284de893b517d944b83a9865a11776ef",
       "error": null
     },
@@ -523,10 +568,10 @@
       "app_references": [
         "eventcatalog"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__event-catalog__eventcatalog.md",
-      "readme_download_url": null,
-      "readme_sha256": "ac0afed280aeef57a6f11f9c0e9024f2d8996790e32e761f7b5eeb69a14f7b01",
+      "readme_download_url": "https://raw.githubusercontent.com/event-catalog/eventcatalog/main/README.md",
+      "readme_sha256": "685b98b6d7d30ea0204d5265b5c481c4d43a86daa5f59d0c32a76f565e5e4597",
       "error": null
     },
     {
@@ -601,7 +646,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__eznix86__docker-registry-ui.md",
       "readme_download_url": "https://raw.githubusercontent.com/eznix86/docker-registry-ui/main/README.md",
-      "readme_sha256": "a8b08ffdea1b499f55d1a65582b1fb623c0d92b22cb30480dd7caaf53879b197",
+      "readme_sha256": "290d5c669b69c47a7567bd7cf9ef2f001a26b77ff88b0bc47d283fd0b49bd907",
       "error": null
     },
     {
@@ -707,51 +752,6 @@
       "readme_path": "knowledge/readmes/github.com__fedify-dev__hollo.md",
       "readme_download_url": null,
       "readme_sha256": "055ef11c3a9b474f607ec4b7d89c68b4f0d6e65bce8698673ff542fa8456a672",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/feedbin/feedbin",
-      "repo_url": "github.com/feedbin/feedbin",
-      "host": "github.com",
-      "owner": "feedbin",
-      "repo": "feedbin",
-      "app_references": [
-        "feedbin"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__feedbin__feedbin.md",
-      "readme_download_url": null,
-      "readme_sha256": "b1d820987b7bbd900fcdb4a2aeba828542ab1658d4600a286707ecc48fcaa4ba",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ferronweb/ferron",
-      "repo_url": "github.com/ferronweb/ferron",
-      "host": "github.com",
-      "owner": "ferronweb",
-      "repo": "ferron",
-      "app_references": [
-        "ferron"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__ferronweb__ferron.md",
-      "readme_download_url": null,
-      "readme_sha256": "e5cb5ae244a85c7b0c5fef39249f1671b478f423c5399de37affa6a5a06c6d8d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/figranium/figranium",
-      "repo_url": "github.com/figranium/figranium",
-      "host": "github.com",
-      "owner": "figranium",
-      "repo": "figranium",
-      "app_references": [
-        "figranium"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__figranium__figranium.md",
-      "readme_download_url": null,
-      "readme_sha256": "94b1b7e56022df97deb5dfcb47958622a1a72c5fb1c4be4442e7469c996fd563",
       "error": null
     }
   ]

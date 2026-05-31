@@ -17,7 +17,10 @@
 
 <h6 align="center">
   <a href="https://www.pikapods.com/pods?run=ocular">
-    <img alt="Run on PikaPods" src="https://www.pikapods.com/static/run-button.svg" alt="Logo" height="150">
+    <img alt="Run on PikaPods" src="https://www.pikapods.com/static/run-button.svg" height="150">
+  </a>
+  <a href="https://github.com/simonwep/ocular/pkgs/container/ocular">
+    <img alt="Docker image pulls" src="https://raw.githubusercontent.com/simondump/static/refs/heads/master/apps/ghcr-pulls/dist/ocular.svg" height="150">
   </a>
 </h6>
 

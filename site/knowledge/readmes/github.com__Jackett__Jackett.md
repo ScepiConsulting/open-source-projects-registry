@@ -99,8 +99,6 @@ Prior versions of Jackett are no longer supported.
  * Catorrent
  * CrackingPatching
  * DaMagNet
- * Demonoid Clone
- * DivxTotal
  * dmhy
  * DonTorrent
  * E-Hentai
@@ -128,7 +126,6 @@ Prior versions of Jackett are no longer supported.
  * MejorTorrent
  * Mikan
  * MixTapeTorrent
- * MoviesDVDR
  * MyPornClub
  * nekoBT
  * NewStudio
@@ -331,7 +328,6 @@ Prior versions of Jackett are no longer supported.
  * C411
  * cangbaoge (CBG)
  * CapybaraBR
- * Carp-Hunter
  * Carpathians
  * CarPT
  * Cathode-Ray.Tube (CRT)
@@ -392,7 +388,6 @@ Prior versions of Jackett are no longer supported.
  * FutureTorrent [PAY2DL]
  * Fuzer (FZ)
  * G3MINI TR4CK3R
- * Gay-Torrents.org
  * GAYtorrent.ru
  * GazelleGames (GGn)
  * Generation-Free
@@ -432,6 +427,7 @@ Prior versions of Jackett are no longer supported.
  * Hebits (HB)
  * HellasHut
  * HELLENIC-HD
+ * HeroBit
  * HHanClub
  * HHD
  * House of Devil
@@ -695,6 +691,7 @@ Prior versions of Jackett are no longer supported.
  * XWTorrents (XWT)
  * YUSCENE
  * Zappateers
+ * Zenith [![(invite needed)][inviteneeded]](#)
  * ZmPT (织梦)
  * ZRPT (自然) [![(invite needed)][inviteneeded]](#)
 </details>

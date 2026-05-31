@@ -1,8 +1,124 @@
 {
   "chunk": 14,
   "count": 50,
-  "generated_at": "2026-05-24T06:44:10Z",
+  "generated_at": "2026-05-31T07:04:49Z",
   "items": [
+    {
+      "reference": "meetable",
+      "name": "Meetable",
+      "website": "meetable.org",
+      "description": "Minimal events aggregator website",
+      "repo_url": "github.com/aaronpk/Meetable",
+      "repo_key": "github.com/aaronpk/Meetable",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "25",
+      "license": null,
+      "tags": [
+        "Email",
+        "Events"
+      ],
+      "readme_path": "knowledge/readmes/github.com__aaronpk__Meetable.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "ee6597a4d740dd8208c93d9e61d2170e35cd36034f6cd30392ce13999d4917ea"
+      }
+    },
+    {
+      "reference": "meilisearch",
+      "name": "Meilisearch",
+      "website": "www.meilisearch.com",
+      "description": "Lightning-fast search API",
+      "repo_url": "github.com/meilisearch/meilisearch",
+      "repo_key": "github.com/meilisearch/meilisearch",
+      "stars": null,
+      "forks": 8,
+      "updated_at": "30",
+      "license": null,
+      "tags": [
+        "Contacts",
+        "Search"
+      ],
+      "readme_path": "knowledge/readmes/github.com__meilisearch__meilisearch.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "1ebe56b27589b1f127845d808585479a39a49e6e42ddd847515ec353a0edb46e"
+      }
+    },
+    {
+      "reference": "melody-auth",
+      "name": "Melody Auth",
+      "website": "auth.valuemelody.com/",
+      "description": "Effortless authentication built for flexibility and control",
+      "repo_url": "github.com/ValueMelody/melody-auth",
+      "repo_key": "github.com/ValueMelody/melody-auth",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "37",
+      "license": null,
+      "tags": [
+        "Authentication",
+        "Email"
+      ],
+      "readme_path": "knowledge/readmes/github.com__ValueMelody__melody-auth.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "06c351474ba56b1b5692eb44dd8b6d93a2874ff15149e9244860d4513dbf64a5"
+      }
+    },
+    {
+      "reference": "meme-search",
+      "name": "Meme Search",
+      "website": "neonwatty.github.io/meme-search/",
+      "description": "Meme search engine built with Python and Ruby",
+      "repo_url": "github.com/neonwatty/meme-search",
+      "repo_key": "github.com/neonwatty/meme-search",
+      "stars": null,
+      "forks": 1,
+      "updated_at": "29",
+      "license": null,
+      "tags": [
+        "Analytics",
+        "Search Engines"
+      ],
+      "readme_path": "knowledge/readmes/github.com__neonwatty__meme-search.md",
+      "readme_status": "ok",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "6eaf15a49863d6864287443ca4e779ba732ab455538f5e79ddd68bc8a9272e50"
+      }
+    },
+    {
+      "reference": "memories",
+      "name": "Memories",
+      "website": "memories.gallery",
+      "description": "Advanced photo management Nextcloud app",
+      "repo_url": "github.com/pulsejet/memories",
+      "repo_key": "github.com/pulsejet/memories",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Bookmarks",
+        "Media Streaming",
+        "Photos"
+      ],
+      "readme_path": "knowledge/readmes/github.com__pulsejet__memories.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "a6a8a2aa35475bc504d7545f7b38e090162796d182558814edbe9210ba0a32b1"
+      }
+    },
     {
       "reference": "memos",
       "name": "Memos",
@@ -12,7 +128,7 @@
       "repo_key": "github.com/usememos/memos",
       "stars": null,
       "forks": 15,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Note-Taking",
@@ -20,11 +136,11 @@
         "Web Server"
       ],
       "readme_path": "knowledge/readmes/github.com__usememos__memos.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "4c4ca803fc77e18fedef15daa4d6f8d827c60dedecc90135923ba3c365115cb3"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "b28e62eb2c216144bbe5294bfc365376c46fb0ef486eb6c73c4b637c3dd3156f"
       }
     },
     {
@@ -36,7 +152,7 @@
       "repo_key": "github.com/pvcnt/mergeable",
       "stars": null,
       "forks": 15,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Dashboard",
@@ -46,8 +162,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "55423d2a31d5f65602e0f957cb7062a2652cd50bce65171c41e83ac8c7520e57"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "76d6cc283ed71818823ec35a6aa7a68b2f294c710c001aa24dcc793a31c8f355"
       }
     },
     {
@@ -59,7 +175,7 @@
       "repo_key": "github.com/Ylianst/MeshCentral",
       "stars": null,
       "forks": 1,
-      "updated_at": "18",
+      "updated_at": "17",
       "license": null,
       "tags": [
         "Remote Access",
@@ -69,8 +185,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "72303da0382165e1c5931299a56609bf17d5858d43d2eee505385f18ddd60022"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "5ef2a11fab2a5acba708decf2f527b62995ed4376cd15f16176e9989ab156cd7"
       }
     },
     {
@@ -82,7 +198,7 @@
       "repo_key": "github.com/Svedrin/meshping",
       "stars": null,
       "forks": 15,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Email",
@@ -92,8 +208,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "22aa3fd5ea92bf2bc4ff31fa701afb8478a8ba9ff12ee7638a7207423fa514d7"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "7e14e5af7730f01e05c36d1beb42652f513a14441037d587ab6ef4c715d11cc9"
       }
     },
     {
@@ -115,8 +231,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "3a9a7249c6d1252c0a7b1dfb29335b5ac65ae989a24673bc1a09e5167f4db338"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "40f97a4666b093be627c0a9e74c486a594d74e2a239bb6e7c35e29ff48ff9295"
       }
     },
     {
@@ -128,18 +244,18 @@
       "repo_key": "github.com/wow-signal-dev/metadata-remote",
       "stars": null,
       "forks": 0,
-      "updated_at": "20",
+      "updated_at": "19",
       "license": null,
       "tags": [
-        "Grocery Lists",
+        "File Transfer and Sync",
         "Music"
       ],
       "readme_path": "knowledge/readmes/github.com__wow-signal-dev__metadata-remote.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "db2c22c8df64f712e4c8cef183e5fae373660d89c2a790a569cfbfa5ba8fd3f6"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "346cc86ecd329b2a48baa12113906c6fd360197f6095e0c78cafb363467529a8"
       }
     },
     {
@@ -151,7 +267,7 @@
       "repo_key": "github.com/alexta69/metube",
       "stars": null,
       "forks": 0,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Downloads",
@@ -161,8 +277,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "ed78dbbba22b69e5201c1be17fd32b854e852ab769721210a83e088835ac4730"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "f2e97b713f7c2edc3341dce2100e31cb1f50ad717b3b2ffae6c998e0397da463"
       }
     },
     {
@@ -174,7 +290,7 @@
       "repo_key": "github.com/szabodanika/microbin",
       "stars": null,
       "forks": 4,
-      "updated_at": "31",
+      "updated_at": "30",
       "license": null,
       "tags": [
         "File Transfer and Sync",
@@ -184,8 +300,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "cb82bfc7f28dbbb109ecd128b606924a6ca1ebe1d011423c7f64cf11827d90f6"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "b32c9d06dfbaeaf4f0cf0ba33a29d565a91818012e0656ec50afc17b2d6ace8e"
       }
     },
     {
@@ -197,7 +313,7 @@
       "repo_key": "github.com/hhftechnology/middleware-manager",
       "stars": null,
       "forks": 15,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Reverse Proxy",
@@ -207,8 +323,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "ab3affbafe3f370ccdf1f1907454b0ac45530c0a3789e17aaae7885bdeb4f9fd"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "02f3f817712a004ceadd4051c2846c64ebdbbb31e638295d19433b5a7ee1c731"
       }
     },
     {
@@ -220,7 +336,7 @@
       "repo_key": "github.com/lyqht/mini-qr",
       "stars": null,
       "forks": 11,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Database",
@@ -230,8 +346,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "3ed8cf78cd387846a54f301b80f7338de02061820b4d79e80ba7c602f95185de"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "6cf77558fdd63239f9f534ccc99083e61ac78dc03ec73efff65f633ac581c3e8"
       }
     },
     {
@@ -243,7 +359,7 @@
       "repo_key": "github.com/aceberg/miniboard",
       "stars": null,
       "forks": 15,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Dashboard",
@@ -253,8 +369,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "8361872220bcdccc3815b31415cbfcc32030977c516873833ec0cb4a01a3b972"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "ca91a9cdfd62e99f459016cc1e4f3ee4790893ca95a28880186aab5649829944"
       }
     },
     {
@@ -266,7 +382,7 @@
       "repo_key": "github.com/miniflux/v2",
       "stars": null,
       "forks": 1,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Feed Reader",
@@ -276,8 +392,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "c2d21ab84a2c35aa450b5da395a067f50e25936344c66b0ccfc4b5a539d1cebb"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "722a3f2915c898519830bd86237d9d6b53efd6d3a211d305aab260dcdd87fa7b"
       }
     },
     {
@@ -289,7 +405,7 @@
       "repo_key": "github.com/svenstaro/miniserve",
       "stars": null,
       "forks": 15,
-      "updated_at": "31",
+      "updated_at": "30",
       "license": null,
       "tags": [
         "Email",
@@ -299,8 +415,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "9db03075c6772c68e852bd40b1f425159b43aba57f36e9e82343460319142389"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "fa34db89bd44f4cad729f52d19a015815861bb6e753cc216215a1e6215aaf136"
       }
     },
     {
@@ -312,7 +428,7 @@
       "repo_key": "github.com/perstarkse/minne",
       "stars": null,
       "forks": 0,
-      "updated_at": "31",
+      "updated_at": "30",
       "license": null,
       "tags": [
         "Read Later",
@@ -322,8 +438,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "4229bf3f004a0a32e8a8a3c302be195714bfd8b3cb8df03b2959c1f9c35637ec"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "b349de0a6dbe3fa49ac0495904ba075815c753a9a321c091df1a22729b3052bd"
       }
     },
     {
@@ -335,18 +451,18 @@
       "repo_key": "github.com/minthcm/minthcm",
       "stars": null,
       "forks": 0,
-      "updated_at": "26",
+      "updated_at": "25",
       "license": null,
       "tags": [
         "Human Resources",
-        "Media Streaming"
+        "Inventory Management"
       ],
       "readme_path": "knowledge/readmes/github.com__minthcm__minthcm.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "ef115cf9f857cd689aa279fb0f9ec01ba7eca52a0a91cedd2ff28c201ebc3cc1"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "67729b75dfea1f7a4ac54de5c6cd82b30043ca9cfaba7b91f5d3059521cfcd10"
       }
     },
     {
@@ -358,18 +474,18 @@
       "repo_key": "github.com/ttlequals0/MinusPod",
       "stars": null,
       "forks": 15,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Email",
         "Podcasts"
       ],
       "readme_path": "knowledge/readmes/github.com__ttlequals0__MinusPod.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "16d53ee0569e339a12a72b8b6fc03afcfe715a83a0f9ff615ea98a9e93d35fd5"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "02fc9768c170a1fbfb8b0c07d6048439f6a74d4cb7efc9aaedadc696d9f20c5d"
       }
     },
     {
@@ -381,18 +497,18 @@
       "repo_key": "github.com/miroslavpejic85/mirotalk",
       "stars": null,
       "forks": 0,
-      "updated_at": "20",
+      "updated_at": "19",
       "license": null,
       "tags": [
-        "Grocery Lists",
+        "File Transfer and Sync",
         "Video Conferencing"
       ],
       "readme_path": "knowledge/readmes/github.com__miroslavpejic85__mirotalk.md",
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "f5ece09162c8711d4341eafd93243efaba2bed772a4a95e517a1a362a1abdb26"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "faa29d68b8a39b095681ea31d08f4249acae31e24eb321160a8243e224357907"
       }
     },
     {
@@ -404,18 +520,17 @@
       "repo_key": "github.com/misskey-dev/misskey",
       "stars": null,
       "forks": 0,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
-        "ActivityPub / Fediverse",
-        "Search Engines"
+        "ActivityPub / Fediverse"
       ],
       "readme_path": "knowledge/readmes/github.com__misskey-dev__misskey.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "0a81b7058794209b6f2a9f781dacf824bde8a9e6569ecbd8236a9d270f183b1b"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "aeeac25df77d86c0601061ccc272a20c471a237ca9dd00227623dc9bc61f0f4b"
       }
     },
     {
@@ -427,7 +542,7 @@
       "repo_key": "codeberg.org/silverpill/mitra",
       "stars": null,
       "forks": 11,
-      "updated_at": "31",
+      "updated_at": "30",
       "license": null,
       "tags": [
         "ActivityPub / Fediverse",
@@ -437,8 +552,8 @@
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "e7b3f00db7e463480c9437d46e5690d786605f7a471d2b65dec4dec1472a6199"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "cf387151beca478d8344994574f8075c01ffa3c873c075a57ee8948b6bb7522a"
       }
     },
     {
@@ -450,7 +565,7 @@
       "repo_key": "github.com/inovector/mixpost",
       "stars": null,
       "forks": 15,
-      "updated_at": "39",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Email",
@@ -460,8 +575,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "45429ba979605f49b6e660795a31351655e21ba9e3c8826c9f68b302c347cbb2"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "8e6b4ed44537d6f34026b3f0a7fb75ca70f9ad8ea9efb157ef75a96603a514ed"
       }
     },
     {
@@ -473,7 +588,7 @@
       "repo_key": "github.com/jeffcaldwellca/mkcertWeb",
       "stars": null,
       "forks": 11,
-      "updated_at": "20",
+      "updated_at": "19",
       "license": null,
       "tags": [
         "Front End",
@@ -483,8 +598,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "cbc4d81c0ae2172d5971608c9c5c9fe08969d4926aa5957075504bd8ab191c8e"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "c61354017ec74cfd91dec6a295f59f35b35e9d41f4065b86f34e1fce5c51ccd6"
       }
     },
     {
@@ -496,7 +611,7 @@
       "repo_key": "github.com/mkdocs/mkdocs",
       "stars": null,
       "forks": 3,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Blog",
@@ -506,8 +621,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "2874c1c4d6bda407c546f5907028de492f802e69e11c29933bf9264c4a71b0d7"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "f26ece57a8408db5cd6a8ce52d6718bda5b7bbdeded829816089174a8fa51acf"
       }
     },
     {
@@ -519,7 +634,7 @@
       "repo_key": "github.com/kennethsible/mkvpriority",
       "stars": null,
       "forks": 15,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Audiobooks",
@@ -532,8 +647,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "effe3ea4167bc10b4736dbd49ed5e6f0193110cb46cc26fe9d47c02964597079"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "d8f1017588320bacb2162e2ae32cc7323d961c31c7d5cd8db902017b2c4799d9"
       }
     },
     {
@@ -545,18 +660,18 @@
       "repo_key": "framagit.org/kaihuri/mobilizon",
       "stars": null,
       "forks": 0,
-      "updated_at": "10",
+      "updated_at": "9",
       "license": null,
       "tags": [
         "ActivityPub / Fediverse",
-        "Dashboard"
+        "Messaging"
       ],
       "readme_path": null,
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "7744fdfa1d51e88249a8bd9577176b3d1b8959d4dbf0e452570cc350064beaa0"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "d2018425597f5dbefa4a9c0684a622efe62af47578140ae7c0bcd391d3353e7c"
       }
     },
     {
@@ -568,7 +683,7 @@
       "repo_key": "github.com/monetr/monetr",
       "stars": null,
       "forks": 8,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Budgeting",
@@ -579,8 +694,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "bad96e2125db080d25e97a2543ccfeecda010fea66da913c992dd394d53659bd"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "b3aac9bc200eeb40f6466927a1c2b3ca5fbb20ffff8879e1c37bef26b40e747a"
       }
     },
     {
@@ -592,7 +707,7 @@
       "repo_key": "github.com/monicahq/monica",
       "stars": null,
       "forks": 0,
-      "updated_at": "26",
+      "updated_at": "25",
       "license": null,
       "tags": [
         "Relationships",
@@ -602,8 +717,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "1d545b341bed273381d658c09c2c66dea9ac1df48d8ff278039239d91a4aec17"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "550a095e47db6b88a455a247a155578feb4acb89df4928346b26eacdbbb7c09c"
       }
     },
     {
@@ -615,7 +730,7 @@
       "repo_key": "github.com/nickshanks347/monitarr",
       "stars": null,
       "forks": 11,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "*arr",
@@ -625,8 +740,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "4941b2729abd39189a33abd69583570ef626a8c8b86caeaf5bfa72b72a252400"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "4401e5cfb3d234778d5194d779b0f235ea64a837cb1bed1105c2265ff176c263"
       }
     },
     {
@@ -638,7 +753,7 @@
       "repo_key": "github.com/jellydeck/moocup",
       "stars": null,
       "forks": 15,
-      "updated_at": "33",
+      "updated_at": "32",
       "license": null,
       "tags": [
         "Email",
@@ -648,8 +763,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "07c003d196faa0354d5494d05f9f936bc291ef4167147f3b0835d7593c42e4d8"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "fe4b78f3bbcb6392e1a720354cfa7df08755ca1edb4c164a39fcf4806563fe78"
       }
     },
     {
@@ -661,7 +776,7 @@
       "repo_key": "github.com/remvze/moodist",
       "stars": null,
       "forks": 15,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Ambient Sounds",
@@ -671,8 +786,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "18dd73dbf74f57c7f6c164d6c3534c4cae67f31d669f80313926669bb8dcf7a1"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "7e3e1166822736901d77790e38a0335d04b2c0171ce184a1f5bedabb33852083"
       }
     },
     {
@@ -684,7 +799,7 @@
       "repo_key": "github.com/moodle/moodle",
       "stars": null,
       "forks": 11,
-      "updated_at": "26",
+      "updated_at": "25",
       "license": null,
       "tags": [
         "Database",
@@ -694,8 +809,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "f6fb0fe125c81b7d42a814494dead8d22ba3eea79b8939bec451ec2d0534d994"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "d6e4851bfff662804007f6115061d3714273c3bf0af60fc82159d22262ea680a"
       }
     },
     {
@@ -717,8 +832,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "f169beadcdaf4151f8420ad538e9f8fdf673ae71c389264203cb1ecc7b7fff25"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "f4ea2bd1adf53af3ccc08bd6aeb725c974486c9461069fe4ace57f747d16b2bc"
       }
     },
     {
@@ -730,7 +845,7 @@
       "repo_key": "github.com/leepeuker/movary",
       "stars": null,
       "forks": 15,
-      "updated_at": "26",
+      "updated_at": "25",
       "license": null,
       "tags": [
         "Media Streaming",
@@ -741,8 +856,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "e14669e042d2d0208e7e8d2d6a9c8e31f689494ad140bc717a0229db66529af3"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "36c1ce87c98b1807c0d18f9c9cb7af03ba6e54678f59608ddde3851700f08a17"
       }
     },
     {
@@ -754,7 +869,7 @@
       "repo_key": "github.com/movim/movim",
       "stars": null,
       "forks": 0,
-      "updated_at": "26",
+      "updated_at": "25",
       "license": null,
       "tags": [
         "Blog",
@@ -764,8 +879,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "e2cc268620ae271fef652a97e6982ff0b7172ba224a78c95e5254c0c24e3cf1a"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "8929a934dead91eeeae49aa0fefe5715d80812289c082a13a26c21c94a45854d"
       }
     },
     {
@@ -777,7 +892,7 @@
       "repo_key": "github.com/mjl-/mox",
       "stars": null,
       "forks": 15,
-      "updated_at": "14",
+      "updated_at": "13",
       "license": null,
       "tags": [
         "Email",
@@ -788,8 +903,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "e8d101a0151e16d6fa5002782bd0015720d9ca9e63376f5a000df0c2c89c63f9"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "13ee4fd38e1c1d66fae7279d4514c738486f3f70f27a261eb0c4297c59f4a7d5"
       }
     },
     {
@@ -801,7 +916,7 @@
       "repo_key": "github.com/terdia/mqttui",
       "stars": null,
       "forks": 15,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Email",
@@ -811,8 +926,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "5400531dea9a39a6968e84330f1ae9fcd2eeee4eddab2b03859216587bc369ca"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "ae070a9383d2649480aa9089212ddd14c064f74d8d1e57473432cabd07682a39"
       }
     },
     {
@@ -824,7 +939,7 @@
       "repo_key": "github.com/FoxxMD/multi-scrobbler",
       "stars": null,
       "forks": 15,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Music",
@@ -834,8 +949,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "f7ffbbfee9b26e58c2bb1ef529d3ba851016320bd66aa85ca77cfeeed7f0fe96"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "57f3befd213be8e93d7a4742c341f7a20765949fb66c10c43ed275db10aeb994"
       }
     },
     {
@@ -857,8 +972,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "fae184566e736211722e16d698fbd44de80696f06525fb259e96fe0201351bc0"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "981df485abc21e974b82463aec8c9aa6130d916b5500b0fba2652849775ef1e1"
       }
     },
     {
@@ -870,7 +985,7 @@
       "repo_key": "github.com/music-assistant/server",
       "stars": null,
       "forks": 1,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Music",
@@ -880,8 +995,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "77b6e24ed19a0f5eca17532effc0fab4b6236b169a9471b9fd1dfb6068f48535"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "f673af479e2cf53537c92365a2e5266b3b513c9df8884d4676774640e51bc59f"
       }
     },
     {
@@ -893,7 +1008,7 @@
       "repo_key": "gitlab.com/g33kphr33k/musicgrabber",
       "stars": null,
       "forks": null,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "*arr",
@@ -903,8 +1018,8 @@
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "a2dfae209182eee5916dc946a45a23ce42d2519db6205c05552ce0e22d0ed3be"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "c5f9a847df290e32ffbc6728bd14fc548e53d5dde5a8be39cbe26d7478f92e87"
       }
     },
     {
@@ -916,7 +1031,7 @@
       "repo_key": "github.com/thijstakken/MusicService",
       "stars": null,
       "forks": 0,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Downloads",
@@ -926,8 +1041,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "432c0a897360e523fcd589c536f2fa65e2e581e0c7d7b85c87b0e7930a135f69"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "9e5ee72cbb2e2d0533218cfb8248f317b4ecbcc16adae096f3896e42dd389bb5"
       }
     },
     {
@@ -939,7 +1054,7 @@
       "repo_key": "github.com/HabiRabbu/Musicseerr",
       "stars": null,
       "forks": 8,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Music",
@@ -949,8 +1064,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "2bb9817035049e42ac88c0ca703a10e81edf0552fa8673c3497266d818448325"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "25ce134881e7793a733ab02e89c4e6d52ab54c9e75a3a52e37e39e19fad3827e"
       }
     },
     {
@@ -962,7 +1077,7 @@
       "repo_key": "github.com/pickles4evaaaa/mybibliotheca",
       "stars": null,
       "forks": 15,
-      "updated_at": "29",
+      "updated_at": "28",
       "license": null,
       "tags": [
         "Books",
@@ -972,8 +1087,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "690f16b9f718100379c5dd6c146d539950c273cf7c9ce931c75f9d13001660ca"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "20e3443bc3f319d7dc65b82379de85138dd5c4d318196a12701d7c05ac4becf0"
       }
     },
     {
@@ -985,7 +1100,7 @@
       "repo_key": "github.com/getmydia/mydia",
       "stars": null,
       "forks": 0,
-      "updated_at": "10",
+      "updated_at": "9",
       "license": null,
       "tags": [
         "*arr",
@@ -995,8 +1110,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "cda53046083c9b475029c6756f53cd38535c3f28dc024a9ba76b770b07cab276"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "953698816ce6eeaad6244e9e313dea8e97dd79cfcbc2b7f1a8e7ecd00a4cf314"
       }
     },
     {
@@ -1008,7 +1123,7 @@
       "repo_key": "github.com/subnub/myDrive",
       "stars": null,
       "forks": 11,
-      "updated_at": "38",
+      "updated_at": "37",
       "license": null,
       "tags": [
         "Cloud Storage",
@@ -1018,8 +1133,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "3b0773a3afd47904f8538894a5ffb4bf1e60316287244640bba499aaef9c2e6d"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "c198f4cddf92340d134b2352584e57fbf1240459a5902d3e5d1877288f7b4f21"
       }
     },
     {
@@ -1041,125 +1156,8 @@
       "readme_status": null,
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "c6d10e57a8f29028f71ffccb311e6061f78bcc547275ad36573184998e604d0d"
-      }
-    },
-    {
-      "reference": "mylar3",
-      "name": "Mylar3",
-      "website": "mylar.nerdfirehurricane.com/",
-      "description": "Automated comic book downloads",
-      "repo_url": "github.com/MylarComics/mylar3",
-      "repo_key": "github.com/MylarComics/mylar3",
-      "stars": null,
-      "forks": 11,
-      "updated_at": "29",
-      "license": null,
-      "tags": [
-        "*arr",
-        "Automation",
-        "Books"
-      ],
-      "readme_path": "knowledge/readmes/github.com__MylarComics__mylar3.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "374a52f4612c55e43cd1b7e6bf2fde5cdeff51b7ccca07e90be3e3c093ab1ca9"
-      }
-    },
-    {
-      "reference": "myspeed",
-      "name": "MySpeed",
-      "website": "myspeed.dev",
-      "description": "Speed test analysis made simple",
-      "repo_url": "github.com/gnmyt/MySpeed",
-      "repo_key": "github.com/gnmyt/MySpeed",
-      "stars": null,
-      "forks": 15,
-      "updated_at": "20",
-      "license": null,
-      "tags": [
-        "Email",
-        "Speed Test"
-      ],
-      "readme_path": "knowledge/readmes/github.com__gnmyt__MySpeed.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "8dcd5a54c552ea0b639c1d979fcb084db16171ccff1d922fc6fd724c1a5cbcf6"
-      }
-    },
-    {
-      "reference": "n8n",
-      "name": "n8n",
-      "website": "n8n.io",
-      "description": "Workflow automation tool for automating tasks",
-      "repo_url": "github.com/n8n-io/n8n",
-      "repo_key": "github.com/n8n-io/n8n",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "38",
-      "license": null,
-      "tags": [
-        "Contacts",
-        "Workflow Automation"
-      ],
-      "readme_path": "knowledge/readmes/github.com__n8n-io__n8n.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "912d92d9059be993efcec3ce9f3547ece25a34d75696400fea2fc5159b822772"
-      }
-    },
-    {
-      "reference": "nanoclaw",
-      "name": "NanoClaw",
-      "website": "nanoclaw.dev",
-      "description": "Lightweight AI chat bot alternative to OpenClaw",
-      "repo_url": "github.com/nanocoai/nanoclaw",
-      "repo_key": "github.com/nanocoai/nanoclaw",
-      "stars": null,
-      "forks": 15,
-      "updated_at": "38",
-      "license": null,
-      "tags": [
-        "Artificial Intelligence",
-        "Email"
-      ],
-      "readme_path": "knowledge/readmes/github.com__nanocoai__nanoclaw.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "f09b0d1cf9c5dca6da646fb641989fd96a9619f57ab01830188d89b270cae4c7"
-      }
-    },
-    {
-      "reference": "nanote",
-      "name": "Nanote",
-      "website": "github.com/omarmir/nanote",
-      "description": "Lightweight note-taking app",
-      "repo_url": "github.com/omarmir/nanote",
-      "repo_key": "github.com/omarmir/nanote",
-      "stars": null,
-      "forks": 0,
-      "updated_at": "38",
-      "license": null,
-      "tags": [
-        "Note-Taking",
-        "Remote Access",
-        "Web Server"
-      ],
-      "readme_path": "knowledge/readmes/github.com__omarmir__nanote.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-24T06:36:30Z",
-        "row_hash": "4d4355c41c109b2f692a2bd7cb7502e172ee72cd1af7c104d8fb923dadce09ea"
+        "fetched_at": "2026-05-31T06:57:14Z",
+        "row_hash": "ad34507e0fb14c043c522429371ce185db0d12291d6e9a7eafc32a3202fb3ca2"
       }
     }
   ]

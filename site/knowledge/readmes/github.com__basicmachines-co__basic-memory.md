@@ -10,12 +10,17 @@
 ## Skip the install — try Basic Memory in the cloud
 
 Claude, Codex, or Cursor connected in 30 seconds. No Python, no JSON, no
-terminal. **$14.25/mo locked in for life** (regular price $19). 7-day free
+terminal. **$15.00/mo locked in for life** (12.50/mo yearly pricing). 7-day free
 trial — cancel any time before day 7 if it's not for you. Beta pricing —
 sign up now and your rate never goes up. OSS users: code `BMFOSS` takes
 another 20% off for 3 months.
 
 [Start free trial →](https://basicmemory.com?utm_source=github&utm_medium=referral&utm_campaign=readme&utm_content=banner)
+
+### Basic Memory Teams is now available!
+
+Give your team a single, shared cloud workspace. Knowledge isn't confined to one person — anything a teammate writes is immediately available to everyone else and to their AI assistants. 
+Edit a note together in real time, hand work off between humans and agents, and build one connected knowledge base instead of scattered copies. Same pricing - start with one user and add more as needed. 
 
 ---
 
@@ -57,7 +62,7 @@ Pick the path that fits you. Both run the same product on the same Markdown.
 - Cross-device sync built in
 - We handle hosting, backups, snapshots
 
-**$14.25/mo locked for life** · 7-day free trial · cancel any time
+**$15.00/mo locked for life** · 7-day free trial · cancel any time
 
 [**Start free trial →**](https://basicmemory.com?utm_source=github&utm_medium=referral&utm_campaign=readme&utm_content=quickstart)
 
@@ -127,7 +132,7 @@ Built on WorkOS AuthKit, Neon Postgres, and Tigris S3.
 
 ### Pricing
 
-**$14.25/mo, locked in for the life of your subscription** (regular price
+**$15.00/mo, locked in for the life of your subscription** (regular price
 $19). Sign up during beta and the rate never goes up — as long as you stay
 subscribed, you keep the price. One plan, no tiers, no surprise upgrades.
 Unlimited notes, unlimited projects, every feature.
@@ -143,7 +148,7 @@ Unlimited notes, unlimited projects, every feature.
 |  | Cloud | Local |
 |---|---|---|
 | **Setup time** | 30 seconds | 2 minutes (requires Python) |
-| **Cost** | $14.25/mo, locked for life (7-day trial) | Free |
+| **Cost** | $15.00/mo, locked for life (7-day trial) | Free |
 | **Storage** | We host (Tigris S3) | Your disk |
 | **Cross-device sync** | Built in | Manual (Git, Syncthing, etc.) |
 | **Mobile access** | Yes (web + app) | No |
@@ -168,6 +173,72 @@ lock-in either way — flip between them when your needs change.
 | [ChatGPT](#chatgpt) | https | Custom GPT actions (`search` / `fetch`) |
 | [Obsidian](#obsidian) | — | Reads/writes the same Markdown directly |
 | Anything MCP | stdio/https | If it speaks MCP, it works |
+
+## Official agent packages
+
+This repository is also the canonical home for Basic Memory's host-native
+agent packages. The core Python package, Claude Code plugin, shared skills,
+Hermes plugin, and OpenClaw plugin all ship from the same source tree.
+
+Maintainers can verify the whole consolidated surface from the repo root:
+
+```bash
+just package-check
+```
+
+Package-local justfiles are also available when working inside one host:
+
+```bash
+just package-check-claude-code
+just package-check-skills
+just package-check-hermes
+just package-check-openclaw
+```
+
+### Claude Code plugin
+
+The Claude Code plugin bundles Basic Memory-aware skills, hooks, and an agent:
+
+```bash
+claude plugin marketplace add basicmachines-co/basic-memory \
+  --sparse .claude-plugin plugins/claude-code
+claude plugin install basic-memory@basicmachines-co
+```
+
+Source: [`plugins/claude-code`](plugins/claude-code).
+
+### Shared skills
+
+Framework-agnostic `SKILL.md` files live in [`skills/`](skills). If your
+Skills CLI supports subpath installs:
+
+```bash
+npx skills add basicmachines-co/basic-memory --path skills
+```
+
+If it does not, copy the `memory-*` directories from `skills/` into your
+agent's skills directory as a temporary Phase 1 install path.
+
+### Hermes
+
+Hermes keeps its native plugin shape under [`integrations/hermes`](integrations/hermes):
+
+```bash
+hermes plugins install basicmachines-co/basic-memory --path integrations/hermes
+```
+
+If your Hermes build lacks subpath installs, use the final deprecated
+`basicmachines-co/hermes-basic-memory` pointer release until host support
+lands.
+
+### OpenClaw
+
+OpenClaw stays package-native and publishes from
+[`integrations/openclaw`](integrations/openclaw):
+
+```bash
+openclaw plugins install @basicmemory/openclaw-basic-memory
+```
 
 ## Pick up where you left off
 
@@ -523,8 +594,9 @@ just install          # Install with dev dependencies
 just test-sqlite      # All tests, SQLite
 just test-postgres    # All tests, Postgres (testcontainers)
 just test             # Both backends
-just fast-check       # fix/format/typecheck + impacted tests + smoke
+just fast-check       # fix/format/typecheck + impacted tests
 just doctor           # File <-> DB consistency check (temp config)
+just package-check    # Claude Code, skills, Hermes, OpenClaw package checks
 just lint
 just typecheck        # Pyright (primary)
 just typecheck-ty     # ty (supplemental)

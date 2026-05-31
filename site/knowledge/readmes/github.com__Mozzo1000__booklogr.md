@@ -55,9 +55,15 @@ See [development instructions](https://github.com/Mozzo1000/booklogr/wiki/Develo
 ## 🙌Contributing
 All contributions, from bug reports to feature requests and code submissions are welcome!
 
-If you’d like to contribute translations:
-- Visit our [translation guide](https://booklogr.app/docs/Developer/Translation) to get started.
-- Submit translations via pull request or get in touch through an issue.
+### Translations
+[![Crowdin](https://badges.crowdin.net/booklogr/localized.svg)](https://crowdin.com/project/booklogr)
+
+We use Crowdin to manage our localization efforts. This is our preferred way to receive translation contributions, as it requires no coding knowledge.
+
+* **Standard Translation:**: Join our [Crowdin Project](https://crowdin.com/project/booklogr) to start translating right away.
+* * **In-Context Translation:** Translate strings directly inside the live application user interface at [https://translate-live.booklogr.app](https://translate-live.booklogr.app).
+* For advanced or manual translation workflows (via pull requests), please check out our [Translation Guide](https://booklogr.app/docs/Developer/Translation).
+
 
 > [!TIP]
 > **Enjoying BookLogr?**  Help keep the project running and cover our monthly hosting costs. [Sponsor on GitHub ❤️](https://github.com/sponsors/Mozzo1000)

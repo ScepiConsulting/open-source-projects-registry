@@ -1,8 +1,53 @@
 {
   "chunk": 11,
   "count": 50,
-  "generated_at": "2026-05-24T06:44:10Z",
+  "generated_at": "2026-05-31T07:04:49Z",
   "items": [
+    {
+      "repo_key": "github.com/crocofied/CoreObs",
+      "repo_url": "github.com/crocofied/CoreObs",
+      "host": "github.com",
+      "owner": "crocofied",
+      "repo": "CoreObs",
+      "app_references": [
+        "corecontrol"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__crocofied__CoreObs.md",
+      "readme_download_url": null,
+      "readme_sha256": "39b02511056b3153dade852d4cb485fe94e34998846dfbb1bd0ffb5ac2a0a922",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/crocofied/PortNote",
+      "repo_url": "github.com/crocofied/PortNote",
+      "host": "github.com",
+      "owner": "crocofied",
+      "repo": "PortNote",
+      "app_references": [
+        "portnote"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__crocofied__PortNote.md",
+      "readme_download_url": null,
+      "readme_sha256": "82d5d11b21949baf21591f3cb2911f36cc519248c5b85d3062f175efec6c6def",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/cronitorio/cronitor-cli",
+      "repo_url": "github.com/cronitorio/cronitor-cli",
+      "host": "github.com",
+      "owner": "cronitorio",
+      "repo": "cronitor-cli",
+      "app_references": [
+        "crontab-guru"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__cronitorio__cronitor-cli.md",
+      "readme_download_url": null,
+      "readme_sha256": "71748255441ccabbf73f8fa4dd3039d465996e2d8d49283f56b8efe4c76532b6",
+      "error": null
+    },
     {
       "repo_key": "github.com/crowdsecurity/crowdsec",
       "repo_url": "github.com/crowdsecurity/crowdsec",
@@ -105,7 +150,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dagucloud__dagu.md",
       "readme_download_url": "https://raw.githubusercontent.com/dagucloud/dagu/main/README.md",
-      "readme_sha256": "b132d3ce07e43ea0d3f5031e0a893fcbdbd95324826505082b8e731d809b4746",
+      "readme_sha256": "7dd06dc125d2a8242dc2eb0332f2bcb089e64dc2983e99308f75d8b8d4d53e8e",
       "error": null
     },
     {
@@ -237,9 +282,9 @@
       "app_references": [
         "databasus"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__databasus__databasus.md",
-      "readme_download_url": "https://raw.githubusercontent.com/databasus/databasus/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ac9e495ce9218c537e04145044553bc00f3e353e363a0efbf29e23c5dc169472",
       "error": null
     },
@@ -297,9 +342,9 @@
       "app_references": [
         "cloudbeaver"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dbeaver__cloudbeaver.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dbeaver/cloudbeaver/devel/README.md",
+      "readme_download_url": null,
       "readme_sha256": "878151e2ee62eb07f5d9d30452699431463349a6b484ecbfdd96fc1f86a73a3d",
       "error": null
     },
@@ -327,10 +372,10 @@
       "app_references": [
         "ddclient"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ddclient__ddclient.md",
-      "readme_download_url": null,
-      "readme_sha256": "47f5a179d8b6387de1ce685ca3738efb1d769cbf26eff073945c6dc57866b3f2",
+      "readme_download_url": "https://raw.githubusercontent.com/ddclient/ddclient/main/README.md",
+      "readme_sha256": "c458d2984eb59becb7d2966661df7828111dd1a030bee72590728b15297cb2c8",
       "error": null
     },
     {
@@ -432,10 +477,10 @@
       "app_references": [
         "subscription-manager"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dh1011__subscription-manager.md",
-      "readme_download_url": null,
-      "readme_sha256": "b3a3f47529f60b7a8c7f421fb5ce40f67b9d38c8fc0b0e0355171f7f43020730",
+      "readme_download_url": "https://raw.githubusercontent.com/dh1011/subscription-manager/main/README.md",
+      "readme_sha256": "49caed408ae93e91589daf26d88526b641fe83bdb06e833d7e52ed37bfacaaf5",
       "error": null
     },
     {
@@ -462,10 +507,10 @@
       "app_references": [
         "docker-staticmaps"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dietrichmax__docker-staticmaps.md",
-      "readme_download_url": null,
-      "readme_sha256": "785942dd5e3e3450f8d1f4447305ac41af4931e31b70c6bd6cda6b40f23fca58",
+      "readme_download_url": "https://raw.githubusercontent.com/dietrichmax/docker-staticmaps/main/README.md",
+      "readme_sha256": "208c5c3a37c118e26512ef093d7f34b438e9a7265cbad0d3f9e8dc0c968a0b88",
       "error": null
     },
     {
@@ -522,10 +567,10 @@
       "app_references": [
         "directus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__directus__directus.md",
-      "readme_download_url": null,
-      "readme_sha256": "2930931f52714b13ffe3c9ac30e76a8c975abd06779552a164ddcd1c8246c71f",
+      "readme_download_url": "https://raw.githubusercontent.com/directus/directus/main/readme.md",
+      "readme_sha256": "160ec9d62be3c6c03adfa65143176dc58d7dbf1d114d8e399fbf81d8404ec5a0",
       "error": null
     },
     {
@@ -537,10 +582,10 @@
       "app_references": [
         "discourse"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__discourse__discourse.md",
-      "readme_download_url": null,
-      "readme_sha256": "2cd0c9edb07fd333bd30beda74a50923a4fd4b0dde796394551223e003b0de1a",
+      "readme_download_url": "https://raw.githubusercontent.com/discourse/discourse/main/README.md",
+      "readme_sha256": "d925330c437cbb375e8788a5d9eef80ac59bcacd810c467294e64aeeb7c40e21",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__docusealco__docuseal.md",
       "readme_download_url": null,
       "readme_sha256": "57dabc2c41a8297280a3a60ee5bb480b89aed5415a6c6ebfc20e8d05d0b6eb16",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/dohsimpson/HabitTrove",
-      "repo_url": "github.com/dohsimpson/HabitTrove",
-      "host": "github.com",
-      "owner": "dohsimpson",
-      "repo": "HabitTrove",
-      "app_references": [
-        "habittrove"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__dohsimpson__HabitTrove.md",
-      "readme_download_url": null,
-      "readme_sha256": "928353386e2095e61c686abb94ad925e2cd3791f66b4afbc81196e0e5fc64c45",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/dohsimpson/TaskTrove",
-      "repo_url": "github.com/dohsimpson/TaskTrove",
-      "host": "github.com",
-      "owner": "dohsimpson",
-      "repo": "TaskTrove",
-      "app_references": [
-        "tasktrove"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__dohsimpson__TaskTrove.md",
-      "readme_download_url": null,
-      "readme_sha256": "70608c00620e3ba837206bd0b82bc58b8a71fa42358b1a1c27329b57868a4774",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/dokkaner/teemii",
-      "repo_url": "github.com/dokkaner/teemii",
-      "host": "github.com",
-      "owner": "dokkaner",
-      "repo": "teemii",
-      "app_references": [
-        "teemii"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__dokkaner__teemii.md",
-      "readme_download_url": null,
-      "readme_sha256": "efc8688b260bf501c2447b9ad734b5bd6a0c60adc3b4c3a074919705d409d4ae",
       "error": null
     }
   ]

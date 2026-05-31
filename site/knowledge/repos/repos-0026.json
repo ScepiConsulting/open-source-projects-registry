@@ -1,8 +1,98 @@
 {
   "chunk": 26,
-  "count": 21,
-  "generated_at": "2026-05-24T06:44:10Z",
+  "count": 27,
+  "generated_at": "2026-05-31T07:04:49Z",
   "items": [
+    {
+      "repo_key": "github.com/zitadel/zitadel",
+      "repo_url": "github.com/zitadel/zitadel",
+      "host": "github.com",
+      "owner": "zitadel",
+      "repo": "zitadel",
+      "app_references": [
+        "zitadel"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__zitadel__zitadel.md",
+      "readme_download_url": null,
+      "readme_sha256": "a93fce0e2e22937d65640eca52cadce4be53a95d837a46bd8b35d654093a158b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/zoriya/Kyoo",
+      "repo_url": "github.com/zoriya/Kyoo",
+      "host": "github.com",
+      "owner": "zoriya",
+      "repo": "Kyoo",
+      "app_references": [
+        "kyoo"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__zoriya__Kyoo.md",
+      "readme_download_url": null,
+      "readme_sha256": "ada1c9135ebd605ebf0d235de3724fcc44bd2e05acc6b5f68f017ea5a324b32a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/zulip/zulip",
+      "repo_url": "github.com/zulip/zulip",
+      "host": "github.com",
+      "owner": "zulip",
+      "repo": "zulip",
+      "app_references": [
+        "zulip"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__zulip__zulip.md",
+      "readme_download_url": null,
+      "readme_sha256": "797053375431ea51df3c156d114ab7fbfdbe8398a0bb8a2d2dc076612b70f34b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/zwave-js/zwave-js-ui",
+      "repo_url": "github.com/zwave-js/zwave-js-ui",
+      "host": "github.com",
+      "owner": "zwave-js",
+      "repo": "zwave-js-ui",
+      "app_references": [
+        "z-wave-js-ui"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__zwave-js__zwave-js-ui.md",
+      "readme_download_url": null,
+      "readme_sha256": "8e9dd2b0ae8b71e04eaf7530445f5af2576e8cc7b09304f2d563389458b690ec",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/zyachel/quetre",
+      "repo_url": "github.com/zyachel/quetre",
+      "host": "github.com",
+      "owner": "zyachel",
+      "repo": "quetre",
+      "app_references": [
+        "quetre"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__zyachel__quetre.md",
+      "readme_download_url": null,
+      "readme_sha256": "e55c6de4d766f5805f3e8f1176289a1db7bf577723f3ba5f20bd45c770413579",
+      "error": null
+    },
+    {
+      "repo_key": "gitlab.com/LazyLibrarian/LazyLibrarian",
+      "repo_url": "gitlab.com/LazyLibrarian/LazyLibrarian",
+      "host": "gitlab.com",
+      "owner": "LazyLibrarian",
+      "repo": "LazyLibrarian",
+      "app_references": [
+        "lazylibrarian"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/LazyLibrarian/LazyLibrarian/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/LazyLibrarian/LazyLibrarian/-/raw/main/README.md?"
+    },
     {
       "repo_key": "gitlab.com/Nystik/inkheart",
       "repo_url": "gitlab.com/Nystik/inkheart",
