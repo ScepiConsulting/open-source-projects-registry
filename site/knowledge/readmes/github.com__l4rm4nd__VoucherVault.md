@@ -32,6 +32,7 @@
 - Single Sign-On (SSO) via OIDC
 - Database compatibility with SQLite3 and PostgreSQL
 - REST API endpoint with stats for Home Assisstant (HA) and other dashboards
+- Multi-currency support via free fixer.io API
 
 ## 📷 Screenshots
 
@@ -69,7 +70,7 @@ docker compose -f docker/docker-compose-sqlite.yml logs -f
 
 > [!TIP]
 > This repository follows the Conventional Commits standard. Therefore, you will find `patch`, `minor` and `major` release version tags on DockerHub.
-> No one stops you from using the `latest` image tag but I recommend pinning a minor version series tag such as `1.27.x`.
+> No one stops you from using the `latest` image tag but I recommend pinning a minor version series tag such as `1.28.x`.
 >
 > This is safer for automatic upgrades and you still get recent patches as well as bug fixes.
 

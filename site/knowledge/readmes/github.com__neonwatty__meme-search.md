@@ -132,7 +132,7 @@ Features of Meme Search include:
 
 11. **Drag-and-Drop Upload**
 
-   Upload memes directly through the web interface with drag-and-drop support. Files are stored in the `direct-uploads` directory (configurable via Docker volume mount) and automatically scanned for indexing. Supports JPG, PNG, and WEBP formats with bulk upload (up to 50 files), real-time progress tracking, and automatic duplicate filename handling.
+   Upload memes directly through the web interface with drag-and-drop and clipboard paste support. Files are stored in the `direct-uploads` directory (configurable via Docker volume mount) and automatically scanned for indexing. Supports JPG, PNG, and WEBP formats with bulk upload (up to 50 files), real-time progress tracking, and automatic duplicate filename handling.
 
 ### Requirements
 
@@ -160,6 +160,32 @@ This pulls and starts containers for the app, database, Solid Queue job worker, 
 
 ```sh
 http://localhost:3000
+```
+
+The Compose files store app data in local bind-mounted directories so upgrades keep using the same files:
+
+- `./meme_search/db_data/meme-search-db` for Postgres data
+- `./meme_search/direct-uploads` for drag-and-drop uploads
+- `./meme_search/db_data/image_to_text_generator` for generator queue data
+- `./meme_search/models` for model downloads
+
+Most Docker installations create missing bind-mount directories automatically. Some Docker frontends, including Synology Container Manager, require the directories to exist before startup.
+Compose also runs a short setup container at startup to make the upload directory writable by the non-root Rails containers, so the configured upload path may be owned by UID/GID `1000` after the first run.
+
+If you want these persistent files visible on a NAS path, set the storage path variables in `.env` or directly in your Compose UI:
+
+```sh
+MEME_SEARCH_DB_PATH=/volume1/docker/meme-search/db
+MEME_SEARCH_DIRECT_UPLOADS_PATH=/volume1/docker/meme-search/direct-uploads
+MEME_SEARCH_GENERATOR_DB_PATH=/volume1/docker/meme-search/image-to-text-db
+MEME_SEARCH_MODELS_PATH=/volume1/docker/meme-search/models
+```
+
+For Docker frontends that require bind-mount directories to exist first, create them before starting:
+
+```sh
+mkdir -p ./meme_search/db_data/meme-search-db ./meme_search/direct-uploads ./meme_search/db_data/image_to_text_generator ./meme_search/models
+mkdir -p /volume1/docker/meme-search/db /volume1/docker/meme-search/direct-uploads /volume1/docker/meme-search/image-to-text-db /volume1/docker/meme-search/models
 ```
 
 To start the app alone pull the repo and cd into the `meme_search/meme_search/meme_search_app`. Once there execute the following to start the app in development mode
@@ -278,7 +304,7 @@ To customize the main app port create a `.env` file locally in the root of the d
 APP_PORT= # the port for the app - defaults to 3000
 ```
 
-This value is automatically detected and loaded into each service via the `docker-compose-pro.yml` file.
+This value is automatically detected and loaded into each service via the Compose files. The Postgres service is only exposed on Docker's internal network, so app containers always talk to it at `meme-search-db:5432`.
 
 ### Building the app locally with Docker
 

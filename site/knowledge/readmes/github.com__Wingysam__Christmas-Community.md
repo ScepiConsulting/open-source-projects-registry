@@ -23,6 +23,14 @@ To discuss the use and development of Christmas Community, you can join the Disc
 ![Screenshot](screenshots/link-not-required.png)
 ![Screenshot](screenshots/name-from-link.png)
 
+## AI
+
+I consider myself an "agentic engineer". However, some of my projects have no LLM involvement to keep my pure software skills sharp. This project was built without AI and is maintained using only human-written code. Please do not submit LLM-generated pull requests.
+
+One exception: you may use LLMs/other ML tools to generate translations into your own language, provided you understand the results and have verified they are correct from the language perspective. No need to worry too much about the code syntax, I'll fix any JS problems once you post your translation PR.
+
+Aside from PRs, if English isn't your native language, you may translate issue descriptions with AI translation tools.
+
 ## Root URL
 
 If you want put Christmas Community on a subdirectory, such as `/christmas-community`, set `ROOT_URL` to that path. For legacy reasons, `ROOT_PATH` also does this. `ROOT_URL` takes precedence over `ROOT_PATH`.
@@ -260,13 +268,6 @@ Hi, I'm Wingy. I made this app. My website is [samwing.dev](https://samwing.dev)
 		</tr>
 		<tr>
             <td align="center">
-                <a href="https://github.com/dbarenholz">
-                    <img src="https://avatars.githubusercontent.com/u/25849034?v=4" width="100;" alt="dbarenholz"/>
-                    <br />
-                    <sub><b>dbarenholz</b></sub>
-                </a>
-            </td>
-            <td align="center">
                 <a href="https://github.com/Laeborg">
                     <img src="https://avatars.githubusercontent.com/u/4494264?v=4" width="100;" alt="Laeborg"/>
                     <br />
@@ -301,8 +302,6 @@ Hi, I'm Wingy. I made this app. My website is [samwing.dev](https://samwing.dev)
                     <sub><b>bsiddans</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/BootVirtual">
                     <img src="https://avatars.githubusercontent.com/u/64020530?v=4" width="100;" alt="BootVirtual"/>
@@ -310,6 +309,8 @@ Hi, I'm Wingy. I made this app. My website is [samwing.dev](https://samwing.dev)
                     <sub><b>BootVirtual</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/DanteMS">
                     <img src="https://avatars.githubusercontent.com/u/8601667?v=4" width="100;" alt="DanteMS"/>
@@ -345,8 +346,6 @@ Hi, I'm Wingy. I made this app. My website is [samwing.dev](https://samwing.dev)
                     <sub><b>mtrunt</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/Na0mir">
                     <img src="https://avatars.githubusercontent.com/u/6453724?v=4" width="100;" alt="Na0mir"/>
@@ -354,6 +353,8 @@ Hi, I'm Wingy. I made this app. My website is [samwing.dev](https://samwing.dev)
                     <sub><b>Na0mir</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/ndlanier">
                     <img src="https://avatars.githubusercontent.com/u/14913926?v=4" width="100;" alt="ndlanier"/>
@@ -389,8 +390,6 @@ Hi, I'm Wingy. I made this app. My website is [samwing.dev](https://samwing.dev)
                     <sub><b>CantisW</b></sub>
                 </a>
             </td>
-		</tr>
-		<tr>
             <td align="center">
                 <a href="https://github.com/StS82">
                     <img src="https://avatars.githubusercontent.com/u/32516183?v=4" width="100;" alt="StS82"/>
@@ -398,6 +397,8 @@ Hi, I'm Wingy. I made this app. My website is [samwing.dev](https://samwing.dev)
                     <sub><b>StS82</b></sub>
                 </a>
             </td>
+		</tr>
+		<tr>
             <td align="center">
                 <a href="https://github.com/alyoro">
                     <img src="https://avatars.githubusercontent.com/u/43644634?v=4" width="100;" alt="alyoro"/>

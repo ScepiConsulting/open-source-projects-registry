@@ -1,8 +1,53 @@
 {
   "chunk": 10,
   "count": 50,
-  "generated_at": "2026-05-31T07:04:49Z",
+  "generated_at": "2026-06-07T07:12:22Z",
   "items": [
+    {
+      "repo_key": "github.com/carlnewton/habitat",
+      "repo_url": "github.com/carlnewton/habitat",
+      "host": "github.com",
+      "owner": "carlnewton",
+      "repo": "habitat",
+      "app_references": [
+        "habitat-social"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__carlnewton__habitat.md",
+      "readme_download_url": null,
+      "readme_sha256": "b59dfaba7dfdca6c159967ccea2768f1240f4cd50245d2815b21cc93b605532e",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/caronc/apprise",
+      "repo_url": "github.com/caronc/apprise",
+      "host": "github.com",
+      "owner": "caronc",
+      "repo": "apprise",
+      "app_references": [
+        "apprise"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__caronc__apprise.md",
+      "readme_download_url": null,
+      "readme_sha256": "b1d3b10e175903bc24d55900a9a145d94d88a56dbdab8ea1e55c970cbb85f112",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/casdoor/casdoor",
+      "repo_url": "github.com/casdoor/casdoor",
+      "host": "github.com",
+      "owner": "casdoor",
+      "repo": "casdoor",
+      "app_references": [
+        "casdoor"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__casdoor__casdoor.md",
+      "readme_download_url": null,
+      "readme_sha256": "bb6385aa434dd0ec3e9dea3a538accbc9b77c1d97a0599293dbbb3cff666817c",
+      "error": null
+    },
     {
       "repo_key": "github.com/causefx/Organizr",
       "repo_url": "github.com/causefx/Organizr",
@@ -27,9 +72,9 @@
       "app_references": [
         "crosswatch"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__cenodude__CrossWatch.md",
-      "readme_download_url": "https://raw.githubusercontent.com/cenodude/CrossWatch/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ed745c33a9065fc361b03292f2f26c57047bc9af38dbcd93cebdfddb13a9c09e",
       "error": null
     },
@@ -222,10 +267,10 @@
       "app_references": [
         "tududi"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__chrisvel__tududi.md",
-      "readme_download_url": null,
-      "readme_sha256": "c412174f0e1f368d63524e804fc9c06f789fbdfb7b0f3e5f3674a2f3a8099494",
+      "readme_download_url": "https://raw.githubusercontent.com/chrisvel/tududi/main/README.md",
+      "readme_sha256": "99077126027a5f009f71f9db68bfce2cf282d01a66c910f65713474413048366",
       "error": null
     },
     {
@@ -477,10 +522,10 @@
       "app_references": [
         "coder"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__coder__coder.md",
-      "readme_download_url": null,
-      "readme_sha256": "3fea0e115633c48aed161118ab4a7e10b00a97d9419e13ea3cb7f708ca0f32a2",
+      "readme_download_url": "https://raw.githubusercontent.com/coder/coder/main/README.md",
+      "readme_sha256": "8e87b5b11ca1c936684853e555baf49ca9391b6d4e50e2b92cecb885e820745b",
       "error": null
     },
     {
@@ -495,7 +540,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__coderaiser__cloudcmd.md",
       "readme_download_url": "https://raw.githubusercontent.com/coderaiser/cloudcmd/master/README.md",
-      "readme_sha256": "7a7cdfb55c21dd7f65e25e5a518e50e033ba4f914fba8b3f6ff676b91325a736",
+      "readme_sha256": "6c3f23601ef88a5649cf51ce7e75db3b024f17060dbf6868a16848be44f78452",
       "error": null
     },
     {
@@ -657,9 +702,9 @@
       "app_references": [
         "coolify"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__coollabsio__coolify.md",
-      "readme_download_url": "https://raw.githubusercontent.com/coollabsio/coolify/v4.x/README.md",
+      "readme_download_url": null,
       "readme_sha256": "66415c8965246aff51858bfdf7abfa5446624795b49000898e0da54593e6eaf0",
       "error": null
     },
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__cpvalente__ontime.md",
       "readme_download_url": null,
       "readme_sha256": "8161cf2128d2264d84e2f4ab4e06c6ff9c19934e3aeaf5e5d864e20c63e966ce",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/crazy-max/diun",
-      "repo_url": "github.com/crazy-max/diun",
-      "host": "github.com",
-      "owner": "crazy-max",
-      "repo": "diun",
-      "app_references": [
-        "diun"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__crazy-max__diun.md",
-      "readme_download_url": null,
-      "readme_sha256": "054524704a35bcb63c52a0819500fbfe156399f7267be1cc8ee36bbec36d30d0",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/crazy-max/ftpgrab",
-      "repo_url": "github.com/crazy-max/ftpgrab",
-      "host": "github.com",
-      "owner": "crazy-max",
-      "repo": "ftpgrab",
-      "app_references": [
-        "ftpgrab"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__crazy-max__ftpgrab.md",
-      "readme_download_url": null,
-      "readme_sha256": "0613e5b48058100ac8edc9006c48d395fa0d62c363cb5012762e8a1f8d6d8ac8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/crocodilestick/Calibre-Web-Automated",
-      "repo_url": "github.com/crocodilestick/Calibre-Web-Automated",
-      "host": "github.com",
-      "owner": "crocodilestick",
-      "repo": "Calibre-Web-Automated",
-      "app_references": [
-        "calibre-web-automated"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__crocodilestick__Calibre-Web-Automated.md",
-      "readme_download_url": null,
-      "readme_sha256": "a57685050d485fe1c8e6017e0f9fd68b7e1bfecda6a70efdaaed2fb26445dd7a",
       "error": null
     }
   ]

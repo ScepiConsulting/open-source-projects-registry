@@ -1,8 +1,53 @@
 {
   "chunk": 15,
   "count": 50,
-  "generated_at": "2026-05-31T07:04:49Z",
+  "generated_at": "2026-06-07T07:12:22Z",
   "items": [
+    {
+      "repo_key": "github.com/humhub/humhub",
+      "repo_url": "github.com/humhub/humhub",
+      "host": "github.com",
+      "owner": "humhub",
+      "repo": "humhub",
+      "app_references": [
+        "humhub"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__humhub__humhub.md",
+      "readme_download_url": null,
+      "readme_sha256": "ac4e36a26d863677f55378c07e6b0dbc48886a5b5ad5c83bd7ab9a1cfcd49c9b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/hwgilbert16/scholarsome",
+      "repo_url": "github.com/hwgilbert16/scholarsome",
+      "host": "github.com",
+      "owner": "hwgilbert16",
+      "repo": "scholarsome",
+      "app_references": [
+        "scholarsome"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hwgilbert16__scholarsome.md",
+      "readme_download_url": null,
+      "readme_sha256": "1f075052408ebb49af12e9a5b0f15a61b3fd856803e6141c5ac0b7a07c99d2c8",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/hyvor/relay",
+      "repo_url": "github.com/hyvor/relay",
+      "host": "github.com",
+      "owner": "hyvor",
+      "repo": "relay",
+      "app_references": [
+        "hyvor-relay"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hyvor__relay.md",
+      "readme_download_url": null,
+      "readme_sha256": "2fa317bbc7303310fa934a654820d89dc61a4b530857f84ad1ca6f1e371a7693",
+      "error": null
+    },
     {
       "repo_key": "github.com/hywax/mafl",
       "repo_url": "github.com/hywax/mafl",
@@ -192,10 +237,10 @@
       "app_references": [
         "manage-my-damn-life"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__intri-in__manage-my-damn-life-nextjs.md",
-      "readme_download_url": null,
-      "readme_sha256": "89ba0248abe17e357deb3bd84ca66b311251511c175e84a592dda773f3efc9ae",
+      "readme_download_url": "https://raw.githubusercontent.com/intri-in/manage-my-damn-life-nextjs/main/README.md",
+      "readme_sha256": "2541f1ede53b70f05866f7c201d0ffa19dfc6cd74db9c7b54ec3ae7a52f322db",
       "error": null
     },
     {
@@ -342,10 +387,10 @@
       "app_references": [
         "pulsarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jamcalli__Pulsarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "737c1abfbb34d8eb581e5831c7d127bfb2e01c997615a1129bb36437f5452b01",
+      "readme_download_url": "https://raw.githubusercontent.com/jamcalli/Pulsarr/master/README.md",
+      "readme_sha256": "aa62468e6de1b2ef3dd849c036dfd2e71300fed19153a266021c5e4b59cbacac",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__joinloops__loops-server.md",
       "readme_download_url": null,
       "readme_sha256": "1fc57bb48d5a0f7cf84cc8c00b75a8b12b76b8b7af6be61679b375428789329c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jon4hz/jellysweep",
-      "repo_url": "github.com/jon4hz/jellysweep",
-      "host": "github.com",
-      "owner": "jon4hz",
-      "repo": "jellysweep",
-      "app_references": [
-        "jellysweep"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jon4hz__jellysweep.md",
-      "readme_download_url": null,
-      "readme_sha256": "5ee274e32ca540861a1fbc7be8d96a6ca3c07dc288ec4f4a370a79cd69fdf0f5",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jon6fingrs/ghostboard",
-      "repo_url": "github.com/jon6fingrs/ghostboard",
-      "host": "github.com",
-      "owner": "jon6fingrs",
-      "repo": "ghostboard",
-      "app_references": [
-        "ghostboard"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jon6fingrs__ghostboard.md",
-      "readme_download_url": null,
-      "readme_sha256": "8c19bb3b8276e0b8065fc48ba5fb78848fae0244f62e7edce9d1c809c7397b27",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jon6fingrs/ghostfile",
-      "repo_url": "github.com/jon6fingrs/ghostfile",
-      "host": "github.com",
-      "owner": "jon6fingrs",
-      "repo": "ghostfile",
-      "app_references": [
-        "ghostfile"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jon6fingrs__ghostfile.md",
-      "readme_download_url": null,
-      "readme_sha256": "452cfa05693af6d0838d035e082b9f54cd3dd98909ff4944ae0e1e9c4feac201",
       "error": null
     }
   ]

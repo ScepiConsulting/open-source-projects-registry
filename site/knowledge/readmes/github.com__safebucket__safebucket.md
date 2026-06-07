@@ -1,11 +1,22 @@
-<h1 align="center">
-  <a href="https://docs.safebucket.io"><img src="./assets/safebucket_banner.png" alt="SafeBucket"></a>
-</h1>
+<a href="https://docs.safebucket.io" target="_blank" rel="noopener">
+  <picture>
+    <img src="./assets/safebucket_banner.png" alt="Safebucket">
+  </picture>
+</a>
+
+<div align="center">
+  <h2>
+    An open source file sharing platform with pluggable infrastructure where files bypass the server
+  </h2>
+</div>
+
+<br />
 
 <div align="center">
 
 [![GitHub Release][release-img]][release]
 [![Backend Quality][backend-img]][backend]
+[![Backend Integration tests][integration-img]][integration]
 [![Frontend Quality][frontend-img]][frontend]
 [![Docker Build][docker-build-img]][docker-build]
 [![Go Report Card][go-report-img]][go-report]
@@ -13,35 +24,21 @@
 
 </div>
 
-Safebucket is an open-source file sharing platform where files never touch your server.
-Uploads and downloads go directly to your storage backend. You bring your own identity provider, your
-own storage, and your own infrastructure. Safebucket handles metadata, access control and audit logging.
-
 ![SafeBucket List View](./assets/list_view.png)
-
-## Why Safebucket?
-
-- **Files bypass the server**: Clients upload and download directly from S3-compatible storage via presigned URLs. The
-  API only handles metadata and access control.
-- **SSO-first**: Authenticate users with your existing identity providers via OIDC. No need to manage passwords for your
-  team.
-- **Bucket-scoped access**: All sharing happens through buckets with explicit membership and role-based permissions (
-  owner, contributor, viewer).
-- **Swappable infrastructure**: Every component (storage, database, events, cache, notifier) can be replaced. Use AWS S3
-  or a self-hosted MinIO. Use NATS or SQS. Use PostgreSQL or SQLite, etc...
 
 ## Features
 
-- Direct uploads and downloads via presigned URLs
-- Role-based access control at platform and bucket level
+- Direct uploads and downloads via presigned URLs: files bypass the server
+- Swappable infrastructure: every component (storage, database, events, cache, notifier) can be replaced
 - SSO via any OIDC provider, with local auth for external users
-- Email invitations with challenge-based validation
+- Role-based access control at platform and bucket level
+- Quick/reverse share: share file via public links with options (password, max downloads, max views, etc...)
 - Real-time activity tracking and audit logs
 - Multifactor authentication (TOTP)
 - File expiration, trash with configurable retention
 - Admin dashboard with platform-wide statistics
 
-See the [full list of features](https://docs.safebucket.io/features).
+And more... see the [full list of features](https://docs.safebucket.io/features).
 
 ## Architecture
 
@@ -108,6 +105,10 @@ This project is licensed under the Apache 2.0 - see the [LICENSE](LICENSE) file 
 [backend]: https://github.com/safebucket/safebucket/actions/workflows/quality-backend.yml
 
 [backend-img]: https://github.com/safebucket/safebucket/actions/workflows/quality-backend.yml/badge.svg
+
+[integration]: https://github.com/safebucket/safebucket/actions/workflows/integration-backend.yml
+
+[integration-img]: https://github.com/safebucket/safebucket/actions/workflows/integration-backend.yml/badge.svg
 
 [frontend]: https://github.com/safebucket/safebucket/actions/workflows/quality-frontend.yml
 

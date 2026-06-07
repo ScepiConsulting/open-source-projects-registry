@@ -206,7 +206,6 @@ Prior versions of Jackett are no longer supported.
  * Fenyarnyek-Tracker
  * File-Tracker
  * Gay-Torrents.net
- * HD-CzTorrent [PAY2DL]
  * HDGalaKtik
  * HellTorrents [PAY2DL]
  * HunTorrent
@@ -247,6 +246,7 @@ Prior versions of Jackett are no longer supported.
  * themixingbowl (TMB)
  * Toloka
  * TorrentMasters
+ * TR4KER
  * TrahT
  * TribalMixes
  * Union Fansub
@@ -373,10 +373,8 @@ Prior versions of Jackett are no longer supported.
  * Explosiv-World (E-W)
  * ExtremeBits
  * F1Carreras
- * F1GP
  * FANO.IN [![(invite needed)][inviteneeded]](#)
  * Fappaizuri
- * FearNoPeer
  * Femdomcult
  * FileList (FL)
  * FinElite (FE) [![(invite needed)][inviteneeded]](#)
@@ -523,6 +521,7 @@ Prior versions of Jackett are no longer supported.
  * OurBits (HDPter)
  * P2PBG [PAY2DL]
  * Panda
+ * ParabellumHD
  * Party-Tracker
  * PassThePopcorn (PTP) [![(invite needed)][inviteneeded]](#)
  * Peeratiko
@@ -663,6 +662,7 @@ Prior versions of Jackett are no longer supported.
  * TranceTraffic
  * Trellas (Magico) [![(invite needed)][inviteneeded]](#)
  * TreZzoR
+ * TSDB (The Sports Database)
  * TurkSeed (Aturk)
  * TurkTorrent (TT) [PAY2DL]
  * TVstore
@@ -689,6 +689,7 @@ Prior versions of Jackett are no longer supported.
  * XtremeBytes (TorrentSurf)
  * XWT-Classics
  * XWTorrents (XWT)
+ * YggReborn
  * YUSCENE
  * Zappateers
  * Zenith [![(invite needed)][inviteneeded]](#)

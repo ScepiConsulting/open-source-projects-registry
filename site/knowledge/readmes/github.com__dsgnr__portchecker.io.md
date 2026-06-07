@@ -32,14 +32,14 @@ API routes and specification can be found at [portchecker.io/docs](https://portc
 #### Web
 
 > [!NOTE]
-> Uses [Node](https://nodejs.org/) version 25 and newer. Requires [Yarn](https://classic.yarnpkg.com/en/)
+> Uses [Node](https://nodejs.org/) version 26 and newer.
 
 Bringing up the UI outside of Docker;
 
 ```
 $ cd frontend/web
-$ yarn install
-$ yarn dev
+$ npm install
+$ npm run dev
 ```
 
 portchecker.io front-end be running at [http://0.0.0.0:8080](http://0.0.0.0:8080).
@@ -77,6 +77,33 @@ $ docker-compose up
 ```
 
 portchecker.io front-end will be running at [http://0.0.0.0:8080](http://0.0.0.0:8080) and the API will be running at [http://0.0.0.0:8000](http://0.0.0.0:8000).
+
+## CI smoke & browser tests
+
+CI runs the same checks you'd otherwise do by hand on every PR:
+
+- builds both prod images from the PR's checkout,
+- brings the stack up via `docker-compose.smoke.yml` (which builds `Dockerfile`, not `Dockerfile.dev`, and runs a local `nc` listener so the port-check API can be tested without touching the needing internet),
+- runs `scripts/smoke.sh` against the API and through the nginx proxy,
+- runs a Playwright browser test that submits the form and asserts results render.
+
+To run the smoke locally:
+
+```
+$ bash scripts/smoke.sh
+```
+
+To run the browser tests locally:
+
+```
+$ docker compose -f docker-compose.smoke.yml up -d --build --wait
+$ cd frontend/web
+$ npm install
+$ npx playwright install --with-deps chromium   # first time only
+$ npm run browser-tests
+```
+
+Dependabot patch, minor, and security updates auto-merge once required checks pass. Major versions are flagged for human review.
 
 ## Environment Variables
 

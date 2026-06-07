@@ -44,7 +44,7 @@ Generated derivatives are now stored under stable asset-key shards instead of mi
 - Image and video support with configurable eager or lazy derivative generation for fast browsing.
 - Original-media download controls on home feed cards, post detail, and stories, alongside open-original actions.
 - Optional role-based local access with admin, viewer, and public browse modes.
-- Settings split into `General Settings` for Home/Reels defaults, stories mode, and excluded folders, plus `Scan & Library` for scan and rebuild actions.
+- Settings split into `General Settings` for Home/Reels defaults, language selection, stories mode, and excluded folders, plus `Scan & Library` for scan and rebuild actions.
 - Phase-aware scan progress for first indexing, derivative migration, and rebuilds.
 - A web app manifest plus production service worker registration.
 - A debounced filesystem watcher in development mode only.
@@ -278,7 +278,7 @@ not read directly by the container.
 - Use `GALLERY_EXCLUDED_FOLDERS` to skip unwanted source folders during discovery and rescans.
 - Rules without a slash match a folder name anywhere in the gallery tree, such as `@eaDir` or `thumbnails`.
 - Rules with a slash match one exact relative folder path beneath `GALLERY_ROOT`, such as `Archive/cache`.
-- The Settings sidebar now separates app-wide preferences into `General Settings`. That section includes the stories-folders toggle, Home/Reels defaults, and the excluded-folder editor.
+- The Settings sidebar now separates app-wide preferences into `General Settings`. That section includes the instant language selector plus saved app-language default, the stories-folders toggle, Home/Reels defaults, and the excluded-folder editor.
 - `General Settings` can add or remove custom exclusion rules at runtime. Env-backed rules stay read-only there and still require a restart to change.
 - After changing excluded folders or stories mode in `General Settings`, run a full library scan from `Scan & Library` so previously indexed folders are soft-removed or reclassified correctly.
 
@@ -343,6 +343,7 @@ only needed when the browser-visible origin differs from the upstream Node host 
 
 - Vue 3
 - Vite
+- Vue I18n
 - Vue Router 4
 - Pinia
 - UnoCSS
@@ -350,6 +351,15 @@ only needed when the browser-visible origin differs from the upstream Node host 
 **Workspace**
 
 - `pnpm` monorepo
+
+## Localization
+
+Client translations live under `client/src/locales/`.
+
+- `en.json` is the canonical source locale and the first place new UI copy should be added.
+- `es.json` and `zh.json` are the shipped Spanish and Chinese translations for the client.
+- `client/src/locales/index.ts` wires locale resolution and the Vue I18n runtime.
+- `pnpm --filter @foldergram/client test` includes a locale validation test that checks locale keys against `en.json`.
 
 ## Scripts
 

@@ -84,15 +84,7 @@ Open `http://localhost:8080` and get after it.
 
 ### Deploy on Proxmox (LXC)
 
-Rackula is available as a Proxmox VE community-scripts LXC container:
-
-1. In the Proxmox web UI, go to your node → **CT Templates**
-2. Select the **Rackula** script from the community-scripts catalog
-3. Deploy with defaults (1 CPU, 512 MB RAM, 8 GB disk)
-
-The API write token (for persistent storage) is auto-generated during install. Find it at `/opt/rackula/data/.env`. You only need it if you're using the persistence API.
-
-> **Note:** LXC is currently in pre-release. See the [Self-Hosting Guide](docs/guides/SELF-HOSTING.md) for details and manual install instructions.
+> **Note:** LXC is currently in pre-release. See the [Self-Hosting Guide](docs/deployment/SELF-HOSTING.md) for details and manual install instructions.
 
 ### Persistent Storage
 
@@ -125,7 +117,7 @@ openssl rand -hex 32  # Session secret (if using auth)
 
 Set `CORS_ORIGIN`, `RACKULA_API_WRITE_TOKEN`, and optionally `RACKULA_AUTH_MODE` (`none`, `local`, or `oidc`) in your `.env` file.
 
-See the [Self-Hosting Guide](docs/guides/SELF-HOSTING.md) for full configuration details including auth modes, env vars, and TLS setup.
+See the [Self-Hosting Guide](docs/deployment/SELF-HOSTING.md) for full configuration details including auth modes, env vars, and TLS setup.
 
 ## Built With Claude
 
@@ -135,7 +127,7 @@ This project was built using AI-assisted development with Claude. I told it what
 
 - [Architecture Overview](docs/ARCHITECTURE.md)
 - [Technical Spec](docs/reference/SPEC.md)
-- [Self-Hosting Guide](docs/guides/SELF-HOSTING.md)
+- [Self-Hosting Guide](docs/deployment/SELF-HOSTING.md)
 - [Changelog](CHANGELOG.md)
 - [Contributing Guide](CONTRIBUTING.md)
 - [Discussions](https://github.com/RackulaLives/Rackula/discussions)

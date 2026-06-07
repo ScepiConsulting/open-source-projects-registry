@@ -1,8 +1,53 @@
 {
   "chunk": 9,
   "count": 50,
-  "generated_at": "2026-05-31T07:04:49Z",
+  "generated_at": "2026-06-07T07:12:22Z",
   "items": [
+    {
+      "repo_key": "github.com/automatisch/automatisch",
+      "repo_url": "github.com/automatisch/automatisch",
+      "host": "github.com",
+      "owner": "automatisch",
+      "repo": "automatisch",
+      "app_references": [
+        "automatisch"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__automatisch__automatisch.md",
+      "readme_download_url": null,
+      "readme_sha256": "73de12e1fe793c873d4917a66dcea7a7453ba08b8bb5452f1a46ef6813724710",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/axllent/mailpit",
+      "repo_url": "github.com/axllent/mailpit",
+      "host": "github.com",
+      "owner": "axllent",
+      "repo": "mailpit",
+      "app_references": [
+        "mailpit"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__axllent__mailpit.md",
+      "readme_download_url": null,
+      "readme_sha256": "21e25814c9502db02d110e32f50c9a3a2a345e1da01f74bad552c5ea136a4889",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/azukaar/Cosmos-Server",
+      "repo_url": "github.com/azukaar/Cosmos-Server",
+      "host": "github.com",
+      "owner": "azukaar",
+      "repo": "Cosmos-Server",
+      "app_references": [
+        "cosmos-server"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__azukaar__Cosmos-Server.md",
+      "readme_download_url": null,
+      "readme_sha256": "2c62707c057d47d73dc8403012ab785f343903b5615eb1061a3781145f4bf123",
+      "error": null
+    },
     {
       "repo_key": "github.com/babybuddy/babybuddy",
       "repo_url": "github.com/babybuddy/babybuddy",
@@ -12,9 +57,9 @@
       "app_references": [
         "baby-buddy"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__babybuddy__babybuddy.md",
-      "readme_download_url": "https://raw.githubusercontent.com/babybuddy/babybuddy/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "60086049b31efb606cca7f0bcefa028e801b2f97bb963892502abc35d774ea9e",
       "error": null
     },
@@ -105,7 +150,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__basicmachines-co__basic-memory.md",
       "readme_download_url": "https://raw.githubusercontent.com/basicmachines-co/basic-memory/main/README.md",
-      "readme_sha256": "97d7a0334560a3932c4030b248b7ede61a6e493394b96090387daa3e79e61f0d",
+      "readme_sha256": "ad02d0f18585439c10c37035f83707028ba430dad555e20c0100a9187fbb1d26",
       "error": null
     },
     {
@@ -177,9 +222,9 @@
       "app_references": [
         "koillection"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__benjaminjonard__koillection.md",
-      "readme_download_url": "https://raw.githubusercontent.com/benjaminjonard/koillection/1.8/README.md",
+      "readme_download_url": null,
       "readme_sha256": "593b9362051aff7ae6cb74da0e3f2435313a6fed2274c54c11f39ffe129a4a3b",
       "error": null
     },
@@ -342,9 +387,9 @@
       "app_references": [
         "black-candy"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__blackcandy-org__blackcandy.md",
-      "readme_download_url": "https://raw.githubusercontent.com/blackcandy-org/blackcandy/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e2e60c3a404a267be6e556ac9105eabfc1c50ee9919e87d2946b3e9ff6cfc952",
       "error": null
     },
@@ -387,9 +432,9 @@
       "app_references": [
         "checkmate"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__bluewave-labs__Checkmate.md",
-      "readme_download_url": "https://raw.githubusercontent.com/bluewave-labs/Checkmate/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "0dde3172330f51d8187ef29d196c00036d0a2e21d9ac3d8ff2a377c962a7043a",
       "error": null
     },
@@ -447,10 +492,10 @@
       "app_references": [
         "betula"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__bouncepaw__betula.md",
-      "readme_download_url": null,
-      "readme_sha256": "de2f6b334dfd56bc97368ba18635c9d3552ee0b0477d81f60a58c0a146af8a2a",
+      "readme_download_url": "https://raw.githubusercontent.com/bouncepaw/betula/master/README.md",
+      "readme_sha256": "fb5cba5dbf1ce19235707f38bf1c23fa4e305dda17ff6941aec10fec11fb117e",
       "error": null
     },
     {
@@ -555,7 +600,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__bulwarkmail__webmail.md",
       "readme_download_url": "https://raw.githubusercontent.com/bulwarkmail/webmail/main/README.md",
-      "readme_sha256": "d592537593cab46dcdb2ccd889ba1cd81f1f8ff32e63a9341094cc4b286ca5de",
+      "readme_sha256": "48d42686e032d4ac45fdbfa508fead71a89e88a568fda7e8a4dcaadd29fc0244",
       "error": null
     },
     {
@@ -582,9 +627,9 @@
       "app_references": [
         "bunkerweb"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__bunkerity__bunkerweb.md",
-      "readme_download_url": "https://raw.githubusercontent.com/bunkerity/bunkerweb/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "47e9ff443c9b788b9861e03da70be1a7e7ef1c098fa5a75bc22ee8d1c2a748ef",
       "error": null
     },
@@ -597,9 +642,9 @@
       "app_references": [
         "wetty"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__butlerx__wetty.md",
-      "readme_download_url": "https://raw.githubusercontent.com/butlerx/wetty/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c88ae52bde43f363197a83b7f79067558b3dcd60ddf7c27cf7cfb08eb8ee3a7f",
       "error": null
     },
@@ -657,10 +702,10 @@
       "app_references": [
         "calagopus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__calagopus__panel.md",
-      "readme_download_url": null,
-      "readme_sha256": "caf069181db1bab7c56c86158f4a962edbfa15b205e6ff6b81faf7f4584e68b3",
+      "readme_download_url": "https://raw.githubusercontent.com/calagopus/panel/main/README.md",
+      "readme_sha256": "d2c780dd5729dacc1a0a22ff3f3fc60ae2b11e22c71c61bd9bb695f167d79d1a",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__caprover__caprover.md",
       "readme_download_url": null,
       "readme_sha256": "9605d175852accc255d7d182cc64f3700ec436be0a66def80c919f373c019ce8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/carlnewton/habitat",
-      "repo_url": "github.com/carlnewton/habitat",
-      "host": "github.com",
-      "owner": "carlnewton",
-      "repo": "habitat",
-      "app_references": [
-        "habitat-social"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__carlnewton__habitat.md",
-      "readme_download_url": "https://raw.githubusercontent.com/carlnewton/habitat/develop/README.md",
-      "readme_sha256": "b59dfaba7dfdca6c159967ccea2768f1240f4cd50245d2815b21cc93b605532e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/caronc/apprise",
-      "repo_url": "github.com/caronc/apprise",
-      "host": "github.com",
-      "owner": "caronc",
-      "repo": "apprise",
-      "app_references": [
-        "apprise"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__caronc__apprise.md",
-      "readme_download_url": "https://raw.githubusercontent.com/caronc/apprise/master/README.md",
-      "readme_sha256": "b1d3b10e175903bc24d55900a9a145d94d88a56dbdab8ea1e55c970cbb85f112",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/casdoor/casdoor",
-      "repo_url": "github.com/casdoor/casdoor",
-      "host": "github.com",
-      "owner": "casdoor",
-      "repo": "casdoor",
-      "app_references": [
-        "casdoor"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__casdoor__casdoor.md",
-      "readme_download_url": null,
-      "readme_sha256": "bb6385aa434dd0ec3e9dea3a538accbc9b77c1d97a0599293dbbb3cff666817c",
       "error": null
     }
   ]

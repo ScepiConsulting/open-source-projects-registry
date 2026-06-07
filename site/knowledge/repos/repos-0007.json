@@ -1,8 +1,38 @@
 {
   "chunk": 7,
   "count": 50,
-  "generated_at": "2026-05-31T07:04:49Z",
+  "generated_at": "2026-06-07T07:12:22Z",
   "items": [
+    {
+      "repo_key": "github.com/Trugamr/wol",
+      "repo_url": "github.com/Trugamr/wol",
+      "host": "github.com",
+      "owner": "Trugamr",
+      "repo": "wol",
+      "app_references": [
+        "wol"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__Trugamr__wol.md",
+      "readme_download_url": null,
+      "readme_sha256": "97cadb7b511408a1f437240ce35e1d8950fc0bb6fb1009971196b9ecf3d09951",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/TryGhost/Ghost",
+      "repo_url": "github.com/TryGhost/Ghost",
+      "host": "github.com",
+      "owner": "TryGhost",
+      "repo": "Ghost",
+      "app_references": [
+        "ghost"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__TryGhost__Ghost.md",
+      "readme_download_url": null,
+      "readme_sha256": "a53cfa4b62be7d1b22587c1452788470cd49db2581904c9035cffa5dc867f168",
+      "error": null
+    },
     {
       "repo_key": "github.com/TwiN/gatus",
       "repo_url": "github.com/TwiN/gatus",
@@ -12,10 +42,10 @@
       "app_references": [
         "gatus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__TwiN__gatus.md",
-      "readme_download_url": null,
-      "readme_sha256": "bf49cebd39131ba12a700dd8e88d940b12176682de4986119124b4efd9b2a7f8",
+      "readme_download_url": "https://raw.githubusercontent.com/TwiN/gatus/master/README.md",
+      "readme_sha256": "01263be8e61b93514de9ce53a12cbabbc2f1fa78b70360ac44eeff37c82f60bd",
       "error": null
     },
     {
@@ -192,9 +222,9 @@
       "app_references": [
         "weblate"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__WeblateOrg__weblate.md",
-      "readme_download_url": "https://raw.githubusercontent.com/WeblateOrg/weblate/main/README.rst",
+      "readme_download_url": null,
       "readme_sha256": "94864058fad501e49766c86de68a10c0d110fa948480cd020cd436d6c311f435",
       "error": null
     },
@@ -222,10 +252,10 @@
       "app_references": [
         "christmas-community"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Wingysam__Christmas-Community.md",
-      "readme_download_url": null,
-      "readme_sha256": "c3fb9fbf61c2e2986e2655cb38d2cdc7ddadce0190484b12b32b5b82003892ba",
+      "readme_download_url": "https://raw.githubusercontent.com/Wingysam/Christmas-Community/master/README.md",
+      "readme_sha256": "76a5be14e1aef47461e55308bae41b40e2f874ad766481f735cf057169164d4a",
       "error": null
     },
     {
@@ -312,9 +342,9 @@
       "app_references": [
         "your-spotify"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Yooooomi__your_spotify.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Yooooomi/your_spotify/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7629ce3d0741f26d71f88837c05adf85a62779d9d2e46208cd6bf3f035b92758",
       "error": null
     },
@@ -372,9 +402,9 @@
       "app_references": [
         "anchor-notes"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ZhFahim__anchor.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ZhFahim/anchor/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8604d8d4f2a768bbb0d2163b0ed1da77ddf7a93477d61e8c760fe5f3b4ea59c3",
       "error": null
     },
@@ -447,10 +477,10 @@
       "app_references": [
         "npmplus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ZoeyVid__NPMplus.md",
-      "readme_download_url": null,
-      "readme_sha256": "e9483d3e2e385097d35fc3bca6791836b9464ec740dfd347f91addc5fb46d7da",
+      "readme_download_url": "https://raw.githubusercontent.com/ZoeyVid/NPMplus/develop/README.md",
+      "readme_sha256": "9f717a2bf54e5a6f4fe2e071e0d7f6be26bfd3fac9010a00dbf3bf051a0d679f",
       "error": null
     },
     {
@@ -570,7 +600,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__activepieces__activepieces.md",
       "readme_download_url": "https://raw.githubusercontent.com/activepieces/activepieces/main/README.md",
-      "readme_sha256": "3339a38ffe811c1f25b733f0e93717f71c432ad9688846d8b0f89d6aa83c5314",
+      "readme_sha256": "f1a7b2e1e53b0df97b97da5d4181c931532a96f298ebfe00ed07796b5fe399a9",
       "error": null
     },
     {
@@ -694,6 +724,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/afaneca/myfin",
+      "repo_url": "github.com/afaneca/myfin",
+      "host": "github.com",
+      "owner": "afaneca",
+      "repo": "myfin",
+      "app_references": [
+        "myfin"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__afaneca__myfin.md",
+      "readme_download_url": "https://raw.githubusercontent.com/afaneca/myfin/master/README.md",
+      "readme_sha256": "f809b6722cbb86da73b7f6cc69ceed61f633a126924f7040d749cee49749ebd8",
+      "error": null
+    },
+    {
       "repo_key": "github.com/agersant/polaris",
       "repo_url": "github.com/agersant/polaris",
       "host": "github.com",
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__agersant__polaris.md",
       "readme_download_url": null,
       "readme_sha256": "306ed09a32852e1b0a4f8203c16880e93a77ca37bf9f999c268f6fd17cd01d2e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/agregarr/agregarr",
-      "repo_url": "github.com/agregarr/agregarr",
-      "host": "github.com",
-      "owner": "agregarr",
-      "repo": "agregarr",
-      "app_references": [
-        "agregarr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__agregarr__agregarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "65d98aecdc50ef98a141568a0c1523f75f7d44705956a4ef833d0a8fe5201d94",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/aizhimou/pigeon-pod",
-      "repo_url": "github.com/aizhimou/pigeon-pod",
-      "host": "github.com",
-      "owner": "aizhimou",
-      "repo": "pigeon-pod",
-      "app_references": [
-        "pigeonpod"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__aizhimou__pigeon-pod.md",
-      "readme_download_url": null,
-      "readme_sha256": "4c699bccf55cbf6cc4a679ce6270464b0d73fca6b098efb17c53349a7cfe0fe8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/akaunting/akaunting",
-      "repo_url": "github.com/akaunting/akaunting",
-      "host": "github.com",
-      "owner": "akaunting",
-      "repo": "akaunting",
-      "app_references": [
-        "akaunting"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__akaunting__akaunting.md",
-      "readme_download_url": null,
-      "readme_sha256": "9f3c69bd3060322d90a580a1ab69c748c71d5093b0f17dbc43d71eac522d4e77",
       "error": null
     }
   ]

@@ -1,8 +1,100 @@
 {
   "chunk": 16,
   "count": 50,
-  "generated_at": "2026-05-31T07:04:49Z",
+  "generated_at": "2026-06-07T07:12:22Z",
   "items": [
+    {
+      "reference": "nps-enhanced",
+      "name": "NPS Enhanced",
+      "website": "d-jy.net/docs/nps/",
+      "description": "Lightweight NAT traversal and reverse proxy",
+      "repo_url": "github.com/djylb/nps",
+      "repo_key": "github.com/djylb/nps",
+      "stars": null,
+      "forks": 11,
+      "updated_at": "14",
+      "license": null,
+      "tags": [
+        "Remote Access",
+        "Reverse Proxy"
+      ],
+      "readme_path": "knowledge/readmes/github.com__djylb__nps.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "65b0717f72fec442cdd71d8f355760cc3c6590b5f66e0ef1ad4011fd5a6a7ef6"
+      }
+    },
+    {
+      "reference": "ntfy",
+      "name": "ntfy",
+      "website": "ntfy.sh",
+      "description": "Simple HTTP-based pub-sub notification service",
+      "repo_url": "github.com/binwiederhier/ntfy",
+      "repo_key": "github.com/binwiederhier/ntfy",
+      "stars": null,
+      "forks": 1,
+      "updated_at": "14",
+      "license": null,
+      "tags": [
+        "Meal Planning",
+        "Notifications"
+      ],
+      "readme_path": "knowledge/readmes/github.com__binwiederhier__ntfy.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "f787a600fccb50144fe8604f185c1de8b7c9decc9084de4c5de0f767956f5837"
+      }
+    },
+    {
+      "reference": "nutify",
+      "name": "Nutify",
+      "website": "github.com/DartSteven/Nutify",
+      "description": "Modern web-based UPS monitoring",
+      "repo_url": "github.com/DartSteven/Nutify",
+      "repo_key": "github.com/DartSteven/Nutify",
+      "stars": null,
+      "forks": 8,
+      "updated_at": "29",
+      "license": null,
+      "tags": [
+        "Contacts",
+        "Monitoring"
+      ],
+      "readme_path": "knowledge/readmes/github.com__DartSteven__Nutify.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "db5f25a72ec738d1a6d706ac5f70267ce338a9459150375b9db55c8bd0656d82"
+      }
+    },
+    {
+      "reference": "nutritrace",
+      "name": "NutriTrace",
+      "website": "github.com/TraceApps/nutritrace",
+      "description": "Personal nutrition tracker",
+      "repo_url": "github.com/TraceApps/nutritrace",
+      "repo_key": "github.com/TraceApps/nutritrace",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "33",
+      "license": null,
+      "tags": [
+        "Health and Wellness",
+        "Tracking"
+      ],
+      "readme_path": "knowledge/readmes/github.com__TraceApps__nutritrace.md",
+      "readme_status": "ok",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "c313ea00caed0c0d821cdeb779012eac6cffbb290af52eafd9e068449663bec6"
+      }
+    },
     {
       "reference": "nzb-dav",
       "name": "Nzb DAV",
@@ -25,8 +117,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "1f518e3d3043c151085ae210fa23ef3fa873859e2f7b2685a221905b1f4934df"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "f98ee5d9702d2ceef0c02d7c6910195ec223985076c39b23a91ef4d54a814ce7"
       }
     },
     {
@@ -48,8 +140,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "9297797704c6c900348e63d514091ffd9c72ff3ad6db39dc2575291f6634e5af"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "fe573bf9dc97546ceb93ce697681d51182616467c7b23984de116854e220df2e"
       }
     },
     {
@@ -61,7 +153,7 @@
       "repo_key": "github.com/oauth2-proxy/oauth2-proxy",
       "stars": null,
       "forks": 15,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Authentication",
@@ -71,8 +163,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "342f99fd5c226b408df4d7c8b40e8ef38aa8b37fcc8fdfef5f0638ac51845da2"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "27b71f5ddf8046273dfaa94eb14b76db4a02a7f2a50cbe3bdb3a6356b6018b55"
       }
     },
     {
@@ -84,18 +176,18 @@
       "repo_key": "github.com/TheSpaghettiDetective/obico-server",
       "stars": null,
       "forks": 0,
-      "updated_at": "38",
+      "updated_at": "39",
       "license": null,
       "tags": [
         "3D Printing",
-        "Search Engines"
+        "Server Management"
       ],
       "readme_path": "knowledge/readmes/github.com__TheSpaghettiDetective__obico-server.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "e5a876d648b06ac4388031ceb0ff3b6154e1487b44dd3230608d0d6780250913"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "85d9cd487d5273ca44f5db7ed851e18107c738df9b326c864f0d3e36e112b6c8"
       }
     },
     {
@@ -107,7 +199,7 @@
       "repo_key": "github.com/vrtmrz/obsidian-livesync",
       "stars": null,
       "forks": 15,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "File Transfer and Sync",
@@ -115,11 +207,11 @@
         "Wiki"
       ],
       "readme_path": "knowledge/readmes/github.com__vrtmrz__obsidian-livesync.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "f56aa1722b01f809b0f63f8df6c92630c94d48bcdbd28e76586e8a12744904c4"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "ae15eba2f1107fde11a2b249c6577563bca4d01d76077e6e67d3feb59888aed7"
       }
     },
     {
@@ -141,8 +233,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "2bd4bd2a1dc4dfc73dd2fb976081983cdd8e22c872d552d2bd1c61ad311de4ef"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "9accae508c77fb466b5237334d6b7174e3770a5d6b3416c4ca96029664120f57"
       }
     },
     {
@@ -154,18 +246,18 @@
       "repo_key": "github.com/octelium/octelium",
       "stars": null,
       "forks": 0,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
-        "Books",
+        "E-commerce",
         "Remote Access"
       ],
       "readme_path": "knowledge/readmes/github.com__octelium__octelium.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "86925f2ff7f7c53dc3a702df2f3614f6f920b0ec9acc8eb3b64cacf4040ac96a"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "7eb2e3bfe051d4e276a04423584aef1bceb35fd4b9a46ae2c95bd00a57a67b24"
       }
     },
     {
@@ -187,8 +279,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "c75ef5195445ac7e44ee68ff138b7611ded8a22eadba0d8419775bfb05fe2b80"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "f642d76f3b7ceec147b6fe3a822a787ada60c32fea21866a4a766954d2c532f9"
       }
     },
     {
@@ -200,18 +292,18 @@
       "repo_key": "github.com/OctoPrint/OctoPrint",
       "stars": null,
       "forks": 0,
-      "updated_at": "28",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "3D Printing",
-        "Budgeting"
+        "Monitoring"
       ],
       "readme_path": "knowledge/readmes/github.com__OctoPrint__OctoPrint.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "7c44d5766060c8d9dfe4635c877db0381fb1d230aae3d53641975c786e11a586"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "9f3b27418731ad607ac483710c25c1b4ab9db128404ff18fc3f45b831b6e112e"
       }
     },
     {
@@ -223,7 +315,7 @@
       "repo_key": "github.com/simonwep/ocular",
       "stars": null,
       "forks": 15,
-      "updated_at": "38",
+      "updated_at": "39",
       "license": null,
       "tags": [
         "Budgeting",
@@ -234,8 +326,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "f1a5bdd014661450250f3189fdb81721dec0148ac102c23bbac6e4e8a2e02eb9"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "3aca635b740d3dec9e066749c182facc8b8e8bab8be038c7415bb4e82fe3a849"
       }
     },
     {
@@ -247,7 +339,7 @@
       "repo_key": "github.com/odoo/odoo",
       "stars": null,
       "forks": 8,
-      "updated_at": "28",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Accounting",
@@ -262,8 +354,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "73b1580c05feb4e05a30c168971734461aaeae98deee50604cb798c04f58c4be"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "c50dbc8dfc4d300e123c72a4f61f2a05064ddd3e369c5643715bc1cdd87fabb2"
       }
     },
     {
@@ -275,7 +367,7 @@
       "repo_key": "github.com/ulsklyc/oikos",
       "stars": null,
       "forks": 15,
-      "updated_at": "19",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Grocery Lists",
@@ -285,8 +377,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "e5f3ab0798d0f21846186dd1bc3f3daad10b9dedd00658b8226ca9d99325fa3e"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "afdfdb541384821611148c5cb9d0bc5b38b8b60a3b2440c0398b901aac56af5a"
       }
     },
     {
@@ -298,18 +390,18 @@
       "repo_key": "github.com/OliveTin/OliveTin",
       "stars": null,
       "forks": 0,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
-        "Books",
+        "E-commerce",
         "Remote Access"
       ],
       "readme_path": "knowledge/readmes/github.com__OliveTin__OliveTin.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "fe4454cf0e78ab4e4c9b8998b43228281d91e99ef777d51892e4cd2132db9a3c"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "3f10f5908a8fb6409d98a52a014f1ab0cdf769a576b75107825ad7c117232761"
       }
     },
     {
@@ -328,11 +420,11 @@
         "Requests"
       ],
       "readme_path": "knowledge/readmes/github.com__Ombi-app__Ombi.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "722cbab9d5196f9a9a091f657ed67ab9614f36864dff055da6a99d54234a2c71"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "410695fda777f0b6848eea154e51cecd29d8259f591d4d2ef3b88521e78c7700"
       }
     },
     {
@@ -344,7 +436,7 @@
       "repo_key": "github.com/kWeglinski/OmniPoly",
       "stars": null,
       "forks": 11,
-      "updated_at": "17",
+      "updated_at": "18",
       "license": null,
       "tags": [
         "Front End",
@@ -354,8 +446,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "1fd52f18eec430e4fb4363506fcc69ff2c94840448e04faadf53626f2c589a6c"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "4444d3f8aa20330db34d1997d99cce6194c83ff4421b7aa8808c6399e8cc5c3e"
       }
     },
     {
@@ -367,7 +459,7 @@
       "repo_key": "github.com/iib0011/omni-tools",
       "stars": null,
       "forks": 15,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Email",
@@ -377,8 +469,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "bcc78ca10c70a029e94ce5f9c22f533b13540acb8108621ace57970b06d31385"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "a35f5002948b2af051b654d4c67587b5011f188c0f215719cd489dc642c834e9"
       }
     },
     {
@@ -390,7 +482,7 @@
       "repo_key": "github.com/EinAeffchen/Omoide",
       "stars": null,
       "forks": 8,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Bookmarks",
@@ -403,8 +495,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "e0299e2026a580a23f4353245a475e20766c1e4cf4d4c55b768a792fa58197a6"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "4f916d59102825c47ddfb8201449745b932b67bd72e698c74be211f745216a09"
       }
     },
     {
@@ -416,7 +508,7 @@
       "repo_key": "github.com/theonedev/onedev",
       "stars": null,
       "forks": 15,
-      "updated_at": "18",
+      "updated_at": "19",
       "license": null,
       "tags": [
         "Development",
@@ -426,8 +518,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "984ba324318fa88a3e4769f5ad0dec0d260308a1c270ffa40615a8171127a1e6"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "46570902eadc9215dd4ee613d57f325c250e47fb7a433700f12a4828b0d84e04"
       }
     },
     {
@@ -439,7 +531,7 @@
       "repo_key": "github.com/OneUptime/oneuptime",
       "stars": null,
       "forks": 1,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Monitoring",
@@ -449,8 +541,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "82a749641904668ddbd528a7a934c668bf2551a19f981b8dd1dee84426982c40"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "bd6010894fb4c430975a52606bbc59833cb9f00b93b8401d922038f48652a0cf"
       }
     },
     {
@@ -462,7 +554,7 @@
       "repo_key": "github.com/cpvalente/ontime",
       "stars": null,
       "forks": 8,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Events",
@@ -472,8 +564,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "135aad5fce47942aef7969c7e2f7590d3ccc6b23b4052c3862a2b6ae8848cd86"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "c3afbf820826d6d20f8461ed3efb49f0dd5d2e3e4f3eea6b6d8ad98ae9a91b13"
       }
     },
     {
@@ -485,18 +577,18 @@
       "repo_key": "github.com/onllm-dev/onWatch",
       "stars": null,
       "forks": 11,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Artificial Intelligence",
         "Tracking"
       ],
       "readme_path": "knowledge/readmes/github.com__onllm-dev__onWatch.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "10527ad2a0c9c5b8922479fad92b6e0a2eb8d93a1763ed38ae1b0d93b1cfa025"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "188cff7c822504a018736764b05101f869294b163fd9c19b5b2f485516a17fba"
       }
     },
     {
@@ -508,7 +600,7 @@
       "repo_key": "github.com/LogicLabs-OU/OpenArchiver",
       "stars": null,
       "forks": 0,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Archive",
@@ -518,8 +610,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "4eae9feb5ec83cb4537dc7ee828672444e1f98160808e47b17b4d5c877bd9620"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "40cc77fcc5a95a1fcaae9de2a3256d7673de25a4d4c24061cf0bd5ce846991aa"
       }
     },
     {
@@ -531,18 +623,18 @@
       "repo_key": "github.com/arpanghosh8453/open-dronelog",
       "stars": null,
       "forks": 0,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
-        "Archive",
+        "Search Engines",
         "Tracking"
       ],
       "readme_path": "knowledge/readmes/github.com__arpanghosh8453__open-dronelog.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "37cf2e27337fc1ae9af3545e6cc3a492a2b5b40806466877fa019e2b3d5be10d"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "336d244d825e1bf62ebfd9798d250acdd1986cc0502694f32872c53d5c0ec664"
       }
     },
     {
@@ -554,7 +646,7 @@
       "repo_key": "github.com/Open-Web-Analytics/Open-Web-Analytics",
       "stars": null,
       "forks": 10,
-      "updated_at": "25",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Dashboard",
@@ -564,8 +656,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "a9ab5c488bf8a46b795310f58ffcbe286b41156805d13214b0844df207a3d80b"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "41da992722cf933ea0fe4377372e1c907a2b0f5b3d7885a64a6f63a7772bce7f"
       }
     },
     {
@@ -577,7 +669,7 @@
       "repo_key": "github.com/open-webui/open-webui",
       "stars": null,
       "forks": 8,
-      "updated_at": "28",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Artificial Intelligence",
@@ -587,8 +679,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "32641c9258660d646f856ee5c7e0ed1dd5a63516fa5158965151b87f78f25fdf"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "dcffeb7e667ccce50692e0b99dea8f55507e258e1a4f8a1c80e40b695fb6323b"
       }
     },
     {
@@ -600,7 +692,7 @@
       "repo_key": "github.com/openbao/openbao",
       "stars": null,
       "forks": 16,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Password Manager",
@@ -610,8 +702,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "4ef430ab4629de97b46be71ef0c6ac3d2243a33efcddab96a9e7aced3657cde1"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "bbbf7e07802f2cd4b8182f3e86d73e383d7c1b00a89a56093e8593023931599d"
       }
     },
     {
@@ -634,8 +726,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "69aa319a855f8018ef1c03ef4935a2e55f27b3d530f5dde7ef4b95c3eed93171"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "5027c326964e6d186f6266f4a984c43b72ee035bb5c0e3641aa5f006e2687e95"
       }
     },
     {
@@ -647,18 +739,18 @@
       "repo_key": "github.com/JonasHiltl/openchangelog",
       "stars": null,
       "forks": 0,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
-        "Books",
-        "Development"
+        "Development",
+        "E-commerce"
       ],
       "readme_path": "knowledge/readmes/github.com__JonasHiltl__openchangelog.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "531d71543acf80aa7268cbda48c18a507f115814c640b39f9c98494bd1a8c5fc"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "ef6d76be3e54811213e1f31c3268247c4ab8c4709afde79c1e9798ad3cb57c8a"
       }
     },
     {
@@ -670,7 +762,7 @@
       "repo_key": "github.com/openclaw/openclaw",
       "stars": null,
       "forks": 8,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Artificial Intelligence",
@@ -680,8 +772,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "00867bd7aa6097293db16d0de2257c4f934d81109bfe999990ef215d626776c8"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "1b82382cd917f392044700f1409efca946c1d03f6dc988ee63813b79d335281b"
       }
     },
     {
@@ -693,7 +785,7 @@
       "repo_key": "github.com/opencloud-eu/opencloud",
       "stars": null,
       "forks": 1,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Cloud Storage",
@@ -704,8 +796,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "248e00b00985a5b4a33f8d83651b54f3bab50487f000d6d1955e17d52aaaaf60"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "d89094fe60851e4a44ecb96c151853edfadfc08a9cce96b08c2f192faaccfd55"
       }
     },
     {
@@ -717,18 +809,18 @@
       "repo_key": "github.com/OpenCut-app/OpenCut",
       "stars": null,
       "forks": 15,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Email",
         "Video Editing"
       ],
       "readme_path": "knowledge/readmes/github.com__OpenCut-app__OpenCut.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "ca5427501bccd79ff92f2a34c6d8d09452fc32c3c8b021d42b812dc792712157"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "6a3c2d83c0c5495fab7c41d5e557f5e28310b9c1ec5a8cd978d1c36ec3421b79"
       }
     },
     {
@@ -740,7 +832,7 @@
       "repo_key": "github.com/openemr/openemr",
       "stars": null,
       "forks": 11,
-      "updated_at": "25",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Database",
@@ -750,8 +842,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "4f519e7968d96005fb547ef677cec17bf329c3c813f7c3ea56732edc662e1f3b"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "1ddf62b6ae74e237858f4a82c3fd6ef51219e412421d7d46194f56797648ac80"
       }
     },
     {
@@ -763,18 +855,18 @@
       "repo_key": "github.com/thomiceli/opengist",
       "stars": null,
       "forks": 0,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
-        "Books",
+        "E-commerce",
         "Pastebin"
       ],
       "readme_path": "knowledge/readmes/github.com__thomiceli__opengist.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "f3bd60f5ca77825d49ca82457ca4edfee84e1b843a9393eafc1863c8e5e5ddaf"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "068cdb9e165efa2302771153cdbcd4aef8a4e7babc40271ee1ccea9fe2ba92ea"
       }
     },
     {
@@ -786,7 +878,7 @@
       "repo_key": "github.com/OpenListTeam/OpenList",
       "stars": null,
       "forks": 0,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "File Management",
@@ -796,8 +888,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "3196cb75bf4cfb9294baf00a3849d58609d8d0ca693790aa45a30393f71c0e47"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "65df0b1c19173bd7eaa8ced382996af83908e42596a9a023aca6cf15d7b781d6"
       }
     },
     {
@@ -809,7 +901,7 @@
       "repo_key": "github.com/stefanpejcic/OpenPanel",
       "stars": null,
       "forks": 8,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Contacts",
@@ -819,8 +911,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "7a3faca7ecc944d65fec0d663bc51a524872547705ee49cfbc23a1b3781008a0"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "54b8b828c18e2a54b7f33cbdcff946b7fc2c7f099d0c10a374c6e596afd9116b"
       }
     },
     {
@@ -832,7 +924,7 @@
       "repo_key": "github.com/opf/openproject",
       "stars": null,
       "forks": 11,
-      "updated_at": "29",
+      "updated_at": "30",
       "license": null,
       "tags": [
         "Kanban",
@@ -842,8 +934,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "76765d0cc2cf54087cb13a7e0eefa04ba9076286b2e28f45896886ad48f1ceaa"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "e39e1d6f963021445829b02364a5d3f14c713d8d98d2352217a7fe6a1fde51ba"
       }
     },
     {
@@ -866,8 +958,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "3d38bc03cdb5cc9bf1804f72891f599c239517801af03001e2b0c70a9a5ae5fd"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "8264643e2539c29755bc21ff61420d91bf27f16383cdd45f675bc3152607689a"
       }
     },
     {
@@ -879,7 +971,7 @@
       "repo_key": "github.com/OpenSignLabs/OpenSign",
       "stars": null,
       "forks": 8,
-      "updated_at": "19",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Contacts",
@@ -889,8 +981,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "be8d784ae7f84aab97419e2724cc12ce6f1bf0048fa961c15dde5ac6c06ed375"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "ce979d71c08f0e4552cfbfe84a34db5371b8c7f6e4f51db92f057aa9b9cfb05a"
       }
     },
     {
@@ -902,7 +994,7 @@
       "repo_key": "github.com/openspeedtest/Speed-Test",
       "stars": null,
       "forks": 15,
-      "updated_at": "19",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Email",
@@ -912,8 +1004,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "75afc2449fa085da2a2fd38c34062058aaaf93906362eb28d2150172b349df94"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "bc2d5e4e2be140ab643f5ce441b732542b533ad38ae25c3e96d694983252d559"
       }
     },
     {
@@ -925,7 +1017,7 @@
       "repo_key": "gitlab.opencode.de/opentalk/ot-setup",
       "stars": null,
       "forks": 9,
-      "updated_at": "31",
+      "updated_at": "32",
       "license": null,
       "tags": [
         "Messaging",
@@ -935,8 +1027,8 @@
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "df28a9a675c616b718aeb1f9a2fa7f76e7a2f0089eddf03355bcd676a27cd37c"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "9d2e025ecfaefbdb592bd7afa61e61d6e8e56cd8c6d0ac1287a8952ef9996f93"
       }
     },
     {
@@ -948,7 +1040,7 @@
       "repo_key": "github.com/open-uem/openuem-console",
       "stars": null,
       "forks": 1,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Inventory Management",
@@ -958,8 +1050,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "e53c5b1ecc5cead178a9edea43a5d6cf6f1527ff644fd0b90aa251d838e50a28"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "6f255a269a63220847e10fb386a716cc250d5427815887216caea8187d8ad512"
       }
     },
     {
@@ -981,8 +1073,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "00fde9c90e23e4a0cb0639e4dfee92dcc848275a415fb59ffdd72298e1b175e4"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "947393f80678dc6a7dab40d7291004ecffe733ac9128ebf00f400b06576eecf5"
       }
     },
     {
@@ -994,7 +1086,7 @@
       "repo_key": "github.com/operately/operately",
       "stars": null,
       "forks": 8,
-      "updated_at": "9",
+      "updated_at": "10",
       "license": null,
       "tags": [
         "Project Management",
@@ -1004,8 +1096,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "6703a58edb409b6d066c2158a4927a7a5ec52e62088cd6f1bda4787ad4b15e84"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "97eae779fee142357c941f31aec1326c208352594207d5ac8afcb2afc26f6a5f"
       }
     },
     {
@@ -1017,18 +1109,18 @@
       "repo_key": "github.com/operational-co/operational.co",
       "stars": null,
       "forks": 0,
-      "updated_at": "38",
+      "updated_at": "39",
       "license": null,
       "tags": [
-        "Search Engines",
+        "Server Management",
         "Tracking"
       ],
       "readme_path": "knowledge/readmes/github.com__operational-co__operational.co.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "1aaf0f35053e99128306729f6f64c65902da958fd3386a8bae4225bdbe14027b"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "08c549a33fd5c6f3003d6b1b8c98f975f5ed53e4554eb5a9f9834299fcd33cfa"
       }
     },
     {
@@ -1040,7 +1132,7 @@
       "repo_key": "github.com/OpnForm/OpnForm",
       "stars": null,
       "forks": 8,
-      "updated_at": "25",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Note-Taking",
@@ -1052,8 +1144,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "e1fb7c76ca12088c3c14f274a170f55962b646066b2e0df5b3c41f41a4d5598b"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "5963f141fbacbd57cba4febac6d4d4914fb3cced1dc1f5642e37013c51f83724"
       }
     },
     {
@@ -1065,7 +1157,7 @@
       "repo_key": "github.com/opnsense/core",
       "stars": null,
       "forks": 3,
-      "updated_at": "25",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Platform",
@@ -1075,100 +1167,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "9388b9e7a349ec5b34a69b5ee58ec4a8582e7c1fdd3de2864e726248bd4b6519"
-      }
-    },
-    {
-      "reference": "organizr",
-      "name": "Organizr",
-      "website": "github.com/causefx/Organizr",
-      "description": "Homelab services organizer and dashboard",
-      "repo_url": "github.com/causefx/Organizr",
-      "repo_key": "github.com/causefx/Organizr",
-      "stars": null,
-      "forks": 11,
-      "updated_at": "25",
-      "license": null,
-      "tags": [
-        "Dashboard",
-        "Database"
-      ],
-      "readme_path": "knowledge/readmes/github.com__causefx__Organizr.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "d8f0c00f938f8e7221441469f877f304ffd6fef1a1f0427fef5b5879f40030c7"
-      }
-    },
-    {
-      "reference": "origamivault",
-      "name": "OrigamiVault",
-      "website": "github.com/origamivault/origamivault",
-      "description": "Encrypt secrets and share them with QR codes",
-      "repo_url": "github.com/origamivault/origamivault",
-      "repo_key": "github.com/origamivault/origamivault",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "17",
-      "license": null,
-      "tags": [
-        "Password Manager",
-        "Privacy"
-      ],
-      "readme_path": "knowledge/readmes/github.com__origamivault__origamivault.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "7e44523682d98bc4e78b9ce54f0939726ac4d3dd81feaed09732f7029357b66f"
-      }
-    },
-    {
-      "reference": "osticket",
-      "name": "osTicket",
-      "website": "osticket.com",
-      "description": "Open source support ticket system",
-      "repo_url": "github.com/osTicket/osTicket",
-      "repo_key": "github.com/osTicket/osTicket",
-      "stars": null,
-      "forks": 10,
-      "updated_at": "25",
-      "license": null,
-      "tags": [
-        "Dashboard",
-        "Support / Ticketing"
-      ],
-      "readme_path": "knowledge/readmes/github.com__osTicket__osTicket.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "df4031e0b78b6e2499e8eca18cf15aa799c475aadb69e9a79ddd4eecd98a99e8"
-      }
-    },
-    {
-      "reference": "ots",
-      "name": "OTS",
-      "website": "ots.fyi",
-      "description": "One-time secret sharing platform",
-      "repo_url": "github.com/Luzifer/ots",
-      "repo_key": "github.com/Luzifer/ots",
-      "stars": null,
-      "forks": 1,
-      "updated_at": "13",
-      "license": null,
-      "tags": [
-        "File Sharing",
-        "Privacy"
-      ],
-      "readme_path": "knowledge/readmes/github.com__Luzifer__ots.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "8638321d0aa71f47a76e62ae6dca49ae17a0e559c99175cf8b2252fef86ecb88"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "988035bb0932bab16fef59e06f6fdc0421dcc02b451a281b1330cac09121d791"
       }
     }
   ]

@@ -50,7 +50,7 @@ In order to run Zerobyte, you need to have Docker and Docker Compose installed o
 ```yaml
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.37
+    image: ghcr.io/nicotsx/zerobyte:v0.38
     container_name: zerobyte
     restart: unless-stopped
     cap_add:
@@ -156,7 +156,7 @@ If you only need to back up locally-mounted folders and don't require remote sha
 ```yaml
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.37
+    image: ghcr.io/nicotsx/zerobyte:v0.38
     container_name: zerobyte
     restart: unless-stopped
     ports:
@@ -195,7 +195,7 @@ If you want to backup a local directory on the same host where Zerobyte is runni
 ```diff
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.37
+    image: ghcr.io/nicotsx/zerobyte:v0.38
     container_name: zerobyte
     restart: unless-stopped
     cap_add:
@@ -270,7 +270,7 @@ Zerobyte can use [rclone](https://rclone.org/) to support 40+ cloud storage prov
    ```diff
    services:
      zerobyte:
-       image: ghcr.io/nicotsx/zerobyte:v0.37
+       image: ghcr.io/nicotsx/zerobyte:v0.38
        container_name: zerobyte
        restart: unless-stopped
        cap_add:
@@ -335,6 +335,12 @@ Zerobyte allows you to easily restore your data from backups. To restore data, n
 ## Authentication
 
 Zerobyte uses [better-auth](https://github.com/better-auth/better-auth) for authentication and session management. The authentication system automatically adapts to your deployment scenario:
+
+### Users and roles
+
+Zerobyte does not currently provide fine-grained RBAC for backup operations. Authenticated organization members are trusted operators for repositories, volumes, backup schedules, restores, and notification destinations in their organization.
+
+Organization roles mainly restrict organization-management and instance-management actions. For example, normal members cannot manage members, SSO settings, invitations, registration, or global users, but they can still operate backup resources. Only add users to an organization if you are comfortable with them using the storage, volume, and notification capabilities configured for the instance.
 
 ### Cookie security
 

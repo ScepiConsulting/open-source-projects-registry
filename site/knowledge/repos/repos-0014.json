@@ -1,8 +1,53 @@
 {
   "chunk": 14,
   "count": 50,
-  "generated_at": "2026-05-31T07:04:49Z",
+  "generated_at": "2026-06-07T07:12:22Z",
   "items": [
+    {
+      "repo_key": "github.com/glanceapp/glance",
+      "repo_url": "github.com/glanceapp/glance",
+      "host": "github.com",
+      "owner": "glanceapp",
+      "repo": "glance",
+      "app_references": [
+        "glance"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__glanceapp__glance.md",
+      "readme_download_url": null,
+      "readme_sha256": "8bd07cbba9ec198a2cca8be73454140edb4c99956c541e7e0b7b4618d7ef0c11",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/glauth/glauth",
+      "repo_url": "github.com/glauth/glauth",
+      "host": "github.com",
+      "owner": "glauth",
+      "repo": "glauth",
+      "app_references": [
+        "glauth"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__glauth__glauth.md",
+      "readme_download_url": null,
+      "readme_sha256": "b787eb76f2526b45eeed24c686182f394f8e76fd1a8f5cc0adf54afb1ad9af20",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/glenndehaan/unifi-voucher-site",
+      "repo_url": "github.com/glenndehaan/unifi-voucher-site",
+      "host": "github.com",
+      "owner": "glenndehaan",
+      "repo": "unifi-voucher-site",
+      "app_references": [
+        "unifi-voucher-site"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__glenndehaan__unifi-voucher-site.md",
+      "readme_download_url": null,
+      "readme_sha256": "7efb36f4394b2c8d4e409c582d5f5f31d22b2f92558ad8e1074ab2bfb65515c5",
+      "error": null
+    },
     {
       "repo_key": "github.com/glpi-project/glpi",
       "repo_url": "github.com/glpi-project/glpi",
@@ -57,9 +102,9 @@
       "app_references": [
         "gitea"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__go-gitea__gitea.md",
-      "readme_download_url": "https://raw.githubusercontent.com/go-gitea/gitea/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e0ce54d46b2ccc116d2953aa0530fb9b3db0b24444c2a47ca56125e05896c45b",
       "error": null
     },
@@ -117,10 +162,10 @@
       "app_references": [
         "gogs"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gogs__gogs.md",
-      "readme_download_url": null,
-      "readme_sha256": "b75802f5e8382784bde65249f38c49dc7ae5aa666d387bba9d22ff56ff0845b5",
+      "readme_download_url": "https://raw.githubusercontent.com/gogs/gogs/main/README.md",
+      "readme_sha256": "28f475320eca1dd82b7ace747020b94a4853e86f41ed684fd95802d1b1775644",
       "error": null
     },
     {
@@ -267,10 +312,10 @@
       "app_references": [
         "grimmory"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__grimmory-tools__grimmory.md",
-      "readme_download_url": null,
-      "readme_sha256": "171c3a17b076795bb9c818378b8ccbc18943f2af5e4c2cb7537dfe34de4ef0c8",
+      "readme_download_url": "https://raw.githubusercontent.com/grimmory-tools/grimmory/develop/README.md",
+      "readme_sha256": "750716dbeae20ae8ccb65f267c85c801c3e8b37aedda3491945dfa740898090d",
       "error": null
     },
     {
@@ -282,9 +327,9 @@
       "app_references": [
         "grist"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gristlabs__grist-core.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gristlabs/grist-core/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8d56a03f0e9e966af95b890a1834a7c92e57b2dd5ac5161805841d3d26b3f24d",
       "error": null
     },
@@ -312,9 +357,9 @@
       "app_references": [
         "snipe-it"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__grokability__snipe-it.md",
-      "readme_download_url": "https://raw.githubusercontent.com/grokability/snipe-it/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "9cf1537867d5edb6a793378b4eb62522edf0228cedc7d22f2b08e6d809f0bde9",
       "error": null
     },
@@ -372,10 +417,10 @@
       "app_references": [
         "yubal"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__guillevc__yubal.md",
-      "readme_download_url": null,
-      "readme_sha256": "06f218cab958b7e0ecdf0bad12405114a93ec1162f8e5163f2c0191254436e34",
+      "readme_download_url": "https://raw.githubusercontent.com/guillevc/yubal/master/README.md",
+      "readme_sha256": "a2496f3f656d0719bc943288b04f99cf4db5a2650302d95bccdd96a793de6a8b",
       "error": null
     },
     {
@@ -417,10 +462,10 @@
       "app_references": [
         "haproxy"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__haproxy__haproxy.md",
-      "readme_download_url": null,
-      "readme_sha256": "b3a42a8320ea21942b298b69344ce4bc133570d285b25a47c0cdf122270315e3",
+      "readme_download_url": "https://raw.githubusercontent.com/haproxy/haproxy/master/README.md",
+      "readme_sha256": "61ff0655d2661a2d4c0a31807145f7122e0830c7b6f97cc997bd93943251b381",
       "error": null
     },
     {
@@ -432,9 +477,9 @@
       "app_references": [
         "lubelogger"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__hargata__lubelog.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hargata/lubelog/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8c53209e8aa988aa25a3cfb24e2f4b18bdee5eab9be1947132b3b00503873396",
       "error": null
     },
@@ -612,10 +657,10 @@
       "app_references": [
         "homarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__homarr-labs__homarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "a5e08d9713802b0e3082be825907e5c61303ecb40bbc2833115155c1ec8ba582",
+      "readme_download_url": "https://raw.githubusercontent.com/homarr-labs/homarr/dev/docs/README.md",
+      "readme_sha256": "599b3083adc07386e2ccc9d86e29041cbf1ae70e0c5cb4fe6077a267577b0634",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__huginn__huginn.md",
       "readme_download_url": null,
       "readme_sha256": "d003fd656bf5152d00e6234e5fba1cd0aa911306893ec861859306c1cfe452ae",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/humhub/humhub",
-      "repo_url": "github.com/humhub/humhub",
-      "host": "github.com",
-      "owner": "humhub",
-      "repo": "humhub",
-      "app_references": [
-        "humhub"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__humhub__humhub.md",
-      "readme_download_url": null,
-      "readme_sha256": "ac4e36a26d863677f55378c07e6b0dbc48886a5b5ad5c83bd7ab9a1cfcd49c9b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/hwgilbert16/scholarsome",
-      "repo_url": "github.com/hwgilbert16/scholarsome",
-      "host": "github.com",
-      "owner": "hwgilbert16",
-      "repo": "scholarsome",
-      "app_references": [
-        "scholarsome"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__hwgilbert16__scholarsome.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hwgilbert16/scholarsome/develop/README.md",
-      "readme_sha256": "1f075052408ebb49af12e9a5b0f15a61b3fd856803e6141c5ac0b7a07c99d2c8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/hyvor/relay",
-      "repo_url": "github.com/hyvor/relay",
-      "host": "github.com",
-      "owner": "hyvor",
-      "repo": "relay",
-      "app_references": [
-        "hyvor-relay"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__hyvor__relay.md",
-      "readme_download_url": null,
-      "readme_sha256": "2fa317bbc7303310fa934a654820d89dc61a4b530857f84ad1ca6f1e371a7693",
       "error": null
     }
   ]

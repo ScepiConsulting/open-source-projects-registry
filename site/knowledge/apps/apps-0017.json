@@ -1,8 +1,100 @@
 {
   "chunk": 17,
   "count": 50,
-  "generated_at": "2026-05-31T07:04:49Z",
+  "generated_at": "2026-06-07T07:12:22Z",
   "items": [
+    {
+      "reference": "organizr",
+      "name": "Organizr",
+      "website": "github.com/causefx/Organizr",
+      "description": "Homelab services organizer and dashboard",
+      "repo_url": "github.com/causefx/Organizr",
+      "repo_key": "github.com/causefx/Organizr",
+      "stars": null,
+      "forks": 11,
+      "updated_at": "26",
+      "license": null,
+      "tags": [
+        "Dashboard",
+        "Database"
+      ],
+      "readme_path": "knowledge/readmes/github.com__causefx__Organizr.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "31131090b249d835ac083e5f6601e6d79c9533146c0f8b7a8fd738e21f73daec"
+      }
+    },
+    {
+      "reference": "origamivault",
+      "name": "OrigamiVault",
+      "website": "github.com/origamivault/origamivault",
+      "description": "Encrypt secrets and share them with QR codes",
+      "repo_url": "github.com/origamivault/origamivault",
+      "repo_key": "github.com/origamivault/origamivault",
+      "stars": null,
+      "forks": 8,
+      "updated_at": "18",
+      "license": null,
+      "tags": [
+        "Password Manager",
+        "Privacy"
+      ],
+      "readme_path": "knowledge/readmes/github.com__origamivault__origamivault.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "bf12e4a3843a2ad93653d3e162d690d6a2229d22f3401c8e53279f5a4f01b2f8"
+      }
+    },
+    {
+      "reference": "osticket",
+      "name": "osTicket",
+      "website": "osticket.com",
+      "description": "Open source support ticket system",
+      "repo_url": "github.com/osTicket/osTicket",
+      "repo_key": "github.com/osTicket/osTicket",
+      "stars": null,
+      "forks": 10,
+      "updated_at": "26",
+      "license": null,
+      "tags": [
+        "Dashboard",
+        "Support / Ticketing"
+      ],
+      "readme_path": "knowledge/readmes/github.com__osTicket__osTicket.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "a61cd7f125b01df85206c48736bb42e5de88497ee9b8eeefaa3904156572e0a8"
+      }
+    },
+    {
+      "reference": "ots",
+      "name": "OTS",
+      "website": "ots.fyi",
+      "description": "One-time secret sharing platform",
+      "repo_url": "github.com/Luzifer/ots",
+      "repo_key": "github.com/Luzifer/ots",
+      "stars": null,
+      "forks": 1,
+      "updated_at": "14",
+      "license": null,
+      "tags": [
+        "File Sharing",
+        "Privacy"
+      ],
+      "readme_path": "knowledge/readmes/github.com__Luzifer__ots.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "0a09d0cd9229885e162d56d489748f6a9e9d69f1d84f04729aebbcd0a755053b"
+      }
+    },
     {
       "reference": "an-otter-wiki",
       "name": "Otter Wiki",
@@ -12,7 +104,7 @@
       "repo_key": "github.com/redimp/otterwiki",
       "stars": null,
       "forks": 15,
-      "updated_at": "28",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Email",
@@ -22,8 +114,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "c0a12db60997acc40fbbc6424601456d40bcbe2dcc9d526f6d99c91ec9fbfe95"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "c684e7df9a6544dcc7ccfbb71c39a7c36d524cda88fab27396a265e7e4e87e63"
       }
     },
     {
@@ -35,7 +127,7 @@
       "repo_key": "github.com/outline/outline",
       "stars": null,
       "forks": 8,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Note-Taking",
@@ -46,8 +138,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "3945365176e262f3b34c64d819851bf998bad581c798034308be3ddba48daecc"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "712ee614de738f893d596b194ce3683e76da79959d951ce95ae1251b8d4cade9"
       }
     },
     {
@@ -59,18 +151,18 @@
       "repo_key": "github.com/overleaf/overleaf",
       "stars": null,
       "forks": 0,
-      "updated_at": "19",
+      "updated_at": "20",
       "license": null,
       "tags": [
-        "File Transfer and Sync",
+        "Grocery Lists",
         "LaTeX"
       ],
       "readme_path": "knowledge/readmes/github.com__overleaf__overleaf.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "b276d7b0ea79a68e655be98f0aae6f337b41457e5d96d2caaaf19116175966d3"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "3f727f10178ea53238185e24451bf587153e87ff3d624f3e8858a1b8525e0457"
       }
     },
     {
@@ -82,7 +174,7 @@
       "repo_key": "github.com/gssariev/overr-syncerr",
       "stars": null,
       "forks": 15,
-      "updated_at": "26",
+      "updated_at": "27",
       "license": null,
       "tags": [
         "Email",
@@ -92,8 +184,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "0c31593791abd8203f083f704588e146a4b7e5a8455ff52dc47c72e44e0f2955"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "8461d0853893f0bf0bc8f0979227fbbc2ca4ee4ef259438c6f59b7882af9e8c9"
       }
     },
     {
@@ -115,8 +207,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "d464bd11a78276f0a754c22ea53f133e1ea762428cedadb0294ec3fd9e80dc54"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "93520e578a9c0655e32355fc85359db91091ec0db18fa913e38d2c42788a6f32"
       }
     },
     {
@@ -128,7 +220,7 @@
       "repo_key": "github.com/owncast/owncast",
       "stars": null,
       "forks": 15,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Live Streaming",
@@ -138,8 +230,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "b03657987b8961a35f2fabc0719fcac1d33ca2af86d12d1e2f6d9dd2d979e6e0"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "8b7f4aedb8ce46ffb0dd32130556afac3c8df606508b9d5d94340edd9194bc35"
       }
     },
     {
@@ -151,7 +243,7 @@
       "repo_key": "github.com/owncloud/core",
       "stars": null,
       "forks": 0,
-      "updated_at": "25",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Cloud Storage",
@@ -162,8 +254,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "f19f9a00566e2199edbd29022c46c1355f8def733a9dc3d3053e8e87c9f4f1d8"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "78bc41257f81196332e9f98ca62a742919dcd7067c6aa7b2439558e4491430af"
       }
     },
     {
@@ -175,7 +267,7 @@
       "repo_key": "github.com/owncloud/ocis",
       "stars": null,
       "forks": 1,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Cloud Storage",
@@ -186,8 +278,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "a9291b4ff7f8f2b32d53eeafa92acfac4f2f8d4b4cc8c7655a67de82c98ed3d5"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "35cc3e2a3bba8a2c0d1c7c65c47b735d152bba92206fe1d621490788d0409da9"
       }
     },
     {
@@ -199,7 +291,7 @@
       "repo_key": "github.com/owntracks/frontend",
       "stars": null,
       "forks": 15,
-      "updated_at": "19",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Front End",
@@ -209,8 +301,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "cf2f85b89e99d91f589bf884a4a13a6d05c990537c030d2795df483879baf1b8"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "3f69b66990b8232b8cc7abd858d7a083106cef1aa017e09d72f55de479da4061"
       }
     },
     {
@@ -232,8 +324,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "08044fd0dce81dc893ea35db3957d431f7070a7026e17cadb5a3c586b8d524de"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "051426ead30a8e3889ae2785a6b8ec69591b549548dbe6b90d82b211c7fd1e08"
       }
     },
     {
@@ -245,18 +337,18 @@
       "repo_key": "github.com/AtalayaLabs/OxiCloud",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "31",
       "license": null,
       "tags": [
         "Cloud Storage",
         "Email"
       ],
       "readme_path": "knowledge/readmes/github.com__AtalayaLabs__OxiCloud.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "984c076a80724c3269caea6437732a7b63616b8f4a13c9899019b7ae27651f95"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "083ae6bf65befd0824dfb52d7f815efa63a7eca33fabffe2d8615456054cca5f"
       }
     },
     {
@@ -268,7 +360,7 @@
       "repo_key": "github.com/mrjackwills/oxker",
       "stars": null,
       "forks": 15,
-      "updated_at": "30",
+      "updated_at": "31",
       "license": null,
       "tags": [
         "Docker",
@@ -279,8 +371,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "c2f5b9059b98b0798ecc45029cfbbd2855c0f16e659816a7630f3461121c19b5"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "3ff28d5bfcff9b3b8c674776df81b95dbdd967b961a77d25bffdf373a769a187"
       }
     },
     {
@@ -292,18 +384,17 @@
       "repo_key": "github.com/WardPearce/paaster",
       "stars": null,
       "forks": 0,
-      "updated_at": "32",
+      "updated_at": "33",
       "license": null,
       "tags": [
-        "Password Manager",
         "Pastebin"
       ],
       "readme_path": "knowledge/readmes/github.com__WardPearce__paaster.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "1035223728ebe861f8b0ec7b4b9f87818c32b5c37560ee71ab829f78ecb32f95"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "6af191fd071ad2ffb3fbda5f670ec65d7ac8f041c5b9b442430e64dbd3b1872e"
       }
     },
     {
@@ -315,7 +406,7 @@
       "repo_key": "github.com/coderamp-labs/pad.ws",
       "stars": null,
       "forks": 15,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Development Environment",
@@ -325,8 +416,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "fff05b7997f871b60d86e0aa801d6c9791e8206449f7b4a17b35f66ea02e575e"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "63e81221fcc86066271ef01a985953b70c88f204e32c27d5b8c5199a81f50797"
       }
     },
     {
@@ -338,7 +429,7 @@
       "repo_key": "github.com/schlagmichdoch/PairDrop",
       "stars": null,
       "forks": 11,
-      "updated_at": "19",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Database",
@@ -348,8 +439,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "416f0bb780e53d88850a409358dbcf59063460b631164d39e4d527dc3c0d9f43"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "fe4dde34b6d16714e05f3dac1fe56d198ee87eea23eda3859b43497d829f955b"
       }
     },
     {
@@ -361,18 +452,18 @@
       "repo_key": "github.com/fosrl/pangolin",
       "stars": null,
       "forks": 8,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Reverse Proxy",
         "VPN"
       ],
       "readme_path": "knowledge/readmes/github.com__fosrl__pangolin.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "b9d3df072b864d204f7a508c035eeebd59e18ba438a957832c5090010176f829"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "18b2515217b40206db15092e5f6b3aabf0a846912c488665028c6302d8a0eb3b"
       }
     },
     {
@@ -384,18 +475,18 @@
       "repo_key": "github.com/panoratech/Panora",
       "stars": null,
       "forks": 0,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
-        "Antivirus",
-        "Development"
+        "Development",
+        "Search Engines"
       ],
       "readme_path": "knowledge/readmes/github.com__panoratech__Panora.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "ef6c5f5f6850aeca3891d86440322012cc8b0014af5504d2f9c7b6f076cf21e8"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "f4e37af5b7950df2a405de5ca018abb914b9d7f55042489d409cec3c5c000d82"
       }
     },
     {
@@ -407,7 +498,7 @@
       "repo_key": "github.com/clusterzx/paperless-ai",
       "stars": null,
       "forks": 15,
-      "updated_at": "19",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Artificial Intelligence",
@@ -417,8 +508,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "9e8ba274e0cbe00a375c35feb8b5ba60ed6f2e633d6c0160e230ad7eb69121c3"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "dabb74741cf47fb4b0c5a800d153161ad9220ed5e1ff2831c375c686ead0294f"
       }
     },
     {
@@ -430,7 +521,7 @@
       "repo_key": "github.com/paperless-ngx/paperless-ngx",
       "stars": null,
       "forks": 11,
-      "updated_at": "28",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Document Management",
@@ -440,8 +531,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "2d03f80ea9bdc55ce01152e8d4e24e6653b7bc5444e306551cc54b6c06820c8a"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "84b9a7f492663ccd8baf446a829fd77e7f7faf3abc1f54fb9a9efdbbb9cd9921"
       }
     },
     {
@@ -453,7 +544,7 @@
       "repo_key": "github.com/papermark/papermark",
       "stars": null,
       "forks": 8,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Contacts",
@@ -463,8 +554,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "24740b48f2365483d650b67461bc597cce7c4b440979137b093d148d15a0d186"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "7f46d5363f16b69a0a0be3bff7637533f27688206ff46eb87fd2e7247b5184e9"
       }
     },
     {
@@ -476,7 +567,7 @@
       "repo_key": "github.com/ciur/papermerge",
       "stars": null,
       "forks": 1,
-      "updated_at": "28",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Deployment",
@@ -486,8 +577,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "6e8dcbbb96a0d3dba4bdeeeb2ca06477d771223b4279a34f2e4578853425074c"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "b2e1224f10f0c02f95f5ceb1e84a0f643da3528805c53bf0d0a5dddbfcbf4696"
       }
     },
     {
@@ -499,18 +590,18 @@
       "repo_key": "github.com/papra-hq/papra",
       "stars": null,
       "forks": 0,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Document Management",
-        "Media Management"
+        "Search Engines"
       ],
       "readme_path": "knowledge/readmes/github.com__papra-hq__papra.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "9ede4b38e0118abf8d162f969eba2d964495cc33b4ab88a5a288304bd160195c"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "5d2b65a8c1f481497c4d8ab69167466e33ab7bb03c9d691b9a33894b2b5ef02c"
       }
     },
     {
@@ -522,18 +613,18 @@
       "repo_key": "github.com/parseablehq/parseable",
       "stars": null,
       "forks": 0,
-      "updated_at": "30",
+      "updated_at": "31",
       "license": null,
       "tags": [
         "Logs",
-        "Note-Taking"
+        "Notifications"
       ],
       "readme_path": "knowledge/readmes/github.com__parseablehq__parseable.md",
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "28a869dbf01655e27a7e16fad9b771b1ee3a57a94025241a4c50535689fd69e2"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "de5c4ecfbb980b2d3269fdcc877e801074159894da377cd64d801e8529348eef"
       }
     },
     {
@@ -545,7 +636,7 @@
       "repo_key": "github.com/passbolt/passbolt_api",
       "stars": null,
       "forks": 0,
-      "updated_at": "25",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "2FA",
@@ -558,8 +649,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "9d8a6ff93b7d26d69eec29ef95b6149c52e74506c15bdf65eb6b15ce9047605b"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "ef7ffb05904d31ebc8d91d3241732a5d1c4c0422750969ef164d5c59bbd204a9"
       }
     },
     {
@@ -571,18 +662,18 @@
       "repo_key": "github.com/pglombardo/PasswordPusher",
       "stars": null,
       "forks": 1,
-      "updated_at": "29",
+      "updated_at": "30",
       "license": null,
       "tags": [
         "Password Manager",
         "Security"
       ],
       "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "6d6523cab2fbd79a35610dac01572c1e9dfd2662dc25ed3f87b406aa4cef2a07"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "0d3c38a80e476d9ed94edbcf3d8f6c6966f776c183a162a71937073e819c79ac"
       }
     },
     {
@@ -594,7 +685,7 @@
       "repo_key": "github.com/cglatot/pasta",
       "stars": null,
       "forks": 8,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Contacts",
@@ -604,8 +695,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "b1cfcbb5ed175a97baba637d5699f1047c9d197977bcb471a9ffd700b6fa85a6"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "f4eeda5d18553fd4a0d5c95c21f14b5b950e2bc039eb79e753ed7c74f8f55535"
       }
     },
     {
@@ -617,7 +708,7 @@
       "repo_key": "github.com/interaapps/pastefy",
       "stars": null,
       "forks": 15,
-      "updated_at": "38",
+      "updated_at": "39",
       "license": null,
       "tags": [
         "Email",
@@ -627,8 +718,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "0324bb6eca299885a190b0e52dda170d953fb1e57d5c230a340e075eaf29d8fd"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "cc9fcfecfdf354bcd06d5f11e2c01f5e5e2c8a0ce45355e83cc1939cc2fe35d2"
       }
     },
     {
@@ -640,7 +731,7 @@
       "repo_key": "github.com/PatchMon/PatchMon",
       "stars": null,
       "forks": 0,
-      "updated_at": "19",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Monitoring",
@@ -651,8 +742,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "ebeb74dff3446daba31efe1824da0fbda68e929c0fdb994b8f3d6604ce79f9c1"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "0b804e1eec2a446a2182b7875413ef0baa263dba1e7756ceae5cb2074bd3c4a8"
       }
     },
     {
@@ -674,8 +765,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "6900f924a6608738aac67b85765ae32c0f941fbc900f4ecb1d51b439fc56d662"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "4e87e70f47a5c8b78c99e0602af6be2a6fe93b253a66fc1690951ab10bc64353"
       }
     },
     {
@@ -687,7 +778,7 @@
       "repo_key": "github.com/payloadcms/payload",
       "stars": null,
       "forks": 15,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Content Management",
@@ -697,8 +788,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "26080a1c377bb6f1d4b67b54eb7500c0680b2b2db4923e11fc28db9724395409"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "a289fff216ac52f939356e14d5f4f0cf5b56c6e5c5d6d2d4eed9a861279db125"
       }
     },
     {
@@ -710,7 +801,7 @@
       "repo_key": "github.com/mrmn2/PdfDing",
       "stars": null,
       "forks": 0,
-      "updated_at": "28",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Document Management",
@@ -720,8 +811,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "13e0db5fdd6a1dba7ccabb58e27bccc5ebdf55662d8b64284ef9c908e02e276e"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "29bbff1dd35c164b348d2cd8d262e38caa4e42aac5fe845f9558e2a68123aaa1"
       }
     },
     {
@@ -733,7 +824,7 @@
       "repo_key": "github.com/Brandawg93/PeaNUT",
       "stars": null,
       "forks": 1,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Clipboard",
@@ -743,8 +834,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "a9cb216f6feb9d8f201d8768fe64b8580e8ae85dc34d6ba1d595230a131c83b0"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "b1758ed7272f4e816cd09aa2340f69704881e68b1e168d42fd99221a391dcc24"
       }
     },
     {
@@ -756,7 +847,7 @@
       "repo_key": "github.com/0xfurai/peekaping",
       "stars": null,
       "forks": 15,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Monitoring",
@@ -766,8 +857,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "114d1697db973169ddf92d2814f0b29ba57f8e45d486b65fe7979e7a6bbd972b"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "dc6f62a0e10456e164d8f31361654edb40a348c29ea9d1b67da17a5694fe30f1"
       }
     },
     {
@@ -779,18 +870,18 @@
       "repo_key": "github.com/Chocobozzz/PeerTube",
       "stars": null,
       "forks": 0,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "ActivityPub / Fediverse",
         "Videos"
       ],
       "readme_path": "knowledge/readmes/github.com__Chocobozzz__PeerTube.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "5b85d3f2e266ec451a1dcd4511138e64f50574de07680f2ea11f880b5f326e7c"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "a6cad6a8c87556a032eba23e168c36accfe550bcd72ed9387261904ea7caa77c"
       }
     },
     {
@@ -802,18 +893,18 @@
       "repo_key": "github.com/pelican-dev/panel",
       "stars": null,
       "forks": 0,
-      "updated_at": "25",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Gaming",
-        "Inventory Management"
+        "Media Streaming"
       ],
       "readme_path": "knowledge/readmes/github.com__pelican-dev__panel.md",
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "11ba14ac1f0ca09837b4bd0cb0949e66c6ded19509bfbced7587b07c1327e438"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "6a546462322457cc6de42fabe659e79dc839afa5349b6ffe7db680edc2f0e651"
       }
     },
     {
@@ -835,8 +926,8 @@
       "readme_status": "ok",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "1b1cdacac4c66efd195d5172a2c97d50e83132199d04d5d190c551c729d2e752"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "63dbd8cc8e25e6274d8f1a1c9c9fb60062337c2790ce7f9359b898fb8d6e0675"
       }
     },
     {
@@ -848,7 +939,7 @@
       "repo_key": "github.com/Peppermint-Lab/peppermint",
       "stars": null,
       "forks": 8,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Contacts",
@@ -858,8 +949,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "1129397ee6fd55a413a70211b29e18e111fa5f86d1adcbdcd6dc773a3dd28403"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "ee60a8d53b90c700f3cf1bf1b36b4333fa0f6fb27459aea94304d16fc43b8afa"
       }
     },
     {
@@ -871,7 +962,7 @@
       "repo_key": "github.com/sbrl/Pepperminty-Wiki",
       "stars": null,
       "forks": 16,
-      "updated_at": "25",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Interface",
@@ -881,8 +972,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "0b13980f51d362482e7f016c741a593c4a4cd826ccda6ca32aed6f72c175ed4f"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "14543f0303bf98fe69060002f34b287bc7a1f84a08748999e6a441cc6f8069f9"
       }
     },
     {
@@ -894,7 +985,7 @@
       "repo_key": "github.com/p0lloc/perfice",
       "stars": null,
       "forks": 15,
-      "updated_at": "37",
+      "updated_at": "38",
       "license": null,
       "tags": [
         "Email",
@@ -904,8 +995,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "0b9a2a5c80c6f143b7cd72d1bf5a71e3f5454e6b3e023495ff7fd1e003508dd7"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "a57738462db6eeabac1965e1bac5d688fb3a476309405db9717b054b19440cfa"
       }
     },
     {
@@ -917,7 +1008,7 @@
       "repo_key": "github.com/Volmarg/personal-management-system",
       "stars": null,
       "forks": 15,
-      "updated_at": "25",
+      "updated_at": "26",
       "license": null,
       "tags": [
         "Content Management",
@@ -927,8 +1018,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "0472df3b36e038453606ead807000c5ecbc26f6acd0135d535549a48416e07fa"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "8a20ba1aed5f7817428aa3dd58354844e1ddeaa829e3ab9fe1a53a518c2d34c7"
       }
     },
     {
@@ -940,7 +1031,7 @@
       "repo_key": "github.com/petio-team/petio",
       "stars": null,
       "forks": 15,
-      "updated_at": "19",
+      "updated_at": "20",
       "license": null,
       "tags": [
         "Requests",
@@ -950,8 +1041,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "bd1d02c12be2476a8eb7fd275f8941a7725d48b80048d48605928f3de7f403e8"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "e2317988daebcf504f160e6f34bc17893f92f29f057ac9817915799fce1589ad"
       }
     },
     {
@@ -963,7 +1054,7 @@
       "repo_key": "github.com/eduardolat/pgbackweb",
       "stars": null,
       "forks": 0,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Backups",
@@ -973,8 +1064,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "2b37805802f4887f3f4f44a9b403c85a083f071dab3391b4caf0daddc3356a63"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "4d1bba145445f3a3e9e8d1f677be902b8e309c857154b35f182c802bb5092f04"
       }
     },
     {
@@ -986,7 +1077,7 @@
       "repo_key": "github.com/pgadmin-org/pgadmin4",
       "stars": null,
       "forks": 8,
-      "updated_at": "28",
+      "updated_at": "29",
       "license": null,
       "tags": [
         "Contacts",
@@ -996,8 +1087,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "e8054834f407af8d53b08d3493788a9066e2068bb5b74c28f907a5612191fa52"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "b58d8ab48952fdbec42e821b0da2073424ec5d2b0fb4521df79843bafd8d6a96"
       }
     },
     {
@@ -1019,8 +1110,8 @@
       "readme_status": "error",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "0854ac9a1e29cfd2d91ee717dc7e614623cdaa133fc707386a6a20c7cb6ce1eb"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "2787edd21fe206046f2e7ba2f6261c23b864ca0019fabcd2fbe1c5d41e6344e2"
       }
     },
     {
@@ -1032,7 +1123,7 @@
       "repo_key": "github.com/SmilyOrg/photofield",
       "stars": null,
       "forks": 15,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Bookmarks",
@@ -1040,11 +1131,11 @@
         "Photos"
       ],
       "readme_path": "knowledge/readmes/github.com__SmilyOrg__photofield.md",
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "347eb1128cbb450cd8b7e0af3a7c70f6c2191b9abba32b378c7dad167dee04da"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "e12ee45c44c9ecc727ae0d898a1f3b1ead941a46913207ef69df80914425bbf2"
       }
     },
     {
@@ -1056,7 +1147,7 @@
       "repo_key": "github.com/photoprism/photoprism",
       "stars": null,
       "forks": 8,
-      "updated_at": "13",
+      "updated_at": "14",
       "license": null,
       "tags": [
         "Bookmarks",
@@ -1067,101 +1158,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "37a5f948c47e1c02d1f639ba1d543a950a596d3249d5b468c547107d60335278"
-      }
-    },
-    {
-      "reference": "photoview",
-      "name": "Photoview",
-      "website": "photoview.github.io/",
-      "description": "Photo gallery for self-hosted personal servers",
-      "repo_url": "github.com/photoview/photoview",
-      "repo_key": "github.com/photoview/photoview",
-      "stars": null,
-      "forks": 0,
-      "updated_at": "37",
-      "license": null,
-      "tags": [
-        "Bookmarks",
-        "Media Streaming",
-        "Photos"
-      ],
-      "readme_path": "knowledge/readmes/github.com__photoview__photoview.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "461784a1d7cb4e551e59a5f714edfabb0cc0388a0e54fd42df90a795d5195afa"
-      }
-    },
-    {
-      "reference": "phpmyadmin",
-      "name": "phpMyAdmin",
-      "website": "www.phpmyadmin.net/",
-      "description": "Web interface for MySQL and MariaDB",
-      "repo_url": "github.com/phpmyadmin/phpmyadmin",
-      "repo_key": "github.com/phpmyadmin/phpmyadmin",
-      "stars": null,
-      "forks": 10,
-      "updated_at": "25",
-      "license": null,
-      "tags": [
-        "Dashboard",
-        "Database"
-      ],
-      "readme_path": "knowledge/readmes/github.com__phpmyadmin__phpmyadmin.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "79050701651c1346de8f189409f7236aad894dcf758d99203c0ae1e2f6d33c69"
-      }
-    },
-    {
-      "reference": "phylum",
-      "name": "Phylum",
-      "website": "codeberg.org/shroff/phylum",
-      "description": "Offline-first cloud storage with native clients",
-      "repo_url": "codeberg.org/shroff/phylum",
-      "repo_key": "codeberg.org/shroff/phylum",
-      "stars": null,
-      "forks": null,
-      "updated_at": "13",
-      "license": null,
-      "tags": [
-        "Books",
-        "Cloud Storage"
-      ],
-      "readme_path": null,
-      "readme_status": "error",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "92e95f71204427db2b27f72ae28f3459096e6e6fcc6635c2e46ccc03f0520c3a"
-      }
-    },
-    {
-      "reference": "pi-hole",
-      "name": "Pi-hole",
-      "website": "pi-hole.net",
-      "description": "Black hole for internet advertisements",
-      "repo_url": "github.com/pi-hole/pi-hole",
-      "repo_key": "github.com/pi-hole/pi-hole",
-      "stars": null,
-      "forks": 8,
-      "updated_at": "31",
-      "license": null,
-      "tags": [
-        "Ad Block",
-        "DNS"
-      ],
-      "readme_path": "knowledge/readmes/github.com__pi-hole__pi-hole.md",
-      "readme_status": "not_modified",
-      "provenance": {
-        "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-05-31T06:57:14Z",
-        "row_hash": "62f800409b25ff6564da605fdcd49c1252978a0a02c3856b4e42efcbec6aa107"
+        "fetched_at": "2026-06-07T07:04:34Z",
+        "row_hash": "5bfd6fea51bd05c9ef5f3a2a908a043264507dd8c629b48e28d95090f184d5a2"
       }
     }
   ]

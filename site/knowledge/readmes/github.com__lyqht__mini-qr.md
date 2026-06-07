@@ -30,7 +30,7 @@ An app to create beautiful QR codes and scan various QR code types.
 - 💾 Save & Load QR Code config
 - 🖼️ Upload custom image for logo with adjustable size and margin
 - 🎭 Presets: Pre-crafted QR code styles
-- 🖌️ Frame customization: Add text labels and style the frame around your QR code
+- 🖌️ Frame customization: Add a frame containing text and a background around your QR code.
 - 🛡️ Error correction level: affects the size of the QR code and logo within. Use lower correction levels for bigger pieces of data to ensure that it can be read.
 - 📱 QR Code Scanner: Scan QR codes using your camera or by uploading images, with intelligent detection for URLs, emails, phone numbers, WiFi credentials, and more
 - 📦 Batch data export: Import a CSV file with multiple data strings and export QR codes for them all at once. Template CSV files can be found in [`public/batch_export_templates/`](public/batch_export_templates/).
@@ -43,6 +43,8 @@ See [ROADMAP.md](./ROADMAP.md) for future planned features.
 ## Demo
 
 Try it out [here](https://mini-qr-code-generator.vercel.app/) ✨
+
+Browse the component library (the internal QR-code rendering lib) in Storybook at [mini-qr-storybook.vercel.app](https://mini-qr-storybook.vercel.app) 📚
 
 <details>
 
@@ -99,6 +101,8 @@ For full self-hosting instructions including Docker setup, environment variables
 Translations & bug fixes are welcome!
 For all other matters, before opening an issue or contacting the project maintainer, please read up on to [CONTRIBUTING.md](CONTRIBUTING.md).
 
+Component stories live in Storybook (`pnpm storybook` locally, or the production build at [mini-qr-storybook.vercel.app](https://mini-qr-storybook.vercel.app)). Pull requests that touch the UI get an auto-deployed Storybook preview on Vercel — see [docs/storybook-vercel-previews.md](docs/storybook-vercel-previews.md) for how it's wired up.
+
 ---
 
 Thank you for everyone here for taking their time out to improve MiniQR 🧡
@@ -136,6 +140,7 @@ Thank you for everyone here for taking their time out to improve MiniQR 🧡
       <td align="center" valign="top" width="16.66%"><a href="https://github.com/Kolophonium0"><img src="https://avatars.githubusercontent.com/u/24278823?v=4?s=48" width="48px;" alt="Yannik Herbst"/><br /><sub><b>Yannik Herbst</b></sub></a><br /><a href="#question-Kolophonium0" title="Answering Questions">💬</a></td>
       <td align="center" valign="top" width="16.66%"><a href="http://solovjov.net/"><img src="https://avatars.githubusercontent.com/u/11983427?v=4?s=48" width="48px;" alt="Mikhail Solovev"/><br /><sub><b>Mikhail Solovev</b></sub></a><br /><a href="#translation-r3bers" title="Translation">🌍</a></td>
       <td align="center" valign="top" width="16.66%"><a href="https://github.com/osamajvd"><img src="https://avatars.githubusercontent.com/u/54687462?v=4?s=48" width="48px;" alt="osamajvd"/><br /><sub><b>osamajvd</b></sub></a><br /><a href="https://github.com/lyqht/mini-qr/commits?author=osamajvd" title="Code">💻</a></td>
+      <td align="center" valign="top" width="16.66%"><a href="https://github.com/aleex1848"><img src="https://avatars.githubusercontent.com/u/17452861?v=4?s=48" width="48px;" alt="aleex1848"/><br /><sub><b>aleex1848</b></sub></a><br /><a href="https://github.com/lyqht/mini-qr/commits?author=aleex1848" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>

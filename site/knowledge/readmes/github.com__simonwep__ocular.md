@@ -32,8 +32,8 @@
 - 🎨 Themed, light and dark mode.
 - 🌍 Multi-language and support for all common currencies.
 - 📱 Installable as a Progressive Web App and optimized for mobile devices.
-- 🔁 Import your data from Google sheet's annual planner and export as json.
-- 📊 Dashboard with extensive statistics and charts including a sankey diagram.
+- 🔁 Import your data from Google sheet's annual planner and export as JSON.
+- 📊 Dashboard with extensive statistics and multiple charts including a Sankey diagram.
 - ⌨️ Keyboard navigation for power users.
 - 📈 All-time overview of your budgets including analytics.
 - 🕶️ Privacy mode for when you're in a public place.
@@ -43,6 +43,13 @@
 - 🔄 Carry over budgets to the next year.
 - 🧮 Inline expression evaluation.
 - ...and much more!
+
+## Links
+
+- 📄 The documentation is hosted [here](https://simonwep.github.io/ocular/) including a [fully featured demo](https://simonwep.github.io/ocular/demo/dashboard#demo)
+- ✨ Upcoming features for the next minor versions can be found under [milestones](https://github.com/simonwep/ocular/milestones)
+- 🚀 The latest release including feature list can be found under [releases](https://github.com/simonwep/ocular/releases)
+- 📦 Ocular is deployed as a single container, the images are uploaded under [packages](https://github.com/simonwep/ocular/pkgs/container/ocular)
 
 ## Screenshots
 

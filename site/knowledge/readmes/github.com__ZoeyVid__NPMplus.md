@@ -146,6 +146,8 @@ location ~* [^/]\.php(?:$|/) {
 - Disable Response Buffering: Most time you want keep buffering enabled, you may want to disable this if you for example want to stream videos and you have a fast and stable connection to the upstream server, this effects the connection from the upstream server to NPMplus
 - Disable Request Buffering: Most time you want keep buffering enabled, request buffering will always be enabled if crowdsec appsec is enabled, you may want to disable this if you for example want to upload huge files and have a fast and stable connection to the upstream server, this effects the connection from the NPMplus to the upstream server
 - Enable compression by upstream: this will allow the backend to compress files, I recommend you to keep this disabled, there may be cases where this is needed since otherwise the upstream missbehaves for some reason (like collabora in nextcloud all-in-one)
+- Disable URI Sanitisation: By default, nginx sanitises the URI (removing `../` to prevent directory traversal attacks). Enabling this toggle will disable this protection by appending `$request_uri` directly without sanitisation. Note: If a path is appended to the `Forward Hostname / IP` (e.g. `127.0.0.1/path`), this toggle is disabled as the path takes precedence over `$request_uri` and disables URI sanitisation automatically. Only enable this if your backend requires the raw URI (like collabora in nextcloud all-in-one)
+- Spoof Host Header: this will rewrite the Host header sent to the upstream server to match the configured Forward Hostname / IP and Forward Port instead of sending the original Host header provided by the client, only enable this if you want to actively spoof the host header, it is never needed for normal proxying
 - Enable fancyindex: this will enabled fancyindex, which shows a index of all files in the folder if there is no index file, only enable this if you know what you are doing and you need the index
 - Websockets: this button was removed, websockets are now always enabled
 - Reuse Key: this will make the new cert always keep its key unless you force renew it, I recommend you to keep this disabled (not to keep the key), a reason to keep the key would be TLSA/pubkey pinning
@@ -153,6 +155,8 @@ location ~* [^/]\.php(?:$|/) {
 - X-Frame-Options: will control the X-Frame-Options header, none will remove the header, SAMEORIGIN/DENY will set it to these values and upstream will keep what upstream sends
 
 ## Examples of implementing some services using auth_request
+
+Note: The upstream URL for an auth request provider can be overridden in the UI; a main location's override takes precedence over any custom location's override.
 
 ### Anubis
 1. Deploy an anubis container (see the compose.yaml for an example and information)
@@ -180,20 +184,20 @@ status_codes:
 ### Authentik (single application)
 1. Set the AUTH_REQUEST_AUTHENTIK_UPSTREAM env in the NPMplus compose.yaml and select authentik/authentik-send-basic-auth in the Auth Request selection, no custom/advanced config/locations needed
 
-<!--
 ## Load Balancing
 1. Open and edit this file: `/opt/npmplus/custom_nginx/http_top.conf` (or `/opt/npmplus/custom_nginx/stream_top.conf` for streams), if you changed /opt/npmplus to a different path make sure to change the path to fit
 2. Set the upstream directive(s) with your servers which should be load balanced (https://nginx.org/en/docs/http/ngx_http_upstream_module.html / https://nginx.org/en/docs/stream/ngx_stream_upstream_module.html), they need to run the same protocol (either http(s) or grpc(s) for proxy hosts or tcp/udp/proxy protocol for streams), like this for example:
 ```
-upstream server1 {
-  server 127.0.0.1:44;
-  server 127.0.0.1:33;
-  server 127.0.0.1:22;
-  server 192.158.168.11:44 backup;
+upstream cu_mybackend {
+  zone cu_mybackend 128k;
+  server 127.0.0.1:44 resolve;
+  server 127.0.0.1:33 resolve;
+  server 127.0.0.1:22 resolve;
+  server 192.168.1.11:44 backup resolve;
 }
 ```
-3. Configure your proxy host/stream like always in the UI, but set the hostname to service1 (or service2 or however you named it) and keep the forward port field empty (since you set the ports within the upstream directive)
--->
+3. Configure your proxy host/stream like always in the UI, but set the hostname to the exact name of your upstream block (e.g. `cu_mybackend`) and leave the forward port field empty (ports are defined inside the upstream block)
+   - The `cu_` prefix (short for **c**ustom **u**pstream) is required: NPMplus uses it to detect that the hostname refers to a custom upstream block and skips generating its own upstream block for it
 
 ## Encrypted Client Hello (ECH)
 

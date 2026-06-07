@@ -31,7 +31,7 @@
 
 <br>
 
-Oikos is a self-hosted web app that keeps your household organized — tasks, groceries, meals, calendar, budget, and more — in one private place, without cloud accounts or subscriptions. Runs as a Docker container on any home server or NAS. Accessible on every device. Installable as a PWA.
+Oikos is a self-hosted web app that keeps your household organized — tasks, groceries, meals, calendar, budget, and more — in one private place, without cloud accounts or subscriptions. Runs as a Docker or Podman container on any home server or NAS — including rootless Podman on SELinux-enabled RHEL/Fedora/CentOS Stream. Accessible on every device with a polished mobile-first PWA interface.
 
 Each module is independent. Use what fits, skip what doesn't.
 
@@ -41,14 +41,14 @@ Each module is independent. Use what fits, skip what doesn't.
 
 | | |
 |---|---|
-| **Tasks** | Shared tasks with deadlines, priorities, subtasks, recurring schedules, and multi-member assignment. |
-| **Shopping** | Collaborative lists organized by aisle. Import from meal plans in one click. |
-| **Meals** | Weekly drag-and-drop planner with direct export to your shopping list. |
+| **Tasks** | Shared tasks with deadlines, priorities, subtasks, recurring schedules, multi-member assignment, Kanban, and mobile-friendly bulk controls. Optional read-only import of Apple Reminders lists via CalDAV. |
+| **Shopping** | Collaborative lists organized by aisle. Touch-safe quick add, swipe gestures, and meal-plan import in one click. Optional read-only import of Apple Reminders lists via CalDAV. |
+| **Meals** | Weekly drag-and-drop planner with multiple items per slot, direct export to your shopping list. |
 | **Recipes** | Create, duplicate, and scale recipes. Pre-fill meal slots or save any meal as a recipe. |
-| **Calendar** | Google Calendar (OAuth) and CalDAV sync (iCloud, Nextcloud, Radicale). ICS subscriptions, recurring events, file attachments. |
+| **Calendar** | Google Calendar (OAuth) and CalDAV sync (iCloud, Nextcloud, Radicale). ICS subscriptions, recurring events, file attachments, and readable month/agenda views. |
 | **Documents** | Upload and organize family files. Folders, tags, per-document visibility, drag-and-drop. |
 | **Budget** | Income, expenses, recurring entries, trends, CSV export. Split Expenses for shared costs with automatic debt simplification. |
-| **Housekeeping** | Manage household staff — schedules, check-in/out, payments, chores, supply requests. |
+| **Housekeeping** | Manage household staff — schedules, check-in/out, daily or hourly billing, chores, supply requests. |
 | **Notes & Contacts** | Colored sticky notes with Markdown. Contact directory with CardDAV sync. |
 | **Birthdays** | Birthday tracker with automatic calendar events, age display, and custom reminders. |
 | **Family** | Member profiles with roles, photos, phone, email, and birthday — synced to Contacts and Birthdays. |
@@ -60,11 +60,12 @@ Each module is independent. Use what fits, skip what doesn't.
 
 ## Design & Technology
 
-- **Liquid Glass UI** — translucent surfaces, backdrop blur, spring animations, and module-tinted overlays — built in pure CSS
-- **PWA** — installable on any device, works offline, responsive from phone to desktop, dark mode
+- **Disciplined Liquid Glass UI** — readable work surfaces, subtle translucent navigation, spring animations, and module-tinted overlays — built in pure CSS
+- **PWA** — installable on any device, works offline, responsive from phone to desktop, with tuned mobile navigation, touch targets, and dark mode
 - **Privacy First** — fully self-hosted, SQLCipher AES-256 encrypted database, zero telemetry
+- **SSO / OpenID Connect** — optional single sign-on via any OIDC provider (Authentik, Keycloak, Google, Microsoft Entra). Configure with four env vars; Authorization Code + PKCE flow.
 - **Zero Build Step** — pure ES modules, no bundler, no transpiler, no framework
-- **Multilingual** — 16 languages with automatic locale detection (de, en, es, fr, it, sv, el, ru, tr, zh, ja, ar, hi, pt, uk, pl)
+- **Multilingual** — 18 languages with automatic locale detection (de, en, es, fr, it, sv, el, ru, tr, zh, ja, ar, hi, pt, uk, pl, nl, cs)
 
 ---
 
@@ -77,7 +78,7 @@ git clone https://github.com/ulsklyc/oikos.git && cd oikos
 node tools/installer/install-server.js
 ```
 
-Open **http://localhost:8090** in your browser. The wizard configures your `.env`, starts Docker, and creates your admin account. Requires Node.js 18+ on the host.
+Open **http://localhost:8090** in your browser. The localized wizard (18 languages) detects your container engine (Docker or Podman), configures your `.env` — including optional reverse proxy/HTTPS, SSO (OIDC), and automatic backups — starts the container, and creates your admin account. Requires Node.js 18+ on the host.
 
 **Option B — Pre-built image (no clone required)**
 
@@ -86,7 +87,6 @@ curl -O https://raw.githubusercontent.com/ulsklyc/oikos/main/docker-compose.yml
 curl -O https://raw.githubusercontent.com/ulsklyc/oikos/main/.env.example
 cp .env.example .env          # set SESSION_SECRET and DB_ENCRYPTION_KEY
 docker compose up -d
-docker compose exec oikos node setup.js
 ```
 
 **Option C — Build from source**
@@ -95,12 +95,21 @@ docker compose exec oikos node setup.js
 git clone https://github.com/ulsklyc/oikos.git && cd oikos
 cp .env.example .env          # set SESSION_SECRET and DB_ENCRYPTION_KEY
 docker compose up -d --build
-docker compose exec oikos node setup.js
 ```
 
-Open `http://localhost:3000` and sign in with the admin credentials you created above.
+Open `http://localhost:3000` — the first visit guides you through creating your admin account in the browser, then signs you in. (For headless setups you can instead run `docker compose exec oikos node setup.js`.)
 
-> **New to Docker?** The **[Installation Guide](docs/installation.md)** covers Docker setup, HTTPS, backups, and troubleshooting step by step.
+**Option D — TrueNAS SCALE (Community Apps Catalog)**
+
+Oikos is available in the TrueNAS SCALE Community Apps Catalog — no terminal required. Open **Apps → Discover Apps**, search for **Oikos**, and install it directly from the UI. Set `SESSION_SECRET` (required) and `DB_ENCRYPTION_KEY` (recommended) during installation. The first visit to the WebUI walks you through creating your admin account.
+
+> **Using Podman (RHEL / Fedora / CentOS Stream)?** Both installers above auto-detect
+> Podman and use `podman-compose.yml` (SELinux `:Z` labels, configurable host bind).
+> For a manual start, replace `docker compose` with `podman compose -f podman-compose.yml`
+> (or `podman-compose -f podman-compose.yml`). For rootless systemd autostart, see the
+> Quadlet unit at `tools/quadlet/oikos.container`.
+
+> **New to Docker or Podman?** The **[Installation Guide](docs/installation.md)** covers engine setup, HTTPS, backups, and troubleshooting step by step.
 
 ---
 
