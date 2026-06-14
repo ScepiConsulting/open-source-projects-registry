@@ -75,14 +75,23 @@ The result: VPS-level isolation on shared hosting infrastructure, without the VP
 
 OpenPanel is a truly [OS-agnostic](https://www.techtarget.com/whatis/definition/agnostic) control panel. Supported OS:
 
-| Operating System       | Versions                             | Notes                                |
-|------------------------|--------------------------------------|--------------------------------------|
-| Ubuntu                 | 22, 24, 26                           | **24.04 is recommended for AMD CPU**  |
-| Debian                 | 10, 11, 12, 13                       |                     |
-| AlmaLinux              | 9.5, 10                              | **9.5 is recommended for ARM CPU** |
-| RockyLinux             | 9.6, 10                              | *On Rocky 10, you must manually switch from `nftables` to `iptables` first — see [#1472](https://github.com/docker/for-linux/issues/1472)* |
-| CentOS                 | 9.5                                  |                                      |
-
+<!-- OS_TEST_RESULTS_START -->
+| Operating System | Version | Last Tested | Status | Notes |
+|---|---|---|---|---|
+| Ubuntu | 22 | 2026-06-14 00:39 UTC | ❌ Fail |  |
+| Ubuntu | 24 | 2026-06-14 00:54 UTC | ❌ Fail | **recommended for AMD CPU** |
+| Ubuntu | 26 | 2026-06-14 00:47 UTC | ❌ Fail |  |
+| Debian | 10 | | | |
+| Debian | 11 | 2026-06-14 01:00 UTC | ❌ Fail |  |
+| Debian | 12 | 2026-06-14 01:15 UTC | ❌ Fail |  |
+| Debian | 13 | 2026-06-14 01:28 UTC | ❌ Fail |  |
+| AlmaLinux | 9.5 | | | **recommended for ARM CPU** |
+| AlmaLinux | 10 | 2026-06-14 00:00 UTC | ❌ Fail |  |
+| RockyLinux | 9.6 | | | |
+| RockyLinux | 10 | 2026-06-14 01:40 UTC | ❌ Fail | *Must manually switch from `nftables` to `iptables` first ([#1472](https://github.com/docker/for-linux/issues/1472))* |
+| CentOS | 9.5 | | | |
+| CentOS | 10 | 2026-06-14 00:18 UTC | ❌ Fail |  |
+<!-- OS_TEST_RESULTS_END -->
 
 
 ## Installation
@@ -124,6 +133,13 @@ For full installation options and configuration flags: [https://openpanel.com/in
 <img src='https://github.com/p3t4rc.png' width='140px;'>
 </a>
 <h4 align='center'>Petar Ćurić</h4>
+</td>
+</td>
+<td id='lazar'>
+<a href='https://github.com/lazarunl'>
+<img src='https://github.com/lazarunl.png' width='140px;'>
+</a>
+<h4 align='center'>Lazar K.</h4>
 </td>
 </tr>
 </table>

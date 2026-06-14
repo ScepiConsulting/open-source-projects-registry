@@ -4,10 +4,16 @@ A simple, lightweight **UI for exploring and managing Docker/OCI registries**.
 
 ![Demo](./docs/images/container-hub.gif)
 
----
-
 > [!NOTE]
-> **v1.0.0** is now available. This is a Go backend, sync engine, themes, and updated UI with helm OCI support. The legacy React frontend (v0.x) is available on the [0.x branch](https://github.com/eznix86/docker-registry-ui/tree/0.x).
+> v0.x is available on the [0.x branch](https://github.com/eznix86/docker-registry-ui/tree/0.x).
+
+## What you get ?
+
+- Multi-registry support (including Github Registry for Personal and Organization)
+- Optional OIDC authentication using Keycloak, PocketID, Authelia and more (as from v1.3.0)
+- Search and filters
+- Helm OCI support
+- Storage insights
 
 ## Quick Start
 
@@ -27,8 +33,6 @@ services:
 Then open the UI at: [http://localhost:8011](http://localhost:8011)
 
 For extensive environment customization, see [`.env.example`](./.env.example).
-
----
 
 ## Deployment
 
@@ -74,9 +78,8 @@ secretEnv:
 
 For all available configuration options, see [`charts/docker-registry-ui/values.yaml`](./charts/docker-registry-ui/values.yaml).
 
----
 
-## Authentication
+## Registry Authentication
 
 For registries with authentication, you must add the auth environment variable as a base64 encoded value of `username:password`
 
@@ -92,7 +95,22 @@ REGISTRY_URL=https://registry.test
 REGISTRY_AUTH=dXNlcm5hbWU6cGFzc3dvcmQ=
 ```
 
----
+## User Authentication
+
+**Docker Registry UI** do not have its own user management, but **Docker Registry UI** supports OIDC Authentication , use the `OIDC_*` and `SESSION_SECRET` env. See more in the [.env.example](./.env.example)
+
+You have many options like
+- Keycloak
+- PocketID
+- Authelia
+- Google
+- Authentik
+- and many more which support OIDC Protocol.
+
+You can further limit access to the hub by using `OIDC_ALLOWED_*`, this is optional.
+
+If you want to login via Github (or any Oauth2-like), it would be recommended that you use proxy it via an OIDC supported IdP Provider.
+
 
 ## Multiple Registry Support
 
@@ -145,31 +163,13 @@ bun run lint:fix    # auto-fix linting issues where possible
 
 Pull requests are welcome. Please ensure code is linted and tested before submission.
 
----
 
 ## Storage Reclamation
 
 When deleting images, Docker Registry **v2/v3** only marks them as deleted. Disk space is not automatically reclaimed.
 
-Use the [Docker Registry Cleaner](https://github.com/eznix86/docker-registry-cleaner) for automated cleanup, or run garbage collection manually:
+Use the [Docker Registry Cleaner](https://github.com/eznix86/docker-registry-cleaner) for automated cleanup, or run garbage collection manually, see [here](./docs/manual-registry-cleanup.md)
 
-```sh
-# Run garbage collection
-bin/registry garbage-collect --delete-untagged /etc/docker/registry/config.yml
-
-# Optionally, remove an entire repository manually
-rm -rf /var/lib/registry/docker/registry/v2/repositories/<repository_name>
-```
-
-Further reading:
-
-* [Docker Distribution: Garbage Collection](https://distribution.github.io/distribution/about/garbage-collection/)
-* [Cleaning Up Registry Blobs in Kubernetes](https://thelinuxnotes.com/how-to-cleanup-container-registry-blobs-in-kubernetes-with-garbage-collection/)
-* [DigitalOcean: Clean Up Container Registry](https://docs.digitalocean.com/products/container-registry/how-to/clean-up-container-registry/)
-* [Community Guide: Reclaiming Disk Space](https://dev.to/limal/reclaiming-free-disk-space-from-a-private-docker-repository-30f5)
-* [GitHub Issue: Registry Garbage Collection](https://github.com/distribution/distribution/issues/3178)
-
----
 
 ## How to Contribute
 
@@ -192,8 +192,13 @@ Use a descriptive branch name, for example `fix/tag-pagination` or `feature/mult
 
 ### 3. Set Up the Environment
 
+- [mise](https://mise.jdx.dev/)
+- [bun](https://bun.sh/)
+
 ```sh
 cp .env.example .env
+mise install
+go mod download
 bun install
 bun run dev
 ```

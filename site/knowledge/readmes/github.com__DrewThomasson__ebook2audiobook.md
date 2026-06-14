@@ -102,7 +102,7 @@ https://github.com/user-attachments/assets/81c4baad-117e-4db5-ac86-efc2b7fea921
 
 ## Features
 - 🔧 **TTS Engines supported**: `XTTSv2`, `Bark`, `Fairseq`, `VITS`, `Tacotron2`, `Tortoise`, `GlowTTS`, `YourTTS`
-- 📚 **Convert multiple file formats**: `.epub`, `.mobi`, `.azw3`, `.fb2`, `.lrf`, `.rb`, `.snb`, `.tcr`, `.pdf`, `.txt`, `.rtf`, `.doc`, `.docx`, `.html`, `.odt`, `.azw`, `.tiff`, `.tif`, `.png`, `.jpg`, `.jpeg`, `.bmp`
+- 📚 **Convert multiple file formats**: `.epub`, `.mobi`, `.azw3`, `.fb2`, `.lrf`, `.rb`, `.snb`, `.tcr`, `.pdf`, `.txt`, `.rtf`, `.doc`, `.docx`, `.html`, `.odt`, `.azw`, `.tiff`, `.tif`, `.png`, `.jpg`, `.jpeg`, `.bmp`, `.zip`
 - 💻 **TextArea** to convert directly a short text in audio
 - 🔍 **OCR scanning** for files with text pages as images
 - 🔊 **High-quality text-to-speech** from near realtime to near real voice
@@ -494,7 +494,8 @@ git checkout tags/VERSION_NUM # Locally/Compose -> Example: git checkout tags/v2
 - [x] GPU Device detection
 - [x] Denoise any reference audio for upload voice cloning,
 - [x] Custom model upload (XTTSv2 only for now. more on request)
-- [ ]  Add Portuguese pt_PT Xttsv2 model fine tuned for EU portuguese (help wanted)
+- [ ] Add European Portuguese language model for xttsv2, fairseq, vits, piper at least (help welcome)
+- [ ] Add Sindhi language model for xttsv2, fairseq, vits, piper at least (help welcome)
 
 #### TTS engines
 - [x] XTTSv2
@@ -505,51 +506,54 @@ git checkout tags/VERSION_NUM # Locally/Compose -> Example: git checkout tags/v2
 - [x] YourTTS
 - [x] Tortoise
 - [x] GlowTTS
-- [x] Piper-TTS
+- [x] Piper
+- [ ] GPT-SoVITS (https://github.com/RVC-Boss/GPT-SoVITS)
+- [ ] OpenVoice (https://github.com/myshell-ai/OpenVoice)
+- [ ] fish-speech (https://github.com/fishaudio/fish-speech)
+- [ ] ChatTTS (https://github.com/2noise/ChatTTS)
 - [ ] CosyVoice (https://github.com/FunAudioLLM/CosyVoice)
-- [ ] Kokoro-TTS
-- [ ] Orpheus-TTS
-- [ ] Zonos
+- [ ] F5-TTS (https://github.com/swivid/f5-tts)
+- [ ] chatterbox (https://github.com/resemble-ai/chatterbox)
+- [ ] Supertonic (https://github.com/supertone-inc/supertonic)
+- [ ] Spark-TTS (https://github.com/sparkaudio/spark-tts)
+- [ ] index-tts (https://github.com/index-tts/index-tts)
+- [ ] MeloTTS (https://github.com/myshell-ai/MeloTTS)
+- [ ] Kokoro-TTS (https://github.com/hexgrad/kokoro)
 - [ ] OmniVoice (https://github.com/k2-fsa/OmniVoice)
-- [ ] Style-TTS2
-- [ ] GPT-SoVITS
-- [ ] F5-TTS (https://github.com/DrewThomasson/ebook2audiobookXTTS/issues/38#issuecomment-2453224267)
+- [ ] Zonos (https://github.com/Zyphra/Zonos)
+- [ ] Style-TTS2 (https://github.com/yl4579/StyleTTS2)
+- [ ] Orpheus-TTS (https://github.com/canopyai/Orpheus-TTS)
+- [ ] NewTTS (https://github.com/neuphonic/neutts?tab=readme-ov-file)
 - [ ] VIbeVoice (https://github.com/vibevoice-community/VibeVoice)
 - [ ] Qwen3-TTS (https://huggingface.co/spaces/Qwen/Qwen3-TTS)
-- [ ] NewTTS (https://github.com/neuphonic/neutts?tab=readme-ov-file)
-- [ ] Speedy-Speech
-- [ ] Supertonic (https://github.com/supertone-inc/supertonic)
-- [ ] Align-TTS
-- [ ] Delightful-TTS
-- [ ] Spark-TTS
 
 #### Readme Translation
-- [ ] Arabic (ara)
-- [ ] Chinese (zho)
+- [x] Arabic (ara)
+- [x] Chinese (zho)
 - [x] English (eng)
-- [ ] Spanish (spa)
-- [ ] French (fra)
-- [ ] German (deu)
-- [ ] Italian (ita)
-- [ ] Portuguese (por)
-- [ ] Polish (pol)
-- [ ] Turkish (tur)
-- [ ] Russian (rus)
-- [ ] Dutch (nld)
-- [ ] Czech (ces)
-- [ ] Japanese (jpn)
-- [ ] Hindi (hin)
-- [ ] Bengali (ben)
-- [ ] Hungarian (hun)
-- [ ] Korean (kor)
-- [ ] Vietnamese (vie)
-- [ ] Swedish (swe)
-- [ ] Persian (fas)
-- [ ] Yoruba (yor)
-- [ ] Swahili (swa)
-- [ ] Indonesian (ind)
-- [ ] Slovak (slk)
-- [ ] Croatian (hrv)   
+- [x] Spanish (spa)
+- [x] French (fra)
+- [x] German (deu)
+- [x] Italian (ita)
+- [x] Portuguese (por)
+- [x] Polish (pol)
+- [x] Turkish (tur)
+- [x] Russian (rus)
+- [x] Dutch (nld)
+- [x] Czech (ces)
+- [x] Japanese (jpn)
+- [x] Hindi (hin)
+- [x] Bengali (ben)
+- [x] Hungarian (hun)
+- [x] Korean (kor)
+- [x] Vietnamese (vie)
+- [x] Swedish (swe)
+- [x] Persian (fas)
+- [x] Yoruba (yor)
+- [x] Swahili (swa)
+- [x] Indonesian (ind)
+- [x] Slovak (slk)
+- [x] Croatian (hrv)   
 
 #### 🐍 OS Compatibility
 - [x] 🍎 Mac Intel x86

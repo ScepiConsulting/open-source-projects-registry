@@ -1,7 +1,7 @@
 {
   "chunk": 1,
   "count": 50,
-  "generated_at": "2026-06-07T07:12:22Z",
+  "generated_at": "2026-06-14T07:29:19Z",
   "items": [
     {
       "repo_key": "akkoma.dev/AkkomaGang/akkoma",
@@ -107,6 +107,21 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'codeberg.org/grunfink/snac2/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/grunfink/snac2/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/irelephant/kittygram",
+      "repo_url": "codeberg.org/irelephant/kittygram",
+      "host": "codeberg.org",
+      "owner": "irelephant",
+      "repo": "kittygram",
+      "app_references": [
+        "kittygram"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'codeberg.org/irelephant/kittygram/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/irelephant/kittygram/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/karrot/karrot-backend",
@@ -462,9 +477,9 @@
       "app_references": [
         "blocky"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__0xERR0R__blocky.md",
-      "readme_download_url": "https://raw.githubusercontent.com/0xERR0R/blocky/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "451957c8aaddabd14280ca0a8624d97b262ef71aff1d43b68901bc2ddeda4704",
       "error": null
     },
@@ -477,10 +492,10 @@
       "app_references": [
         "nginx-ui"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__0xJacky__nginx-ui.md",
-      "readme_download_url": null,
-      "readme_sha256": "95878c0a68a7faea9ee86c296b3ea007f17149106b0c3d7f44d87b51d08a78e7",
+      "readme_download_url": "https://raw.githubusercontent.com/0xJacky/nginx-ui/dev/README.md",
+      "readme_sha256": "fa59862c751918fed552b562f0100fce54ae362ee347d2f2667e514c32c77ca6",
       "error": null
     },
     {
@@ -537,10 +552,10 @@
       "app_references": [
         "signature-pdf"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__24eme__signaturepdf.md",
-      "readme_download_url": null,
-      "readme_sha256": "aecebffbbbc7ce602cfc3bd4388ddc8522b638532ea48600c9cd97d15d4a016e",
+      "readme_download_url": "https://raw.githubusercontent.com/24eme/signaturepdf/master/README.md",
+      "readme_sha256": "b3df2ea3fba113123b4adf2d14339536bfd1f6047c12698c0eb14e25090cf27e",
       "error": null
     },
     {
@@ -552,10 +567,10 @@
       "app_references": [
         "ideon"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__3xpyth0n__ideon.md",
-      "readme_download_url": null,
-      "readme_sha256": "7fae25540bec68e1aad52fa618f1c7d5ec7bd5f0e5aaa5a001c008e55244df59",
+      "readme_download_url": "https://raw.githubusercontent.com/3xpyth0n/ideon/main/README.md",
+      "readme_sha256": "0a84a9c8ff32c6e5d747e2815cbd0ee858b641ad8ff23083db456cc558efbd48",
       "error": null
     },
     {
@@ -582,10 +597,10 @@
       "app_references": [
         "vaultls"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__7ritn__VaulTLS.md",
-      "readme_download_url": null,
-      "readme_sha256": "070b21dfcec2acd5198b3a82ac5b3fe8037ff6bac825b9a7a0c6f7176527fd67",
+      "readme_download_url": "https://raw.githubusercontent.com/7ritn/VaulTLS/main/README.md",
+      "readme_sha256": "cf726ac3ef15349df986cdae19251efdd3d5433605e6db87f54261f534339c82",
       "error": null
     },
     {
@@ -672,9 +687,9 @@
       "app_references": [
         "scrutiny"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__AnalogJ__scrutiny.md",
-      "readme_download_url": "https://raw.githubusercontent.com/AnalogJ/scrutiny/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c7a0e9350d2df53b06e1616daf76b709787df8f8289fc070f3c9009ee5a19b13",
       "error": null
     },
@@ -735,22 +750,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ArchiveBox__ArchiveBox.md",
       "readme_download_url": "https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/dev/README.md",
-      "readme_sha256": "1780a83870eddce8e585ba9c608bff47c7aa715ba81e5b524dd544a49091da49",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Arthi-chaud/Meelo",
-      "repo_url": "github.com/Arthi-chaud/Meelo",
-      "host": "github.com",
-      "owner": "Arthi-chaud",
-      "repo": "Meelo",
-      "app_references": [
-        "meelo"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Arthi-chaud__Meelo.md",
-      "readme_download_url": null,
-      "readme_sha256": "7b5887d0498bb33d8237e186d0f271e8e42cb48f578f7948075717b4a361844f",
+      "readme_sha256": "7df15fcd32d5e56046bf17db85f1af80247ec461d5864efd1f5d65fa5c4fbfa9",
       "error": null
     }
   ]

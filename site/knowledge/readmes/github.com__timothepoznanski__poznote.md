@@ -3,14 +3,8 @@
   <img src="images/poznote-logo-text.png" alt="Poznote Logo" width="400">
 </p>
 
-<div align="center">
-
-[![GitHub stars](https://img.shields.io/github/stars/timothepoznanski/poznote?style=flat&logo=github)](https://github.com/timothepoznanski/poznote/stargazers) [![License](https://img.shields.io/github/license/timothepoznanski/poznote?style=flat)](https://github.com/timothepoznanski/poznote/blob/main/LICENCE) [![Docker GHCR](https://img.shields.io/badge/Docker-GHCR-2496ED?style=flat&logo=docker&logoColor=white)](https://github.com/timothepoznanski/poznote/pkgs/container/poznote)
-
-</div>
-
 <h3 align="center">
-Poznote is a personal note-taking and documentation platform.
+Poznote is a note-taking and documentation platform.
 </h3>
 
 <br>
@@ -36,6 +30,7 @@ https://poznote.com/index.html#press
 ## Table of content
 
 - [Install](#install)
+  - [Cloud](#cloud)
 - [Access](#access)
 - [Change Settings](#change-settings)
 - [Update application](#update-application)
@@ -203,6 +198,14 @@ Start Poznote containers:
 ```bash
 docker compose up -d
 ```
+
+</details>
+
+<a id="cloud"></a>
+<details>
+<summary><strong>☁️ Cloud</strong></summary>
+
+Use [Poznote Cloud](https://poznote.com/index.html#cloud) or deploy your own instance on platforms like Railway, Render, Fly.io, Koyeb, Northflank, DigitalOcean App Platform, or Heroku.
 
 </details>
 

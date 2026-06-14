@@ -5,6 +5,8 @@
 [![CI](https://github.com/flohoss/gocron/actions/workflows/ci.yaml/badge.svg)](https://github.com/flohoss/gocron/actions/workflows/ci.yaml)
 [![Coverage](https://raw.githubusercontent.com/wiki/flohoss/gocron/coverage.svg)](https://github.com/flohoss/gocron/wiki/coverage.html)
 
+[![RepoRanker](https://reporanker.com/badge/flohoss/gocron)](https://reporanker.com/repos/flohoss/gocron)
+
 A task scheduler built with Go and Vue.js that allows users to specify recurring jobs via a simple YAML configuration file. The scheduler reads job definitions, executes commands at specified times using cron expressions, and passes in environment variables for each job.
 
 Tagged GitHub releases include downloadable Linux binaries. Run `./gocron_<version>_linux_<arch> --version` to inspect the embedded version metadata of a downloaded release binary.
@@ -183,9 +185,6 @@ docker compose run --rm yarn-e2e install --frozen-lockfile
 docker compose up -d
 docker compose --profile test run --rm e2e
 docker compose down
-
-# Open Cypress UI from the e2e package (optional)
-docker compose run --rm yarn-e2e open
 ```
 
 ### Update Dependencies

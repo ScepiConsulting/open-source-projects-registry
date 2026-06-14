@@ -45,12 +45,12 @@ It contains up-to-date setup guides, configuration reference, and usage document
 
 ## Installation
 
-In order to run Zerobyte, you need to have Docker and Docker Compose installed on your server. Then, you can use the provided `docker-compose.yml` file to start the application.
+In order to run Zerobyte, you need to have Docker and Docker Compose installed on your server. Then, you can use the provided `compose.yaml` file to start the application.
 
 ```yaml
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.38
+    image: ghcr.io/nicotsx/zerobyte:v0.39
     container_name: zerobyte
     restart: unless-stopped
     cap_add:
@@ -106,6 +106,7 @@ Zerobyte can be customized using environment variables. Below are the available 
 | `APP_SECRET_FILE`         | Path to a file containing `APP_SECRET`, useful with Docker or Kubernetes secrets. Mutually exclusive with `APP_SECRET`.                   | (none)                 |
 | `PORT`                    | The port the web interface and API will listen on.                                                                                        | `4096`                 |
 | `RESTIC_HOSTNAME`         | The hostname used by Restic when creating snapshots. Automatically detected if a custom hostname is set in Docker.                        | `zerobyte`             |
+| `GOMAXPROCS`              | Optional positive integer passed to Restic processes to limit CPU scheduler threads. Useful for reducing CPU pressure during backups.     | Restic default         |
 | `TZ`                      | Timezone for the container (e.g., `Europe/Zurich`). **Crucial for accurate backup scheduling.**                                           | `UTC`                  |
 | `TRUST_PROXY`             | When `true`, trust an existing `X-Forwarded-For` header from your reverse proxy. Leave `false` for direct deployments.                    | `false`                |
 | `TRUSTED_ORIGINS`         | Comma-separated list of extra trusted origins for CORS (e.g., `http://localhost:3000,http://example.com`).                                | (none)                 |
@@ -115,6 +116,25 @@ Zerobyte can be customized using environment variables. Below are the available 
 | `SERVER_IDLE_TIMEOUT`     | Idle timeout for the server in seconds.                                                                                                   | `60`                   |
 | `RCLONE_CONFIG_DIR`       | Path to the directory containing `rclone.conf` inside the container. Change this if running as a non-root user.                           | `/root/.config/rclone` |
 | `PROVISIONING_PATH`       | Path to a JSON file with operator-managed repositories and volumes to sync at startup.                                                    | (none)                 |
+
+### Performance tuning
+
+If backups use too much CPU, set `GOMAXPROCS` on the Zerobyte container and restart it:
+
+```yaml
+environment:
+  - GOMAXPROCS=2
+```
+
+This limits the Go scheduler used by Restic child processes. Existing operations are not changed; the new value applies to Restic processes started after the container restart.
+
+Other useful Restic tuning options:
+
+- Set repository compression to `off` to reduce CPU usage, or `auto` for the usual balance. `max` can save more space but uses more CPU.
+- Use repository upload/download limits to avoid saturating network links.
+- Use backup schedule **Custom restic parameters** for advanced per-job flags such as `--read-concurrency 1`, `--exclude-larger-than 10G`, or `--no-scan`.
+
+See the full guide: [Performance tuning](https://zerobyte.app/docs/guides/performance-tuning).
 
 ### Webhook and notification network policy
 
@@ -151,12 +171,12 @@ See `examples/provisioned-resources/README.md` for a full example.
 
 ### Simplified setup (no remote mounts)
 
-If you only need to back up locally-mounted folders and don't require remote share mounting capabilities, you can remove the `SYS_ADMIN` capability and FUSE device from your `docker-compose.yml`:
+If you only need to back up locally-mounted folders and don't require remote share mounting capabilities, you can remove the `SYS_ADMIN` capability and FUSE device from your `compose.yaml`:
 
 ```yaml
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.38
+    image: ghcr.io/nicotsx/zerobyte:v0.39
     container_name: zerobyte
     restart: unless-stopped
     ports:
@@ -190,12 +210,12 @@ Zerobyte supports multiple volume backends including NFS, SMB, WebDAV, SFTP, and
 
 To add your first volume, navigate to the "Volumes" section in the web interface and click on "Create volume". Fill in the required details such as volume name, type, and connection settings.
 
-If you want to backup a local directory on the same host where Zerobyte is running, you'll first need to mount that directory into the Zerobyte container. You can do this by adding a volume mapping in your `docker-compose.yml` file. For example, to mount `/path/to/your/directory` from the host to `/mydata` in the container, you would add the following line under the `volumes` section:
+If you want to backup a local directory on the same host where Zerobyte is running, you'll first need to mount that directory into the Zerobyte container. You can do this by adding a volume mapping in your `compose.yaml` file. For example, to mount `/path/to/your/directory` from the host to `/mydata` in the container, you would add the following line under the `volumes` section:
 
 ```diff
 services:
   zerobyte:
-    image: ghcr.io/nicotsx/zerobyte:v0.38
+    image: ghcr.io/nicotsx/zerobyte:v0.39
     container_name: zerobyte
     restart: unless-stopped
     cap_add:
@@ -214,7 +234,7 @@ services:
 +     - /path/to/your/directory:/mydata
 ```
 
-After updating the `docker-compose.yml` file, restart the Zerobyte container to apply the changes:
+After updating the `compose.yaml` file, restart the Zerobyte container to apply the changes:
 
 ```bash
 docker compose down
@@ -265,12 +285,12 @@ Zerobyte can use [rclone](https://rclone.org/) to support 40+ cloud storage prov
    rclone listremotes
    ```
 
-4. **Mount the rclone config into the Zerobyte container** by updating your `docker-compose.yml`:
+4. **Mount the rclone config into the Zerobyte container** by updating your `compose.yaml`:
 
    ```diff
    services:
      zerobyte:
-       image: ghcr.io/nicotsx/zerobyte:v0.38
+       image: ghcr.io/nicotsx/zerobyte:v0.39
        container_name: zerobyte
        restart: unless-stopped
        cap_add:

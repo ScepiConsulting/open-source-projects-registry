@@ -1,4 +1,8 @@
-# wol 🦭
+<p align="center">
+  <img src="assets/images/logo.png" alt="wol logo" width="96">
+</p>
+
+<h1 align="center">wol</h1>
 
 A CLI tool to send Wake-On-LAN (WOL) magic packets to wake up devices on your
 network. Features both CLI commands and a web interface.
@@ -9,6 +13,7 @@ network. Features both CLI commands and a web interface.
 
 - Send WOL magic packets via CLI or web interface
 - Configure multiple machines with names for easy access
+- Configurable broadcast address and port, with per-machine overrides
 - List configured machines
 - Web interface for easy wake-up
 - Docker support
@@ -79,6 +84,11 @@ reverse proxy with basic auth, https etc.
 > container. Host networking is recommended for Wake-on-LAN packets to work
 > properly on your local network.
 
+Image tags:
+
+- `latest` and `X.Y.Z` track named releases (`X.Y.Z` pins a specific version).
+- `edge` tracks the latest commit on `main`, for trying unreleased changes.
+
 ## Configuration
 
 Create a `config.yaml` file in one of these locations (in order of precedence):
@@ -86,6 +96,17 @@ Create a `config.yaml` file in one of these locations (in order of precedence):
 - `./config.yaml` (current directory)
 - `~/.wol/config.yaml` (home directory)
 - `/etc/wol/config.yaml` (system-wide)
+
+To load a config file from an arbitrary path, pass `-c`/`--config`:
+
+```sh
+wol serve --config /etc/wol/config.yaml
+```
+
+An explicit `--config` file is authoritative: it must exist (wol exits with an
+error if it doesn't), and the default search locations above and the `WOL_CONFIG`
+environment variable are ignored. On startup `serve` logs which config source it
+loaded.
 
 Alternatively, you can provide the configuration via the `WOL_CONFIG` environment variable:
 
@@ -114,13 +135,43 @@ machines:
   - name: server
     mac: "AA:BB:CC:DD:EE:FF"
     ip: "server.local"
+    # Optional per-machine broadcast override, e.g. when this machine is on a
+    # different subnet/VLAN. Unset fields inherit the global broadcast below.
+    broadcast:
+      address: "192.168.20.255"
 
 server:
   listen: ":7777" # Optional, defaults to :7777
 
+# Optional. Where magic packets are sent; defaults to 255.255.255.255:9.
+broadcast:
+  address: "255.255.255.255"
+  port: 9
+
 ping:
   privileged: false # Optional, set to true if you need privileged ping
 ```
+
+### Broadcast address and port
+
+By default, magic packets are sent to the broadcast address `255.255.255.255` on
+port `9`. On a host with more than one network interface (for example WSL2, or a
+host with Docker bridges), the OS may send the packet out the wrong interface, so
+the device never receives it.
+
+If that happens, set the broadcast address of your device's own subnet. For a
+device at `192.168.1.100/24` that address is `192.168.1.255`. The packet is then
+routed out the correct interface.
+
+You can set the broadcast target in three ways:
+
+- Globally, under the `broadcast` key.
+- Per machine, under a machine's own `broadcast` key. This is useful when machines
+  are on different subnets. Any field you leave out falls back to the global value.
+- For a single send, with the `--broadcast` and `--port` flags.
+
+When more than one is set, the order of precedence is: CLI flag, then per-machine
+config, then global config, then the built-in default of `255.255.255.255:9`.
 
 ## Usage
 
@@ -136,8 +187,15 @@ wol send --name desktop
 # Wake up a machine by MAC address
 wol send --mac "00:11:22:33:44:55"
 
+# Override the broadcast address and port for a single send
+# (for example, to reach a device on a specific subnet)
+wol send --mac "00:11:22:33:44:55" --broadcast 192.168.1.255 --port 9
+
 # Start the web interface
 wol serve
+
+# Start the web interface with an explicit config file
+wol serve --config /etc/wol/config.yaml
 
 # Show version information
 wol version
@@ -185,6 +243,15 @@ To make this change persistent, add it to your `/etc/sysctl.conf` file.
 You can also try experimenting with setting `ping.privileged: true` in your configuration as an alternative solution.
 
 For more details, see [issue #12](https://github.com/Trugamr/wol/issues/12).
+
+## Releases
+
+Releases are handled by [release-please](https://github.com/googleapis/release-please).
+Every push to `main` updates a "release" pull request that bumps the version and
+the changelog based on the [Conventional Commits](https://www.conventionalcommits.org/)
+in the history. Merging that pull request tags the release and triggers GoReleaser
+to publish the binaries and container images. Nothing is released until the release
+pull request is merged.
 
 ## License
 

@@ -29,7 +29,7 @@ Without active preservation effort, everything on the internet eventually disapp
 *ArchiveBox is an open source tool that lets organizations & individuals archive both public & private web content while retaining control over their data. It can be used to save copies of bookmarks, preserve evidence for legal cases, backup photos from FB/Insta/Flickr or media from YT/Soundcloud/etc., save research papers, and more...*
 <br/>
 
-> ➡️ Get ArchiveBox with `pip install archivebox` on [Linux](#quickstart)/[macOS](#quickstart), or via **[Docker](#quickstart)** ⭐️ on any OS.  
+> ➡️ Get ArchiveBox with `pip install archivebox>=0.9.5rc1` on [Linux](#quickstart)/[macOS](#quickstart), or via **[Docker](#quickstart)** ⭐️ on any OS.  
 
 *Once installed, you can interact with it through the: [Browser Extension](https://github.com/ArchiveBox/archivebox-browser-extension), [CLI](#usage), [self-hosted web interface](https://github.com/ArchiveBox/ArchiveBox/wiki/Publishing-Your-Archive), [Python API](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#python-shell-usage), or [filesystem](#static-archive-exporting).*
 
@@ -92,7 +92,7 @@ docker run -it -v $PWD:/data archivebox/archivebox init
 <br/>
 <br/>
 # Option C: Or install it with your preferred pkg manager (see Quickstart below for apt, brew, and more)
-pip install archivebox
+pip install 'archivebox>=0.9.5rc1'
 mkdir -p ~/archivebox/data && cd ~/archivebox/data
 archivebox init
 archivebox install
@@ -299,12 +299,14 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 <pre lang="bash"><code style="white-space: pre-line">echo 'deb [trusted=yes] https://archivebox.github.io/debian-archivebox dev main' | sudo tee /etc/apt/sources.list.d/archivebox.list
 sudo apt update
 sudo apt install archivebox
-archivebox version                         # make sure all dependencies are installed
+archivebox version                         # make sure the package is installed
 </code></pre>
 </li>
 <li>Create a new empty directory and initialize your collection (can be anywhere).
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data && cd ~/archivebox/data
-archivebox init --install
+archivebox init
+sudo archivebox install
+archivebox add 'https://example.com'
 </code></pre>
 <br/>
 </li>
@@ -474,6 +476,22 @@ For more discussion on managed and paid hosting options see here: <a href="https
 ArchiveBox commands can be run in a terminal [directly on your host](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#cli-usage), or via [Docker](https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#usage-1)/[Docker Compose](https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#usage).  
 <sup>(depending on how you chose to install it above)</sup>
 
+<!--
+```bash
+set -euo pipefail
+__archivebox_docs_home="$(mktemp -d)"
+export HOME="$__archivebox_docs_home"
+mkdir -p ~/archivebox/data
+cd ~/archivebox/data
+archivebox init
+archivebox version
+archivebox help
+test -f index.sqlite3
+test -d archive
+rm -rf "$__archivebox_docs_home"
+```
+-->
+<!--pytest.mark.skip(reason='Mixed host/Docker alternatives include interactive Docker commands')-->
 ```bash
 mkdir -p ~/archivebox/data   # create a new data dir anywhere
 cd ~/archivebox/data         # IMPORTANT: cd into the directory
@@ -510,10 +528,12 @@ archivebox persona create --import=chrome personal
 # make sure you have pip-installed ArchiveBox and it's available in your $PATH first  
 <br/>
 # archivebox [subcommand] [--help]
-archivebox init --install      # safe to run init multiple times (also how you update versions)
+mkdir -p ~/archivebox/data && cd ~/archivebox/data
+archivebox init
+sudo archivebox install
+archivebox add 'https://example.com'
 archivebox version           # get archivebox version info + check dependencies
 archivebox help              # get list of archivebox subcommands that can be run
-archivebox add --depth=1 'https://news.ycombinator.com'
 </code></pre>
 <i>For more info, see our <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#cli-usage">Usage: CLI Usage</a> wiki. ➡️</i>
 </details>
@@ -527,10 +547,11 @@ archivebox add --depth=1 'https://news.ycombinator.com'
 # make sure you have `docker-compose.yml` from the Quickstart instructions first
 <br/>
 # docker compose run archivebox [subcommand] [--help]
-docker compose run archivebox init --install
+docker compose run archivebox init
+docker compose run archivebox install
 docker compose run archivebox version
 docker compose run archivebox help
-docker compose run archivebox add --depth=1 'https://news.ycombinator.com'
+docker compose run archivebox add 'https://example.com'
 # to start webserver: docker compose up
 </code></pre>
 <i>For more info, see our <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#usage">Usage: Docker Compose CLI</a> wiki. ➡️</i>
@@ -545,10 +566,11 @@ docker compose run archivebox add --depth=1 'https://news.ycombinator.com'
 # make sure you create and cd into in a new empty directory first  
 <br/>
 # docker run -it -v $PWD:/data archivebox/archivebox [subcommand] [--help]
-docker run -v $PWD:/data -it archivebox/archivebox init --install
+docker run -v $PWD:/data -it archivebox/archivebox init
+docker run -v $PWD:/data -it archivebox/archivebox install
 docker run -v $PWD:/data -it archivebox/archivebox version
 docker run -v $PWD:/data -it archivebox/archivebox help
-docker run -v $PWD:/data -it archivebox/archivebox add --depth=1 'https://news.ycombinator.com'
+docker run -v $PWD:/data -it archivebox/archivebox add 'https://example.com'
 # to start webserver: docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox
 </code></pre>
 <i>For more info, see our <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#usage-1">Usage: Docker CLI</a> wiki. ➡️</i>
@@ -674,10 +696,36 @@ docker run -it -v $PWD:/data archivebox/archivebox add --depth=1 'https://exampl
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/e1e5bd78-b0b6-45dc-914c-e1046fee4bc4" width="330px" align="right" style="float: right"/>
 
 
+<!--
+```bash
+set -euo pipefail
+__archivebox_docs_home="$(mktemp -d)"
+export HOME="$__archivebox_docs_home"
+mkdir -p ~/archivebox/data ~/Downloads
+cd ~/archivebox/data
+archivebox init
+cat > ~/Downloads/some_feed.xml <<'EOF'
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>ArchiveBox docs test feed</title>
+    <link>https://example.com/</link>
+    <description>ArchiveBox docs test feed</description>
+    <item>
+      <title>Feed item</title>
+      <link>https://example.com/from-feed</link>
+      <guid>https://example.com/from-feed</guid>
+    </item>
+  </channel>
+</rss>
+EOF
+```
+-->
+<!--pytest-codeblocks:cont-->
 ```bash
 # archivebox add --help
 archivebox add 'https://example.com/some/page'
-archivebox add --parser=generic_rss < ~/Downloads/some_feed.xml
+archivebox add --depth=1 --plugins=parse_rss_urls "file://$HOME/Downloads/some_feed.xml"
 archivebox add --depth=1 'https://news.ycombinator.com#2020-12-12'
 echo 'http://example.com' | archivebox add
 echo 'any text with <a href="https://example.com">urls</a> in it' | archivebox add
@@ -687,6 +735,19 @@ echo 'any text with <a href="https://example.com">urls</a> in it' | archivebox a
 # if using Docker Compose, add -T when piping stdin / stdout:
 # echo 'https://example.com' | docker compose run -T archivebox add
 ```
+<!--pytest-codeblocks:cont-->
+<!--
+```bash
+archivebox list --json > snapshots.json
+grep -q 'https://example.com/some/page' snapshots.json
+grep -q 'https://example.com/from-feed' snapshots.json
+grep -q 'https://news.ycombinator.com#2020-12-12' snapshots.json
+grep -q 'http://example.com' snapshots.json
+test -d archive
+test "$(find archive -mindepth 1 -maxdepth 1 -type d | wc -l | tr -d ' ')" -ge 4
+rm -rf "$__archivebox_docs_home"
+```
+-->
 
 See the [Usage: CLI](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#CLI-Usage) page for documentation and examples.
 
@@ -1083,7 +1144,7 @@ Because ArchiveBox is designed to ingest a large volume of URLs with multiple co
 <li><strong>Don't store large collections on older filesystems like EXT3/FAT</strong> as they may not be able to handle more than 50k directory entries in the <code>data/archive/</code> folder.
 </li>
 <li><strong>Try to keep the <code>data/index.sqlite3</code> file on local drive (not a network mount)</strong> or SSD for maximum performance, however the <code>data/archive/</code> folder can be on a network mount or slower HDD.</li>
-<li>If using Docker or NFS/SMB/FUSE for the <code>data/archive/</code> folder, you may need to set <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#puid--pgid"><code>PUID</code> & <code>PGID</code></a> and <a href="https://github.com/ArchiveBox/ArchiveBox/issues/1304">disable <code>root_squash</code></a> on your fileshare server.
+<li>If using Docker or NFS/SMB/FUSE for the <code>data/archive/</code> folder, make sure the mounted data directory is writable by its intended owner and consider disabling <a href="https://github.com/ArchiveBox/ArchiveBox/issues/1304"><code>root_squash</code></a> on your fileshare server.
 </li>
 </ul>
 
@@ -1093,7 +1154,6 @@ Because ArchiveBox is designed to ingest a large volume of URLs with multiple co
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Disk-Layout">Wiki: Usage (Disk Layout)</a></li>
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#output-folder">Wiki: Security Overview (Output-Folder)</a></li>
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#large-archives">Wiki: Usage (Large Archives)</a></li>
-<li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#puid--pgid">Wiki: Configuration (<code>PUID</code> & <code>GUID</code>)</a></li>
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#do-not-run-as-root">Wiki: Security Overview (Do Not Run as Root)</a></li>
 </ul>
 
@@ -1346,6 +1406,7 @@ For low hanging fruit / easy first tickets, see: <a href="https://github.com/Arc
 
 First make sure you have `uv` installed: https://docs.astral.sh/uv/getting-started/installation/
 
+<!--pytest.mark.skip(reason='Development workflow snippets are not part of docs codeblock tests')-->
 ```bash
 git clone https://github.com/ArchiveBox/monorepo
 cd monorepo
@@ -1367,6 +1428,7 @@ Repos included in monorepo setup:
 
 #### 2. Option A: Install the Python, JS, and system dependencies directly on your machine
 
+<!--pytest.mark.skip(reason='Development workflow snippets are not part of docs codeblock tests')-->
 ```bash
 # Install ArchiveBox runtime dependencies
 mkdir -p data && cd data
@@ -1382,6 +1444,7 @@ archivebox server 0.0.0.0:8000
 
 #### 2. Option B: Build the docker container and use that for development instead
 
+<!--pytest.mark.skip(reason='Development workflow snippets are not part of docs codeblock tests')-->
 ```bash
 # Optional: develop via docker by mounting the code dir into the container
 # if you edit e.g. ./archivebox/core/models.py on the docker host, runserver
@@ -1411,6 +1474,7 @@ You can also run all these in Docker. For more examples see the GitHub Actions C
 
 <details><summary><i>Click to expand...</i></summary>
 
+<!--pytest.mark.skip(reason='Development workflow snippets are not part of docs codeblock tests')-->
 ```bash
 # set up persistent DEBUG=True for all runs
 archivebox config --set DEBUG=True
@@ -1435,6 +1499,7 @@ https://stackoverflow.com/questions/1074212/how-can-i-see-the-raw-sql-queries-dj
 
 If you're looking for the latest `dev` Docker image, it's often available pre-built on Docker Hub, simply pull and use `archivebox/archivebox:dev`.
 
+<!--pytest.mark.skip(reason='Development workflow snippets are not part of docs codeblock tests')-->
 ```bash
 docker pull archivebox/archivebox:dev
 docker run archivebox/archivebox:dev version
@@ -1442,9 +1507,10 @@ docker run archivebox/archivebox:dev version
 ```
 
 ##### Build Branch from Source
-  
+
 You can also build and run any branch yourself from source, for example to build & use `dev` locally:
 
+<!--pytest.mark.skip(reason='Development workflow snippets are not part of docs codeblock tests')-->
 ```bash
 # docker-compose.yml:
 services:
@@ -1469,6 +1535,7 @@ archivebox install
 
 <details><summary><i>Click to expand...</i></summary>
 
+<!--pytest.mark.skip(reason='Development workflow snippets are not part of docs codeblock tests')-->
 ```bash
 ./bin/lint.sh
 ./bin/test.sh
@@ -1482,6 +1549,7 @@ archivebox install
 
 <details><summary><i>Click to expand...</i></summary>
 
+<!--pytest.mark.skip(reason='Development workflow snippets are not part of docs codeblock tests')-->
 ```bash
 # generate the database migrations after changes to models.py
 cd archivebox/
@@ -1546,6 +1614,7 @@ Copy a similar plugin as a template to modify, then open a new PR to add it in t
 <details><summary><i>Click to expand...</i></summary>
 
 (Normally CI takes care of this, but these scripts can be run to do it manually)
+<!--pytest.mark.skip(reason='Development workflow snippets are not part of docs codeblock tests')-->
 ```bash
 ./bin/build.sh
 
@@ -1562,6 +1631,7 @@ Copy a similar plugin as a template to modify, then open a new PR to add it in t
 <details><summary><i>Click to expand...</i></summary>
 
 (Normally CI takes care of this, but these scripts can be run to do it manually)
+<!--pytest.mark.skip(reason='Development workflow snippets are not part of docs codeblock tests')-->
 ```bash
 ./bin/release.sh
 

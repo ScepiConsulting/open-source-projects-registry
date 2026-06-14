@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-06-07T07:12:22Z",
+  "generated_at": "2026-06-14T07:29:19Z",
   "summary": {
-    "apps": 1304,
-    "repos": 1282,
-    "readme_ok": 118,
-    "readme_not_modified": 1113,
-    "readme_error": 51
+    "apps": 1297,
+    "repos": 1275,
+    "readme_ok": 131,
+    "readme_not_modified": 1092,
+    "readme_error": 52
   },
   "failed_repos": [
     {
@@ -42,6 +42,11 @@
       "repo_key": "codeberg.org/grunfink/snac2",
       "repo_url": "codeberg.org/grunfink/snac2",
       "error": "worker_exception: Invalid URL 'codeberg.org/grunfink/snac2/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/grunfink/snac2/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/irelephant/kittygram",
+      "repo_url": "codeberg.org/irelephant/kittygram",
+      "error": "worker_exception: Invalid URL 'codeberg.org/irelephant/kittygram/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/irelephant/kittygram/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/karrot/karrot-backend",
