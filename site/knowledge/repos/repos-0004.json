@@ -1,7 +1,7 @@
 {
   "chunk": 4,
   "count": 50,
-  "generated_at": "2026-06-14T07:29:19Z",
+  "generated_at": "2026-06-21T08:06:44Z",
   "items": [
     {
       "repo_key": "github.com/Kometa-Team/Kometa",
@@ -297,9 +297,9 @@
       "app_references": [
         "listenarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Listenarrs__Listenarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Listenarrs/Listenarr/canary/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1c888ffecaa9cf865a8ba2f687408d0baee41cea0a44b0af0d08f0fd20644d57",
       "error": null
     },
@@ -402,9 +402,9 @@
       "app_references": [
         "explo"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__LumePart__Explo.md",
-      "readme_download_url": "https://raw.githubusercontent.com/LumePart/Explo/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e5aab85401e4bef8cdf171da94f928316c9660752cae8d2db887a30ca7f6c507",
       "error": null
     },
@@ -477,9 +477,9 @@
       "app_references": [
         "maintainerr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Maintainerr__Maintainerr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Maintainerr/Maintainerr/development/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6778340e00065ed8755f1d8b7244909484621cb148027e319248b5a45a551b06",
       "error": null
     },
@@ -589,6 +589,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/Memtly/Memtly.Community",
+      "repo_url": "github.com/Memtly/Memtly.Community",
+      "host": "github.com",
+      "owner": "Memtly",
+      "repo": "Memtly.Community",
+      "app_references": [
+        "memtly"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__Memtly__Memtly.Community.md",
+      "readme_download_url": "https://raw.githubusercontent.com/Memtly/Memtly.Community/master/readme.md",
+      "readme_sha256": "5118cf89243f85ec387ea76e620e994f5bd991aa4914811026def9446e16163b",
+      "error": null
+    },
+    {
       "repo_key": "github.com/MizuchiLabs/mantrae",
       "repo_url": "github.com/MizuchiLabs/mantrae",
       "host": "github.com",
@@ -642,9 +657,9 @@
       "app_references": [
         "mylar3"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__MylarComics__mylar3.md",
-      "readme_download_url": "https://raw.githubusercontent.com/MylarComics/mylar3/stable/README.md",
+      "readme_download_url": null,
       "readme_sha256": "da83e819456674544168a5e0c4b0af291eaca852b61f0c370e416807ccc06cb3",
       "error": null
     },
@@ -657,9 +672,9 @@
       "app_references": [
         "unbound"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__NLnetLabs__unbound.md",
-      "readme_download_url": "https://raw.githubusercontent.com/NLnetLabs/unbound/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "0f4fa968e7cc13171457b3e024ec2c069a3f2131ab9030aac50fbc143c429c7b",
       "error": null
     },
@@ -687,9 +702,9 @@
       "app_references": [
         "soulsync"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Nezreka__SoulSync.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Nezreka/SoulSync/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "04dd851eea60bf42e2910d29f7fe79422b8d1ad648259082a07adecd2da05890",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__Notifiarr__dockwatch.md",
       "readme_download_url": null,
       "readme_sha256": "04b8852868432639b9c49372791e39300110d71c6f8c7852c6efc3d99291fac4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Notifiarr/notifiarr",
-      "repo_url": "github.com/Notifiarr/notifiarr",
-      "host": "github.com",
-      "owner": "Notifiarr",
-      "repo": "notifiarr",
-      "app_references": [
-        "notifiarr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Notifiarr__notifiarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "4c950ac2567a70d6626aafff21c90a0843c16b88d5e3c8629e9fc7580da43c2b",
       "error": null
     }
   ]

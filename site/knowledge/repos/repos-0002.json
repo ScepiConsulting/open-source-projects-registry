@@ -1,7 +1,7 @@
 {
   "chunk": 2,
   "count": 50,
-  "generated_at": "2026-06-14T07:29:19Z",
+  "generated_at": "2026-06-21T08:06:44Z",
   "items": [
     {
       "repo_key": "github.com/Arthi-chaud/Meelo",
@@ -282,9 +282,9 @@
       "app_references": [
         "peertube"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Chocobozzz__PeerTube.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Chocobozzz/PeerTube/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "3b29fa3f3c953309d170fd0bc0fa30b014a0bb795f9f875ff51b8de081fc3e25",
       "error": null
     },
@@ -301,21 +301,6 @@
       "readme_path": "knowledge/readmes/github.com__ChrispyBacon-dev__DockFlare.md",
       "readme_download_url": null,
       "readme_sha256": "7ad86b040804cd93fefde76ce9edcf344d6b020a1c3825647a6c6a6b64171f67",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Cirx08/WeddingShare",
-      "repo_url": "github.com/Cirx08/WeddingShare",
-      "host": "github.com",
-      "owner": "Cirx08",
-      "repo": "WeddingShare",
-      "app_references": [
-        "weddingshare"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Cirx08__WeddingShare.md",
-      "readme_download_url": null,
-      "readme_sha256": "3f82f033eb536a2c40ec39e7b3fe0ca075a3630388a955ef246c0daf55a70116",
       "error": null
     },
     {
@@ -387,9 +372,9 @@
       "app_references": [
         "sparkyfitness"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__CodeWithCJ__SparkyFitness.md",
-      "readme_download_url": "https://raw.githubusercontent.com/CodeWithCJ/SparkyFitness/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "996e4473118f99f55f2f0704c51fc0aa054eccd7d47c076aaaa318f6a5740457",
       "error": null
     },
@@ -567,10 +552,10 @@
       "app_references": [
         "youtarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__DialmasterOrg__Youtarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "90b5ff50745ab42a15de3312f6d68e44f53f1d2ac9fc07c85165e1ef0c9dacc1",
+      "readme_download_url": "https://raw.githubusercontent.com/DialmasterOrg/Youtarr/main/README.md",
+      "readme_sha256": "c2a22dd838c149cf08172f12c3e37e8f9f6f467e4ebcf7c15721155b774ba646",
       "error": null
     },
     {
@@ -672,9 +657,9 @@
       "app_references": [
         "fladder"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__DonutWare__Fladder.md",
-      "readme_download_url": "https://raw.githubusercontent.com/DonutWare/Fladder/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "45c2d19cc2b05f2103731ba587cde2a54ec12ac2e670ee211567bf3e8636206a",
       "error": null
     },
@@ -687,9 +672,9 @@
       "app_references": [
         "ebook2audiobook"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__DrewThomasson__ebook2audiobook.md",
-      "readme_download_url": "https://raw.githubusercontent.com/DrewThomasson/ebook2audiobook/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6037638a613813838e1389ffe7f0f0449217e0e840c1c7e68511ed7ce54207f6",
       "error": null
     },
@@ -717,10 +702,10 @@
       "app_references": [
         "drop"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Drop-OSS__drop.md",
-      "readme_download_url": null,
-      "readme_sha256": "e99d994220a381837ea58907146661db0cc5e776870be1c68730a57cf05caf90",
+      "readme_download_url": "https://raw.githubusercontent.com/Drop-OSS/drop/develop/README.md",
+      "readme_sha256": "a24b9860aab2f657a331e07bd1fa1cdb684969b090260cfdfb401eb3d9b55ad7",
       "error": null
     },
     {
@@ -751,6 +736,21 @@
       "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbBudget.md",
       "readme_download_url": null,
       "readme_sha256": "facd261913f4137326e77294a2a16bee37e1dc7e3f89a9dff2826c0fde1c08c8",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/DumbWareio/DumbDo",
+      "repo_url": "github.com/DumbWareio/DumbDo",
+      "host": "github.com",
+      "owner": "DumbWareio",
+      "repo": "DumbDo",
+      "app_references": [
+        "dumbdo"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbDo.md",
+      "readme_download_url": null,
+      "readme_sha256": "bf14942396338b8ce61af8c1d55cd8f0d0d133ab401d46125e1f9068c1598ac5",
       "error": null
     }
   ]

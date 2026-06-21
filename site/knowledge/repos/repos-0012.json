@@ -1,8 +1,68 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-06-14T07:29:19Z",
+  "generated_at": "2026-06-21T08:06:44Z",
   "items": [
+    {
+      "repo_key": "github.com/documenso/documenso",
+      "repo_url": "github.com/documenso/documenso",
+      "host": "github.com",
+      "owner": "documenso",
+      "repo": "documenso",
+      "app_references": [
+        "documenso"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__documenso__documenso.md",
+      "readme_download_url": null,
+      "readme_sha256": "adedb40d1be269cd345620ff99b76770f3ceb4952964e37234d4df29964d789b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/docusealco/docuseal",
+      "repo_url": "github.com/docusealco/docuseal",
+      "host": "github.com",
+      "owner": "docusealco",
+      "repo": "docuseal",
+      "app_references": [
+        "docuseal"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__docusealco__docuseal.md",
+      "readme_download_url": null,
+      "readme_sha256": "57dabc2c41a8297280a3a60ee5bb480b89aed5415a6c6ebfc20e8d05d0b6eb16",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dohsimpson/HabitTrove",
+      "repo_url": "github.com/dohsimpson/HabitTrove",
+      "host": "github.com",
+      "owner": "dohsimpson",
+      "repo": "HabitTrove",
+      "app_references": [
+        "habittrove"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dohsimpson__HabitTrove.md",
+      "readme_download_url": null,
+      "readme_sha256": "928353386e2095e61c686abb94ad925e2cd3791f66b4afbc81196e0e5fc64c45",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dohsimpson/TaskTrove",
+      "repo_url": "github.com/dohsimpson/TaskTrove",
+      "host": "github.com",
+      "owner": "dohsimpson",
+      "repo": "TaskTrove",
+      "app_references": [
+        "tasktrove"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dohsimpson__TaskTrove.md",
+      "readme_download_url": null,
+      "readme_sha256": "70608c00620e3ba837206bd0b82bc58b8a71fa42358b1a1c27329b57868a4774",
+      "error": null
+    },
     {
       "repo_key": "github.com/dokku/dokku",
       "repo_url": "github.com/dokku/dokku",
@@ -12,9 +72,9 @@
       "app_references": [
         "dokku"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dokku__dokku.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dokku/dokku/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b961a551c5c72d30f3fe4b9eb03f9605b7acc651f36dd1441c8368ce8ce7966b",
       "error": null
     },
@@ -342,10 +402,10 @@
       "app_references": [
         "emoncms"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__emoncms__emoncms.md",
-      "readme_download_url": null,
-      "readme_sha256": "70970b33f396233fdbd43bb327b4108bc6057aa770c704cbb35dda584a6aff1e",
+      "readme_download_url": "https://raw.githubusercontent.com/emoncms/emoncms/master/readme.md",
+      "readme_sha256": "0e099a563f6cb6281435dd86526a37ecee225ec627d571078d5bfd4c0f59ca90",
       "error": null
     },
     {
@@ -357,9 +417,9 @@
       "app_references": [
         "note-mark"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__enchant97__note-mark.md",
-      "readme_download_url": "https://raw.githubusercontent.com/enchant97/note-mark/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d6a98181311e1306f9a36aed9cd6180a7acb87552e7f0ab281bfc4864ba5cd97",
       "error": null
     },
@@ -418,10 +478,10 @@
       "app_references": [
         "filerise"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__error311__FileRise.md",
-      "readme_download_url": null,
-      "readme_sha256": "cf66aaae29f0f8c50756145db3015cabf31a6075fe9a2cae7ef409dfad5175a4",
+      "readme_download_url": "https://raw.githubusercontent.com/error311/FileRise/master/README.md",
+      "readme_sha256": "a9e53346dd5e5a1538211eb47d8bc2eab62f602a34fc05cdf010c37324c53053",
       "error": null
     },
     {
@@ -508,9 +568,9 @@
       "app_references": [
         "eventcatalog"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__event-catalog__eventcatalog.md",
-      "readme_download_url": "https://raw.githubusercontent.com/event-catalog/eventcatalog/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "eda2258c9811d51efeb498693f51a59ac57f89fc626f2a39a3b0b184cd40b8c4",
       "error": null
     },
@@ -586,7 +646,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__eznix86__docker-registry-ui.md",
       "readme_download_url": "https://raw.githubusercontent.com/eznix86/docker-registry-ui/main/README.md",
-      "readme_sha256": "e246828695b617a8b6e5ed6b285aca66f6e6d2b5adfbca1504702c13e0683e82",
+      "readme_sha256": "5ecb8994192ce3d2288a96018664e34bd018806da5f4fe9b84f9b3e289d02aee",
       "error": null
     },
     {
@@ -692,66 +752,6 @@
       "readme_path": "knowledge/readmes/github.com__fedify-dev__hollo.md",
       "readme_download_url": null,
       "readme_sha256": "05ab2e757a861b1e20ede911ff298f043f3147911230295989bf6050c0a78375",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/feedbin/feedbin",
-      "repo_url": "github.com/feedbin/feedbin",
-      "host": "github.com",
-      "owner": "feedbin",
-      "repo": "feedbin",
-      "app_references": [
-        "feedbin"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__feedbin__feedbin.md",
-      "readme_download_url": null,
-      "readme_sha256": "b1d820987b7bbd900fcdb4a2aeba828542ab1658d4600a286707ecc48fcaa4ba",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ferronweb/ferron",
-      "repo_url": "github.com/ferronweb/ferron",
-      "host": "github.com",
-      "owner": "ferronweb",
-      "repo": "ferron",
-      "app_references": [
-        "ferron"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__ferronweb__ferron.md",
-      "readme_download_url": null,
-      "readme_sha256": "e5cb5ae244a85c7b0c5fef39249f1671b478f423c5399de37affa6a5a06c6d8d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/figranium/figranium",
-      "repo_url": "github.com/figranium/figranium",
-      "host": "github.com",
-      "owner": "figranium",
-      "repo": "figranium",
-      "app_references": [
-        "figranium"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__figranium__figranium.md",
-      "readme_download_url": null,
-      "readme_sha256": "94b1b7e56022df97deb5dfcb47958622a1a72c5fb1c4be4442e7469c996fd563",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/filebrowser/filebrowser",
-      "repo_url": "github.com/filebrowser/filebrowser",
-      "host": "github.com",
-      "owner": "filebrowser",
-      "repo": "filebrowser",
-      "app_references": [
-        "file-browser"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__filebrowser__filebrowser.md",
-      "readme_download_url": null,
-      "readme_sha256": "ee55dc02d2ad5c5532649b0c8a2c3612ae6706a80d0e6001ea61895624049b36",
       "error": null
     }
   ]

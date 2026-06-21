@@ -45,12 +45,12 @@
 
 ## Who It's For
 
-| Audience                 | Use Case                                                                                                    |
-| ------------------------ | ----------------------------------------------------------------------------------------------------------- |
-| **Homelabbers**          | Plan your server rack before you rack it. Move pixels, not 4U servers.                                      |
-| **AV Technicians**       | Bayed rack support for audio installs, map out amp racks, patch bays, and processor chains.                 |
-| **Network Engineers**    | Document and plan switch/router topologies. Export for runbooks and change requests.                        |
-| **Data Centre Teams**    | Layout planning for colo cages and enterprise cabinets. Share via URL with your team.                       |
+| Audience | Use Case |
+| --- | --- |
+| **Homelabbers** | Plan your server rack before you rack it. Move pixels, not 4U servers. |
+| **AV Technicians** | Bayed rack support for audio installs, map out amp racks, patch bays, and processor chains. |
+| **Network Engineers** | Document and plan switch/router topologies. Export for runbooks and change requests. |
+| **Data Centre Teams** | Layout planning for colo cages and enterprise cabinets. Share via URL with your team. |
 | **Educators & Students** | Teach networking and infrastructure concepts with a visual, hands-on tool. No licence keys, no gatekeeping. |
 
 ## Why Though?
@@ -60,6 +60,12 @@ You might ask, why should I make an imaginary rack like some sort of IT cosplay?
 - **Plan your layouts** before you build them. It's a lot easier to move your mouse than that 4U server full of hard drives. Your shoulder will thank you.
 - **Document existing layouts** so you know what is where.
 - **Because you can**
+
+## How Racks Work
+
+Racks are measured in rack units, written U. One U is 1.75 inches of vertical space, and a common full-height rack is 42U. Rackula models racks in whole U: a device occupies a whole number of units and mounts at a whole-U boundary, the same way real rails register equipment under the EIA-310 standard. If something sits at U5, it is really at U5, not floating part of a unit above it.
+
+Gear smaller than 1U, like half-height brackets or side-by-side half-width pairs, does not bolt to the rails on its own. It rides inside a 1U carrier (a bracket, tray, or shelf) that takes up one whole U and holds the smaller devices. The carrier registers to the rails, and the small devices register to the carrier.
 
 ## Get Started
 

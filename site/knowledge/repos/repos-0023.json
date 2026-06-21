@@ -1,8 +1,83 @@
 {
   "chunk": 23,
   "count": 50,
-  "generated_at": "2026-06-14T07:29:19Z",
+  "generated_at": "2026-06-21T08:06:44Z",
   "items": [
+    {
+      "repo_key": "github.com/semaphoreio/semaphore",
+      "repo_url": "github.com/semaphoreio/semaphore",
+      "host": "github.com",
+      "owner": "semaphoreio",
+      "repo": "semaphore",
+      "app_references": [
+        "semaphore"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__semaphoreio__semaphore.md",
+      "readme_download_url": null,
+      "readme_sha256": "12d9bacfb9b70d899c737b2867a20059526881b191c6476f16565279e40ec4e4",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/semaphoreui/semaphore",
+      "repo_url": "github.com/semaphoreui/semaphore",
+      "host": "github.com",
+      "owner": "semaphoreui",
+      "repo": "semaphore",
+      "app_references": [
+        "semaphore-ui"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__semaphoreui__semaphore.md",
+      "readme_download_url": "https://raw.githubusercontent.com/semaphoreui/semaphore/develop/README.md",
+      "readme_sha256": "0beaced2138b5299db23aa5e4f50aa66e482bf6cc41e6a6930971ba77e6cd077",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/sergi0g/cup",
+      "repo_url": "github.com/sergi0g/cup",
+      "host": "github.com",
+      "owner": "sergi0g",
+      "repo": "cup",
+      "app_references": [
+        "cup-updates"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__sergi0g__cup.md",
+      "readme_download_url": null,
+      "readme_sha256": "4b5c9a936c75a25b5e43e938b462645b539029c40212672179f03e760b103e68",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/sergix44/XBackBone",
+      "repo_url": "github.com/sergix44/XBackBone",
+      "host": "github.com",
+      "owner": "sergix44",
+      "repo": "XBackBone",
+      "app_references": [
+        "xbackbone"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__sergix44__XBackBone.md",
+      "readme_download_url": null,
+      "readme_sha256": "c7d5607e69573feb64014453e29648616cf5c209e4a90d0d57744b9110cd89dc",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/seriousm4x/UpSnap",
+      "repo_url": "github.com/seriousm4x/UpSnap",
+      "host": "github.com",
+      "owner": "seriousm4x",
+      "repo": "UpSnap",
+      "app_references": [
+        "upsnap"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__seriousm4x__UpSnap.md",
+      "readme_download_url": "https://raw.githubusercontent.com/seriousm4x/UpSnap/master/README.md",
+      "readme_sha256": "cadf227e9219e15350ca77ae6d0df3a05009e741aa6a92f163a50ae0d27a4ad1",
+      "error": null
+    },
     {
       "repo_key": "github.com/sethcottle/littlelink",
       "repo_url": "github.com/sethcottle/littlelink",
@@ -87,9 +162,9 @@
       "app_references": [
         "silex"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__silexlabs__Silex.md",
-      "readme_download_url": "https://raw.githubusercontent.com/silexlabs/Silex/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4e557f907e3072ba1f6a213be11302eed5b034bc4e98ba04402db16b952de01d",
       "error": null
     },
@@ -102,10 +177,10 @@
       "app_references": [
         "silverbullet"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__silverbulletmd__silverbullet.md",
-      "readme_download_url": null,
-      "readme_sha256": "8b6fcf52655f129bfa485fb9acd1fe7cea0f830e21632a15930b0e73a0b0a48b",
+      "readme_download_url": "https://raw.githubusercontent.com/silverbulletmd/silverbullet/main/README.md",
+      "readme_sha256": "5e31d579b15c7490c807aa74ea4b2cbb93c6287a91d4edfc61a91713813cfbdd",
       "error": null
     },
     {
@@ -297,10 +372,10 @@
       "app_references": [
         "pingvin-share-x"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__smp46__pingvin-share-x.md",
-      "readme_download_url": null,
-      "readme_sha256": "6df7c2fd1a1bc265b79022c3d5db5a62a544eccb935a74be17fd6de1014e2f9c",
+      "readme_download_url": "https://raw.githubusercontent.com/smp46/pingvin-share-x/main/README.md",
+      "readme_sha256": "8d9c5b94fcfbc7376be71e3ae28df8906bcd46251a8fa0aa96d6283aff6ce97a",
       "error": null
     },
     {
@@ -315,7 +390,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__snapotter-hq__SnapOtter.md",
       "readme_download_url": "https://raw.githubusercontent.com/snapotter-hq/SnapOtter/main/README.md",
-      "readme_sha256": "c426e822bf303648c1d5716ad9895da020cb1c9131a2b455ff506d24b1b25e9f",
+      "readme_sha256": "15de89f7035f0238a84be0a10ffa1a23aeedd584f9b56015308ee9a02e7ca034",
       "error": null
     },
     {
@@ -372,9 +447,9 @@
       "app_references": [
         "pgweb"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__sosedoff__pgweb.md",
-      "readme_download_url": "https://raw.githubusercontent.com/sosedoff/pgweb/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "069506db60a04ef66fe10a189b159b80d50cab37dfd2cc4efe029abc7136bbb0",
       "error": null
     },
@@ -447,10 +522,10 @@
       "app_references": [
         "stalwart"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__stalwartlabs__stalwart.md",
-      "readme_download_url": null,
-      "readme_sha256": "a73c1e2e5a60e0b3619b8e1edc3ece479895a056f7f165f84c3befa3a8d49a29",
+      "readme_download_url": "https://raw.githubusercontent.com/stalwartlabs/stalwart/main/README.md",
+      "readme_sha256": "03afd3d8ddb7d3b56f59585a377b3dd01c744e3c58ee853eb3d9518d29b482ce",
       "error": null
     },
     {
@@ -525,7 +600,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__stefanpejcic__OpenPanel.md",
       "readme_download_url": "https://raw.githubusercontent.com/stefanpejcic/OpenPanel/main/README.md",
-      "readme_sha256": "f81665243856af6c2311b98cfa674ef29f29971d519801da804c4ba4975bacd3",
+      "readme_sha256": "17d1cd5dedc88546728ae78c0cbc9c43e4d39dc2171ca74cfd4019b77dd1bd2c",
       "error": null
     },
     {
@@ -676,81 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__suitenumerique__meet.md",
       "readme_download_url": null,
       "readme_sha256": "7ac5670bca7b912bd9e490711a2369ec7354b4a5dcc47e1d72c52c0e7530f064",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/supabase/supabase",
-      "repo_url": "github.com/supabase/supabase",
-      "host": "github.com",
-      "owner": "supabase",
-      "repo": "supabase",
-      "app_references": [
-        "supabase"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__supabase__supabase.md",
-      "readme_download_url": null,
-      "readme_sha256": "6381696523ff0d9b092703949716cfc24b90271fd3e803ae14fb483574f9ea3f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/super-productivity/super-productivity",
-      "repo_url": "github.com/super-productivity/super-productivity",
-      "host": "github.com",
-      "owner": "super-productivity",
-      "repo": "super-productivity",
-      "app_references": [
-        "super-productivity"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__super-productivity__super-productivity.md",
-      "readme_download_url": null,
-      "readme_sha256": "f20baf1252142aefa24460f5e14f9c8f83a798c2c4098c6244cc3b0caf671bd5",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/surveyjs/survey-library",
-      "repo_url": "github.com/surveyjs/survey-library",
-      "host": "github.com",
-      "owner": "surveyjs",
-      "repo": "survey-library",
-      "app_references": [
-        "surveyjs"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__surveyjs__survey-library.md",
-      "readme_download_url": null,
-      "readme_sha256": "70c67dcc73b38e7699266d2f698da94ba249894fd5360abf4a7b548f7ebad05a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/svenstaro/miniserve",
-      "repo_url": "github.com/svenstaro/miniserve",
-      "host": "github.com",
-      "owner": "svenstaro",
-      "repo": "miniserve",
-      "app_references": [
-        "miniserve"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__svenstaro__miniserve.md",
-      "readme_download_url": null,
-      "readme_sha256": "d33d4d72d0ca6a5d03af84d72beec5148e6e63fe80a256b678300e2a1e185fa9",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/swingmx/swingmusic",
-      "repo_url": "github.com/swingmx/swingmusic",
-      "host": "github.com",
-      "owner": "swingmx",
-      "repo": "swingmusic",
-      "app_references": [
-        "swing-music"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__swingmx__swingmusic.md",
-      "readme_download_url": null,
-      "readme_sha256": "17a8d61c83448cebe9df1b0a1829ebeeac738031d44d8f2bf7483a4da2093e0e",
       "error": null
     }
   ]

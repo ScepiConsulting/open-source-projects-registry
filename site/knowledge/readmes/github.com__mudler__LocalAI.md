@@ -29,6 +29,18 @@
 <a href="https://trendshift.io/repositories/5539" target="_blank"><img src="https://trendshift.io/api/badge/repositories/5539" alt="mudler%2FLocalAI | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </p>
 
+<!-- Keep these links, translations synced daily. -->
+<p align="center">
+<a href="https://zdoc.app/de/mudler/LocalAI">Deutsch</a> |
+<a href="https://zdoc.app/es/mudler/LocalAI">Español</a> |
+<a href="https://zdoc.app/fr/mudler/LocalAI">français</a> |
+<a href="https://zdoc.app/ja/mudler/LocalAI">日本語</a> |
+<a href="https://zdoc.app/ko/mudler/LocalAI">한국어</a> |
+<a href="https://zdoc.app/pt/mudler/LocalAI">Português</a> |
+<a href="https://zdoc.app/ru/mudler/LocalAI">Русский</a> |
+<a href="https://zdoc.app/zh/mudler/LocalAI">中文</a>
+</p>
+
 **LocalAI** is the open-source AI engine. Run any model - LLMs, vision, voice, image, video - on any hardware. No GPU required.
 
 **A small core, not a bundle.** Each backend wraps a best-in-class engine (llama.cpp, vLLM, whisper.cpp, stable-diffusion, MLX...) in its own image, pulled only when a model needs it. You install nothing you don't use.
@@ -208,9 +220,27 @@ For older news and full release notes, see [GitHub Releases](https://github.com/
 
 ## Supported Backends & Acceleration
 
-LocalAI supports **36+ backends** including llama.cpp, vLLM, transformers, whisper.cpp, diffusers, MLX, MLX-VLM, and many more. Hardware acceleration is available for **NVIDIA** (CUDA 12/13), **AMD** (ROCm), **Intel** (oneAPI/SYCL), **Apple Silicon** (Metal), **Vulkan**, and **NVIDIA Jetson** (L4T). All backends can be installed on-the-fly from the [Backend Gallery](https://localai.io/backends/).
+LocalAI supports **60+ backends** including llama.cpp, vLLM, SGLang, transformers, whisper.cpp, diffusers, MLX, MLX-VLM, and many more. Hardware acceleration is available for **NVIDIA** (CUDA 12/13), **AMD** (ROCm), **Intel** (oneAPI/SYCL), **Apple Silicon** (Metal), **Vulkan**, and **NVIDIA Jetson** (L4T). All backends can be installed on-the-fly from the [Backend Gallery](https://localai.io/backends/).
 
 See the full [Backend & Model Compatibility Table](https://localai.io/model-compatibility/) and [GPU Acceleration guide](https://localai.io/features/gpu-acceleration/).
+
+### Backends built by us
+
+Most backends wrap a best-in-class upstream engine. A handful of them are native C/C++/GGML engines (no Python at inference) developed and maintained by the LocalAI project itself:
+
+| Backend | What it does |
+|---------|-------------|
+| [parakeet.cpp](https://github.com/mudler/parakeet.cpp) | C++/GGML port of NVIDIA NeMo Parakeet ASR (tdt/ctc/rnnt/hybrid), with cache-aware streaming transcription |
+| [voxtral.c](https://github.com/mudler/voxtral.c) | Voxtral Realtime 4B speech-to-text in pure C |
+| [vibevoice.cpp](https://github.com/mudler/vibevoice.cpp) | Native port of Microsoft VibeVoice for TTS (voice cloning) and long-form ASR with speaker diarization |
+| [rf-detr.cpp](https://github.com/mudler/rf-detr.cpp) | Native RF-DETR object detection and instance segmentation |
+| [locate-anything.cpp](https://github.com/mudler/locate-anything.cpp) | Open-vocabulary object detection and visual grounding (LocateAnything-3B) |
+| [depth-anything.cpp](https://github.com/mudler/depth-anything.cpp) | Depth Anything 3 monocular metric depth + camera pose estimation |
+| [privacy-filter.cpp](https://github.com/localai-org/privacy-filter.cpp) | Standalone GGML PII/NER token-classification engine powering LocalAI's PII redaction tier |
+| [LocalVQE](https://github.com/localai-org/LocalVQE) | Joint acoustic echo cancellation, noise suppression, and dereverberation |
+| [local-store](https://github.com/mudler/LocalAI) | Local-first vector database for embeddings (shipped in-tree) |
+
+We also maintain [apex-quant](https://github.com/localai-org/apex-quant), a per-tensor, per-layer quantization recipe for Mixture-of-Experts models that exploits their structural sparsity to produce GGUFs matching or beating Q8_0 quality - and they run out of the box on stock llama.cpp.
 
 ## Resources
 

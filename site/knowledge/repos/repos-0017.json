@@ -1,8 +1,68 @@
 {
   "chunk": 17,
   "count": 50,
-  "generated_at": "2026-06-14T07:29:19Z",
+  "generated_at": "2026-06-21T08:06:44Z",
   "items": [
+    {
+      "repo_key": "github.com/leomoon-studios/wiki-go",
+      "repo_url": "github.com/leomoon-studios/wiki-go",
+      "host": "github.com",
+      "owner": "leomoon-studios",
+      "repo": "wiki-go",
+      "app_references": [
+        "wiki-go"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__leomoon-studios__wiki-go.md",
+      "readme_download_url": null,
+      "readme_sha256": "472cf9ca8af867049be4933421a90e05bc905d4ba16aa759d26f860093aec6af",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/letsrevel/revel-backend",
+      "repo_url": "github.com/letsrevel/revel-backend",
+      "host": "github.com",
+      "owner": "letsrevel",
+      "repo": "revel-backend",
+      "app_references": [
+        "revel"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__letsrevel__revel-backend.md",
+      "readme_download_url": "https://raw.githubusercontent.com/letsrevel/revel-backend/main/README.md",
+      "readme_sha256": "9822b7031d83fccf4adb37c76379cde7e6e99cf8e005449b12e65d9722a1e315",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/librespeed/speedtest",
+      "repo_url": "github.com/librespeed/speedtest",
+      "host": "github.com",
+      "owner": "librespeed",
+      "repo": "speedtest",
+      "app_references": [
+        "librespeed"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__librespeed__speedtest.md",
+      "readme_download_url": null,
+      "readme_sha256": "3af130ae71801d8a3f64cf1efecbb709a28e9764e733ea6452e22a2c0cfeba77",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/lingarr-translate/lingarr",
+      "repo_url": "github.com/lingarr-translate/lingarr",
+      "host": "github.com",
+      "owner": "lingarr-translate",
+      "repo": "lingarr",
+      "app_references": [
+        "lingarr"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__lingarr-translate__lingarr.md",
+      "readme_download_url": null,
+      "readme_sha256": "c8696e1a9fdb64d7c5989bb007189d52fd2c7055b875843d0d8e065a92e24d89",
+      "error": null
+    },
     {
       "repo_key": "github.com/linkwarden/linkwarden",
       "repo_url": "github.com/linkwarden/linkwarden",
@@ -57,9 +117,9 @@
       "app_references": [
         "linuxserver-webtop"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__linuxserver__docker-webtop.md",
-      "readme_download_url": "https://raw.githubusercontent.com/linuxserver/docker-webtop/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a791c89de809b9e8510e5f20264829bc9e8785fe9937d87e4127ff0c00d3af66",
       "error": null
     },
@@ -102,9 +162,9 @@
       "app_references": [
         "web-check"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__lissy93__web-check.md",
-      "readme_download_url": "https://raw.githubusercontent.com/lissy93/web-check/master/.github/README.md",
+      "readme_download_url": null,
       "readme_sha256": "26aa5d99f640b1138524a819a2ef8b1019dafad2487a0d00a62a987103212fb4",
       "error": null
     },
@@ -222,9 +282,9 @@
       "app_references": [
         "logforge"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__log-forge__logforge.md",
-      "readme_download_url": "https://raw.githubusercontent.com/log-forge/logforge/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "97b9737e037db35953c31a72d37d7201da85636d52f167b80b0507feb1db233e",
       "error": null
     },
@@ -402,10 +462,10 @@
       "app_references": [
         "rallly"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__lukevella__rallly.md",
-      "readme_download_url": null,
-      "readme_sha256": "ea9d1cc39c03282f88a33070da486850533bfbbcfbfb6c89662cd79582a80e21",
+      "readme_download_url": "https://raw.githubusercontent.com/lukevella/rallly/main/README.md",
+      "readme_sha256": "7065ca3b4c0c290967d19c7167e8842e0c74a7cd70d3e85f20d13620cf73617b",
       "error": null
     },
     {
@@ -432,9 +492,9 @@
       "app_references": [
         "mini-qr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__lyqht__mini-qr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/lyqht/mini-qr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "31fd79e998f77d906e2d60ac2707236977cf66430c50aeada2e1132b00e176fa",
       "error": null
     },
@@ -691,66 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__marvinvr__docktail.md",
       "readme_download_url": null,
       "readme_sha256": "b868308421c99c8f57c25b3e646cee2101df5765399abf0841002cae28ea26f4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/mastodon/mastodon",
-      "repo_url": "github.com/mastodon/mastodon",
-      "host": "github.com",
-      "owner": "mastodon",
-      "repo": "mastodon",
-      "app_references": [
-        "mastodon"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__mastodon__mastodon.md",
-      "readme_download_url": null,
-      "readme_sha256": "567cee4adadda36522dc20823b8ff91815df3a17adc5c93e3ea829ccf57cfa30",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/mateusz-bak/openreads",
-      "repo_url": "github.com/mateusz-bak/openreads",
-      "host": "github.com",
-      "owner": "mateusz-bak",
-      "repo": "openreads",
-      "app_references": [
-        "openreads"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__mateusz-bak__openreads.md",
-      "readme_download_url": null,
-      "readme_sha256": "83b1adfe696ead41e20d38703d06c1f51201a71c6a311c6c9cd113c5e790b53b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/mathesar-foundation/mathesar",
-      "repo_url": "github.com/mathesar-foundation/mathesar",
-      "host": "github.com",
-      "owner": "mathesar-foundation",
-      "repo": "mathesar",
-      "app_references": [
-        "mathesar"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__mathesar-foundation__mathesar.md",
-      "readme_download_url": null,
-      "readme_sha256": "e566b49f165d5f892539fa0bf43cec4dfb9963a02227ec4a2902db73229a4e73",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/matomo-org/matomo",
-      "repo_url": "github.com/matomo-org/matomo",
-      "host": "github.com",
-      "owner": "matomo-org",
-      "repo": "matomo",
-      "app_references": [
-        "matomo"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__matomo-org__matomo.md",
-      "readme_download_url": null,
-      "readme_sha256": "845f9752b91fd59bad4a567656b5c0e679d03ac779c572b699c539d1d9ad68e1",
       "error": null
     }
   ]

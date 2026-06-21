@@ -99,6 +99,7 @@ Prior versions of Jackett are no longer supported.
  * Catorrent
  * CrackingPatching
  * DaMagNet
+ * DivxTotal
  * dmhy
  * DonTorrent
  * E-Hentai
@@ -368,6 +369,7 @@ Prior versions of Jackett are no longer supported.
  * Empornium (EMP) [![(invite needed)][inviteneeded]](#)
  * eMuwarez
  * eStone (BigTorrent)
+ * Order66
  * Exitorrent.org [![(invite needed)][inviteneeded]](#)
  * ExoticaZ (YourExotic)
  * Explosiv-World (E-W)
@@ -671,6 +673,7 @@ Prior versions of Jackett are no longer supported.
  * UBits
  * UltraHD
  * Ultrabits
+ * Unbreakable
  * UnlimitZ
  * upload.cx (ULCX)
  * Upscale Vault

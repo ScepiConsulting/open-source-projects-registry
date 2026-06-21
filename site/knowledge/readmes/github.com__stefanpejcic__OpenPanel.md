@@ -18,6 +18,7 @@ The result: VPS-level isolation on shared hosting infrastructure, without the VP
 ║  • ⚙️ OpenAdmin - administration panel                         ║
 ║  • 🌐 Caddy – Reverse Proxy & SSL                              ║
 ║  • 🔍 BIND9 – DNS Server                                       ║
+║  • 🔍 phpMyAdmin – shared by all users                         ║
 ║  • 🗄️ MySQL – User Management & Metadata                       ║
 ║  • 🐳 Docker Engine – Container Orchestration                  ║
 ╚════════════════════════════════════════════════════════════════╝
@@ -39,7 +40,7 @@ The result: VPS-level isolation on shared hosting infrastructure, without the VP
 │                                 │ │                                 │ │                                 │
 │  🗄️  Databases:                 │ │  🗄️  Databases:                 │ │  🗄️  Databases:                 │
 │  • MySQL 8.0                    │ │  • MariaDB 10.11                │ │  • Percona MySQL                │
-│  • phpMyAdmin                   │ │  • phpMyAdmin                   │ │  • PostgreSQL                   │
+│                                 │ │                                 │ │  • PostgreSQL                   │
 ├─────────────────────────────────┤ ├─────────────────────────────────┤ ├─────────────────────────────────┤
 │  📊 Resource Limits:            │ │  📊 Resource Limits:            │ │  📊 Resource Limits:            │
 │  • CPU: 2 cores                 │ │  • CPU: 4 cores                 │ │  • CPU: 1 core                  │
@@ -78,19 +79,19 @@ OpenPanel is a truly [OS-agnostic](https://www.techtarget.com/whatis/definition/
 <!-- OS_TEST_RESULTS_START -->
 | Operating System | Version | Last Tested | Status | Notes |
 |---|---|---|---|---|
-| Ubuntu | 22 | 2026-06-14 00:39 UTC | ❌ Fail |  |
-| Ubuntu | 24 | 2026-06-14 00:54 UTC | ❌ Fail | **recommended for AMD CPU** |
-| Ubuntu | 26 | 2026-06-14 00:47 UTC | ❌ Fail |  |
+| Ubuntu | 22 | 2026-06-21 05:07 UTC | ❌ Fail |  |
+| Ubuntu | 24 | 2026-06-21 05:22 UTC | ❌ Fail | **recommended for AMD CPU** |
+| Ubuntu | 26 | 2026-06-21 05:14 UTC | ❌ Fail |  |
 | Debian | 10 | | | |
-| Debian | 11 | 2026-06-14 01:00 UTC | ❌ Fail |  |
-| Debian | 12 | 2026-06-14 01:15 UTC | ❌ Fail |  |
-| Debian | 13 | 2026-06-14 01:28 UTC | ❌ Fail |  |
+| Debian | 11 | 2026-06-21 05:28 UTC | ❌ Fail |  |
+| Debian | 12 | 2026-06-21 05:41 UTC | ❌ Fail |  |
+| Debian | 13 | 2026-06-21 05:54 UTC | ❌ Fail |  |
 | AlmaLinux | 9.5 | | | **recommended for ARM CPU** |
-| AlmaLinux | 10 | 2026-06-14 00:00 UTC | ❌ Fail |  |
+| AlmaLinux | 10 | 2026-06-21 04:05 UTC | ❌ Fail |  |
 | RockyLinux | 9.6 | | | |
-| RockyLinux | 10 | 2026-06-14 01:40 UTC | ❌ Fail | *Must manually switch from `nftables` to `iptables` first ([#1472](https://github.com/docker/for-linux/issues/1472))* |
+| RockyLinux | 10 | 2026-06-21 06:07 UTC | ❌ Fail | *Must manually switch from `nftables` to `iptables` first ([#1472](https://github.com/docker/for-linux/issues/1472))* |
 | CentOS | 9.5 | | | |
-| CentOS | 10 | 2026-06-14 00:18 UTC | ❌ Fail |  |
+| CentOS | 10 | 2026-06-21 04:43 UTC | ❌ Fail |  |
 <!-- OS_TEST_RESULTS_END -->
 
 

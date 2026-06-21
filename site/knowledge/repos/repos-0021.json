@@ -1,8 +1,83 @@
 {
   "chunk": 21,
   "count": 50,
-  "generated_at": "2026-06-14T07:29:19Z",
+  "generated_at": "2026-06-21T08:06:44Z",
   "items": [
+    {
+      "repo_key": "github.com/petio-team/petio",
+      "repo_url": "github.com/petio-team/petio",
+      "host": "github.com",
+      "owner": "petio-team",
+      "repo": "petio",
+      "app_references": [
+        "petio"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__petio-team__petio.md",
+      "readme_download_url": null,
+      "readme_sha256": "70b7549fb7d8f254f51e057a4a2fdca9b89cd3e2970abd83536ce6a0c84df36c",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/pgadmin-org/pgadmin4",
+      "repo_url": "github.com/pgadmin-org/pgadmin4",
+      "host": "github.com",
+      "owner": "pgadmin-org",
+      "repo": "pgadmin4",
+      "app_references": [
+        "pgadmin"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__pgadmin-org__pgadmin4.md",
+      "readme_download_url": null,
+      "readme_sha256": "9624acef27d40a0488460bbec213b78fd37cd7d2897b64aa5158d04161704235",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/pglombardo/PasswordPusher",
+      "repo_url": "github.com/pglombardo/PasswordPusher",
+      "host": "github.com",
+      "owner": "pglombardo",
+      "repo": "PasswordPusher",
+      "app_references": [
+        "password-pusher"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
+      "readme_download_url": null,
+      "readme_sha256": "5e3996b253603f89d2105e47886d6127767fe8d39b9d9f1be80486013a1fc1e0",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/photoprism/photoprism",
+      "repo_url": "github.com/photoprism/photoprism",
+      "host": "github.com",
+      "owner": "photoprism",
+      "repo": "photoprism",
+      "app_references": [
+        "photoprism"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__photoprism__photoprism.md",
+      "readme_download_url": null,
+      "readme_sha256": "ca651888da01efd75e24e96d5fd0152538cce164d97cbd476ad82b425c1862d4",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/photoview/photoview",
+      "repo_url": "github.com/photoview/photoview",
+      "host": "github.com",
+      "owner": "photoview",
+      "repo": "photoview",
+      "app_references": [
+        "photoview"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__photoview__photoview.md",
+      "readme_download_url": null,
+      "readme_sha256": "e121a36df86b8615015a4a482d12c627e2e5a04561d9a244f4ac7841b0f19f67",
+      "error": null
+    },
     {
       "repo_key": "github.com/phpmyadmin/phpmyadmin",
       "repo_url": "github.com/phpmyadmin/phpmyadmin",
@@ -87,10 +162,10 @@
       "app_references": [
         "invoice-builder"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__piratuks__invoice-builder.md",
-      "readme_download_url": null,
-      "readme_sha256": "a046edea03d953b64348b60b8f75b7b8b5717a36eadf6344d44db1435bc6bde8",
+      "readme_download_url": "https://raw.githubusercontent.com/piratuks/invoice-builder/main/README.md",
+      "readme_sha256": "1fac05f7d892949a292f8bc6976ac4c12ec9a00beb4e41eddbfb1714106de2c2",
       "error": null
     },
     {
@@ -222,9 +297,9 @@
       "app_references": [
         "filesync"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__polius__FileSync.md",
-      "readme_download_url": "https://raw.githubusercontent.com/polius/FileSync/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "5fe8ee2a3ad6ce15841ffde7eb9b418406908dd9bd1c58eb9c0ee0e478d61d88",
       "error": null
     },
@@ -372,9 +447,9 @@
       "app_references": [
         "unregistry"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__psviderski__unregistry.md",
-      "readme_download_url": "https://raw.githubusercontent.com/psviderski/unregistry/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f52cd3132aa0776c26930fa8ee07780f7573d276293850944a2da89dc8a44206",
       "error": null
     },
@@ -507,10 +582,10 @@
       "app_references": [
         "quickwit"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__quickwit-oss__quickwit.md",
-      "readme_download_url": null,
-      "readme_sha256": "a19a0ed0c9c0bcf33fbb297a9becf89bdb8a29345441ab015e60d813bf6bd393",
+      "readme_download_url": "https://raw.githubusercontent.com/quickwit-oss/quickwit/main/README.md",
+      "readme_sha256": "76b0c8960cf94c21c9b653cf8305242367eed561a76e26c8ac904e46a75ff75c",
       "error": null
     },
     {
@@ -567,10 +642,10 @@
       "app_references": [
         "configarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__raydak-labs__configarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "71e42e4096857d6cba78b33cdc9331b65bab9ddab954d357f8750193baee7b95",
+      "readme_download_url": "https://raw.githubusercontent.com/raydak-labs/configarr/main/README.md",
+      "readme_sha256": "76b7cfc0e941e71626c184ce7a5cbfe4bf5d445f4c711ec7b15678818efecba0",
       "error": null
     },
     {
@@ -657,9 +732,9 @@
       "app_references": [
         "relaticle"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__relaticle__relaticle.md",
-      "readme_download_url": "https://raw.githubusercontent.com/relaticle/relaticle/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7db99f1f40833e795cceb580e1ecb5a71155d740a45baf3b3679a7fb2994272e",
       "error": null
     },
@@ -672,85 +747,10 @@
       "app_references": [
         "argus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__release-argus__Argus.md",
-      "readme_download_url": null,
-      "readme_sha256": "d3d3e60cd846245818e9c8a994dc286850696d64e3aca810af3f4cd546e067c1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/remvze/moodist",
-      "repo_url": "github.com/remvze/moodist",
-      "host": "github.com",
-      "owner": "remvze",
-      "repo": "moodist",
-      "app_references": [
-        "moodist"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__remvze__moodist.md",
-      "readme_download_url": null,
-      "readme_sha256": "8eb2e5bcddc05ea125810b37350da50816e13be00872c6c77f312774e62193c1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/requarks/wiki",
-      "repo_url": "github.com/requarks/wiki",
-      "host": "github.com",
-      "owner": "requarks",
-      "repo": "wiki",
-      "app_references": [
-        "wiki-js"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__requarks__wiki.md",
-      "readme_download_url": null,
-      "readme_sha256": "828fff778ed896f90b1c59821306dae45d7b6c26f89fcca104e36cbff8bed20b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/requestly/requestly",
-      "repo_url": "github.com/requestly/requestly",
-      "host": "github.com",
-      "owner": "requestly",
-      "repo": "requestly",
-      "app_references": [
-        "requestly"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__requestly__requestly.md",
-      "readme_download_url": null,
-      "readme_sha256": "27ba5bb238f3091c9e0ea8c85c754ab1a2de2d0a88c4bdba0a5c5faaf39823b0",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/restic/restic",
-      "repo_url": "github.com/restic/restic",
-      "host": "github.com",
-      "owner": "restic",
-      "repo": "restic",
-      "app_references": [
-        "restic"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__restic__restic.md",
-      "readme_download_url": null,
-      "readme_sha256": "8180046c28e55384c37588607b64a160b3e359a044d6ac59fddb94d659eab75d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/revenz/Fenrus",
-      "repo_url": "github.com/revenz/Fenrus",
-      "host": "github.com",
-      "owner": "revenz",
-      "repo": "Fenrus",
-      "app_references": [
-        "fenrus"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__revenz__Fenrus.md",
-      "readme_download_url": null,
-      "readme_sha256": "fa2cb5a505a465972e269d8a5244f0dddd197aa0f8a54855c1708f668f4ffa75",
+      "readme_download_url": "https://raw.githubusercontent.com/release-argus/Argus/master/README.md",
+      "readme_sha256": "2aa798a8ec717743c71bf56d5bb5fa26633931e8c95050541218a648ae5fe0f5",
       "error": null
     }
   ]
