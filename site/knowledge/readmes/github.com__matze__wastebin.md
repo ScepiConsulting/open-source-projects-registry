@@ -13,8 +13,8 @@ A minimal pastebin with a design shamelessly copied from
 You are reading the documentation for an **unreleased version**. You can refer
 to released versions here:
 
-**[3.6.2](https://github.com/matze/wastebin/tree/f9cb25a4d5b19fa938eef0af42f68f2835f17b98)** •
-[3.6.0](https://github.com/matze/wastebin/tree/2a9f3b6eabe21d6c42c39d6885ed767868b12fa7) •
+**[3.7.0](https://github.com/matze/wastebin/tree/ef77e45f3ae7f3d8ec1385f9f22527d10e1ec9aa)** •
+[3.6.2](https://github.com/matze/wastebin/tree/f9cb25a4d5b19fa938eef0af42f68f2835f17b98) •
 [3.5.0](https://github.com/matze/wastebin/tree/d379a6e3e73e6f1fcf23f93c9b0cc857f46acbce) •
 [3.4.1](https://github.com/matze/wastebin/tree/c9d717329a6e357e8a13a324bfa9a53d41ae9b35) •
 [3.3.0](https://github.com/matze/wastebin/tree/a297749b932ed9ff32569f3af7ee8e4a5b499834) •
@@ -34,6 +34,7 @@ to released versions here:
 * encrypts entries using ChaCha20Poly1305 and argon2 hashed passwords
 * allows deletion after expiration, after reading or by anonymous owners
 * shows QR code to browse a paste's URL on mobile devices
+* translated into Chinese and German
 
 ### Non-features
 
@@ -219,22 +220,32 @@ POST a new paste to the `/` endpoint with the following JSON payload:
   "expires": <number of seconds from now, optional>,
   "burn_after_reading": <true/false, optional>,
   "password": <password for encryption optional>,
+  "owner": "<owner token from a previous insert, optional>"
 }
 ```
 
 After successful insertion, you will receive a JSON response with the path to
-the newly created paste:
+the newly created paste and a signed `owner` token authorizing deletion:
 
 ```json
-{"path":"/Ibv9Fa.rs"}
+{"path":"/Ibv9Fa.rs","owner":"<signed token>"}
 ```
+
+By default every insert gets its own owner identity. Passing the `owner` token
+of a previous insert back in the `owner` field makes the new paste reuse that
+identity, letting a client group several pastes under a single owner. An absent
+or invalid token mints a fresh identity. Note that a reused token is a shared
+credential: whoever holds it can delete every paste created under it.
 
 To retrieve the raw content, make a GET request on the `/raw/:id` route. In case
 the paste was encrypted, pass the password via the `wastebin-password` header.
 
 To delete a paste, make a DELETE request on the `/:id` route with the `uid`
-cookie set that was sent back in the `Set-Cookie` header of the redirect
-response after creation.
+cookie set. A browser obtains that cookie by opening `/<id>?owner=<token>` with
+the `owner` token from the insert response: the server validates the token,
+appends the uid to the signed `uid` cookie and redirects to the clean paste URL.
+The form-based UI sets the same cookie in the `Set-Cookie` header of the
+redirect response after creation.
 
 
 ### wastebin-ctl command line tool

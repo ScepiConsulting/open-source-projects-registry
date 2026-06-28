@@ -80,15 +80,17 @@ of the notes even if it tried to.
 | `ALLOW_ADVANCED`        | `true`           | Allow custom configuration. If set to `false` all notes will be one view only.                                                                                                                                |
 | `ALLOW_FILES`           | `true`           | Allow uploading files. If set to `false`, users will only be allowed to create text notes.                                                                                                                    |
 | `ID_LENGTH`             | `32`             | Set the size of the note `id` in bytes. By default this is `32` bytes. This is useful for reducing link size. _This setting does not affect encryption strength_.                                             |
+| `REDIS_PREFIX`          | `""`             | Optional prefix for all Redis keys. Useful when sharing a Redis instance with other apps via ACL namespaces.                                                                                                  |
 | `VERBOSITY`             | `warn`           | Verbosity level for the backend. [Possible values](https://docs.rs/env_logger/latest/env_logger/#enabling-logging) are: `error`, `warn`, `info`, `debug`, `trace`                                             |
 | `THEME_IMAGE`           | `""`             | Custom image for replacing the logo. Must be publicly reachable                                                                                                                                               |
 | `THEME_TEXT`            | `""`             | Custom text for replacing the description below the logo                                                                                                                                                      |
 | `THEME_PAGE_TITLE`      | `""`             | Custom text the page title                                                                                                                                                                                    |
 | `THEME_FAVICON`         | `""`             | Custom url for the favicon. Must be publicly reachable                                                                                                                                                        |
 | `THEME_NEW_NOTE_NOTICE` | `true`           | Show the message about how notes are stored in the memory and may be evicted after creating a new note. Defaults to `true`.                                                                                   |
-| `THEME_HOME_LINK`       | `true`           | Show the `/home` link in the footer. Defaults to `true`.                                                                                                                                                    |
+| `THEME_HOME_LINK`       | `true`           | Show the `/home` link in the footer. Defaults to `true`.                                                                                                                                                      |
 | `IMPRINT_URL`           | `""`             | Custom url for an Imprint hosted somewhere else. Must be publicly reachable. Takes precedence above `IMPRINT_HTML`.                                                                                           |
 | `IMPRINT_HTML`          | `""`             | Alternative to `IMPRINT_URL`, this can be used to specify the HTML code to show on `/imprint`. Only `IMPRINT_HTML` or `IMPRINT_URL` should be specified, not both.                                            |
+
 ## Deployment
 
 > ℹ️ `https` is required otherwise browsers will not support the cryptographic functions.
@@ -102,7 +104,7 @@ Docker is the easiest way. There is the [official image here](https://hub.docker
 ```yaml
 # docker-compose.yml
 
-version: '3.8'
+version: "3.8"
 
 services:
   redis:

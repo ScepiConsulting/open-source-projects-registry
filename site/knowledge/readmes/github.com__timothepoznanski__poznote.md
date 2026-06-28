@@ -46,7 +46,6 @@ https://poznote.com/index.html#press
 - [Chrome Extension](#chrome-extension)
 - [API Documentation](#api-documentation)
 - [Tech Stack](#tech-stack)
-- [About](#about)
 
 ## Install
 
@@ -197,15 +196,6 @@ Start Poznote containers:
 ```bash
 docker compose up -d
 ```
-
-</details>
-
-<a id="cloud"></a>
-<details>
-<summary><strong>☁️ Cloud</strong></summary>
-<br>
-
-Use [Poznote Cloud](https://poznote.com/index.html#cloud) or deploy your own instance on platforms like Railway, Render, Fly.io, Koyeb, Northflank, DigitalOcean App Platform, or Heroku.
 
 </details>
 
@@ -913,6 +903,3 @@ Poznote prioritizes simplicity and portability - no complex frameworks, no heavy
 - **Python 3.12 (Alpine)** - MCP server runtime with httpx, uvicorn, fastmcp, and mcp libraries for AI assistant integration
 </details>
 
-## About
-
-Learn more about the project and its background on <a href="https://poznote.com/about.html"> the Poznote About page</a>.

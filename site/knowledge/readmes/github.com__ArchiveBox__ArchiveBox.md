@@ -29,7 +29,7 @@ Without active preservation effort, everything on the internet eventually disapp
 *ArchiveBox is an open source tool that lets organizations & individuals archive both public & private web content while retaining control over their data. It can be used to save copies of bookmarks, preserve evidence for legal cases, backup photos from FB/Insta/Flickr or media from YT/Soundcloud/etc., save research papers, and more...*
 <br/>
 
-> ➡️ Get ArchiveBox with `pip install archivebox>=0.9.5rc1` on [Linux](#quickstart)/[macOS](#quickstart), or via **[Docker](#quickstart)** ⭐️ on any OS.  
+> ➡️ Get ArchiveBox with `uv tool install --python 3.13 --upgrade 'git+https://github.com/ArchiveBox/ArchiveBox.git@dev'` on [Linux](#quickstart)/[macOS](#quickstart), or via **[Docker](#quickstart)** ⭐️ on any OS.
 
 *Once installed, you can interact with it through the: [Browser Extension](https://github.com/ArchiveBox/archivebox-browser-extension), [CLI](#usage), [self-hosted web interface](https://github.com/ArchiveBox/ArchiveBox/wiki/Publishing-Your-Archive), [Python API](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#python-shell-usage), or [filesystem](#static-archive-exporting).*
 
@@ -52,7 +52,7 @@ It also detects any content featured *inside* pages & extracts it out into a fol
 - 💾 **Github**/**Gitlab**/etc. links ➡️ `clone of GIT source code`, `README`, `images`, ...
 - ✨ *and more, see [Output Formats](#output-formats) below...*
 
-You can run ArchiveBox as a Docker web app to manage these snapshots, or continue accessing the same collection using the `pip`-installed CLI, Python API, and SQLite3 APIs. 
+You can run ArchiveBox as a Docker web app to manage these snapshots, or continue accessing the same collection using the `uv`-installed CLI, Python API, and SQLite3 APIs.
 All the ways of using it are equivalent, and provide matching features like adding tags, scheduling regular crawls, viewing logs, and more...
 
 <br/>
@@ -68,7 +68,7 @@ The goal is to sleep soundly knowing the part of the internet you care about wil
 <br/>
 
 
-**📦&nbsp; Install ArchiveBox using your preferred method: `docker` / `pip` / `apt` / etc. ([see full Quickstart below](#quickstart)).**
+**📦&nbsp; Install ArchiveBox using your preferred method: `docker` / `uv` / `brew` / `apt` / etc. ([see full Quickstart below](#quickstart)).**
 
 
 <details>
@@ -85,14 +85,14 @@ docker compose run archivebox init
 <br/>
 # Option B: Or use it as a plain Docker container:
 mkdir -p ~/archivebox/data && cd ~/archivebox/data
-docker run -it -v $PWD:/data archivebox/archivebox init
-# docker run -it -v $PWD:/data archivebox/archivebox add 'https://example.com'
-# docker run -it -v $PWD:/data archivebox/archivebox help
-# docker run -it -v $PWD:/data -p 8000:8000 archivebox/archivebox
+docker run -it -v $PWD:/data archivebox/archivebox:dev init
+# docker run -it -v $PWD:/data archivebox/archivebox:dev add 'https://example.com'
+# docker run -it -v $PWD:/data archivebox/archivebox:dev help
+# docker run -it -v $PWD:/data -p 8000:8000 archivebox/archivebox:dev
 <br/>
 <br/>
-# Option C: Or install it with your preferred pkg manager (see Quickstart below for apt, brew, and more)
-pip install 'archivebox>=0.9.5rc1'
+# Option C: Or install it with uv (see Quickstart below for apt, brew, and more)
+uv tool install --python 3.13 --upgrade 'git+https://github.com/ArchiveBox/ArchiveBox.git@dev'
 mkdir -p ~/archivebox/data && cd ~/archivebox/data
 archivebox init
 archivebox install
@@ -214,14 +214,14 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker</a> on your system (if not already installed).</li>
 <li>Create a new empty directory and initialize your collection (can be anywhere).
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data && cd ~/archivebox/data
-docker run -v $PWD:/data -it archivebox/archivebox init
+docker run -v $PWD:/data -it archivebox/archivebox:dev init
 </code></pre>
 </li>
 <li>Optional: Start the server then login to the Web UI <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
-<pre lang="bash"><code style="white-space: pre-line">docker run -v $PWD:/data -p 8000:8000 archivebox/archivebox
+<pre lang="bash"><code style="white-space: pre-line">docker run -v $PWD:/data -p 8000:8000 archivebox/archivebox:dev
 # completely optional, CLI can always be used without running a server
 # docker run -v $PWD:/data -it [subcommand] [--help]
-docker run -v $PWD:/data -it archivebox/archivebox help
+docker run -v $PWD:/data -it archivebox/archivebox:dev help
 </code></pre>
 <i>For more info, see <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Install#option-a-docker--docker-compose-setup-%EF%B8%8F">Install: Docker Compose</a> in the Wiki. ➡️</i>
 </li>
@@ -256,13 +256,13 @@ See <a href="https://docs.sweeting.me/s/against-curl-sh">"Against curl | sh as a
 
 
 <details>
-<summary><b><img src="https://user-images.githubusercontent.com/511499/117447613-ba4c5d80-af0b-11eb-8f89-1d98e31b6a79.png" alt="Pip" height="28px" align="top"/> <code>pip</code></b> (macOS/Linux/BSD)</summary>
+<summary><b><img src="https://user-images.githubusercontent.com/511499/117447613-ba4c5d80-af0b-11eb-8f89-1d98e31b6a79.png" alt="uv" height="28px" align="top"/> <code>uv</code></b> (macOS/Linux/BSD)</summary>
 <br/>
 <ol>
 
-<li>Install <a href="https://realpython.com/installing-python/">Python >= v3.13</a> and <a href="https://nodejs.org/en/download/package-manager/">Node >= v22</a> on your system (if not already installed).</li>
-<li>Install the ArchiveBox package using <code>pip3</code> (or <a href="https://docs.astral.sh/uv/guides/tools/#running-tools"><code>uvx</code></a>).
-<pre lang="bash"><code style="white-space: pre-line">pip3 install --upgrade archivebox
+<li>Install <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> on your system (if not already installed).</li>
+<li>Install the ArchiveBox package using <code>uv</code>.
+<pre lang="bash"><code style="white-space: pre-line">uv tool install --python 3.13 --upgrade 'git+https://github.com/ArchiveBox/ArchiveBox.git@dev'
 archivebox version
 # install any missing extras shown using apt/brew/pkg/etc. see Wiki for instructions
 #    python@3.13 node curl wget git ripgrep ...
@@ -305,7 +305,7 @@ archivebox version                         # make sure the package is installed
 <li>Create a new empty directory and initialize your collection (can be anywhere).
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data && cd ~/archivebox/data
 archivebox init
-sudo archivebox install
+archivebox install
 archivebox add 'https://example.com'
 </code></pre>
 <br/>
@@ -319,7 +319,7 @@ archivebox help
 </li>
 </ol>
 See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
-<sub>See the <a href="https://github.com/ArchiveBox/debian-archivebox"><code>debian-archivebox</code></a> repo for more details about this distribution.</sub>
+<sub>The apt package is a thin dev-channel wrapper around the normal Python install flow. See the <a href="https://github.com/ArchiveBox/debian-archivebox"><code>debian-archivebox</code></a> repo for details, and run <code>sudo archivebox install</code> only if you want it to install missing system packages via apt.</sub>
 <br/><br/>
 </details>
 
@@ -503,8 +503,8 @@ archivebox help
 # equivalent: docker compose run archivebox [subcommand] [--help]
 docker compose run archivebox help
 
-# equivalent: docker run -it -v $PWD:/data archivebox/archivebox [subcommand] [--help]
-docker run -it -v $PWD:/data archivebox/archivebox help
+# equivalent: docker run -it -v $PWD:/data archivebox/archivebox:dev [subcommand] [--help]
+docker run -it -v $PWD:/data archivebox/archivebox:dev help
 
 # optional: import your browser cookies into a persona for logged-in archiving
 archivebox persona create --import=chrome personal
@@ -525,12 +525,12 @@ archivebox persona create --import=chrome personal
 <summary><img src="https://user-images.githubusercontent.com/511499/117456282-08665e80-af16-11eb-91a1-8102eff54091.png" alt="curl sh automatic setup script" height="22px" align="top"/> <b>CLI Usage Examples: non-Docker</b></summary>
 <br/>
 <pre lang="bash"><code style="white-space: pre-line">
-# make sure you have pip-installed ArchiveBox and it's available in your $PATH first  
+# make sure you have uv-installed ArchiveBox and it's available in your $PATH first
 <br/>
 # archivebox [subcommand] [--help]
 mkdir -p ~/archivebox/data && cd ~/archivebox/data
 archivebox init
-sudo archivebox install
+archivebox install
 archivebox add 'https://example.com'
 archivebox version           # get archivebox version info + check dependencies
 archivebox help              # get list of archivebox subcommands that can be run
@@ -565,13 +565,13 @@ docker compose run archivebox add 'https://example.com'
 <pre lang="bash"><code style="white-space: pre-line">
 # make sure you create and cd into in a new empty directory first  
 <br/>
-# docker run -it -v $PWD:/data archivebox/archivebox [subcommand] [--help]
-docker run -v $PWD:/data -it archivebox/archivebox init
-docker run -v $PWD:/data -it archivebox/archivebox install
-docker run -v $PWD:/data -it archivebox/archivebox version
-docker run -v $PWD:/data -it archivebox/archivebox help
-docker run -v $PWD:/data -it archivebox/archivebox add 'https://example.com'
-# to start webserver: docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox
+# docker run -it -v $PWD:/data archivebox/archivebox:dev [subcommand] [--help]
+docker run -v $PWD:/data -it archivebox/archivebox:dev init
+docker run -v $PWD:/data -it archivebox/archivebox:dev install
+docker run -v $PWD:/data -it archivebox/archivebox:dev version
+docker run -v $PWD:/data -it archivebox/archivebox:dev help
+docker run -v $PWD:/data -it archivebox/archivebox:dev add 'https://example.com'
+# to start webserver: docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox:dev
 </code></pre>
 <i>For more info, see our <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#usage-1">Usage: Docker CLI</a> wiki. ➡️</i>
 </details>
@@ -603,8 +603,8 @@ nano docker-compose.yml                        # setup initial ADMIN_USERNAME & 
 docker compose up                              # start the server
 <br/>
 # Or with a Docker container:
-docker run -v $PWD:/data -it archivebox/archivebox archivebox manage createsuperuser
-docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox
+docker run -v $PWD:/data -it archivebox/archivebox:dev archivebox manage createsuperuser
+docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox:dev
 </code></pre>
 
 <sup>Open <a href="http://web.archivebox.localhost:8000"><code>http://web.archivebox.localhost:8000</code></a> for the public UI and <a href="http://admin.archivebox.localhost:8000"><code>http://admin.archivebox.localhost:8000</code></a> for the admin UI ➡️</sup><br/>
@@ -630,15 +630,15 @@ docker compose run archivebox config --set ...
 
 > [!TIP]
 > Whether in Docker or not, ArchiveBox commands work the same way, and can be used to access the same data on-disk.
-> For example, you could run the Web UI in Docker Compose, and run one-off commands with `pip`-installed ArchiveBox.
+> For example, you could run the Web UI in Docker Compose, and run one-off commands with `uv`-installed ArchiveBox.
 
 <details>
 <summary><i>Expand to show comparison...</i></summary><br/>
 
 <pre lang="bash"><code style="white-space: pre-line">
-archivebox add --depth=1 'https://example.com'                     # add a URL with pip-installed archivebox on the host
+archivebox add --depth=1 'https://example.com'                     # add a URL with uv-installed archivebox on the host
 docker compose run archivebox add --depth=1 'https://example.com'                       # or w/ Docker Compose
-docker run -it -v $PWD:/data archivebox/archivebox add --depth=1 'https://example.com'  # or w/ Docker, all equivalent
+docker run -it -v $PWD:/data archivebox/archivebox:dev add --depth=1 'https://example.com'  # or w/ Docker, all equivalent
 </code></pre>
 
 <i>For more info, see our <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Docker">Docker</a> wiki. ➡️</i>
@@ -731,7 +731,7 @@ echo 'http://example.com' | archivebox add
 echo 'any text with <a href="https://example.com">urls</a> in it' | archivebox add
 
 # if using Docker, add -i when piping stdin:
-# echo 'https://example.com' | docker run -v $PWD:/data -i archivebox/archivebox add
+# echo 'https://example.com' | docker run -v $PWD:/data -i archivebox/archivebox:dev add
 # if using Docker Compose, add -T when piping stdin / stdout:
 # echo 'https://example.com' | docker compose run -T archivebox add
 ```
@@ -882,10 +882,8 @@ You don't need to install every dependency to use ArchiveBox. ArchiveBox will au
   
 If not using Docker, make sure to keep the dependencies up-to-date yourself and check that ArchiveBox isn't reporting any incompatibility with the versions you install.
 
-<pre lang="bash"><code style="white-space: pre-line">#install python3 and archivebox with your system package manager
-# apt/brew/pip/etc install ... (see Quickstart instructions above)
+<pre lang="bash"><code style="white-space: pre-line"># install uv + archivebox first (see Quickstart instructions above)
 <br/>
-which -a archivebox    # see where you have installed archivebox
 archivebox install     # auto install all the extractors and extras
 archivebox --version   # see info and check validity of installed dependencies
 </code></pre>
@@ -1451,7 +1449,8 @@ archivebox server 0.0.0.0:8000
 # inside the container will reload and pick up your changes
 ./bin/build_docker.sh dev
 
-docker run -it -v $PWD/data:/data archivebox/archivebox:dev init --install
+docker run -it -v $PWD/data:/data archivebox/archivebox:dev init
+docker run -it -v $PWD/data:/data archivebox/archivebox:dev install
 
 # Run the development server w/ autoreloading (but no bg workers)
 docker run -it -v $PWD/data:/data -v $PWD/archivebox:/app/archivebox -p 8000:8000 archivebox/archivebox:dev server --debug --reload 0.0.0.0:8000

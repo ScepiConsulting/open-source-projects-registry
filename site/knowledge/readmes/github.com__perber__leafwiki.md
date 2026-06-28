@@ -42,7 +42,7 @@ docker run -p 8080:8080 -v ~/leafwiki-data:/app/data \
 - Backlinks and link status per page (incoming, outgoing, broken links)
 - Built-in Markdown editor with live preview, keyboard shortcuts, and autocomplete for internal page links
 - Optimistic locking for concurrent edits
-- Markdown: tables, task lists, footnotes, callouts (`:::info` / `:::warning`), Mermaid diagrams, sanitized inline HTML
+- Markdown: tables, task lists, footnotes, callouts (`:::info` / `:::warning`), Mermaid diagrams, KaTeX math blocks (`$$...$$`, inline `$...$` not supported), sanitized inline HTML
 
 **Customization:**
 - Custom stylesheet (`--custom-stylesheet`, v0.8.5+)
@@ -269,6 +269,7 @@ For plain HTTP: add `--allow-insecure=true` so login and CSRF cookies work.
 |----------------------------------|-------------------------------------------------------------------------|---------------|---------|
 | `--host`                         | Host/IP the server binds to                                             | `127.0.0.1`   | –       |
 | `--port`                         | Port the server listens on                                              | `8080`        | –       |
+| `--unix-socket`                  | Unix domain socket path; overrides `--host` and `--port`                | `""`          | v0.11.3 |
 | `--data-dir`                     | Directory where data is stored                                          | `./data`      | –       |
 | `--public-access`                | Allow public read-only access                                           | `false`       | –       |
 | `--base-path`                    | URL prefix for reverse proxy setups (e.g. `/wiki`)                      | `""`          | v0.8.2  |
@@ -297,6 +298,7 @@ For plain HTTP: add `--allow-insecure=true` so login and CSRF cookies work.
 |-----------------------------------------|------------------------------------------------------|---------------|---------|
 | `LEAFWIKI_HOST`                         | Host/IP address                                      | `127.0.0.1`   | –       |
 | `LEAFWIKI_PORT`                         | Port                                                 | `8080`        | –       |
+| `LEAFWIKI_UNIX_SOCKET`                  | Unix domain socket path; overrides host/port         | `""`          | v0.11.3 |
 | `LEAFWIKI_DATA_DIR`                     | Data directory path                                  | `./data`      | –       |
 | `LEAFWIKI_ADMIN_PASSWORD`               | Initial admin password *(required)*                  | –             | –       |
 | `LEAFWIKI_JWT_SECRET`                   | JWT signing secret *(required)*                      | –             | –       |
@@ -352,6 +354,24 @@ Available since v0.10.0. Use when an upstream proxy authenticates users and forw
 - Only trusts the header from IPs listed in `--trusted-proxy-ips`
 - If the forwarded username doesn't exist in LeafWiki, the request is rejected
 - Do not enable without configuring `--trusted-proxy-ips`
+
+### Unix Socket (v0.11.3)
+
+Use `--unix-socket` when LeafWiki should listen on a local unix domain socket instead of TCP.
+
+```bash
+./leafwiki \
+  --unix-socket=/run/leafwiki/leafwiki.sock \
+  --data-dir=./data \
+  --jwt-secret=yoursecret \
+  --admin-password=yourpassword
+```
+
+- `--unix-socket` overrides `--host` and `--port`
+- LeafWiki still serves normal HTTP; a reverse proxy such as Nginx or Caddy connects to the socket
+- If a stale socket file exists from a previous run, LeafWiki removes it before listening
+- New socket files are created with permissions `0660`
+- On Windows, unix sockets are not supported and LeafWiki returns a startup error if this option is used
 
 ### Security
 
@@ -424,8 +444,9 @@ The sort dialog lets you drag items into position, use the ↑ ↓ arrow buttons
 If it's useful to you:
 
 - ⭐ **[Star the repo](https://github.com/perber/leafwiki)** — helps others find it
-- 💛 **[Sponsor on GitHub](https://github.com/sponsors/perber)** — supports ongoing maintenance, bug fixes, and new features
-- ☁️ **[Join the hosted waitlist](https://leafwiki.com/hosted)** — don't want to run a server? a hosted version is in the works
+- 💛 **[Sponsor on GitHub](https://leafwiki.com/support)** — supports ongoing maintenance, bug fixes, and new features
+
+Need help deploying LeafWiki for your team? [Business support & setup →](https://leafwiki.com/support/)
 
 ---
 

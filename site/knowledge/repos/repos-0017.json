@@ -1,23 +1,8 @@
 {
   "chunk": 17,
   "count": 50,
-  "generated_at": "2026-06-21T08:06:44Z",
+  "generated_at": "2026-06-28T07:09:27Z",
   "items": [
-    {
-      "repo_key": "github.com/leomoon-studios/wiki-go",
-      "repo_url": "github.com/leomoon-studios/wiki-go",
-      "host": "github.com",
-      "owner": "leomoon-studios",
-      "repo": "wiki-go",
-      "app_references": [
-        "wiki-go"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__leomoon-studios__wiki-go.md",
-      "readme_download_url": null,
-      "readme_sha256": "472cf9ca8af867049be4933421a90e05bc905d4ba16aa759d26f860093aec6af",
-      "error": null
-    },
     {
       "repo_key": "github.com/letsrevel/revel-backend",
       "repo_url": "github.com/letsrevel/revel-backend",
@@ -30,7 +15,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__letsrevel__revel-backend.md",
       "readme_download_url": "https://raw.githubusercontent.com/letsrevel/revel-backend/main/README.md",
-      "readme_sha256": "9822b7031d83fccf4adb37c76379cde7e6e99cf8e005449b12e65d9722a1e315",
+      "readme_sha256": "3d7c2aa9586300001c253adc0a510a023d7836e83d0c9517a7b433b305a8cf9d",
       "error": null
     },
     {
@@ -462,9 +447,9 @@
       "app_references": [
         "rallly"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__lukevella__rallly.md",
-      "readme_download_url": "https://raw.githubusercontent.com/lukevella/rallly/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7065ca3b4c0c290967d19c7167e8842e0c74a7cd70d3e85f20d13620cf73617b",
       "error": null
     },
@@ -552,10 +537,10 @@
       "app_references": [
         "pinepods"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__madeofpendletonwool__PinePods.md",
-      "readme_download_url": null,
-      "readme_sha256": "44a684c7c476e16379c7d6a4151f2414df9a3d5df9497e001881e192067adf0f",
+      "readme_download_url": "https://raw.githubusercontent.com/madeofpendletonwool/PinePods/main/README.md",
+      "readme_sha256": "3b0f910efe115962f61644c59b1fd6fe5b044327d497815c6914742c15fa5d2d",
       "error": null
     },
     {
@@ -702,10 +687,10 @@
       "app_references": [
         "borg-backup-server"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__marcpope__borgbackupserver.md",
-      "readme_download_url": null,
-      "readme_sha256": "dec71e67f2907b58fcf2959b44e5a95eb6fb6934668ab4193665717066590989",
+      "readme_download_url": "https://raw.githubusercontent.com/marcpope/borgbackupserver/main/README.md",
+      "readme_sha256": "a4875bf22eca03857927c046dd3a0225c54a935f60a0549ff07dbdc2083faf6e",
       "error": null
     },
     {
@@ -751,6 +736,21 @@
       "readme_path": "knowledge/readmes/github.com__marvinvr__docktail.md",
       "readme_download_url": null,
       "readme_sha256": "b868308421c99c8f57c25b3e646cee2101df5765399abf0841002cae28ea26f4",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/mastodon/mastodon",
+      "repo_url": "github.com/mastodon/mastodon",
+      "host": "github.com",
+      "owner": "mastodon",
+      "repo": "mastodon",
+      "app_references": [
+        "mastodon"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__mastodon__mastodon.md",
+      "readme_download_url": null,
+      "readme_sha256": "567cee4adadda36522dc20823b8ff91815df3a17adc5c93e3ea829ccf57cfa30",
       "error": null
     }
   ]

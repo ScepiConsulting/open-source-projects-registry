@@ -129,7 +129,7 @@ services:
       - ADMIN_USERNAME=your-admin-username
       - ADMIN_PASSWORD=your-admin-password
       - SECRET_KEY=replace_with_random_string_can_be_anything
-      # The domain your instance is hosted at. e.x: v.fireshare.net
+      # The domain your instance is hosted at. e.x: demo.fireshare.net
       # this is required for opengraph to work correctly for shared links.
       - DOMAIN=
       # PUID/PGID: the user/group ID the container runs as. Files written to your
@@ -138,6 +138,10 @@ services:
       # Run `id` on your host to find your UID and GID.
       - PUID=1000
       - PGID=1000
+      # The port the web server (nginx) listens on inside the container (default: 80).
+      # Leave this alone and change the host-side "ports" mapping above unless you run
+      # with network_mode: host, where "ports" is ignored and this becomes the host port.
+      # - FIRESHARE_PORT=80
 ```
 
 Update the volume paths and credentials, then run:

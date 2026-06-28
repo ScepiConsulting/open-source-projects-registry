@@ -41,6 +41,12 @@ Unlike monolithic, corporate platforms that treat events as transactions, Revel 
 
 ---
 
+> 🤖 **AI disclosure:** Revel makes use of AI-assisted coding, but stays firmly away from vibe
+> coding. Every line that lands in `main` is understood, reviewed, and defended by a human.
+> If you contribute with AI, follow the workflow in **[AI_USAGE.md](AI_USAGE.md)**.
+
+---
+
 ### ✨ Live Demo
 
 You can try out an early version of Revel yourself at https://demo.letsrevel.io
@@ -189,10 +195,12 @@ The project uses multiple Docker Compose files for different purposes:
 
 | File | Purpose | Usage |
 |------|---------|-------|
-| `compose.yaml` | **Local development** - includes Mailpit for email testing | `docker compose up -d` |
-| `docker-compose-ci.yml` | **CI/CD pipeline** - minimal services for testing | `docker compose -f docker-compose-ci.yml up -d` |
-| `docker-compose-base.yml` | **Shared services** - extended by other compose files | Not used directly |
-| `docker-compose-observability.yml` | **Full stack with observability** - standalone (includes core services + Grafana, Prometheus, Loki, etc.) | Alternative to `compose.yaml` |
+| `compose.yaml` | **Local development** — PostgreSQL, Redis, ClamAV + Mailpit (email testing) | `docker compose up -d` |
+| `docker-compose-ci.yml` | **CI** — minimal services for tests (PostgreSQL, Redis, ClamAV, no Mailpit) | `docker compose -f docker-compose-ci.yml up -d` |
+| `docker-compose-base.yml` | **Service definitions** — every service the other files extend (core + observability stack); not run directly | — |
+| `docker-compose-observability.yml` | **Standalone** — core services + the full observability stack (Grafana, Prometheus, Loki, Tempo, …). Replaces `compose.yaml`; does **not** include Mailpit | `docker compose -f docker-compose-observability.yml up -d` |
+
+The application itself (Django + Celery) runs on the host via `make run` — Docker only provides the backing services. For production (app, frontend, reverse proxy, TLS) use the [infra](https://github.com/letsrevel/infra) repo.
 
 For local development, simply run:
 ```bash
@@ -205,9 +213,16 @@ This starts PostgreSQL, Redis, ClamAV, and **Mailpit**. All emails sent by the a
 
 ## 🏠 Self-Hosting (Production)
 
-For a full production deployment — reverse proxy, TLS, the SvelteKit frontend, and the observability stack — use the **[infra](https://github.com/letsrevel/infra)** repository, which ships a turn-key Docker Compose setup and a documented `.env.example`.
+The entire stack — frontend, API, workers, database, and (optionally) the full observability suite — is self-hostable on a single box with Docker Compose. The **[infra](https://github.com/letsrevel/infra)** repository ships the Compose files, a parameterized Caddyfile, and an interactive **`setup.sh` wizard** that writes your `.env`, picks the right Caddy config, fetches geo data, and brings the stack up. You don't need to clone the backend or frontend repos — the application images are pulled from the registry.
 
-The published frontend image (`ghcr.io/letsrevel/revel-frontend`) is **environment-agnostic**: it reads its backend API URL from `PUBLIC_API_URL` at **runtime**, so a single prebuilt image can point at any backend. Set `PUBLIC_API_URL` (and `ORIGIN`) in your deployment environment — no rebuild required. See `letsrevel/infra`'s `.env.example` for the canonical configuration.
+**Two reference tiers** let Revel scale down a long way:
+
+- **Slim** — ~2 vCPU / 4 GB RAM (~5 €/mo). Core services only; ClamAV, Telegram, and observability switched off. Recommended starting point for a single-org instance.
+- **Full** — 8 vCPU / 32 GB RAM. Every optional Compose profile: antivirus, the LGTM observability stack, the Telegram bot, and the login canary.
+
+The difference is mostly which Compose profiles you enable (`COMPOSE_PROFILES`) plus a few feature flags (`FEATURE_MALWARE_SCAN`, `FEATURE_TELEGRAM`, `FEATURE_OBSERVABILITY`, `FEATURE_ORGANIZATION_CREATION`). Clients read the active flags from `GET /version`, so gated features are hidden rather than 403'd. The published frontend image (`ghcr.io/letsrevel/revel-frontend`) is **environment-agnostic** — it reads its backend API URL from `PUBLIC_API_URL` at **runtime**, so one prebuilt image can target any backend (no rebuild required).
+
+📖 **Full guide:** [docs.letsrevel.io/self-hosting](https://docs.letsrevel.io/self-hosting/).
 
 ---
 
@@ -217,18 +232,18 @@ Revel includes a comprehensive observability stack built on the LGTM (Loki, Graf
 
 ### Available Services
 
-The observability stack requires a separate Docker Compose file. After `make setup`, only the core services (PostgreSQL, Redis, ClamAV, Mailpit) are running. To enable full observability:
+The observability stack lives in a separate Docker Compose file. After `make setup`, only the core services (PostgreSQL, Redis, ClamAV, Mailpit) are running. To enable full observability:
 
 ```bash
+docker compose down                                          # stop compose.yaml first
 docker compose -f docker-compose-observability.yml up -d
 ```
 
 !!! note
-    `docker-compose-observability.yml` is a **standalone** compose file that includes both core services and the observability stack. Do not run it alongside `compose.yaml`.
+    `docker-compose-observability.yml` is **standalone**: it bundles the core services *and* the observability stack, so it **replaces** `compose.yaml` (same container names — don't run both). Note it does **not** include Mailpit, so email testing is unavailable while it's running.
 
 | Service | Purpose | URL | Credentials |
 |---------|---------|-----|-------------|
-| **Mailpit** | Email testing - catches all outgoing emails | [http://localhost:8025](http://localhost:8025) | - |
 | **Grafana** | Unified dashboard for logs, traces, and metrics | [http://localhost:3000](http://localhost:3000) | admin / admin |
 | **Prometheus** | Metrics collection and querying | [http://localhost:9090](http://localhost:9090) | - |
 | **Loki** | Log aggregation | [http://localhost:3100](http://localhost:3100) | - |
@@ -270,13 +285,13 @@ docker compose -f docker-compose-observability.yml up -d
 Observability can be configured via environment variables in `.env`:
 
 ```bash
-ENABLE_OBSERVABILITY=True          # Enable/disable all observability features
+FEATURE_OBSERVABILITY=True         # Enable/disable all observability features (legacy alias: ENABLE_OBSERVABILITY)
 TRACING_SAMPLE_RATE=1.0            # 100% in dev (auto-switches to 0.1 in production)
 OTEL_EXPORTER_OTLP_ENDPOINT=http://localhost:4318
 ```
 
 !!! note
-    `make setup` runs with `ENABLE_OBSERVABILITY=False` to avoid connection errors to non-existent services. If you start the observability stack later, set `ENABLE_OBSERVABILITY=True` in your `.env`.
+    `make setup` runs with `FEATURE_OBSERVABILITY=False` to avoid connection errors to non-existent services. If you start the observability stack later, set `FEATURE_OBSERVABILITY=True` in your `.env`. The old `ENABLE_OBSERVABILITY` name is still honoured as a deprecated alias for one release.
 
 ### Verifying Observability Setup
 
@@ -432,7 +447,7 @@ Most apps contain controllers and service modules for API endpoints and business
 
 ## 🤝 Contributing
 
-We welcome contributions! Please read our **[CONTRIBUTING.md](CONTRIBUTING.md)** to learn how you can get involved, from reporting bugs to submitting code.
+We welcome contributions! Please read our **[CONTRIBUTING.md](CONTRIBUTING.md)** to learn how you can get involved, from reporting bugs to submitting code. If you contribute with AI assistance, also read **[AI_USAGE.md](AI_USAGE.md)** — it is not optional.
 
 ### Internationalization
 

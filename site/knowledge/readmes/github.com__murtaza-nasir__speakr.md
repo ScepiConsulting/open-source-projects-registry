@@ -9,7 +9,7 @@
   <a href="https://www.gnu.org/licenses/agpl-3.0"><img alt="AGPL v3" src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"></a>
   <a href="https://github.com/murtaza-nasir/speakr/actions/workflows/docker-publish.yml"><img alt="Docker Build" src="https://github.com/murtaza-nasir/speakr/actions/workflows/docker-publish.yml/badge.svg"></a>
   <a href="https://hub.docker.com/r/learnedmachine/speakr"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/learnedmachine/speakr"></a>
-  <a href="https://github.com/murtaza-nasir/speakr/releases/latest"><img alt="Latest Version" src="https://img.shields.io/badge/version-0.9.0-alpha-brightgreen.svg"></a>
+  <a href="https://github.com/murtaza-nasir/speakr/releases/latest"><img alt="Latest Version" src="https://img.shields.io/badge/version-0.9.4-alpha-brightgreen.svg"></a>
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@ Speakr turns a recording into organized, searchable, shareable knowledge. Here i
 - **Hands-off intake** - a watched "black hole" folder auto-imports and processes any audio dropped into it.
 
 ### Transcribe
-- **Bring your own engine** - self-hosted WhisperX (recommended; it is what enables the speaker features below), OpenAI, Mistral / Voxtral, or any custom ASR webservice. The right connector is auto-detected from your configuration.
+- **Bring your own engine** - self-hosted WhisperX (recommended; it is what enables the speaker features below), OpenAI, Mistral / Voxtral, AssemblyAI, or any custom ASR webservice. The right connector is auto-detected from your configuration.
 - **Speaker diarization** - automatic who-said-what labeling (WhisperX, or OpenAI's diarizing models).
 - **Voice profiles** - recognize the same person across different recordings via voice embeddings (requires the WhisperX ASR backend).
 - **Custom vocabulary and hotwords** (most effective with the WhisperX backend) - bias the transcriber toward names, jargon, and acronyms it would otherwise mishear; configurable globally or per tag / folder.
@@ -149,6 +149,7 @@ Speakr uses a **connector-based architecture** that auto-detects your transcript
 | **WhisperX ASR** | GPU container | Yes (best quality) | Yes |
 | **Mistral Voxtral** | Just API key | Yes (built-in) | No |
 | **VibeVoice ASR** | Self-hosted (vLLM) | Yes (built-in) | No |
+| **AssemblyAI** | Just API key | Yes (built-in) | No |
 | **Legacy Whisper** | Just API key | No | No |
 
 **Simplest setup (OpenAI with diarization):**
@@ -177,6 +178,13 @@ TRANSCRIPTION_CONNECTOR=vibevoice
 TRANSCRIPTION_BASE_URL=http://your-vllm-server:8000
 TRANSCRIPTION_MODEL=vibevoice
 ```
+
+**AssemblyAI (cloud diarization, long multi-speaker meetings):**
+```bash
+TRANSCRIPTION_CONNECTOR=assemblyai
+TRANSCRIPTION_API_KEY=your-assemblyai-key
+```
+Handles multi-hour, multi-speaker files in a single job. New accounts get free credits with no card required.
 Requires [VibeVoice](https://huggingface.co/microsoft/VibeVoice-ASR) served via vLLM with GPU.
 
 > **PyTorch 2.6 Users:** If you encounter a "Weights only load failed" error with WhisperX, add `TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=true` to your ASR container. See [troubleshooting](https://murtaza-nasir.github.io/speakr/troubleshooting#pytorch-26-weights-loading-error-whisperx-asr-service) for details.
@@ -193,9 +201,25 @@ Complete documentation is available at **[murtaza-nasir.github.io/speakr](https:
 - [Troubleshooting](https://murtaza-nasir.github.io/speakr/troubleshooting) - Common issues and solutions
 - [FAQ](https://murtaza-nasir.github.io/speakr/faq) - Frequently asked questions
 
-## Latest Release (v0.9.0-alpha)
+## Latest Release (v0.9.4-alpha)
 
-**The first non-patch release in the v0.8 line.** Three big user-facing themes: capturing audio is now multi-platform and properly documented, the mobile app is a first-class member of the design system, and the upload modal stops feeling like a desktop card pasted onto a phone. **Full release notes: [`release_notes_v0.9.0.md`](release_notes_v0.9.0.md).**
+**A feature release focused on transcription control, sharing privacy, and upload reliability.** Transcription templates now bundle an initial prompt and hotwords that you save once and reuse from the upload modal, tags, folders, or your account default. Summarization and chat each gain an independent toggle for making per-line timestamps available to the model, so the AI can reference moments in long recordings. Recipients of a shared recording now see only the tag or folder that granted them access, never the owner's other labels. Failed uploads retry themselves automatically across all browsers, and any recording is reachable by a direct `/recordings/<id>` link. For self-hosted text backends with prefix caching, an opt-in option reshapes the title and summary prompts to reuse the transcript prefix, and the admin dashboard now reports prompt-cache reads so the saving is visible. This option stays off by default for now and may become the default in a future release. **Full release notes on the [GitHub release page](https://github.com/murtaza-nasir/speakr/releases/tag/v0.9.4-alpha).**
+
+### v0.9.3-alpha (previous release)
+
+**Security patch: updates bundled FFmpeg to fix CVE-2026-8461.** Speakr runs FFmpeg/ffprobe on uploaded media, and the previously bundled build (johnvansickle static 7.0.2) carried a MagicYUV decoder flaw ("PixelSmash") that a crafted file could use for a crash or remote code execution. FFmpeg now comes from the maintained BtbN builds, pinned to the 8.1 branch (8.1.2, which contains the fix). Recommended for all deployments, especially multi-user instances that accept untrusted uploads. **Full release notes on the [GitHub release page](https://github.com/murtaza-nasir/speakr/releases/tag/v0.9.3-alpha).**
+
+### v0.9.2-alpha (previous release)
+
+**Adds a pluggable local / S3 storage backend.** Recording audio can now live in S3-compatible object storage (AWS S3, MinIO, Backblaze B2, Cloudflare R2, Wasabi) instead of, or alongside, the local filesystem, with presigned-URL delivery and a migration script for existing recordings. Local storage stays the default, so existing deployments are unaffected until they opt in. Contributed by @Daabramov (#268). **Full release notes on the [GitHub release page](https://github.com/murtaza-nasir/speakr/releases/tag/v0.9.2-alpha).**
+
+### v0.9.1-alpha (previous release)
+
+**A patch release hardening the v0.9.0 upload path.** Fixes uploads failing with an expired CSRF token after long sessions or sleep (#310), Inquire embeddings not being generated when auto-summarization is enabled (#305), and the Account page's API token modals not opening (#308); adds a timeout so stalled uploads fail into the recovery path and a warning before leaving the page mid-upload. **Full release notes on the [GitHub release page](https://github.com/murtaza-nasir/speakr/releases/tag/v0.9.1-alpha).**
+
+### v0.9.0-alpha highlights (the major feature release this patches)
+
+**The first non-patch release in the v0.8 line.** Three big user-facing themes: capturing audio is now multi-platform and properly documented, the mobile app is a first-class member of the design system, and the upload modal stops feeling like a desktop card pasted onto a phone. **Full release notes on the [GitHub release page](https://github.com/murtaza-nasir/speakr/releases/tag/v0.9.0-alpha).**
 
 **System Audio & Multi-Input Recording**
 - Per-OS help guide auto-opens for the right platform (macOS BlackHole + Multi-Output Device, Windows "Share system audio", Linux pavucontrol + `pactl module-virtual-source` one-liner)

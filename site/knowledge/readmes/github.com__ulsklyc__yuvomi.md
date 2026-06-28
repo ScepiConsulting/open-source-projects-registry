@@ -46,7 +46,7 @@
     <tr>
       <td align="center"><b>14</b><br><sub>modules</sub></td>
       <td align="center"><sub>·</sub></td>
-      <td align="center"><b>19</b><br><sub>languages</sub></td>
+      <td align="center"><b>20</b><br><sub>languages</sub></td>
       <td align="center"><sub>·</sub></td>
       <td align="center"><b>0</b><br><sub>trackers</sub></td>
       <td align="center"><sub>·</sub></td>
@@ -163,7 +163,7 @@ Each module is independent. Use what fits, skip what doesn't.
 | ![shopping](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/shopping.png) | **Shopping** | Collaborative lists organized by aisle. Touch-safe quick add, swipe gestures, and meal-plan import in one tap. Optional CalDAV import. |
 | ![meals](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/meals.png) | **Meals** | Weekly drag-and-drop planner with multiple items per slot. Direct export to shopping list. |
 | ![recipes](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/recipes.png) | **Recipes** | Create, duplicate, and scale recipes. Pre-fill meal slots or save any planned meal as a recipe. |
-| ![calendar](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/calendar.png) | **Calendar** | Google Calendar (OAuth) and CalDAV sync (iCloud, Nextcloud, Radicale). ICS subscriptions, recurring events, file attachments, public & school holiday overlays (OpenHolidays), month and agenda views. |
+| ![calendar](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/calendar.png) | **Calendar** | Google Calendar (OAuth) and CalDAV sync (iCloud, Nextcloud, Radicale). ICS subscriptions, recurring events, file attachments, public & school holiday overlays (OpenHolidays), month and agenda views. Read-only `webcal://` export feed so external apps (Apple Calendar, Google Calendar, Thunderbird) can subscribe to your Yuvomi events. |
 | ![documents](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/documents.png) | **Documents** | Upload and organize family files. Folders, tags, per-document visibility controls, in-browser preview, drag-and-drop. New files, including calendar attachments, can optionally use WebDAV storage; Paperless-ngx and Papra (DMS) linking and uploads are supported. |
 | ![budget](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/budget.png) | **Budget** | Income, expenses, recurring entries, trend charts, CSV export, loans, shared expenses, and subscription tracking with renewals, budgets, currencies, alerts, and analytics. |
 | ![housekeeping](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/housekeeping.png) | **Housekeeping** | Manage household staff — schedules, check-in/out, daily or hourly billing, chores, supply requests. |
@@ -188,7 +188,7 @@ Each module is independent. Use what fits, skip what doesn't.
 - **SSO / OpenID Connect** — optional single sign-on via any OIDC provider (Authentik, Keycloak, Google, Microsoft Entra) configured with four env vars; Authorization Code + PKCE flow
 - **Self-service password reset** — optional SMTP email lets users reset a forgotten password themselves via a time-limited emailed link; anti-enumeration by design
 - **Zero build step** — pure ES modules, no bundler, no transpiler, no framework
-- **Multilingual** — 19 languages with automatic locale detection (de, en, es, fr, it, sv, el, ru, tr, zh, ja, ar, hi, pt, uk, pl, nl, cs, vi)
+- **Multilingual** — 20 languages with automatic locale detection (de, en, es, fr, it, sv, el, ru, tr, zh, ja, ar, hi, pt, uk, pl, nl, cs, vi, hu)
 
 ---
 
@@ -196,7 +196,7 @@ Each module is independent. Use what fits, skip what doesn't.
 
 ### Web installer (recommended)
 
-A localized setup wizard — 18 languages — that runs in your browser. Auto-detects Docker or Podman, configures HTTPS, SSO, and scheduled backups, then starts the container and creates your admin account.
+A localized setup wizard — 20 languages — that runs in your browser. Auto-detects Docker or Podman, configures HTTPS, SSO, and scheduled backups, then starts the container and creates your admin account.
 
 ```bash
 git clone https://github.com/ulsklyc/yuvomi.git && cd yuvomi

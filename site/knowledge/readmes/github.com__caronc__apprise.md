@@ -77,6 +77,7 @@ The table below identifies the services this tool supports and some example serv
 | [FCM](https://appriseit.com/services/fcm/) | fcm://    | (TCP) 443    | fcm://project@apikey/DEVICE_ID<br />fcm://project@apikey/#TOPIC<br/>fcm://project@apikey/DEVICE_ID1/#topic1/#topic2/DEVICE_ID2/
 | [Feishu](https://appriseit.com/services/feishu/) | feishu://    | (TCP) 443    | feishu://token
 | [Flock](https://appriseit.com/services/flock/) | flock://    | (TCP) 443    | flock://token<br/>flock://botname@token<br/>flock://app_token/u:userid<br/>flock://app_token/g:channel_id<br/>flock://app_token/u:userid/g:channel_id
+| [Flowtriq](https://appriseit.com/services/flowtriq/) | flowtriq:// or flowtriqs://    | (TCP) 80 or 443    | flowtriq://apikey@hostname/webhook/path<br />flowtriqs://apikey@hostname/webhook/path
 | [Google Chat](https://appriseit.com/services/googlechat/) | gchat://    | (TCP) 443    | gchat://workspace/key/token
 | [Gotify](https://appriseit.com/services/gotify/) | gotify:// or gotifys://   | (TCP) 80 or 443    | gotify://hostname/token<br />gotifys://hostname/token?priority=high
 | [GroupMe](https://appriseit.com/services/groupme/) | groupme://   | (TCP) 443   | groupme://bot_id<br />groupme://bot_id/access_token
@@ -126,6 +127,7 @@ The table below identifies the services this tool supports and some example serv
 | [Pushover](https://appriseit.com/services/pushover/)  | pover://   | (TCP) 443   | pover://user@token<br />pover://user@token/DEVICE<br />pover://user@token/DEVICE1/DEVICE2/DEVICEN<br />**Note**: you must specify both your user_id and token
 | [Pushplus](https://appriseit.com/services/pushplus/) | pushplus://  | (TCP) 443   | pushplus://Token
 | [PushSafer](https://appriseit.com/services/pushsafer/)  | psafer:// or psafers://  | (TCP) 80 or 443  | psafer://privatekey<br />psafers://privatekey/DEVICE<br />psafer://privatekey/DEVICE1/DEVICE2/DEVICEN
+| [PushWard](https://appriseit.com/services/pushward/)  | pushward://  | (TCP) 443  | pushward://hlk_apikey<br />pushward://hlk_apikey?level=critical&volume=0.8
 | [Pushy](https://appriseit.com/services/pushy/)  | pushy://  | (TCP) 443  | pushy://apikey/DEVICE<br />pushy://apikey/DEVICE1/DEVICE2/DEVICEN<br />pushy://apikey/TOPIC<br />pushy://apikey/TOPIC1/TOPIC2/TOPICN
 | [PushDeer](https://appriseit.com/services/pushdeer/) | pushdeer:// or pushdeers:// | (TCP) 80 or 443 | pushdeer://pushKey<br />pushdeer://hostname/pushKey<br />pushdeer://hostname:port/pushKey
 | [QQ Push](https://appriseit.com/services/qq/) | qq://  | (TCP) 443   | qq://Token
@@ -635,7 +637,7 @@ There are 3 Persistent Storage operational states Apprise can operate using:
    * Developers who choose to use this operational mode can also force cached information manually if they choose.
    * The CLI will use this operational mode by default.
 1. `flush`: Flushes any cache information to the filesystem during every transaction.
-1. `memory`: Effectively disable Persistent Storage.  Any caching of data required by each plugin used is done in memory.  Apprise effectively operates as it always did before peristent storage was available. This setting ensures no content is every written to disk.
+1. `memory`: Effectively disable Persistent Storage.  Any caching of data required by each plugin used is done in memory.  Apprise effectively operates as it always did before peristent storage was available. This setting ensures no content is ever written to disk.
    * By default this is the mode Apprise will operate under for those developing with it unless they configure it to otherwise operate as `auto` or `flush`.  This is done through the `AppriseAsset()` object and is explained further on in this documentation.
 
 ## CLI Persistent Storage Commands
