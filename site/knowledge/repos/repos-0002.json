@@ -1,8 +1,23 @@
 {
   "chunk": 2,
   "count": 50,
-  "generated_at": "2026-06-28T07:09:27Z",
+  "generated_at": "2026-07-05T06:47:00Z",
   "items": [
+    {
+      "repo_key": "github.com/ArchiveBox/ArchiveBox",
+      "repo_url": "github.com/ArchiveBox/ArchiveBox",
+      "host": "github.com",
+      "owner": "ArchiveBox",
+      "repo": "ArchiveBox",
+      "app_references": [
+        "archivebox"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__ArchiveBox__ArchiveBox.md",
+      "readme_download_url": null,
+      "readme_sha256": "17b8cb0e0fadf7d96b54bc8ef8a8b0bcc89efbdbb43e1d8e9ca43fa322753847",
+      "error": null
+    },
     {
       "repo_key": "github.com/Arthi-chaud/Meelo",
       "repo_url": "github.com/Arthi-chaud/Meelo",
@@ -76,6 +91,21 @@
       "readme_path": "knowledge/readmes/github.com__AzuraCast__AzuraCast.md",
       "readme_download_url": null,
       "readme_sha256": "12eabef1397259483df2d57c93ea3b2c85a64eba0ff6f21d30aa0c1f2fbe39a6",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/BIRU-Scop/tenzu-back",
+      "repo_url": "github.com/BIRU-Scop/tenzu-back",
+      "host": "github.com",
+      "owner": "BIRU-Scop",
+      "repo": "tenzu-back",
+      "app_references": [
+        "tenzu"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__BIRU-Scop__tenzu-back.md",
+      "readme_download_url": "https://raw.githubusercontent.com/BIRU-Scop/tenzu-back/main/README.md",
+      "readme_sha256": "b9c43007a890b4207509f49d1f232fd0ebe2082e893525d34e3283c8443fed9c",
       "error": null
     },
     {
@@ -282,10 +312,10 @@
       "app_references": [
         "peertube"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Chocobozzz__PeerTube.md",
-      "readme_download_url": null,
-      "readme_sha256": "3b29fa3f3c953309d170fd0bc0fa30b014a0bb795f9f875ff51b8de081fc3e25",
+      "readme_download_url": "https://raw.githubusercontent.com/Chocobozzz/PeerTube/develop/README.md",
+      "readme_sha256": "fe7783915cdd9a6ef86844544b38b10f371fb8d9ab4651bd9586ce541fa5a49d",
       "error": null
     },
     {
@@ -372,9 +402,9 @@
       "app_references": [
         "sparkyfitness"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__CodeWithCJ__SparkyFitness.md",
-      "readme_download_url": "https://raw.githubusercontent.com/CodeWithCJ/SparkyFitness/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "821fb72ea42344c5f9aa1a0c7cc346888fd9cdd742ebccd492bf3bdf6cec9bb8",
       "error": null
     },
@@ -447,9 +477,9 @@
       "app_references": [
         "project-nomad"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Crosstalk-Solutions__project-nomad.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "5fe1b0aaa29ba71ed748bbc693a392878aba51e1a697bb8812845b87bdca8ef4",
       "error": null
     },
@@ -507,9 +537,9 @@
       "app_references": [
         "managarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Dark-Alex-17__managarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Dark-Alex-17/managarr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "427cff8fcc0767f92f344b05a33bc348fe3eb3364469e686457555396b3b5209",
       "error": null
     },
@@ -555,7 +585,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__DialmasterOrg__Youtarr.md",
       "readme_download_url": "https://raw.githubusercontent.com/DialmasterOrg/Youtarr/main/README.md",
-      "readme_sha256": "c12e5f76b4ebe56c56d925599d96e3e03e5abcb706bd4299ea7f4c882592a283",
+      "readme_sha256": "4edc87d24289c0b6ada0b2e8a8b1b97259c49497b465b71a74274c34956184f3",
       "error": null
     },
     {
@@ -567,9 +597,9 @@
       "app_references": [
         "profilarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Dictionarry-Hub__profilarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Dictionarry-Hub/profilarr/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "da4c1c5961d995dcb0c04b6beccbc615317d04d9dece6fb51e444fa2d6455b03",
       "error": null
     },
@@ -721,36 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbAssets.md",
       "readme_download_url": null,
       "readme_sha256": "1817a186279532bae6c85cfd616e1962872de34ea0cbe8563389114324c3825b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/DumbWareio/DumbBudget",
-      "repo_url": "github.com/DumbWareio/DumbBudget",
-      "host": "github.com",
-      "owner": "DumbWareio",
-      "repo": "DumbBudget",
-      "app_references": [
-        "dumbbudget"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbBudget.md",
-      "readme_download_url": null,
-      "readme_sha256": "facd261913f4137326e77294a2a16bee37e1dc7e3f89a9dff2826c0fde1c08c8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/DumbWareio/DumbDo",
-      "repo_url": "github.com/DumbWareio/DumbDo",
-      "host": "github.com",
-      "owner": "DumbWareio",
-      "repo": "DumbDo",
-      "app_references": [
-        "dumbdo"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__DumbWareio__DumbDo.md",
-      "readme_download_url": null,
-      "readme_sha256": "bf14942396338b8ce61af8c1d55cd8f0d0d133ab401d46125e1f9068c1598ac5",
       "error": null
     }
   ]

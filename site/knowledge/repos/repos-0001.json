@@ -1,7 +1,7 @@
 {
   "chunk": 1,
   "count": 50,
-  "generated_at": "2026-06-28T07:09:27Z",
+  "generated_at": "2026-07-05T06:47:00Z",
   "items": [
     {
       "repo_key": "akkoma.dev/AkkomaGang/akkoma",
@@ -492,9 +492,9 @@
       "app_references": [
         "nginx-ui"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__0xJacky__nginx-ui.md",
-      "readme_download_url": "https://raw.githubusercontent.com/0xJacky/nginx-ui/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "dfe7b449c6e168a777e359055f771d85c50373f5c03735ebf336de4218505bd9",
       "error": null
     },
@@ -537,10 +537,10 @@
       "app_references": [
         "1panel"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__1Panel-dev__1Panel.md",
-      "readme_download_url": null,
-      "readme_sha256": "24315bc1509443978283ebd80480798cd617f2abce829330f0734c681a2e1eb7",
+      "readme_download_url": "https://raw.githubusercontent.com/1Panel-dev/1Panel/dev-v2/README.md",
+      "readme_sha256": "8f2c015f021958b60b515130b2b6b3ade3d1e2e0b64bd498c22659edd178cc25",
       "error": null
     },
     {
@@ -567,10 +567,25 @@
       "app_references": [
         "ideon"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__3xpyth0n__ideon.md",
-      "readme_download_url": null,
-      "readme_sha256": "0a84a9c8ff32c6e5d747e2815cbd0ee858b641ad8ff23083db456cc558efbd48",
+      "readme_download_url": "https://raw.githubusercontent.com/3xpyth0n/ideon/main/README.md",
+      "readme_sha256": "5d4d88c7a7f2e40d3bd32f9dc0ab1987fc77241154cc91a99aac71b5db658518",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/5rahim/seanime",
+      "repo_url": "github.com/5rahim/seanime",
+      "host": "github.com",
+      "owner": "5rahim",
+      "repo": "seanime",
+      "app_references": [
+        "seanime"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__5rahim__seanime.md",
+      "readme_download_url": "https://raw.githubusercontent.com/5rahim/seanime/main/README.md",
+      "readme_sha256": "3a5de38945c42edbc2af4c2cf61794ce50f1dff0bd50b0f47ccef60eb64f0ec9",
       "error": null
     },
     {
@@ -612,10 +627,10 @@
       "app_references": [
         "copyparty"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__9001__copyparty.md",
-      "readme_download_url": null,
-      "readme_sha256": "3235cefb178e716050e5e2378e3f800351bd5f7ecb25e40de1dbc5502fdc8840",
+      "readme_download_url": "https://raw.githubusercontent.com/9001/copyparty/hovudstraum/README.md",
+      "readme_sha256": "0430a6943cfce5fdb4d9c1b6466ffc31a1ff3ed2410a3ea0daa5376548f5e41d",
       "error": null
     },
     {
@@ -702,10 +717,10 @@
       "app_references": [
         "flashpaper"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__AndrewPaglusch__FlashPaper.md",
-      "readme_download_url": null,
-      "readme_sha256": "52a23fed52489d4ead503dde3bf69481614f2b9c53f7379bb32cdea646639b53",
+      "readme_download_url": "https://raw.githubusercontent.com/AndrewPaglusch/FlashPaper/master/README.md",
+      "readme_sha256": "e65c716b954c7a0527ab4b7c6c6c13eb07cf45feb4f23e03bdedd22ecde5bb0a",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__AppFlowy-IO__AppFlowy.md",
       "readme_download_url": null,
       "readme_sha256": "f59d3e49037d392f36d7ea13d25485c5d54317f9aee7c61c4c2a47f067aa996d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ArchiveBox/ArchiveBox",
-      "repo_url": "github.com/ArchiveBox/ArchiveBox",
-      "host": "github.com",
-      "owner": "ArchiveBox",
-      "repo": "ArchiveBox",
-      "app_references": [
-        "archivebox"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__ArchiveBox__ArchiveBox.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/dev/README.md",
-      "readme_sha256": "17b8cb0e0fadf7d96b54bc8ef8a8b0bcc89efbdbb43e1d8e9ca43fa322753847",
       "error": null
     }
   ]

@@ -1,20 +1,21 @@
 <!-- SPDX-FileCopyrightText: 2023-2026 Sayantan Santra <sayantan.santra689@gmail.com> -->
 <!-- SPDX-License-Identifier: MIT -->
 
-[![github-tests-badge](https://github.com/SinTan1729/chhoto-url/actions/workflows/rust-tests.yml/badge.svg)](https://github.com/SinTan1729/chhoto-url/actions/workflows/rust-tests.yml)
-[![docker-pulls-badge](https://img.shields.io/docker/pulls/sintan1729/chhoto-url)](https://hub.docker.com/r/sintan1729/chhoto-url)
+[![github-tests-badge](https://img.shields.io/github/actions/workflow/status/SinTan1729/chhoto-url/.github%2Fworkflows%2Frust-tests.yml?label=tests)](https://github.com/SinTan1729/chhoto-url/actions/workflows/rust-tests.yml)
+[![docker-pulls-badge](https://img.shields.io/docker/pulls/sintan1729/chhoto-url?label=pulls)](https://hub.docker.com/r/sintan1729/chhoto-url)
+[![docker-stars-badge](https://img.shields.io/github/stars/SinTan1729/chhoto-url?style=flat)](https://github.com/SinTan1729/chhoto-url)
 [![maintainer-badge](https://img.shields.io/badge/maintainer-SinTan1729-blue)](https://github.com/SinTan1729)
-[![latest-release-badge](https://img.shields.io/github/v/release/SinTan1729/chhoto-url?label=latest%20release)](https://github.com/SinTan1729/chhoto-url/releases/latest)
-[![docker-image-size-badge](https://img.shields.io/docker/image-size/sintan1729/chhoto-url)](https://hub.docker.com/r/sintan1729/chhoto-url/tags)
-[![license-badge](https://img.shields.io/github/license/SinTan1729/chhoto-url)](https://spdx.org/licenses/MIT.html)
+[![latest-release-badge](https://img.shields.io/github/v/release/SinTan1729/chhoto-url)](https://github.com/SinTan1729/chhoto-url/releases/latest)
+[![docker-image-size-badge](https://img.shields.io/docker/image-size/sintan1729/chhoto-url?label=size)](https://hub.docker.com/r/sintan1729/chhoto-url/tags)
+[![license-badge](https://img.shields.io/badge/License-MIT-green.svg?label=license)](https://spdx.org/licenses/MIT.html)
 
 # ![Logo](frontend/assets/favicon-32.png) <span style="font-size:42px">Chhoto URL</span>
 
 # What is it?
 
 A simple selfhosted URL shortener with no unnecessary features. Simplicity
-and speed are the main foci of this project. The scratch docker image is <6 MB (compressed),
-the alpine one is <10 MB (compressed), and it uses <15 MB of RAM under regular use.
+and speed are the main foci of this project. The scratch docker image is <4.5 MB (compressed),
+the alpine one is <8.5 MB (compressed), and it uses <10 MB of RAM under regular use.
 
 Don't worry if you see no activity for a long time. I consider this project
 to be complete, not dead. I'm unlikely to add any new features, but I will try
@@ -98,31 +99,31 @@ Password: `chhoto-url-demo-pass`
 # Screenshots
 
 <p align="middle">
-  <img src="doc/screenshot-desktop.webp" height="250" alt="desktop screenshot" />
-  <img src="doc/screenshot-mobile.webp" height="250" alt="mobile screenshot" />
+  <img src="docs/screenshot-desktop.webp" height="250" alt="desktop screenshot" />
+  <img src="docs/screenshot-mobile.webp" height="250" alt="mobile screenshot" />
 </p>
 
 # Installation and configuration
 
-[See here.](./doc/INSTALLATION.md)
+[See here.](./docs/INSTALLATION.md)
 
 # Instructions for CLI usage
 
-[See here.](./doc/CLI.md)
+[See here.](./docs/CLI.md)
 
 # Related software
 
-[See here.](./doc/TOOLS.md)
+[See here.](./docs/TOOLS.md)
 
 # Notes
 
 - The list of adjectives and names used for random short url generation is a modified
   version of [this list used by docker](https://github.com/moby/moby/blob/master/internal/namesgenerator/names-generator.go).
-- It is highly recommended that you [enable WAL mode](./doc/INSTALLATION.md#chhoto_sqlite_use_wal_mode).
+- It is highly recommended that you [enable WAL mode](./docs/INSTALLATION.md#chhoto_sqlite_use_wal_mode).
 - Although it's unlikely, it's possible that your database is mangled after some update. For mission critical use cases,
   it's recommended to keep regular versioned backups of the database, and sticking to a minor release tag e.g. 5.8.
 - If you intend to have more than a few thousand short links, it's strongly recommended that you use the UID
-  [`CHHOTO_SLUG_STYLE`](./doc/INSTALLATION.md#chhoto_slug_style) with a [`CHHOTO_SLUG_LENGTH`](./doc/INSTALLATION.md#chhoto_slug_length)
+  [`CHHOTO_SLUG_STYLE`](./docs/INSTALLATION.md#chhoto_slug_style) with a [`CHHOTO_SLUG_LENGTH`](./docs/INSTALLATION.md#chhoto_slug_length)
   of 16 or more. Otherwise, generating new links will start to fail after a while.
 - For safety, only `https`,`http`,`ftp`, and `magnet` links are allowed for long links. If you have a special case which requires some
   specific scheme, feel free to open a feature request, and we can figure out a solution.

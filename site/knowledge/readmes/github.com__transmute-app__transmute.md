@@ -15,7 +15,7 @@
 
 [![Run on PikaPods](https://www.pikapods.com/static/run-button.svg)](https://www.pikapods.com/pods?run=transmute)
 
-**Transmute** is a free, open source, self-hosted file converter built for privacy and automation. Convert images, video, audio, documents, spreadsheets, subtitles, and fonts entirely locally, with no file size limits and no third-party access to your files. Deploy in seconds with Docker.
+**Transmute** is a free, open-source, self-hosted file conversion and compression tool built for privacy and automation. Convert images, video, audio, documents, spreadsheets, subtitles, and fonts entirely locally, or compress supported files to make them smaller without sending anything to a third party. Deploy in seconds with Docker, with no file size limits, no watermarks, and no external access to your files.
 
 Full documentation on [our website](https://transmute.sh/docs/)!
 
@@ -32,7 +32,7 @@ Want to support us or follow along? Give us a star or jump in and contribute!
 > AI tools assist during development (autocomplete, some boilerplate, help with tests) but all code is intentionally written, reviewed, and validated by a human who understands and takes responsibility for the result. This is not an autonomously generated project, and fully AI-generated or agent-submitted contributions are not accepted. See the [contributing guide](https://github.com/transmute-app/transmute?tab=contributing-ov-file#no-autonomous-agents-or-unreviewed-ai-contributions) for more details
 
 ## Demo
-Want to see a video demo? Check out our [YouTube](https://www.youtube.com/watch?v=Gmh7gm2z6mk).
+Want to see a video demo? Check out our [YouTube](https://www.youtube.com/watch?v=wCa7I_UfpUs).
 
 ## Features
 

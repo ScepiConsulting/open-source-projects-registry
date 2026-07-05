@@ -375,6 +375,7 @@ Prior versions of Jackett are no longer supported.
  * Explosiv-World (E-W)
  * ExtremeBits
  * F1Carreras
+ * F1GP
  * FANO.IN [![(invite needed)][inviteneeded]](#)
  * Fappaizuri
  * Femdomcult
@@ -393,7 +394,6 @@ Prior versions of Jackett are no longer supported.
  * Generation-Free
  * GGPT
  * GigaTorrents
- * GimmePeers (formerly ILT) [PAY2DL]
  * GiroTorrent
  * GreatPosterWall (GPW)
  * HaiDan
@@ -482,6 +482,7 @@ Prior versions of Jackett are no longer supported.
  * Mansão dos Animes (MDAN)
  * March [![(invite needed)][inviteneeded]](#)
  * Matrix
+ * Memphis
  * MeseVilág (Fairytale World)
  * MetalGuru [![(invite needed)][inviteneeded]](#)
  * MidnightScene
@@ -502,7 +503,6 @@ Prior versions of Jackett are no longer supported.
  * NCore
  * Nebulance (NBL) (TransmiTheNet)
  * NewHeaven (TorrentHeavenResurrection) [![(invite needed)][inviteneeded]](#)
- * Nexum
  * NicePT
  * Nirvana
  * njtupt (浦园)) [![(invite needed)][inviteneeded]](#)
@@ -537,7 +537,6 @@ Prior versions of Jackett are no longer supported.
  * Polish Torrent (PTT)
  * PolishTracker [![(invite needed)][inviteneeded]](#)
  * Pornbay [![(invite needed)][inviteneeded]](#)
- * PornBytes
  * Portugas
  * Pretome
  * PrivateHD (PHD)
@@ -575,7 +574,7 @@ Prior versions of Jackett are no longer supported.
  * RetroFlix
  * RetroMoviesClub (RMC)
  * RetroToon
- * RevolutionTT [![(invite needed)][inviteneeded]](#)
+ * RevoPeers [PAY2DL]
  * RocketHD
  * Romanian Metal Torrents (RMT)
  * Rousi.pro
@@ -608,7 +607,6 @@ Prior versions of Jackett are no longer supported.
  * SportsCora
  * SportsCult
  * SpringSunday (SSD) [![(invite needed)][inviteneeded]](#)
- * SugoiMusic
  * SunnyPT [![(invite needed)][inviteneeded]](#)
  * Superbits (SBS)
  * Swarmazon
@@ -666,7 +664,6 @@ Prior versions of Jackett are no longer supported.
  * TranceTraffic
  * Trellas (Magico) [![(invite needed)][inviteneeded]](#)
  * TreZzoR
- * TSDB (The Sports Database)
  * TurkSeed (Aturk)
  * TurkTorrent (TT) [PAY2DL]
  * TVstore

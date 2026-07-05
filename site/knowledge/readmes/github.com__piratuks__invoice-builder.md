@@ -9,8 +9,6 @@
 ![Docker](https://img.shields.io/badge/Docker-blue?style=flat-square&logo=docker&logoColor=white)
 [![GHCR](https://img.shields.io/badge/ghcr.io-invoice--builder-blue?style=flat-square&logo=github)](https://github.com/piratuks/invoice-builder/pkgs/container/invoice-builder)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FF813F?style=flat&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/evaldizi)
-[![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/fae95447-d182-4281-a9ab-72f3a728cab8.svg)](https://oosmetrics.com/repo/piratuks/invoice-builder)
-[![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/b9423919-f6dd-44ca-a4ae-a9be883d092e.svg)](https://oosmetrics.com/repo/piratuks/invoice-builder)
 
 **Offline invoicing with full data ownership.**
 
@@ -107,6 +105,7 @@ If you value **privacy, portability, and control**, this app is built for you.
 - Language selection: currently French, German, English and Lithuanian
 - Number & date formatting (e.g. `1,234.10` vs `1.234,10`)
 - Invoice/quote number prefix & suffix
+- Leading-zero invoice/quote numbering is preserved across auto-increment (for consistent alphabetical file sorting)
 - File name customization for exported PDFs
 - Light & dark mode
 - Enable/disable UBL 2.1 Peppol BIS Billing 3.0, reports, style profiles, presets and quotes
@@ -417,6 +416,7 @@ Please open an issue before starting major work to ensure alignment.
 - Report issues or features here: [ISSUES/FEATURES](https://github.com/piratuks/invoice-builder/issues)
 - Feature requests and discussions are welcome
 - Please follow [guidelines](CONTRIBUTING.md)
+- For agentic/AI-assisted development workflows, see [AGENTS.md](AGENTS.md)
 
 ## 📚 Documentation
 
@@ -428,6 +428,8 @@ Please open an issue before starting major work to ensure alignment.
 
 | Version | Status                |
 | ------- | --------------------- |
+| v2.5.4  | ✅ Actively supported |
+| v2.5.3  | ✅ Actively supported |
 | v2.5.2  | ✅ Actively supported |
 | v2.5.1  | ✅ Actively supported |
 | v2.5.0  | ✅ Actively supported |

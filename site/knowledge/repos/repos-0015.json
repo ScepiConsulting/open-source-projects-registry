@@ -1,8 +1,98 @@
 {
   "chunk": 15,
   "count": 50,
-  "generated_at": "2026-06-28T07:09:27Z",
+  "generated_at": "2026-07-05T06:47:00Z",
   "items": [
+    {
+      "repo_key": "github.com/hudikhq/hoodik",
+      "repo_url": "github.com/hudikhq/hoodik",
+      "host": "github.com",
+      "owner": "hudikhq",
+      "repo": "hoodik",
+      "app_references": [
+        "hoodik"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hudikhq__hoodik.md",
+      "readme_download_url": null,
+      "readme_sha256": "df8c06492ad36977070c686bcd8f5e2fcfc3376672e17761fe7283cf95a8649c",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/huginn/huginn",
+      "repo_url": "github.com/huginn/huginn",
+      "host": "github.com",
+      "owner": "huginn",
+      "repo": "huginn",
+      "app_references": [
+        "huginn"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__huginn__huginn.md",
+      "readme_download_url": null,
+      "readme_sha256": "d003fd656bf5152d00e6234e5fba1cd0aa911306893ec861859306c1cfe452ae",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/humhub/humhub",
+      "repo_url": "github.com/humhub/humhub",
+      "host": "github.com",
+      "owner": "humhub",
+      "repo": "humhub",
+      "app_references": [
+        "humhub"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__humhub__humhub.md",
+      "readme_download_url": null,
+      "readme_sha256": "ac4e36a26d863677f55378c07e6b0dbc48886a5b5ad5c83bd7ab9a1cfcd49c9b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/hwgilbert16/scholarsome",
+      "repo_url": "github.com/hwgilbert16/scholarsome",
+      "host": "github.com",
+      "owner": "hwgilbert16",
+      "repo": "scholarsome",
+      "app_references": [
+        "scholarsome"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hwgilbert16__scholarsome.md",
+      "readme_download_url": null,
+      "readme_sha256": "e3a9a5b13ad139235d311b4d13cf815d7c350ca142ea63c8a43f2fcb7de6e597",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/hyvor/relay",
+      "repo_url": "github.com/hyvor/relay",
+      "host": "github.com",
+      "owner": "hyvor",
+      "repo": "relay",
+      "app_references": [
+        "hyvor-relay"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hyvor__relay.md",
+      "readme_download_url": null,
+      "readme_sha256": "2fa317bbc7303310fa934a654820d89dc61a4b530857f84ad1ca6f1e371a7693",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/hywax/mafl",
+      "repo_url": "github.com/hywax/mafl",
+      "host": "github.com",
+      "owner": "hywax",
+      "repo": "mafl",
+      "app_references": [
+        "mafl"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hywax__mafl.md",
+      "readme_download_url": null,
+      "readme_sha256": "9f23cb3caa6b0709fa996fb23efc895043cb45c7ddba3a3ae16a64f9ec2906fa",
+      "error": null
+    },
     {
       "repo_key": "github.com/i3months/eziwiki",
       "repo_url": "github.com/i3months/eziwiki",
@@ -72,10 +162,10 @@
       "app_references": [
         "immich-power-tools"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__immich-power-tools__immich-power-tools.md",
-      "readme_download_url": null,
-      "readme_sha256": "65eb45e3246a29e990f43f1b859d1d1b6995b172e2b3f916fee1e9ae1d32d3f5",
+      "readme_download_url": "https://raw.githubusercontent.com/immich-power-tools/immich-power-tools/main/README.md",
+      "readme_sha256": "27f6470ffe4898927d78a3c7c9f8a9560471a73ce0421f40ce538042316dca08",
       "error": null
     },
     {
@@ -177,9 +267,9 @@
       "app_references": [
         "inventree"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__inventree__InvenTree.md",
-      "readme_download_url": "https://raw.githubusercontent.com/inventree/InvenTree/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8f81f3906fcca08160f846d23f9f8cf33de280fccd84b83a7dc97794bfde4b3b",
       "error": null
     },
@@ -222,9 +312,9 @@
       "app_references": [
         "invoicerr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__invoicerr-app__invoicerr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/invoicerr-app/invoicerr/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "fe428e39e885a9e174ae8735ed2ac6a9d258a29ef2fc5dd40333ed42498fd57b",
       "error": null
     },
@@ -342,9 +432,9 @@
       "app_references": [
         "stencilbox"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__jamesread__StencilBox.md",
-      "readme_download_url": "https://raw.githubusercontent.com/jamesread/StencilBox/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "3cd015f6867d4b7f65614815773a31a8d4ff7e2d8e9a64c75b7b7d6fbc53825a",
       "error": null
     },
@@ -402,9 +492,9 @@
       "app_references": [
         "mkcert-web-ui"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__jeffcaldwellca__mkcertWeb.md",
-      "readme_download_url": "https://raw.githubusercontent.com/jeffcaldwellca/mkcertWeb/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f6e977ed86a73d06ef2e407e0453520ce6b6821b0d4eb247baeab3e9fb8dae68",
       "error": null
     },
@@ -642,9 +732,9 @@
       "app_references": [
         "airtrail"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__johanohly__AirTrail.md",
-      "readme_download_url": "https://raw.githubusercontent.com/johanohly/AirTrail/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "32fc1574b8e87ff702e85b94a001d32e3219e80368f81a4daf75985b9682e2cf",
       "error": null
     },
@@ -661,96 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__johnwarne__upvote-rss.md",
       "readme_download_url": null,
       "readme_sha256": "406f5b9543f47e40a1d09a7939d87daf0ebac13d365f9fae7efc621c01c7a28c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/joinloops/loops-server",
-      "repo_url": "github.com/joinloops/loops-server",
-      "host": "github.com",
-      "owner": "joinloops",
-      "repo": "loops-server",
-      "app_references": [
-        "loops"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__joinloops__loops-server.md",
-      "readme_download_url": "https://raw.githubusercontent.com/joinloops/loops-server/main/README.md",
-      "readme_sha256": "b29372463b73dd10bc3c7d57c41fc80cc96249f04ebaf889544c721b67846004",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jon4hz/jellysweep",
-      "repo_url": "github.com/jon4hz/jellysweep",
-      "host": "github.com",
-      "owner": "jon4hz",
-      "repo": "jellysweep",
-      "app_references": [
-        "jellysweep"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jon4hz__jellysweep.md",
-      "readme_download_url": null,
-      "readme_sha256": "5ee274e32ca540861a1fbc7be8d96a6ca3c07dc288ec4f4a370a79cd69fdf0f5",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jon6fingrs/ghostboard",
-      "repo_url": "github.com/jon6fingrs/ghostboard",
-      "host": "github.com",
-      "owner": "jon6fingrs",
-      "repo": "ghostboard",
-      "app_references": [
-        "ghostboard"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jon6fingrs__ghostboard.md",
-      "readme_download_url": null,
-      "readme_sha256": "8c19bb3b8276e0b8065fc48ba5fb78848fae0244f62e7edce9d1c809c7397b27",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jon6fingrs/ghostfile",
-      "repo_url": "github.com/jon6fingrs/ghostfile",
-      "host": "github.com",
-      "owner": "jon6fingrs",
-      "repo": "ghostfile",
-      "app_references": [
-        "ghostfile"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jon6fingrs__ghostfile.md",
-      "readme_download_url": null,
-      "readme_sha256": "452cfa05693af6d0838d035e082b9f54cd3dd98909ff4944ae0e1e9c4feac201",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jordan-dalby/ByteStash",
-      "repo_url": "github.com/jordan-dalby/ByteStash",
-      "host": "github.com",
-      "owner": "jordan-dalby",
-      "repo": "ByteStash",
-      "app_references": [
-        "bytestash"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jordan-dalby__ByteStash.md",
-      "readme_download_url": null,
-      "readme_sha256": "3c10baadf757f63fa106e65cf04e49a7af64326534384a97f110218cc00782c8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/journiv/journiv-app",
-      "repo_url": "github.com/journiv/journiv-app",
-      "host": "github.com",
-      "owner": "journiv",
-      "repo": "journiv-app",
-      "app_references": [
-        "journiv"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__journiv__journiv-app.md",
-      "readme_download_url": null,
-      "readme_sha256": "907852668f69052b96978e5410170beb95deea000444f0f11404135b499abab4",
       "error": null
     }
   ]

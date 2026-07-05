@@ -3,7 +3,7 @@
 </p>
 
 > [!NOTE]
-> **SnapOtter v2.0.0 is coming soon.** The current Docker image (`latest`) is v1.x and includes image tools only. v2.0 adds 157 tools across image, video, audio, documents, and files. We're fixing a last-minute issue with local AI installs before publishing the new image. Stay tuned!
+> **SnapOtter v2.0.0** is the current monorepo version, with 200+ tools across image, video, audio, PDF, and files. For published image channels and GPU variants, see the Docker Tags guide.
 
 <p align="center">
   <a href="https://hub.docker.com/r/snapotter/snapotter"><img src="https://img.shields.io/docker/v/snapotter/snapotter?label=Docker%20Hub&logo=docker" alt="Docker Hub"></a>
@@ -18,29 +18,48 @@
   <a href="https://github.com/sponsors/snapotter-hq"><img src="https://img.shields.io/badge/Sponsor-pink?logo=githubsponsors&logoColor=white" alt="Sponsor"></a>
 </p>
 
+<p align="center">
+  <strong>Self-hosted file toolkit. 200+ tools across image, video, audio, PDF, and files.</strong><br />
+  The open-source alternative to Smallpdf, iLovePDF, TinyPNG, TinyWow, and CloudConvert, in one stack you host yourself.
+</p>
+
 ![SnapOtter - Dashboard](branding/dashboard.gif)
+
+Stirling-PDF stops at PDFs. ConvertX stops at conversions. SnapOtter runs all five, and your files never leave your server. Edit images, convert video, transcribe audio, repair PDFs, batch your files: one Docker stack, on hardware you own.
+
+## Quick Start
+
+One command, no setup. An embedded Postgres 17 + Redis 8 boot inside the container, so there's nothing else to wire up:
+
+```bash
+docker run -d --name SnapOtter -p 1349:1349 -v SnapOtter-data:/data snapotter/snapotter:latest
+```
+
+Open [http://localhost:1349](http://localhost:1349) and log in with `admin` / `admin`. That's the whole install.
+
+For the production Compose stack, NVIDIA GPU acceleration, and configuration, see [Deployment](#deployment) below.
 
 ## Key Features
 
-- **157 tools across 5 modalities:**
-  - **Image (64):** resize, crop, compress, convert, watermark, color adjust, beautify screenshots, generate memes, vectorize, GIF tools, find duplicates, passport photos, and more. Supports 55+ input formats (including 23 camera RAW formats) and 14 output formats
-  - **Video (29):** convert, compress, trim, resize, crop, merge, video-to-GIF, extract audio, stabilize, change FPS, burn/extract subtitles, and more
-  - **Audio (17):** convert, trim, normalize, volume, fade, pitch shift, silence removal, noise reduction, merge/split, waveform, and more
-  - **Documents / PDF (37):** merge, split, compress, convert (Word/Excel/PowerPoint/EPUB), protect/unlock, redact, watermark, page numbers, OCR, and more
-  - **Files (10):** CSV/JSON/XML/YAML conversion, CSV merge/split, chart maker, ZIP create/extract
+- **200+ tools across 5 modalities:**
+  - **Image (105):** resize, crop, compress, convert, watermark, color adjust, beautify screenshots, generate memes, vectorize, GIF tools, find duplicates, passport photos, plus dedicated format converters (JPG to PNG, HEIC to JPG, WebP to PNG, image to PDF, and more). Supports 55+ input formats (including 23 camera RAW formats) and 14 output formats
+  - **Video (57):** convert, compress, trim, resize, crop, merge, video-to-GIF, extract audio, stabilize, change FPS, burn/extract subtitles, plus dedicated converters (MOV to MP4, MKV to MP4, MP4 to MP3, and more)
+  - **Audio (27):** convert, trim, normalize, volume, fade, pitch shift, silence removal, noise reduction, merge/split, waveform, plus dedicated converters (M4A to MP3, AAC to MP3, OGG to WAV, and more)
+  - **PDF (29):** merge, split, compress, convert, protect/unlock, redact, sign, watermark, page numbers, OCR, plus PDF to JPG/PNG/TIFF
+  - **Files (23):** CSV/JSON/XML/YAML conversion, CSV merge/split, Excel to CSV, chart maker, ZIP create/extract
 - **Image editor:** Layer-based editor with brushes, shapes, adjustments, filters, curves, and keyboard shortcuts. Runs in your browser, processes on your hardware
 - **Local AI:** Remove backgrounds, upscale images, restore and colorize old photos, erase objects, blur faces, enhance faces, extract text (OCR from images and PDFs), transcribe audio, auto-generate video subtitles, expand canvas, and fix transparency. All on your hardware, no internet required
 - **OIDC / SSO:** Login with Google, GitHub, Okta, or any OpenID Connect provider
 - **21 languages:** English, Arabic, Chinese (Simplified & Traditional), Dutch, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Swedish, Thai, Turkish, Ukrainian, Vietnamese. RTL support for Arabic
 - **Pipelines:** Chain tools into reusable workflows with unlimited steps. Import/export as JSON. Batch process unlimited files at once
 - **REST API:** Every tool available via API with API key auth. Interactive docs at `/api/docs`
-- **Self-hosted stack:** SnapOtter + Postgres 17 + Redis 8, run together with one `docker compose up`. No external SaaS dependencies
+- **Self-hosted:** one `docker run` for a single-container quick start (embedded Postgres 17 + Redis 8), or the same Postgres 17 + Redis 8 as a Compose stack for production. No external SaaS dependencies
 - **Multi-arch:** Runs on AMD64 and ARM64 (Intel, Apple Silicon, Raspberry Pi)
 - **Privacy first:** Your files never leave your network. Basic analytics help us catch bugs and improve tools -- disable anytime by rebuilding with `SNAPOTTER_ANALYTICS=off` ([Here's how to do it](https://docs.snapotter.com/guide/deployment.html#analytics))
 
-## Quick Start
+## Deployment
 
-SnapOtter runs as a small Docker Compose stack (app + Postgres 17 + Redis 8). Save this as `compose.yaml`:
+The [Quick Start](#quick-start) one-liner above is all most people need. For production, run the 3-container Compose stack (app + Postgres 17 + Redis 8). Save this as `compose.yaml`:
 
 ```yaml
 services:
@@ -51,7 +70,7 @@ services:
       DATABASE_URL: postgres://snapotter:snapotter@postgres:5432/snapotter
       REDIS_URL: redis://redis:6379
     volumes:
-      - snapotter-data:/data
+      - SnapOtter-data:/data
     depends_on: [postgres, redis]
     restart: unless-stopped
   postgres:
@@ -60,16 +79,16 @@ services:
       POSTGRES_USER: snapotter
       POSTGRES_PASSWORD: snapotter
       POSTGRES_DB: snapotter
-    volumes: ["snapotter-pgdata:/var/lib/postgresql/data"]
+    volumes: ["SnapOtter-pgdata:/var/lib/postgresql/data"]
     restart: unless-stopped
   redis:
     image: redis:8-alpine
-    volumes: ["snapotter-redisdata:/data"]
+    volumes: ["SnapOtter-redisdata:/data"]
     restart: unless-stopped
 volumes:
-  snapotter-data:
-  snapotter-pgdata:
-  snapotter-redisdata:
+  SnapOtter-data:
+  SnapOtter-pgdata:
+  SnapOtter-redisdata:
 ```
 
 Then start the stack:
@@ -79,10 +98,10 @@ docker compose up -d
 ```
 
 <details>
-<summary><sub>Have an NVIDIA GPU? Click here for GPU acceleration.</sub></summary>
+<summary><sub>Have an NVIDIA GPU? Click here for CUDA acceleration.</sub></summary>
 <br>
 
-Use the GPU Compose file for GPU-accelerated background removal, upscaling, transcription, and OCR. See [Docker Tags](https://docs.snapotter.com/guide/docker-tags) for the GPU Compose example and benchmarks.
+Use the GPU Compose file for NVIDIA CUDA-accelerated background removal, upscaling, transcription, and OCR. Intel/AMD iGPU acceleration through VA-API, Quick Sync, or OpenCL is not supported for AI inference today; those systems run AI tools on CPU. See [Docker Tags](https://docs.snapotter.com/guide/docker-tags) for the GPU Compose example and benchmarks.
 
 </details>
 
@@ -95,7 +114,7 @@ Use the GPU Compose file for GPU-accelerated background removal, upscaling, tran
 
 You will be asked to change your password on first login.
 
-For Docker Compose, persistent storage, and other setup options, see the [Getting Started Guide](https://docs.snapotter.com/guide/getting-started). For GPU acceleration and tag details, see [Docker Tags](https://docs.snapotter.com/guide/docker-tags).
+For Docker Compose, persistent storage, and other setup options, see the [Getting Started Guide](https://docs.snapotter.com/guide/getting-started). For NVIDIA CUDA acceleration and tag details, see [Docker Tags](https://docs.snapotter.com/guide/docker-tags).
 
 ## Documentation
 
@@ -127,7 +146,7 @@ We welcome bug reports, feature ideas, and pull requests. See [CONTRIBUTING.md](
 
 SnapOtter is built and maintained independently with no venture capital or corporate backing. Sponsorships fund infrastructure, keep releases flowing, and ensure the project stays free and open for everyone.
 
-If SnapOtter saves you from paying for cloud file-processing services, consider supporting its development:
+If SnapOtter has replaced a paid subscription or two in your workflow, a small sponsorship helps keep it that way:
 
 <a href="https://github.com/sponsors/snapotter-hq">
   <img src="branding/sponsor-banner.svg" width="100%" alt="Sponsor SnapOtter on GitHub">

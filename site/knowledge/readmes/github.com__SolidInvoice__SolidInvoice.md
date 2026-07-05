@@ -18,12 +18,16 @@ Send beautiful quotes and invoices, accept online payments, automate recurring b
 </p>
 
 <p>
-  <a href="https://solidinvoice.co"><img src="https://img.shields.io/badge/Try%20Hosted-%248%2Fmo-2ea44f?style=for-the-badge" alt="Try Hosted" /></a>
+  <a href="https://artifacthub.io/packages/search?repo=solidinvoice"><img src="https://img.shields.io/endpoint?url=https://artifacthub.io/badge/repository/solidinvoice" alt="Artifact Hub" /></a>
+</p>
+
+<p>
+  <a href="https://solidinvoice.co"><img src="https://img.shields.io/badge/Try%20Hosted-%249%2Fmo-2ea44f?style=for-the-badge" alt="Try Hosted" /></a>
   <a href="https://hub.docker.com/r/solidinvoice/solidinvoice"><img src="https://img.shields.io/badge/Self--Host-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Self-Host with Docker" /></a>
   <a href="https://github.com/SolidInvoice/SolidInvoice"><img src="https://img.shields.io/badge/Star-on%20GitHub-181717?style=for-the-badge&logo=github" alt="Star on GitHub" /></a>
 </p>
 
-<img src="https://github.com/SolidInvoice/SolidInvoice/assets/144858/efdb4dc1-5b5f-4fa6-a90e-bd6d1bac186a" alt="SolidInvoice Dashboard" width="100%" />
+<img src="docs/static/img/dashboard.png" alt="SolidInvoice Dashboard" width="100%" />
 
 </div>
 
@@ -41,14 +45,26 @@ Most invoicing tools force a trade-off: easy to use *or* respectful of your data
 - Quotes that convert into invoices in one click
 - Recurring invoices on flexible schedules
 - Multi-currency support (real `Money` objects — no float rounding)
-- Tax rules and discounts (percentage or fixed amount)
-- Branded PDF generation
+- Multi-tax support with invoice-level tax and automatic rate snapshot on issue
+- Flat-rate and percentage tax types, plus per-line discounts
+- 8 built-in PDF templates for invoices and quotes
+- Automatic overdue detection with configurable notifications
+- Payment reminders sent on a schedule you define
+- Create a new client directly from the invoice or quote form
 - Invoice state machine (draft → pending → paid)
 
 ### 👥 Clients & Contacts
 - Full client and contact management
+- Custom fields for clients and contacts
 - Per-client currency, addresses and contact channels
 - Multi-tenancy out of the box (run multiple companies from one install)
+
+### 🔐 User & Security
+- Two-Factor Authentication (2FA) via TOTP
+- Google OAuth login
+- User email verification
+- Role-based access control with Symfony Security & Voters
+- Guided onboarding flow with a checklist for new users
 
 ### 💳 Payments
 - Bring-your-own Stripe, PayPal and other gateways via [Payum](https://payum.gitbook.io/payum/)
@@ -58,18 +74,22 @@ Most invoicing tools force a trade-off: easy to use *or* respectful of your data
 ### 🔌 Integrations & API
 - REST API (JSON-LD, JSON-HAL, JSON, XML) powered by [API Platform 4](https://api-platform.com/)
 - Token-based auth (`X-API-TOKEN`)
-- Built-in MCP server for AI agent automation
+- Built-in MCP server with OAuth2 for AI agent automation
+- Meilisearch integration for fast full-text search across all data
+- Grid export and full company data export
 - Notifications via email, SMS and chat channels
 
 ### 🛡 Privacy & Ownership
 - 100% self-hostable — your database, your rules
-- Role-based access control with Symfony Security & Voters
 - Encrypted secrets, Doctrine multi-tenancy filters
 - MIT licensed — fork it, modify it, ship it
 
 ### 🚀 Modern Stack
 - Symfony 7.1, PHP 8.4, Doctrine ORM, API Platform 4
-- Tabler UI on Bootstrap 5.3, Stimulus, Webpack Encore, Bun
+- Tabler UI on Bootstrap 5.3 — fully responsive, mobile-friendly
+- Stimulus, Webpack Encore, Bun, Sass
+- Helm charts for Kubernetes, opt-in Prometheus metrics
+- Symfony Messenger for async task processing
 - ULID primary keys, PHPStan level 6, ECS, Rector
 
 ---
@@ -99,9 +119,9 @@ Both versions ship the same codebase and feature set. Pick whichever fits your w
 
 | | |
 | :---: | :---: |
-| <img src="https://github.com/SolidInvoice/SolidInvoice/assets/144858/efdb4dc1-5b5f-4fa6-a90e-bd6d1bac186a" alt="Dashboard" /><br/>**Dashboard** | <img src="https://github.com/SolidInvoice/SolidInvoice/assets/144858/b89c1239-2455-48ef-9ee0-47b78cf69483" alt="Client View" /><br/>**Client View** |
-| <img src="https://github.com/SolidInvoice/SolidInvoice/assets/144858/a04e2aad-ee98-4615-9096-e16d647534f5" alt="Invoice Editor" /><br/>**Invoice Editor** | <img src="https://github.com/SolidInvoice/SolidInvoice/assets/144858/bbd16da6-61ed-4b20-8a12-f78b1a20c39f" alt="Payments" /><br/>**Payments** |
-| <img src="https://github.com/SolidInvoice/SolidInvoice/assets/144858/fcc7e26e-6c58-4706-9891-1b00df371873" alt="Settings" /><br/>**Settings** | |
+| <img src="docs/static/img/dashboard.png" alt="Dashboard" /><br/>**Dashboard** | <img src="docs/static/img/managing-clients/client-view-overview.png" alt="Client View" /><br/>**Client View** |
+| <img src="docs/static/img/invoices/invoice-list.png" alt="Invoice List" /><br/>**Invoice List** | <img src="docs/static/img/invoices/create-invoice-form.png" alt="Invoice Editor" /><br/>**Invoice Editor** |
+| <img src="docs/static/img/recurring-invoices/recurring-invoices-list-page.png" alt="Recurring Invoices" /><br/>**Recurring Invoices** | <img src="docs/static/img/payments.png" alt="Payments" /><br/>**Payments** |
 
 ---
 

@@ -1,8 +1,53 @@
 {
   "chunk": 8,
   "count": 50,
-  "generated_at": "2026-06-28T07:09:27Z",
+  "generated_at": "2026-07-05T06:47:00Z",
   "items": [
+    {
+      "repo_key": "github.com/afaneca/myfin",
+      "repo_url": "github.com/afaneca/myfin",
+      "host": "github.com",
+      "owner": "afaneca",
+      "repo": "myfin",
+      "app_references": [
+        "myfin"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__afaneca__myfin.md",
+      "readme_download_url": null,
+      "readme_sha256": "f809b6722cbb86da73b7f6cc69ceed61f633a126924f7040d749cee49749ebd8",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/agersant/polaris",
+      "repo_url": "github.com/agersant/polaris",
+      "host": "github.com",
+      "owner": "agersant",
+      "repo": "polaris",
+      "app_references": [
+        "polaris"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__agersant__polaris.md",
+      "readme_download_url": null,
+      "readme_sha256": "306ed09a32852e1b0a4f8203c16880e93a77ca37bf9f999c268f6fd17cd01d2e",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/agregarr/agregarr",
+      "repo_url": "github.com/agregarr/agregarr",
+      "host": "github.com",
+      "owner": "agregarr",
+      "repo": "agregarr",
+      "app_references": [
+        "agregarr"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__agregarr__agregarr.md",
+      "readme_download_url": null,
+      "readme_sha256": "65d98aecdc50ef98a141568a0c1523f75f7d44705956a4ef833d0a8fe5201d94",
+      "error": null
+    },
     {
       "repo_key": "github.com/aizhimou/pigeon-pod",
       "repo_url": "github.com/aizhimou/pigeon-pod",
@@ -165,7 +210,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__aliasvault__aliasvault.md",
       "readme_download_url": "https://raw.githubusercontent.com/aliasvault/aliasvault/main/README.md",
-      "readme_sha256": "2ec0e9bc6f53ccef7e60756b45de53763073607ea9a9bb37c19f882c69f8aa6c",
+      "readme_sha256": "6dc08a6086a8467201c80823a604a28e45ee294b01fdb38ae31d5441119ef459",
       "error": null
     },
     {
@@ -237,9 +282,9 @@
       "app_references": [
         "ampache"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ampache__ampache.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ampache/ampache/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6b23191612bcb58cf5d121b5eb8a73c1411cf867013de0829f281f4445e14d18",
       "error": null
     },
@@ -357,9 +402,9 @@
       "app_references": [
         "ansible"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ansible__ansible.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ansible/ansible/devel/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a0d060dbbf5cc7d8881761018364e29f9b503a1b1229934d1150563f0773448c",
       "error": null
     },
@@ -417,10 +462,10 @@
       "app_references": [
         "apache-superset"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__apache__superset.md",
-      "readme_download_url": null,
-      "readme_sha256": "b3e2060d779e14d6da06c7f17828f9702eae8604282f00e007a43b1a692eb498",
+      "readme_download_url": "https://raw.githubusercontent.com/apache/superset/master/README.md",
+      "readme_sha256": "5b73d052a790d587d52a903b9f362ebc4f09a2ef46f9d07aa749e6abf0d48aa6",
       "error": null
     },
     {
@@ -447,9 +492,9 @@
       "app_references": [
         "appwrite"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__appwrite__appwrite.md",
-      "readme_download_url": "https://raw.githubusercontent.com/appwrite/appwrite/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "cfb44cca4051f192a2084950487d3de0cb78d346dce0c04f48a5ee98ca5bcf6f",
       "error": null
     },
@@ -597,9 +642,9 @@
       "app_references": [
         "asciinema"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__asciinema__asciinema.md",
-      "readme_download_url": "https://raw.githubusercontent.com/asciinema/asciinema/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "32b115204e7851851e63786f2f0dd85ff981aeeb863338d6a62d6b25623f2e9e",
       "error": null
     },
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__autobrr__autobrr.md",
       "readme_download_url": null,
       "readme_sha256": "36c219fa06dc94c73f1f36bc60531a96539d33330274ffb39dfa3f7fe27ab9bc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/autokitteh/autokitteh",
-      "repo_url": "github.com/autokitteh/autokitteh",
-      "host": "github.com",
-      "owner": "autokitteh",
-      "repo": "autokitteh",
-      "app_references": [
-        "autokitteh"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__autokitteh__autokitteh.md",
-      "readme_download_url": null,
-      "readme_sha256": "ba7f415a85bc57d8d5f38cdcb40a85f87a81073b2c2368794f104cd9719d56df",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/automatisch/automatisch",
-      "repo_url": "github.com/automatisch/automatisch",
-      "host": "github.com",
-      "owner": "automatisch",
-      "repo": "automatisch",
-      "app_references": [
-        "automatisch"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__automatisch__automatisch.md",
-      "readme_download_url": null,
-      "readme_sha256": "73de12e1fe793c873d4917a66dcea7a7453ba08b8bb5452f1a46ef6813724710",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/axllent/mailpit",
-      "repo_url": "github.com/axllent/mailpit",
-      "host": "github.com",
-      "owner": "axllent",
-      "repo": "mailpit",
-      "app_references": [
-        "mailpit"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__axllent__mailpit.md",
-      "readme_download_url": null,
-      "readme_sha256": "21e25814c9502db02d110e32f50c9a3a2a345e1da01f74bad552c5ea136a4889",
       "error": null
     }
   ]

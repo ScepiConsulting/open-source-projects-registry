@@ -1,8 +1,218 @@
 {
   "chunk": 27,
-  "count": 1,
-  "generated_at": "2026-06-28T07:09:27Z",
+  "count": 10,
+  "generated_at": "2026-07-05T06:47:00Z",
   "items": [
+    {
+      "reference": "zigbee2mqtt",
+      "name": "Zigbee2MQTT",
+      "website": "www.zigbee2mqtt.io",
+      "description": "Zigbee to MQTT bridge",
+      "repo_url": "github.com/Koenkk/zigbee2mqtt",
+      "repo_key": "github.com/Koenkk/zigbee2mqtt",
+      "stars": null,
+      "forks": 11,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Database",
+        "Internet of Things"
+      ],
+      "readme_path": "knowledge/readmes/github.com__Koenkk__zigbee2mqtt.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-05T06:39:12Z",
+        "row_hash": "9205dd0df6c37bb81cad15b5f010be0a6e9bf9b25736d93b388ef87f4d2ebd3b"
+      }
+    },
+    {
+      "reference": "ziit",
+      "name": "Ziit",
+      "website": "ziit.app",
+      "description": "Swiss army knife of code time tracking",
+      "repo_url": "github.com/0PandaDEV/Ziit",
+      "repo_key": "github.com/0PandaDEV/Ziit",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Cloud Storage",
+        "Home Automation",
+        "Smart Home",
+        "Time Tracking"
+      ],
+      "readme_path": "knowledge/readmes/github.com__0PandaDEV__Ziit.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-05T06:39:12Z",
+        "row_hash": "2d83aac74f67cba70808c9f053aec54076470d2162c0595d1035507695b2fb14"
+      }
+    },
+    {
+      "reference": "zipcaptions",
+      "name": "ZipCaptions",
+      "website": "zipcaptions.app",
+      "description": "Generate text from a given audio source using only your browser",
+      "repo_url": "github.com/jptrsn/zip-captions",
+      "repo_key": "github.com/jptrsn/zip-captions",
+      "stars": null,
+      "forks": 11,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Accessibility",
+        "Database"
+      ],
+      "readme_path": "knowledge/readmes/github.com__jptrsn__zip-captions.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-05T06:39:12Z",
+        "row_hash": "3dfccca69670c5a2c8ecf537b8aa5812ea66ef833adcfdf6885800448fb5837b"
+      }
+    },
+    {
+      "reference": "zipline",
+      "name": "Zipline",
+      "website": "zipline.diced.sh",
+      "description": "Next generation ShareX/file upload server",
+      "repo_url": "github.com/diced/zipline",
+      "repo_key": "github.com/diced/zipline",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "File Sharing",
+        "Screenshots",
+        "URL Shortener"
+      ],
+      "readme_path": "knowledge/readmes/github.com__diced__zipline.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-05T06:39:12Z",
+        "row_hash": "156b8101f29c03e2c2430d38a4cd1a1e704ec656f41fa7f7f5d9c2acf95a282a"
+      }
+    },
+    {
+      "reference": "zitadel",
+      "name": "Zitadel",
+      "website": "zitadel.com",
+      "description": "Identity infrastructure simplified",
+      "repo_url": "github.com/zitadel/zitadel",
+      "repo_key": "github.com/zitadel/zitadel",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "14",
+      "license": null,
+      "tags": [
+        "Authentication",
+        "Identity Management"
+      ],
+      "readme_path": "knowledge/readmes/github.com__zitadel__zitadel.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-05T06:39:12Z",
+        "row_hash": "b2047940895a983b283d9663362705567086922e004728072eff692e1fef455f"
+      }
+    },
+    {
+      "reference": "zoneminder",
+      "name": "ZoneMinder",
+      "website": "http://www.zoneminder.com/",
+      "description": "Open source closed-circuit television app",
+      "repo_url": "github.com/ZoneMinder/zoneminder",
+      "repo_key": "github.com/ZoneMinder/zoneminder",
+      "stars": null,
+      "forks": 10,
+      "updated_at": "26",
+      "license": null,
+      "tags": [
+        "NVR",
+        "Video Surveillance"
+      ],
+      "readme_path": "knowledge/readmes/github.com__ZoneMinder__zoneminder.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-05T06:39:12Z",
+        "row_hash": "08c43d86d4ec11a9e3c61af9a03fc164355faacb4eb19f8c9c16d3b763882317"
+      }
+    },
+    {
+      "reference": "zoraxy",
+      "name": "Zoraxy",
+      "website": "zoraxy.aroz.org",
+      "description": "General purpose reverse proxy and forwarding tool for networking noobs",
+      "repo_url": "github.com/tobychui/zoraxy",
+      "repo_key": "github.com/tobychui/zoraxy",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "18",
+      "license": null,
+      "tags": [
+        "File Management",
+        "Reverse Proxy"
+      ],
+      "readme_path": "knowledge/readmes/github.com__tobychui__zoraxy.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-05T06:39:12Z",
+        "row_hash": "f1e591efdad4f70bcd84aed255840a7366412ae5388255d236d1700b44d01fcc"
+      }
+    },
+    {
+      "reference": "zot-registry",
+      "name": "Zot",
+      "website": "zotregistry.dev",
+      "description": "OCI-native container image registry, simplified",
+      "repo_url": "github.com/project-zot/zot",
+      "repo_key": "github.com/project-zot/zot",
+      "stars": null,
+      "forks": 1,
+      "updated_at": "14",
+      "license": null,
+      "tags": [
+        "Analytics",
+        "Container Registry"
+      ],
+      "readme_path": "knowledge/readmes/github.com__project-zot__zot.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-05T06:39:12Z",
+        "row_hash": "fd23dfc6859500bb2ef7966b6d426f1f59b50cc2ab468ed310e91b1a5aac52b5"
+      }
+    },
+    {
+      "reference": "ztnet",
+      "name": "ZTNET",
+      "website": "ztnet.network",
+      "description": "Self-hosted ZeroTier network controller",
+      "repo_url": "github.com/sinamics/ztnet",
+      "repo_key": "github.com/sinamics/ztnet",
+      "stars": null,
+      "forks": 11,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Remote Access",
+        "VPN"
+      ],
+      "readme_path": "knowledge/readmes/github.com__sinamics__ztnet.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-05T06:39:12Z",
+        "row_hash": "ff897adb80c97b4731da05a0cc6c6c8c86a5ace49323710445c487eed260bdc6"
+      }
+    },
     {
       "reference": "zulip",
       "name": "Zulip",
@@ -22,8 +232,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-06-28T07:01:24Z",
-        "row_hash": "06de4332b541c9e4bb49451ed8c28404eece52dd01b3d4c00c811dbc31a91b0c"
+        "fetched_at": "2026-07-05T06:39:12Z",
+        "row_hash": "c7711c042835e60235d3008c53eafce89a6dc66430e87a095cc2f0d8f09264ce"
       }
     }
   ]

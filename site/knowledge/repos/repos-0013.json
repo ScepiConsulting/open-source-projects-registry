@@ -1,8 +1,68 @@
 {
   "chunk": 13,
   "count": 50,
-  "generated_at": "2026-06-28T07:09:27Z",
+  "generated_at": "2026-07-05T06:47:00Z",
   "items": [
+    {
+      "repo_key": "github.com/fccview/cronmaster",
+      "repo_url": "github.com/fccview/cronmaster",
+      "host": "github.com",
+      "owner": "fccview",
+      "repo": "cronmaster",
+      "app_references": [
+        "cr-nmaster"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__fccview__cronmaster.md",
+      "readme_download_url": null,
+      "readme_sha256": "2438c65f716e15013e970aff4e248e70c9a539d2b85626acdedfd8791160a4ed",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/fccview/jotty",
+      "repo_url": "github.com/fccview/jotty",
+      "host": "github.com",
+      "owner": "fccview",
+      "repo": "jotty",
+      "app_references": [
+        "jotty"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__fccview__jotty.md",
+      "readme_download_url": null,
+      "readme_sha256": "bb42702868ad803f38673ec4a376e8980897663b7adff715eeb5f8249331cb5c",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/fedify-dev/hollo",
+      "repo_url": "github.com/fedify-dev/hollo",
+      "host": "github.com",
+      "owner": "fedify-dev",
+      "repo": "hollo",
+      "app_references": [
+        "hollo"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__fedify-dev__hollo.md",
+      "readme_download_url": null,
+      "readme_sha256": "05ab2e757a861b1e20ede911ff298f043f3147911230295989bf6050c0a78375",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/feedbin/feedbin",
+      "repo_url": "github.com/feedbin/feedbin",
+      "host": "github.com",
+      "owner": "feedbin",
+      "repo": "feedbin",
+      "app_references": [
+        "feedbin"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__feedbin__feedbin.md",
+      "readme_download_url": null,
+      "readme_sha256": "b1d820987b7bbd900fcdb4a2aeba828542ab1658d4600a286707ecc48fcaa4ba",
+      "error": null
+    },
     {
       "repo_key": "github.com/ferronweb/ferron",
       "repo_url": "github.com/ferronweb/ferron",
@@ -27,10 +87,10 @@
       "app_references": [
         "figranium"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__figranium__figranium.md",
-      "readme_download_url": null,
-      "readme_sha256": "94b1b7e56022df97deb5dfcb47958622a1a72c5fb1c4be4442e7469c996fd563",
+      "readme_download_url": "https://raw.githubusercontent.com/figranium/figranium/main/README.md",
+      "readme_sha256": "87bd75a993b7f707350e1593d6ff79ef971f6f14f8ef849d6a8f5028cb8c4742",
       "error": null
     },
     {
@@ -252,9 +312,9 @@
       "app_references": [
         "medialyze"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__frederikemmer__MediaLyze.md",
-      "readme_download_url": "https://raw.githubusercontent.com/frederikemmer/MediaLyze/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "5381994fab98f6ae4683d3c574dbb5c62714ef84e7a5edc00b12da31214b2c09",
       "error": null
     },
@@ -387,9 +447,9 @@
       "app_references": [
         "notediscovery"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gamosoft__NoteDiscovery.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gamosoft/NoteDiscovery/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c1d89e52a42b0d9b8d5ba384698c065fb22753101103ca34a05d6f698200daf7",
       "error": null
     },
@@ -469,6 +529,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/gelatinescreams/The-One-File",
+      "repo_url": "github.com/gelatinescreams/The-One-File",
+      "host": "github.com",
+      "owner": "gelatinescreams",
+      "repo": "The-One-File",
+      "app_references": [
+        "the-one-file"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__gelatinescreams__The-One-File.md",
+      "readme_download_url": "https://raw.githubusercontent.com/gelatinescreams/The-One-File/main/README.md",
+      "readme_sha256": "c384e7269a3e6ec7187ac6acc852b5998d1b9fdeaee57f40e40bca4206e33731",
+      "error": null
+    },
+    {
       "repo_key": "github.com/gelbphoenix/autocaliweb",
       "repo_url": "github.com/gelbphoenix/autocaliweb",
       "host": "github.com",
@@ -492,9 +567,9 @@
       "app_references": [
         "gerbera"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gerbera__gerbera.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gerbera/gerbera/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e117cd5685bf3b939acfd5194c8dfd5953897570fe4a82b44dad447e4de7cd9f",
       "error": null
     },
@@ -522,9 +597,9 @@
       "app_references": [
         "fider"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__getfider__fider.md",
-      "readme_download_url": "https://raw.githubusercontent.com/getfider/fider/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8a07f0741bd5d3043999db7a1b9b0e2ab04b82d9fb4a4bf791ec58cb1a6e0f59",
       "error": null
     },
@@ -567,10 +642,10 @@
       "app_references": [
         "maxun"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__getmaxun__maxun.md",
-      "readme_download_url": null,
-      "readme_sha256": "17763ebe0a35959d17f89b7b9503e2c113691fee90b997eaf2b2c85053ef9c10",
+      "readme_download_url": "https://raw.githubusercontent.com/getmaxun/maxun/develop/README.md",
+      "readme_sha256": "ff9ff76711df25f5cf3edcd963d178992e3e893326bea36abf83411098361058",
       "error": null
     },
     {
@@ -645,7 +720,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ghostfolio__ghostfolio.md",
       "readme_download_url": "https://raw.githubusercontent.com/ghostfolio/ghostfolio/main/README.md",
-      "readme_sha256": "1a36d5bef9adb2cbcf3aaac58041768fd66eb6785a93d3008dded02d8660a0e7",
+      "readme_sha256": "58cdb5d0006259df4bbb20429700ad3d5d0c6bbde70f0801653edab005bc44fe",
       "error": null
     },
     {
@@ -672,85 +747,10 @@
       "app_references": [
         "postiz"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gitroomhq__postiz-app.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gitroomhq/postiz-app/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1749996b8e7008d4f1090f218a986991a229438b7de1191ba1744b3b2f44d78f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/giuseppe99barchetta/SuggestArr",
-      "repo_url": "github.com/giuseppe99barchetta/SuggestArr",
-      "host": "github.com",
-      "owner": "giuseppe99barchetta",
-      "repo": "SuggestArr",
-      "app_references": [
-        "suggestarr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__giuseppe99barchetta__SuggestArr.md",
-      "readme_download_url": null,
-      "readme_sha256": "903b90429d96d697fa95b1f196340926ded2a39629c2628f06214a0b2b256b1c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/glanceapp/glance",
-      "repo_url": "github.com/glanceapp/glance",
-      "host": "github.com",
-      "owner": "glanceapp",
-      "repo": "glance",
-      "app_references": [
-        "glance"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__glanceapp__glance.md",
-      "readme_download_url": null,
-      "readme_sha256": "8bd07cbba9ec198a2cca8be73454140edb4c99956c541e7e0b7b4618d7ef0c11",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/glauth/glauth",
-      "repo_url": "github.com/glauth/glauth",
-      "host": "github.com",
-      "owner": "glauth",
-      "repo": "glauth",
-      "app_references": [
-        "glauth"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__glauth__glauth.md",
-      "readme_download_url": null,
-      "readme_sha256": "b787eb76f2526b45eeed24c686182f394f8e76fd1a8f5cc0adf54afb1ad9af20",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/glenndehaan/unifi-voucher-site",
-      "repo_url": "github.com/glenndehaan/unifi-voucher-site",
-      "host": "github.com",
-      "owner": "glenndehaan",
-      "repo": "unifi-voucher-site",
-      "app_references": [
-        "unifi-voucher-site"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__glenndehaan__unifi-voucher-site.md",
-      "readme_download_url": null,
-      "readme_sha256": "7efb36f4394b2c8d4e409c582d5f5f31d22b2f92558ad8e1074ab2bfb65515c5",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/glpi-project/glpi",
-      "repo_url": "github.com/glpi-project/glpi",
-      "host": "github.com",
-      "owner": "glpi-project",
-      "repo": "glpi",
-      "app_references": [
-        "glpi"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__glpi-project__glpi.md",
-      "readme_download_url": null,
-      "readme_sha256": "5f2d111c98e1c09d83c718ecd4af6980dec6e96dde75dc466c4f42fde0a45328",
       "error": null
     }
   ]

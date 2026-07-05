@@ -31,6 +31,14 @@
 ## La Suite Meet: Simple Video Conferencing
 
 Powered by [LiveKit](https://livekit.io/), La Suite Meet offers Zoom-level performance with high-quality video and audio. No installation required—simply join calls directly from your browser. Check out LiveKit's impressive optimizations in their [blog post](https://blog.livekit.io/livekit-one-dot-zero/).
+
+> [!TIP]
+> New here? Start by introducing yourself in our Matrix channel:
+> **https://matrix.to/#/#meet-official:matrix.org**
+>
+> We’re happy to discuss ideas, answer questions, and help to deploy LaSuite Meet.
+
+
 ### Features
 - Optimized for stability in large meetings (+100 p.)
 - Support for multiple screen sharing streams
@@ -55,7 +63,7 @@ We’re continuously adding new features to enhance your experience, with the la
 
 ### 🚀 Major roll out to all French public servants
 
-On the 25th of January 2026, David Amiel, France’s Minister for Civil Service and State Reform, announced the full deployment of Visio—the French government’s dedicated Meet platform—to all public servants. ([Source in French](https://www.latribune.fr/article/la-tribune-dimanche/politique/73157688099661/david-amiel-ministre-delegue-de-la-fonction-publique-nous-allons-sortir-de-la-dependance-aux-outils-americains))
+On the 29th of January 2026, Prime Minister Sébastien Lecornu, announced the full deployment of Visio—the French government’s dedicated Meet platform—to all public servants. ([Source in English](https://www.nytimes.com/2026/01/29/world/europe/france-zoom-alternative-visio.html))
 
 ## Table of Contents
 
@@ -87,22 +95,57 @@ We use Kubernetes for our [production instance](https://visio.numerique.gouv.fr/
 #### Known instances
 We hope to see many more, here is an incomplete list of public La Suite Meet instances. Feel free to make a PR to add ones that are not listed below🙏
 
-| Url                                                           | Org | Access |
-|---------------------------------------------------------------| --- | ------- |
-| [visio.numerique.gouv.fr](https://visio.numerique.gouv.fr/)   | DINUM    | French public agents working for the central administration and the extended public sphere. ProConnect is required to login in or sign up|
-| [visio.suite.anct.gouv.fr](https://visio.suite.anct.gouv.fr/) | ANCT    | French public agents working for the territorial administration and the extended public sphere. ProConnect is required to login in or sign up|
-| [visio.lasuite.coop](https://visio.lasuite.coop/)             | lasuite.coop    | Free and open demo to all. Content and accounts are reset after one month |
-| [mosacloud.cloud](https://mosa.cloud/)                        | mosa.cloud    | Demo instance of mosa.cloud, a dutch company providing services around La Suite apps. |
+| Url                                                           | Org          | Access                                                                                                                                        |
+|---------------------------------------------------------------|--------------|-----------------------------------------------------------------------------------------------------------------------------------------------|
+| [visio.numerique.gouv.fr](https://visio.numerique.gouv.fr/)   | DINUM        | French public agents working for the central administration and the extended public sphere. ProConnect is required to login in or sign up     |
+| [visio.suite.anct.gouv.fr](https://visio.suite.anct.gouv.fr/) | ANCT         | French public agents working for the territorial administration and the extended public sphere. ProConnect is required to login in or sign up |
+| [visio.lasuite.coop](https://visio.lasuite.coop/)             | lasuite.coop | Free and open demo to all. Content and accounts are reset after one month                                                                     |
+| [mosacloud.cloud](https://mosa.cloud/)                        | mosa.cloud   | Demo instance of mosa.cloud, a dutch company providing services around La Suite apps.                                                         |
+| [Clever Cloud](https://www.clever.cloud/product/visio/)       | clever cloud | Openvisio is a sovereign video conferencing solution based on LaSuite Meet offered by [Clever Cloud](https://www.clever.cloud/).              |
+| [Email.eu](https://email.eu/)                                 | Email.eu     | Sovereign business workspace.                                                                                                                 |
 
 
-## Contributing
+# Contributing
 
-We <3 contributions of any kind, big and small:
+We <3 contributions of all kinds **big or small** and we’re genuinely glad you’re here. 🌱
 
-- Vote on features or get early access to beta functionality in our [roadmap](https://github.com/orgs/suitenumerique/projects/11/views/4)
-- Open a PR (see our instructions on [developing La Suite Meet locally](https://github.com/suitenumerique/meet/blob/main/docs/developping_locally.md))
-- Submit a [feature request](https://github.com/suitenumerique/meet/issues/new?assignees=&labels=enhancement&template=Feature_request.md) or [bug report](https://github.com/suitenumerique/meet/issues/new?assignees=&labels=bug&template=Bug_report.md)
+### Start by saying hi
 
+**The best first contribution is simply to come say hi.**
+
+Before opening a PR, especially a larger one, or one written with the help of AI, we encourage you to reach out to a maintainer on our [Matrix channel](https://matrix.to/#/#meet-official:matrix.org) (@antoine.lebaud:matrix.org).
+
+Getting in touch early helps us align on goals, avoid duplicated or wasted effort, and build a community that stays active, welcoming, and fun to be part of. There are no silly questions here: whether you’ve shipped hundreds of PRs or you’re just getting started, you’re welcome.
+
+### AI contributions
+
+AI-assisted contributions are welcome. But code is never the end goal. What matters most is building relationships, sharing knowledge, and growing a sustainable community over time.
+
+If your contribution has been heavily generated with AI, please be transparent about it. This helps maintainers review it with the right context and respects the time they invest in the project.
+
+Using AI does not transfer ownership of the contribution: you should still fully understand the code, the problem it solves, and the reasoning behind the approach you propose. In short, even if AI helped write it, the why should still be yours.
+
+### Contributions beyond code
+
+**Not technical? We need you too.**
+Open source is much more than code. Writing documentation, improving onboarding, translating content, answering questions, reporting bugs, or simply helping others feel welcome all make a huge difference.
+
+### Ways to contribute
+
+When you’re ready, here are a few ways to get involved:
+
+* 👋 **Say hello** and share your ideas with the community and maintainers on our [Matrix channel](https://matrix.to/#/#meet-official:matrix.org)
+* 🛠️ **Open a PR** by following our guide to [develop La Suite Meet locally](https://github.com/suitenumerique/meet/blob/main/docs/developping_locally.md)
+* 💡 **Suggest an idea** by opening a [feature request](https://github.com/suitenumerique/meet/issues/new?assignees=&labels=enhancement&template=Feature_request.md)
+* 🐛 **Report a bug** by opening a [bug report](https://github.com/suitenumerique/meet/issues/new?assignees=&labels=bug&template=Bug_report.md)
+
+Thank you for helping build something open, useful, and human. 💙
+
+### Community call
+
+We host a community call on the first Friday of every month to share updates, discuss ideas, and connect with contributors.
+
+Whether you’re actively contributing or just curious about the project, you’re welcome to join. More details are shared on the [Matrix channel](https://matrix.to/#/#meet-official:matrix.org).
 
 ## Philosophy
 

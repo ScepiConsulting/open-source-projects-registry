@@ -79,19 +79,19 @@ OpenPanel is a truly [OS-agnostic](https://www.techtarget.com/whatis/definition/
 <!-- OS_TEST_RESULTS_START -->
 | Operating System | Version | Last Tested | Status | Notes |
 |---|---|---|---|---|
-| Ubuntu | 22 | 2026-06-27 15:41 UTC | ❌ Fail |  |
-| Ubuntu | 24 | 2026-06-27 15:55 UTC | ❌ Fail | **recommended for AMD CPU** |
-| Ubuntu | 26 | 2026-06-27 15:48 UTC | ❌ Fail |  |
+| Ubuntu | 22 | 2026-06-30 16:48 UTC | ✅ Pass |  |
+| Ubuntu | 24 | 2026-06-30 17:03 UTC | ✅ Pass | **recommended for AMD CPU** |
+| Ubuntu | 26 | 2026-06-30 16:55 UTC | ✅ Pass |  |
 | Debian | 10 | | | |
-| Debian | 11 | 2026-06-27 16:01 UTC | ❌ Fail |  |
-| Debian | 12 | 2026-06-27 16:15 UTC | ❌ Fail |  |
-| Debian | 13 | 2026-06-27 16:30 UTC | ❌ Fail |  |
+| Debian | 11 | 2026-06-30 17:09 UTC | ✅ Pass |  |
+| Debian | 12 | 2026-06-30 17:24 UTC | ✅ Pass |  |
+| Debian | 13 | 2026-06-30 17:38 UTC | ✅ Pass |  |
 | AlmaLinux | 9.5 | | | **recommended for ARM CPU** |
-| AlmaLinux | 10 | 2026-06-27 14:30 UTC | ❌ Fail |  |
+| AlmaLinux | 10 | 2026-06-30 13:41 UTC | ❌ Fail |  |
 | RockyLinux | 9.6 | | | |
-| RockyLinux | 10 | 2026-06-27 16:43 UTC | ❌ Fail | *Must manually switch from `nftables` to `iptables` first ([#1472](https://github.com/docker/for-linux/issues/1472))* |
+| RockyLinux | 10 | 2026-06-30 17:52 UTC | ❌ Fail | *Must manually switch from `nftables` to `iptables` first ([#1472](https://github.com/docker/for-linux/issues/1472))* |
 | CentOS | 9.5 | | | |
-| CentOS | 10 | 2026-06-27 15:14 UTC | ❌ Fail |  |
+| CentOS | 10 | 2026-06-30 16:12 UTC | ✅ Pass |  |
 <!-- OS_TEST_RESULTS_END -->
 
 
