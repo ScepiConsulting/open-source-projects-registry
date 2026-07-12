@@ -2,8 +2,13 @@
   <img src="branding/social-preview.png" width="800" alt="SnapOtter - A Self-Hosted File Manipulation Suite">
 </p>
 
-> [!NOTE]
-> **SnapOtter v2.0.0** is the current monorepo version, with 200+ tools across image, video, audio, PDF, and files. For published image channels and GPU variants, see the Docker Tags guide.
+<!-- TEMP: 2.0.0 launch + migration + Discord note. Trim a few weeks after release, once it's old news. -->
+> [!IMPORTANT]
+> **SnapOtter 2.0 is here.** 200+ tools across five modalities (image, video, audio, PDF, and files), durable background jobs, on-demand local AI, and a one-command `docker run`. See the [release notes](https://github.com/snapotter-hq/SnapOtter/releases/tag/v2.0.0).
+>
+> **Coming from 1.x?** Many of you have trusted SnapOtter since day one, and your feedback and suggestions shaped everything that followed. 2.0 is a big step, and we worked to make sure it doesn't break what you already depend on. Your accounts, saved files, settings, API keys, and pipelines carry over automatically on first boot, and your old database is never modified. We wrote a full [migration guide](./MIGRATING.md) so the move is safe and boring.
+>
+> I'll be on [Discord](https://discord.gg/hr3s7HPUsr) more than usual this week, so if you need a hand with the upgrade or anything else, come say hi and I'll get back to you quickly. Thank you for being here.
 
 <p align="center">
   <a href="https://hub.docker.com/r/snapotter/snapotter"><img src="https://img.shields.io/docker/v/snapotter/snapotter?label=Docker%20Hub&logo=docker" alt="Docker Hub"></a>
@@ -19,8 +24,9 @@
 </p>
 
 <p align="center">
-  <strong>Self-hosted file toolkit. 200+ tools across image, video, audio, PDF, and files.</strong><br />
-  The open-source alternative to Smallpdf, iLovePDF, TinyPNG, TinyWow, and CloudConvert, in one stack you host yourself.
+  <strong>Open-source, self-hosted file-processing infrastructure. Convert, compress, OCR, transcribe, strip metadata, and run local AI across image, video, audio, PDF, and documents, through a UI, REST API, and pipelines. Your files never leave your network.</strong>
+  <br /><br />
+  The one self-hosted stack that replaces CloudConvert, Smallpdf, TinyPNG, TinyWow, and Otter.ai. 200+ tools across five modalities, on hardware you own.
 </p>
 
 ![SnapOtter - Dashboard](branding/dashboard.gif)
@@ -29,7 +35,7 @@ Stirling-PDF stops at PDFs. ConvertX stops at conversions. SnapOtter runs all fi
 
 ## Quick Start
 
-One command, no setup. An embedded Postgres 17 + Redis 8 boot inside the container, so there's nothing else to wire up:
+One command, that's it.
 
 ```bash
 docker run -d --name SnapOtter -p 1349:1349 -v SnapOtter-data:/data snapotter/snapotter:latest
@@ -47,15 +53,15 @@ For the production Compose stack, NVIDIA GPU acceleration, and configuration, se
   - **Audio (27):** convert, trim, normalize, volume, fade, pitch shift, silence removal, noise reduction, merge/split, waveform, plus dedicated converters (M4A to MP3, AAC to MP3, OGG to WAV, and more)
   - **PDF (29):** merge, split, compress, convert, protect/unlock, redact, sign, watermark, page numbers, OCR, plus PDF to JPG/PNG/TIFF
   - **Files (23):** CSV/JSON/XML/YAML conversion, CSV merge/split, Excel to CSV, chart maker, ZIP create/extract
-- **Image editor:** Layer-based editor with brushes, shapes, adjustments, filters, curves, and keyboard shortcuts. Runs in your browser, processes on your hardware
+- **Image editor:** Free layer-based editor with brushes, shapes, adjustments, filters, curves, and keyboard shortcuts. Runs in your browser and processes on your hardware
 - **Local AI:** Remove backgrounds, upscale images, restore and colorize old photos, erase objects, blur faces, enhance faces, extract text (OCR from images and PDFs), transcribe audio, auto-generate video subtitles, expand canvas, and fix transparency. All on your hardware, no internet required
 - **OIDC / SSO:** Login with Google, GitHub, Okta, or any OpenID Connect provider
 - **21 languages:** English, Arabic, Chinese (Simplified & Traditional), Dutch, French, German, Hindi, Indonesian, Italian, Japanese, Korean, Polish, Portuguese, Russian, Spanish, Swedish, Thai, Turkish, Ukrainian, Vietnamese. RTL support for Arabic
-- **Pipelines:** Chain tools into reusable workflows with unlimited steps. Import/export as JSON. Batch process unlimited files at once
+- **Pipelines:** Chain tools into reusable workflows with 20 steps by default. Import/export as JSON. Batch process up to 100 files by default
 - **REST API:** Every tool available via API with API key auth. Interactive docs at `/api/docs`
 - **Self-hosted:** one `docker run` for a single-container quick start (embedded Postgres 17 + Redis 8), or the same Postgres 17 + Redis 8 as a Compose stack for production. No external SaaS dependencies
 - **Multi-arch:** Runs on AMD64 and ARM64 (Intel, Apple Silicon, Raspberry Pi)
-- **Privacy first:** Your files never leave your network. Basic analytics help us catch bugs and improve tools -- disable anytime by rebuilding with `SNAPOTTER_ANALYTICS=off` ([Here's how to do it](https://docs.snapotter.com/guide/deployment.html#analytics))
+- **Privacy first:** Your files never leave your network. Basic analytics help us catch bugs and improve tools -- disable at build time with `SNAPOTTER_ANALYTICS=off` or at runtime with the in-app admin opt-out ([Here's how to do it](https://docs.snapotter.com/guide/deployment.html#analytics))
 
 ## Deployment
 
@@ -119,6 +125,7 @@ For Docker Compose, persistent storage, and other setup options, see the [Gettin
 ## Documentation
 
 - [Getting Started](https://docs.snapotter.com/guide/getting-started)
+- [Upgrading from 1.x to 2.0](https://docs.snapotter.com/guide/upgrading)
 - [Configuration](https://docs.snapotter.com/guide/configuration)
 - [OIDC / SSO](https://docs.snapotter.com/guide/oidc)
 - [Deployment](https://docs.snapotter.com/guide/deployment)

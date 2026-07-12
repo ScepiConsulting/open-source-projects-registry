@@ -1,8 +1,68 @@
 {
   "chunk": 11,
   "count": 50,
-  "generated_at": "2026-07-05T06:47:00Z",
+  "generated_at": "2026-07-12T06:04:00Z",
   "items": [
+    {
+      "repo_key": "github.com/cooklang/cookcli",
+      "repo_url": "github.com/cooklang/cookcli",
+      "host": "github.com",
+      "owner": "cooklang",
+      "repo": "cookcli",
+      "app_references": [
+        "cookcli"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__cooklang__cookcli.md",
+      "readme_download_url": null,
+      "readme_sha256": "f576edbd17120ef71ad91869ec8b0d1abee12164e1366380119e56e6697f6a18",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/coollabsio/coolify",
+      "repo_url": "github.com/coollabsio/coolify",
+      "host": "github.com",
+      "owner": "coollabsio",
+      "repo": "coolify",
+      "app_references": [
+        "coolify"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__coollabsio__coolify.md",
+      "readme_download_url": null,
+      "readme_sha256": "66415c8965246aff51858bfdf7abfa5446624795b49000898e0da54593e6eaf0",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/coralproject/talk",
+      "repo_url": "github.com/coralproject/talk",
+      "host": "github.com",
+      "owner": "coralproject",
+      "repo": "talk",
+      "app_references": [
+        "voxmedia-coral"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__coralproject__talk.md",
+      "readme_download_url": null,
+      "readme_sha256": "a494a4dc46ee59ba1b39dca4b83680390ba97348938993b3edb24f86e0be63bf",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/corenting/eddrit",
+      "repo_url": "github.com/corenting/eddrit",
+      "host": "github.com",
+      "owner": "corenting",
+      "repo": "eddrit",
+      "app_references": [
+        "eddrit"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__corenting__eddrit.md",
+      "readme_download_url": null,
+      "readme_sha256": "d5e20a0f19519e95197351e8592610e7a940850ac946288433c5838f5b471361",
+      "error": null
+    },
     {
       "repo_key": "github.com/cpvalente/ontime",
       "repo_url": "github.com/cpvalente/ontime",
@@ -27,10 +87,10 @@
       "app_references": [
         "diun"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__crazy-max__diun.md",
-      "readme_download_url": null,
-      "readme_sha256": "054524704a35bcb63c52a0819500fbfe156399f7267be1cc8ee36bbec36d30d0",
+      "readme_download_url": "https://raw.githubusercontent.com/crazy-max/diun/master/README.md",
+      "readme_sha256": "75de90be8db9cd7efcdf23cf153ce061d4c919e988046e59d74df9566fb222f4",
       "error": null
     },
     {
@@ -42,10 +102,10 @@
       "app_references": [
         "ftpgrab"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__crazy-max__ftpgrab.md",
-      "readme_download_url": null,
-      "readme_sha256": "0613e5b48058100ac8edc9006c48d395fa0d62c363cb5012762e8a1f8d6d8ac8",
+      "readme_download_url": "https://raw.githubusercontent.com/crazy-max/ftpgrab/master/README.md",
+      "readme_sha256": "aa3677fdca2e140d6795e396955ef36ff6443c5df6d45f094a539adc2fb55e18",
       "error": null
     },
     {
@@ -147,9 +207,9 @@
       "app_references": [
         "imagor-studio"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__cshum__imagor-studio.md",
-      "readme_download_url": "https://raw.githubusercontent.com/cshum/imagor-studio/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b8b54566dea03feb2fbe8e2a33878e3117e70b0d00187c3f837c759c77fba211",
       "error": null
     },
@@ -210,7 +270,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dagucloud__dagu.md",
       "readme_download_url": "https://raw.githubusercontent.com/dagucloud/dagu/main/README.md",
-      "readme_sha256": "bd6537823ccad77679ebd1b4f6bb3f479eb7d2a69ff284b38e835ac7f66b4a84",
+      "readme_sha256": "a26c5e0a451034be596b8d9dfb643bdb8963298b60edfe898f38c56c3da0cda0",
       "error": null
     },
     {
@@ -282,9 +342,9 @@
       "app_references": [
         "hortusfox"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__danielbrendel__hortusfox-web.md",
-      "readme_download_url": "https://raw.githubusercontent.com/danielbrendel/hortusfox-web/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "fa9583f3a9aa8b689cb1f97e8a11b31b3c827702e9523ea3cd4642cf6de774df",
       "error": null
     },
@@ -387,10 +447,10 @@
       "app_references": [
         "cloudbeaver"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dbeaver__cloudbeaver.md",
-      "readme_download_url": null,
-      "readme_sha256": "dbadf942ef70862390135c1c8dba70eb03a7bd76243bae1b5fb125566691db76",
+      "readme_download_url": "https://raw.githubusercontent.com/dbeaver/cloudbeaver/devel/README.md",
+      "readme_sha256": "cf9b0810a95ed865adb0856cbb1ed6759684d458562c7e1194b3ba05988aaca8",
       "error": null
     },
     {
@@ -432,10 +492,10 @@
       "app_references": [
         "reitti"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dedicatedcode__reitti.md",
-      "readme_download_url": null,
-      "readme_sha256": "dc974b21f73b7a17db1d8cab2e59087681cae4dfbe46bcfaaf326737950e74bd",
+      "readme_download_url": "https://raw.githubusercontent.com/dedicatedcode/reitti/main/README.md",
+      "readme_sha256": "5540cd30847051df9b77101b47c95dd2080dd8f61e878a98145608de90a28f5d",
       "error": null
     },
     {
@@ -477,10 +537,10 @@
       "app_references": [
         "faved"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__denho__faved.md",
-      "readme_download_url": null,
-      "readme_sha256": "fcff509b968b7cddaa6619a418052551b8ef2968c76cfb6cfa20cd72d7361001",
+      "readme_download_url": "https://raw.githubusercontent.com/denho/faved/main/README.md",
+      "readme_sha256": "08bc0aa2e023744317a0ed6fd5fc3d29457a87ec806dc8a57247ab62821c36cb",
       "error": null
     },
     {
@@ -691,66 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__diyhue__diyHue.md",
       "readme_download_url": null,
       "readme_sha256": "01a7a2e3a0df91fb48fc702d1bab396cfc34ee186b5660c8e6a0d8c4e8f8c6c7",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/djylb/nps",
-      "repo_url": "github.com/djylb/nps",
-      "host": "github.com",
-      "owner": "djylb",
-      "repo": "nps",
-      "app_references": [
-        "nps-enhanced"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__djylb__nps.md",
-      "readme_download_url": null,
-      "readme_sha256": "b8d6c76905ed890a8d3a1d188bb607e78ed0505502931f498c114c541c7372aa",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/dkorecko/PatchPanda",
-      "repo_url": "github.com/dkorecko/PatchPanda",
-      "host": "github.com",
-      "owner": "dkorecko",
-      "repo": "PatchPanda",
-      "app_references": [
-        "patchpanda"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__dkorecko__PatchPanda.md",
-      "readme_download_url": null,
-      "readme_sha256": "8df146c76663a26223037ccd4f56f874fa6d2e6dad95f9001954db533d9c11b4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/dkorecko/Ticky",
-      "repo_url": "github.com/dkorecko/Ticky",
-      "host": "github.com",
-      "owner": "dkorecko",
-      "repo": "Ticky",
-      "app_references": [
-        "ticky"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__dkorecko__Ticky.md",
-      "readme_download_url": null,
-      "readme_sha256": "753152300366556b1b59b2005b7e22dec189f6c39d14c9904a00c98aa949cf91",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/dmunozv04/iSponsorBlockTV",
-      "repo_url": "github.com/dmunozv04/iSponsorBlockTV",
-      "host": "github.com",
-      "owner": "dmunozv04",
-      "repo": "iSponsorBlockTV",
-      "app_references": [
-        "isponsorblocktv"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__dmunozv04__iSponsorBlockTV.md",
-      "readme_download_url": null,
-      "readme_sha256": "b4250a1d5bc6c617585ebbc65db6f063ea7778d64dc839f6758dff1b6696f404",
       "error": null
     }
   ]

@@ -23,6 +23,34 @@ docker run -p 8080:8080 -v ~/leafwiki-data:/app/data \
 
 ---
 
+## Table of Contents
+
+- [Features](#features)
+- [Good fit / not a fit](#good-fit--not-a-fit)
+- [Install](#install)
+  - [Docker](#docker)
+  - [Docker Compose](#docker-compose)
+  - [Linux installer](#linux-installer)
+  - [Binary](#binary)
+  - [Reset admin password](#reset-admin-password)
+- [Operating Modes](#operating-modes)
+- [Dev Setup](#dev-setup)
+- [Configuration](#configuration)
+  - [CLI Flags](#cli-flags)
+  - [Environment Variables](#environment-variables)
+  - [Custom Stylesheet](#custom-stylesheet)
+  - [Reverse-Proxy Authentication](#reverse-proxy-authentication)
+  - [Unix Socket](#unix-socket-v0113)
+  - [Git Backup](#git-backup-v0113-experimental)
+  - [Security](#security)
+  - [Operations notes](#operations-notes)
+- [Keyboard Shortcuts](#keyboard-shortcuts)
+- [Sorting Pages](#sorting-pages)
+- [Support this project](#support-this-project)
+- [Contributing](#contributing)
+
+---
+
 ## Features
 
 **Operations:**
@@ -85,6 +113,10 @@ docker run -p 8080:8080 -v ~/leafwiki-data:/app/data \
 - Teams looking for a Confluence or Notion replacement
 
 LeafWiki is intentionally narrower than those systems. That focus is part of the value.
+
+---
+
+**Prefer not to run your own server?** Free hosted beta — 10 spots, starting September 2026. [Get a beta spot →](https://leafwiki.com/hosted/#waitlist) and help shape the hosted version.
 
 ---
 
@@ -520,7 +552,8 @@ The sort dialog lets you drag items into position, use the ↑ ↓ arrow buttons
 If it's useful to you:
 
 - ⭐ **[Star the repo](https://github.com/perber/leafwiki)** — helps others find it
-- 💛 **[Sponsor on GitHub](https://leafwiki.com/support)** — supports ongoing maintenance, bug fixes, and new features
+- 💛 **[Sponsor on GitHub](https://leafwiki.com/support)** — supports ongoing maintenance, bug fixes, and new features  
+- 🚀 **[Don't want to self-host? Get a free beta spot](https://leafwiki.com/hosted/#waitlist)** — 10 spots, hosted beta starting September 2026, help shape the hosted version
 
 Need help deploying LeafWiki for your team? [Business support & setup →](https://leafwiki.com/support/)
 

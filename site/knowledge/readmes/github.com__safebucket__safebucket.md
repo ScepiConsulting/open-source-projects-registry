@@ -19,7 +19,6 @@
 [![Backend Integration tests][integration-img]][integration]
 [![Frontend Quality][frontend-img]][frontend]
 [![Docker Build][docker-build-img]][docker-build]
-[![Go Report Card][go-report-img]][go-report]
 [![License: Apache-2.0][license-img]][license]
 
 </div>
@@ -82,7 +81,13 @@ Replace `<tag>` with the image tag you want to verify (e.g., `latest`, `v1.0.0`)
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=safebucket/safebucket&type=date&legend=top-left)](https://www.star-history.com/#safebucket/safebucket&type=date&legend=top-left)
+<a href="https://www.star-history.com/?type=date&legend=top-left&repos=safebucket%2Fsafebucket">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=safebucket/safebucket&type=date&theme=dark&legend=top-left&sealed_token=dHsVUeCTzOInC_KmU8r_6IlKegsMgz60XuyDH4mZ4hI7kvjW4mWJ1P3OhR50H_hzOLkuPqeT62gAOoVX8tiKV8qANvyEreqgJ1gCnJlkCP9rroF8NtqiiHO8GxxpRmTpTboXm1GFOLuxnOXIu8jwDVTffF_P0wXQ14JAl8_ipDL6kFsr3Jd3X7EBMiKN" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=safebucket/safebucket&type=date&legend=top-left&sealed_token=dHsVUeCTzOInC_KmU8r_6IlKegsMgz60XuyDH4mZ4hI7kvjW4mWJ1P3OhR50H_hzOLkuPqeT62gAOoVX8tiKV8qANvyEreqgJ1gCnJlkCP9rroF8NtqiiHO8GxxpRmTpTboXm1GFOLuxnOXIu8jwDVTffF_P0wXQ14JAl8_ipDL6kFsr3Jd3X7EBMiKN" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=safebucket/safebucket&type=date&legend=top-left&sealed_token=dHsVUeCTzOInC_KmU8r_6IlKegsMgz60XuyDH4mZ4hI7kvjW4mWJ1P3OhR50H_hzOLkuPqeT62gAOoVX8tiKV8qANvyEreqgJ1gCnJlkCP9rroF8NtqiiHO8GxxpRmTpTboXm1GFOLuxnOXIu8jwDVTffF_P0wXQ14JAl8_ipDL6kFsr3Jd3X7EBMiKN" />
+ </picture>
+</a>
 
 ## License
 
@@ -117,10 +122,6 @@ This project is licensed under the Apache 2.0 - see the [LICENSE](LICENSE) file 
 [docker-build]: https://github.com/safebucket/safebucket/actions/workflows/docker-build.yml
 
 [docker-build-img]: https://github.com/safebucket/safebucket/actions/workflows/docker-build.yml/badge.svg
-
-[go-report]: https://goreportcard.com/report/github.com/safebucket/safebucket
-
-[go-report-img]: https://goreportcard.com/badge/github.com/safebucket/safebucket
 
 [license]: https://github.com/safebucket/safebucket/blob/main/LICENSE
 

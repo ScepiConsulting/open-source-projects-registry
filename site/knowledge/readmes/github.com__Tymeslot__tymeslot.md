@@ -183,7 +183,7 @@ Optional. Charge attendees through Stripe at booking time. Off by default — se
 | `MEETING_PAYMENTS_ENABLED` | Set to `true` to expose the payments dashboard and the per-event payment toggle. Defaults to `false`. |
 | `MEETING_PAYMENTS_APPLICATION_FEE_BP` | Optional platform fee in basis points (`100` = 1%). Defaults to `0`, so self-hosters never take a cut unless they opt in. Range `0`–`10000`. |
 
-Once enabled, hosts connect their own Stripe account from **Dashboard → Payments**, pick a currency, and switch on **Require payment** for any event type. Direct charges flow into the host's Stripe balance on their existing payout schedule.
+Once enabled, hosts connect their own Stripe account from **Dashboard → Integrations → Payments**, pick a currency, and switch on **Require payment** for any event type. Direct charges flow into the host's Stripe balance on their existing payout schedule.
 
 </details>
 
@@ -227,9 +227,13 @@ If Tymeslot is useful to you, **[star the repo](https://github.com/tymeslot/tyme
 
 PRs and issues are welcome — start with [CONTRIBUTING.md](CONTRIBUTING.md). Found a security issue? Please report it via the [contact page](https://tymeslot.app/contact) rather than a public issue.
 
+Tymeslot is better thanks to its contributors — see [CONTRIBUTORS.md](CONTRIBUTORS.md), with special thanks to [@dani](https://github.com/dani) for generic OAuth, French localisation and a stream of CalDAV fixes.
+
 ## Licence
 
 Open source under the [GNU AGPLv3](LICENSE) — free to use, self-host, modify and redistribute; if you run a modified version as a network service, share your changes under the same licence.
+
+The licence covers the **code**. The **Tymeslot name and logo** are trademarks of Diletta Luna OÜ — forks are welcome, but must travel under their own name. See [TRADEMARK.md](TRADEMARK.md).
 
 <br />
 

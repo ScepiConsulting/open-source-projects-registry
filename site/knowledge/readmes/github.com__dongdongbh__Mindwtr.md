@@ -6,9 +6,9 @@
 
 English | [中文](./README_zh.md)
 
-The free, open-source, cross-platform GTD app. Local-first, no account required. _Mind Like Water._
+**Get everything out of your head.** Mindwtr is a free, open-source to-do app built on the Getting Things Done (GTD) method: it captures every task and idea in seconds, then shows you the one next thing to do. No account, no subscription, and your data stays on your device.
 
-_New to GTD? Read [GTD in 15 minutes](https://hamberg.no/gtd) for a quick introduction._
+_Mindwtr = "mind like water": the calm you get when nothing is rattling around in your head._
 
 [Getting Started](https://docs.mindwtr.app/start/getting-started) · [FAQ](https://docs.mindwtr.app/start/faq) · [Docs](https://docs.mindwtr.app/) · [Data & Sync](https://docs.mindwtr.app/data-sync/) · [Cloud Deployment](https://docs.mindwtr.app/data-sync/cloud-deployment) · [MCP Server](https://docs.mindwtr.app/power-users/mcp)
 
@@ -16,7 +16,7 @@ _New to GTD? Read [GTD in 15 minutes](https://hamberg.no/gtd) for a quick introd
 [![GitHub license](https://img.shields.io/github/license/dongdongbh/Mindwtr?color=brightgreen)](LICENSE)
 [![GitHub downloads](https://img.shields.io/github/downloads/dongdongbh/Mindwtr/total)](https://github.com/dongdongbh/Mindwtr/releases)
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/dongdongbh/Mindwtr)
-[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/ahhFxuDBb4)
+[![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/gc4h5t58PR)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ff5f5f?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/dongdongbh)
 [![Ko-fi](https://img.shields.io/badge/Sponsor-Ko--fi-29abe0?logo=kofi&logoColor=white)](https://ko-fi.com/D1D01T20WK)
 
@@ -84,44 +84,46 @@ _New to GTD? Read [GTD in 15 minutes](https://hamberg.no/gtd) for a quick introd
   </p>
 </div>
 
-## Why Mindwtr (Quick Comparison)
+## Sound familiar?
 
-Mindwtr is built for people who want a complete GTD system without lock-in. Here is a brief, respectful comparison with mainstream task apps and GTD-focused alternatives.
+- **"I'll remember it." You won't.** One hotkey, type it, forget it safely. That's capture.
+- **Your to-do list has 80 items, so you avoid it.** Focus shows only the few things you can do right now.
+- **"Plan Mom's birthday" has been stuck for weeks.** Turn it into a project of small steps, so the next one is always obvious.
+- **You asked a coworker for something and you both forgot.** Waiting For tracks it so you remember to follow up.
+- **"Learn guitar someday" guilt-trips you from the list.** Park it in Someday/Maybe: kept, not nagging.
+- **Sunday night, everything feels out of control.** A guided weekly review puts you back in charge.
 
-| Capability                                                        | Mindwtr | Todoist | TickTick | Everdo | NirvanaHQ |
-| ----------------------------------------------------------------- | ------- | ------- | -------- | ------ | --------- |
-| Open source                                                       | ✅      | ❌      | ❌       | ❌     | ❌        |
-| GTD-native workflow                                               | ✅      | ⚠️      | ⚠️       | ✅     | ✅        |
-| All major platforms (desktop + mobile + web, incl. Linux desktop) | ✅      | ✅      | ✅       | ⚠️     | ⚠️        |
-| Local-first + no account required                                 | ✅      | ❌      | ❌       | ✅     | ❌        |
-| AI assistant (BYOK + local LLM)                                   | ✅      | ❌      | ❌       | ❌     | ❌        |
-| Flexible sync (WebDAV / Dropbox / self-hosted / local file)       | ✅      | ❌      | ❌       | ⚠️     | ❌        |
-| Completely free                                                   | ✅      | ❌      | ❌       | ❌     | ❌        |
+## How it works
 
-Legend: `✅` = yes, `❌` = no, `⚠️` = partial/limited support.
+Your head is for having ideas, not for holding them (David Allen, who wrote the book on this). Mindwtr holds them for you:
 
-_This comparison is based on the current public capabilities of each product. If any entry is outdated, feel free to open an issue or PR with sources._
+1. **Dump it.** A task, an idea, a worry: type it (or speak it) and it lands in your Inbox. Global hotkey on desktop, widget and share sheet on your phone.
+2. **Sort it.** A short guided pass over the Inbox. Takes two minutes? Do it now. Has a date? Schedule it. Waiting on someone else? Track it. Just a maybe? Shelve it for someday.
+3. **Do it.** Open Focus and see only what you can act on right now. Everything else stays out of sight.
+4. **Reset weekly.** A guided review catches loose ends, so the list stays trustworthy and your head stays clear.
+
+If you know GTD: that is Capture, Clarify, Organize, Engage, and Reflect, end to end. If you don't, no problem: Mindwtr walks you through each step, and [GTD in 15 minutes](https://hamberg.no/gtd) is a friendly introduction whenever you're curious.
 
 ## Philosophy
 
-Mindwtr is built to be **simple by default and powerful when you need it**. We focus on reducing cognitive load, cutting the fat, and keeping you in flow. That means:
+**Don't show me a cockpit when I just want to ride a bike.**
 
-- **Progressive disclosure**: advanced options stay hidden until they matter.
-- **Less by default**: fewer fields, fewer knobs, fewer distractions.
-- **Avoid feature creep**: we prioritize clarity over clutter.
+Mindwtr is simple by default and powerful when you need it:
 
-_Don't show me a cockpit when I just want to ride a bike._
+- Advanced options stay hidden until they matter.
+- Fewer fields, fewer knobs, fewer distractions.
+- Clarity beats clutter: we say no to feature creep.
 
 ## Features
 
-- GTD workflow end-to-end: Capture, Clarify, Organize, Reflect, Engage.
-- Focus view combines time-based agenda with next actions.
-- Local-first data model with native iCloud / CloudKit sync on supported Apple builds, plus file sync, WebDAV, Dropbox, and self-hosted cloud options.
-- Projects support sections, areas, and reorderable project task order for larger multi-step planning.
-- Obsidian vault import with note deep links on desktop.
-- Optional AI copilot (BYOK + local/self-hosted compatible models).
-- Cross-platform apps for desktop and mobile, plus PWA.
-- Optional automation helpers with desktop local REST API, CLI, and the published [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) server.
+- The full GTD loop, guided: capture, sort, do, review.
+- Focus view puts today's schedule and your next actions on one screen.
+- Your data lives on your device. Sync is optional, and you pick where: iCloud on Apple devices, Dropbox, a shared folder, your own server, or WebDAV.
+- Projects with sections, areas, and manual task ordering for bigger plans.
+- Import tasks from your Obsidian notes, with links back to the source (desktop).
+- Optional AI helper: connect your own OpenAI, Gemini, or Claude account, or run a private AI on your own computer. Off by default.
+- Apps for Windows, macOS, Linux, iPhone, and Android, plus a web app that works offline.
+- For developers: a local REST API, a CLI, and the [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) server so AI assistants can manage your tasks.
 
 <details>
 <summary>See all features</summary>
@@ -133,14 +135,14 @@ _Don't show me a cockpit when I just want to ride a bike._
 - **Organize** - Projects, sections, contexts, and status lists
 - **Reflect** - Weekly review wizard with reminders
 - **Engage** - Context-filtered next actions
-- **AI Assist (Optional)** - Clarify, break down, and review with BYOK AI (OpenAI, Gemini, Claude, or local/self-hosted OpenAI-compatible LLMs)
+- **AI Assist (Optional)** - Clarify, break down, and review with your own AI account (OpenAI, Gemini, Claude) or a local/self-hosted OpenAI-compatible model
 
 ### Views
 
 - 📥 **Inbox** - Capture zone with processing wizard
 - 🎯 **Focus** - Agenda (time-based) + Next Actions in one view
 - 📁 **Projects** - Multi-step outcomes with sections, areas, and manual task ordering
-- 🏷️ **Contexts** - Slash-delimited contexts with parent matching (@work/meetings)
+- 🏷️ **Contexts** - Tag tasks by where or how you get them done; nested contexts like @work/meetings also match @work
 - ⏳ **Waiting For** - Delegated items
 - 💭 **Someday/Maybe** - Deferred ideas
 - 📅 **Calendar** - Time-based planning with adjustable mobile week density
@@ -168,8 +170,8 @@ _Don't show me a cockpit when I just want to ride a bike._
 ### Data & Sync
 
 - 🔄 **Sync Options** - See the [Data & Sync docs](https://docs.mindwtr.app/data-sync/) for supported backends and setup
-- 🍎 **Native iCloud / CloudKit Sync** - Apple-only structured sync on supported iPhone, iPad, and macOS builds
-- ☁️ **Dropbox OAuth Sync (Optional)** - Native Dropbox App Folder sync in supported non-FOSS builds
+- 🍎 **iCloud Sync** - Built-in sync on supported iPhone, iPad, and macOS builds (CloudKit)
+- ☁️ **Dropbox Sync (Optional)** - Sign in with Dropbox and sync through a private app folder (store builds; not in FOSS builds)
 - 📤 **Export/Backup** - Export data to JSON
 - ♻️ **Restore from Backup** - Replace local data from a validated Mindwtr backup with a recovery snapshot first
 - 📥 **TickTick + Todoist + DGT GTD + OmniFocus + Apple Reminders Import** - Import TickTick CSV/ZIP, Todoist CSV/ZIP, DGT GTD JSON/ZIP, OmniFocus exports, or incomplete Apple Reminders into Mindwtr
@@ -180,8 +182,8 @@ _Don't show me a cockpit when I just want to ride a bike._
 
 - 🔌 **CLI** - Add, list, complete, search from terminal by running the repo helper
 - 🌐 **REST API** - Optional desktop localhost API server for token-authenticated scripting
-- 🌍 **Web App (PWA)** - Browser access with offline support
-- 🧠 **MCP Server** - Optional local stdio Model Context Protocol server for LLM automation, available as [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) and in the [MCP Registry](https://registry.modelcontextprotocol.io/)
+- 🌍 **Web App** - Runs in your browser, works offline (PWA)
+- 🧠 **MCP Server** - Lets AI assistants read and manage your tasks (a local Model Context Protocol server), available as [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) and in the [MCP Registry](https://registry.modelcontextprotocol.io/)
 
 Desktop builds can start the local REST API from **Settings -> Advanced** on `127.0.0.1` with default port `3456` and a generated bearer token. The CLI remains a repo helper; the stdio MCP server can be installed from npm with `npm install -g mindwtr-mcp` or launched by MCP clients with `npx -y mindwtr-mcp`.
 
@@ -196,6 +198,24 @@ Desktop builds can start the local REST API from **Settings -> Advanced** on `12
 - 🐳 **Docker** - Run the PWA + self-hosted sync server with Docker
 
 </details>
+
+## Why Mindwtr (Quick Comparison)
+
+Mindwtr is for people who want the full GTD method in one app, with data they own and no lock-in. Here is a brief, respectful comparison with mainstream task apps and GTD-focused alternatives.
+
+| Capability                                                              | Mindwtr | Todoist | TickTick | Everdo | NirvanaHQ |
+| ----------------------------------------------------------------------- | ------- | ------- | -------- | ------ | --------- |
+| Open source                                                             | ✅      | ❌      | ❌       | ❌     | ❌        |
+| Follows the full GTD method out of the box                              | ✅      | ⚠️      | ⚠️       | ✅     | ✅        |
+| Works everywhere: Windows, Mac, Linux, iPhone, Android, web             | ✅      | ✅      | ✅       | ⚠️     | ⚠️        |
+| Works offline, no account needed                                        | ✅      | ❌      | ❌       | ✅     | ❌        |
+| Optional AI helper (your own AI account, or one on your computer)       | ✅      | ❌      | ❌       | ❌     | ❌        |
+| You pick where your data syncs (Dropbox, your server, a folder, WebDAV) | ✅      | ❌      | ❌       | ⚠️     | ❌        |
+| Completely free                                                         | ✅      | ❌      | ❌       | ❌     | ❌        |
+
+Legend: `✅` = yes, `❌` = no, `⚠️` = partial/limited support.
+
+_This comparison is based on the current public capabilities of each product. If any entry is outdated, feel free to open an issue or PR with sources._
 
 ## Installation
 
@@ -241,7 +261,7 @@ You can help in several ways:
 2. **Leave store reviews:** A good rating/review on the [App Store](https://apps.apple.com/app/mindwtr/id6758597144), [Google Play](https://play.google.com/store/apps/details?id=tech.dongdongbh.mindwtr), or [Microsoft Store](https://apps.microsoft.com/detail/9n0v5b0b6frx?ocid=webpdpshare) helps a lot.
 3. **Star and share:** Star the repo and post about Mindwtr on [X](https://twitter.com/intent/tweet?text=I%20like%20Mindwtr%20https%3A%2F%2Fgithub.com%2Fdongdongbh%2FMindwtr), [Reddit](https://www.reddit.com/submit?url=https%3A%2F%2Fgithub.com%2Fdongdongbh%2FMindwtr&title=I%20like%20Mindwtr), or [LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https%3A%2F%2Fgithub.com%2Fdongdongbh%2FMindwtr&title=I%20like%20Mindwtr).
 4. **Report bugs and request features:** Open issues on [GitHub Issues](https://github.com/dongdongbh/Mindwtr/issues).
-5. **Join the community chat:** Come to [Discord](https://discord.gg/ahhFxuDBb4).
+5. **Join the community chat:** Come to [Discord](https://discord.gg/gc4h5t58PR).
 6. **Help with translations:** Contribute locale updates in [`packages/core/src/i18n/locales/`](packages/core/src/i18n/locales/).
 7. **Contribute code/docs:** Open a pull request and follow the [contribution guide](docs/CONTRIBUTING.md) and commit conventions.
 8. **Pick and build:** Community members are welcome to pick any open issue and submit a PR.
@@ -262,9 +282,9 @@ You can help in several ways:
 
 <a href="https://www.star-history.com/?repos=dongdongbh%2FMindwtr&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&theme=dark&legend=top-left&sealed_token=o7AhNqQCMIgsAPrJNNtM_vXOeX8W0bIEpvmIena9PV3XimmgI9az7lbogUApV_fH-XpQ4OuVXrpI4qP3V7ixza9r8lDKbwNU0-oQrJywIWFf0kNhQD71ypiYzU7MpatFfUn30EeKyKyEpEqUlOtHfAb0XEs59TKha6lmoUfazzlSHvmR47bncqR7gUGO" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&legend=top-left&sealed_token=o7AhNqQCMIgsAPrJNNtM_vXOeX8W0bIEpvmIena9PV3XimmgI9az7lbogUApV_fH-XpQ4OuVXrpI4qP3V7ixza9r8lDKbwNU0-oQrJywIWFf0kNhQD71ypiYzU7MpatFfUn30EeKyKyEpEqUlOtHfAb0XEs59TKha6lmoUfazzlSHvmR47bncqR7gUGO" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&legend=top-left&sealed_token=o7AhNqQCMIgsAPrJNNtM_vXOeX8W0bIEpvmIena9PV3XimmgI9az7lbogUApV_fH-XpQ4OuVXrpI4qP3V7ixza9r8lDKbwNU0-oQrJywIWFf0kNhQD71ypiYzU7MpatFfUn30EeKyKyEpEqUlOtHfAb0XEs59TKha6lmoUfazzlSHvmR47bncqR7gUGO" />
  </picture>
 </a>
 
@@ -279,9 +299,6 @@ Thanks to these monthly sponsors for supporting Mindwtr.
   <a href="https://github.com/ronmolenda" title="@ronmolenda">
     <img src="docs/assets/sponsors/ronmolenda.png" width="60" height="60" alt="@ronmolenda" />
   </a>
-  <a href="https://github.com/bepolymathe" title="@bepolymathe">
-    <img src="docs/assets/sponsors/bepolymathe.png" width="60" height="60" alt="@bepolymathe" />
-  </a>
   <a href="https://github.com/karl1990" title="@karl1990">
     <img src="docs/assets/sponsors/karl1990.png" width="60" height="60" alt="@karl1990" />
   </a>
@@ -294,8 +311,11 @@ Thanks to these monthly sponsors for supporting Mindwtr.
   <a href="https://github.com/PLPeeters" title="@PLPeeters">
     <img src="docs/assets/sponsors/plpeeters-avatar.png" width="60" height="60" alt="@PLPeeters" />
   </a>
+  <a href="https://github.com/danhs" title="@danhs">
+    <img src="docs/assets/sponsors/danhs.png" width="60" height="60" alt="@danhs" />
+  </a>
 </p>
 
 <p align="center">
-  <sub><a href="https://github.com/jarrydstan">@jarrydstan</a> · <a href="https://github.com/ronmolenda">@ronmolenda</a> · <a href="https://github.com/bepolymathe">@bepolymathe</a> · <a href="https://github.com/karl1990">@karl1990</a> · <a href="https://github.com/srijan">@srijan</a> · <a href="https://github.com/davibicudo">@davibicudo</a> · <a href="https://github.com/PLPeeters">@PLPeeters</a></sub>
+  <sub><a href="https://github.com/jarrydstan">@jarrydstan</a> · <a href="https://github.com/ronmolenda">@ronmolenda</a> · <a href="https://github.com/karl1990">@karl1990</a> · <a href="https://github.com/srijan">@srijan</a> · <a href="https://github.com/davibicudo">@davibicudo</a> · <a href="https://github.com/PLPeeters">@PLPeeters</a> · <a href="https://github.com/danhs">@danhs</a></sub>
 </p>

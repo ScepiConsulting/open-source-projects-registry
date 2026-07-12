@@ -348,11 +348,14 @@ Dagu installs declared portable CLIs before the DAG run, exposes them on `PATH` 
 ### Third-party Dagu Actions
 
 ```yaml
+params:
+  - BUILD_ID
+
 steps:
   - id: notify
     action: acme/dagu-action-notify@v1.2.0
     with:
-      text: "Build ${BUILD_ID} finished"
+      text: "Build ${params.BUILD_ID} finished"
 
   - id: audit
     depends: notify
@@ -432,12 +435,15 @@ steps:
 # You can include multiple DAGs in the same YAML file, or reference DAGs defined in separate files.
 name: etl/extract
 
+params:
+  - SOURCE
+
 tools:
   - aws/aws-cli@2.11.14
 
 steps:
   - name: download
-    run: aws s3 cp ${SOURCE} data.csv
+    run: aws s3 cp ${params.SOURCE} data.csv
     outputs:
       result: data.csv
 ```
@@ -668,7 +674,7 @@ JSON or text format logging (`DAGU_LOG_FORMAT`). Logs are stored per-run with se
 
 ![Artifact browser in dark mode](./assets/images/readme-artifacts-dark.png)
 
-Dagu runs can write arbitrary files into `DAG_RUN_ARTIFACTS_DIR`, and Dagu stores them per run as Artifacts. In the Web UI, operators can browse the file tree, preview Markdown, text, and image files inline, and download any artifact when they need the raw file.
+Dagu runs can write arbitrary files under `${context.paths.artifacts_dir}` in value-resolved fields, with `DAG_RUN_ARTIFACTS_DIR` also exposed to step processes. Dagu stores those files per run as Artifacts. In the Web UI, operators can browse the file tree, preview Markdown, text, and image files inline, and download any artifact when they need the raw file.
 
 This is useful for generated reports, screenshots, charts, exported JSON or CSV files, and other outputs that do not fit simple key/value outputs.
 
@@ -753,7 +759,7 @@ params:
   - MESSAGE
 steps:
   - name: hello
-    run: echo "${MESSAGE}"
+    run: echo "${params.MESSAGE}"
 `), dagu.WithParams(map[string]string{
 	"MESSAGE": "hello from the host app",
 }))
@@ -803,7 +809,7 @@ The embedded API is experimental and may change. See the embedded API documentat
 | `DAGU_AUTH_BASIC_USERNAME` | — | Basic auth username |
 | `DAGU_AUTH_BASIC_PASSWORD` | — | Basic auth password |
 | `DAGU_AUTH_TOKEN_SECRET` | (auto) | JWT signing secret |
-| `DAGU_AUTH_TOKEN_TTL` | `24h` | JWT token lifetime |
+| `DAGU_AUTH_TOKEN_TTL` | `24h` | JWT token lifetime (maximum: `8760h` / 365 days) |
 
 OIDC variables: `DAGU_AUTH_OIDC_CLIENT_ID`, `DAGU_AUTH_OIDC_CLIENT_SECRET`, `DAGU_AUTH_OIDC_ISSUER`, `DAGU_AUTH_OIDC_SCOPES`, `DAGU_AUTH_OIDC_WHITELIST`, `DAGU_AUTH_OIDC_AUTO_SIGNUP`, `DAGU_AUTH_OIDC_DEFAULT_ROLE`, `DAGU_AUTH_OIDC_ALLOWED_DOMAINS`.
 

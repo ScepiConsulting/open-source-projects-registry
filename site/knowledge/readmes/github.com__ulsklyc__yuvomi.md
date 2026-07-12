@@ -1,7 +1,5 @@
 <div align="center">
-  <sub><b>English</b> &nbsp;·&nbsp; <a href="README.de.md">Deutsch</a></sub>
-
-  <img src="docs/logo.svg" alt="Yuvomi" width="92" />
+  <sub><img src="docs/logo.svg" alt="Yuvomi" width="92" /><a href="README.de.md"></sub>
 
   <h1>Yuvomi</h1>
   <p><strong>The self-hosted family planner. Private, offline-capable, and beautiful.</strong></p>
@@ -107,30 +105,58 @@ New home: **https://yuvomi.cloud/** · Questions? Open a [discussion](https://gi
     <tr>
       <td align="center" width="50%">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/tasks-dark-web.png">
-          <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/tasks-light-web.png">
-          <img src="docs/screenshots/tasks-light-web.png" alt="Tasks — Kanban board with priorities, deadlines and multi-member assignment">
+          <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/health-cycle-dark-web.png">
+          <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/health-cycle-light-web.png">
+          <img src="docs/screenshots/health-cycle-light-web.png" alt="Health — menstrual cycle ring with period and fertile-window predictions">
         </picture>
-        <br><sub><b>Tasks</b> — Kanban board, recurring schedules, multi-assignment</sub>
+        <br><sub><b>Health</b> — Vitals, meds, labs, activity & cycle tracking, per member</sub>
       </td>
       <td align="center" width="50%">
         <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/calendar-dark-web.png">
-          <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/calendar-light-web.png">
-          <img src="docs/screenshots/calendar-light-web.png" alt="Calendar with Google OAuth and CalDAV sync">
+          <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/rewards-dark-web.png">
+          <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/rewards-light-web.png">
+          <img src="docs/screenshots/rewards-light-web.png" alt="Rewards — point standings and a parent-approved reward catalog">
         </picture>
-        <br><sub><b>Calendar</b> — Google OAuth, iCloud, CalDAV, ICS subscriptions</sub>
+        <br><sub><b>Rewards</b> — Points for chores, parent-approved catalog & ledger</sub>
       </td>
     </tr>
     <tr>
+      <td align="center">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/split-expenses-dark-web.png">
+          <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/split-expenses-light-web.png">
+          <img src="docs/screenshots/split-expenses-light-web.png" alt="Split expenses — shared cost groups with balances and settle-up">
+        </picture>
+        <br><sub><b>Split expenses</b> — Shared costs with automatic debt simplification</sub>
+      </td>
       <td align="center">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/budget-dark-web.png">
           <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/budget-light-web.png">
           <img src="docs/screenshots/budget-light-web.png" alt="Budget — income, expenses and split costs with debt simplification">
         </picture>
-        <br><sub><b>Budget</b> — Income, expenses, split costs, CSV export</sub>
+        <br><sub><b>Budget</b> — Income, expenses, subscriptions, CSV export</sub>
       </td>
+    </tr>
+    <tr>
+      <td align="center">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/tasks-dark-web.png">
+          <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/tasks-light-web.png">
+          <img src="docs/screenshots/tasks-light-web.png" alt="Tasks — Kanban board with priorities, deadlines and multi-member assignment">
+        </picture>
+        <br><sub><b>Tasks</b> — Kanban board, recurring schedules, multi-assignment</sub>
+      </td>
+      <td align="center">
+        <picture>
+          <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/calendar-dark-web.png">
+          <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/calendar-light-web.png">
+          <img src="docs/screenshots/calendar-light-web.png" alt="Calendar with Google OAuth and CalDAV sync">
+        </picture>
+        <br><sub><b>Calendar</b> — Google OAuth, iCloud, CalDAV, ICS subscriptions &amp; import</sub>
+      </td>
+    </tr>
+    <tr>
       <td align="center">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/meals-dark-web.png">
@@ -139,8 +165,6 @@ New home: **https://yuvomi.cloud/** · Questions? Open a [discussion](https://gi
         </picture>
         <br><sub><b>Meals</b> — Weekly planner, recipes, one-click shopping export</sub>
       </td>
-    </tr>
-    <tr>
       <td align="center">
         <picture>
           <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/shopping-dark-web.png">
@@ -149,16 +173,36 @@ New home: **https://yuvomi.cloud/** · Questions? Open a [discussion](https://gi
         </picture>
         <br><sub><b>Shopping</b> — Shared lists, aisle groups, swipe gestures</sub>
       </td>
-      <td align="center">
-        <picture>
-          <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/contacts-dark-web.png">
-          <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/contacts-light-web.png">
-          <img src="docs/screenshots/contacts-light-web.png" alt="Contacts — family directory with CardDAV sync">
-        </picture>
-        <br><sub><b>Contacts</b> — Family directory, CardDAV sync</sub>
-      </td>
     </tr>
   </table>
+
+  <sub>On mobile, too — every module adapts to phone-sized screens:</sub>
+  <br>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/health-cycle-dark-mobile.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/health-cycle-light-mobile.png">
+    <img src="docs/screenshots/health-cycle-light-mobile.png" alt="Health on mobile" height="380">
+  </picture>
+  &nbsp;
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/rewards-dark-mobile.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/rewards-light-mobile.png">
+    <img src="docs/screenshots/rewards-light-mobile.png" alt="Rewards on mobile" height="380">
+  </picture>
+  &nbsp;
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/tasks-dark-mobile.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/tasks-light-mobile.png">
+    <img src="docs/screenshots/tasks-light-mobile.png" alt="Tasks on mobile" height="380">
+  </picture>
+  &nbsp;
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/screenshots/calendar-dark-mobile.png">
+    <source media="(prefers-color-scheme: light)" srcset="docs/screenshots/calendar-light-mobile.png">
+    <img src="docs/screenshots/calendar-light-mobile.png" alt="Calendar on mobile" height="380">
+  </picture>
+
+  <br><br>
   <a href="https://yuvomi.cloud/">See all screenshots →</a>
 </div>
 
@@ -168,21 +212,21 @@ New home: **https://yuvomi.cloud/** · Questions? Open a [discussion](https://gi
 
 | | Module | What it does |
 |:---:|---|---|
-| ![tasks](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/tasks.png) | **Tasks** | Deadlines, priorities, subtasks, recurring schedules, multi-member assignment, and a Kanban board. Optional CalDAV import of Apple Reminders. |
+| ![tasks](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/tasks.png) | **Tasks** | Deadlines, priorities, subtasks, recurring schedules, multi-member assignment, per-task visibility (only me / assignees / everyone), an "assigned to me" filter, and a Kanban board. Optional CalDAV import of Apple Reminders. |
 | ![shopping](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/shopping.png) | **Shopping** | Collaborative lists grouped by aisle, with swipe gestures, per-item notes, and one-tap import from the meal plan. |
-| ![meals](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/meals.png) | **Meals** | Weekly drag-and-drop planner with multiple items per slot, weekly repeats, and direct export to the shopping list. |
+| ![meals](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/meals.png) | **Meals** | Weekly planner with multiple items per slot, weekly repeats, a drag-and-drop recipe sidebar, a one-click week randomizer, and direct export to the shopping list. |
 | ![recipes](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/recipes.png) | **Recipes** | Create, duplicate, and scale recipes; pre-fill meal slots or save any planned meal as a recipe. |
-| ![calendar](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/calendar.png) | **Calendar** | Google (OAuth) and CalDAV sync (iCloud, Nextcloud, Radicale), ICS subscriptions, recurring events, attachments, holiday overlays, and a read-only `webcal://` export feed. |
-| ![documents](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/documents.png) | **Documents** | Upload, tag, preview, and organize family files with per-document visibility. Optional WebDAV storage plus Paperless-ngx and Papra (DMS) linking. |
-| ![budget](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/budget.png) | **Budget** | Income, expenses, recurring entries, trend charts, a statistics tab, CSV export, loans, split expenses, and subscription tracking with renewals and currencies. |
+| ![calendar](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/calendar.png) | **Calendar** | Google (OAuth) and CalDAV sync (iCloud, Nextcloud, Radicale), ICS subscriptions, one-time import from an `.ics` file or shared feed into editable local events, recurring events, attachments, holiday overlays, keyword search across title, location and notes (accent-insensitive, finds events whose date you don't know), an "assigned to me" filter, per-event visibility, a default assignee per synced calendar, a configurable week start (Monday, Sunday or Saturday), and a read-only `webcal://` export feed. |
+| ![documents](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/documents.png) | **Documents** | Upload, tag, preview, and organize family files with per-document visibility. Optional local folder or WebDAV storage plus Paperless-ngx and Papra (DMS) linking. |
+| ![budget](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/budget.png) | **Budget** | Income, expenses, recurring entries, trend charts, a statistics tab, CSV export, loans, split expenses, subscription tracking with renewals and currencies, and a planning tab with per-category monthly budgets and a savings goal (planned vs. actual). |
 | ![housekeeping](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/housekeeping.png) | **Housekeeping** | Manage household staff — schedules, check-in/out, daily or hourly billing, chores, and supply requests. |
 | ![rewards](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/rewards.png) | **Rewards** | Point values on tasks credit assigned members; a reward catalog with parent-approved redemptions, per-member opt-in, and an auditable ledger. |
-| ![health](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/health.png) | **Health** | Per-member vitals, medications with refill alerts, lab results, and activity logs — with trend charts, CSV export, and per-entry visibility. |
+| ![health](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/health.png) | **Health** | Per-member vitals, medications with refill alerts, lab results, activity logs, and menstrual cycle tracking (period predictions, fertile window, cycle ring) — with trend charts, CSV export, and per-entry visibility. |
 | ![notes](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/notes.png) | **Notes & Contacts** | Colored Markdown sticky notes plus a contact directory with CardDAV sync. |
 | ![birthdays](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/birthdays.png) | **Birthdays** | Birthday tracker with automatic calendar events, age display, and custom reminders. |
 | ![family](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/family.png) | **Family** | Member profiles with roles, photos, and contact details — synced to Contacts and Birthdays. |
 | ![reminders](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/reminders.png) | **Reminders** | Task and calendar reminders via in-app badges, opt-in Web Push (HTTPS), and household Gotify/ntfy channels. |
-| ![api-tokens](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/api-tokens.png) | **API Tokens** | Bearer / X-API-Key tokens with an OpenAPI 3.0 spec and a built-in MCP endpoint (`/mcp`) for AI agents like Claude Desktop. |
+| ![api-tokens](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/api-tokens.png) | **API Tokens** | Bearer / X-API-Key tokens with an OpenAPI 3.0 spec and a built-in MCP endpoint (`/mcp`) that lets AI agents like Claude Desktop drive the whole API in natural language. Optional per-module read/write scopes keep a token — e.g. one handed to an AI client — off sensitive areas. |
 | ![backup](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/backup.png) | **Backup** | Manual and scheduled database backup/restore with pre-restore rollback. Optional WebDAV upload (Nextcloud, ownCloud, etc.). |
 
 <sub>Full data model and per-module details in the <a href="docs/SPEC.md">Spec</a>.</sub>

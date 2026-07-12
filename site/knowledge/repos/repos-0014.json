@@ -1,8 +1,83 @@
 {
   "chunk": 14,
   "count": 50,
-  "generated_at": "2026-07-05T06:47:00Z",
+  "generated_at": "2026-07-12T06:04:00Z",
   "items": [
+    {
+      "repo_key": "github.com/getumbrel/umbrel",
+      "repo_url": "github.com/getumbrel/umbrel",
+      "host": "github.com",
+      "owner": "getumbrel",
+      "repo": "umbrel",
+      "app_references": [
+        "umbrelos"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__getumbrel__umbrel.md",
+      "readme_download_url": null,
+      "readme_sha256": "493bd5ca654ae338d3bcb9185900cf80950e3d0129355f9820173c9482a0d049",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/getwud/wud",
+      "repo_url": "github.com/getwud/wud",
+      "host": "github.com",
+      "owner": "getwud",
+      "repo": "wud",
+      "app_references": [
+        "wud"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__getwud__wud.md",
+      "readme_download_url": null,
+      "readme_sha256": "99bd4405c7e9ea6d6f8fa5d3f0a271fcca3d89cf347d158093bdec8a26af2a13",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/ghostfolio/ghostfolio",
+      "repo_url": "github.com/ghostfolio/ghostfolio",
+      "host": "github.com",
+      "owner": "ghostfolio",
+      "repo": "ghostfolio",
+      "app_references": [
+        "ghostfolio"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__ghostfolio__ghostfolio.md",
+      "readme_download_url": "https://raw.githubusercontent.com/ghostfolio/ghostfolio/main/README.md",
+      "readme_sha256": "85ea5c8b6524d0b4a3e5915faf8cf6ba5a4fdb6e89fbdf0f94f2fd5f16cf416c",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/gilbertchen/duplicacy",
+      "repo_url": "github.com/gilbertchen/duplicacy",
+      "host": "github.com",
+      "owner": "gilbertchen",
+      "repo": "duplicacy",
+      "app_references": [
+        "duplicacy"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__gilbertchen__duplicacy.md",
+      "readme_download_url": null,
+      "readme_sha256": "c69aa1222619f30c228f56165716126177c2b4dbc7b02d50dcff99cf09250636",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/gitroomhq/postiz-app",
+      "repo_url": "github.com/gitroomhq/postiz-app",
+      "host": "github.com",
+      "owner": "gitroomhq",
+      "repo": "postiz-app",
+      "app_references": [
+        "postiz"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__gitroomhq__postiz-app.md",
+      "readme_download_url": null,
+      "readme_sha256": "1749996b8e7008d4f1090f218a986991a229438b7de1191ba1744b3b2f44d78f",
+      "error": null
+    },
     {
       "repo_key": "github.com/giuseppe99barchetta/SuggestArr",
       "repo_url": "github.com/giuseppe99barchetta/SuggestArr",
@@ -342,9 +417,9 @@
       "app_references": [
         "grist"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gristlabs__grist-core.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gristlabs/grist-core/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ccd635a7a615968c7c8300409edcf54cac629f87de4e5c942fdb13521c55684a",
       "error": null
     },
@@ -477,10 +552,10 @@
       "app_references": [
         "haproxy"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__haproxy__haproxy.md",
-      "readme_download_url": null,
-      "readme_sha256": "61ff0655d2661a2d4c0a31807145f7122e0830c7b6f97cc997bd93943251b381",
+      "readme_download_url": "https://raw.githubusercontent.com/haproxy/haproxy/master/README.md",
+      "readme_sha256": "71d0fd82e05b7c630cb8ec93dd41336b7cf12328b6952cfd07e9d4d2339ea373",
       "error": null
     },
     {
@@ -552,9 +627,9 @@
       "app_references": [
         "downtify"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__henriquesebastiao__downtify.md",
-      "readme_download_url": "https://raw.githubusercontent.com/henriquesebastiao/downtify/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8ff42360891ad99b7a6a1cceb24f3e7984960fa844f601a6e1a80ead0d4c8e7d",
       "error": null
     },
@@ -676,81 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__holtwick__briefing.md",
       "readme_download_url": null,
       "readme_sha256": "b474562ec295bfcbfc128a50c73ec87653c3b9658614844b3658709cc64913be",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/homarr-labs/homarr",
-      "repo_url": "github.com/homarr-labs/homarr",
-      "host": "github.com",
-      "owner": "homarr-labs",
-      "repo": "homarr",
-      "app_references": [
-        "homarr"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__homarr-labs__homarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/homarr-labs/homarr/dev/docs/README.md",
-      "readme_sha256": "4942789f2a776fe229230b6eebdb14187678ee05595c2b3038c57bdc89bb36cf",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/home-assistant/core",
-      "repo_url": "github.com/home-assistant/core",
-      "host": "github.com",
-      "owner": "home-assistant",
-      "repo": "core",
-      "app_references": [
-        "home-assistant"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__home-assistant__core.md",
-      "readme_download_url": null,
-      "readme_sha256": "c9955c50630b0e2582cbc56b13f077e778a8c03c8002ce8966a38444a30c4d93",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/hook0/hook0",
-      "repo_url": "github.com/hook0/hook0",
-      "host": "github.com",
-      "owner": "hook0",
-      "repo": "hook0",
-      "app_references": [
-        "hook0"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__hook0__hook0.md",
-      "readme_download_url": null,
-      "readme_sha256": "1d30b4156e6fc86ac58bccbb35337c38098a010c6355f1f76f1b4394d5ac1348",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/html2rss/html2rss-web",
-      "repo_url": "github.com/html2rss/html2rss-web",
-      "host": "github.com",
-      "owner": "html2rss",
-      "repo": "html2rss-web",
-      "app_references": [
-        "html2rss"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__html2rss__html2rss-web.md",
-      "readme_download_url": null,
-      "readme_sha256": "73fd6a04b7be01abe2f434367168dea533316b55909d53345915a9621ec04b6e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/httpjamesm/AnonymousOverflow",
-      "repo_url": "github.com/httpjamesm/AnonymousOverflow",
-      "host": "github.com",
-      "owner": "httpjamesm",
-      "repo": "AnonymousOverflow",
-      "app_references": [
-        "anonymousoverflow"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__httpjamesm__AnonymousOverflow.md",
-      "readme_download_url": null,
-      "readme_sha256": "c1b51e30e84f9403371eacce3d18062f918875046357224fefc5300c2dcfadcf",
       "error": null
     }
   ]

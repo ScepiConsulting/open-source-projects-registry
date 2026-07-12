@@ -34,7 +34,7 @@ If you contribute code, please read the [Contributor License Agreement](CLA.md).
 - **Rich text compose** — WYSIWYG editor with font family, size, color, highlight, tables, emoji, links, attachments, image resize handles, and Excel table paste
 - **Attachments** — send and receive file attachments across all accounts
 - **Multiple layouts** — classic, compact, wide reader, vertical split, and more
-- **Multiple themes** — dark, light, and several color schemes
+- **Multiple themes** — dark, light, and several color schemes; custom CSS field for per-user style overrides
 - **Multi-language UI** — English, French, Spanish, Italian, German, Russian, and Simplified Chinese
 - **Full-text search** — across all connected accounts simultaneously
 - **Real-time notifications** — WebSocket-powered new-mail toasts and web push notifications
@@ -45,6 +45,7 @@ If you contribute code, please read the [Contributor License Agreement](CLA.md).
 - **Reply / Forward / Compose** — correct per-account SMTP routing; font family groups, email priority
 - **Folder navigation** — expand any account to browse folders
 - **Star, archive, delete, mark read/unread** — synced back to IMAP
+- **Mark-as-read behavior** — choose immediate (on open), after a configurable delay in seconds, or manual (button only) per-user preference
 - **Inbox rules** — automate actions (move, archive, delete, mark read, star) based on sender, subject, recipient, headers, body, or attachments
 - **Block list** — automatically move mail from blocked senders to trash before inbox rules run
 - **Spam reporting** — mark messages as spam or not spam from the context menu, toolbar, or bulk actions; feedback will feed into automated filtering in a future release
@@ -53,10 +54,10 @@ If you contribute code, please read the [Contributor License Agreement](CLA.md).
 - **Password recovery** — recover your account via a recovery email address configured in profile settings
 - **User management** — admin panel, invite-only registration, invite emails
 - **Two-factor authentication** — TOTP (any authenticator app), email OTP fallback, persistent device trust; admin-configurable enforcement policy
-- **SSO / OIDC** — single sign-on via any OpenID Connect provider
+- **SSO / OIDC** — single sign-on via any OpenID Connect provider; group claims from the IdP can be mapped to the MailFlow admin role
 - **Microsoft 365 / OAuth2** — work accounts via Azure App Registration; personal Outlook.com via device code flow
 - **Todoist integration** — create tasks directly from emails; tasks include a deep link back to the original message
-- **CardDAV** — expose your MailFlow contacts as a CardDAV address book for sync with phone and desktop contact apps
+- **CardDAV** — expose your MailFlow contacts as a CardDAV address book for sync with phone and desktop contact apps; contact photos sync and appear as sender avatars in the message list
 
 ---
 
@@ -284,7 +285,7 @@ Edit `.env`. In addition to the required secrets, set these for a native install
 | `DB_NAME` | `mailflow` |
 | `DB_USER` | `mailflow` |
 | `DB_PASSWORD` | password you set in step 2 |
-| `REDIS_URL` | `redis://localhost:6379` |
+| `REDIS_URL` | `redis://localhost:6379` — or `redis+unix:///path/to/redis.sock` for a Unix socket |
 | `ENCRYPTION_KEY` | `openssl rand -hex 32` |
 
 ### 5. Build the frontend
@@ -535,17 +536,27 @@ MailFlow is free and open source. If it's useful to you, consider supporting dev
 
 <!-- SPONSORS-START -->
 <a href="https://github.com/Rainson12" title="Rainson12"><img src="https://avatars.githubusercontent.com/u/13119203?s=64&u=d18af1210e56533c4b5808986de75dbb28227599&v=4" width="48" height="48" alt="Rainson12" style="border-radius:50%;margin:4px"></a>
+<a href="https://github.com/MikeScanlan5" title="MikeScanlan5"><img src="https://avatars.githubusercontent.com/u/44779151?s=64&u=e7dfabc231fa876f879e63b4cd1c897036751467&v=4" width="48" height="48" alt="MikeScanlan5" style="border-radius:50%;margin:4px"></a>
+<a href="https://github.com/rahhing" title="rahhing"><img src="https://avatars.githubusercontent.com/u/192337730?s=64&u=ef3c773f0ccac769353d63545e0ff6a0c885294a&v=4" width="48" height="48" alt="rahhing" style="border-radius:50%;margin:4px"></a>
 <!-- SPONSORS-END -->
 
 ---
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=maathimself/mailflow&type=Date)](https://star-history.com/#maathimself/mailflow&Date)
+[![Stargazers over time](.github/assets/star-history.svg)](https://github.com/maathimself/mailflow/stargazers)
 
 ---
 
 ## Upgrading
+
+### v2.2.0 – v2.4.1
+
+No manual migration steps required. All schema changes apply automatically on first startup.
+
+### v2.1.0
+
+No manual migration steps required. All schema changes apply automatically on first startup.
 
 ### v2.0.0
 

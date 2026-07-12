@@ -1,8 +1,68 @@
 {
   "chunk": 10,
   "count": 50,
-  "generated_at": "2026-07-05T06:47:00Z",
+  "generated_at": "2026-07-12T06:04:00Z",
   "items": [
+    {
+      "repo_key": "github.com/caddyserver/caddy",
+      "repo_url": "github.com/caddyserver/caddy",
+      "host": "github.com",
+      "owner": "caddyserver",
+      "repo": "caddy",
+      "app_references": [
+        "caddy"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__caddyserver__caddy.md",
+      "readme_download_url": null,
+      "readme_sha256": "19a03ce87b6b83b284b085bb675139008f9f2b88367ed466ee0916d7a196396c",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/calagopus/panel",
+      "repo_url": "github.com/calagopus/panel",
+      "host": "github.com",
+      "owner": "calagopus",
+      "repo": "panel",
+      "app_references": [
+        "calagopus"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__calagopus__panel.md",
+      "readme_download_url": null,
+      "readme_sha256": "d2c780dd5729dacc1a0a22ff3f3fc60ae2b11e22c71c61bd9bb695f167d79d1a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/calcom/cal.diy",
+      "repo_url": "github.com/calcom/cal.diy",
+      "host": "github.com",
+      "owner": "calcom",
+      "repo": "cal.diy",
+      "app_references": [
+        "cal-com"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__calcom__cal.diy.md",
+      "readme_download_url": "https://raw.githubusercontent.com/calcom/cal.diy/main/README.md",
+      "readme_sha256": "a9a6121c41b37242a4aac18704037dcff14f23d41dbf74b8a18c9e3d393b01e7",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/calibrain/shelfmark",
+      "repo_url": "github.com/calibrain/shelfmark",
+      "host": "github.com",
+      "owner": "calibrain",
+      "repo": "shelfmark",
+      "app_references": [
+        "shelfmark"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__calibrain__shelfmark.md",
+      "readme_download_url": "https://raw.githubusercontent.com/calibrain/shelfmark/main/readme.md",
+      "readme_sha256": "0fe3869f6de09769f6ea4723b90e116be8d5c5e39f3d1a724b97cea4782ca597",
+      "error": null
+    },
     {
       "repo_key": "github.com/caprover/caprover",
       "repo_url": "github.com/caprover/caprover",
@@ -45,7 +105,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__caronc__apprise.md",
       "readme_download_url": "https://raw.githubusercontent.com/caronc/apprise/master/README.md",
-      "readme_sha256": "abcae81cfa299793a4e22cc8f74ea15b8571084d945be5d5eea9d495dd16e87c",
+      "readme_sha256": "4b27d7b3a1ab0c7e92ae21a41b53940fa5587226d73f1ee219089e2f01d3fcbc",
       "error": null
     },
     {
@@ -90,7 +150,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__cenodude__CrossWatch.md",
       "readme_download_url": "https://raw.githubusercontent.com/cenodude/CrossWatch/main/README.md",
-      "readme_sha256": "726e501be87c338e2c35bbf9a269e17388d42cbd4509bce484f2819f49e173aa",
+      "readme_sha256": "b154402617798180352f880103c86c19cfb32f32c82823ce35846007e5203ad7",
       "error": null
     },
     {
@@ -267,9 +327,9 @@
       "app_references": [
         "traefik-manager"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__chr0nzz__traefik-manager.md",
-      "readme_download_url": "https://raw.githubusercontent.com/chr0nzz/traefik-manager/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "887ff1114165a3dc42e8f35410b8f9cad2b4553160158084f3455d134887c112",
       "error": null
     },
@@ -297,10 +357,10 @@
       "app_references": [
         "tududi"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__chrisvel__tududi.md",
-      "readme_download_url": null,
-      "readme_sha256": "99077126027a5f009f71f9db68bfce2cf282d01a66c910f65713474413048366",
+      "readme_download_url": "https://raw.githubusercontent.com/chrisvel/tududi/main/README.md",
+      "readme_sha256": "abf644dd7fd006e9a36753b52bf6750e7c3b5a55a6fcc42e5f88c04b871c2059",
       "error": null
     },
     {
@@ -432,9 +492,9 @@
       "app_references": [
         "whodb"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__clidey__whodb.md",
-      "readme_download_url": "https://raw.githubusercontent.com/clidey/whodb/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4b1cc5cab8d0f5b0430c9b91008540fb5920d371748bbf3fbedd6317176607f1",
       "error": null
     },
@@ -462,9 +522,9 @@
       "app_references": [
         "cloudpanel"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__cloudpanel-io__cloudpanel-ce.md",
-      "readme_download_url": "https://raw.githubusercontent.com/cloudpanel-io/cloudpanel-ce/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f209e54ec8774d58517b0a5ebd512d2381d48ae08bc087c176c974885778eeea",
       "error": null
     },
@@ -642,9 +702,9 @@
       "app_references": [
         "tracearr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__connorgallopo__Tracearr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/connorgallopo/Tracearr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "488fe1d226bdd61a16edd55196d330e5ec9e3966722b732c98474166f8941c90",
       "error": null
     },
@@ -660,7 +720,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__contao__contao.md",
       "readme_download_url": "https://raw.githubusercontent.com/contao/contao/main/README.md",
-      "readme_sha256": "de9ae9174a5a566d50d26f063fce3f8f80d88be42a4712e57a38930ec1742091",
+      "readme_sha256": "8b995c9d0980793655015c8787b5a403f5c4c2a569e55a664c73f67b20203870",
       "error": null
     },
     {
@@ -691,66 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__convos-chat__convos.md",
       "readme_download_url": null,
       "readme_sha256": "b706fe1efd8c4942fad368272ba414b979aec7bcf1315d1b15d50e62d154e1ed",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/cooklang/cookcli",
-      "repo_url": "github.com/cooklang/cookcli",
-      "host": "github.com",
-      "owner": "cooklang",
-      "repo": "cookcli",
-      "app_references": [
-        "cookcli"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__cooklang__cookcli.md",
-      "readme_download_url": null,
-      "readme_sha256": "f576edbd17120ef71ad91869ec8b0d1abee12164e1366380119e56e6697f6a18",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/coollabsio/coolify",
-      "repo_url": "github.com/coollabsio/coolify",
-      "host": "github.com",
-      "owner": "coollabsio",
-      "repo": "coolify",
-      "app_references": [
-        "coolify"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__coollabsio__coolify.md",
-      "readme_download_url": null,
-      "readme_sha256": "66415c8965246aff51858bfdf7abfa5446624795b49000898e0da54593e6eaf0",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/coralproject/talk",
-      "repo_url": "github.com/coralproject/talk",
-      "host": "github.com",
-      "owner": "coralproject",
-      "repo": "talk",
-      "app_references": [
-        "voxmedia-coral"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__coralproject__talk.md",
-      "readme_download_url": null,
-      "readme_sha256": "a494a4dc46ee59ba1b39dca4b83680390ba97348938993b3edb24f86e0be63bf",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/corenting/eddrit",
-      "repo_url": "github.com/corenting/eddrit",
-      "host": "github.com",
-      "owner": "corenting",
-      "repo": "eddrit",
-      "app_references": [
-        "eddrit"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__corenting__eddrit.md",
-      "readme_download_url": null,
-      "readme_sha256": "d5e20a0f19519e95197351e8592610e7a940850ac946288433c5838f5b471361",
       "error": null
     }
   ]

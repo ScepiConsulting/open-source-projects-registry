@@ -87,14 +87,12 @@ Prior versions of Jackett are no longer supported.
  * AniRena
  * AniSource
  * ApacheTorrent
- * arab-torrents.com
  * AudioBook Bay (ABB)
  * Bangumi Moe
  * BigFANGroup
  * BlueRoms
  * BT.etree
  * BTdirectory (BT目录)
- * btstate
  * Byrutor
  * Catorrent
  * CrackingPatching
@@ -165,7 +163,6 @@ Prior versions of Jackett are no longer supported.
  * TorrentGalaxyClone
  * TorrentKitty
  * TorrentProject2
- * TorrentQQ (토렌트큐큐)
  * Torrents.csv
  * Torrentsome (토렌트썸)
  * Torrenttip (토렌트팁)
@@ -437,7 +434,6 @@ Prior versions of Jackett are no longer supported.
  * ImmortalSeed (iS)
  * Immortuos
  * Indietorrents [![(invite needed)][inviteneeded]](#)
- * INFINITY [PAY2DL] [![(invite needed)][inviteneeded]](#)
  * InfinityHD
  * Infire
  * Insane Tracker
@@ -545,6 +541,7 @@ Prior versions of Jackett are no longer supported.
  * PT分享站 (itzmx)
  * PTCafe (咖啡)
  * PTCC (我的PT)
+ * PTCDY (传道院) [![(invite needed)][inviteneeded]](#)
  * PTerClub (PT之友俱乐部)
  * PTFans
  * PTFiles (PTF)
@@ -677,6 +674,7 @@ Prior versions of Jackett are no longer supported.
  * Upscale Vault
  * UTOPIA
  * Vault network
+ * VC-Lib [![(invite needed)][inviteneeded]](#)
  * VietMediaF
  * White Angel
  * WinterSakura [![(invite needed)][inviteneeded]](#)

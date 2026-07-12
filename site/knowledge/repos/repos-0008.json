@@ -1,8 +1,53 @@
 {
   "chunk": 8,
   "count": 50,
-  "generated_at": "2026-07-05T06:47:00Z",
+  "generated_at": "2026-07-12T06:04:00Z",
   "items": [
+    {
+      "repo_key": "github.com/adnanh/webhook",
+      "repo_url": "github.com/adnanh/webhook",
+      "host": "github.com",
+      "owner": "adnanh",
+      "repo": "webhook",
+      "app_references": [
+        "adnanh-webhook"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__adnanh__webhook.md",
+      "readme_download_url": null,
+      "readme_sha256": "d600709d9bf31c0077ade699bee7760f72a2ac315130e444be5436ed5fc16da9",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/advplyr/audiobookshelf",
+      "repo_url": "github.com/advplyr/audiobookshelf",
+      "host": "github.com",
+      "owner": "advplyr",
+      "repo": "audiobookshelf",
+      "app_references": [
+        "audiobookshelf"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__advplyr__audiobookshelf.md",
+      "readme_download_url": null,
+      "readme_sha256": "4c6a10335f13c741165e472593ef5ba8b43d953bd9a448106a933ec7fa7d3291",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/afairgiant/MediKeep",
+      "repo_url": "github.com/afairgiant/MediKeep",
+      "host": "github.com",
+      "owner": "afairgiant",
+      "repo": "MediKeep",
+      "app_references": [
+        "medikeep"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__afairgiant__MediKeep.md",
+      "readme_download_url": null,
+      "readme_sha256": "a52a1cfb518ce980a448e439bce05e63310121293dea30eaf88f6e3fbf7def99",
+      "error": null
+    },
     {
       "repo_key": "github.com/afaneca/myfin",
       "repo_url": "github.com/afaneca/myfin",
@@ -102,10 +147,10 @@
       "app_references": [
         "immich-public-proxy"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__alangrainger__immich-public-proxy.md",
-      "readme_download_url": null,
-      "readme_sha256": "d3fa38423178b3cce1f07e4be5e869dcc8bfb59314634aa3eb8ee084c27a8d4b",
+      "readme_download_url": "https://raw.githubusercontent.com/alangrainger/immich-public-proxy/main/README.md",
+      "readme_sha256": "c1f4afc1c771465b87ceb755ccdedecef23177d74791abc8ef3b2f824805e0a1",
       "error": null
     },
     {
@@ -207,9 +252,9 @@
       "app_references": [
         "aliasvault"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__aliasvault__aliasvault.md",
-      "readme_download_url": "https://raw.githubusercontent.com/aliasvault/aliasvault/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6dc08a6086a8467201c80823a604a28e45ee294b01fdb38ae31d5441119ef459",
       "error": null
     },
@@ -297,10 +342,10 @@
       "app_references": [
         "reactive-resume"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__amruthpillai__reactive-resume.md",
-      "readme_download_url": null,
-      "readme_sha256": "8b31a70d5730438812e3e39bdb857db07bfd44ceb6288d73c8092eafe10ebfa6",
+      "readme_download_url": "https://raw.githubusercontent.com/amruthpillai/reactive-resume/main/README.md",
+      "readme_sha256": "cbd1551439f32c4d467245e40426826ee32347c4ed8b5f6b319b45e4727225d5",
       "error": null
     },
     {
@@ -312,10 +357,10 @@
       "app_references": [
         "dashwise"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__andreasmolnardev__dashwise.md",
-      "readme_download_url": null,
-      "readme_sha256": "9a9f21d26745d9c5ce3920372ce84eb1c8144b7aa270296674ea2d2660e7e4a5",
+      "readme_download_url": "https://raw.githubusercontent.com/andreasmolnardev/dashwise/dev/README.md",
+      "readme_sha256": "3daf3723970413b808c40a1f3b4fec8d832e746819e08c72f63d64a3934984b1",
       "error": null
     },
     {
@@ -432,10 +477,10 @@
       "app_references": [
         "apache-answer"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__apache__answer.md",
-      "readme_download_url": null,
-      "readme_sha256": "d3ade32e0ab02c1a689cbad46bc38bc498eb46b3aa714b862d5ab6879f83bea0",
+      "readme_download_url": "https://raw.githubusercontent.com/apache/answer/main/README.md",
+      "readme_sha256": "8304c51aad715c4ae4b98f433c58b9cd20069f884732f5949f363a06f496e490",
       "error": null
     },
     {
@@ -462,9 +507,9 @@
       "app_references": [
         "apache-superset"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__apache__superset.md",
-      "readme_download_url": "https://raw.githubusercontent.com/apache/superset/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "5b73d052a790d587d52a903b9f362ebc4f09a2ef46f9d07aa749e6abf0d48aa6",
       "error": null
     },
@@ -687,10 +732,10 @@
       "app_references": [
         "poenskelisten"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__aunefyren__poenskelisten.md",
-      "readme_download_url": null,
-      "readme_sha256": "42f25ea5237e0d3e2772caa98323b33d98e8e7c157c7edd0dd663668634c4ed4",
+      "readme_download_url": "https://raw.githubusercontent.com/aunefyren/poenskelisten/main/README.md",
+      "readme_sha256": "6876416f6b884213078576121489b4b24bf824b73760917bd4c084728e2b1bc6",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__aureuserp__aureuserp.md",
       "readme_download_url": null,
       "readme_sha256": "0efb38e1bf7770ed09aacbbbac75aaf0e6317d90820989f3d5ca5e8500d92241",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/authelia/authelia",
-      "repo_url": "github.com/authelia/authelia",
-      "host": "github.com",
-      "owner": "authelia",
-      "repo": "authelia",
-      "app_references": [
-        "authelia"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__authelia__authelia.md",
-      "readme_download_url": null,
-      "readme_sha256": "46089c2fde988b44811f8938db760cfdab41e6344032583b8ba800f69d7e8da6",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/authgear/authgear-server",
-      "repo_url": "github.com/authgear/authgear-server",
-      "host": "github.com",
-      "owner": "authgear",
-      "repo": "authgear-server",
-      "app_references": [
-        "authgear"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__authgear__authgear-server.md",
-      "readme_download_url": null,
-      "readme_sha256": "92f8251a31f6e79d3776127e8be9e72e823ca3878ebaf4121255916d1ac9cd2d",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/autobrr/autobrr",
-      "repo_url": "github.com/autobrr/autobrr",
-      "host": "github.com",
-      "owner": "autobrr",
-      "repo": "autobrr",
-      "app_references": [
-        "autobrr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__autobrr__autobrr.md",
-      "readme_download_url": null,
-      "readme_sha256": "36c219fa06dc94c73f1f36bc60531a96539d33330274ffb39dfa3f7fe27ab9bc",
       "error": null
     }
   ]

@@ -60,7 +60,7 @@ If your company would like to sponsor Reactive Resume, email [hello@amruthpillai
 - Professionally designed templates
 - A4 and Letter size support
 - Customizable colors, fonts, and spacing
-- Custom CSS for advanced styling
+- Structured Style Rules for section and text styling
 
 **Privacy & Control**
 
@@ -240,11 +240,11 @@ Other ways to support:
 
 ## Star History
 
-<a href="https://www.star-history.com/#amruthpillai/reactive-resume&type=date&legend=top-left">
+<a href="https://www.star-history.com/?repos=amruthpillai%2Freactive-resume&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=amruthpillai/reactive-resume&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=amruthpillai/reactive-resume&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=amruthpillai/reactive-resume&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=amruthpillai/reactive-resume&type=date&theme=dark&legend=top-left&sealed_token=BF8sVMes0z5BhdkMhtFklhxeikeGUrSyW-CcY9E_RCQI5zqUHEbMRwcB075fUewbAtlNoCnDlWhDWjrDGhTcXMojsS2I0RCqcL-Y9p3Ez3H1A2QpRMthjFilP0YOCJEE9AZqRrqzlvj1uU2y5ixarXOuUXuuSw5DkLMViSMD8Ldl0H3BEgclnjWw4fI4" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=amruthpillai/reactive-resume&type=date&legend=top-left&sealed_token=BF8sVMes0z5BhdkMhtFklhxeikeGUrSyW-CcY9E_RCQI5zqUHEbMRwcB075fUewbAtlNoCnDlWhDWjrDGhTcXMojsS2I0RCqcL-Y9p3Ez3H1A2QpRMthjFilP0YOCJEE9AZqRrqzlvj1uU2y5ixarXOuUXuuSw5DkLMViSMD8Ldl0H3BEgclnjWw4fI4" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=amruthpillai/reactive-resume&type=date&legend=top-left&sealed_token=BF8sVMes0z5BhdkMhtFklhxeikeGUrSyW-CcY9E_RCQI5zqUHEbMRwcB075fUewbAtlNoCnDlWhDWjrDGhTcXMojsS2I0RCqcL-Y9p3Ez3H1A2QpRMthjFilP0YOCJEE9AZqRrqzlvj1uU2y5ixarXOuUXuuSw5DkLMViSMD8Ldl0H3BEgclnjWw4fI4" />
  </picture>
 </a>
 

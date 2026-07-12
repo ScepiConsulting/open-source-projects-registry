@@ -1,8 +1,171 @@
 {
   "chunk": 27,
-  "count": 10,
-  "generated_at": "2026-07-05T06:47:00Z",
+  "count": 17,
+  "generated_at": "2026-07-12T06:04:00Z",
   "items": [
+    {
+      "reference": "zabbix",
+      "name": "Zabbix",
+      "website": "www.zabbix.com/",
+      "description": "Real-time monitoring of IT components and services",
+      "repo_url": "github.com/zabbix/zabbix",
+      "repo_key": "github.com/zabbix/zabbix",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "15",
+      "license": null,
+      "tags": [
+        "Monitoring",
+        "Uptime"
+      ],
+      "readme_path": "knowledge/readmes/github.com__zabbix__zabbix.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "e7c64ed16a00b578d55ed46551caa0da86a57a0c061c7635776e4478dca6c4f2"
+      }
+    },
+    {
+      "reference": "zammad",
+      "name": "Zammad",
+      "website": "zammad.org",
+      "description": "Powerful helpdesk solution",
+      "repo_url": "github.com/zammad/zammad",
+      "repo_key": "github.com/zammad/zammad",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "30",
+      "license": null,
+      "tags": [
+        "Note-Taking",
+        "Support / Ticketing"
+      ],
+      "readme_path": "knowledge/readmes/github.com__zammad__zammad.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "de199140465507307604ed6fd4db4fa17600f40174766100aeeeb44a8dfc4c9d"
+      }
+    },
+    {
+      "reference": "zaneops",
+      "name": "ZaneOps",
+      "website": "zaneops.dev",
+      "description": "Platform for deploying static sites, web apps, databases, and CRON jobs",
+      "repo_url": "github.com/zane-ops/zane-ops",
+      "repo_key": "github.com/zane-ops/zane-ops",
+      "stars": null,
+      "forks": 8,
+      "updated_at": "29",
+      "license": null,
+      "tags": [
+        "Deployment",
+        "Static Site"
+      ],
+      "readme_path": "knowledge/readmes/github.com__zane-ops__zane-ops.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "dd3306b426bdb40ec7eaf0318fbbf8c67cefefb674bd917792b9aaec7f65b110"
+      }
+    },
+    {
+      "reference": "zen-notes",
+      "name": "Zen Notes",
+      "website": "www.sheshbabu.com/zen/",
+      "description": "Simple Markdown note-taking app",
+      "repo_url": "github.com/sheshbabu/zen",
+      "repo_key": "github.com/sheshbabu/zen",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "20",
+      "license": null,
+      "tags": [
+        "Note-Taking",
+        "Remote Access",
+        "Web Server"
+      ],
+      "readme_path": "knowledge/readmes/github.com__sheshbabu__zen.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "18837638f4eb81d249af1b5f84ec6ebce808dafc204128fe9d45471ea09d8110"
+      }
+    },
+    {
+      "reference": "zennotes",
+      "name": "ZenNotes",
+      "website": "zennotes.org",
+      "description": "Keyboard-first Markdown note-taking",
+      "repo_url": "github.com/ZenNotes/zennotes",
+      "repo_key": "github.com/ZenNotes/zennotes",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Note-Taking",
+        "Remote Access",
+        "Web Server"
+      ],
+      "readme_path": "knowledge/readmes/github.com__ZenNotes__zennotes.md",
+      "readme_status": "ok",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "22f2be25015f6ac8a5a74a8a4ae0d237044910d3306692dec35a7794edbecc15"
+      }
+    },
+    {
+      "reference": "zensical",
+      "name": "Zensical",
+      "website": "zensical.org/docs/",
+      "description": "Modern static site generator",
+      "repo_url": "github.com/zensical/zensical",
+      "repo_key": "github.com/zensical/zensical",
+      "stars": null,
+      "forks": 15,
+      "updated_at": "31",
+      "license": null,
+      "tags": [
+        "Static Site",
+        "Wiki"
+      ],
+      "readme_path": "knowledge/readmes/github.com__zensical__zensical.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "5d8db665d4a23741fa513f8bd8b3458f37d7711981565930b31377ff818a4a33"
+      }
+    },
+    {
+      "reference": "zerobyte",
+      "name": "Zerobyte",
+      "website": "zerobyte.app",
+      "description": "Backup automation with remote storage support",
+      "repo_url": "github.com/nicotsx/zerobyte",
+      "repo_key": "github.com/nicotsx/zerobyte",
+      "stars": null,
+      "forks": 0,
+      "updated_at": "38",
+      "license": null,
+      "tags": [
+        "Backups",
+        "Search Engines"
+      ],
+      "readme_path": "knowledge/readmes/github.com__nicotsx__zerobyte.md",
+      "readme_status": "not_modified",
+      "provenance": {
+        "source": "selfhst/cdn directory/software.json",
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "01f98026d7c935ad98f08d390b06c00bfb0bfa095447d0bef651e8f5c4db9e84"
+      }
+    },
     {
       "reference": "zigbee2mqtt",
       "name": "Zigbee2MQTT",
@@ -22,8 +185,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-07-05T06:39:12Z",
-        "row_hash": "9205dd0df6c37bb81cad15b5f010be0a6e9bf9b25736d93b388ef87f4d2ebd3b"
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "da7e285b65df4cb8fc188ee1f643274a59272d1e196797a9a625d91707ae4b41"
       }
     },
     {
@@ -47,8 +210,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-07-05T06:39:12Z",
-        "row_hash": "2d83aac74f67cba70808c9f053aec54076470d2162c0595d1035507695b2fb14"
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "ee909c975a72a556b2a3b9e1d9a4a930360fdb287f98a69ada5ab71788492ace"
       }
     },
     {
@@ -70,8 +233,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-07-05T06:39:12Z",
-        "row_hash": "3dfccca69670c5a2c8ecf537b8aa5812ea66ef833adcfdf6885800448fb5837b"
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "ff4e2f1e7edf3a20e64bad4146fd9403ac02757da9b4a59d07409bf5769eca6a"
       }
     },
     {
@@ -94,8 +257,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-07-05T06:39:12Z",
-        "row_hash": "156b8101f29c03e2c2430d38a4cd1a1e704ec656f41fa7f7f5d9c2acf95a282a"
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "53d7fbf5ec269e57bdd4a06c82eb6e07f888df9c7bd13f04fd08a27ce0da9608"
       }
     },
     {
@@ -117,8 +280,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-07-05T06:39:12Z",
-        "row_hash": "b2047940895a983b283d9663362705567086922e004728072eff692e1fef455f"
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "3419f0eaed8c8ab4509f05b2cdf15ba038ad041fcc32834c7665825f8634314d"
       }
     },
     {
@@ -140,8 +303,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-07-05T06:39:12Z",
-        "row_hash": "08c43d86d4ec11a9e3c61af9a03fc164355faacb4eb19f8c9c16d3b763882317"
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "76efe81bfa27f3cd43a5035a0531064ef18676982a412fcf9fb247ccda9f9658"
       }
     },
     {
@@ -163,8 +326,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-07-05T06:39:12Z",
-        "row_hash": "f1e591efdad4f70bcd84aed255840a7366412ae5388255d236d1700b44d01fcc"
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "b678d915c97185602895fdf37bc6700be7430cdb7b34bf61753f095d4189af94"
       }
     },
     {
@@ -186,8 +349,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-07-05T06:39:12Z",
-        "row_hash": "fd23dfc6859500bb2ef7966b6d426f1f59b50cc2ab468ed310e91b1a5aac52b5"
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "3dc6e11de30bd8b21a19162c813b5f5af09217c3abf73660e5da0c05dbcb4cbb"
       }
     },
     {
@@ -209,8 +372,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-07-05T06:39:12Z",
-        "row_hash": "ff897adb80c97b4731da05a0cc6c6c8c86a5ace49323710445c487eed260bdc6"
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "0bb5d5a4ffc4af10e18f37c850b005e86fbe9380da22ef57f45022fb19227a18"
       }
     },
     {
@@ -232,8 +395,8 @@
       "readme_status": "not_modified",
       "provenance": {
         "source": "selfhst/cdn directory/software.json",
-        "fetched_at": "2026-07-05T06:39:12Z",
-        "row_hash": "c7711c042835e60235d3008c53eafce89a6dc66430e87a095cc2f0d8f09264ce"
+        "fetched_at": "2026-07-12T05:56:08Z",
+        "row_hash": "fa8df04fe809a54169bad6226224c44c62216062e906105557a1dc3d9178daae"
       }
     }
   ]

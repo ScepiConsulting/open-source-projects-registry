@@ -1,8 +1,38 @@
 {
   "chunk": 7,
   "count": 50,
-  "generated_at": "2026-07-05T06:47:00Z",
+  "generated_at": "2026-07-12T06:04:00Z",
   "items": [
+    {
+      "repo_key": "github.com/TomBursch/kitchenowl",
+      "repo_url": "github.com/TomBursch/kitchenowl",
+      "host": "github.com",
+      "owner": "TomBursch",
+      "repo": "kitchenowl",
+      "app_references": [
+        "kitchenowl"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__TomBursch__kitchenowl.md",
+      "readme_download_url": null,
+      "readme_sha256": "f9dedaa5f945914ec5d191e781568b785ffdbf833eef1e4f8893375595d04fac",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/ToolJet/ToolJet",
+      "repo_url": "github.com/ToolJet/ToolJet",
+      "host": "github.com",
+      "owner": "ToolJet",
+      "repo": "ToolJet",
+      "app_references": [
+        "tooljet"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__ToolJet__ToolJet.md",
+      "readme_download_url": null,
+      "readme_sha256": "077435e805ebefcad2aae589817c2a44ff4a8011ddb4346cde49e0b3dcd2bd7d",
+      "error": null
+    },
     {
       "repo_key": "github.com/TraceApps/nutritrace",
       "repo_url": "github.com/TraceApps/nutritrace",
@@ -12,10 +42,10 @@
       "app_references": [
         "nutritrace"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__TraceApps__nutritrace.md",
-      "readme_download_url": null,
-      "readme_sha256": "7d7e277148d3df981f8e0ecc31125872a6deade3ea8ec997e7843b1cf410f3ef",
+      "readme_download_url": "https://raw.githubusercontent.com/TraceApps/nutritrace/main/README.md",
+      "readme_sha256": "514cd9690e560232061c8d65b8568e018e45c31313474730887280a8c535d94f",
       "error": null
     },
     {
@@ -27,9 +57,9 @@
       "app_references": [
         "trilium-notes"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__TriliumNext__Trilium.md",
-      "readme_download_url": "https://raw.githubusercontent.com/TriliumNext/Trilium/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "be789a23b92c56ef60b5a529c8db9f0f83d98fca344fe2ef3982d54ec12fd0fc",
       "error": null
     },
@@ -90,7 +120,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Tymeslot__tymeslot.md",
       "readme_download_url": "https://raw.githubusercontent.com/Tymeslot/tymeslot/main/README.md",
-      "readme_sha256": "01828604a20c35282855c3c9e3384267416917a9f93354002586b81bbbc073fb",
+      "readme_sha256": "a7aae4bc183bd0d0f45187f68342de57dff6bac9aaeef1cef660f496d3985841",
       "error": null
     },
     {
@@ -132,9 +162,9 @@
       "app_references": [
         "octo-fiesta"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__V1ck3s__octo-fiesta.md",
-      "readme_download_url": "https://raw.githubusercontent.com/V1ck3s/octo-fiesta/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b4aeab60bb26d58ca6306130d246f18b529b478bf3ded91bcf51fd917188c983",
       "error": null
     },
@@ -327,10 +357,10 @@
       "app_references": [
         "wordpress"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__WordPress__WordPress.md",
-      "readme_download_url": null,
-      "readme_sha256": "491ef4578defac49ddbd8a3df9fa8dfc61bb6d140a7532fd7948b259b07223e2",
+      "readme_download_url": "https://raw.githubusercontent.com/WordPress/WordPress/master/readme.html",
+      "readme_sha256": "f6f4c1c8f625aba6317bc3d2f7d1fa4ccfcbbaa7ad086475c6e9da99528632ec",
       "error": null
     },
     {
@@ -439,6 +469,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/ZenNotes/zennotes",
+      "repo_url": "github.com/ZenNotes/zennotes",
+      "host": "github.com",
+      "owner": "ZenNotes",
+      "repo": "zennotes",
+      "app_references": [
+        "zennotes"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__ZenNotes__zennotes.md",
+      "readme_download_url": "https://raw.githubusercontent.com/ZenNotes/zennotes/main/README.md",
+      "readme_sha256": "15dd771a915c06284cff53ab336b44e9555411d8c94ba1bd6442c68682f89730",
+      "error": null
+    },
+    {
       "repo_key": "github.com/ZhFahim/anchor",
       "repo_url": "github.com/ZhFahim/anchor",
       "host": "github.com",
@@ -507,9 +552,9 @@
       "app_references": [
         "excalidash"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ZimengXiong__ExcaliDash.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ZimengXiong/ExcaliDash/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "35b1d7bfcd38a879e2a54a5d3eb86b8d5d07618780f646bba7f73818722191c4",
       "error": null
     },
@@ -525,7 +570,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ZoeyVid__NPMplus.md",
       "readme_download_url": "https://raw.githubusercontent.com/ZoeyVid/NPMplus/develop/README.md",
-      "readme_sha256": "24638e9a5c852e9c262cd5978f7897fdee7fbf831af0ee9bf95848b244a71d8b",
+      "readme_sha256": "559a39c3d36b5940c01f73d5500f584e657afbe8f47221cde622433311bb2cee",
       "error": null
     },
     {
@@ -552,10 +597,10 @@
       "app_references": [
         "meetable"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__aaronpk__Meetable.md",
-      "readme_download_url": null,
-      "readme_sha256": "e98ef84f0990ae6ceff164a64e0b696491efa775754583a755d98e211d13e2f0",
+      "readme_download_url": "https://raw.githubusercontent.com/aaronpk/Meetable/main/README.md",
+      "readme_sha256": "e9de0c25babc6005c5afd6806f2583f3a4e86147d62f2e907a7dd8e932aa8877",
       "error": null
     },
     {
@@ -627,9 +672,9 @@
       "app_references": [
         "activepieces"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__activepieces__activepieces.md",
-      "readme_download_url": "https://raw.githubusercontent.com/activepieces/activepieces/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "cd713ed6ae78214e2a54266541df2b8c1de6163312dd499a83d59a930065ed1b",
       "error": null
     },
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__adminsyspro__proxcenter-ui.md",
       "readme_download_url": null,
       "readme_sha256": "b6335f3fc59ad0f8b297545b355296660abab8412e151ddbb10941377a16a19a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/adnanh/webhook",
-      "repo_url": "github.com/adnanh/webhook",
-      "host": "github.com",
-      "owner": "adnanh",
-      "repo": "webhook",
-      "app_references": [
-        "adnanh-webhook"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__adnanh__webhook.md",
-      "readme_download_url": null,
-      "readme_sha256": "d600709d9bf31c0077ade699bee7760f72a2ac315130e444be5436ed5fc16da9",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/advplyr/audiobookshelf",
-      "repo_url": "github.com/advplyr/audiobookshelf",
-      "host": "github.com",
-      "owner": "advplyr",
-      "repo": "audiobookshelf",
-      "app_references": [
-        "audiobookshelf"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__advplyr__audiobookshelf.md",
-      "readme_download_url": "https://raw.githubusercontent.com/advplyr/audiobookshelf/master/readme.md",
-      "readme_sha256": "4c6a10335f13c741165e472593ef5ba8b43d953bd9a448106a933ec7fa7d3291",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/afairgiant/MediKeep",
-      "repo_url": "github.com/afairgiant/MediKeep",
-      "host": "github.com",
-      "owner": "afairgiant",
-      "repo": "MediKeep",
-      "app_references": [
-        "medikeep"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__afairgiant__MediKeep.md",
-      "readme_download_url": null,
-      "readme_sha256": "a52a1cfb518ce980a448e439bce05e63310121293dea30eaf88f6e3fbf7def99",
       "error": null
     }
   ]

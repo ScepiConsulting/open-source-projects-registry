@@ -71,7 +71,7 @@ We stand on the shoulders of giants.  Cronicle was built using these awesome Nod
 | Module Name | Description | License |
 |-------------|-------------|---------|
 | [async](https://www.npmjs.com/package/async) | Higher-order functions and common patterns for asynchronous code. | MIT |
-| [bcrypt-node](https://www.npmjs.com/package/bcrypt-node) | Native JS implementation of BCrypt for Node. | BSD 3-Clause |
+| [bcryptjs](https://www.npmjs.com/package/bcryptjs) | Optimized bcrypt in JavaScript with zero dependencies. | BSD 3-Clause |
 | [chart.js](https://www.npmjs.com/package/chart.js) | Simple HTML5 charts using the canvas element. | MIT |
 | [daemon](https://www.npmjs.com/package/daemon) | Add-on for creating \*nix daemons. | MIT |
 | [errno](https://www.npmjs.com/package/errno) | Node.js libuv errno details exposed. | MIT |

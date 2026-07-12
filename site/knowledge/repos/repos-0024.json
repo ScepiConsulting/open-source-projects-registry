@@ -1,8 +1,98 @@
 {
   "chunk": 24,
   "count": 50,
-  "generated_at": "2026-07-05T06:47:01Z",
+  "generated_at": "2026-07-12T06:04:00Z",
   "items": [
+    {
+      "repo_key": "github.com/stashapp/stash",
+      "repo_url": "github.com/stashapp/stash",
+      "host": "github.com",
+      "owner": "stashapp",
+      "repo": "stash",
+      "app_references": [
+        "stash"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__stashapp__stash.md",
+      "readme_download_url": null,
+      "readme_sha256": "9919670b3e5813dcd1175cc0fe3cf0fcf5092aa8a2e17446b22d2d7d32eeeb98",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/statamic/cms",
+      "repo_url": "github.com/statamic/cms",
+      "host": "github.com",
+      "owner": "statamic",
+      "repo": "cms",
+      "app_references": [
+        "statamic"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__statamic__cms.md",
+      "readme_download_url": null,
+      "readme_sha256": "fa8a65ec0fadea7a63c3440a0daca912ac41f5828d24224fcb4fd00fe51dee59",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/statping-ng/statping-ng",
+      "repo_url": "github.com/statping-ng/statping-ng",
+      "host": "github.com",
+      "owner": "statping-ng",
+      "repo": "statping-ng",
+      "app_references": [
+        "statping-ng"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__statping-ng__statping-ng.md",
+      "readme_download_url": null,
+      "readme_sha256": "65ebb0d29382438e80819dc76e3f9b50acbac772bab6ab878b2975f1df7ac7af",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/stefanpejcic/OpenPanel",
+      "repo_url": "github.com/stefanpejcic/OpenPanel",
+      "host": "github.com",
+      "owner": "stefanpejcic",
+      "repo": "OpenPanel",
+      "app_references": [
+        "openpanel"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__stefanpejcic__OpenPanel.md",
+      "readme_download_url": "https://raw.githubusercontent.com/stefanpejcic/OpenPanel/main/README.md",
+      "readme_sha256": "dbf17002b03998243cd0f96d2958268ba46d472fd3d17a169aa5b565a1e9a373",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/stephondoestech/unraid-config-guardian",
+      "repo_url": "github.com/stephondoestech/unraid-config-guardian",
+      "host": "github.com",
+      "owner": "stephondoestech",
+      "repo": "unraid-config-guardian",
+      "app_references": [
+        "unraid-guardian"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__stephondoestech__unraid-config-guardian.md",
+      "readme_download_url": null,
+      "readme_sha256": "534b33496d178dbeae46dd1c754bade4a9de5d6f342957b86a34c33d8f322123",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/stoatchat/stoatchat",
+      "repo_url": "github.com/stoatchat/stoatchat",
+      "host": "github.com",
+      "owner": "stoatchat",
+      "repo": "stoatchat",
+      "app_references": [
+        "stoat"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__stoatchat__stoatchat.md",
+      "readme_download_url": null,
+      "readme_sha256": "7b19453b98684863e2814ccf8e290dc274d1b36bb0d6b202e1a951583271a650",
+      "error": null
+    },
     {
       "repo_key": "github.com/stormkit-io/app-stormkit-io",
       "repo_url": "github.com/stormkit-io/app-stormkit-io",
@@ -117,9 +207,9 @@
       "app_references": [
         "lasuite-meet"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__suitenumerique__meet.md",
-      "readme_download_url": "https://raw.githubusercontent.com/suitenumerique/meet/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "cad278b690b6833ca011a75469820a758300a12d50f463471fe2170873fc0706",
       "error": null
     },
@@ -225,7 +315,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__syncloud__platform.md",
       "readme_download_url": "https://raw.githubusercontent.com/syncloud/platform/master/README.md",
-      "readme_sha256": "b6c2813cbae0ad2206c4812be420c850ee9e8f455db06ccc8c04e0005ed506e4",
+      "readme_sha256": "e3ad112a82f20699c7d35cf597026521ae270598e3db32556db4222d5c05cd5f",
       "error": null
     },
     {
@@ -417,10 +507,10 @@
       "app_references": [
         "teslamate"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__teslamate-org__teslamate.md",
-      "readme_download_url": null,
-      "readme_sha256": "eccbe4ccdb495878460a24c4a86c09816484f0ba2562cf0f9b11d4c306d2d76e",
+      "readme_download_url": "https://raw.githubusercontent.com/teslamate-org/teslamate/main/README.md",
+      "readme_sha256": "42d20969ab7e9c8d0a66bc1fb11fe38ebb50c5f522bff8bb1d3968786fff43d1",
       "error": null
     },
     {
@@ -432,9 +522,9 @@
       "app_references": [
         "geopulse"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__tess1o__geopulse.md",
-      "readme_download_url": "https://raw.githubusercontent.com/tess1o/geopulse/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "aaac380a2c92b30502236e8cf4a15cb8376a72d102069f01f0e0642a585af020",
       "error": null
     },
@@ -492,10 +582,10 @@
       "app_references": [
         "scraparr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__thecfu__scraparr.md",
-      "readme_download_url": null,
-      "readme_sha256": "ab11f18af26e4eb0262bb2dceb1e82453cee568f2579e5df659feeaa59524173",
+      "readme_download_url": "https://raw.githubusercontent.com/thecfu/scraparr/dev/README.md",
+      "readme_sha256": "2bd8837f68bf32d2fc617945a0ce48c3460abb49d5439e063d8fe32383f65adb",
       "error": null
     },
     {
@@ -507,10 +597,10 @@
       "app_references": [
         "kutt"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__thedevs-network__kutt.md",
-      "readme_download_url": null,
-      "readme_sha256": "720a409c8bea2b343f0e29770d848a8b56161152e985613181c9f7643fc3e25a",
+      "readme_download_url": "https://raw.githubusercontent.com/thedevs-network/kutt/main/README.md",
+      "readme_sha256": "12fd66dd4e5ccd12a6a3ca06c88f35ba173d20799bf69a9a0fffe7fde050b2c0",
       "error": null
     },
     {
@@ -552,10 +642,10 @@
       "app_references": [
         "onedev"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__theonedev__onedev.md",
-      "readme_download_url": null,
-      "readme_sha256": "cdc2625032f92e1c34ebda446fbc7e15ac2b94f334e9e84f5826a0c25fa7494a",
+      "readme_download_url": "https://raw.githubusercontent.com/theonedev/onedev/main/readme.md",
+      "readme_sha256": "381f89057ca65df06c6d1ce4293163c851f35be31aca6795b4ce96dfdb2e82d2",
       "error": null
     },
     {
@@ -661,96 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__tiehfood__thrifty.md",
       "readme_download_url": null,
       "readme_sha256": "83c0548d3cb218df2553a09052bb236fa4ed87177ccbb715136b6f6271d88f23",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/timothepoznanski/poznote",
-      "repo_url": "github.com/timothepoznanski/poznote",
-      "host": "github.com",
-      "owner": "timothepoznanski",
-      "repo": "poznote",
-      "app_references": [
-        "poznote"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__timothepoznanski__poznote.md",
-      "readme_download_url": "https://raw.githubusercontent.com/timothepoznanski/poznote/main/README.md",
-      "readme_sha256": "9b2a412cc66a0b6b52ef1c0c5b28cd7a0660917761cbd763cf7e618608957b78",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/tinyauthapp/tinyauth",
-      "repo_url": "github.com/tinyauthapp/tinyauth",
-      "host": "github.com",
-      "owner": "tinyauthapp",
-      "repo": "tinyauth",
-      "app_references": [
-        "tinyauth"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__tinyauthapp__tinyauth.md",
-      "readme_download_url": "https://raw.githubusercontent.com/tinyauthapp/tinyauth/main/README.md",
-      "readme_sha256": "9f56868ae131e50f1705eb29c4b5981a4b16007fe7fd66301c4e4f12fcb10111",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/tirrenotechnologies/tirreno",
-      "repo_url": "github.com/tirrenotechnologies/tirreno",
-      "host": "github.com",
-      "owner": "tirrenotechnologies",
-      "repo": "tirreno",
-      "app_references": [
-        "tirreno"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__tirrenotechnologies__tirreno.md",
-      "readme_download_url": "https://raw.githubusercontent.com/tirrenotechnologies/tirreno/master/README.md",
-      "readme_sha256": "7ccbfaf9d212af0c8cb7b5565d7e0cf697725cdac443c33b9528cdf0bbd1759a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/tobychui/zoraxy",
-      "repo_url": "github.com/tobychui/zoraxy",
-      "host": "github.com",
-      "owner": "tobychui",
-      "repo": "zoraxy",
-      "app_references": [
-        "zoraxy"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__tobychui__zoraxy.md",
-      "readme_download_url": null,
-      "readme_sha256": "cb41baa68a5380e432320296767693a911893b0d280dfbe3bcbe20c1001099c7",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/toddsundsted/ktistec",
-      "repo_url": "github.com/toddsundsted/ktistec",
-      "host": "github.com",
-      "owner": "toddsundsted",
-      "repo": "ktistec",
-      "app_references": [
-        "ktistec"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__toddsundsted__ktistec.md",
-      "readme_download_url": "https://raw.githubusercontent.com/toddsundsted/ktistec/main/README.md",
-      "readme_sha256": "8ee8373aa7404f6b734ab61f4b7dd90f8544e12f772f8bc6184cf2d9a0a43507",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/toeverything/AFFiNE",
-      "repo_url": "github.com/toeverything/AFFiNE",
-      "host": "github.com",
-      "owner": "toeverything",
-      "repo": "AFFiNE",
-      "app_references": [
-        "affine"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__toeverything__AFFiNE.md",
-      "readme_download_url": null,
-      "readme_sha256": "aec16e8a48e400da64f524cc65ba5f2110e083e0d3072ed8afe6da5f32f72370",
       "error": null
     }
   ]

@@ -28,7 +28,7 @@
 
 ---
 
-Warpgate is a smart & fully transparent SSH, HTTPS, Kubernetes, MySQL, PostgreSQL bastion host that doesn't require a client app or an SSH wrapper.
+Warpgate is a smart & fully transparent SSH, HTTPS, Kubernetes, MySQL, PostgreSQL, RDP and VNC bastion host that doesn't require a client app or an SSH wrapper.
 
 * Set it up in your DMZ, add user accounts and easily assign them to specific hosts and URLs within the network.
 * Warpgate will record every session for you to view (live) and replay later through a built-in admin web UI.
@@ -99,7 +99,7 @@ Warpgate is being actively used in enterprise settings.
 
 ## How it works
 
-Warpgate is a service that you deploy on the bastion/DMZ host, which will accept SSH, HTTPS, Kubernetes, MySQL and PostgreSQL connections and provide an (optional) web admin UI.
+Warpgate is a service that you deploy on the bastion/DMZ host, which will accept SSH, HTTPS, Kubernetes, MySQL, PostgreSQL, RDP and VNC connections and provide an (optional) web admin UI.
 
 Run `warpgate setup` to interactively generate a config file, including port bindings. See [Getting started](https://warpgate.null.page/getting-started/) for details.
 
@@ -185,6 +185,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/theharold"><img src="https://avatars.githubusercontent.com/u/19338240?v=4?s=100" width="100px;" alt="theharold"/><br /><sub><b>theharold</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=theharold" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/noammeltzer-ax"><img src="https://avatars.githubusercontent.com/u/240492416?v=4?s=100" width="100px;" alt="noammeltzer-ax"/><br /><sub><b>noammeltzer-ax</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=noammeltzer-ax" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/snvtac"><img src="https://avatars.githubusercontent.com/u/18233097?v=4?s=100" width="100px;" alt="Haoqian"/><br /><sub><b>Haoqian</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=snvtac" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/alistarle"><img src="https://avatars.githubusercontent.com/u/4499513?v=4?s=100" width="100px;" alt="Victor Coutellier"/><br /><sub><b>Victor Coutellier</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=alistarle" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

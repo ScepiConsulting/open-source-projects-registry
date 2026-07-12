@@ -77,23 +77,25 @@ The result: VPS-level isolation on shared hosting infrastructure, without the VP
 OpenPanel is a truly [OS-agnostic](https://www.techtarget.com/whatis/definition/agnostic) control panel. Supported OS:
 
 <!-- OS_TEST_RESULTS_START -->
-| Operating System | Version | Last Tested | Status | Notes |
-|---|---|---|---|---|
-| Ubuntu | 22 | 2026-06-30 16:48 UTC | ✅ Pass |  |
-| Ubuntu | 24 | 2026-06-30 17:03 UTC | ✅ Pass | **recommended for AMD CPU** |
-| Ubuntu | 26 | 2026-06-30 16:55 UTC | ✅ Pass |  |
-| Debian | 10 | | | |
-| Debian | 11 | 2026-06-30 17:09 UTC | ✅ Pass |  |
-| Debian | 12 | 2026-06-30 17:24 UTC | ✅ Pass |  |
-| Debian | 13 | 2026-06-30 17:38 UTC | ✅ Pass |  |
-| AlmaLinux | 9.5 | | | **recommended for ARM CPU** |
-| AlmaLinux | 10 | 2026-06-30 13:41 UTC | ❌ Fail |  |
-| RockyLinux | 9.6 | | | |
-| RockyLinux | 10 | 2026-06-30 17:52 UTC | ❌ Fail | *Must manually switch from `nftables` to `iptables` first ([#1472](https://github.com/docker/for-linux/issues/1472))* |
-| CentOS | 9.5 | | | |
-| CentOS | 10 | 2026-06-30 16:12 UTC | ✅ Pass |  |
+| Operating System | Version | Last Tested | Status | Average install time[^2] | Notes |
+|---|---|---|---|---|---|
+| Ubuntu | 22 | 2026-07-12 04:05 UTC | ❌ Fail |  |  |
+| Ubuntu | 24 | 2026-07-12 04:19 UTC | ❌ Fail |  | **recommended for AMD CPU** |
+| Ubuntu | 26 | 2026-07-12 04:12 UTC | ❌ Fail |  |  |
+| Debian | 10 | | | |  |
+| Debian | 11 | 2026-07-12 04:24 UTC | ❌ Fail |  |  |
+| Debian | 12 | 2026-07-12 04:37 UTC | ❌ Fail |  |  |
+| Debian | 13 | 2026-07-12 04:49 UTC | ❌ Fail |  |  |
+| AlmaLinux | 9.5 | | |  | **recommended for ARM CPU** |
+| AlmaLinux | 10 | 2026-07-12 03:00 UTC | ❌ Fail |  |  |
+| RockyLinux | 9.6 | | | |  |
+| RockyLinux | 10 | 2026-07-12 05:02 UTC | ❌ Fail |  |  |
+| CentOS | 9.5 | | | |  |
+| CentOS | 10 | 2026-07-12 03:39 UTC | ❌ Fail |  |  |
+| openEuler | 24 | | Untested |  |  |
 <!-- OS_TEST_RESULTS_END -->
 
+[^2]: Average installation time for [the install script](https://openpanel.org/) on a VPS with the following specifications: 2 CPU cores and 2 GB of RAM.
 
 ## Installation
 

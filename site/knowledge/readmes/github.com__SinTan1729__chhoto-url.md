@@ -1,15 +1,20 @@
 <!-- SPDX-FileCopyrightText: 2023-2026 Sayantan Santra <sayantan.santra689@gmail.com> -->
 <!-- SPDX-License-Identifier: MIT -->
 
-[![github-tests-badge](https://img.shields.io/github/actions/workflow/status/SinTan1729/chhoto-url/.github%2Fworkflows%2Frust-tests.yml?label=tests)](https://github.com/SinTan1729/chhoto-url/actions/workflows/rust-tests.yml)
-[![docker-pulls-badge](https://img.shields.io/docker/pulls/sintan1729/chhoto-url?label=pulls)](https://hub.docker.com/r/sintan1729/chhoto-url)
-[![docker-stars-badge](https://img.shields.io/github/stars/SinTan1729/chhoto-url?style=flat)](https://github.com/SinTan1729/chhoto-url)
-[![maintainer-badge](https://img.shields.io/badge/maintainer-SinTan1729-blue)](https://github.com/SinTan1729)
-[![latest-release-badge](https://img.shields.io/github/v/release/SinTan1729/chhoto-url)](https://github.com/SinTan1729/chhoto-url/releases/latest)
-[![docker-image-size-badge](https://img.shields.io/docker/image-size/sintan1729/chhoto-url?label=size)](https://hub.docker.com/r/sintan1729/chhoto-url/tags)
-[![license-badge](https://img.shields.io/badge/License-MIT-green.svg?label=license)](https://spdx.org/licenses/MIT.html)
+[![github-tests-badge](https://img.shields.io/github/actions/workflow/status/SinTan1729/chhoto-url/.github%2Fworkflows%2Frust-tests.yml?logo=github&label=tests)](https://github.com/SinTan1729/chhoto-url/actions/workflows/rust-tests.yml)
+[![docker-pulls-badge](https://img.shields.io/docker/pulls/sintan1729/chhoto-url?logo=docker&label=pulls)](https://hub.docker.com/r/sintan1729/chhoto-url)
+[![ghcr-pulls-badge](https://img.shields.io/badge/dynamic/json?url=https://ghcr-badge.elias.eu.org/api/SinTan1729/chhoto-url&query=downloadCount&label=pulls&style=flat&logo=github)](https://ghcr.io/SinTan1729/chhoto-url)
+[![github-stars-badge](https://img.shields.io/github/stars/SinTan1729/chhoto-url?logo=github&style=flat)](https://github.com/SinTan1729/chhoto-url)
+[![codeberg-stars-badge](https://img.shields.io/gitea/stars/SinTan1729/chhoto-url?gitea_url=https%3A%2F%2Fcodeberg.org&style=flat&logo=codeberg
+)](https://codeberg.org/SinTan1729/chhoto-url)
+[![maintainer-badge](https://img.shields.io/badge/maintainer-SinTan1729-blue?logo=github)](https://github.com/SinTan1729)
+[![latest-release-badge](https://img.shields.io/github/v/release/SinTan1729/chhoto-url?logo=github)](https://github.com/SinTan1729/chhoto-url/releases/latest)
+[![docker-image-size-badge](https://img.shields.io/docker/image-size/sintan1729/chhoto-url?logo=docker&label=size)](https://hub.docker.com/r/sintan1729/chhoto-url/tags)
+[![license-badge](https://img.shields.io/badge/License-MIT-green?logo=googledocs&label=license)](https://spdx.org/licenses/MIT.html)
 
 # ![Logo](frontend/assets/favicon-32.png) <span style="font-size:42px">Chhoto URL</span>
+
+### [Official Website](https://chhoto.link) • [GitHub](https://github.com/SinTan1729/chhoto-url) • [Codeberg](https://codeberg.org/SinTan1729/chhoto-url) • [Docker Hub](https://hub.docker.com/r/sintan1729/chhoto-url)
 
 # What is it?
 
@@ -41,7 +46,7 @@ for small. URL means, well... URL. So the name simply means Small URL.
 
 # Demo
 
-Link: [https://chhoto-url-demo.sayantansantra.com](https://chhoto-url-demo.sayantansantra.com)
+Link: [demo.chhoto.link](https://demo.chhoto.link)</br>
 Password: `chhoto-url-demo-pass`
 
 #### Note:

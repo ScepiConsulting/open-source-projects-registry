@@ -225,12 +225,9 @@ Inspect connections that could not be geolocated and therefore do not appear on 
 
 ## Privacy
 
-- TapMap runs locally.
-- No connection data is sent anywhere.
-- Geolocation uses local GeoIP databases.
-- If automatic local geolocation is enabled, TapMap contacts a public IP lookup service to determine your public IP address.
-- External public-IP lookup can be avoided by using fixed local coordinates.
-- GeoIP databases can be installed and updated from within TapMap or managed manually.
+TapMap is designed to protect your privacy. It processes network connection data locally, does not transmit connection data, telemetry, analytics, or personal information, and performs geolocation using local GeoIP databases.
+
+For details, see [PRIVACY.md](PRIVACY.md).
 
 ---
 
@@ -349,13 +346,7 @@ The executable must be built on the target operating system.
 
 ## Project
 
-TapMap is developed by Ola Lie at TIP Teknologi i Praksis AS. Professional services include:
-
-- TapMap support
-- System development
-- Data analysis
-
-[https://tip.no](https://tip.no)
+[TapMap](https://tip.no/tapmap) is developed by Ola Lie at [TIP Teknologi i Praksis AS](https://tip.no).
 
 ---
 

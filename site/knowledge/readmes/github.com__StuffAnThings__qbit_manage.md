@@ -31,6 +31,14 @@ We rely on [qbittorrent-api](https://pypi.org/project/qbittorrent-api/) to inter
 
 Generally expect new releases of qBittorrent to not immediately be supported. Support CANNOT be added until qbittorrent-api adds support for the version. Any material changed and impact must then be assessed prior to Qbit Manage supporting it.
 
+**Version bumps are automated — no issue or PR needed.** [Renovate](https://docs.renovatebot.com/) watches
+`qbittorrent-api` on PyPI and always auto-merges its updates (major, minor, patch — see `.github/renovate.json`) as
+soon as a new release is 3+ days old. Merging that bump changes `pyproject.toml`, which triggers CI
+(`update-supported-versions.yml`) to refresh `SUPPORTED_VERSIONS.json` and the badges below — the whole chain runs
+without a human touching it. Issues asking us to "add support for qBittorrent vX.Y" will be auto-closed and point
+back here; if qbit_manage still doesn't work on a version already shown as supported below, that's a real bug —
+please file one.
+
 ### Master
 
 ![master - qBittorrent version](https://img.shields.io/badge/dynamic/json?label=master%20-%20qBittorrent&query=master.qbit&url=https%3A%2F%2Fraw.githubusercontent.com%2FStuffAnThings%2Fqbit_manage%2Fdevelop%2FSUPPORTED_VERSIONS.json&color=brightgreen)

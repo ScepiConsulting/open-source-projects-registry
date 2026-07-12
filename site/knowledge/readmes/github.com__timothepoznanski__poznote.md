@@ -44,6 +44,7 @@ https://poznote.com/index.html#press
 - [Multiple Instances](#multiple-instances)
 - [MCP Server](#mcp-server)
 - [Chrome Extension](#chrome-extension)
+- [Share to Poznote on Android](#share-to-poznote-on-android)
 - [API Documentation](#api-documentation)
 - [Tech Stack](#tech-stack)
 
@@ -228,6 +229,64 @@ helm install poznote helmforge/poznote --namespace poznote --create-namespace
 ```
 
 The Poznote Helm chart is maintained by the HelmForge community as a Kubernetes-native installation option. See the [HelmForge Poznote chart documentation](https://helmforge.dev/docs/charts/poznote) for values, persistence, service exposure, probes, security contexts, and other production-oriented settings.
+
+</details>
+
+<a id="rootless"></a>
+<details>
+<summary><strong>🔒 Rootless</strong></summary><br>
+
+Poznote also ships a rootless image variant that runs entirely as an unprivileged user (uid/gid `1000`) instead of root — for environments that forbid root inside containers (Kubernetes restricted `PodSecurityStandard`, rootless Podman, `docker run --user`, etc). It works exactly like the default image; the only differences are that it listens internally on port `8080` and cannot fix the ownership of your data directory at startup.
+
+#### Step 1: Prerequisite
+
+1. Install [Docker engine](https://docs.docker.com/engine/install/)
+2. Install [Docker Compose](https://docs.docker.com/compose/install/linux)
+
+#### Step 2: Deploy Poznote
+
+Create a new directory:
+```bash
+mkdir poznote
+```
+
+Navigate to the Poznote directory:
+```bash
+cd poznote
+```
+
+Create the data directory and make it owned by uid/gid `1000` (**required**: unlike the default image, the rootless container cannot fix this ownership itself at startup):
+```bash
+mkdir -p data
+sudo chown -R 1000:1000 data
+```
+
+Create the environment file:
+```bash
+curl -o .env https://raw.githubusercontent.com/timothepoznanski/poznote/main/.env.template
+```
+
+Edit the `.env` file:
+```bash
+vi .env
+```
+
+Download the rootless Docker Compose configuration file:
+```bash
+curl -o docker-compose.rootless.yml https://raw.githubusercontent.com/timothepoznanski/poznote/main/docker-compose.rootless.yml
+```
+
+Download the latest Poznote rootless Webserver and Poznote MCP images:
+```bash
+docker compose -f docker-compose.rootless.yml pull
+```
+
+Start Poznote containers:
+```bash
+docker compose -f docker-compose.rootless.yml up -d
+```
+
+To migrate an existing Poznote instance to the rootless variant, or for more details, see [Running rootless](docs/TROUBLESHOOTING.md#running-rootless) in the Troubleshooting Guide.
 
 </details>
 
@@ -869,6 +928,17 @@ The **Poznote URL Saver** is a browser extension that allows you to quickly save
 </p>
 
 Install the extension directly from the Chrome Web Store → [Install extension](https://chromewebstore.google.com/detail/bmjclfamahegmgillaghhmnbkjebipbh?utm_source=item-share-cb)
+
+## Share to Poznote on Android
+
+On Android, Poznote appears in the system **Share** menu once the PWA is installed. Share a page from Chrome (or a link/text from any app), pick Poznote, and a new note is created with the page title and a clickable link — no extension needed.
+
+To use it:
+
+1. Open your Poznote instance in Chrome on Android and install it as an app (menu → **Add to Home screen** → **Install**).
+2. In any app, tap **Share**, then choose **Poznote**.
+
+> If Poznote does not appear in the share menu right away, make sure the app is installed (not just a bookmark). If you installed the PWA before this feature was released, Chrome picks up the new capability automatically after a few days, or immediately if you reinstall the app.
 
 ## API Documentation
 
