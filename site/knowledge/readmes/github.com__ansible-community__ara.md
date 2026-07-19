@@ -10,7 +10,7 @@ It is another recursive acronym with a focus on simplicity.
 
 ara provides Ansible reporting by recording ``ansible`` and ``ansible-playbook`` commands regardless of how and where they run:
 
-- from most Linux distributions and even on Mac OS (as long as ``python >= 3.8`` is available)
+- from most Linux distributions and even on Mac OS (as long as ``python >= 3.10`` is available)
 - from tools that run Ansible like ansible-(pull|test|runner|navigator), AWX & Automation Controller (Tower), Molecule and Semaphore
 - from a terminal, a script or by hand
 - from a laptop, desktop, server, virtual machine, container or execution environment
@@ -31,7 +31,7 @@ This plugin gathers data as Ansible runs and sends it to a Django REST API serve
 
 ## Requirements
 
-- Any recent Linux distribution or Mac OS with python >=3.8 available
+- Any recent Linux distribution or Mac OS with python >=3.10 available
 - The ara package (containing the Ansible plugins) must be installed for the same python interpreter as Ansible itself
 
 ## Getting started
@@ -140,6 +140,9 @@ Contributions to the project are welcome and appreciated !
 
 Get started with the [contributor's documentation](https://ara.readthedocs.io/en/latest/contributing.html).
 
+ara is a non-commercial project but it still incurs expenses like hosting, development, maintenance, testing & CI.
+If ara has been helpful or useful to you, consider ordering stickers or leaving a tip: https://ko-fi.com/rfc2549
+
 ## Authors
 
 Code contributions to the project can be viewed from the git log or on [Codeberg](https://codeberg.org/ansible-community/ara/activity/contributors).
@@ -149,7 +152,7 @@ The ara parrot logo was designed and contributed by [Jason E. Rist](https://code
 ## Copyright
 
 ```
-Copyright (c) 2025 The ARA Records Ansible authors
+Copyright (c) 2026 The ARA Records Ansible authors
 
 ARA Records Ansible is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by

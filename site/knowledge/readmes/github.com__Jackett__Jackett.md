@@ -83,6 +83,7 @@ Prior versions of Jackett are no longer supported.
  * 1337x
  * 52BT
  * ACG.RIP
+ * Anibt
  * AniLibria
  * AniRena
  * AniSource
@@ -207,7 +208,6 @@ Prior versions of Jackett are no longer supported.
  * HDGalaKtik
  * HellTorrents [PAY2DL]
  * HunTorrent
- * Hydracker
  * Il CorSaRo Blu
  * ilDraGoNeRo
  * Kinorun
@@ -350,6 +350,7 @@ Prior versions of Jackett are no longer supported.
  * Darkpeers
  * Das Unerwartete (D-U)
  * DataScene (DS)
+ * DaXiangJiao (大香蕉)
  * Depth Studio
  * DesiGaane (DG) [![(invite needed)][inviteneeded]](#)
  * DesiTorrents
@@ -381,7 +382,6 @@ Prior versions of Jackett are no longer supported.
  * Flood (FLD)
  * Free Farm (自由农场)
  * FunFile (FF)
- * FunkyTorrents (FT) [![(invite needed)][inviteneeded]](#)
  * funZone
  * FutureTorrent [PAY2DL]
  * Fuzer (FZ)
@@ -518,7 +518,7 @@ Prior versions of Jackett are no longer supported.
  * OurBits (HDPter)
  * P2PBG [PAY2DL]
  * Panda
- * ParabellumHD
+ * ParabellumHD [![(invite needed)][inviteneeded]](#)
  * Party-Tracker
  * PassThePopcorn (PTP) [![(invite needed)][inviteneeded]](#)
  * Peeratiko
@@ -532,7 +532,6 @@ Prior versions of Jackett are no longer supported.
  * Podzemlje
  * Polish Torrent (PTT)
  * PolishTracker [![(invite needed)][inviteneeded]](#)
- * Pornbay [![(invite needed)][inviteneeded]](#)
  * Portugas
  * Pretome
  * PrivateHD (PHD)
@@ -647,7 +646,7 @@ Prior versions of Jackett are no longer supported.
  * TorrentBD
  * TorrentBytes (TBy) [![(invite needed)][inviteneeded]](#)
  * TorrentCCF (TCCF)
- * TorrentClaw [![(invite needed)][inviteneeded]](#)
+ * TorrentClaw
  * TorrentDay (TD)
  * TorrentDD (TodayBit)
  * Torrenteros (TTR)

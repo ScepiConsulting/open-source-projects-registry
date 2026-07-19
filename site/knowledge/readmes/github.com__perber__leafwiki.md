@@ -45,6 +45,8 @@ docker run -p 8080:8080 -v ~/leafwiki-data:/app/data \
   - [Security](#security)
   - [Operations notes](#operations-notes)
 - [Keyboard Shortcuts](#keyboard-shortcuts)
+- [.leafwikiignore — Ignore Files](#leafwikiignore--ignore-files)
+- [External Edits & Resync](#external-edits--resync)
 - [Sorting Pages](#sorting-pages)
 - [Support this project](#support-this-project)
 - [Contributing](#contributing)
@@ -276,7 +278,7 @@ npm run dev
 **Terminal 2 — Backend:**
 ```bash
 cd cmd/leafwiki
-go run main.go --jwt-secret=yoursecret --allow-insecure=true --admin-password=yourpassword
+go run . --jwt-secret=yoursecret --allow-insecure=true --admin-password=yourpassword
 ```
 
 Vite starts on `http://localhost:5173`. The backend binds to `127.0.0.1` by default.
@@ -294,6 +296,13 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for contribution guidelines.
 | `--jwt-secret` | Secret for signing JWTs. Keep it secure. |
 | `--admin-password` | Initial admin password (only applied if no admin exists yet). |
 
+### Optional admin identity
+
+| Flag | Description | Default |
+|------|-------------|---------|
+| `--admin-username` | Initial admin username (only applied if no admin exists yet). | `admin` |
+| `--admin-email` | Initial admin email (only applied if no admin exists yet). | `admin@localhost` |
+
 For plain HTTP: add `--allow-insecure=true` so login and CSRF cookies work.
 
 ### CLI Flags
@@ -304,6 +313,8 @@ For plain HTTP: add `--allow-insecure=true` so login and CSRF cookies work.
 | `--port`                         | Port the server listens on                                              | `8080`        | –       |
 | `--unix-socket`                  | Unix domain socket path; overrides `--host` and `--port`                | `""`          | v0.11.3 |
 | `--data-dir`                     | Directory where data is stored                                          | `./data`      | –       |
+| `--admin-username`               | Initial admin username (only applied if no admin exists yet)            | `admin`       | v0.12.0 |
+| `--admin-email`                  | Initial admin email (only applied if no admin exists yet)               | `admin@localhost` | v0.12.0 |
 | `--public-access`                | Allow public read-only access                                           | `false`       | –       |
 | `--base-path`                    | URL prefix for reverse proxy setups (e.g. `/wiki`)                      | `""`          | v0.8.2  |
 | `--allow-insecure`               | ⚠️ Enables HTTP for auth cookies (required for plain HTTP)              | `false`       | v0.7.0  |
@@ -320,7 +331,9 @@ For plain HTTP: add `--allow-insecure=true` so login and CSRF cookies work.
 | `--enable-http-remote-user`      | Enable reverse-proxy auth via HTTP header                               | `false`       | v0.10.0 |
 | `--http-remote-user-header-name` | Header name carrying the username from the proxy                        | `Remote-User` | v0.10.0 |
 | `--trusted-proxy-ips`            | Trusted proxy IPs/CIDRs for remote-user header                          | `""`          | v0.10.0 |
-| `--http-remote-user-logout-url`  | Logout redirect when reverse-proxy auth is active                       | `""`          | v0.10.0 |
+| `--login-url`                    | Redirect to an external URL instead of the built-in login form          | `""`          | v0.12.0 |
+| `--logout-url`                   | Redirect to an external URL after logout                                | `""`          | v0.12.0 |
+| `--http-remote-user-logout-url`  | ⚠️ Deprecated, use `--logout-url` instead                               | `""`          | v0.10.0 |
 | `--disable-request-log`          | Suppress per-request HTTP access log lines                              | `false`       | v0.10.1 |
 | `--git-backup`                   | ⚗️ Enable git backup to a remote repository                             | `false`       | v0.11.3 |
 | `--git-backup-remote`            | ⚗️ SSH remote URL for git backup (e.g. `git@github.com:user/repo.git`) | `""`          | v0.11.3 |
@@ -343,6 +356,8 @@ For plain HTTP: add `--allow-insecure=true` so login and CSRF cookies work.
 | `LEAFWIKI_UNIX_SOCKET`                  | Unix domain socket path; overrides host/port         | `""`          | v0.11.3 |
 | `LEAFWIKI_DATA_DIR`                     | Data directory path                                  | `./data`      | –       |
 | `LEAFWIKI_ADMIN_PASSWORD`               | Initial admin password *(required)*                  | –             | –       |
+| `LEAFWIKI_ADMIN_USERNAME`               | Initial admin username (only applied if no admin exists yet) | `admin`       | v0.12.0 |
+| `LEAFWIKI_ADMIN_EMAIL`                  | Initial admin email (only applied if no admin exists yet) | `admin@localhost` | v0.12.0 |
 | `LEAFWIKI_JWT_SECRET`                   | JWT signing secret *(required)*                      | –             | –       |
 | `LEAFWIKI_PUBLIC_ACCESS`                | Allow public read-only access                        | `false`       | –       |
 | `LEAFWIKI_BASE_PATH`                    | URL prefix for reverse proxy                         | `""`          | v0.8.2  |
@@ -360,7 +375,9 @@ For plain HTTP: add `--allow-insecure=true` so login and CSRF cookies work.
 | `LEAFWIKI_ENABLE_HTTP_REMOTE_USER`      | Reverse-proxy auth via header                        | `false`       | v0.10.0 |
 | `LEAFWIKI_HTTP_REMOTE_USER_HEADER_NAME` | Username header from proxy                           | `Remote-User` | v0.10.0 |
 | `LEAFWIKI_TRUSTED_PROXY_IPS`            | Trusted proxy IPs/CIDRs                              | `""`          | v0.10.0 |
-| `LEAFWIKI_HTTP_REMOTE_USER_LOGOUT_URL`  | Logout redirect URL                                  | `""`          | v0.10.0 |
+| `LEAFWIKI_LOGIN_URL`                    | Redirect to an external URL instead of the login form | `""`          | v0.12.0 |
+| `LEAFWIKI_LOGOUT_URL`                   | Redirect to an external URL after logout             | `""`          | v0.12.0 |
+| `LEAFWIKI_HTTP_REMOTE_USER_LOGOUT_URL`  | ⚠️ Deprecated, use `LEAFWIKI_LOGOUT_URL` instead     | `""`          | v0.10.0 |
 | `LEAFWIKI_DISABLE_REQUEST_LOG`          | Suppress per-request HTTP access log lines           | `false`       | v0.10.1 |
 | `LEAFWIKI_GIT_BACKUP`                   | ⚗️ Enable git backup                                | `false`       | v0.11.3 |
 | `LEAFWIKI_GIT_BACKUP_REMOTE`            | ⚗️ SSH remote URL                                   | `""`          | v0.11.3 |
@@ -399,12 +416,17 @@ Available since v0.10.0. Use when an upstream proxy authenticates users and forw
   --enable-http-remote-user=true \
   --http-remote-user-header-name=X-Forwarded-User \
   --trusted-proxy-ips=127.0.0.1,172.18.0.0/16 \
-  --http-remote-user-logout-url=https://auth.example.com/logout
+  --login-url=https://auth.example.com/login \
+  --logout-url=https://auth.example.com/logout
 ```
 
 - Only trusts the header from IPs listed in `--trusted-proxy-ips`
 - If the forwarded username doesn't exist in LeafWiki, the request is rejected
 - Do not enable without configuring `--trusted-proxy-ips`
+- `--login-url` and `--logout-url` are independent, optional redirect targets — set either or both to send users to an external IdP instead of the built-in login form / to redirect after logout
+- `--login-url` and `--logout-url` must start with `http://` or `https://`; the server refuses to start otherwise. `--user-management-url` has no such restriction — it's only used as a link, so relative paths work too
+- ⚠️ `--login-url` takes effect regardless of `--enable-http-remote-user` and has no in-app bypass: once set, *every* unauthenticated visit (including `/login` itself) redirects to it immediately. Double-check the URL before setting it — a wrong or unreachable value locks all users, including admins, out of the built-in login form
+- `--http-remote-user-logout-url` (v0.10.0) is deprecated; use `--logout-url` instead. It still works as a fallback when `--logout-url`/`LEAFWIKI_LOGOUT_URL` isn't set, but a deprecation warning is logged
 
 ### Unix Socket (v0.11.3)
 
@@ -522,6 +544,76 @@ For most setups, prefer `--public-access` for read-only public access and the vi
 
 `Ctrl+V` / `Cmd+V` for pasting images and files works in the editor.  
 `Esc` closes modals, dialogs, and edit mode.
+
+---
+
+## .leafwikiignore — Ignore Files
+
+LeafWiki indexes every `.md` file it finds on disk. If you have files or directories you want to keep on disk but exclude from the wiki (draft pages, archive sections, private notes, imported markdown being organized), create a `.leafwikiignore` file at the root of your wiki's data directory.
+
+**Location:** Anywhere under `root/`. A `.leafwikiignore` at the wiki root applies to the entire wiki; per-directory files apply to their directory and its children.
+
+**Syntax:** Standard gitignore-style patterns:
+
+| Pattern | Meaning |
+|---------|---------|
+| `#` | Comment |
+| `*` | Matches anything except `/` |
+| `?` | Matches any single char except `/` |
+| `**` | Matches zero or more directories |
+| Trailing `/` | Directory-only match |
+| Leading `/` | Anchored to wiki root |
+| `!` prefix | Negation (un-ignore) |
+
+**Examples:**
+
+```gitignore
+# Exclude all log files
+*.log
+
+# Exclude entire directory
+drafts/
+
+# Exclude everything except important.md
+*.md
+!important.md
+```
+
+**Notes:**
+- Changes to any `.leafwikiignore` require a restart to take effect.
+- Ignored files are hidden completely — remove the ignore pattern to see them again.
+- Per-directory ignore files are supported: any directory under `root/` may contain its own `.leafwikiignore`. Patterns accumulate from root to leaf, and child patterns can negate parent patterns with `!`.
+
+**Multi-level example:**
+
+```gitignore
+# root/.leafwikiignore — applies everywhere
+*.md
+
+# root/docs/.leafwikiignore — un-ignore specific files under docs/
+!important.md
+
+# root/docs/archive/.leafwikiignore — re-ignore files under archive/
+*.md
+```
+
+In this example:
+- All `.md` files are ignored by default (root rule).
+- `docs/important.md` is un-ignored (child negation).
+- `docs/archive/` is re-ignored (grandchild re-applies the restriction).
+
+---
+
+## External Edits & Resync
+
+If you edit Markdown files directly on disk — a text editor, Git, a script, a bulk import — LeafWiki won't pick up the changes on its own. Trigger a resync one of two ways:
+
+- **Admin UI:** trigger it manually from the maintenance/admin settings page, with live progress across four phases (tree, links, tags, search).
+- **OS signal:** send `SIGUSR1` or `SIGHUP` to the running process (e.g., from a git post-receive hook or a cron job) — no restart needed.
+
+Both paths share the same resync job, so either way you get the same consistent result. This is separate from `.leafwikiignore` changes, which are only read at startup (see above).
+
+**New files without a `leafwiki_id`:** every page's identity lives in a `leafwiki_id` field in its own frontmatter, not in its filename or path — that's what lets pages survive renames and moves without losing their identity. If you add a `.md` file yourself (not created through the app) and it has no `leafwiki_id` yet, the next resync generates one and **writes it back into the file on disk**. This is automatic and requires no action from you, but it does mean the file changes on disk after the resync — worth knowing if you manage `root/` with your own separate Git workflow (outside LeafWiki's built-in [Git Backup](#git-backup-v0113-experimental)), since that ID write-back will show up as an extra diff you didn't make yourself.
 
 ---
 

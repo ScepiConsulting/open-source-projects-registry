@@ -1,8 +1,38 @@
 {
   "chunk": 10,
   "count": 50,
-  "generated_at": "2026-07-12T06:04:00Z",
+  "generated_at": "2026-07-19T05:57:48Z",
   "items": [
+    {
+      "repo_key": "github.com/cachethq/cachet",
+      "repo_url": "github.com/cachethq/cachet",
+      "host": "github.com",
+      "owner": "cachethq",
+      "repo": "cachet",
+      "app_references": [
+        "cachet"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__cachethq__cachet.md",
+      "readme_download_url": "https://raw.githubusercontent.com/cachethq/cachet/3.x/README.md",
+      "readme_sha256": "73aff087b41f17a59500f5f02b553a79873e157da3a8c3a452ab0df656d5f6c8",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/caddymanager/caddymanager",
+      "repo_url": "github.com/caddymanager/caddymanager",
+      "host": "github.com",
+      "owner": "caddymanager",
+      "repo": "caddymanager",
+      "app_references": [
+        "caddymanager"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__caddymanager__caddymanager.md",
+      "readme_download_url": null,
+      "readme_sha256": "f431796756ec84f92872d55f4f657b97b47b85e9f0e63dec121babd603b69abb",
+      "error": null
+    },
     {
       "repo_key": "github.com/caddyserver/caddy",
       "repo_url": "github.com/caddyserver/caddy",
@@ -42,9 +72,9 @@
       "app_references": [
         "cal-com"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__calcom__cal.diy.md",
-      "readme_download_url": "https://raw.githubusercontent.com/calcom/cal.diy/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a9a6121c41b37242a4aac18704037dcff14f23d41dbf74b8a18c9e3d393b01e7",
       "error": null
     },
@@ -57,9 +87,9 @@
       "app_references": [
         "shelfmark"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__calibrain__shelfmark.md",
-      "readme_download_url": "https://raw.githubusercontent.com/calibrain/shelfmark/main/readme.md",
+      "readme_download_url": null,
       "readme_sha256": "0fe3869f6de09769f6ea4723b90e116be8d5c5e39f3d1a724b97cea4782ca597",
       "error": null
     },
@@ -102,9 +132,9 @@
       "app_references": [
         "apprise"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__caronc__apprise.md",
-      "readme_download_url": "https://raw.githubusercontent.com/caronc/apprise/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4b27d7b3a1ab0c7e92ae21a41b53940fa5587226d73f1ee219089e2f01d3fcbc",
       "error": null
     },
@@ -147,9 +177,9 @@
       "app_references": [
         "crosswatch"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__cenodude__CrossWatch.md",
-      "readme_download_url": "https://raw.githubusercontent.com/cenodude/CrossWatch/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b154402617798180352f880103c86c19cfb32f32c82823ce35846007e5203ad7",
       "error": null
     },
@@ -259,6 +289,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/chattocorp/chatto",
+      "repo_url": "github.com/chattocorp/chatto",
+      "host": "github.com",
+      "owner": "chattocorp",
+      "repo": "chatto",
+      "app_references": [
+        "chatto"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__chattocorp__chatto.md",
+      "readme_download_url": "https://raw.githubusercontent.com/chattocorp/chatto/main/README.md",
+      "readme_sha256": "2ea1a50154a26c55a7ed2d3768e3520c498246095c42bcada885c4d22c4b3592",
+      "error": null
+    },
+    {
       "repo_key": "github.com/chatwoot/chatwoot",
       "repo_url": "github.com/chatwoot/chatwoot",
       "host": "github.com",
@@ -327,10 +372,10 @@
       "app_references": [
         "traefik-manager"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__chr0nzz__traefik-manager.md",
-      "readme_download_url": null,
-      "readme_sha256": "887ff1114165a3dc42e8f35410b8f9cad2b4553160158084f3455d134887c112",
+      "readme_download_url": "https://raw.githubusercontent.com/chr0nzz/traefik-manager/main/README.md",
+      "readme_sha256": "e8681084d2a98450d264b301346efeb228ce150fe04d854ce40c5ee7a23b31a4",
       "error": null
     },
     {
@@ -360,7 +405,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__chrisvel__tududi.md",
       "readme_download_url": "https://raw.githubusercontent.com/chrisvel/tududi/main/README.md",
-      "readme_sha256": "abf644dd7fd006e9a36753b52bf6750e7c3b5a55a6fcc42e5f88c04b871c2059",
+      "readme_sha256": "72138b1a9ce132c403b68f825c994eb3d38cd1f45f548dd083462aee8c278dbc",
       "error": null
     },
     {
@@ -492,10 +537,10 @@
       "app_references": [
         "whodb"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__clidey__whodb.md",
-      "readme_download_url": null,
-      "readme_sha256": "4b1cc5cab8d0f5b0430c9b91008540fb5920d371748bbf3fbedd6317176607f1",
+      "readme_download_url": "https://raw.githubusercontent.com/clidey/whodb/main/README.md",
+      "readme_sha256": "46102ff37829e98bc92ceae2cdb548646e7b1aadd2fb6ae9bf37a1332e2feb15",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__connorgallopo__Tracearr.md",
       "readme_download_url": null,
       "readme_sha256": "488fe1d226bdd61a16edd55196d330e5ec9e3966722b732c98474166f8941c90",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/contao/contao",
-      "repo_url": "github.com/contao/contao",
-      "host": "github.com",
-      "owner": "contao",
-      "repo": "contao",
-      "app_references": [
-        "contao"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__contao__contao.md",
-      "readme_download_url": "https://raw.githubusercontent.com/contao/contao/main/README.md",
-      "readme_sha256": "8b995c9d0980793655015c8787b5a403f5c4c2a569e55a664c73f67b20203870",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/conversejs/converse.js",
-      "repo_url": "github.com/conversejs/converse.js",
-      "host": "github.com",
-      "owner": "conversejs",
-      "repo": "converse.js",
-      "app_references": [
-        "converse"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__conversejs__converse.js.md",
-      "readme_download_url": null,
-      "readme_sha256": "b457ee2314577e9c10bff21398ffa2edd171dc8d6f8394cb1cdf481864e4996f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/convos-chat/convos",
-      "repo_url": "github.com/convos-chat/convos",
-      "host": "github.com",
-      "owner": "convos-chat",
-      "repo": "convos",
-      "app_references": [
-        "convos"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__convos-chat__convos.md",
-      "readme_download_url": null,
-      "readme_sha256": "b706fe1efd8c4942fad368272ba414b979aec7bcf1315d1b15d50e62d154e1ed",
       "error": null
     }
   ]

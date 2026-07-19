@@ -28,7 +28,6 @@ docker run -p 80:80 ghcr.io/blackcandy-org/blackcandy:latest
 # Or pull from Docker Hub.
 docker run -p 80:80 blackcandy/blackcandy:latest 
 ```
-
 That's all. Now, you can access either http://localhost or http://host-ip in a browser, and use initial admin user to log in (email: admin@admin.com, password: foobar).
 
 ## Upgrade
@@ -41,17 +40,17 @@ That's all. Now, you can access either http://localhost or http://host-ip in a b
 Upgrade Black Candy is pull new image from remote. Then remove an old container and create a new one.
 
 ```shell
-docker pull ghcr.io/blackcandy-org/blackcandy:latest
 docker stop <your_blackcandy_container>
 docker rm <your_blackcandy_container>
+docker pull ghcr.io/blackcandy-org/blackcandy:latest
 docker run <OPTIONS> ghcr.io/blackcandy-org/blackcandy:latest 
 ```
 
 With docker compose, you can upgrade Black Candy like this:
 
 ```shell
-docker pull ghcr.io/blackcandy-org/blackcandy:latest
 docker-compose down
+docker pull ghcr.io/blackcandy-org/blackcandy:latest
 docker-compose up
 ```
 
@@ -131,6 +130,29 @@ docker run -e SECRET_KEY_BASE=your_generated_secret ghcr.io/blackcandy-org/black
 ```
 
 If `SECRET_KEY_BASE` is not set, Black Candy will generate a new one on each startup, which will invalidate all existing sessions.
+
+### Example
+
+And if you would like to use docker compose instead of the CLI commands:
+
+```YAML
+services:
+  app:
+    image: ghcr.io/blackcandy-org/blackcandy:latest
+    restart: unless-stopped
+    ports:
+      - "3000:80" # Don't forget to check for port conflicts on the host
+    volumes:
+      - storage_data:/app/storage # Application Data storage
+      - ./media_data:/media_data # Your media goes here
+    environment:
+      SECRET_KEY_BASE: fake_secret_key # Don't forget to generate one using 'openssl rand -hex 64' on the console
+      MEDIA_PATH: /media_data
+
+volumes:
+  storage_data: # Required to avoid database corruption issues.
+```
+
 
 ## Environment Variables
 

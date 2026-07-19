@@ -182,6 +182,7 @@ Built-in locales:
 - `en` (default)
 - `de`
 - `fr`
+- `ko`
 
 Examples:
 

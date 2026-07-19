@@ -1,8 +1,68 @@
 {
   "chunk": 15,
   "count": 50,
-  "generated_at": "2026-07-12T06:04:00Z",
+  "generated_at": "2026-07-19T05:57:48Z",
   "items": [
+    {
+      "repo_key": "github.com/hhftechnology/middleware-manager",
+      "repo_url": "github.com/hhftechnology/middleware-manager",
+      "host": "github.com",
+      "owner": "hhftechnology",
+      "repo": "middleware-manager",
+      "app_references": [
+        "middleware-manager"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hhftechnology__middleware-manager.md",
+      "readme_download_url": null,
+      "readme_sha256": "319c0b40e6cb7a7a9004ed753052b81309a2a0e9d1b985739b148f7d5b56a41f",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/hhftechnology/traefik-log-dashboard",
+      "repo_url": "github.com/hhftechnology/traefik-log-dashboard",
+      "host": "github.com",
+      "owner": "hhftechnology",
+      "repo": "traefik-log-dashboard",
+      "app_references": [
+        "traefik-log-dashboard"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hhftechnology__traefik-log-dashboard.md",
+      "readme_download_url": null,
+      "readme_sha256": "cc0757706b626f45fba327a9fd7781d7b954aba2edd57eaafdff545759e4f769",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/hintjen/selfhosted-gateway",
+      "repo_url": "github.com/hintjen/selfhosted-gateway",
+      "host": "github.com",
+      "owner": "hintjen",
+      "repo": "selfhosted-gateway",
+      "app_references": [
+        "self-hosted-gateway"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hintjen__selfhosted-gateway.md",
+      "readme_download_url": null,
+      "readme_sha256": "b528007e0649a29a13677815baf0f676fea5f0835d278fc8f44e3c5431680ed1",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/holtwick/briefing",
+      "repo_url": "github.com/holtwick/briefing",
+      "host": "github.com",
+      "owner": "holtwick",
+      "repo": "briefing",
+      "app_references": [
+        "briefing"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__holtwick__briefing.md",
+      "readme_download_url": null,
+      "readme_sha256": "b474562ec295bfcbfc128a50c73ec87653c3b9658614844b3658709cc64913be",
+      "error": null
+    },
     {
       "repo_key": "github.com/homarr-labs/homarr",
       "repo_url": "github.com/homarr-labs/homarr",
@@ -12,9 +72,9 @@
       "app_references": [
         "homarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__homarr-labs__homarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/homarr-labs/homarr/dev/docs/README.md",
+      "readme_download_url": null,
       "readme_sha256": "820ccd74ac7fbd335ceb209e56b3fbc47199f5c5f239121c2cd73deba0a9468f",
       "error": null
     },
@@ -87,10 +147,10 @@
       "app_references": [
         "hoodik"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hudikhq__hoodik.md",
-      "readme_download_url": null,
-      "readme_sha256": "df8c06492ad36977070c686bcd8f5e2fcfc3376672e17761fe7283cf95a8649c",
+      "readme_download_url": "https://raw.githubusercontent.com/hudikhq/hoodik/master/README.md",
+      "readme_sha256": "ae900c9d55009cfd8afe13a39db4e3d957d5418cb912a91c11c6ca5b5723d9ff",
       "error": null
     },
     {
@@ -222,9 +282,9 @@
       "app_references": [
         "immich"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__immich-app__immich.md",
-      "readme_download_url": "https://raw.githubusercontent.com/immich-app/immich/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "cd67d01f164a3f2b3ba1a8c43700a7154140a10f6fdf76d7e75cba5dc718fa2b",
       "error": null
     },
@@ -432,10 +492,10 @@
       "app_references": [
         "trip"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__itskovacs__trip.md",
-      "readme_download_url": null,
-      "readme_sha256": "416878c8bd09f6163d45fb5fc4aefe3fea7b3d940f5fa24fff90be11332a6496",
+      "readme_download_url": "https://raw.githubusercontent.com/itskovacs/trip/main/README.md",
+      "readme_sha256": "327a7417ab54ccdbccc773acdedbc437ddc504d347f47b7ddcc7dd62e825ae28",
       "error": null
     },
     {
@@ -567,10 +627,10 @@
       "app_references": [
         "mkcert-web-ui"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jeffcaldwellca__mkcertWeb.md",
-      "readme_download_url": null,
-      "readme_sha256": "f6e977ed86a73d06ef2e407e0453520ce6b6821b0d4eb247baeab3e9fb8dae68",
+      "readme_download_url": "https://raw.githubusercontent.com/jeffcaldwellca/mkcertWeb/main/README.md",
+      "readme_sha256": "bdbcdca43c1cd6e026ab4609e6985a051612435175a1f31eeb197d98365536dd",
       "error": null
     },
     {
@@ -687,70 +747,10 @@
       "app_references": [
         "cronicle"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__jhuckaby__Cronicle.md",
-      "readme_download_url": "https://raw.githubusercontent.com/jhuckaby/Cronicle/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "551f25d11971a1d05526d476574bc17c48a32d1b400752fc2e6e1b2431d5d4a2",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jitsi/jitsi-meet",
-      "repo_url": "github.com/jitsi/jitsi-meet",
-      "host": "github.com",
-      "owner": "jitsi",
-      "repo": "jitsi-meet",
-      "app_references": [
-        "jitsi-meet"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jitsi__jitsi-meet.md",
-      "readme_download_url": null,
-      "readme_sha256": "cd50b8ddb4e1fe4569dd36c8cd4f94da91e584a228ee7330d9498a2eccbe769f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jittering/traefik-kop",
-      "repo_url": "github.com/jittering/traefik-kop",
-      "host": "github.com",
-      "owner": "jittering",
-      "repo": "traefik-kop",
-      "app_references": [
-        "traefik-kop"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jittering__traefik-kop.md",
-      "readme_download_url": null,
-      "readme_sha256": "bc28f9c6739e186e6f127729652ea0b39b116ae5f75374714ecedf4a59f5a21b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jmbannon/ytdl-sub",
-      "repo_url": "github.com/jmbannon/ytdl-sub",
-      "host": "github.com",
-      "owner": "jmbannon",
-      "repo": "ytdl-sub",
-      "app_references": [
-        "ytdl-sub"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jmbannon__ytdl-sub.md",
-      "readme_download_url": null,
-      "readme_sha256": "16bdee0cb9306e11116125d7a5f62a024e6609be22065edd0b0b3e1d1eccb567",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jmsltnv/civitai-data-manager",
-      "repo_url": "github.com/jmsltnv/civitai-data-manager",
-      "host": "github.com",
-      "owner": "jmsltnv",
-      "repo": "civitai-data-manager",
-      "app_references": [
-        "civitai-data-manager"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jmsltnv__civitai-data-manager.md",
-      "readme_download_url": null,
-      "readme_sha256": "50503394fa8cce6e5f7767d8a233fbec742f8e6a60cb75a2f10f64dbe99e5b8c",
       "error": null
     }
   ]

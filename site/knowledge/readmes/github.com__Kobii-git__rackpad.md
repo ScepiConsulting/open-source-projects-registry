@@ -5,6 +5,7 @@
 [![Container](https://img.shields.io/badge/ghcr.io-rackpad-2496ed?logo=docker&logoColor=white)](https://github.com/Kobii-git/rackpad/pkgs/container/rackpad)
 [![License](https://img.shields.io/github/license/Kobii-git/rackpad?color=success)](./LICENSE)
 [![Stars](https://img.shields.io/github/stars/Kobii-git/rackpad?style=flat)](https://github.com/Kobii-git/rackpad/stargazers)
+[![Discord](https://img.shields.io/badge/Discord-Join%20the%20community-5865F2?logo=discord&logoColor=white)](https://discord.gg/g25tEafYDX)
 
 Rackpad is a self-hosted infrastructure inventory and operations workspace for homelabs, small racks, network rooms, and lab environments. It brings racks, devices, ports, cables, VLANs, IPAM, WiFi, compute, discovery, monitoring, docs, images, labs, and an admin area into one clean app.
 
@@ -40,6 +41,8 @@ If `rackpad.co.za` is unavailable, the repo still contains the core material you
 - [Proxmox install notes](./docs/PROXMOX.md)
 - [Hyper-V import guide](./docs/HYPERV_IMPORT.md)
 - [Proxmox import guide](./docs/PROXMOX_IMPORT.md)
+- [Networks, VLANs, DHCP, and IPAM guide](./docs/NETWORKS_IPAM.md)
+- [Discovery guide](./docs/DISCOVERY.md)
 - [Reports guide](./docs/REPORTS.md)
 - [Visualizer guide](./docs/VISUALIZER.md)
 - [OIDC login guide](./docs/OIDC.md)
@@ -48,6 +51,7 @@ If `rackpad.co.za` is unavailable, the repo still contains the core material you
 - [SNMP implementation plan & outstanding work](./docs/SNMP_IMPLEMENTATION_PLAN.md)
 - [Documentation and images guide](./docs/DOCUMENTATION.md)
 - [Security policy](./SECURITY.md)
+- [Community Discord](https://discord.gg/g25tEafYDX)
 - [Changelog](./CHANGELOG.md)
 - [MIT license](./LICENSE)
 - [Support notes](./SUPPORT.md)
@@ -118,6 +122,10 @@ Rackpad ships **light and dark themes**. Full-resolution 1920x1200 captures live
 ### Monitoring
 
 <img src="./docs/screenshots/monitoring.png" alt="Rackpad monitoring workspace" width="100%">
+
+HTTP/HTTPS checks may target public hosts, RFC1918 LAN addresses, and IPv6 ULA
+addresses. Rackpad pins each DNS resolution and blocks loopback, link-local,
+metadata-service, multicast, and reserved destinations, including redirects.
 
 ### Compute
 
@@ -210,6 +218,8 @@ Use these when you want the workflow steps rather than just the overview:
 - [Hyper-V import](./docs/HYPERV_IMPORT.md): download the collector, collect inventory on a Hyper-V host, map or create the host record, review VMs, and import selected categories.
 - [Proxmox import](./docs/PROXMOX_IMPORT.md): download the collector, collect inventory on a Proxmox node, map or create the node record, review QEMU VMs and LXC containers, and import selected categories.
 - [Reports](./docs/REPORTS.md): generate a clean inventory report, print/save to PDF, and export CSV or Excel-compatible files.
+- [Networks/IPAM](./docs/NETWORKS_IPAM.md): create tagged or untagged networks, document DHCP scopes, zones, reservations, and VLAN planning ranges.
+- [Discovery](./docs/DISCOVERY.md): run manual or scheduled scans, keep results review-first, and understand Docker/LXC visibility limits.
 - [Visualizer](./docs/VISUALIZER.md): inspect rack, loose-room, port, and cable relationships from existing Rackpad data.
 - [OIDC login](./docs/OIDC.md): configure Authentik or another IdP, map roles, and debug issuer/discovery URL problems.
 - [Documentation and images](./docs/DOCUMENTATION.md): create Markdown runbooks, insert pictures, attach device reference images, and include them in backups.
@@ -236,7 +246,7 @@ Recommended workflow:
 
 - test new work from `beta`
 - merge validated fixes and features into `main`
-- create version tags like `v1.5.2` from `main`
+- create version tags like `v1.6.7` from `main`
 
 If you want the newest testing build instead of the latest stable tag:
 
@@ -312,6 +322,9 @@ SNMP_TRAP_PORT=1162
 SNMP_TRAP_BIND=0.0.0.0
 SNMP_INVENTORY_SYNC=1
 MONITOR_INTERVAL_MS=300000
+DISCOVERY_SCAN_MAX_ACTIVE=2
+DISCOVERY_SCAN_MAX_ACTIVE_PER_LAB=1
+DISCOVERY_SCAN_MAX_QUEUED=32
 NODE_ENV=production
 TRUST_PROXY=0
 TRUSTED_HOSTS=
@@ -398,12 +411,12 @@ curl -fsSL https://raw.githubusercontent.com/Kobii-git/Rackpad/main/scripts/inst
 ```
 
 Use `RACKPAD_TAG=latest` if you want the newest stable GHCR image,
-`RACKPAD_TAG=1.5.10` if you want a specific release, or `RACKPAD_TAG=beta` if
+`RACKPAD_TAG=1.6.7` if you want a specific release, or `RACKPAD_TAG=beta` if
 you want the newest testing image:
 
 ```bash
 curl -fsSL https://raw.githubusercontent.com/Kobii-git/Rackpad/main/scripts/install-docker.sh -o /tmp/install-rackpad.sh
-RACKPAD_TAG=1.5.10 bash /tmp/install-rackpad.sh
+RACKPAD_TAG=1.6.7 bash /tmp/install-rackpad.sh
 ```
 
 Open:
@@ -420,7 +433,7 @@ cd /opt/rackpad
 sudo curl -fsSLo compose.yml https://raw.githubusercontent.com/Kobii-git/Rackpad/main/docker-compose.release.yml
 sudo tee .env >/dev/null <<'EOF'
 RACKPAD_IMAGE=ghcr.io/kobii-git/rackpad
-RACKPAD_TAG=1.5.10
+RACKPAD_TAG=latest
 RACKPAD_PORT=3000
 MONITOR_INTERVAL_MS=300000
 TRUST_PROXY=0
