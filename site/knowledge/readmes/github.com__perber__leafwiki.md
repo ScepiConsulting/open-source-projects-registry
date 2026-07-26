@@ -45,7 +45,6 @@ docker run -p 8080:8080 -v ~/leafwiki-data:/app/data \
   - [Security](#security)
   - [Operations notes](#operations-notes)
 - [Keyboard Shortcuts](#keyboard-shortcuts)
-- [.leafwikiignore — Ignore Files](#leafwikiignore--ignore-files)
 - [External Edits & Resync](#external-edits--resync)
 - [Sorting Pages](#sorting-pages)
 - [Support this project](#support-this-project)
@@ -61,6 +60,7 @@ docker run -p 8080:8080 -v ~/leafwiki-data:/app/data \
 - Runs on Linux, macOS, Windows, Raspberry Pi (x86_64 and ARM64)
 - Reverse-proxy friendly with `--base-path`
 - Reverse-proxy authentication via trusted HTTP header (v0.10+)
+- API keys for programmatic and agent access, admin-managed, read-only, experimental/opt-in
 - Three access modes: fully internal, public read with login-only editing, or open editing without login (see [Operating Modes](#operating-modes))
 - Roles: admin, editor, viewer
 
@@ -424,7 +424,7 @@ Available since v0.10.0. Use when an upstream proxy authenticates users and forw
 - If the forwarded username doesn't exist in LeafWiki, the request is rejected
 - Do not enable without configuring `--trusted-proxy-ips`
 - `--login-url` and `--logout-url` are independent, optional redirect targets — set either or both to send users to an external IdP instead of the built-in login form / to redirect after logout
-- `--login-url` and `--logout-url` must start with `http://` or `https://`; the server refuses to start otherwise. `--user-management-url` has no such restriction — it's only used as a link, so relative paths work too
+- `--login-url`, `--logout-url`, and `--user-management-url` must all start with `http://` or `https://`; the server refuses to start otherwise (relative paths are not accepted for any of them)
 - ⚠️ `--login-url` takes effect regardless of `--enable-http-remote-user` and has no in-app bypass: once set, *every* unauthenticated visit (including `/login` itself) redirects to it immediately. Double-check the URL before setting it — a wrong or unreachable value locks all users, including admins, out of the built-in login form
 - `--http-remote-user-logout-url` (v0.10.0) is deprecated; use `--logout-url` instead. It still works as a fallback when `--logout-url`/`LEAFWIKI_LOGOUT_URL` isn't set, but a deprecation warning is logged
 
@@ -547,63 +547,6 @@ For most setups, prefer `--public-access` for read-only public access and the vi
 
 ---
 
-## .leafwikiignore — Ignore Files
-
-LeafWiki indexes every `.md` file it finds on disk. If you have files or directories you want to keep on disk but exclude from the wiki (draft pages, archive sections, private notes, imported markdown being organized), create a `.leafwikiignore` file at the root of your wiki's data directory.
-
-**Location:** Anywhere under `root/`. A `.leafwikiignore` at the wiki root applies to the entire wiki; per-directory files apply to their directory and its children.
-
-**Syntax:** Standard gitignore-style patterns:
-
-| Pattern | Meaning |
-|---------|---------|
-| `#` | Comment |
-| `*` | Matches anything except `/` |
-| `?` | Matches any single char except `/` |
-| `**` | Matches zero or more directories |
-| Trailing `/` | Directory-only match |
-| Leading `/` | Anchored to wiki root |
-| `!` prefix | Negation (un-ignore) |
-
-**Examples:**
-
-```gitignore
-# Exclude all log files
-*.log
-
-# Exclude entire directory
-drafts/
-
-# Exclude everything except important.md
-*.md
-!important.md
-```
-
-**Notes:**
-- Changes to any `.leafwikiignore` require a restart to take effect.
-- Ignored files are hidden completely — remove the ignore pattern to see them again.
-- Per-directory ignore files are supported: any directory under `root/` may contain its own `.leafwikiignore`. Patterns accumulate from root to leaf, and child patterns can negate parent patterns with `!`.
-
-**Multi-level example:**
-
-```gitignore
-# root/.leafwikiignore — applies everywhere
-*.md
-
-# root/docs/.leafwikiignore — un-ignore specific files under docs/
-!important.md
-
-# root/docs/archive/.leafwikiignore — re-ignore files under archive/
-*.md
-```
-
-In this example:
-- All `.md` files are ignored by default (root rule).
-- `docs/important.md` is un-ignored (child negation).
-- `docs/archive/` is re-ignored (grandchild re-applies the restriction).
-
----
-
 ## External Edits & Resync
 
 If you edit Markdown files directly on disk — a text editor, Git, a script, a bulk import — LeafWiki won't pick up the changes on its own. Trigger a resync one of two ways:
@@ -611,7 +554,7 @@ If you edit Markdown files directly on disk — a text editor, Git, a script, a 
 - **Admin UI:** trigger it manually from the maintenance/admin settings page, with live progress across four phases (tree, links, tags, search).
 - **OS signal:** send `SIGUSR1` or `SIGHUP` to the running process (e.g., from a git post-receive hook or a cron job) — no restart needed.
 
-Both paths share the same resync job, so either way you get the same consistent result. This is separate from `.leafwikiignore` changes, which are only read at startup (see above).
+Both paths share the same resync job, so either way you get the same consistent result. This is separate from `.leafwikiignore` changes, which are only read at startup.
 
 **New files without a `leafwiki_id`:** every page's identity lives in a `leafwiki_id` field in its own frontmatter, not in its filename or path — that's what lets pages survive renames and moves without losing their identity. If you add a `.md` file yourself (not created through the app) and it has no `leafwiki_id` yet, the next resync generates one and **writes it back into the file on disk**. This is automatic and requires no action from you, but it does mean the file changes on disk after the resync — worth knowing if you manage `root/` with your own separate Git workflow (outside LeafWiki's built-in [Git Backup](#git-backup-v0113-experimental)), since that ID write-back will show up as an extra diff you didn't make yourself.
 

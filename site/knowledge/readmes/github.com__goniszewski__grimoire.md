@@ -1,186 +1,337 @@
 <div align="center">
-  <img alt="Grimoire Logo" src="static/grimoire_logo_300.webp">
+  <img alt="Grimoire Logo" src="public/grimoire_logo_300.webp">
   <h1>Grimoire</h1>
-  <p>Bookmark manager for the wizards 🧙</p>
-<img alt="GitHub License" src="https://img.shields.io/github/license/goniszewski/grimoire">
-<img alt="GitHub Actions Workflow Status" src="https://img.shields.io/github/actions/workflow/status/goniszewski/grimoire/ci.yml?event=release">
-<img alt="GitHub Release" src="https://img.shields.io/github/v/release/goniszewski/grimoire">
-<img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/goniszewski/grimoire">
+  <p>Save, search, and organize the knowledge that matters to you — all local, all private.</p>
 </div>
+
 <br>
 
-> [!IMPORTANT]
-> Version `0.4` introduces a new approach for data storage and user authorization. If you are upgrading from version `0.3.X` you may want to utilize the built-in [**migration tool** (read more)](https://grimoire.pro/docs/migration-tool/).
+[![Quality Gates](https://github.com/goniszewski/grimoire/actions/workflows/quality.yml/badge.svg?branch=main)](https://github.com/goniszewski/grimoire/actions/workflows/quality.yml)
+![Release target](https://img.shields.io/badge/release-1.0.0-7c3aed)
+![Bun 1.x](https://img.shields.io/badge/Bun-1.x-black)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](./LICENSE)
 
-Glimpse into the magical book of _your_ forbidden knowledge - **Grimoire!** 📖💫
+Grimoire is a local-first bookmark manager for people who save technical resources and need to find them later. Save links, import browser bookmarks, extract readable content, search by keyword or meaning, and let optional AI providers summarize and organize your library — while your data stays on your machine.
 
-Unleash your inner sorcerer and conquer the chaos of bookmarks! With Grimoire, you'll have a bewitching way to store and sort your enchanted links.
+> [!NOTE]
+> **Grimoire 1.0** is a complete rewrite — a fresh start for the project. The legacy Grimoire (v0.5.x, SvelteKit-based) is preserved on the [`legacy/v0.x`](https://github.com/goniszewski/grimoire/tree/legacy/v0.x) branch.
+> If you are coming from v0.5.x: no direct migration tool exists yet, but it is a **high priority** on the [roadmap](./docs/roadmap.md#migration-from-legacy-grimoire-high-priority).
+> Everything remains **local-first**, **private**, and **100% open source** under the MIT license.
 
-But wait, there's **more**!
+## Contents
 
-Transmute your saved pages into juicy content snippets with our mystical extraction feature. Embrace the magic, tame the clutter, and let Grimoire be your mystical companion in the vast library of the web.
-
-It's time to conjure up some organization! 📚✨
-
-## Features
-
-- add and organize bookmarks easily 🔖
-- create new user accounts, each with their own bookmarks, categories and tags 🙋
-- fuzzy search through bookmarks 🔍
-- supports tags and categories 🏷️
-- fetch metadata from websites, store it locally and update it when needed 🌐
-- add your personal notes to bookmarks 📝
-- integration API to add bookmarks from other sources 🧰
-- embrace the night with a dark mode 🌙
-- and stay productive using our official browser extension, _grimoire companion_ ([available here](https://github.com/goniszewski/grimoire-web-extension)) 🪄
+- [Screenshots](#screenshots)
+- [Quick Start](#quick-start)
+- [What Grimoire Does](#what-grimoire-does)
+- [How It Works](#how-it-works)
+- [Install And Upgrade Paths](#install-and-upgrade-paths)
+- [Data, Privacy, And Security](#data-privacy-and-security)
+- [Configuration](#configuration)
+- [Backups And Restore](#backups-and-restore)
+- [Local Integrations](#local-integrations)
+- [Development](#development)
+- [Documentation](#documentation)
 
 ## Screenshots
 
-| Light Mode                                                                      | Dark Mode                                                                            |
-| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
-| ![Only unread](screenshots/only-unread-white.png) Show only unread              | ![Adding new bookmark](screenshots/adding-new-bookmark-dark.png) Adding new bookmark |
-| ![User Profile view](screenshots/user-profile-view-white.png) User Profile view | ![Bookmark details](screenshots/bookmark-details-dark.png) Bookmark details          |
+The screenshots below use synthetic/demo data from the local UI audit set.
 
-More screenshots can be found in the [screenshots directory](screenshots).
+| Library | Search | Bookmark detail |
+| --- | --- | --- |
+| ![Grimoire library list with categories, domains, tags, and processing badges](./docs/presentations/ui-ux-audit-assets/library-list-overview.png) | ![Search overlay with a design query against the bookmark library](./docs/presentations/ui-ux-audit-assets/ai-command-palette-search-state.png) | ![Bookmark detail drawer showing notes, tags, category, actions, and related bookmarks](./docs/presentations/ui-ux-audit-assets/bookmark-detail-standard.png) |
 
-## Installation
+| Settings and browser integration | Import flow | Mobile library |
+| --- | --- | --- |
+| ![Settings browser integration section with token and bookmarklet controls](./docs/task-reports/2026/06/2026-06-02-task-126-browser-bookmarklet-client/assets/02-settings-browser-integration.svg) | ![Import dialog showing a successful browser bookmark import queued for processing](./docs/presentations/ui-ux-audit-assets/import-bookmarks-success.png) | ![Mobile Grimoire library view with compact controls and bookmark cards](./docs/presentations/ui-ux-audit-assets/mobile-library-stack.png) |
 
-<details>
-  <summary><strong>Run using Docker Compose</strong> (recommended)</summary>
+## Quick Start
 
-### Prerequisites
+### Source Checkout
 
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
+This is the recommended development path. It works from a public clone and does not
+depend on release assets.
 
-### Steps
+```sh
+git clone https://github.com/goniszewski/grimoire.git
+cd grimoire
 
-1. Create a `docker-compose.yml` file with the following content:
-
-```yml
-services:
-  grimoire:
-    image: goniszewski/grimoire:latest # or change from 'latest' to 'preview' to use the latest preview version
-    container_name: grimoire
-    restart: unless-stopped
-    environment:
-      - PORT=5173
-      - PUBLIC_HTTPS_ONLY=false
-      - PUBLIC_SIGNUP_DISABLED=false
-    volumes:
-      - grimoire_data:/app/data/
-    build:
-      context: .
-      dockerfile: Dockerfile
-    healthcheck:
-      test: wget --no-verbose --tries=1 --spider http://localhost:$PORT/api/health || exit 1
-      interval: 30s
-      timeout: 10s
-      retries: 3
-    ports:
-      - '${PORT:-5173}:${PORT:-5173}'
-volumes:
-  grimoire_data:
+npm install
+cd daemon && bun install
+cd ..
 ```
 
-2. [Optional] Update the environment variables to match your needs.
-3. Run the app using `docker compose up -d` command.
+Start the daemon and frontend in separate terminals:
 
-</details>
-
-> [!NOTE]
-> For the recommended setup, only the `docker-compose.yml` file is required.
-
-<details>
-  <summary><strong>Run app using Node</strong></summary>
-
-### Prerequisites
-
-- [Docker](https://docs.docker.com/get-docker/)
-- [Docker Compose](https://docs.docker.com/compose/install/)
-- [Node.js](https://nodejs.org/en/download/)
-- [PNPM](https://pnpm.io/installation)
-
-### Steps
-
-```bash
-# Clone the repository
-git clone https://github.com/goniszewski/grimoire
-
-# Rename the `.env.example` file to `.env`
-# "mv .env.example .env" on Linux/MacOS, "ren .env.example .env" on Windows
-
-# Install the dependencies
-pnpm i
-
-# Run the app
-chmod +x ./run-dev.sh && ./run-dev.sh
+```sh
+npm run daemon:dev
 ```
 
-</details>
+```sh
+npm run dev
+```
 
-> [!TIP]
-> Although the above setups are intended for development, they are also suitable for daily use. For a better experience, it is recommended to use a Node.js process manager, such as [PM2](https://github.com/Unitech/pm2).
+Open the Vite app at `http://127.0.0.1:8080`. The app talks to the daemon at
+`http://127.0.0.1:3210`.
 
-<details>
-  <summary><strong>Run using One-Click Deploy and Kubernetes (Helm)</strong></summary>
+### Docker
 
-### ⚡ One-Click Deploy
+Docker serves the built frontend and daemon API from one loopback-bound port.
 
-| Cloud Provider | Deploy Button |
-|----------------|---------------|
-| AWS | <a href="https://deploystack.io/deploy/goniszewski-grimoire?provider=aws&language=cfn"><img src="https://raw.githubusercontent.com/deploystackio/deploy-templates/refs/heads/main/.assets/img/aws.svg" height="38"></a> |
-| DigitalOcean | <a href="https://deploystack.io/deploy/goniszewski-grimoire?provider=do&language=dop"><img src="https://raw.githubusercontent.com/deploystackio/deploy-templates/refs/heads/main/.assets/img/do.svg" height="38"></a> |
-| Render | <a href="https://deploystack.io/deploy/goniszewski-grimoire?provider=rnd&language=rnd"><img src="https://raw.githubusercontent.com/deploystackio/deploy-templates/refs/heads/main/.assets/img/rnd.svg" height="38"></a> |
-| Helm | `helm repo add deploystack https://deploystackio.github.io/deploy-templates/`<br>`helm repo update`<br>`helm install goniszewski-grimoire deploystack/goniszewski-grimoire` |
+```sh
+docker compose up -d
+curl http://127.0.0.1:3210/health
+```
 
-<sub>Change or add deploy options at [awesome-docker-run](https://github.com/deploystackio/awesome-docker-run/tree/main/commands/grimoire)</sub>
+Open `http://127.0.0.1:3210`.
 
-<sub>Generated by <a href="https://deploystack.io/c/goniszewski-grimoire" target="_blank">DeployStack.io</a></sub>
+## What Grimoire Does
 
-</details>
+- Saves public `http` and `https` URLs from the app, API, MCP, import flow, or
+  browser bookmarklet.
+- Extracts readable content from normal web pages, PDFs, GitHub repositories,
+  GitHub issues, StackOverflow/StackExchange pages, and YouTube
+  metadata/transcripts where available.
+- Stores bookmarks, content, tags, categories, jobs, notes, timeline events,
+  backups, and settings locally in SQLite and local files.
+- Searches with SQLite FTS5 keyword search, semantic embedding search, or a
+  hybrid ranking mode.
+- Supports archive, trash, read state, read-later flags, pinning, notes,
+  category/tag management, import/export, backup/restore, diagnostics, and
+  local update checks.
+- Runs without AI providers. Optional providers include OpenAI, Ollama,
+  Anthropic, OpenRouter, DeepSeek international, and custom OpenAI-compatible
+  chat or embeddings endpoints.
+
+## How It Works
+
+Grimoire has two runtime parts:
+
+- Frontend: React 18, Vite, TypeScript, Tailwind CSS, and Radix UI primitives
+  under `src/`.
+- Daemon: Bun, Hono, and SQLite under `daemon/`, listening on
+  `127.0.0.1:3210` by default.
+
+Bookmark ingestion is progressive:
+
+```text
+save URL
+  -> enqueue durable SQLite job
+  -> fetch public content
+  -> extract readable text and metadata
+  -> enrich with optional AI summary, tags, and category
+  -> create optional embeddings
+  -> update search indexes
+```
+
+Bookmarks are visible immediately after save. Pipeline failures keep the
+bookmark usable and expose retry/reprocess controls.
+
+## Install And Upgrade Paths
+
+### Native Source Install
+
+The source installer copies daemon files, installs production dependencies,
+builds the frontend, writes a default config, registers the user service, and
+starts the daemon.
+
+```sh
+cd daemon
+./install.sh
+```
+
+Upgrade from an unpacked source checkout or release archive:
+
+```sh
+cd daemon
+./install.sh --upgrade
+```
+
+Uninstall while preserving data:
+
+```sh
+cd daemon
+./install.sh --uninstall
+```
+
+Purge data only when you intentionally want to remove the local library:
+
+```sh
+cd daemon
+./install.sh --uninstall --purge
+```
+
+### Homebrew (pending live validation)
+
+The repository includes a Homebrew formula, but public install, service
+lifecycle, and data-preservation checks have not passed against release assets.
+It is not a supported beta installation path yet. The release decision records
+the validation required before these commands are published for users.
+
+## Data, Privacy, And Security
+
+Native installs keep user data under `~/.local/share/littleimp/`.
+
+| Path | Contents |
+| --- | --- |
+| `~/.local/share/littleimp/littleimp.db` | SQLite database |
+| `~/.local/share/littleimp/.env` | Install-time daemon defaults |
+| `~/.local/share/littleimp/dist/` | Built frontend served by the daemon |
+| `~/.local/share/littleimp/backups/` | Local snapshots and encrypted packages |
+| `~/.local/share/littleimp/restore-rollbacks/` | Pre-restore rollback copies |
+| `~/.local/share/littleimp/logs/` | Daemon logs |
+
+Runtime user settings live at `~/.config/littleimp/config.json`. Homebrew
+installs keep Homebrew-managed data under `$(brew --prefix)/var/little-imp`.
+
+Grimoire is local-first and loopback-first:
+
+- Native daemon default: `127.0.0.1:3210`.
+- Docker host port default: `127.0.0.1:3210:3210`.
+- General REST routes are intended for first-party loopback use.
+- MCP and protected capture endpoints require managed local integration bearer
+  tokens.
+- Public-network exposure is not a supported mode; put an authenticated tunnel,
+  VPN, or reverse proxy in front of it if you deliberately need remote access.
+
+See [SECURITY.md](./SECURITY.md) and
+[security-boundaries.md](./docs/security-boundaries.md).
+
+## Configuration
+
+The daemon reads install-time defaults from `~/.local/share/littleimp/.env`.
+
+| Variable | Default | Description |
+| --- | --- | --- |
+| `HOST` | `127.0.0.1` | Bind address. Keep localhost for security. |
+| `PORT` | `3210` | Daemon HTTP port. |
+| `DATA_DIR` | `~/.local/share/littleimp` | Database, backups, and logs. |
+| `NODE_ENV` | `production` | Use `development` for local development logging. |
+| `LOG_FORMAT` | `json` | `json` or `pretty`. |
+
+AI and embedding settings are managed in Settings and persisted in
+`~/.config/littleimp/config.json`. Secret fields are redacted in API responses,
+diagnostics, and portable settings backups.
+
+## Backups And Restore
+
+Settings and the packaged `littleimp` CLI can create, verify, encrypt, and
+restore local backup snapshots. Each normal snapshot contains:
+
+- `snapshot.db`
+- `manifest.json`
+- `checksums.sha256`
+- `data/settings.json`
+
+CLI examples:
+
+```sh
+littleimp backup create
+littleimp backup list
+littleimp backup verify --file ~/.local/share/littleimp/backups/BACKUP_NAME
+littleimp backup restore BACKUP_NAME --yes
+```
+
+Encrypted package examples:
+
+```sh
+LITTLEIMP_BACKUP_PASSWORD='use-a-long-unique-password' \
+  littleimp backup create --encrypt --output ~/Desktop/little-imp-backup.enc
+
+LITTLEIMP_BACKUP_PASSWORD='use-a-long-unique-password' \
+  littleimp backup verify --encrypted --file ~/Desktop/little-imp-backup.enc
+```
+
+Restores verify checksums, create a rollback directory, replace local data, and
+return a restart command plus `/health` URL. See
+[backup-design.md](./docs/backup-design.md).
+
+## Local Integrations
+
+### REST API
+
+The generated API reference is [API.md](./API.md). The source contract is
+[docs/api-contract.json](./docs/api-contract.json), generated from
+`daemon/src/api/contract.ts`.
+
+```sh
+curl http://127.0.0.1:3210/health
+```
+
+### MCP
+
+Grimoire exposes Streamable HTTP MCP at `http://127.0.0.1:3210/mcp`. Create
+a local integration token first:
+
+```sh
+curl -X POST http://127.0.0.1:3210/integration-tokens \
+  -H "Content-Type: application/json" \
+  -d '{"name":"Local MCP client"}'
+```
+
+Use the returned token as `Authorization: Bearer ...`.
+
+### Browser Bookmarklet
+
+Settings -> Browser Integration can create a token-backed bookmarklet. Drag it
+to your browser bookmarks bar, then click it on a page to capture the current
+URL, title, and selected text into Grimoire.
+
+The bookmarklet embeds an integration token. Treat it like a password.
 
 ## Development
 
-Check out the [development guide](https://grimoire.pro/docs/getting-started/development) to learn how to set up the project for development.
+```sh
+npm install
+cd daemon && bun install
+cd ..
+```
 
-## Roadmap
+Core commands:
 
-- [x] Initial relase (0.1.0) 🚀
-- [x] Official Docker image 🐳
-- [x] Add Integration API 🧰
-- [x] Official browser extension ([repository](https://github.com/goniszewski/grimoire-web-extension)) 🪄
-- [ ] Bookmark import and export features 💼
-- [ ] AI features, like generated descriptions and tags suggestions 🤖
-- [ ] Public User profiles & bookmark sharing 🌍
-- [ ] Flows - a way to keep bookmarks in a session-like order with related notes (e.g. for learning, research, etc.) ✨
-- [ ] ...and more to come! 🧙
+```sh
+npm run dev
+npm run daemon:dev
+npm run lint
+npm run type-check
+npm run test
+npm run test:daemon
+npm run test:e2e
+npm run build
+```
 
-We're open to suggestions and feature requests! If you have an idea for a feature, please [open an issue](https://github.com/goniszewski/grimoire/issues) or [start a discussion](https://github.com/goniszewski/grimoire/discussions/categories/ideas).
+Full local quality gate:
 
-## Contributing
+```sh
+npm run check
+```
 
-If you want to contribute to the project, please read the [contributing guide](CONTRIBUTING.md).
+If `node`, `npm`, `npx`, or `bun` are missing in a sandboxed environment, run:
+
+```sh
+npm run tools:setup
+export PATH="$PWD/local/bin:$PATH"
+```
+
+Then rerun the normal commands.
+
+## Documentation
+
+- [FAQ](./docs/faq.md)
+- [API Reference](./API.md)
+- [API Contract](./docs/api-contract.json)
+- [Project Overview](./docs/overview.md)
+- [Roadmap](./docs/roadmap.md)
+- [Backup Design](./docs/backup-design.md)
+- [Diagnostics](./docs/diagnostics.md)
+- [Docker Deployment](./docs/docker-deployment.md)
+- [Update System](./docs/update-system.md)
+- [Security Policy](./SECURITY.md)
+- [Contributing Guide](./CONTRIBUTING.md)
+
+## Changelog
+
+See [CHANGELOG.md](./CHANGELOG.md).
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
-
-## Credits
-
-Special thanks to: [@extractus/article-extractor](https://github.com/extractus/article-extractor),
-[Bun](https://github.com/oven-sh/bun),
-[DaisyUI](https://github.com/saadeghi/daisyui),
-[Drizzle](https://github.com/drizzle-team/drizzle-orm),
-[Fuse.js](https://github.com/krisk/fuse),
-[Lucia](https://github.com/pilcrowOnPaper/lucia),
-[MetaScraper](https://github.com/microlinkhq/metascraper),
-[PocketBase](https://github.com/pocketbase/pocketbase),
-[sanitize-html](https://github.com/apostrophecms/sanitize-html),
-[SvelteKit](https://github.com/sveltejs/kit),
-[Svelte Select](https://github.com/rob-balfre/svelte-select),
-[Svelte French Toast](https://github.com/kbrgl/svelte-french-toast),
-[Swagger UI](https://github.com/swagger-api/swagger-ui),
-[Tabler Icons](https://github.com/tabler/tabler-icons),
-[Tailwind CSS](https://tailwindcss.com),
-[url-metadata](https://github.com/laurengarcia/url-metadata)
+MIT. See [LICENSE](./LICENSE).

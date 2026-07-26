@@ -23,6 +23,9 @@ ___
 
 ## Changelog
 
+- **v0.8.1**:
+    - **NEW**: Added *Docker Compose* - possibility to run dockcheck fully containerized.
+    - **FIX**: Clarified interactive output around `-E` (exclude from update).
 - **v0.8.0**:
     - **NEW**: Added *Home Assistant* event integration.
     - **NEW**: Added option `-E` to exclude from updating, while still checking for updates.
@@ -34,14 +37,6 @@ ___
     - **FIX**: Changed some array variable handling to be more compatible.
     - **FIX**: Script update notification consistency, didn't always trigger.
     - **FIX**: Function call to print current backups, some environments didn't source the function.
-- **v0.7.8**:
-    - **NEW**: More URLs to urls.list.
-    - **NEW**: Added option `-o` to hide "No Updates available" and only output updateable images.
-    - **FIX**: Bugfix and tag support in Apprise template. by @mag37 in https://github.com/mag37/dockcheck/pull/276
-    - **FIX**: Clarify interaction between `-b` and `-p` options by @alaaalii in https://github.com/mag37/dockcheck/pull/277
-      - When `-b` is used the `-p` option is ignored - as pruning is respecting backups.
-    - **FIX**: File notification and JSON format rework.
-
 
 ![example.gif](extras/example.gif)
 
@@ -71,6 +66,7 @@ Options:
 -M     Prints custom releasenote urls as markdown (requires template support).
 -n     No updates, only checking availability.
 -N     No updates or checks; simulating updates to test notifications unconditionally.
+-o     Hides the \"No updates available\" message and only shows updateable images.
 -p     Auto-Prune dangling images after update. Ignored when -b is used.
 -r     Allow checking/updating images created by `docker run`, containers need to be recreated manually.
 -R     Skip container recreation after pulling images.
@@ -135,6 +131,31 @@ wget -O ~/.local/bin/dockcheck.sh "https://raw.githubusercontent.com/mag37/dockc
 
 Then call the script anywhere with just `dockcheck.sh`.
 Add preferred `notify.sh`-template to the same directory - this will not be touched by the scripts self-update function.
+
+## Docker Compose
+
+**Warning** - Mounting the docker socket with full permissions.  
+
+Either use the [compose-example-configfile.yml](compose-example-configfile.yml) together with setting up a `dockcheck.config` with your notification settings and options. Or use the [compose-example-envvars.yml](compose-example-envvars.yml) and set everything as environment varialbes (use the [default.config](default.config) as reference).
+
+Make sure the docker project volumes match 1:1 between the host and inside the container.  
+
+If you'd like to run it interactively (while having the container running), for example:
+```sh
+docker exec -it dockcheck ./dockcheck.sh -e container1 -x 10
+## or create an alias:
+alias dockcheck="docker exec -it dockcheck ./dockcheck.sh"
+```
+Or run it once, interactively with docker run (excluding config+crontab in this example):
+```sh
+docker run -it \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /path/to/projects/docker/:/path/to/projects/docker/\
+  mag37/dockcheck ./dockcheck.sh -x 10 -b 5
+```
+
+<sub><sup>Thanks to [vorezal](https://github.com/vorezal).</sup></sub>
 
 ## Configuration
 

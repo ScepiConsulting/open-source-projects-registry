@@ -296,6 +296,22 @@ command = "uvx"
 args = ["basic-memory", "mcp"]
 ```
 
+Codex can keep its default MCP approval behavior, or you can pre-approve eligible
+Basic Memory tools by adding this server-scoped setting to the same table:
+
+```toml
+[mcp_servers.basic-memory]
+command = "uvx"
+args = ["basic-memory", "mcp"]
+default_tools_approval_mode = "approve"
+```
+
+This does not disable Codex approvals globally or expand which Basic Memory
+projects the server can access. Codex still requires approval for tools that
+advertise a destructive annotation, including Basic Memory's writes, edits, and
+deletes. If you installed the Basic Memory Codex plugin, use its
+[plugin-scoped configuration](plugins/codex/README.md#mcp-approvals) instead.
+
 ### Cursor
 
 Add to `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global):
@@ -491,8 +507,7 @@ agents can pick the right one without trial-and-error:
   `delete_note`, `read_content`, `view_note`
 - **Search & discovery:** `search`, `search_notes`, `recent_activity`,
   `list_directory`
-- **Knowledge graph:** `build_context` (navigates `memory://` URLs),
-  `canvas` (Obsidian canvas generation)
+- **Knowledge graph:** `build_context` (navigates `memory://` URLs)
 - **Projects:** `list_memory_projects`, `create_memory_project`,
   `get_current_project`, `sync_status`
 - **Schema:** `schema_infer`, `schema_validate`, `schema_diff`
@@ -510,6 +525,11 @@ basic-memory project list
 basic-memory project add research ~/research
 basic-memory project set-cloud research   # route through cloud
 basic-memory project set-local research   # revert
+
+# Config
+basic-memory config list                        # all settings, effective values, env overrides
+basic-memory config set cli_output_style plain  # validated through the config model
+basic-memory config unset cli_output_style      # revert to default
 
 # Health & maintenance
 basic-memory status

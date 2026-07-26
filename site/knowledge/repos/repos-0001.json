@@ -1,7 +1,7 @@
 {
   "chunk": 1,
   "count": 50,
-  "generated_at": "2026-07-19T05:57:48Z",
+  "generated_at": "2026-07-26T06:09:32Z",
   "items": [
     {
       "repo_key": "akkoma.dev/AkkomaGang/akkoma",
@@ -212,6 +212,21 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'codeberg.org/ric_harvey/marp-ui/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/ric_harvey/marp-ui/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/rimgo/rimgo",
+      "repo_url": "codeberg.org/rimgo/rimgo",
+      "host": "codeberg.org",
+      "owner": "rimgo",
+      "repo": "rimgo",
+      "app_references": [
+        "rimgo"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'codeberg.org/rimgo/rimgo/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/rimgo/rimgo/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/rimu/pyfedi",
@@ -477,9 +492,9 @@
       "app_references": [
         "blocky"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__0xERR0R__blocky.md",
-      "readme_download_url": "https://raw.githubusercontent.com/0xERR0R/blocky/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4a869c0116f463c844cd033876ae34048e48ca527e7a8c3e4afbf278f1b5a869",
       "error": null
     },
@@ -537,10 +552,10 @@
       "app_references": [
         "1panel"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__1Panel-dev__1Panel.md",
-      "readme_download_url": null,
-      "readme_sha256": "8f2c015f021958b60b515130b2b6b3ade3d1e2e0b64bd498c22659edd178cc25",
+      "readme_download_url": "https://raw.githubusercontent.com/1Panel-dev/1Panel/dev-v2/README.md",
+      "readme_sha256": "33ef0c078b2c14dfa8e5309e785b03c454306419d9182006e82d52c29f33d44d",
       "error": null
     },
     {
@@ -582,10 +597,10 @@
       "app_references": [
         "seanime"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__5rahim__seanime.md",
-      "readme_download_url": null,
-      "readme_sha256": "3a5de38945c42edbc2af4c2cf61794ce50f1dff0bd50b0f47ccef60eb64f0ec9",
+      "readme_download_url": "https://raw.githubusercontent.com/5rahim/seanime/main/README.md",
+      "readme_sha256": "ba25ae1575693c038db632ee7e6d774f5d218848829a10e7963cd5c48c709546",
       "error": null
     },
     {
@@ -630,7 +645,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__9001__copyparty.md",
       "readme_download_url": "https://raw.githubusercontent.com/9001/copyparty/hovudstraum/README.md",
-      "readme_sha256": "44b16351246dd988d7d8f4444f13c32eb4d2fcfb35d250894ee420d5877b267f",
+      "readme_sha256": "d4b3ce6fc5ebc6301410712ad8701935875590e352cabef870f847ab828be638",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__AnthonyGress__lab-dash.md",
       "readme_download_url": null,
       "readme_sha256": "53492537532ce8d3083a0bdfa0a8d346582781ea0d3eb0d79ab10521cc2b1204",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/AppFlowy-IO/AppFlowy",
-      "repo_url": "github.com/AppFlowy-IO/AppFlowy",
-      "host": "github.com",
-      "owner": "AppFlowy-IO",
-      "repo": "AppFlowy",
-      "app_references": [
-        "appflowy"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__AppFlowy-IO__AppFlowy.md",
-      "readme_download_url": null,
-      "readme_sha256": "f59d3e49037d392f36d7ea13d25485c5d54317f9aee7c61c4c2a47f067aa996d",
       "error": null
     }
   ]

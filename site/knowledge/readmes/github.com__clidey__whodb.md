@@ -2,6 +2,8 @@
 
 # <img src="https://raw.githubusercontent.com/clidey/whodb/main/docs/logo/logo.svg" width="30px" height="auto" alt="" /> WhoDB
 
+[![MCP Toplist](https://mcptoplist.com/badge/glama%2Fclidey%2Fwhodb.svg)](https://mcptoplist.com/server/glama%2Fclidey%2Fwhodb)
+
 ### A lightweight, self-hosted workspace for your databases
 
 [![Release workflow](https://img.shields.io/github/actions/workflow/status/clidey/whodb/release-ce.yml?branch=main)](https://github.com/clidey/whodb/actions/workflows/release-ce.yml)
@@ -187,7 +189,7 @@ pnpm install
 pnpm start
 ```
 
-The frontend opens at [http://localhost:3000](http://localhost:3000) and talks to the backend on port `8080`. See [BUILD_AND_RUN.md](https://github.com/clidey/whodb/blob/main/BUILD_AND_RUN.md) for generation and build commands.
+The frontend opens at [http://localhost:3000](http://localhost:3000) and talks to the backend on port `8080`. See the [CE build and run guide](https://github.com/clidey/whodb/blob/main/.agents/docs/build-and-run.md) for generation and build commands.
 
 ## Contributing
 

@@ -120,7 +120,6 @@ See EventCatalog powering real-world architectures:
 | [@eventcatalog/sdk](./packages/sdk) | Node.js SDK for programmatic catalog management |
 | [@eventcatalog/create-eventcatalog](./packages/create-eventcatalog) | CLI scaffolding tool |
 | [@eventcatalog/visualiser](./packages/visualiser) | Standalone React visualiser component |
-| [@eventcatalog/dsl-playground](./packages/playground) | Browser-based DSL playground |
 
 ---
 
@@ -246,6 +245,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ugostack"><img src="https://avatars.githubusercontent.com/u/81093728?v=4?s=100" width="100px;" alt="ugostack"/><br /><sub><b>ugostack</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/commits?author=ugostack" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jdebarochez"><img src="https://avatars.githubusercontent.com/u/3436890?v=4?s=100" width="100px;" alt="Jean de Barochez"/><br /><sub><b>Jean de Barochez</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/commits?author=jdebarochez" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/cog06"><img src="https://avatars.githubusercontent.com/u/44521955?v=4?s=100" width="100px;" alt="cog06"/><br /><sub><b>cog06</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/issues?q=author%3Acog06" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://cksource.com"><img src="https://avatars.githubusercontent.com/u/93583958?v=4?s=100" width="100px;" alt="Dominik Szczepaniak"/><br /><sub><b>Dominik Szczepaniak</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/issues?q=author%3Adszczepaniak-cksource" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>

@@ -100,19 +100,26 @@ App should be accessible at http://localhost:5000
 OR
 
 - Clone repo
-- Copy `src/example.env` to `src/.env`, modify as needed
 - Run `docker compose up`
 - For automatic app updates, see `compose.yml`
+- To enable environment:
+    - Uncomment:
+        ```
+        # env_file:
+        #     - src/.env
+        ```
+    - Copy `src/example.env` to `src/.env`, modify as needed
 - To enable HTTPS, see `compose.yml`
   - then you can access the HTTPS app with https://localhost:5001
   - your browser will warn you about not secure connection, you need to click on "allow"
 
 ### Run locally (Python)
 
-- Copy `src/example.env` to `src/.env`, modify as needed
 - Create and activate a virtual environment in `src/` and install `requirements.txt`
 - optionally install `ffmpeg` and `node`/`deno`, otherwise they will be automatically installed to your venv
 - run `main.py`
+- To enable environment:
+    - Copy `src/example.env` to `src/.env`, modify as needed
 
 
 ## Cookies
@@ -208,8 +215,8 @@ Please fill in a bug report. Attach browser and app logs if relevant, app versio
 
 <a href="https://www.star-history.com/?repos=Matszwe02%2Fytdlp_web_player&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Matszwe02/ytdlp_web_player&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Matszwe02/ytdlp_web_player&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Matszwe02/ytdlp_web_player&type=date&legend=top-left" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=Matszwe02/ytdlp_web_player&type=date&theme=dark&legend=top-left&sealed_token=Zl2dzmWUVUFTEUi3gsml_QdK81OsclisvdMzzAPqjx4Mw-hM5yGunbLB7ZfzHSImqHJln6sjfraFdR4NTvzwtayFPXg9KXZxaEKR3QLDjmlz0G6K5PAB-tYNce-2hNRxLaeY-MEnVtwwCD7aUivxdI_aKacEyBcLZfDk2Y8qMMbWBmEbMvcLUezM1uPg" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=Matszwe02/ytdlp_web_player&type=date&legend=top-left&sealed_token=Zl2dzmWUVUFTEUi3gsml_QdK81OsclisvdMzzAPqjx4Mw-hM5yGunbLB7ZfzHSImqHJln6sjfraFdR4NTvzwtayFPXg9KXZxaEKR3QLDjmlz0G6K5PAB-tYNce-2hNRxLaeY-MEnVtwwCD7aUivxdI_aKacEyBcLZfDk2Y8qMMbWBmEbMvcLUezM1uPg" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=Matszwe02/ytdlp_web_player&type=date&legend=top-left&sealed_token=Zl2dzmWUVUFTEUi3gsml_QdK81OsclisvdMzzAPqjx4Mw-hM5yGunbLB7ZfzHSImqHJln6sjfraFdR4NTvzwtayFPXg9KXZxaEKR3QLDjmlz0G6K5PAB-tYNce-2hNRxLaeY-MEnVtwwCD7aUivxdI_aKacEyBcLZfDk2Y8qMMbWBmEbMvcLUezM1uPg" />
  </picture>
 </a>

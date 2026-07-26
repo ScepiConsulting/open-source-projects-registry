@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-19T05:57:47Z",
+  "generated_at": "2026-07-26T06:09:32Z",
   "summary": {
-    "apps": 1322,
-    "repos": 1298,
-    "readme_ok": 149,
-    "readme_not_modified": 1097,
-    "readme_error": 52
+    "apps": 1326,
+    "repos": 1302,
+    "readme_ok": 142,
+    "readme_not_modified": 1107,
+    "readme_error": 53
   },
   "failed_repos": [
     {
@@ -77,6 +77,11 @@
       "repo_key": "codeberg.org/ric_harvey/marp-ui",
       "repo_url": "codeberg.org/ric_harvey/marp-ui",
       "error": "worker_exception: Invalid URL 'codeberg.org/ric_harvey/marp-ui/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/ric_harvey/marp-ui/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/rimgo/rimgo",
+      "repo_url": "codeberg.org/rimgo/rimgo",
+      "error": "worker_exception: Invalid URL 'codeberg.org/rimgo/rimgo/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/rimgo/rimgo/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/rimu/pyfedi",

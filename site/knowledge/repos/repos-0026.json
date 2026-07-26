@@ -1,8 +1,68 @@
 {
   "chunk": 26,
-  "count": 48,
-  "generated_at": "2026-07-19T05:57:48Z",
+  "count": 50,
+  "generated_at": "2026-07-26T06:09:32Z",
   "items": [
+    {
+      "repo_key": "github.com/wekan/wekan",
+      "repo_url": "github.com/wekan/wekan",
+      "host": "github.com",
+      "owner": "wekan",
+      "repo": "wekan",
+      "app_references": [
+        "wekan"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__wekan__wekan.md",
+      "readme_download_url": "https://raw.githubusercontent.com/wekan/wekan/main/README.md",
+      "readme_sha256": "166d4d0fbeb8b382d18aacbd6ca436512772f658a9a59921c5b5778fb70dc431",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/wezm/feedlynx",
+      "repo_url": "github.com/wezm/feedlynx",
+      "host": "github.com",
+      "owner": "wezm",
+      "repo": "feedlynx",
+      "app_references": [
+        "feedlynx"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__wezm__feedlynx.md",
+      "readme_download_url": null,
+      "readme_sha256": "fa0feff0c8e1085bd1f7e80712d43b09e61be7d8937d69035734c16886c7c298",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/wg-easy/wg-easy",
+      "repo_url": "github.com/wg-easy/wg-easy",
+      "host": "github.com",
+      "owner": "wg-easy",
+      "repo": "wg-easy",
+      "app_references": [
+        "wg-easy"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__wg-easy__wg-easy.md",
+      "readme_download_url": null,
+      "readme_sha256": "0c3066c03940abd496276ccd89624753f4bf96207451da7016ee201c1de21c5b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/wger-project/wger",
+      "repo_url": "github.com/wger-project/wger",
+      "host": "github.com",
+      "owner": "wger-project",
+      "repo": "wger",
+      "app_references": [
+        "wger"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__wger-project__wger.md",
+      "readme_download_url": null,
+      "readme_sha256": "11b4826a7357eabd8756a6a5d21099f5660122e87ef6c4ec688249b351b42f05",
+      "error": null
+    },
     {
       "repo_key": "github.com/windmill-labs/windmill",
       "repo_url": "github.com/windmill-labs/windmill",
@@ -45,7 +105,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__withoutbg__withoutbg-inference.md",
       "readme_download_url": "https://raw.githubusercontent.com/withoutbg/withoutbg-inference/main/README.md",
-      "readme_sha256": "7b8b8dbb0e242a0e71cdfdc79d70d9397920a00741938b9982e2976690c772cf",
+      "readme_sha256": "6800041a0eb20b4b39eb8abda22c1014f18c732ccb6b799cfb5c77d41892053b",
       "error": null
     },
     {
@@ -692,36 +752,6 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "sr.ht/~sircmpwn/sourcehut",
-      "repo_url": "sr.ht/~sircmpwn/sourcehut",
-      "host": "sr.ht",
-      "owner": "~sircmpwn",
-      "repo": "sourcehut",
-      "app_references": [
-        "sourcehut"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'sr.ht/~sircmpwn/sourcehut/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://sr.ht/~sircmpwn/sourcehut/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "we.phorge.it/source/phorge",
-      "repo_url": "we.phorge.it/source/phorge",
-      "host": "we.phorge.it",
-      "owner": "source",
-      "repo": "phorge",
-      "app_references": [
-        "phorge"
-      ],
-      "readme_status": "error",
-      "readme_path": null,
-      "readme_download_url": null,
-      "readme_sha256": null,
-      "error": "worker_exception: Invalid URL 'we.phorge.it/source/phorge/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://we.phorge.it/source/phorge/-/raw/main/README.md?"
     }
   ]
 }

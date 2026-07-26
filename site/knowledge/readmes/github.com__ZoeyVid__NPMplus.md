@@ -15,7 +15,7 @@ If you don't need the web GUI of NPMplus, you may also have a look at caddy: htt
 ## List of some changes
 
 - Supports HTTP/3 (QUIC), requires you to expose https with udp
-- Support for crowdsec and openappsec
+- Support for crowdsec
 - Support for acme profiles (letsencrypt shortlived is used by default)
 - Improved support for different acme servers (like ocsp/must-staple)
 - OIDC support
@@ -100,17 +100,6 @@ name: appsec
 source: appsec
 labels:
   type: appsec
-#---
-# If you use open-appsec, uncomment the section below.
-# If connecting to open-appsec cloud, you must edit the default 'log trigger' 
-# in the cloud dashboard: check "Log to > gateway / agent" and click 'enforce'.
-# Otherwise, no intrusion events will be logged to the local agent 
-# for CrowdSec to process.
-#source: file
-#filenames:
-# - /opt/openappsec/logs/cp-nano-http-transaction-handler.log*
-#labels:
-#  type: openappsec
 ```
 4. Make sure to use `network_mode: host` in your compose file for the NPMplus container
 5. Run `docker exec crowdsec cscli bouncers add npmplus` and save the api key of the output
@@ -147,7 +136,6 @@ location ~* [^/]\.php(?:$|/) {
 - Disable Request Buffering: Most time you want keep buffering enabled, request buffering will always be enabled if crowdsec appsec is enabled, you may want to disable this if you for example want to upload huge files and have a fast and stable connection to the upstream server, this effects the connection from the NPMplus to the upstream server
 - Enable compression by upstream: this will allow the backend to compress files, I recommend you to keep this disabled, there may be cases where this is needed since otherwise the upstream missbehaves for some reason (like collabora in nextcloud all-in-one)
 - Disable URI Sanitisation: By default, nginx sanitises the URI (removing `../` to prevent directory traversal attacks). Enabling this toggle will disable this protection by appending `$request_uri` directly without sanitisation. Note: If a path is appended to the `Forward Hostname / IP` (e.g. `127.0.0.1/path`), this toggle is disabled as the path takes precedence over `$request_uri` and disables URI sanitisation automatically. Only enable this if your backend requires the raw URI (like collabora in nextcloud all-in-one)
-- Spoof Host Header: this will rewrite the Host header sent to the upstream server to match the configured Forward Hostname / IP and Forward Port instead of sending the original Host header provided by the client, only enable this if you want to actively spoof the host header, it is never needed for normal proxying
 - Enable fancyindex: this will enabled fancyindex, which shows a index of all files in the folder if there is no index file, only enable this if you know what you are doing and you need the index
 - Websockets: this button was removed, websockets are now always enabled
 - Reuse Key: this will make the new cert always keep its key unless you force renew it, I recommend you to keep this disabled (not to keep the key), a reason to keep the key would be TLSA/pubkey pinning
@@ -336,14 +324,13 @@ If you need to run scripts before NPMplus launches put them under: `/opt/npmplus
 4. If you're blocking IPs — for example, using access lists, GeoIP filtering, or CrowdSec block lists — make sure to mention this as well.
 5. If GoAccess is enabled, it processes access logs to generate statistics, which are saved on disk for a time you can configure. These statistics include user information (like IPs), so make sure to also mention this.
 6. If you use the PHP-FPM option, error logs from PHP-FPM will also be written to Docker logs. These include user information (like IPs), so make sure to also mention this.
-7. If you use open-appsec `NGINX_LOAD_OPENAPPSEC_ATTACHMENT_MODULE`, you should also include information about it; since I don't use it myself, I can't give you any further hints.
-8. If you collect any user information (like through other custom nginx modules, modules you can load via env, lua scripts, etc.), also mention it.
-9. If you use the caddy http to https redirect container, you should also mention the data collected by it, since it will also collect (error) logs.
-10. If use use anubis, see here: https://anubis.techaro.lol/docs/admin/configuration/impressum
-11. If you do any extra custom/advanced configuration/modification, which is in someway related to the users data, then yes, keep in mind to also mention this.
-12. Anything else you do with the users data, should also be mentioned. (Like what your backend does or any other proxies in front of NPMplus (like cloudflare, still not recommended), how data is stored, duration, ads, analytic tools, how data is handled if they contact you, by who/which provider, etc.)
-13. I don't think this needs to be mentioned, but you can include it if you want to be thorough (note: this does not apply if you're using Let's Encrypt, as they no longer support OCSP): Some clients (like Firefox) send OCSP requests to the certificate authority (CA) by default if the CA includes OCSP URLs in the certificate. This behavior can be disabled by users in Firefox. In my opinion, it doesn't need to be mentioned, as no data is sent to you — the client communicates directly with the CA. The check is initiated by the client itself; it's neither requested nor required by you. Your certificate simply indicates that the client can perform this check if it chooses to.
-14. Also optional and, in my opinion, not required: Some information about the data stored by the nameservers running your domain. I don't think this should be required, since in most cases there's a provider between the users and your nameserver acting as a proxy. This means the DNS requests of your users are hidden behind their provider. It’s the provider who should explain to their users how they handle data in their role as a "DNS proxy."
+7. If you collect any user information (like through other custom nginx modules, modules you can load via env, lua scripts, etc.), also mention it.
+8. If you use the caddy http to https redirect container, you should also mention the data collected by it, since it will also collect (error) logs.
+9. If use use anubis, see here: https://anubis.techaro.lol/docs/admin/configuration/impressum
+10. If you do any extra custom/advanced configuration/modification, which is in someway related to the users data, then yes, keep in mind to also mention this.
+11. Anything else you do with the users data, should also be mentioned. (Like what your backend does or any other proxies in front of NPMplus (like cloudflare, still not recommended), how data is stored, duration, ads, analytic tools, how data is handled if they contact you, by who/which provider, etc.)
+12. I don't think this needs to be mentioned, but you can include it if you want to be thorough (note: this does not apply if you're using Let's Encrypt, as they no longer support OCSP): Some clients (like Firefox) send OCSP requests to the certificate authority (CA) by default if the CA includes OCSP URLs in the certificate. This behavior can be disabled by users in Firefox. In my opinion, it doesn't need to be mentioned, as no data is sent to you — the client communicates directly with the CA. The check is initiated by the client itself; it's neither requested nor required by you. Your certificate simply indicates that the client can perform this check if it chooses to.
+13. Also optional and, in my opinion, not required: Some information about the data stored by the nameservers running your domain. I don't think this should be required, since in most cases there's a provider between the users and your nameserver acting as a proxy. This means the DNS requests of your users are hidden behind their provider. It’s the provider who should explain to their users how they handle data in their role as a "DNS proxy."
 
 ## What connections can be expected from the NPMplus container?
 - to your clients

@@ -1,4 +1,4 @@
-[![Discord](https://img.shields.io/badge/Discord-LibrePhotos-5865F2?style=plastic&logo=discord&logoColor=white)][discord] [![Website](https://img.shields.io/website?down_color=lightgrey&down_message=offline&style=plastic&up_color=blue&up_message=online&url=https%3A%2F%2Flibrephotos.com)](https://librephotos.com/)
+[![Discord](https://img.shields.io/badge/Discord-LibrePhotos-5865F2?style=plastic&logo=discord&logoColor=white)][discord] 
 [![Read the docs](https://img.shields.io/static/v1?label=Read&message=the%20docs&color=blue&style=plastic)](https://docs.librephotos.com/) [![GitHub contributors](https://img.shields.io/github/contributors/librephotos/librephotos?style=plastic)](https://github.com/LibrePhotos/librephotos/graphs/contributors) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=plastic)](LICENSE)
 
 # LibrePhotos
@@ -7,11 +7,6 @@
 <sub>Mockup designed by rawpixel.com / Freepik</sub>
 
 A self-hosted, open-source photo management service with automatic face recognition, object detection, and semantic search — powered by modern machine learning.
-
-- **Stable** demo is available here: https://demo1.librephotos.com/ . User is ```demo```, password is ```demo1234``` (with sample images).
-- Latest **development** demo is available here: https://demo2.librephotos.com/ (same user/password)
-- You can watch development videos on [Niaz Faridani-Rad's channel](https://www.youtube.com/channel/UCZJ2pk2BPKxwbuCV9LWDR0w)
-- You can join our [Discord][discord].
 
 ## Repository layout
 

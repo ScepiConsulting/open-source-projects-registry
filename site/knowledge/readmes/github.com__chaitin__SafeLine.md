@@ -53,7 +53,7 @@ List of the main features as follows:
 - **`Rate Limiting`**
   - Defend your web apps against `DoS attacks`, `bruteforce attempts`, `traffic surges`, and other types of abuse by throttling traffic that exceeds defined limits.
 - **`Anti-Bot Challenge`**
-  - Anti-Bot challenges to protect your website from `bot attacks`, humen users will be allowed, crawlers and bots will be blocked.
+  - Anti-Bot challenges to protect your website from `bot attacks`, human users will be allowed, crawlers and bots will be blocked.
 - **`Authentication Challenge`**
   - When authentication challenge turned on, visitors need to enter the password, otherwise they will be blocked.
 - **`Dynamic Protection`**

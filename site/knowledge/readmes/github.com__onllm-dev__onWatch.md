@@ -2,7 +2,7 @@
 
 **Free, open-source AI API quota monitoring for developers.**
 
-Track usage across [Synthetic](https://synthetic.new), [Z.ai](https://z.ai), [Anthropic](https://anthropic.com), [Codex](https://openai.com/codex), [GitHub Copilot](https://github.com/features/copilot), [MiniMax](https://platform.minimax.io), [Gemini CLI](docs/GEMINI_SETUP.md), [Cursor](docs/CURSOR_SETUP.md), [Grok](docs/GROK_SETUP.md), and Antigravity in one place.
+Track usage across [Synthetic](https://synthetic.new), [Z.ai](https://z.ai), [Anthropic](https://anthropic.com), [Codex](https://openai.com/codex), [GitHub Copilot](https://github.com/features/copilot), [MiniMax](https://platform.minimax.io), [Gemini CLI](docs/GEMINI_SETUP.md), [Cursor](docs/CURSOR_SETUP.md), [Grok](docs/GROK_SETUP.md), [Kimi Code](docs/KIMI_SETUP.md), and Antigravity in one place.
 See history, get alerts, and open a local web dashboard before you hit throttling or run over budget. Additionally, you can ingest local telemetry from your own API-driven workflows with API Integrations, keeping track of token use and spending across multiple providers.
 
 **Links:** [Website](https://onwatch.onllm.dev) | [Buy Me a Coffee](https://buymeacoffee.com/prakersh)
@@ -18,7 +18,7 @@ See history, get alerts, and open a local web dashboard before you hit throttlin
 
 **Compatibility & Docs**
 
-[![Version](https://img.shields.io/badge/Version-v2.12.5-0EA5E9?style=for-the-badge)](https://github.com/onllm-dev/onwatch/releases/tag/v2.12.5)
+[![Version](https://img.shields.io/badge/Version-v2.13.1-0EA5E9?style=for-the-badge)](https://github.com/onllm-dev/onwatch/releases/tag/v2.13.1)
 [![Go 1.25+](https://img.shields.io/badge/Go-1.25+-00ADD8?style=for-the-badge&logo=go&logoColor=white)](https://go.dev)
 [![Platform](https://img.shields.io/badge/macOS%20%7C%20Linux%20%7C%20Windows-orange?style=for-the-badge&logo=apple&logoColor=white)](#quick-start)
 [![pkg.go.dev](https://img.shields.io/badge/pkg.go.dev-reference-007D9C?style=for-the-badge&logo=go&logoColor=white)](https://pkg.go.dev/github.com/onllm-dev/onwatch/v2)
@@ -168,7 +168,10 @@ Open **http://localhost:9211** and log in with your `.env` credentials.
 - **Gemini CLI (Beta)** -- Per-model quota tracking for Gemini 2.5/3.x Pro, Flash, and Flash Lite models with 24-hour reset cycles
 - **Antigravity** -- Multi-model quota cards (Claude, Gemini, GPT) with grouped quota pools, logging history, and cycle overview. Selectable data **source** -- the desktop **IDE** probe or the **`agy` CLI** (richer weekly + 5-hour buckets), or **both** (default) -- switchable in the dashboard settings; all variants share one Google-account quota
 - **Cursor** -- Individual, Team, and Enterprise account tracking with auto-detected credentials from Cursor Desktop SQLite or macOS Keychain/Linux keyring, OAuth token auto-refresh, burn rate forecasts, and on-demand spend tracking
+- **Kimi Code** -- Moonshot Kimi Code CLI OAuth quotas via `GET /coding/v1/usages` (auto-detect `~/.kimi-code/credentials`). Weekly + window limits with reset countdown. See [Kimi Setup](docs/KIMI_SETUP.md).
 - **Grok** -- xAI Grok Build / SuperGrok credits tracking via local `~/.grok/auth.json` (or `$GROK_HOME`), optional `grok agent stdio` RPC, and grok.com gRPC-web bearer probe (no browser cookie import). Primary "Credits" utilization against plan limit with reset countdown. Informational local session token stats also captured.
+- **Moonshot** -- Balance-based tracking for the Moonshot (Kimi) open-platform API. Available, Voucher, and Cash balance cards with drop-rate trends. Set `MOONSHOT_API_KEY`. See [Moonshot Setup](docs/MOONSHOT_SETUP.md).
+- **DeepSeek** -- Balance-based tracking for the DeepSeek platform API. Total, Granted, and Topped-Up balance cards with drop-rate trends. Set `DEEPSEEK_API_KEY`. See [DeepSeek Setup](docs/DEEPSEEK_SETUP.md).
 - **API Integrations** -- Local JSONL ingestion for custom API-driven workflows and automations. Track per-integration token volume, request counts, recent activity, costs, trends, and accumulated usage across separate API keys and providers.
 - **All** -- Side-by-side view of all configured providers
 - **Prometheus metrics endpoint (Beta)** -- Exposes `/metrics` for Prometheus/Grafana/Alertmanager integrations, with optional bearer token protection via `ONWATCH_METRICS_TOKEN`
@@ -333,6 +336,11 @@ Additional environment variables:
 | `GROK_TOKEN`             | Grok bearer from `grok login` (or auto-detected from ~/.grok/auth.json)|
 | `GROK_ENABLED`           | Enable Grok provider (default: auto when auth present; set false to disable)|
 | `GROK_HOME`              | Custom Grok home dir (default ~/.grok; auth.json and sessions live here)|
+| `KIMI_TOKEN` / `KIMI_CODE_TOKEN` | Optional static Kimi Code access token (prefer local OAuth credentials)|
+| `KIMI_CODE_ENABLED`      | Enable Kimi Code provider (default: auto when credentials present)|
+| `KIMI_CODE_CREDENTIALS`  | Path to kimi-code.json (default ~/.kimi-code/credentials/kimi-code.json)|
+| `MOONSHOT_API_KEY`       | Moonshot (Kimi) open-platform API key (enables balance tracking)|
+| `DEEPSEEK_API_KEY`       | DeepSeek platform API key (enables balance tracking)   |
 | `ANTIGRAVITY_ENABLED`    | Enable Antigravity provider (auto-detects local server)|
 | `ANTIGRAVITY_SOURCE`     | Data source: `both` (default), `cli` (agy), or `ide`   |
 | `ANTIGRAVITY_CLI_PATH`   | Override path to the `agy` binary (else PATH/well-known)|
@@ -577,6 +585,20 @@ See [DEVELOPMENT.md](docs/DEVELOPMENT.md) for build instructions, cross-compilat
 ./app.sh --build --run # Build + run debug mode    (or: make run)
 ./app.sh --release     # Cross-compile all platforms (or: make release-local)
 ```
+
+### Nix
+
+If you have Nix (flakes enabled), you can build, run, and develop without touching `app.sh`:
+
+```bash
+nix build .#onwatch            # Build -> ./result/bin/onwatch (pure-Go, static)
+nix run .#onwatch -- --debug   # Build + run
+nix develop                    # Enter a shell with go, gopls, gotools, gofumpt
+```
+
+With [direnv](https://direnv.net/) installed, run `direnv allow` once and the devShell loads automatically on `cd`.
+
+The flake tracks `nixos-unstable` (pinned via `flake.lock`) because `go.mod` requires Go >= 1.25.7 and the `nixos-25.05` branch only ships Go 1.24. When you change `go.sum`, update the `vendorHash` in `flake.nix` by running `nix build .#onwatch` and pasting the `got: sha256-...` value from the mismatch error.
 
 ---
 

@@ -1,8 +1,38 @@
 {
   "chunk": 15,
   "count": 50,
-  "generated_at": "2026-07-19T05:57:48Z",
+  "generated_at": "2026-07-26T06:09:32Z",
   "items": [
+    {
+      "repo_key": "github.com/hhftechnology/Dock-Dploy",
+      "repo_url": "github.com/hhftechnology/Dock-Dploy",
+      "host": "github.com",
+      "owner": "hhftechnology",
+      "repo": "Dock-Dploy",
+      "app_references": [
+        "dock-dploy"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hhftechnology__Dock-Dploy.md",
+      "readme_download_url": null,
+      "readme_sha256": "e4e915d448ea1bc44159f150110c9ef5749049e5e95b3de6ad81944f2fca38cf",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/hhftechnology/crowdsec_manager",
+      "repo_url": "github.com/hhftechnology/crowdsec_manager",
+      "host": "github.com",
+      "owner": "hhftechnology",
+      "repo": "crowdsec_manager",
+      "app_references": [
+        "crowdsec-manager"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hhftechnology__crowdsec_manager.md",
+      "readme_download_url": null,
+      "readme_sha256": "b394796261710b9090c41858593cdcea750f78059b2b063943bafb60eef40c07",
+      "error": null
+    },
     {
       "repo_key": "github.com/hhftechnology/middleware-manager",
       "repo_url": "github.com/hhftechnology/middleware-manager",
@@ -150,7 +180,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hudikhq__hoodik.md",
       "readme_download_url": "https://raw.githubusercontent.com/hudikhq/hoodik/master/README.md",
-      "readme_sha256": "ae900c9d55009cfd8afe13a39db4e3d957d5418cb912a91c11c6ca5b5723d9ff",
+      "readme_sha256": "5e7c553757d222f3ee248c38f04fed311d982c6db8b1d653c018ba29a42a2e31",
       "error": null
     },
     {
@@ -282,10 +312,10 @@
       "app_references": [
         "immich"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__immich-app__immich.md",
-      "readme_download_url": null,
-      "readme_sha256": "cd67d01f164a3f2b3ba1a8c43700a7154140a10f6fdf76d7e75cba5dc718fa2b",
+      "readme_download_url": "https://raw.githubusercontent.com/immich-app/immich/main/README.md",
+      "readme_sha256": "03a9c05673a43119eae0813eaac8bacc2167bb2ffd962fe6436648c506ea75ac",
       "error": null
     },
     {
@@ -462,10 +492,10 @@
       "app_references": [
         "boxarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__iongpt__boxarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "5edc9409d3e4d00e1c67bf2980090404a7e33f6531928572737c65cb437fa446",
+      "readme_download_url": "https://raw.githubusercontent.com/iongpt/boxarr/main/README.md",
+      "readme_sha256": "e3bb2b58898f30e6c82494cadd1762b2f85b6b4e2c122646407da066047af075",
       "error": null
     },
     {
@@ -492,9 +522,9 @@
       "app_references": [
         "trip"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__itskovacs__trip.md",
-      "readme_download_url": "https://raw.githubusercontent.com/itskovacs/trip/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "327a7417ab54ccdbccc773acdedbc437ddc504d347f47b7ddcc7dd62e825ae28",
       "error": null
     },
@@ -537,10 +567,10 @@
       "app_references": [
         "pulsarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jamcalli__Pulsarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "aa62468e6de1b2ef3dd849c036dfd2e71300fed19153a266021c5e4b59cbacac",
+      "readme_download_url": "https://raw.githubusercontent.com/jamcalli/Pulsarr/master/README.md",
+      "readme_sha256": "dfce6962731f35acd62931d003e66bb9c6ce750715cecfabf7902dcdebe4011a",
       "error": null
     },
     {
@@ -627,9 +657,9 @@
       "app_references": [
         "mkcert-web-ui"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__jeffcaldwellca__mkcertWeb.md",
-      "readme_download_url": "https://raw.githubusercontent.com/jeffcaldwellca/mkcertWeb/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "bdbcdca43c1cd6e026ab4609e6985a051612435175a1f31eeb197d98365536dd",
       "error": null
     },
@@ -657,10 +687,10 @@
       "app_references": [
         "jellyfin"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jellyfin__jellyfin.md",
-      "readme_download_url": null,
-      "readme_sha256": "914b25fd2d743e86bc7c252adad127f50dce63f023efb93934154580cbc8b36b",
+      "readme_download_url": "https://raw.githubusercontent.com/jellyfin/jellyfin/master/README.md",
+      "readme_sha256": "88a24330cd3fb606ee827a5b5cf0449230627e6a711c445d84b6452d20afb257",
       "error": null
     },
     {
@@ -721,36 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__jgraph__drawio.md",
       "readme_download_url": null,
       "readme_sha256": "7d728dc2b3f67bb48126bf194bdb31d831bff9c081f421456522f5ceadc5d299",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jhpyle/docassemble",
-      "repo_url": "github.com/jhpyle/docassemble",
-      "host": "github.com",
-      "owner": "jhpyle",
-      "repo": "docassemble",
-      "app_references": [
-        "docassemble"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jhpyle__docassemble.md",
-      "readme_download_url": null,
-      "readme_sha256": "a1c9c5fe78b19cfc4724e23d2c359e216459c70e2e68dd8ce868a2b5e645ae59",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jhuckaby/Cronicle",
-      "repo_url": "github.com/jhuckaby/Cronicle",
-      "host": "github.com",
-      "owner": "jhuckaby",
-      "repo": "Cronicle",
-      "app_references": [
-        "cronicle"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jhuckaby__Cronicle.md",
-      "readme_download_url": null,
-      "readme_sha256": "551f25d11971a1d05526d476574bc17c48a32d1b400752fc2e6e1b2431d5d4a2",
       "error": null
     }
   ]

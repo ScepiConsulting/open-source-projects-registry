@@ -1,8 +1,53 @@
 {
   "chunk": 21,
   "count": 50,
-  "generated_at": "2026-07-19T05:57:48Z",
+  "generated_at": "2026-07-26T06:09:32Z",
   "items": [
+    {
+      "repo_key": "github.com/owntracks/frontend",
+      "repo_url": "github.com/owntracks/frontend",
+      "host": "github.com",
+      "owner": "owntracks",
+      "repo": "frontend",
+      "app_references": [
+        "owntracks-frontend"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__owntracks__frontend.md",
+      "readme_download_url": null,
+      "readme_sha256": "dad72a9d3657ef432a61bd656cc87fb34127403e940ca2e97a2b125785138001",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/owntracks/recorder",
+      "repo_url": "github.com/owntracks/recorder",
+      "host": "github.com",
+      "owner": "owntracks",
+      "repo": "recorder",
+      "app_references": [
+        "owntracks-recorder"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__owntracks__recorder.md",
+      "readme_download_url": "https://raw.githubusercontent.com/owntracks/recorder/master/README.md",
+      "readme_sha256": "734241e193c80cd2e2513432c9938749295410fa0bb74fe3107e947c6d7f574b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/ozencb/couchtube",
+      "repo_url": "github.com/ozencb/couchtube",
+      "host": "github.com",
+      "owner": "ozencb",
+      "repo": "couchtube",
+      "app_references": [
+        "couchtube"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__ozencb__couchtube.md",
+      "readme_download_url": null,
+      "readme_sha256": "5c944e9d33b824dbce10a9dad0f94a4ceb40fd129a89fe29890931adf43a5e55",
+      "error": null
+    },
     {
       "repo_key": "github.com/p0lloc/perfice",
       "repo_url": "github.com/p0lloc/perfice",
@@ -210,7 +255,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__perber__leafwiki.md",
       "readme_download_url": "https://raw.githubusercontent.com/perber/leafwiki/main/README.md",
-      "readme_sha256": "9d40ec65a7af69867819fa58abe04d22c5d42d9efbda5f5bff92bec0272c9ca5",
+      "readme_sha256": "2616fccd47c7802f256d3caa667492747f2e6cb6bf9f614ea6d5c88c372827c6",
       "error": null
     },
     {
@@ -225,7 +270,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__perminder-klair__subwave.md",
       "readme_download_url": "https://raw.githubusercontent.com/perminder-klair/subwave/develop/README.md",
-      "readme_sha256": "dd7a594c867b693634a52786789bf902b9ab8df4043b053571f45543826fbe08",
+      "readme_sha256": "cb31f513a0583e13da5f5a8a704932854998e48c0b96b5664de97ef2cbe41d79",
       "error": null
     },
     {
@@ -297,10 +342,10 @@
       "app_references": [
         "password-pusher"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pglombardo__PasswordPusher.md",
-      "readme_download_url": null,
-      "readme_sha256": "5e3996b253603f89d2105e47886d6127767fe8d39b9d9f1be80486013a1fc1e0",
+      "readme_download_url": "https://raw.githubusercontent.com/pglombardo/PasswordPusher/master/README.md",
+      "readme_sha256": "54c99c724545ce57bade3dfc91dcd5e3f3cd639a587ae35b761fcb43e2e88fc4",
       "error": null
     },
     {
@@ -387,9 +432,9 @@
       "app_references": [
         "pinkary"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__pinkary-project__pinkary.com.md",
-      "readme_download_url": "https://raw.githubusercontent.com/pinkary-project/pinkary.com/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b593f6995f913a7fe4754b39fab8227df898822081b54670e74ff2d1dbf275e8",
       "error": null
     },
@@ -657,9 +702,9 @@
       "app_references": [
         "prometheus"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__prometheus__prometheus.md",
-      "readme_download_url": "https://raw.githubusercontent.com/prometheus/prometheus/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "903404c4bf86f099ac03fd6cbf297c7b1e32269ec0ee7b461335a638e52c715a",
       "error": null
     },
@@ -702,55 +747,10 @@
       "app_references": [
         "unregistry"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__psviderski__unregistry.md",
-      "readme_download_url": "https://raw.githubusercontent.com/psviderski/unregistry/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "be86a8d0ec9e8d7d740a77eb3f2ed5eb9868920ecae3b795eb6170b285001f45",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pterodactyl/panel",
-      "repo_url": "github.com/pterodactyl/panel",
-      "host": "github.com",
-      "owner": "pterodactyl",
-      "repo": "panel",
-      "app_references": [
-        "pterodactyl"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pterodactyl__panel.md",
-      "readme_download_url": null,
-      "readme_sha256": "2ae86df7c6c42b9c65ad1af6b130f952c977b124bf328eeececfc65cfb5998ce",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pulsejet/memories",
-      "repo_url": "github.com/pulsejet/memories",
-      "host": "github.com",
-      "owner": "pulsejet",
-      "repo": "memories",
-      "app_references": [
-        "memories"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pulsejet__memories.md",
-      "readme_download_url": null,
-      "readme_sha256": "0710a0ba58d7623f3d5a70864bebc67794dfe033e6e3e769d5962a5e03cd1e2a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/pvcnt/mergeable",
-      "repo_url": "github.com/pvcnt/mergeable",
-      "host": "github.com",
-      "owner": "pvcnt",
-      "repo": "mergeable",
-      "app_references": [
-        "mergeable"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__pvcnt__mergeable.md",
-      "readme_download_url": null,
-      "readme_sha256": "e64bcf4bd9df42fb34d7e420356bbded2cc0767147f727f69302059670cc64aa",
       "error": null
     }
   ]

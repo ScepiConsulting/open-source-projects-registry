@@ -1,8 +1,23 @@
 {
   "chunk": 6,
   "count": 50,
-  "generated_at": "2026-07-19T05:57:48Z",
+  "generated_at": "2026-07-26T06:09:32Z",
   "items": [
+    {
+      "repo_key": "github.com/RocketChat/Rocket.Chat",
+      "repo_url": "github.com/RocketChat/Rocket.Chat",
+      "host": "github.com",
+      "owner": "RocketChat",
+      "repo": "Rocket.Chat",
+      "app_references": [
+        "rocket-chat"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__RocketChat__Rocket.Chat.md",
+      "readme_download_url": null,
+      "readme_sha256": "f2846b7430368be25cc9fc1103cf59e82402ff48c1a205b796a7b8ddd60947e3",
+      "error": null
+    },
     {
       "repo_key": "github.com/SamR1/FitTrackee",
       "repo_url": "github.com/SamR1/FitTrackee",
@@ -12,9 +27,9 @@
       "app_references": [
         "fittrackee"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__SamR1__FitTrackee.md",
-      "readme_download_url": "https://raw.githubusercontent.com/SamR1/FitTrackee/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "cad9aac3f7860a7a56ecdc03c20f19a46279d6dd34bd891c4e4c418f13504cc9",
       "error": null
     },
@@ -27,9 +42,9 @@
       "app_references": [
         "podfetch"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__SamTV12345__PodFetch.md",
-      "readme_download_url": "https://raw.githubusercontent.com/SamTV12345/PodFetch/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "09438df82d2b666d79eb3dff55c0ebff3b096109844797f0e628c25b300b85c1",
       "error": null
     },
@@ -177,10 +192,10 @@
       "app_references": [
         "chhoto-url"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__SinTan1729__chhoto-url.md",
-      "readme_download_url": null,
-      "readme_sha256": "a49d9e124b4d5d3c3730fdb6353cb98da6ea1657888fdd550e41510bf000920e",
+      "readme_download_url": "https://raw.githubusercontent.com/SinTan1729/chhoto-url/main/README.md",
+      "readme_sha256": "6e36ce8b3e06d4857af5d4d966f87b0dae42e1d159615a75b3977f6461ee9eee",
       "error": null
     },
     {
@@ -585,7 +600,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Termix-SSH__Termix.md",
       "readme_download_url": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/README.md",
-      "readme_sha256": "22f3c7c8faedc1e1e0a1a6057daa6f18278afd8570dcbdfa7b7043dae97c608c",
+      "readme_sha256": "66d642d3f429a10d6485a707e028596f839af971418c01cebf4a2802dd40d4c0",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__TimWitzdam__GitSave.md",
       "readme_download_url": null,
       "readme_sha256": "b7293a511cf6a6a4e4e8b2f5954561ba6f87245887466cc5ed12c998f3f45030",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/TobiasMarschner/ferrishare",
-      "repo_url": "github.com/TobiasMarschner/ferrishare",
-      "host": "github.com",
-      "owner": "TobiasMarschner",
-      "repo": "ferrishare",
-      "app_references": [
-        "ferrishare"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__TobiasMarschner__ferrishare.md",
-      "readme_download_url": null,
-      "readme_sha256": "b3908cfef345902bf3ac81559b6363124d2b7b358a24945375e678c5d0fb1456",
       "error": null
     }
   ]

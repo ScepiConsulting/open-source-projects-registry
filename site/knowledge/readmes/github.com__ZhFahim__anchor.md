@@ -28,6 +28,8 @@ Anchor focuses on speed, privacy, simplicity, and reliability across mobile and 
 - **Search** - Search notes locally by title or content
 - **Trash** - Soft delete notes with recovery period
 - **Automatic Sync** - Sync changes across devices when online
+- **Import & Export** - Export your full library, and import it back or bring notes in from Google Keep
+- **Home Screen Widget** - Quick access to your notes from the Android home screen
 - **Admin Panel** - User management, registration control, and system statistics
 - **OIDC Authentication** - Sign in with OpenID Connect providers (Pocket ID, Authelia, Keycloak, etc.)
 
@@ -75,7 +77,9 @@ Anchor focuses on speed, privacy, simplicity, and reliability across mobile and 
    | Variable | Required | Default | Description |
    |----------|----------|---------|-------------|
    | `APP_URL` | No | `http://localhost:3000` | Base URL where Anchor is served |
-   | `JWT_SECRET` | No | (auto-generated) | Auth token secret |
+   | `JWT_SECRET` | No | (auto-generated) | Auth token secret. Min 16 characters when set |
+   | `DATA_DIR` | No | `/data` | Root directory for persisted uploads |
+   | `CORS_ORIGINS` | No | (allow all) | Comma-separated allowlist of CORS origins |
    | `PG_HOST` | No | (empty) | External Postgres host (leave empty for embedded) |
    | `PG_PORT` | No | `5432` | Postgres port |
    | `PG_USER` | No | `anchor` | Postgres username |

@@ -1,8 +1,38 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-07-19T05:57:48Z",
+  "generated_at": "2026-07-26T06:09:32Z",
   "items": [
+    {
+      "repo_key": "github.com/directus/directus",
+      "repo_url": "github.com/directus/directus",
+      "host": "github.com",
+      "owner": "directus",
+      "repo": "directus",
+      "app_references": [
+        "directus"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__directus__directus.md",
+      "readme_download_url": null,
+      "readme_sha256": "974d947749c0959da42556a21f87463b47f7439d3be56a3d3d4a5ad454e5005a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/discourse/discourse",
+      "repo_url": "github.com/discourse/discourse",
+      "host": "github.com",
+      "owner": "discourse",
+      "repo": "discourse",
+      "app_references": [
+        "discourse"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__discourse__discourse.md",
+      "readme_download_url": "https://raw.githubusercontent.com/discourse/discourse/main/README.md",
+      "readme_sha256": "784611a56172ef4a2f57f79946df034f2cde084dfef0f999f2c9f788b524b6b2",
+      "error": null
+    },
     {
       "repo_key": "github.com/diskoverdata/diskover-community",
       "repo_url": "github.com/diskoverdata/diskover-community",
@@ -210,7 +240,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dokku__dokku.md",
       "readme_download_url": "https://raw.githubusercontent.com/dokku/dokku/master/README.md",
-      "readme_sha256": "3d0bec27eb6d51cd3f6d7faccd2fb275a5797241093ed5c85dfab565378ac263",
+      "readme_sha256": "7a88193b648f6b46f1e6bff769241d6b44ecfadc0b213118c0cee2b9a2fdd4e6",
       "error": null
     },
     {
@@ -252,9 +282,9 @@
       "app_references": [
         "mindwtr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dongdongbh__Mindwtr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a3a255fdd92630903f0a1c76bdc24fb1e1c14d4e2fec45419e0a800ba398e87e",
       "error": null
     },
@@ -552,9 +582,9 @@
       "app_references": [
         "wallos"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ellite__Wallos.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ellite/Wallos/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "3d82ffd4d5f38466904c9a8486ee6d84baac2b6e81dafcdbec699041081b0e9c",
       "error": null
     },
@@ -613,9 +643,9 @@
       "app_references": [
         "lightweight-music-server"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__epoupon__lms.md",
-      "readme_download_url": "https://raw.githubusercontent.com/epoupon/lms/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "9dbca1e2da5f4e83eae8276bf01b4d8c460e13fe31f44cb9e38860e5bd2abbcc",
       "error": null
     },
@@ -643,9 +673,9 @@
       "app_references": [
         "filerise"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__error311__FileRise.md",
-      "readme_download_url": "https://raw.githubusercontent.com/error311/FileRise/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "dea57de57321763378ce3a3b0d5d01e5bce7122e111873a440a8de44cdfca7eb",
       "error": null
     },
@@ -722,36 +752,6 @@
       "readme_path": "knowledge/readmes/github.com__evcc-io__evcc.md",
       "readme_download_url": null,
       "readme_sha256": "9c003de122ed712227d54e3735c76246284de893b517d944b83a9865a11776ef",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/event-catalog/eventcatalog",
-      "repo_url": "github.com/event-catalog/eventcatalog",
-      "host": "github.com",
-      "owner": "event-catalog",
-      "repo": "eventcatalog",
-      "app_references": [
-        "eventcatalog"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__event-catalog__eventcatalog.md",
-      "readme_download_url": null,
-      "readme_sha256": "aa941e4ecfd50a06746f153b31e4029387ad244914a0bcef906cf1f6fa076a83",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/evershopcommerce/evershop",
-      "repo_url": "github.com/evershopcommerce/evershop",
-      "host": "github.com",
-      "owner": "evershopcommerce",
-      "repo": "evershop",
-      "app_references": [
-        "evershop"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__evershopcommerce__evershop.md",
-      "readme_download_url": null,
-      "readme_sha256": "586f206e25b23bd5a459b3029ddd4a1439acfc60b4fb009829e451c839b8a276",
       "error": null
     }
   ]

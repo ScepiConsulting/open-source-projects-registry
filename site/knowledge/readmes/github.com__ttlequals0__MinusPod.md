@@ -12,6 +12,7 @@ MinusPod is a self-hosted server that removes ads before you ever hit play. It t
 - Audio-side signals: loudness analysis, DAI transition detection, pre/post-roll, and a VAD-gap detector for spans Whisper drops
 - Per-feed audio cue detection that snaps cuts to a show's jingle or stinger
 - Confidence scoring with a review queue; rejected detections stay visible for auditing
+- Every marker carries a segment category (sponsor, cross-promo, self-promo, interaction, and opt-in intro/outro/recap), each resolving to remove, beep, or keep, set globally or per feed and defaulting to remove until configured
 
 **Transcription**
 - Local Whisper on GPU or CPU via faster-whisper, or a remote OpenAI-compatible API
@@ -30,6 +31,7 @@ MinusPod is a self-hosted server that removes ads before you ever hit play. It t
 **Publishing**
 - Re-cut RSS feeds served per podcast, with versioned audio files
 - Podcasting 2.0: regenerated transcripts and chapters, AI-content disclosure, value-for-value tags passed through
+- Optional Podping listener refreshes a feed within seconds of the host announcing a new episode, on top of scheduled polling
 - OPML import/export, and an optional cover-art badge that marks the re-feed
 
 **Interface and ops**
@@ -79,6 +81,8 @@ Access the web UI at `http://localhost:8000/ui/` to add and manage feeds.
 
 **No NVIDIA GPU?** Pull the CPU variant (`docker compose -f docker-compose.cpu.yml up -d`; multi-arch, runs natively on amd64 and arm64) and offload Whisper to a remote API. Full CPU setup and the 2.0.0+ upgrade notes are in [docs/installation.md](docs/installation.md).
 
+**Stable or edge?** `:latest` (GPU) and `:cpu` follow every release; several can land in one day. For a slower, vetted track, set `MINUSPOD_VERSION=stable` (GPU compose) or `MINUSPOD_VERSION=stable-cpu` (CPU compose) in your `.env` to pin `ttlequals0/minuspod:stable` / `:stable-cpu` instead. Stable tags only move to releases that have soaked in production; see the [releases page](https://github.com/ttlequals0/MinusPod/releases) for curated notes on each.
+
 ## Documentation
 
 | Topic | |
@@ -98,6 +102,7 @@ Access the web UI at `http://localhost:8000/ui/` to add and manage feeds.
 | [Security, Storage & Custom Assets](docs/security-and-storage.md) | Remote access, login lockout, backups, custom markers |
 | [Podcasting 2.0](docs/podcasting-2.0.md) | What MinusPod emits, regenerates, and deliberately strips from the Podcast Namespace, and why |
 | [Deployment Runbook](docs/DEPLOYMENT.md) | Operational runbook |
+| [Releasing & Channels](docs/releasing.md) | Stable vs edge channels, how releases are tagged and promoted |
 | [LLM Benchmark Report](benchmarks/llm/results/report.md) | Per-model F1, JSON compliance, latency, and cost across the benchmarked models |
 
 Or browse the [full docs index](docs/README.md).
