@@ -1,8 +1,53 @@
 {
   "chunk": 13,
   "count": 50,
-  "generated_at": "2026-07-26T06:09:32Z",
+  "generated_at": "2026-08-02T06:03:38Z",
   "items": [
+    {
+      "repo_key": "github.com/etesync/server",
+      "repo_url": "github.com/etesync/server",
+      "host": "github.com",
+      "owner": "etesync",
+      "repo": "server",
+      "app_references": [
+        "etesync"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__etesync__server.md",
+      "readme_download_url": null,
+      "readme_sha256": "3e77b64a4106991a9e5b44f67ab7a5a981a9dc9e9cc6a731503f71fdba24bdb4",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/ether/etherpad",
+      "repo_url": "github.com/ether/etherpad",
+      "host": "github.com",
+      "owner": "ether",
+      "repo": "etherpad",
+      "app_references": [
+        "etherpad"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__ether__etherpad.md",
+      "readme_download_url": "https://raw.githubusercontent.com/ether/etherpad/develop/README.md",
+      "readme_sha256": "561d9f3d0a97dc6f6ef77654170c4893d9744baad751d081606ef81bf899048f",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/evcc-io/evcc",
+      "repo_url": "github.com/evcc-io/evcc",
+      "host": "github.com",
+      "owner": "evcc-io",
+      "repo": "evcc",
+      "app_references": [
+        "evcc"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__evcc-io__evcc.md",
+      "readme_download_url": null,
+      "readme_sha256": "9c003de122ed712227d54e3735c76246284de893b517d944b83a9865a11776ef",
+      "error": null
+    },
     {
       "repo_key": "github.com/event-catalog/eventcatalog",
       "repo_url": "github.com/event-catalog/eventcatalog",
@@ -12,9 +57,9 @@
       "app_references": [
         "eventcatalog"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__event-catalog__eventcatalog.md",
-      "readme_download_url": "https://raw.githubusercontent.com/event-catalog/eventcatalog/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "8dca73bc6e2d0bb89b2154badc871d4c31f629234f611f96ad23dace04f979d3",
       "error": null
     },
@@ -27,10 +72,10 @@
       "app_references": [
         "evershop"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__evershopcommerce__evershop.md",
-      "readme_download_url": null,
-      "readme_sha256": "586f206e25b23bd5a459b3029ddd4a1439acfc60b4fb009829e451c839b8a276",
+      "readme_download_url": "https://raw.githubusercontent.com/evershopcommerce/evershop/dev/README.md",
+      "readme_sha256": "3cf015a0721f504efe82365d1a4232baba4a6babbb8c179098a51503570df361",
       "error": null
     },
     {
@@ -237,10 +282,10 @@
       "app_references": [
         "figranium"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__figranium__figranium.md",
-      "readme_download_url": null,
-      "readme_sha256": "288d62d6a47a612c3964da460fd5d740710ef686420f15ae03d2735d3c6cb6ea",
+      "readme_download_url": "https://raw.githubusercontent.com/figranium/figranium/main/README.md",
+      "readme_sha256": "7ccc1bb2ef246b7166229ec445effeabe880b2d50291fd57080b3d4583abb0eb",
       "error": null
     },
     {
@@ -255,7 +300,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__filebrowser__filebrowser.md",
       "readme_download_url": "https://raw.githubusercontent.com/filebrowser/filebrowser/master/README.md",
-      "readme_sha256": "f550b4356e015f1d479fa3ffcc7a7e64e72cde5c503a8be338d6ddc9baa5f3db",
+      "readme_sha256": "6966247bf87f43e6eeda87f0f4f9539897a37e8108aec84e9c7608601afd7d59",
       "error": null
     },
     {
@@ -300,7 +345,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__fisharebest__webtrees.md",
       "readme_download_url": "https://raw.githubusercontent.com/fisharebest/webtrees/main/README.md",
-      "readme_sha256": "09f88e02cfe9c870c8058ad7fa9141aa00c61150fe597350fc5ee4707623a59a",
+      "readme_sha256": "86d11df8e748e7a120d0eda62b819f0e73dfe2c389a2b8c162048ea382891cb1",
       "error": null
     },
     {
@@ -327,10 +372,10 @@
       "app_references": [
         "gocron"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__flohoss__gocron.md",
-      "readme_download_url": null,
-      "readme_sha256": "ad08b26e02f8b763e159b9473b3bfb694056fd1d9dc98b0f36dcdb42e1d5952f",
+      "readme_download_url": "https://raw.githubusercontent.com/flohoss/gocron/main/README.md",
+      "readme_sha256": "920487d8e013ac0de69e1b9f30a4fc5608c28dfd118ac9fb0cdf2a60bcce264c",
       "error": null
     },
     {
@@ -462,10 +507,10 @@
       "app_references": [
         "medialyze"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__frederikemmer__MediaLyze.md",
-      "readme_download_url": null,
-      "readme_sha256": "e6dbfe035bb6bf02477fb5d47ca3d882709f3ba46f6e344347532884a58aeea6",
+      "readme_download_url": "https://raw.githubusercontent.com/frederikemmer/MediaLyze/main/README.md",
+      "readme_sha256": "5fee5abfbbf41a9f3e4b9889db803a65841360ccc290c14c78a8aa44aede66b5",
       "error": null
     },
     {
@@ -522,9 +567,9 @@
       "app_references": [
         "posterizarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__fscorrupt__posterizarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/fscorrupt/posterizarr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d436dfda4d2ff12b773e6c8bbd8110b70cc06ef1e6275d427158899a8e2c0c78",
       "error": null
     },
@@ -537,9 +582,9 @@
       "app_references": [
         "koito"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__gabehf__Koito.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gabehf/Koito/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f6b392ab22afa2b8c7c19e193af62cc1df6f9de6fb3f6e908f2fa58810847c0e",
       "error": null
     },
@@ -597,10 +642,10 @@
       "app_references": [
         "notediscovery"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gamosoft__NoteDiscovery.md",
-      "readme_download_url": null,
-      "readme_sha256": "3356fe587369b0facf1bd8fb0afc1b4d5a1b8486659236d497dac8287486530f",
+      "readme_download_url": "https://raw.githubusercontent.com/gamosoft/NoteDiscovery/main/README.md",
+      "readme_sha256": "7e8840c58f6f2d737ae7791bd2ab645a4ac6e325df4c709b01ecafcf74f73bda",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__gelbphoenix__autocaliweb.md",
       "readme_download_url": null,
       "readme_sha256": "4172d4035e207cf388c3f79d11a169d01426912b0fade120df8023cb0086f65f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/gerbera/gerbera",
-      "repo_url": "github.com/gerbera/gerbera",
-      "host": "github.com",
-      "owner": "gerbera",
-      "repo": "gerbera",
-      "app_references": [
-        "gerbera"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__gerbera__gerbera.md",
-      "readme_download_url": "https://raw.githubusercontent.com/gerbera/gerbera/master/README.md",
-      "readme_sha256": "3b88e2516306b8b3b38e5526c0288e6c9f3b79971130cf438e956149221aff5f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/getarcaneapp/arcane",
-      "repo_url": "github.com/getarcaneapp/arcane",
-      "host": "github.com",
-      "owner": "getarcaneapp",
-      "repo": "arcane",
-      "app_references": [
-        "arcane"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__getarcaneapp__arcane.md",
-      "readme_download_url": null,
-      "readme_sha256": "ed5e60e17a437d8fdfbbb837ef3c50585ee8ecd92bd238d6355f3a465e412e4b",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/getfider/fider",
-      "repo_url": "github.com/getfider/fider",
-      "host": "github.com",
-      "owner": "getfider",
-      "repo": "fider",
-      "app_references": [
-        "fider"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__getfider__fider.md",
-      "readme_download_url": null,
-      "readme_sha256": "8a07f0741bd5d3043999db7a1b9b0e2ab04b82d9fb4a4bf791ec58cb1a6e0f59",
       "error": null
     }
   ]

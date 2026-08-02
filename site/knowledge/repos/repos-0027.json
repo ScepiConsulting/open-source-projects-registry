@@ -1,8 +1,68 @@
 {
   "chunk": 27,
-  "count": 2,
-  "generated_at": "2026-07-26T06:09:32Z",
+  "count": 6,
+  "generated_at": "2026-08-02T06:03:39Z",
   "items": [
+    {
+      "repo_key": "gitlab.opencode.de/opentalk/ot-setup",
+      "repo_url": "gitlab.opencode.de/opentalk/ot-setup",
+      "host": "gitlab.opencode.de",
+      "owner": "opentalk",
+      "repo": "ot-setup",
+      "app_references": [
+        "opentalk"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.opencode.de/opentalk/ot-setup/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.opencode.de/opentalk/ot-setup/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "lavaforge.org/spotizerr/spotizerr",
+      "repo_url": "lavaforge.org/spotizerr/spotizerr",
+      "host": "lavaforge.org",
+      "owner": "spotizerr",
+      "repo": "spotizerr",
+      "app_references": [
+        "spotizerr"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'lavaforge.org/spotizerr/spotizerr/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://lavaforge.org/spotizerr/spotizerr/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "open.greenhost.net/stackspin/stackspin",
+      "repo_url": "open.greenhost.net/stackspin/stackspin",
+      "host": "open.greenhost.net",
+      "owner": "stackspin",
+      "repo": "stackspin",
+      "app_references": [
+        "stackspin"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'open.greenhost.net/stackspin/stackspin/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://open.greenhost.net/stackspin/stackspin/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "salsa.debian.org/freedombox-team/freedombox",
+      "repo_url": "salsa.debian.org/freedombox-team/freedombox",
+      "host": "salsa.debian.org",
+      "owner": "freedombox-team",
+      "repo": "freedombox",
+      "app_references": [
+        "freedombox"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://salsa.debian.org/freedombox-team/freedombox/-/raw/main/README.md?"
+    },
     {
       "repo_key": "sr.ht/~sircmpwn/sourcehut",
       "repo_url": "sr.ht/~sircmpwn/sourcehut",

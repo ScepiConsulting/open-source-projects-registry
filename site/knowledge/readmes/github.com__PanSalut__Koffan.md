@@ -62,6 +62,7 @@ I built the first version in **Next.js**, but it turned out to be very resource-
 - Simple login system
 - Rate limiting protection against brute-force attacks
 - **REST API** - Programmatic access for integrations and migrations ([docs](https://github.com/PanSalut/Koffan/wiki/REST-API))
+- **Outbound webhooks** - Signed item events for automation tools such as n8n, Node-RED, and Zapier ([docs](https://github.com/PanSalut/Koffan/wiki/Webhooks))
 
 ## Tech Stack
 
@@ -155,6 +156,22 @@ docker-compose up -d
 | `LOGIN_WINDOW_MINUTES` | `15` | Time window for counting attempts |
 | `LOGIN_LOCKOUT_MINUTES` | `30` | Lockout duration after exceeding limit |
 | `API_TOKEN` | *(disabled)* | Enable REST API with this token ([docs](https://github.com/PanSalut/Koffan/wiki/REST-API)) |
+| `WEBHOOK_URL` | *(disabled)* | HTTP or HTTPS endpoint for outbound item events |
+| `WEBHOOK_SECRET` | *(none)* | Secret used to sign webhook payloads with HMAC-SHA256 |
+| `WEBHOOK_EVENTS` | *(all item events)* | Comma-separated filter: `item.created`, `item.updated`, `item.completed`, `item.deleted` |
+
+### Outbound Webhooks
+
+Set `WEBHOOK_URL` to receive signed, asynchronous item events. Koffan supports event filtering, HMAC-SHA256 signatures, and durable SQLite-backed retries that survive restarts.
+
+```bash
+WEBHOOK_URL=https://automation.example.com/webhook/koffan \
+WEBHOOK_SECRET=replace-with-a-random-secret \
+WEBHOOK_EVENTS=item.created,item.completed,item.deleted \
+go run .
+```
+
+See the [Webhook documentation](https://github.com/PanSalut/Koffan/wiki/Webhooks) for events, payloads, signature verification, retry behavior, and integration guidance.
 
 ## Deploy to Your Server
 
@@ -184,6 +201,7 @@ Data is stored in `/data/shopping.db`. The volume ensures your data persists acr
 For more information, check the **[Wiki](https://github.com/PanSalut/Koffan/wiki)**:
 
 - [REST API](https://github.com/PanSalut/Koffan/wiki/REST-API) - Programmatic access, migrations, integrations
+- [Webhooks](https://github.com/PanSalut/Koffan/wiki/Webhooks) - Outbound item events for automation and notifications
 - [Multiple Instances](https://github.com/PanSalut/Koffan/wiki/Multiple-Instances) - Running separate instances for different households
 
 ## Feature Requests

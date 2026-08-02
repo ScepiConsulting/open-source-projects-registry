@@ -15,7 +15,6 @@ _Mindwtr = "mind like water": the calm you get when nothing is rattling around i
 [![CI](https://github.com/dongdongbh/Mindwtr/actions/workflows/ci.yml/badge.svg)](https://github.com/dongdongbh/Mindwtr/actions/workflows/ci.yml)
 [![GitHub license](https://img.shields.io/github/license/dongdongbh/Mindwtr?color=brightgreen)](LICENSE)
 [![GitHub downloads](https://img.shields.io/github/downloads/dongdongbh/Mindwtr/total)](https://github.com/dongdongbh/Mindwtr/releases)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/dongdongbh/Mindwtr)
 [![Discord](https://img.shields.io/badge/Discord-Join-5865F2?logo=discord&logoColor=white)](https://discord.gg/gc4h5t58PR)
 [![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub-ff5f5f?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/dongdongbh)
 [![Ko-fi](https://img.shields.io/badge/Sponsor-Ko--fi-29abe0?logo=kofi&logoColor=white)](https://ko-fi.com/D1D01T20WK)
@@ -125,6 +124,8 @@ Mindwtr is simple by default and powerful when you need it:
 - Apps for Windows, macOS, Linux, iPhone, and Android, plus a web app that works offline.
 - For developers: a local REST API, a CLI, and the [`mindwtr-mcp`](https://www.npmjs.com/package/mindwtr-mcp) server so AI assistants can manage your tasks.
 
+[![MCP Toplist](https://mcptoplist.com/badge/io.github.dongdongbh%2Fmindwtr.svg)](https://mcptoplist.com/server/io.github.dongdongbh%2Fmindwtr)
+
 <details>
 <summary>See all features</summary>
 
@@ -194,7 +195,7 @@ Desktop builds can start the local REST API from **Settings -> Advanced** on `12
 - 📲 **Android Widget** - Home screen focus/next widget
 - ⌨️ **Keyboard Shortcuts** - Standard (Gmail-style), Vim, and Emacs presets
 - 🎨 **Themes** - Light, Dark, OLED, Nord, Sepia, E-ink, and Material 3
-- 🌍 **i18n** - English, Vietnamese, Chinese (Simplified), Chinese (Traditional), Spanish, Hindi, Arabic, German, Russian, Japanese, French, Portuguese, Polish, Korean, Czech, Italian, Turkish, Dutch
+- 🌍 **i18n** - English, Vietnamese, Chinese (Simplified), Chinese (Traditional), Spanish, Hindi, Arabic, German, Russian, Japanese, French, Portuguese, Polish, Korean, Czech, Italian, Turkish, Dutch, Persian, Swedish
 - 🐳 **Docker** - Run the PWA + self-hosted sync server with Docker
 
 </details>
@@ -229,6 +230,8 @@ Quick options:
 - Android: Google Play, F-Droid, IzzyOnDroid, or GitHub Releases APK.
 - iOS: App Store or TestFlight beta.
 - Web / self-hosted: [Cloud Deployment](https://docs.mindwtr.app/data-sync/cloud-deployment) or the [Docker guide](docker/README.md).
+
+Windows builds: free code signing provided by [SignPath.io](https://signpath.io/), certificate by [SignPath Foundation](https://signpath.org/) — application pending. See the [code signing policy](https://mindwtr.app/signing).
 
 <details>
 <summary>Package manager quick commands</summary>
@@ -282,9 +285,9 @@ You can help in several ways:
 
 <a href="https://www.star-history.com/?repos=dongdongbh%2FMindwtr&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&theme=dark&legend=top-left&sealed_token=o7AhNqQCMIgsAPrJNNtM_vXOeX8W0bIEpvmIena9PV3XimmgI9az7lbogUApV_fH-XpQ4OuVXrpI4qP3V7ixza9r8lDKbwNU0-oQrJywIWFf0kNhQD71ypiYzU7MpatFfUn30EeKyKyEpEqUlOtHfAb0XEs59TKha6lmoUfazzlSHvmR47bncqR7gUGO" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&legend=top-left&sealed_token=o7AhNqQCMIgsAPrJNNtM_vXOeX8W0bIEpvmIena9PV3XimmgI9az7lbogUApV_fH-XpQ4OuVXrpI4qP3V7ixza9r8lDKbwNU0-oQrJywIWFf0kNhQD71ypiYzU7MpatFfUn30EeKyKyEpEqUlOtHfAb0XEs59TKha6lmoUfazzlSHvmR47bncqR7gUGO" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&legend=top-left&sealed_token=o7AhNqQCMIgsAPrJNNtM_vXOeX8W0bIEpvmIena9PV3XimmgI9az7lbogUApV_fH-XpQ4OuVXrpI4qP3V7ixza9r8lDKbwNU0-oQrJywIWFf0kNhQD71ypiYzU7MpatFfUn30EeKyKyEpEqUlOtHfAb0XEs59TKha6lmoUfazzlSHvmR47bncqR7gUGO" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&theme=dark&legend=top-left&sealed_token=FEttB-7Usxl2vOdPE6oWOyGuWDgtvmBXqdm8XO1JLHtvdji48vvbX3VAbe-G2M9IM90c_1UQwn39SrfxZB0n8vLkP7f9GWn_5K1veBdx4ka7HvnXOAYnlK-Td8KI9HVjBVQeMHMcFRhIKjL5y0knWi4BBhdfqUPCSvtWExdJ9cXo4UlRaLaoW12OxQqk" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&legend=top-left&sealed_token=FEttB-7Usxl2vOdPE6oWOyGuWDgtvmBXqdm8XO1JLHtvdji48vvbX3VAbe-G2M9IM90c_1UQwn39SrfxZB0n8vLkP7f9GWn_5K1veBdx4ka7HvnXOAYnlK-Td8KI9HVjBVQeMHMcFRhIKjL5y0knWi4BBhdfqUPCSvtWExdJ9cXo4UlRaLaoW12OxQqk" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=dongdongbh/Mindwtr&type=date&legend=top-left&sealed_token=FEttB-7Usxl2vOdPE6oWOyGuWDgtvmBXqdm8XO1JLHtvdji48vvbX3VAbe-G2M9IM90c_1UQwn39SrfxZB0n8vLkP7f9GWn_5K1veBdx4ka7HvnXOAYnlK-Td8KI9HVjBVQeMHMcFRhIKjL5y0knWi4BBhdfqUPCSvtWExdJ9cXo4UlRaLaoW12OxQqk" />
  </picture>
 </a>
 
@@ -314,8 +317,14 @@ Thanks to these monthly sponsors for supporting Mindwtr.
   <a href="https://github.com/danhs" title="@danhs">
     <img src="docs/assets/sponsors/danhs.png" width="60" height="60" alt="@danhs" />
   </a>
+  <a href="https://github.com/NikoScotch" title="@NikoScotch">
+    <img src="docs/assets/sponsors/nikoscotch.png" width="60" height="60" alt="@NikoScotch" />
+  </a>
+  <a href="https://github.com/nicopico-dev" title="@nicopico-dev">
+    <img src="docs/assets/sponsors/nicopico-dev.png" width="60" height="60" alt="@nicopico-dev" />
+  </a>
 </p>
 
 <p align="center">
-  <sub><a href="https://github.com/jarrydstan">@jarrydstan</a> · <a href="https://github.com/ronmolenda">@ronmolenda</a> · <a href="https://github.com/karl1990">@karl1990</a> · <a href="https://github.com/srijan">@srijan</a> · <a href="https://github.com/davibicudo">@davibicudo</a> · <a href="https://github.com/PLPeeters">@PLPeeters</a> · <a href="https://github.com/danhs">@danhs</a></sub>
+  <sub><a href="https://github.com/jarrydstan">@jarrydstan</a> · <a href="https://github.com/ronmolenda">@ronmolenda</a> · <a href="https://github.com/karl1990">@karl1990</a> · <a href="https://github.com/srijan">@srijan</a> · <a href="https://github.com/davibicudo">@davibicudo</a> · <a href="https://github.com/PLPeeters">@PLPeeters</a> · <a href="https://github.com/danhs">@danhs</a> · <a href="https://github.com/NikoScotch">@NikoScotch</a> · <a href="https://github.com/nicopico-dev">@nicopico-dev</a></sub>
 </p>

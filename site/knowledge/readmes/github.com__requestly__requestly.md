@@ -1,10 +1,19 @@
 <p align="center">
   <a href="https://requestly.com/" rel="noreferrer noopener">
     <picture>
-      <!-- TODO: replace with finalized brand asset URLs before publishing -->
-      <source media="(prefers-color-scheme: dark)" srcset="https://requestly.com/og/logo-dark.svg" />
-      <source media="(prefers-color-scheme: light)" srcset="https://requestly.com/og/logo-light.svg" />
-      <img alt="Requestly" src="https://requestly.com/og/logo-light.svg" width="42%" />
+      <source
+        media="(prefers-color-scheme: dark)"
+        srcset="https://github.com/requestly/requestly/blob/master/assets/rq_logo_full.svg?raw=true"
+      />
+      <source
+        media="(prefers-color-scheme: light)"
+        srcset="https://github.com/requestly/requestly/blob/master/assets/rq_logo_full_light_mode.svg?raw=true"
+      />
+      <img
+        alt="Requestly Logo"
+        src="https://github.com/requestly/requestly/blob/master/assets/rq_logo_full_light_mode.svg?raw=true"
+        width="42%"
+      />
     </picture>
   </a>
 </p>
@@ -60,8 +69,6 @@ Modern, Git-native API client. **Switch from Postman in 1 click.**
 | Windows | [Download](https://get.requestly.com/api-client-windows) |
 | Linux | [Download](https://get.requestly.com/api-client-linux) |
 
-<!-- TODO: confirm these `get.requestly.com/api-client-*` redirect URLs exist; if not use the actual download URLs from requestly.com -->
-
 ## This repository
 
 This repo is the community hub for **Requestly API Client**. Use it to:
@@ -105,15 +112,6 @@ The HTTP Interceptor isn't going anywhere. The API Client is where we're investi
 
 ## License
 
-This repository (issue tracker, community discussions, public roadmap) is licensed under [CC BY 4.0](LICENSE).
+This repository is licensed under the [GNU AGPLv3](LICENSE). Third-party components retain the original licenses provided by their owners.
 
-The Requestly API Client application is proprietary software. See [requestly.com/terms](https://requestly.com/terms) for product terms.
-
----
-
-### Deferred / TODO before publishing
-
-- [ ] Brand asset URLs in the header `<picture>` block: replace `requestly.com/og/logo-*.svg` placeholders with finalized assets
-- [ ] Confirm `get.requestly.com/api-client-*` redirect URLs exist (or substitute actual download links from requestly.com)
-- [ ] Confirm `https://requestly.com/pricing` is live; otherwise link to landing page
-- [ ] Confirm screenshots/visual assets if any to be added later
+The Requestly API Client application is proprietary software and is not covered by that license. See [requestly.com/terms](https://requestly.com/terms) for product terms.

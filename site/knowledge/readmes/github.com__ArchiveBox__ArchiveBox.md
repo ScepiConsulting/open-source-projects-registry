@@ -71,7 +71,10 @@ The goal is to sleep soundly knowing the part of the internet you care about wil
 <pre lang="bash"><code style="white-space: pre-line"># Option A: Get ArchiveBox with Docker Compose (recommended):
 mkdir -p ~/archivebox/data && cd ~/archivebox
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml   # edit options in this file as-needed
+docker compose pull
 docker compose run archivebox init
+docker compose run archivebox install
+docker compose run archivebox manage createsuperuser
 # docker compose run archivebox add 'https://example.com'
 # docker compose run archivebox help
 # docker compose up
@@ -80,6 +83,7 @@ docker compose run archivebox init
 # Option B: Or use it as a plain Docker container:
 mkdir -p ~/archivebox/data && cd ~/archivebox/data
 docker run -it -v $PWD:/data archivebox/archivebox:dev init
+docker run -it -v $PWD:/data archivebox/archivebox:dev install
 # docker run -it -v $PWD:/data archivebox/archivebox:dev add 'https://example.com'
 # docker run -it -v $PWD:/data archivebox/archivebox:dev help
 # docker run -it -v $PWD:/data -p 8000:8000 archivebox/archivebox:dev
@@ -182,9 +186,12 @@ ArchiveBox is free for everyone to self-host, but we also provide support, secur
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data && cd ~/archivebox
 # Read and edit docker-compose.yml options as-needed after downloading
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
+docker compose pull
 </code></pre></li>
-<li>Run the initial setup to create an admin user (or set ADMIN_USER/PASS in docker-compose.yml)
+<li>Initialize the collection, then create an admin user (or set ADMIN_USERNAME/ADMIN_PASSWORD in docker-compose.yml)
 <pre lang="bash"><code style="white-space: pre-line">docker compose run archivebox init
+docker compose run archivebox install
+docker compose run archivebox manage createsuperuser
 </code></pre></li>
 <li>Next steps: Start the server then login to the Web UI <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
 <pre lang="bash"><code style="white-space: pre-line">docker compose up
@@ -265,12 +272,13 @@ archivebox version
 </li>
 <li>Create a new empty directory and initialize your collection (can be anywhere).
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data && cd ~/archivebox/data   # for example
-archivebox init     # instantialize a new collection
+archivebox init     # initialize a new collection
 archivebox install  # install all the runtime dependencies (e.g. chrome, single-file, yt-dlp, etc.)
 </code></pre>
 </li>
-<li>Optional: Start the server then login to the Web UI <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
-<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:8000
+<li>Create an admin account, then optionally start the server and log in to the Web UI at <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
+<pre lang="bash"><code style="white-space: pre-line">archivebox manage createsuperuser
+archivebox server 0.0.0.0:8000
 # completely optional, CLI can always be used without running a server
 # archivebox [subcommand] [--help]
 archivebox help
@@ -297,8 +305,7 @@ sudo apt install archivebox
 </code></pre>
 </li>
 <li>Create a new empty directory and initialize your collection (can be anywhere).
-<pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox
-sudo install -d -o archivebox -g archivebox ~/archivebox/data
+<pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data
 cd ~/archivebox/data
 archivebox init
 archivebox install
@@ -306,8 +313,9 @@ archivebox add 'https://example.com'
 </code></pre>
 <br/>
 </li>
-<li>Optional: Start the server then login to the Web UI <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
-<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:8000
+<li>Create an admin account, then optionally start the server and log in to the Web UI at <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
+<pre lang="bash"><code style="white-space: pre-line">archivebox manage createsuperuser
+archivebox server 0.0.0.0:8000
 # completely optional, CLI can always be used without running a server
 # archivebox [subcommand] [--help]
 archivebox help
@@ -320,7 +328,7 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 </details>
 
 <details>
-<summary><b><img src="https://user-images.githubusercontent.com/511499/117447803-f2ec3700-af0b-11eb-87d3-671d114f011d.png" alt="homebrew" height="28px" align="top"/> <code>brew</code></b> (macOS only)</summary>
+<summary><b><img src="https://user-images.githubusercontent.com/511499/117447803-f2ec3700-af0b-11eb-87d3-671d114f011d.png" alt="homebrew" height="28px" align="top"/> <code>brew</code></b> (macOS and Linux)</summary>
 <br/>
 <ol>
 <li>Install <a href="https://brew.sh/#install">Homebrew</a> on your system (if not already installed).</li>
@@ -338,8 +346,9 @@ archivebox init
 archivebox install
 </code></pre>
 </li>
-<li>Optional: Start the server then login to the Web UI <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
-<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:8000
+<li>Create an admin account, then optionally start the server and log in to the Web UI at <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
+<pre lang="bash"><code style="white-space: pre-line">archivebox manage createsuperuser
+archivebox server 0.0.0.0:8000
 # completely optional, CLI can always be used without running a server
 # archivebox [subcommand] [--help]
 archivebox help
@@ -982,7 +991,7 @@ archivebox manage createsuperuser
 
 ### Security Risks of Viewing Archived JS
 
-Archived JavaScript is untrusted content. The default <code>SERVER_SECURITY_MODE=safe-subdomains-fullreplay</code> serves replay content on isolated snapshot subdomains so it cannot share the admin UI's cookies or origin. If your deployment cannot use wildcard <code>*.archivebox.localhost</code> subdomains, use <code>safe-onedomain-nojsreplay</code>, which keeps one origin but disables JavaScript replay. See the [Security Overview](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview) and [Issue #239](https://github.com/ArchiveBox/ArchiveBox/issues/239) for details.
+Archived JavaScript is untrusted content. The default <code>SERVER_SECURITY_MODE=auto</code> uses isolated subdomains with full replay on <code>*.localhost</code>, and a one-domain no-JS replay policy on ordinary public or LAN hostnames. Choose <code>safe-subdomains-fullreplay</code> only when wildcard DNS and TLS are configured. See the [Security Overview](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview) and [Issue #239](https://github.com/ArchiveBox/ArchiveBox/issues/239) for details.
 
 
 <br/>

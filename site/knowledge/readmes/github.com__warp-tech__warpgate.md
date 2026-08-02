@@ -32,6 +32,7 @@ Warpgate is a smart & fully transparent SSH, HTTPS, Kubernetes, MySQL, PostgreSQ
 
 * Set it up in your DMZ, add user accounts and easily assign them to specific hosts and URLs within the network.
 * Warpgate will record every session for you to view (live) and replay later through a built-in admin web UI.
+* Browser-based SSH, RDP and VNC access is built in; native clients continue to work.
 * Not a jump host - forwards connection straight to the target in a way that's fully transparent to the client.
 * Native 2FA and SSO support (TOTP & OpenID Connect)
 * Built-in brute-force protection with IP blocking and user lockout
@@ -188,6 +189,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/alistarle"><img src="https://avatars.githubusercontent.com/u/4499513?v=4?s=100" width="100px;" alt="Victor Coutellier"/><br /><sub><b>Victor Coutellier</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=alistarle" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/Hexalyse"><img src="https://avatars.githubusercontent.com/u/4415295?v=4?s=100" width="100px;" alt="Hexalyse"/><br /><sub><b>Hexalyse</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=Hexalyse" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/LarsSven"><img src="https://avatars.githubusercontent.com/u/60571459?v=4?s=100" width="100px;" alt="Lars"/><br /><sub><b>Lars</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=LarsSven" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/basti-nis"><img src="https://avatars.githubusercontent.com/u/22980626?v=4?s=100" width="100px;" alt="basti-nis"/><br /><sub><b>basti-nis</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=basti-nis" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Chanta007"><img src="https://avatars.githubusercontent.com/u/105554003?v=4?s=100" width="100px;" alt="Chanta007"/><br /><sub><b>Chanta007</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=Chanta007" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/snkolev18"><img src="https://avatars.githubusercontent.com/u/56872319?v=4?s=100" width="100px;" alt="Stoyan Kolev"/><br /><sub><b>Stoyan Kolev</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=snkolev18" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/britbennett"><img src="https://avatars.githubusercontent.com/u/160669068?v=4?s=100" width="100px;" alt="britbennett"/><br /><sub><b>britbennett</b></sub></a><br /><a href="https://github.com/warp-tech/warpgate/commits?author=britbennett" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

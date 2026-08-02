@@ -201,6 +201,14 @@ docker compose up -d
 
 </details>
 
+<a id="poznote-cloud"></a>
+<details>
+<summary><strong>☁️ Poznote Cloud</strong></summary><br>
+
+Use Poznote without installing or maintaining anything: we host it for you. [Get started with Poznote Cloud](https://poznote.com/index.html#cloud)
+
+</details>
+
 <a id="kubernetes"></a>
 <details>
 <summary><strong>☸️ Kubernetes with Helm</strong></summary>
@@ -540,6 +548,16 @@ Poznote supports two primary note formats, each tailored for different workflows
 
 *   **Functionality:** Create pre-filled notes to standardize your documentation.
 *   **Usage:** Notes marked as templates can be duplicated to create new notes with the same structure, tags, and content, saving time on repetitive tasks.
+</details>
+
+<details>
+<summary><strong>Daily Notes (Diary)</strong></summary>
+&nbsp;
+
+*   **Usage:** Write one note per day, journal-style, from a dedicated Diary board.
+*   **Workflow:** The "Today's entry" button opens today's note, creating it if needed, titled with the current date and stored automatically in a `Diary/YYYY/MM` folder structure.
+*   **Board View:** Entries are displayed as cards grouped by month, newest first, with a filter to quickly find past entries.
+*   **Format:** New entries are created as HTML or Markdown notes, depending on the "Diary entry format" setting under **Settings > Display**.
 </details>
 
 ## Personalization

@@ -23,6 +23,10 @@ ___
 
 ## Changelog
 
+
+- **v0.8.2**:
+    - **FIX**: Blocking any self-updates when containerized (both script and image).
+    - **FIX**: Only print exclusion message when excluded container actually has an update.
 - **v0.8.1**:
     - **NEW**: Added *Docker Compose* - possibility to run dockcheck fully containerized.
     - **FIX**: Clarified interactive output around `-E` (exclude from update).
@@ -135,6 +139,7 @@ Add preferred `notify.sh`-template to the same directory - this will not be touc
 ## Docker Compose
 
 **Warning** - Mounting the docker socket with full permissions.  
+**Info** - The dockcheck container is currently required to be manually updated, self-updates blocked.  
 
 Either use the [compose-example-configfile.yml](compose-example-configfile.yml) together with setting up a `dockcheck.config` with your notification settings and options. Or use the [compose-example-envvars.yml](compose-example-envvars.yml) and set everything as environment varialbes (use the [default.config](default.config) as reference).
 

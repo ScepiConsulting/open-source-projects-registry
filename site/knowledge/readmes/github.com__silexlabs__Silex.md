@@ -7,7 +7,7 @@
 
 The web belongs to everyone. Silex is a free/libre visual website builder — no lock-in, no subscription, no tracking. Design visually, export clean HTML/CSS, host anywhere.
 
-**[Try Silex online](https://v3.silex.me/)** | **[Documentation](https://docs.silex.me)** | **[Desktop app — coming soon](https://roadmap.silex.me/posts/3/silex-desktop)** | **[Manifesto](https://www.silex.me/manifesto/)**
+**[Try Silex online](https://v3.silex.me/)** | **[Documentation](https://docs.silex.me)** | **[Download the desktop app](https://www.silex.me/download/)** | **[Manifesto](https://www.silex.me/manifesto/)**
 
 ![Silex UI](https://www.silex.me/img/HJKUdOfC5N-2400.webp)
 
@@ -35,7 +35,7 @@ Most no-code tools lock you in: proprietary formats, forced hosting, subscriptio
 - **Static HTML output** — fast, secure, easy to host anywhere
 - **CMS integration** — bind components to WordPress, Strapi, Squidex, or any GraphQL API
 - **[11ty](https://www.11ty.dev/) compatible** — generate static sites from Silex templates, deploy with CI/CD
-- **Desktop app (coming soon)** — work offline, no account needed, AI-ready with built-in [MCP server](#ai--vibe-coding). Built with [Tauri](https://tauri.app/) for Windows, macOS, Linux. [Follow progress](https://roadmap.silex.me/posts/3/silex-desktop).
+- **Desktop app (alpha)** — work offline, no account needed, AI-ready with built-in [MCP server](#ai--vibe-coding). Built with [Tauri](https://tauri.app/) for Windows, macOS, Linux. [Download it](https://www.silex.me/download/) or [follow progress](https://roadmap.silex.me/posts/3/silex-desktop).
 - **Plugin system** — extend with server and client plugins in JS/TS
 - **SEO tools** — meta tags, Open Graph, per-page settings
 - **Self-hosting** — Docker, Node.js, or one-click deploy on [CapRover](https://caprover.com/)
@@ -44,7 +44,7 @@ Most no-code tools lock you in: proprietary formats, forced hosting, subscriptio
 
 **Use it online** — **[v3.silex.me](https://v3.silex.me/)** (free, requires a GitLab account for storage)
 
-**Desktop app (alpha)** — [download for Windows, macOS or Linux](https://github.com/silexlabs/Silex/releases/latest). Work offline, no account needed.
+**Desktop app (alpha)** — [download for Windows, macOS or Linux](https://www.silex.me/download/). Work offline, no account needed.
 
 ## Contribute
 
@@ -97,9 +97,9 @@ Silex is the work of contributors from all over the world. This project is maint
 
 <!-- Auto generated contributors -->
 
-**2026** — [Alex Hoyau](https://github.com/lexoyo), [Ola Mohamed](https://github.com/ola-a11y), [Syed Ishmum Ahnaf](https://github.com/SyedIshmumAhnaf), [Safal2004](https://github.com/Safal2004), [Wassim Triki](https://github.com/wassim-triki)
+**2026** — [Alex Hoyau](https://github.com/lexoyo), [Aysajan Eziz](https://github.com/AysajanE), [JE4NVRG](https://github.com/JE4NVRG), [KozakLordOfMatrix](https://github.com/MatrixNeoKozak), [pupuking723](https://github.com/pupuking723), [Ola Mohamed](https://github.com/ola-a11y), [Syed Ishmum Ahnaf](https://github.com/SyedIshmumAhnaf), [Wassim Triki](https://github.com/wassim-triki)
 
-**2025** — [Alex Hoyau](https://github.com/lexoyo), [ceubri](https://github.com/ceubri), [Mazen Kamal](https://github.com/Mazen050), Piotr Golebiewski, [oliviermgx](https://github.com/oliviermgx)
+**2025** — [Alex Hoyau](https://github.com/lexoyo), [Mazen Kamal](https://github.com/Mazen050), Piotr Golebiewski, [ioleo](https://github.com/ioleo), [oliviermgx](https://github.com/oliviermgx)
 
 **2024** — [Alex Hoyau](https://github.com/lexoyo), [oliviermgx](https://github.com/oliviermgx), [JeremyZXi](https://github.com/JeremyZXi), [SuperDelphi](https://github.com/SuperDelphi)
 
@@ -119,15 +119,24 @@ Silex is the work of contributors from all over the world. This project is maint
 
 **2016** — [Alex Hoyau](https://github.com/lexoyo), [singchan](https://github.com/singchan), [Pierre Ozoux](https://github.com/pierreozoux)
 
-**2015** — [Alex Hoyau](https://github.com/lexoyo), [singchan](https://github.com/singchan), [Christophe](https://github.com/ondrejec), [Pierre Ozoux](https://github.com/pierreozoux), [René Föhring](https://github.com/rrrene), [christian-bromann](https://github.com/christian-bromann)
+**2015** — [Alex Hoyau](https://github.com/lexoyo), [singchan](https://github.com/singchan), Christophe, [Pierre Ozoux](https://github.com/pierreozoux), [René Föhring](https://github.com/rrrene), [christian-bromann](https://github.com/christian-bromann)
 
 **2014** — [Alex Hoyau](https://github.com/lexoyo), [Camille Gérard-Hirne](https://github.com/camcrock), [neocorp64](https://github.com/NeoCorp), Michele Martone, [peoslaap](https://github.com/peoslaap)
 
-**2013** — [Alex Hoyau](https://github.com/lexoyo), Yann Le Scouarnec, TheCause, yanhick, Thomas Fetiveau
+**2013** — [Alex Hoyau](https://github.com/lexoyo), Yann Le Scouarnec, [TheCause](https://github.com/TheCause), [yanhick](https://github.com/yanhick), Alexandre Hoyau, [Thomas Fetiveau](https://github.com/zabojad)
 
 
 
 <!-- Auto generated contributors -->
+
+The list above is generated from the git history of this repository, so it only covers code. Silex
+owes just as much to people whose work lives elsewhere:
+
+- **Brice Martin** ([ceubri](https://github.com/ceubri)) — templates, brand assets and design
+- **Jonas Moreau** ([MoreauJonas](https://github.com/MoreauJonas)) — detailed bug reports and feedback from real world use
+- [**BaguetteAgile**](https://github.com/BaguetteAgile) — years of bug reports and integration requests, from GitLab publishing to AI agents
+- [**sidmint**](https://github.com/sidmint) — precise usability feedback on the editor and the desktop app
+- **Likha Studios** ([GetLikha](https://github.com/GetLikha)) — reproducible bug reports on Silex v3
 
 ## Links
 
@@ -138,6 +147,7 @@ Silex is the work of contributors from all over the world. This project is maint
 - [Road map](https://roadmap.silex.me) — help define tasks and priorities
 - [Community forums](https://community.silex.me)
 - [Newsletter (EN)](https://short.silex.me/news_en) | [(FR)](https://short.silex.me/news_fr)
+- [Release announcements](https://fosstodon.org/@silex/tagged/SilexRelease) — every stable release, also available as an [RSS feed](https://fosstodon.org/@silex/tagged/SilexRelease.rss)
 - [OpenCollective](https://opencollective.com/silex) — financial contributions
 
 ## Built on

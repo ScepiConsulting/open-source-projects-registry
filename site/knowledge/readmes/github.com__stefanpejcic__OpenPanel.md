@@ -79,19 +79,19 @@ OpenPanel is a truly [OS-agnostic](https://www.techtarget.com/whatis/definition/
 <!-- OS_TEST_RESULTS_START -->
 | Operating System | Version | Last Tested | Status | Average install time[^2] | Notes |
 |---|---|---|---|---|---|
-| Ubuntu | 22 | 2026-07-26 04:06 UTC | ❌ Fail |  |  |
-| Ubuntu | 24 | 2026-07-26 04:19 UTC | ❌ Fail | 3m 42s | **recommended for AMD CPU** |
-| Ubuntu | 26 | 2026-07-26 04:12 UTC | ❌ Fail | 3m 58s |  |
+| Ubuntu | 22 | 2026-07-28 04:12 UTC | ❌ Fail |  |  |
+| Ubuntu | 24 | 2026-07-28 06:03 UTC | ❌ Fail | 3m 42s | **recommended for AMD CPU** |
+| Ubuntu | 26 | 2026-07-28 04:19 UTC | ❌ Fail | 3m 58s |  |
 | Debian | 10 | | | |  |
-| Debian | 11 | 2026-07-26 04:24 UTC | ❌ Fail |  |  |
-| Debian | 12 | 2026-07-26 04:38 UTC | ❌ Fail | 2m 17s |  |
-| Debian | 13 | 2026-07-26 04:50 UTC | ❌ Fail | 3m 24s |  |
+| Debian | 11 | 2026-07-28 06:09 UTC | ❌ Fail |  |  |
+| Debian | 12 | 2026-07-28 06:22 UTC | ❌ Fail | 2m 17s |  |
+| Debian | 13 | 2026-07-28 06:35 UTC | ❌ Fail | 3m 24s |  |
 | AlmaLinux | 9.5 | | |  | **recommended for ARM CPU** |
-| AlmaLinux | 10 | 2026-07-26 03:00 UTC | ❌ Fail | 13m 57s |  |
+| AlmaLinux | 10 | 2026-07-28 03:00 UTC | ❌ Fail | 13m 57s |  |
 | RockyLinux | 9.6 | | | |  |
-| RockyLinux | 10 | 2026-07-26 05:03 UTC | ❌ Fail |  |  |
+| RockyLinux | 10 | 2026-07-28 06:47 UTC | ❌ Fail |  |  |
 | CentOS | 9.5 | | | |  |
-| CentOS | 10 | 2026-07-26 03:37 UTC | ❌ Fail | 8m 55s |  |
+| CentOS | 10 | 2026-07-28 03:37 UTC | ❌ Fail | 8m 55s |  |
 | openEuler | 24 | | Untested |  |  |
 | ZorinOS | 18 | 2026-07-21 09:43 UTC | ✅ Pass |  |  |
 

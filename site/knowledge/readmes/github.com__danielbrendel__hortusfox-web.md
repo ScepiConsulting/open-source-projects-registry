@@ -86,7 +86,7 @@ HortusFox is a free opensource self-hosted collaborative plant management system
 ## Resources
 
 - [Official Homepage](https://www.hortusfox.com/)
-- [Documentation](https://hortusfox.github.io/)
+- [Documentation](https://www.hortusfox.com/documentation)
 
 ## Installation
 
@@ -170,6 +170,8 @@ Note: Setting `PROXY_OVERWRITE_VALUES` to `true` is mandatory if you want to upd
 docker compose pull
 docker compose up -d
 ```
+
+Note: This particular step is also the correct way to upgrade to a new version.
 
 4. The application should now be running on http://localhost:8080.
 

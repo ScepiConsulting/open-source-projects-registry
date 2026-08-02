@@ -103,7 +103,6 @@ Prior versions of Jackett are no longer supported.
  * DonTorrent
  * E-Hentai
  * EBook Bay (EBB)
- * Elitetorrent.wf
  * EpubLibre
  * ExtraTorrent.st
  * EZTV
@@ -234,7 +233,6 @@ Prior versions of Jackett are no longer supported.
  * RGFootball
  * RinTor
  * RiperAM
- * RockBox
  * RUDUB (ex-BaibaKoTV)
  * Rustorka
  * RuTracker.org
@@ -404,7 +402,7 @@ Prior versions of Jackett are no longer supported.
  * HD-Olimpo [![(invite needed)][inviteneeded]](#)
  * HD-Only (HDO)
  * HD-Space (HDS)
- * HD-Torrents (HDT)
+ * HD-Torrents (HDT) [![(invite needed)][inviteneeded]](#)
  * HD-UNiT3D
  * HDArea (HDA)
  * HDBao
@@ -562,7 +560,6 @@ Prior versions of Jackett are no longer supported.
  * Racing4Everyone (R4E)
  * RacingForMe (RFM)
  * RailgunPT
- * Rain (雨)
  * Rastastugan
  * Red Star Torrent (RST) [![(invite needed)][inviteneeded]](#)
  * Redacted (PassTheHeadphones)
@@ -574,7 +571,6 @@ Prior versions of Jackett are no longer supported.
  * RocketHD
  * Romanian Metal Torrents (RMT)
  * Rousi.pro
- * RunTheFrames
  * SAMARITANO
  * SBPT
  * SceneHD [![(invite needed)][inviteneeded]](#)
@@ -635,7 +631,6 @@ Prior versions of Jackett are no longer supported.
  * Toca Share
  * Tormac
  * Tornado
- * Torr9
  * Torrent Heaven (Dutch)
  * Torrent Network (TN)
  * Torrent Trader [![(invite needed)][inviteneeded]](#)
@@ -653,7 +648,6 @@ Prior versions of Jackett are no longer supported.
  * TorrentHR
  * Torrenting (TT)
  * TorrentLeech (TL)
- * TorrentLeech.pl [![(invite needed)][inviteneeded]](#)
  * ToTheGlory (TTG) [![(invite needed)][inviteneeded]](#)
  * TrackerMK
  * TrackerZero [PAY2DL]

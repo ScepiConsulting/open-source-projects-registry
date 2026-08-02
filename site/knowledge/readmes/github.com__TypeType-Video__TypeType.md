@@ -4,11 +4,29 @@
 
 # TypeType
 
-TypeType is a self-hosted video platform for YouTube, NicoNico, and BiliBili. It combines a web app, private accounts and libraries, playback, downloads, and instance administration in one stack that you control.
+TypeType is a self-hosted video platform for YouTube, NicoNico, and BiliBili.
+Run one private instance, then use it from the responsive web app or the native
+Android client. Accounts, subscriptions, history, playlists, favorites, watch
+progress, and settings stay on the instance you control.
 
-This is the central TypeType repository. It contains the Docker Compose stack, installer, update and rollback tools, release coordination, and the project issue tracker.
+<p align="center">
+  <a href="https://typetype.video/fdroid/"><img src="https://raw.githubusercontent.com/TypeType-Video/TypeType-Android/main/assets/badges/fdroid.svg" alt="Install TypeType with F-Droid" width="30%"></a>
+  <a href="https://github.com/TypeType-Video/TypeType-Android/releases/latest"><img src="https://raw.githubusercontent.com/TypeType-Video/TypeType-Android/main/assets/badges/signed-apk.svg" alt="Download the latest signed TypeType APK" width="30%"></a>
+</p>
 
-## Desktop
+## Install
+
+Docker Engine and Docker Compose v2 are required for the self-hosted stack.
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/TypeType-Video/TypeType/main/scripts/install-stack.sh | bash
+```
+
+## Web app
+
+The web app runs in a modern browser on desktop and mobile. It provides
+multi-service discovery, personal libraries, downloads, administration, and
+SABR playback without installing a client.
 
 <p align="center">
   <img src="assets/screenshots/01-hero-watch-desktop.png" alt="TypeType playing a YouTube video" width="100%">
@@ -20,39 +38,34 @@ This is the central TypeType repository. It contains the Docker Compose stack, i
   <img src="assets/gifs/01-multi-service-search.gif" alt="Switching a TypeType search between YouTube, NicoNico, and BiliBili" width="960">
 </p>
 
-| YouTube | NicoNico | BiliBili |
+### Mobile web
+
+| Home | Playback | Audio only |
 | --- | --- | --- |
-| ![YouTube search results](assets/screenshots/02-youtube-search-desktop.png) | ![NicoNico search results](assets/screenshots/03-niconico-search-desktop.png) | ![BiliBili search results](assets/screenshots/04-bilibili-search-desktop.png) |
+| ![TypeType mobile home](assets/screenshots/07-mobile-home.png) | ![TypeType mobile playback](assets/screenshots/11-mobile-watch.png) | ![TypeType mobile audio-only mode](assets/screenshots/12-mobile-audio-only.png) |
 
-### Keep your own library
+## Native Android app
 
-| Save to a playlist | Resume from history |
-| --- | --- |
-| ![Saving a video to a playlist](assets/gifs/02-save-to-playlist.gif) | ![Resuming a video from history](assets/gifs/03-resume-from-history.gif) |
+[TypeType Android](https://github.com/TypeType-Video/TypeType-Android) is the
+native client for Android phones and tablets. It connects directly to your
+TypeType instance and includes synchronized accounts, subscriptions, history,
+playlists, downloads, background audio, Picture in Picture, audio-only playback,
+captions, SponsorBlock, comments, and native playback controls.
 
-| Subscriptions | History |
-| --- | --- |
-| ![TypeType subscriptions](assets/screenshots/05-subscriptions-desktop.png) | ![TypeType watch history](assets/screenshots/06-history-desktop.png) |
-
-## Mobile
-
-| Home | Search | History |
+| Home | Native player | Settings |
 | --- | --- | --- |
-| ![TypeType mobile home](assets/screenshots/07-mobile-home.png) | ![TypeType mobile search](assets/screenshots/08-mobile-search.png) | ![TypeType mobile history](assets/screenshots/09-mobile-history.png) |
+| ![TypeType Android home](https://raw.githubusercontent.com/TypeType-Video/TypeType-Android/main/assets/screenshots/android-home.png) | ![TypeType native Android player](https://raw.githubusercontent.com/TypeType-Video/TypeType-Android/main/assets/screenshots/android-player.png) | ![TypeType Android settings](https://raw.githubusercontent.com/TypeType-Video/TypeType-Android/main/assets/screenshots/android-settings.png) |
 
-| Playlists | Playback | Audio only |
-| --- | --- | --- |
-| ![TypeType mobile playlists](assets/screenshots/10-mobile-playlists.png) | ![TypeType mobile playback](assets/screenshots/11-mobile-watch.png) | ![TypeType mobile audio-only mode](assets/screenshots/12-mobile-audio-only.png) |
+TypeType Android supports Android 6.0 and newer without requiring Google Play
+Services. Read the
+[Android installation guide](https://github.com/TypeType-Video/TypeType-Android#install)
+for F-Droid and signed APK instructions.
 
-## Start here
+## Self-host TypeType
 
-### Install TypeType
-
-Docker Engine and Docker Compose v2 are required.
-
-```sh
-curl -fsSL https://raw.githubusercontent.com/TypeType-Video/TypeType/main/scripts/install-stack.sh | bash
-```
+This central repository contains the Docker Compose stack, installer, update
+and rollback tools, release coordination, and project issue tracker. The web
+and Android clients both connect to the same TypeType instance.
 
 The installer creates `~/typetype-stack`, generates installation-specific secrets, and asks before starting the stack.
 
@@ -60,7 +73,7 @@ The installer creates `~/typetype-stack`, generates installation-specific secret
 - [Manual Docker Compose setup](https://typetype-video.github.io/Docs-TypeType/self-hosting/docker-compose#manual-setup)
 - [Configuration](https://typetype-video.github.io/Docs-TypeType/self-hosting/configuration)
 
-### Use and maintain your instance
+### Maintain your instance
 
 - [User guide](https://typetype-video.github.io/Docs-TypeType/guide/)
 - [Update guide](https://typetype-video.github.io/Docs-TypeType/self-hosting/maintenance)
@@ -70,7 +83,7 @@ The installer creates `~/typetype-stack`, generates installation-specific secret
 
 ## What TypeType includes
 
-- A responsive web client for YouTube, NicoNico, and BiliBili
+- Responsive web and native Android clients for YouTube, NicoNico, and BiliBili
 - Accounts, subscriptions, history, playlists, favorites, and watch progress
 - MSE and SABR playback with quality, audio-track, subtitle, and recovery controls
 - Video and audio downloads with local or S3-compatible storage
@@ -84,6 +97,7 @@ Each component has its own repository, tests, release cycle, and license. Pull r
 | Repository | Responsibility | License |
 | --- | --- | --- |
 | [TypeType](https://github.com/TypeType-Video/TypeType) | Stack, installer, releases, coordination, and issues | MIT |
+| [TypeType-Android](https://github.com/TypeType-Video/TypeType-Android) | Native Android client | GPL-3.0 |
 | [TypeType-Frontend](https://github.com/TypeType-Video/TypeType-Frontend) | React web client | MIT |
 | [TypeType-Server](https://github.com/TypeType-Video/TypeType-Server) | Kotlin API, extraction, and user data | GPL-3.0 |
 | [TypeType-Player](https://github.com/TypeType-Video/TypeType-Player) | Browser MSE and SABR playback package | MIT |

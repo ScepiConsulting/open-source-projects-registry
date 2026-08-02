@@ -191,6 +191,20 @@ Built-in support ~30 languages (managed by [Crowdin](https://docs.termix.site/tr
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+
+**Session Sharing:**
+Share a live terminal, RDP, VNC, or Telnet session with others in real time. Share via a link (joined anonymously, no account needed) or with a specific Termix user, and choose read-only or read-write access. Shares can expire automatically or be revoked at any time, and session sharing can be toggled globally or per-host.
+
+</td>
+<td width="50%" valign="top">
+
+**Desktop Standalone + 2-Way Sync:**
+The Electron desktop app runs fully standalone with its own local backend and database, no server required. Optionally connect it to a remote Termix server for automatic two-way sync of hosts, credentials, snippets, and more, and choose whether SSH connections are started locally or through the remote server.
+
+</td>
+</tr>
 </table>
 
 <br />
@@ -291,6 +305,20 @@ networks:
     driver: bridge
 ```
 
+### Cloud Hosting
+
+You can also run the Termix server on a cloud VPS instead of inside your own network. If Termix runs on the network it manages, an outage takes Termix with it, and your hosts and saved sessions are stuck inside the system you are trying to fix. Hosting it externally keeps it reachable no matter what happens to your network, and gives you a static IP and access from anywhere without a VPN or port forward.
+
+[GINERNET](https://docs.termix.site/install/ginernet) is a sponsor of Termix, and there is a full step by step guide for deploying to their VPS platform in the docs.
+
+<br />
+
+## Telemetry
+
+Termix sends a small anonymous usage ping once every 24 hours to help understand how many instances are running and which features are actually used. This only includes a randomly generated instance ID, a count of users and hosts, the app version, and whether certain features (terminal, file manager, tunnels, docker, etc.) were used in the last 24 hours. It never includes usernames, hostnames, IP addresses, credentials, or any other identifying or connection data.
+
+This is opt-out and enabled by default. You can disable it at any time in Admin Settings under **General**.
+
 <br />
 
 ## Donate
@@ -325,10 +353,6 @@ Interested in a paid placement to support development? Email [mail@termix.site](
   <img src="https://sirv.sirv.com/website/screenshots/cloudflare/cloudflare-logo.png?w=300" height="40" alt="Cloudflare" />
 </a>
 &nbsp;&nbsp;&nbsp;
-<a href="https://tailscale.com/">
-  <img src="https://drive.google.com/uc?export=view&id=1lIxkJuX6M23bW-2FElhT0rQieTrzaVSL" height="40" alt="Tailscale" />
-</a>
-&nbsp;&nbsp;&nbsp;
 <a href="https://akamai.com/">
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/8b/Akamai_logo.svg" height="40" alt="Akamai" />
 </a>
@@ -340,7 +364,10 @@ Interested in a paid placement to support development? Email [mail@termix.site](
 <a href="https://rackgenius.com/">
   <img src="https://rackgenius.com/rackgenius-logo.png" height="40" alt="Rack Genius" />
 </a>
-
+&nbsp;&nbsp;&nbsp;
+<a href="https://ginernet.com/">
+  <img src="https://ginernet.com/img/logo-web.png" height="40" alt="Ginernet" />
+</a>
 </div>
 
 <br />

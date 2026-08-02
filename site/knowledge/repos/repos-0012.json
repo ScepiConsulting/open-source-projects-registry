@@ -1,8 +1,38 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-07-26T06:09:32Z",
+  "generated_at": "2026-08-02T06:03:38Z",
   "items": [
+    {
+      "repo_key": "github.com/diogovalentte/homarr-iframes",
+      "repo_url": "github.com/diogovalentte/homarr-iframes",
+      "host": "github.com",
+      "owner": "diogovalentte",
+      "repo": "homarr-iframes",
+      "app_references": [
+        "homarr-iframes"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__diogovalentte__homarr-iframes.md",
+      "readme_download_url": null,
+      "readme_sha256": "c5493dfde2e77c047c8701911fd39ec7acfdcb4b6aba9a2ff425b3bebc5cd431",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/diogovalentte/mantium",
+      "repo_url": "github.com/diogovalentte/mantium",
+      "host": "github.com",
+      "owner": "diogovalentte",
+      "repo": "mantium",
+      "app_references": [
+        "mantium"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__diogovalentte__mantium.md",
+      "readme_download_url": null,
+      "readme_sha256": "6d63ee589298ce03ac39de43d7f9f90558613138b23825841944dc38a733371f",
+      "error": null
+    },
     {
       "repo_key": "github.com/directus/directus",
       "repo_url": "github.com/directus/directus",
@@ -27,9 +57,9 @@
       "app_references": [
         "discourse"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__discourse__discourse.md",
-      "readme_download_url": "https://raw.githubusercontent.com/discourse/discourse/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "784611a56172ef4a2f57f79946df034f2cde084dfef0f999f2c9f788b524b6b2",
       "error": null
     },
@@ -237,9 +267,9 @@
       "app_references": [
         "dokku"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dokku__dokku.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dokku/dokku/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7a88193b648f6b46f1e6bff769241d6b44ecfadc0b213118c0cee2b9a2fdd4e6",
       "error": null
     },
@@ -282,10 +312,10 @@
       "app_references": [
         "mindwtr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dongdongbh__Mindwtr.md",
-      "readme_download_url": null,
-      "readme_sha256": "a3a255fdd92630903f0a1c76bdc24fb1e1c14d4e2fec45419e0a800ba398e87e",
+      "readme_download_url": "https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/README.md",
+      "readme_sha256": "71b46841ee60da88f74252357685a8221c6472a7cd1f7bff7af7502a7cd6ab45",
       "error": null
     },
     {
@@ -589,6 +619,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/ellite/scrob",
+      "repo_url": "github.com/ellite/scrob",
+      "host": "github.com",
+      "owner": "ellite",
+      "repo": "scrob",
+      "app_references": [
+        "scrob"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__ellite__scrob.md",
+      "readme_download_url": "https://raw.githubusercontent.com/ellite/scrob/main/README.md",
+      "readme_sha256": "86de63bde3251ced0e4ae6dd082a305f7115316eb294b62f95437dee5e90619a",
+      "error": null
+    },
+    {
       "repo_key": "github.com/emoncms/emoncms",
       "repo_url": "github.com/emoncms/emoncms",
       "host": "github.com",
@@ -707,51 +752,6 @@
       "readme_path": "knowledge/readmes/github.com__espocrm__espocrm.md",
       "readme_download_url": null,
       "readme_sha256": "683559b6dae3768eaa9c66612250e3c6bdcb4276ab1b0fb3f15d060be6040dda",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/etesync/server",
-      "repo_url": "github.com/etesync/server",
-      "host": "github.com",
-      "owner": "etesync",
-      "repo": "server",
-      "app_references": [
-        "etesync"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__etesync__server.md",
-      "readme_download_url": null,
-      "readme_sha256": "3e77b64a4106991a9e5b44f67ab7a5a981a9dc9e9cc6a731503f71fdba24bdb4",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ether/etherpad",
-      "repo_url": "github.com/ether/etherpad",
-      "host": "github.com",
-      "owner": "ether",
-      "repo": "etherpad",
-      "app_references": [
-        "etherpad"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__ether__etherpad.md",
-      "readme_download_url": null,
-      "readme_sha256": "cee5ce62bf1f6ff719c6236fb1bb6d286df9ba9782e9f1ecb3f9e3ccc3a8b284",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/evcc-io/evcc",
-      "repo_url": "github.com/evcc-io/evcc",
-      "host": "github.com",
-      "owner": "evcc-io",
-      "repo": "evcc",
-      "app_references": [
-        "evcc"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__evcc-io__evcc.md",
-      "readme_download_url": null,
-      "readme_sha256": "9c003de122ed712227d54e3735c76246284de893b517d944b83a9865a11776ef",
       "error": null
     }
   ]
