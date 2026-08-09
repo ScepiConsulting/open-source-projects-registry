@@ -2,28 +2,25 @@
 
 <img src="resources/social_preview.jpg" width="100%">
 
-Please be aware that the application is distributed as is and is not recommended for use in a production environment.
+Please be aware that the application is distributed as-is and is not recommended for use in a production environment.
 
 And don't forget about regular backups of important data.
 
-Automatic updates are disabled by default. You can choose only what you need.
+Automatic updates are disabled by default. You can enable only what you need.
 
 ## Table of contents:
 
 - [main features](#main-features)
 - [deploy](#deploy)
-- [check process](#check-process)
-- [update process](#update-process)
 - [private registries](#private-registries)
 - [custom labels](#custom-labels)
 - [notifications](#notifications)
 - [auth](#auth)
 - [api](#api)
 - [env](#env)
-- [screenshots](#screenshots)
-- [contributing](#contributing)
-- [development](#develop)
-- [todo](#todo)
+- [check and update](./docs/CHECK_AND_UPDATE.md)
+- [screenshots](./docs/SCREENSHOTS.md)
+- [contributing](./docs/CONTRIBUTING.md)
 
 ## Main features:
 
@@ -44,7 +41,7 @@ Automatic updates are disabled by default. You can choose only what you need.
 
 - ### Quick start
 
-  Use [docker-compose.app.yml](./docker-compose.app.yml) or following docker commands.
+  Use [docker-compose.app.yml](./docker-compose.app.yml) or the following docker commands.
 
   ```bash
   # create volume
@@ -54,10 +51,11 @@ Automatic updates are disabled by default. You can choose only what you need.
   docker pull ghcr.io/quenary/tugtainer:1
 
   # run container
+  # AGENT_SECRET is required. Set a strong, unique shared secret.
   docker run -d -p 9412:80 \
       --name=tugtainer \
       --restart=unless-stopped \
-      -e AGENT_SECRET="CHANGE_ME!" \
+      -e AGENT_SECRET="" \
       -v tugtainer_data:/tugtainer \
       -v /var/run/docker.sock:/var/run/docker.sock:ro \
       ghcr.io/quenary/tugtainer:1
@@ -66,84 +64,46 @@ Automatic updates are disabled by default. You can choose only what you need.
 > [!IMPORTANT]
 > Keep in mind that you **cannot update** an **agent** or a **socket-proxy** from within the app because they are used to communicate with the Docker CLI.
 > Avoid including these containers in a docker-compose that contains other containers you want to update automatically, as this will result in an error during the update.
-> To keep them updated, you can activate the "check" only to receive notifications, and recreate manually or from another tool, such as Portainer.
+> To keep them updated, you can activate "check" only to receive notifications, and recreate them manually or from another tool, such as Portainer.
 
 - ### Remote hosts
 
+  > [!IMPORTANT]
+  > Agent host URLs that resolve to private or reserved networks are blocked by default (SSRF protection).
+  > If your remote agent is on a LAN or Docker network, allow it on the primary instance via **AGENT_ALLOW_NETWORKS** (e.g. `192.168.0.0/24`) and/or **AGENT_ALLOW_ENDPOINTS** (e.g. `10.0.0.5:9413`).
+  > See [.env.example](./.env.example) for details. By default, only the built-in agent endpoint `127.0.0.1:8001` is allowed when `AGENT_ENABLED=true`.
+
   To manage remote hosts from one UI, you have to deploy the Tugtainer Agent.
-  To do so, you can use [docker-compose.agent.yml](./docker-compose.agent.yml) or following docker commands.
+  To do so, you can use [docker-compose.agent.yml](./docker-compose.agent.yml) or the following docker commands.
 
-  After deploying the agent, in the UI follow Menu -> Hosts, and add it with the respective parameters.
+  After deploying the agent, in the UI follow Menu -> Hosts, and add it with the respective parameters. The **Agent secret** field should match the **AGENT_SECRET** you've provided for the agent container.
 
-  Remember that the machine with the agent must be accessible for the primary instance.
-
-  Don't forget to change **AGENT_SECRET** variable. It is used for backend-agent requests signature.
-
-  Backend and agent use http to communicate, so you can utilize reverse proxy for https.
+  Backend and agent use HTTP to communicate, so you can use a reverse proxy for HTTPS.
 
   ```bash
   # pull image
   docker pull ghcr.io/quenary/tugtainer-agent:1
 
   # run container
+  # AGENT_SECRET is required. Set a strong, unique shared secret.
   docker run -d -p 9413:8001 \
       --name=tugtainer-agent \
       --restart=unless-stopped \
-      -e AGENT_SECRET="CHANGE_ME!" \
+      -e AGENT_SECRET="" \
       -v /var/run/docker.sock:/var/run/docker.sock:ro \
       ghcr.io/quenary/tugtainer-agent:1
   ```
 
 - ### Socket proxy
 
-  You can use Tugtainer and Tugtainer Agent without direct mount of docker socket.
+  You can use Tugtainer and Tugtainer Agent without mounting the Docker socket directly.
 
   [docker-compose.app.yml](./docker-compose.app.yml) and [docker-compose.agent.yml](./docker-compose.agent.yml) use this approach by default.
 
   Manual setup:
   - Deploy socket-proxy e.g. https://hub.docker.com/r/linuxserver/socket-proxy
   - Enable at least **CONTAINERS, IMAGES, POST, INFO, PING** for the **check** feature, and **NETWORKS** for the **update** feature;
-  - Set env var DOCKER_HOST="tcp://my-socket-proxy:port" to the Tugtainer(-agent) container(s);
-
-## Check process:
-
-1. Verify that a container is suitable for checking (not local image);
-2. Pull image (if enabled in the settings, disabled by default), this may be handy if you using registry proxy;
-3. Request current digest of an image from a registry;
-4. Compare digests;
-5. If different, the container **marked as available**.
-
-**Scheduled** process includes all enabled hosts and all containers **selected for auto-check**.
-
-**Manual** process includes all containers despite auto-check toggle (or a single container if you've clicked one)
-
-## Update process:
-
-- ### Dependency graph
-  - Containers of a host are processed as a single set;
-  - A global dependency graph is constructed for all containers with:
-    - Compose dependencies (**com.docker.compose.depends_on** label for containers with same **com.docker.compose.project** and **com.docker.compose.project.config_files** labels)
-    - Custom dependencies [dev.quenary.tugtainer.depends_on](#custom-labels)
-  - Dependencies are directional: if container A depends on B, B must be started before A and stopped after A;
-  - Containers without dependencies are treated as independent nodes in the graph
-
-- ### Process
-  1. A global dependency graph is built:
-     - [protected](#custom-labels) containers are skipped;
-     - not `running` containers are skipped by default (can be changed in the settings);
-  2. A set of **updatable** containers is calculated:
-     - Updatable container is a container which **marked as available** and **selected for auto-update** or **was clicked for update**;
-  3. A set of **affected** containers is calculated:
-     - includes all containers that depend (directly or transitively) on any updatable container;
-     - excludes the updatable containers themselves;
-  4. A unified topological execution order is built based on the dependency graph;
-  5. **Image pull** performed for **updatable** containers;
-  6. All involved containers (**updatable** and **affected**) are stopped once, in order from most dependent to most dependable;
-  7. Then, in reverse order (from most dependable to most dependent):
-     - **Updatable** containers are recreated and started;
-     - **Affected** containers are started;
-
-  **Scheduled process** being performed for all enabled hosts.
+  - Set the env var DOCKER_HOST="tcp://my-socket-proxy:port" on the Tugtainer(-agent) container(s);
 
 ## Private registries
 
@@ -161,7 +121,7 @@ To use private registries, you have to mount docker config to Tugtainer or Tugta
       }
     }
   ```
-- Mount the config to the Tugtainer (Agent) as a readonly volume `-v $HOME/.docker/config.json:/root/.docker/config.json:ro` or in a docker-compose file.
+- Mount the config to the Tugtainer (Agent) as a read-only volume `-v $HOME/.docker/config.json:/root/.docker/config.json:ro` or in a docker-compose file.
 - That's all you need to do, Docker CLI will take care of the rest.
 
 ## Custom labels:
@@ -172,14 +132,14 @@ To use private registries, you have to mount docker config to Tugtainer or Tugta
 
 - dev.quenary.tugtainer.depends_on="my_postgres,my_redis"
 
-  This label is an alternative to the docker compoes label. It allows you to declare that a container depends on another container, even if they are not in the same compose project. List of container names, separated by commas.
+  This label is an alternative to the docker compose label. It allows you to declare that a container depends on another container, even if they are not in the same compose project. List of container names, separated by commas.
 
 ## Hooks:
 
-Starting with this feature, you can configure shell commands to run inside a
-container at points of the update lifecycle: `pre_update`, `post_update`,
-`pre_stop`, `pre_rollback`, `post_rollback`. Each command runs as
-`sh -c "<command>"` inside the target container via the agent.
+You can configure shell commands to run inside a container at points of the
+update lifecycle: `pre_update`, `post_update`, `pre_stop`, `pre_rollback`,
+`post_rollback`. Each command runs as `sh -c "<command>"` inside the target
+container via the agent.
 
 Tugtainer has no built-in database/service-specific backup logic — writing
 the actual backup/notification commands (e.g. `pg_dump`) and managing where
@@ -265,21 +225,21 @@ Jinja2 context schema:
 - "not_available": No new image found.
 - "available": New image available for the container.
 - "available(notified)": New image available for the container, but it was in the previous notification. The app preserves digests of new images, so if another new image has appeared, the result will still be "available".
-- "updated": Container successfully recreaded with the new image.
+- "updated": Container successfully recreated with the new image.
 - "rolled_back": The app failed to recreate the container, but was able to restore it with the old image.
-- "failed": The app failed to recreate container.
+- "failed": The app failed to recreate the container.
 
-The notification is sent only if the body is not empty. For instance, if there is only containers with "available(notified)" results, the body will be empty (with default template), and notification will not be sent.
+The notification is sent only if the body is not empty. For instance, if there are only containers with "available(notified)" results, the body will be empty (with the default template), and the notification will not be sent.
 
-If you want to restore default template, it's [here](./backend/const.py)
+If you want to restore the default template, it's [here](./backend/const.py)
 
 ## Auth
 
-The app uses password authorization by default. The password is stored in the file in encrypted form.
+The app uses password authorization by default. The password is stored in a file in encrypted form.
 
-Auth cookies are not domain-specific and not https only, but you can change this using env variables.
+Alternatively, you can use an OpenID Connect provider instead of a password.
 
-Starting with v1.6.0, you can use the OpenID Connect provider instead of password. This can also be configured using env variables.
+Auth cookies are not domain-specific and not HTTPS-only. All of this can be configured using env variables.
 
 ## API
 
@@ -299,51 +259,4 @@ The backend API is served under the `/api` base path.
 
 ## Env:
 
-Environment variables are not required, but you can still define some. There is [.env.example](/.env.example) containing list of vars with description.
-
-## Screenshots
-
-<p align="center">
-<img src="resources/tugtainer-hosts-v1.2.3.png" width="48%">
-<img src="resources/tugtainer-containers-v1.2.3.png" width="48%">
-<img src="resources/tugtainer-images-v1.2.3.png" width="48%">
-<img src="resources/tugtainer-settings-v1.2.3.png" width="48%">
-</p>
-
-## Contributing
-
-Contributions are welcome. Please follow these guidelines to keep the project consistent and maintainable.
-
-- ### Commits:
-  - Use the [Conventional Commits](https://www.conventionalcommits.org/) format for all commit messages e.g. `feat(backend): add user authentication`. Common types: feat, fix, docs, refactor, test, chore
-  - Keep commits focused, avoid mixing unrelated changes
-- ### Code Changes:
-  - Follow the existing code style and structure
-  - Prefer clear, readable solutions
-  - Avoid introducing unnecessary dependencies
-- ### Tests:
-  - All new features must include unit tests
-  - If you modify existing functionality, update or add/extend the related tests
-  - Ensure all tests pass before submitting changes
-  - Ensure lint and typechecks pass before submitting changes (see backend/frontend readme for details)
-- ### Pull Requests:
-  - Provide a clear description of what was changed and why
-  - Reference related issues if applicable
-  - Keep pull requests focused, avoid mixing unrelated changes
-- ### General
-  - If a breaking change is required, сonsider opening an issue and discussing it first
-  - Update documentation (this file) when behavior changes
-
-## Development:
-
-- angular for frontend
-- python for backend and agent
-
-See [/backend/README.md](/backend/README.md) and [/frontend/README.md](/frontend/README.md) for more details
-
-## TODO:
-
-- add unit tests
-- Dozzle integration or something more universal (list of urls for redirects?)
-- Swarm support?
-- Try to add release notes (from labels or something)
+Most environment variables are optional. **AGENT_SECRET** is required for backend-agent communication. See [.env.example](/.env.example) for a list of vars with descriptions.

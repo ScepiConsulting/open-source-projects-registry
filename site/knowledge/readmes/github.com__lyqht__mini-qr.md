@@ -35,7 +35,7 @@ An app to create beautiful QR codes and scan various QR code types.
 - 📱 QR Code Scanner: Scan QR codes using your camera or by uploading images, with intelligent detection for URLs, emails, phone numbers, WiFi credentials, and more
 - 📦 Batch data export: Import a CSV file with multiple data strings and export QR codes for them all at once. Template CSV files can be found in [`public/batch_export_templates/`](public/batch_export_templates/).
 - 📲 PWA Support: Install MiniQR as a desktop or mobile app
-- 📝 Data templates: Support for various data types including text, URLs, emails, phone numbers, SMS, WiFi credentials, vCards, locations, and calendar events
+- 📝 Data templates: Support for various data types including text, URLs, emails, phone numbers, SMS, WiFi credentials, vCards, locations, calendar events, and EPC QR (SEPA payment / GiroCode)
 - 🌍 UTF-8 input support: Vietnamese, CJK, Arabic, emoji, and other multibyte text
 
 See [ROADMAP.md](./ROADMAP.md) for future planned features.
@@ -103,10 +103,6 @@ For all other matters, before opening an issue or contacting the project maintai
 
 Component stories live in Storybook (`pnpm storybook` locally, or the production build at [mini-qr-storybook.vercel.app](https://mini-qr-storybook.vercel.app)). Pull requests that touch the UI get an auto-deployed Storybook preview on Vercel — see [docs/storybook-vercel-previews.md](docs/storybook-vercel-previews.md) for how it's wired up.
 
-Maintainers: see [RELEASING.md](RELEASING.md) for how releases are cut (automated via release-please + Crowdin).
-
-> **Release process:** Automated with release-please (versioning, tagging, GitHub Release, and `public/CHANGELOG.md`) and the Crowdin GitHub integration (translations). See [RELEASING.md](RELEASING.md).
-
 ---
 
 Thank you for everyone here for taking their time out to improve MiniQR 🧡
@@ -145,6 +141,7 @@ Thank you for everyone here for taking their time out to improve MiniQR 🧡
       <td align="center" valign="top" width="16.66%"><a href="http://solovjov.net/"><img src="https://avatars.githubusercontent.com/u/11983427?v=4?s=48" width="48px;" alt="Mikhail Solovev"/><br /><sub><b>Mikhail Solovev</b></sub></a><br /><a href="#translation-r3bers" title="Translation">🌍</a></td>
       <td align="center" valign="top" width="16.66%"><a href="https://github.com/osamajvd"><img src="https://avatars.githubusercontent.com/u/54687462?v=4?s=48" width="48px;" alt="osamajvd"/><br /><sub><b>osamajvd</b></sub></a><br /><a href="https://github.com/lyqht/mini-qr/commits?author=osamajvd" title="Code">💻</a></td>
       <td align="center" valign="top" width="16.66%"><a href="https://github.com/aleex1848"><img src="https://avatars.githubusercontent.com/u/17452861?v=4?s=48" width="48px;" alt="aleex1848"/><br /><sub><b>aleex1848</b></sub></a><br /><a href="https://github.com/lyqht/mini-qr/commits?author=aleex1848" title="Code">💻</a></td>
+      <td align="center" valign="top" width="16.66%"><a href="https://github.com/jdiepholz"><img src="https://avatars.githubusercontent.com/u/144233651?v=4?s=48" width="48px;" alt="jdiepholz"/><br /><sub><b>jdiepholz</b></sub></a><br /><a href="https://github.com/lyqht/mini-qr/commits?author=jdiepholz" title="Code">💻</a></td>
     </tr>
   </tbody>
   <tfoot>

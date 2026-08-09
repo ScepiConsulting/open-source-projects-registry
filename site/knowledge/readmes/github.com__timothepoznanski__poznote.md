@@ -37,7 +37,11 @@ https://poznote.com/index.html#press
 - [Note types](#note-types)
 - [Personalization](#personalization)
 - [Multi-users](#multi-users)
+- [Activity Log](#activity-log)
+- [Webhooks](#webhooks)
 - [Git Synchronization](#git-synchronization)
+- [S3 Attachment Storage](#s3-attachment-storage)
+- [S3 Backups](#s3-backups)
 - [Backup / Export](#backup--export)
 - [Restore / Import](#restore--import)
 - [Offline View](#offline-view)
@@ -270,6 +274,8 @@ mkdir -p data
 sudo chown -R 1000:1000 data
 ```
 
+`sudo` is often not needed here: if your user already has uid `1000` the `chown` can be skipped, and on rootless Podman/Docker it can run without root, see [Running rootless](docs/TROUBLESHOOTING.md#running-rootless).
+
 Create the environment file:
 ```bash
 curl -o .env https://raw.githubusercontent.com/timothepoznanski/poznote/main/.env.template
@@ -463,7 +469,7 @@ Poznote supports OpenID Connect (authorization code + PKCE) for single sign-on i
 2. Users authenticate with the OIDC authorization code flow secured by PKCE.
 3. Access can be restricted with allowed groups and, if needed, a legacy allowed users list.
 4. After authentication, Poznote links the identity in this order: `sub` (`oidc_subject`), then `preferred_username`, then `email`.
-5. If auto-create users is enabled and no profile matches, Poznote creates one automatically.
+5. If auto-create users is enabled and no profile matches, Poznote creates one automatically. Such a profile has **no password at all**: it never went through the initial-credential handover an admin does when creating an account, so it does not answer to the default password. Sign-in goes through the provider, or an admin sets an explicit password from **Settings > Admin Tools > Users**.
 6. If `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true`, the username/password form is hidden and the login page becomes SSO-only.
 7. REST API clients can authenticate with `Authorization: Bearer <OIDC JWT>` when OIDC is enabled; Poznote validates the provider JWKS, issuer, expiration, audience, and configured access controls.
 
@@ -483,7 +489,9 @@ POZNOTE_OIDC_CLIENT_SECRET=your_client_secret
 POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=false
 ```
 
-Use `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true` if you want to hide the local username/password form and force SSO-only login.
+Use `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true` if you want to hide the local username/password form and force SSO-only login. This is the only switch that blocks password authentication: it removes the form, rejects password POSTs server-side, and hides the "Change Password" setting.
+
+> **Recovering from an identity provider outage.** SSO-only means exactly that: while `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true`, nobody can sign in with a password, admins included, so there is no in-browser escape hatch. This is deliberate, since an attacker who compromised an admin account cannot re-enable password login to give themselves a persistent way in. Recovery needs server access: set `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=false` in `.env`, restart the container, and sign in with a local password. Before enabling SSO-only, make sure at least one admin account has an explicit password set (**Settings > Admin Tools > Users**), otherwise flipping the flag back will not help. Note that an admin profile auto-provisioned by OIDC has no password until one is set.
 
 > **Breaking change:** previous OIDC settings in `.env` are no longer read, except `POZNOTE_OIDC_CLIENT_ID`, `POZNOTE_OIDC_CLIENT_SECRET`, and `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN`. After upgrading, re-enter the other OIDC settings from the admin page.
 
@@ -530,7 +538,9 @@ Poznote supports two primary note formats, each tailored for different workflows
 &nbsp;
 
 *   **Usage:** Manage tasks and projects with interactive checklists.
-*   **Workflow:** Track progress with checkboxes that can be toggled directly in the editor or the notes list.
+*   **Workflow:** Track progress with checkboxes that can be toggled directly in the editor or the notes list. A progress bar shows the completion of each list.
+*   **Task Options:** Each task can have a due date with an optional time, a reminder notification that fires at the due time, and an important flag, and can be moved to another list.
+*   **Tasks Page:** A dedicated Tasks page, accessible from the dashboard, gathers every task from all your task lists in one place, with status filters (to do, important, overdue, with due date, completed), a text filter, and a quick "Add task" button.
 *   **Public Collaboration:** Task lists can be shared via a public URL. If edit permissions are granted, external collaborators can check items off the list without needing a Poznote account.
 </details>
 
@@ -637,6 +647,7 @@ Poznote features a multi-user architecture with isolated data spaces for each pr
 - **Owner/admin safeguards**: Opening another user's account does not transfer ownership. Sensitive actions such as password changes, backup/restore, Git Sync configuration, and global admin settings remain restricted to the appropriate owner or administrator.
 - **Read-only sharing**: Notes, folders, and entire workspaces can be shared in **Read-only** mode with other users of the same instance or publicly through dedicated links.
 - **Single-editor locking**: When several users can access the same note, Poznote allows only one active editor at a time. Other users can still open the note in read-only mode, see who currently holds the lock, and take over editing after reopening the note once the lock is released or expires.
+- **Tenant isolation (SaaS mode)**: Administrators can block selected capabilities for non-admin users, such as discovering the other accounts of the instance and sharing with them, or registering personal webhooks. Administrators are never affected. Leave everything unchecked for a family or team instance.
 
 
 ### Architecture & Structure
@@ -654,6 +665,38 @@ data/
     ├── 2/                       # User ID 2
     └── ...
 ```
+
+## Activity Log
+
+Poznote keeps a history of the sensitive operations performed on the instance, so administrators can see what happened, when, and by whom. It is available from **Settings > Admin Tools > Activity log** and is restricted to administrators.
+
+Each entry records the date and time, the account concerned, the action, and a short summary such as the name of the deleted workspace or the number of notes removed. Hover the help icon at the top of the page for the full list of recorded operations, which covers:
+
+- **Sessions**: logins and logouts.
+- **Accounts**: profile changes (username, email, name), quota changes, activation and deactivation, admin role granted or revoked, account deletion, and delegated account access granted or revoked.
+- **Workspaces**: creation, deletion, sharing and unsharing.
+- **Data**: backup creation and restore, trash emptying, and permanent note deletion.
+
+Routine activity is deliberately left out: writing or moving a note to the trash is not recorded, and neither are API calls authenticated on each request, which would otherwise turn the log into a traffic dump.
+
+The log records that an operation happened, not the data it touched. **Note content is never written to it**, and neither are tags, folders, or attachments. A deletion entry identifies the note by its title and workspace so the event can be recognised, nothing more.
+
+> **No password is ever written to the log**, in any form. Where a password is relevant, for example on a protected shared workspace, only the fact that one is set is recorded.
+
+Entries are kept for 90 days by default. The retention period can be changed to 30, 90 or 365 days, or set to unlimited, and the log can be cleared manually from the same page.
+
+## Webhooks
+
+Poznote can notify external services when something happens on the instance, by sending outgoing webhooks (HTTP POST requests with a JSON payload) to the endpoints you register. This makes it easy to plug Poznote into automation tools such as n8n, Zapier, or your own scripts. Poznote only emits webhooks: what the receiving endpoint does with them (send an email, trigger a workflow, ...) is up to you.
+
+There are two levels of webhooks:
+
+- **Admin Webhooks** (**Settings > Admin Tools > Admin Webhooks**, administrators only): instance events such as `user.created`, `user.updated`, `user.activated`, `user.deactivated`, `user.deleted`, `signup.cap_reached`, `quota.notes_reached`, and `quota.storage_reached`.
+- **User Webhooks** (**Settings > User Webhooks**): each account can register its own endpoints for events about its own content: `note.created`, `note.shared`, and reminder events. These events are only ever delivered to the endpoints registered by the account that produced them, never to another user's.
+
+Deliveries are JSON POST requests signed with HMAC-SHA256 when the webhook has a secret (same scheme as GitHub webhooks). Note content is never sent, payloads carry only metadata, and reminder events come in three variants so you choose how much data leaves the instance.
+
+For the complete reference, covering every event, the exact payload fields (`data.user`, `data.note`, ...), signature verification with code examples, delivery guarantees, and the Instance URL configuration for direct note links, see the **[Webhooks documentation](docs/WEBHOOKS.md)**.
 
 ## Git Synchronization
 
@@ -691,6 +734,57 @@ When enabled by the user, Poznote will automatically:
 - **Push** on every note create, update, or delete
 
 Manual push/pull is also available from the **Dashboard** via the **Push** and **Pull** cards.
+
+</details>
+
+## S3 Attachment Storage
+
+By default, note attachments are stored on the local disk. Administrators can instead store them in an S3-compatible object storage (AWS S3, MinIO, Garage, Cloudflare R2, Backblaze B2, ...). The setting applies to all users of the instance.
+
+<details>
+<summary><strong>How to configure S3 storage</strong></summary>
+<br>
+
+Configure it in **Settings > S3 Attachments** (administrators only).
+
+- **Configuration**: Endpoint URL, region, bucket, access key, secret key, and path-style addressing, with a built-in connection test.
+- **Migration**: Move existing attachment files between the local disk and the bucket, in both directions and for every user. Migration runs in batches and can be safely interrupted and resumed.
+- **Privacy**: Attachments are stored under `attachments/{user id}/` in the bucket and are always served through Poznote, so the bucket can stay private.
+- **Quotas**: A per-user S3 storage quota can be set, and S3 usage appears in the admin storage statistics.
+- **Backups**: Zip exports include S3 attachments by default (fetched from the bucket on the fly). An option in the Backup window lets you leave them out for a lighter archive.
+
+Restoring a backup that was made without its S3 attachments is refused while S3 storage is active, because a full restore replaces the bucket content. To restore it anyway, rebuild a complete archive first:
+
+1. Download the **Attachments Export** from the Backup window: it contains every attachment of your account in a `files/` folder.
+2. Unzip the backup, copy the files from `files/` into the backup's `attachments/` folder, and zip it again. Careful when re-zipping: select the backup's contents (`database/`, `entries/`, `attachments/`, ...) and compress that selection, not the folder containing them. The folders must sit at the root of the zip, otherwise the restore reports that `database/poznote_backup.sql` is missing.
+3. Restore the rebuilt zip normally.
+
+> Git Sync ignores attachments while S3 storage is enabled.
+
+</details>
+
+## S3 Backups
+
+Administrators can send complete backup archives (one ZIP per user, identical to the Complete Backup download) to an S3-compatible bucket, manually or automatically on a schedule. The configuration is independent from the S3 Attachment Storage one, so backups can target a different bucket or provider.
+
+<details>
+<summary><strong>How to configure S3 backups</strong></summary>
+<br>
+
+Configure it in **Settings > S3 Backups** (administrators only).
+
+- **Master switch**: A toggle at the top of the page enables or disables the whole feature. When disabled, automatic backups stop and the S3 backup and restore sections disappear for every user (the self-service actions are refused server-side too).
+- **Configuration**: Endpoint URL, region, bucket, access key, secret key, and path-style addressing, with a built-in connection test.
+- **User selection**: Checkboxes choose which users are covered by the backups. Everyone is checked by default, and while everyone is checked, new accounts are included automatically.
+- **Manual backups**: A "Back up now" button uploads a fresh archive for each selected user, one user at a time, with per-user progress. It works as soon as the connection is configured, even when automatic backups are off.
+- **Automatic backups**: When enabled, a background worker backs up the selected users on the chosen frequency (daily, weekly, or monthly). The first run happens within a few minutes of enabling, the next ones after the chosen interval.
+- **Retention**: Only the most recent N archives are kept per user, older ones are deleted from the bucket after each backup (0 keeps everything).
+- **Browsing**: The page lists the archives currently in the bucket, with download and delete actions.
+- **Restore**: Archives are stored under `backups/{user id}/` in the bucket and can be restored with the standard [Restore / Import](#restore--import) page.
+- **Self-service**: Once the bucket is configured, every user gets an "S3 Backups" section on their Backup / Export page to upload a fresh archive of their own account, and to download or delete their existing archives. A "Restore from S3" section on the Restore / Import page restores their account directly from one of those archives.
+- **Tenant isolation**: Two options ("S3 backups on the Backup page" and "S3 restore on the Restore page") disable these self-service sections for non-admin users. They are enforced server-side, so the blocked actions are refused even when called directly.
+
+When attachments are stored in S3 (S3 Attachment Storage), they are included in the archives by default, fetched from the bucket on the fly. An option lets you leave them out of the backups for lighter archives and faster runs.
 
 </details>
 
@@ -1049,7 +1143,7 @@ Poznote prioritizes simplicity and portability - no complex frameworks, no heavy
 ### Storage
 - **HTML/Markdown files** - Notes are stored as plain HTML or Markdown files in the filesystem
 - **SQLite database** - Metadata, tags, relationships, and user data
-- **File attachments** - Stored directly in the filesystem
+- **File attachments** - Stored on the local filesystem, or optionally in an S3-compatible object storage
 
 ### Infrastructure
 - **Nginx + PHP-FPM** - High-performance web server with FastCGI Process Manager

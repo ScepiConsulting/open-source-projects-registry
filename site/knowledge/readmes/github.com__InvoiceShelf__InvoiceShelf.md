@@ -1,88 +1,99 @@
-<img src="https://github.com/user-attachments/assets/a6ae2080-e865-4fde-b41d-5a09964d7de2">
+<p align="center">
+  <img src="resources/static/img/logo-full.svg" alt="InvoiceShelf" width="232">
+</p>
 
-## Introduction
+<p align="center">
+  Open-source invoicing for people who want to own their business data.
+</p>
 
-InvoiceShelf is an open-source web app that helps you track expenses, record payments, and create professional invoices and estimates. It is self-hosted, multi-tenant, and built for individuals and small businesses that want to keep their books on their own infrastructure.
+<p align="center">
+  <a href="https://invoiceshelf.com/download"><strong>Download InvoiceShelf</strong></a>
+  ·
+  <a href="https://docs.invoiceshelf.com/">Documentation</a>
+  ·
+  <a href="https://discord.gg/eHXf4zWhsR">Community</a>
+</p>
 
-The web application is built with Laravel and Vue 3.
+> [!WARNING]
+> The default `3.x` branch is an alpha preview. It is ready for testing and
+> feedback, but not for production data. Use the supported
+> [`2.x` release](https://github.com/InvoiceShelf/InvoiceShelf/tree/2.x) for a
+> production installation.
 
-To get started using Docker Compose, follow the [Installation guide](https://docs.invoiceshelf.com/installation.html).
+![InvoiceShelf dashboard](resources/static/img/invoiceshelf-dashboard.png)
 
-# Table of Contents
+## Run your invoicing from one place
 
-1. [Documentation](#documentation)
-2. [System Requirements](#system-requirements)
-3. [Download](#download)
-4. [Discord](#discord)
-5. [Roadmap](#roadmap)
-6. [Translate](#translate)
-7. [License](#license)
+InvoiceShelf is a self-hosted web application for creating invoices, tracking
+payments and expenses, and keeping customer accounts organised. It is built for
+freelancers and small businesses that want a focused workflow without giving up
+control of their data.
 
-## Documentation
+- Create invoices and estimates, then export polished PDFs.
+- Record payments and see what each customer still owes.
+- Track expenses, taxes, and business reports.
+- Schedule recurring invoices for repeat work.
+- Give customers a portal for invoices, estimates, and payment history.
+- Manage multiple companies and invite team members with scoped roles.
 
-- [Installation Steps](https://docs.invoiceshelf.com/installation.html)
-- [User Guide](https://docs.invoiceshelf.com/)
-- [Developer Guide](https://docs.invoiceshelf.com/developer-guide.html)
-- [API Documentation](https://api-docs.invoiceshelf.com)
+Optional official modules can add specialised features without making the core
+application heavier.
 
-## System Requirements
+## Install InvoiceShelf
 
-- **PHP 8.4+** is required (since v2.2.0, when InvoiceShelf moved to Laravel 13).
-- Database: MySQL, MariaDB, PostgreSQL, or SQLite.
-- Before updating from inside the app, verify your server meets the target version's PHP and extension requirements.
-- The in-app updater verifies requirements and refuses to proceed if they are not met.
+### Production: InvoiceShelf 2.x
 
-## Download
+Install the current stable release from the
+[self-hosted download page](https://invoiceshelf.com/download), or run the
+official Docker image with the `:latest` tag. Follow the
+[installation guide](https://docs.invoiceshelf.com/installation.html) for the
+complete setup and upgrade instructions.
 
-- [Download Link](https://invoiceshelf.com)
+### Preview: InvoiceShelf 3.x
 
-## Discord
+Use the preview only with disposable or backed-up data:
 
-Join the discussion on the InvoiceShelf Discord: [Invite Link](https://discord.gg/eHXf4zWhsR)
+- Download the latest 3.x preview from the
+  [self-hosted download page](https://invoiceshelf.com/download).
+- For Docker, use `invoiceshelf/invoiceshelf:next` instead of `:latest` in the
+  [official Compose setup](https://github.com/InvoiceShelf/docker).
 
-## Roadmap
+A minimal SQLite Docker setup looks like this:
 
-Rough roadmap of things to come, not in any specific order:
+```bash
+git clone https://github.com/InvoiceShelf/docker.git invoiceshelf
+cd invoiceshelf
+cp docker-compose.sqlite.yml docker-compose.yml
+# For the 3.x preview, change the image tag in docker-compose.yml to :next.
+docker compose up -d
+```
 
-- [x] Automatic Update
-- [x] Email Configuration
-- [x] Installation Wizard
-- [x] Address Customisation & Default Notes
-- [x] Edit Email before Sending Invoice
-- [x] Available as a Docker image
-- [x] Performance Improvements
-- [x] Customer View Page
-- [x] Custom Fields on Invoices & Estimates
-- [x] Multiple Companies
-- [x] Recurring Invoices
-- [x] Customer Portal
-- [x] Decoupled system settings from company settings _(v3.0)_
-- [x] Proper multi-tenancy system _(v3.0)_
-- [x] Company member invitations with custom roles _(v3.0)_
-- [x] Dark mode _(v3.0)_
-- [x] Full TypeScript refactor of the frontend _(v3.0)_
-- [x] Improved backend architecture _(v3.0)_
-- [x] Security hardening _(v3.0)_
-- [ ] **Reworked installation wizard** _(v3.0)_
-- [ ] **Module Directory** _(v3.0)_
-- [ ] **Rewritten Payments module** _(v3.0)_
-- [ ] Accept Payments (Stripe integration)
-- [ ] Improved template system for invoices and estimates
+Open <http://localhost:8090> and finish the setup wizard. Read the
+[Docker guide](https://docs.invoiceshelf.com/install/docker.html) before using
+InvoiceShelf on a public server.
 
-## Translate
+For a traditional web-server installation, see the
+[manual installation guide](https://docs.invoiceshelf.com/install/manual.html).
+InvoiceShelf 3.x requires PHP 8.4 and supports MySQL/MariaDB, PostgreSQL, and
+SQLite. Docker includes the required application runtime.
 
-Help us translate InvoiceShelf into your language: https://crowdin.com/project/invoiceshelf
+## Learn and get help
 
-## Star History
+- [User and installation documentation](https://docs.invoiceshelf.com/)
+- [API reference](https://api-docs.invoiceshelf.com/)
+- [Discord community](https://discord.gg/eHXf4zWhsR)
+- [Bug reports and feature requests](https://github.com/InvoiceShelf/InvoiceShelf/issues)
 
-<a href="https://www.star-history.com/?repos=invoiceshelf%2Finvoiceshelf&type=date&legend=top-left">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=invoiceshelf/invoiceshelf&type=date&theme=dark&legend=top-left" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=invoiceshelf/invoiceshelf&type=date&legend=top-left" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=invoiceshelf/invoiceshelf&type=date&legend=top-left" />
- </picture>
-</a>
+## Contribute
+
+Code contributions are welcome. Start with the
+[contribution guide](CONTRIBUTING.md) and use the development environment in
+[`docker/development`](docker/development/README.md).
+
+You can also help translate InvoiceShelf on
+[Crowdin](https://crowdin.com/project/invoiceshelf).
 
 ## License
 
-InvoiceShelf is released under the [GNU Affero General Public License v3.0](LICENSE). See [LICENSE](LICENSE) for the full text.
+InvoiceShelf is released under the
+[GNU Affero General Public License v3.0](LICENSE).

@@ -1,8 +1,53 @@
 {
   "chunk": 22,
   "count": 50,
-  "generated_at": "2026-08-02T06:03:39Z",
+  "generated_at": "2026-08-09T04:23:48Z",
   "items": [
+    {
+      "repo_key": "github.com/postalserver/postal",
+      "repo_url": "github.com/postalserver/postal",
+      "host": "github.com",
+      "owner": "postalserver",
+      "repo": "postal",
+      "app_references": [
+        "postal"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__postalserver__postal.md",
+      "readme_download_url": null,
+      "readme_sha256": "cd12bd3c9dae6282fcad76a214c341a698ca3425a4070ede411de1d6dc157bf0",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/project-zot/zot",
+      "repo_url": "github.com/project-zot/zot",
+      "host": "github.com",
+      "owner": "project-zot",
+      "repo": "zot",
+      "app_references": [
+        "zot-registry"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__project-zot__zot.md",
+      "readme_download_url": null,
+      "readme_sha256": "83a12ebead2caa5543f2a5ece78be5a168d781e1977583aa0a3a63b6ef98f5ce",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/projectsend/projectsend",
+      "repo_url": "github.com/projectsend/projectsend",
+      "host": "github.com",
+      "owner": "projectsend",
+      "repo": "projectsend",
+      "app_references": [
+        "projectsend"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__projectsend__projectsend.md",
+      "readme_download_url": "https://raw.githubusercontent.com/projectsend/projectsend/develop/README.md",
+      "readme_sha256": "c99dc3d8dc0261abaa3f62d3decbdd1c594d925de30bf4dd44ea8f7d63234798",
+      "error": null
+    },
     {
       "repo_key": "github.com/prometheus/prometheus",
       "repo_url": "github.com/prometheus/prometheus",
@@ -72,10 +117,10 @@
       "app_references": [
         "pterodactyl"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__pterodactyl__panel.md",
-      "readme_download_url": null,
-      "readme_sha256": "2ae86df7c6c42b9c65ad1af6b130f952c977b124bf328eeececfc65cfb5998ce",
+      "readme_download_url": "https://raw.githubusercontent.com/pterodactyl/panel/1.0-develop/README.md",
+      "readme_sha256": "b315b0b988a52b698ffd01d98b30ebc3104033d40a625af353c6b046db46c809",
       "error": null
     },
     {
@@ -147,9 +192,9 @@
       "app_references": [
         "czkawka"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__qarmin__czkawka.md",
-      "readme_download_url": "https://raw.githubusercontent.com/qarmin/czkawka/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "00612ae2bbca76da9b0c3e98d4c30c93b6f39ccfd4fd854a3c403b28d3ce29d7",
       "error": null
     },
@@ -177,10 +222,10 @@
       "app_references": [
         "ddns-updater"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__qdm12__ddns-updater.md",
-      "readme_download_url": null,
-      "readme_sha256": "0f3ca36074d7cb173708d6ae2ab5d44ce0c8e4c1875428b9f38a048ec3fb5c96",
+      "readme_download_url": "https://raw.githubusercontent.com/qdm12/ddns-updater/master/README.md",
+      "readme_sha256": "17870a1a47c78fc21bffdeef475834b8d69eb55a461456a4e5262bde0581ff18",
       "error": null
     },
     {
@@ -267,9 +312,9 @@
       "app_references": [
         "rclone"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__rclone__rclone.md",
-      "readme_download_url": "https://raw.githubusercontent.com/rclone/rclone/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "635cd9b26984cf48b088afc160dd45d73060efa6826058aa7ec6214831586a2d",
       "error": null
     },
@@ -282,10 +327,10 @@
       "app_references": [
         "pulse"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__rcourtman__Pulse.md",
-      "readme_download_url": null,
-      "readme_sha256": "a000eebc6475624096ac3cc4f44a10bac67820b3e564a3c1803f98ce7f12c03d",
+      "readme_download_url": "https://raw.githubusercontent.com/rcourtman/Pulse/main/README.md",
+      "readme_sha256": "b0242814c8b03c385b8ac2d44ce9eb7f2db9e84053afcd4f7defae99c8e695a8",
       "error": null
     },
     {
@@ -297,10 +342,10 @@
       "app_references": [
         "recyclarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__recyclarr__recyclarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "e1cdece45a8b1bbe4b47fae919c22ad4de1db0a6d4e9469f41d33d091f70d833",
+      "readme_download_url": "https://raw.githubusercontent.com/recyclarr/recyclarr/master/README.md",
+      "readme_sha256": "f1cacd5d2e9635beeb0d72bbc4b5c1d72962b71cb182ab2a63cb302c7293bc00",
       "error": null
     },
     {
@@ -357,10 +402,10 @@
       "app_references": [
         "argus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__release-argus__Argus.md",
-      "readme_download_url": null,
-      "readme_sha256": "e45e7fbead3448146ec42a57c16fccdd1c2651adb5bccbf6ab01c97137046113",
+      "readme_download_url": "https://raw.githubusercontent.com/release-argus/Argus/master/README.md",
+      "readme_sha256": "bdd0eca7d970a97375f70c771b711fe8f48af34a18df3472919202ab0ac4a403",
       "error": null
     },
     {
@@ -402,9 +447,9 @@
       "app_references": [
         "requestly"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__requestly__requestly.md",
-      "readme_download_url": "https://raw.githubusercontent.com/requestly/requestly/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a9d7060f3ffacc11acb116e810099d6ba1be97b8ed830b4ad2ce3ac9b295c641",
       "error": null
     },
@@ -612,9 +657,9 @@
       "app_references": [
         "romm"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__rommapp__romm.md",
-      "readme_download_url": "https://raw.githubusercontent.com/rommapp/romm/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4aa8c32db445ce1b10319aa33822d873c294449ce2adfaa63b8e472fbe47ec6c",
       "error": null
     },
@@ -687,10 +732,10 @@
       "app_references": [
         "runson"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__runs-on__runs-on.md",
-      "readme_download_url": null,
-      "readme_sha256": "9567f604a39baee96c62577115d7aea77039468eb34bc2dd7193a1b822f8a778",
+      "readme_download_url": "https://raw.githubusercontent.com/runs-on/runs-on/main/README.md",
+      "readme_sha256": "98e4e26bc52ef103eb8af04264993b7e0380e335adcabc4cc61728f8fce0ea97",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__runtipi__runtipi.md",
       "readme_download_url": null,
       "readme_sha256": "1bbc78c0bf53327a650e6a26cc3a8a5e41d9eff9a2f1dc855d765730a4ab7478",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/rustfs/rustfs",
-      "repo_url": "github.com/rustfs/rustfs",
-      "host": "github.com",
-      "owner": "rustfs",
-      "repo": "rustfs",
-      "app_references": [
-        "rustfs"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__rustfs__rustfs.md",
-      "readme_download_url": "https://raw.githubusercontent.com/rustfs/rustfs/main/README.md",
-      "readme_sha256": "337f1141c738b3111fde7210569b2508d8bc59e38e3141e6309d7a89c07709ce",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/rustmailer/bichon",
-      "repo_url": "github.com/rustmailer/bichon",
-      "host": "github.com",
-      "owner": "rustmailer",
-      "repo": "bichon",
-      "app_references": [
-        "bichon"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__rustmailer__bichon.md",
-      "readme_download_url": "https://raw.githubusercontent.com/rustmailer/bichon/main/README.md",
-      "readme_sha256": "911f0cadabdff4a3612b396c47dd8f8255485aaa57f1ecb0dbec4b48cd649188",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ryanlelek/Raneto",
-      "repo_url": "github.com/ryanlelek/Raneto",
-      "host": "github.com",
-      "owner": "ryanlelek",
-      "repo": "Raneto",
-      "app_references": [
-        "raneto"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__ryanlelek__Raneto.md",
-      "readme_download_url": null,
-      "readme_sha256": "35558cd16873b43cbcd338133e317f8b8b098e603b2e5bdf7ed025d86ee69895",
       "error": null
     }
   ]

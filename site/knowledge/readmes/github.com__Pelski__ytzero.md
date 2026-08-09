@@ -3,7 +3,7 @@
   <h1>YT Zero</h1>
   <p><strong>A self-hosted YouTube inbox for people who want subscriptions, not recommendations.</strong></p>
   <p>
-    <a href="https://github.com/Pelski/ytzero/releases"><img src="https://img.shields.io/github/v/release/Pelski/ytzero" alt="Latest release"></a>
+    <a href="https://github.com/Pelski/ytzero/releases"><img src="https://img.shields.io/github/v/release/Pelski/ytzero?sort=date" alt="Latest release"></a>
     <a href="https://github.com/Pelski/ytzero/pkgs/container/ytzero"><img src="https://img.shields.io/badge/docker-ghcr.io%2Fpelski%2Fytzero-2496ED?logo=docker&amp;logoColor=white" alt="Docker image"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-AGPL--3.0-blue" alt="AGPL-3.0-only"></a>
     <a href="https://github.com/Pelski/ytzero/wiki"><img src="https://img.shields.io/badge/docs-wiki-555" alt="Documentation wiki"></a>
@@ -12,6 +12,10 @@
 </div>
 
 YT Zero turns YouTube back into a simple reader for channels you chose on purpose. No Google account. No API key. No algorithmic home feed pushing videos you did not ask for.
+
+> **Fix embedded player and get more!** 
+> 
+> Companion extensions are already available for **Firefox and Chrome/Chromium**: [YT Zero Enhance](https://github.com/Pelski/ytzero-enhance) upgrades playback with reliable controls, shortcuts, chapters, SponsorBlock, picture-in-picture and more. See the [browser extension guide](https://github.com/Pelski/ytzero/wiki/Browser-Extensions) to get started.
 
 It reads public YouTube RSS feeds, stores everything in your own SQLite or PostgreSQL database, and gives you a calm place to sort, schedule, watch, archive, and revisit videos from creators you already follow. With the optional [yt-dlp](https://github.com/yt-dlp/yt-dlp) integration it can even download those videos and play them from disk, in its own player.
 
@@ -56,7 +60,7 @@ YT Zero removes that layer. It keeps subscriptions, watch progress, playlists, t
 ## Features
 
 - **Subscription inbox** — all new videos from followed channels in one feed.
-- **Channel import** — add channels manually, import OPML, or import `subscriptions.csv` from Google Takeout.
+- **Channel import** — add channels manually, import OPML, NewPipe subscription JSON, or `subscriptions.csv` from Google Takeout.
 - **Live and upcoming streams** — dedicated live view with automatic status refresh, plus a per-profile option to keep live and Upcoming entries out of the main feed.
 - **Watch later buckets** — schedule videos for Today, Tonight, Tomorrow, Tomorrow evening, or Weekend.
 - **Archive flow** — reject videos, restore them later, and keep the main feed clean.
@@ -105,7 +109,23 @@ That means:
 ## Quick start
 
 YT Zero can run as a regular Docker container, an Unraid Community App, a
-native systemd service, or in its own Proxmox LXC:
+native systemd service, in its own Proxmox LXC, or on a cloud platform.
+
+### One-click cloud deploy
+
+[![Deploy to DigitalOcean](https://www.deploytodo.com/do-btn-blue.svg)](https://cloud.digitalocean.com/apps/new?repo=https://github.com/Pelski/ytzero/tree/main)
+[![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/Pelski/ytzero)
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/yt-zero-1?referralCode=1GJD2M&utm_medium=integration&utm_source=template&utm_campaign=generic)
+[![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?type=docker&image=ghcr.io%2Fpelski%2Fytzero%3Alatest&name=ytzero&service_type=web&instance_type=small&regions=fra&ports=3001%3Bhttp%3B%2F&env%5BPORT%5D=3001)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.svg)](https://www.heroku.com/deploy?template=https://github.com/Pelski/ytzero)
+
+Render provisions a persistent `/data` disk. DigitalOcean provisions PostgreSQL
+for application state, but App Platform has no persistent filesystem, so
+downloads, avatars, logs, and caches are ephemeral there. Heroku has the same
+file limitation and provisions PostgreSQL. Koyeb requires a volume mounted at
+`/data` to be added manually after the initial deployment.
+See **[Cloud Deployment](https://github.com/Pelski/ytzero/wiki/Cloud-Deployment)**
+before choosing a provider.
 
 | Method | Best for | How it runs |
 | --- | --- | --- |
@@ -113,6 +133,7 @@ native systemd service, or in its own Proxmox LXC:
 | Unraid | Unraid users who prefer DockerMan / Community Apps | The same GHCR image with persistent appdata |
 | Proxmox VE | Homelabs managed from a PVE host | Unprivileged Debian LXC, without Docker inside |
 | Debian / Ubuntu | LXC, VM or bare-metal Linux | Native Bun application managed by systemd |
+| Cloud | Render, Railway, DigitalOcean, Koyeb, Heroku, Fly.io, Zeabur, Kubernetes and Docker PaaS | One-click templates or repository manifests |
 
 ### Docker
 
@@ -171,7 +192,8 @@ Open <http://localhost:3001>. The app starts empty — add channels from **Setti
 Full instructions (Proxmox and installer options, Unraid, local development, production-like start) are in **[Installation](https://github.com/Pelski/ytzero/wiki/Installation)**.
 
 The native and Proxmox commands require a release that includes the packaged
-`ytzero-vX.Y.Z.tar.gz` asset. Older tags without that asset are Docker/local
+`ytzero-YYYY.MM.N.tar.gz` asset (for example,
+`ytzero-2026.08.1.tar.gz`). Older tags without that asset are Docker/local
 only.
 
 ## Documentation
@@ -179,6 +201,7 @@ only.
 Full documentation lives in the **[Wiki](https://github.com/Pelski/ytzero/wiki)**:
 
 - **[Installation](https://github.com/Pelski/ytzero/wiki/Installation)** — Docker, Unraid, Proxmox, native Linux, and local development.
+- **[Cloud Deployment](https://github.com/Pelski/ytzero/wiki/Cloud-Deployment)** — one-click buttons and guides for hosted platforms.
 - **[Configuration](https://github.com/Pelski/ytzero/wiki/Configuration)** — environment variables.
 - **[Features](https://github.com/Pelski/ytzero/wiki/Features)** — everything the app does, with screens.
 - **[Settings](https://github.com/Pelski/ytzero/wiki/Settings)** — current navigation, sections, and administrator-only access.

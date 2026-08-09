@@ -6,7 +6,7 @@
 
 English | [中文](./README_zh.md)
 
-**Get everything out of your head.** Mindwtr is a free, open-source to-do app built on the Getting Things Done (GTD) method: it captures every task and idea in seconds, then shows you the one next thing to do. No account, no subscription, and your data stays on your device.
+**Get everything out of your head.** Mindwtr™ is a free, open-source to-do app built on the Getting Things Done (GTD) method: it captures every task and idea in seconds, then shows you the one next thing to do. No account, no subscription, and your data stays on your device.
 
 _Mindwtr = "mind like water": the calm you get when nothing is rattling around in your head._
 
@@ -175,7 +175,7 @@ Mindwtr is simple by default and powerful when you need it:
 - ☁️ **Dropbox Sync (Optional)** - Sign in with Dropbox and sync through a private app folder (store builds; not in FOSS builds)
 - 📤 **Export/Backup** - Export data to JSON
 - ♻️ **Restore from Backup** - Replace local data from a validated Mindwtr backup with a recovery snapshot first
-- 📥 **TickTick + Todoist + DGT GTD + OmniFocus + Apple Reminders Import** - Import TickTick CSV/ZIP, Todoist CSV/ZIP, DGT GTD JSON/ZIP, OmniFocus exports, or incomplete Apple Reminders into Mindwtr
+- 📥 **TickTick + Todoist + DGT GTD + OmniFocus + Apple Reminders + CSV Import** - Import TickTick CSV/ZIP, Todoist CSV/ZIP, DGT GTD JSON/ZIP, OmniFocus exports, incomplete Apple Reminders, or any app via a documented generic CSV format into Mindwtr
 - 🔗 **Obsidian Integration** - Desktop vault task import with deep links back to source notes
 - 🗓️ **External Calendars (System + ICS)** - Mobile reads system calendars and pushes dated tasks; macOS desktop reads Apple Calendar and can push dated tasks; desktop/web also support ICS subscriptions and task creation from events
 
@@ -231,7 +231,7 @@ Quick options:
 - iOS: App Store or TestFlight beta.
 - Web / self-hosted: [Cloud Deployment](https://docs.mindwtr.app/data-sync/cloud-deployment) or the [Docker guide](docker/README.md).
 
-Windows builds: free code signing provided by [SignPath.io](https://signpath.io/), certificate by [SignPath Foundation](https://signpath.org/) — application pending. See the [code signing policy](https://mindwtr.app/signing).
+Windows builds: free code signing provided by [SignPath.io](https://signpath.io/), certificate by [SignPath Foundation](https://signpath.org/) — application approved, certificate pending issuance. See the [code signing policy](https://mindwtr.app/signing).
 
 <details>
 <summary>Package manager quick commands</summary>
@@ -327,4 +327,10 @@ Thanks to these monthly sponsors for supporting Mindwtr.
 
 <p align="center">
   <sub><a href="https://github.com/jarrydstan">@jarrydstan</a> · <a href="https://github.com/ronmolenda">@ronmolenda</a> · <a href="https://github.com/karl1990">@karl1990</a> · <a href="https://github.com/srijan">@srijan</a> · <a href="https://github.com/davibicudo">@davibicudo</a> · <a href="https://github.com/PLPeeters">@PLPeeters</a> · <a href="https://github.com/danhs">@danhs</a> · <a href="https://github.com/NikoScotch">@NikoScotch</a> · <a href="https://github.com/nicopico-dev">@nicopico-dev</a></sub>
+</p>
+
+---
+
+<p align="center">
+  <sub>Mindwtr™ and the Mindwtr logo are trademarks of the Mindwtr project. Official website: <a href="https://mindwtr.app">mindwtr.app</a></sub>
 </p>

@@ -1,8 +1,68 @@
 {
   "chunk": 27,
-  "count": 6,
-  "generated_at": "2026-08-02T06:03:39Z",
+  "count": 10,
+  "generated_at": "2026-08-09T04:23:48Z",
   "items": [
+    {
+      "repo_key": "gitlab.com/mayan-edms/mayan-edms",
+      "repo_url": "gitlab.com/mayan-edms/mayan-edms",
+      "host": "gitlab.com",
+      "owner": "mayan-edms",
+      "repo": "mayan-edms",
+      "app_references": [
+        "mayan-edms"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/mayan-edms/mayan-edms/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/mayan-edms/mayan-edms/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/rtraceio/web",
+      "repo_url": "gitlab.com/rtraceio/web/flink",
+      "host": "gitlab.com",
+      "owner": "rtraceio",
+      "repo": "web",
+      "app_references": [
+        "flink"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/rtraceio/web/flink/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/rtraceio/web/flink/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/storyteller-platform/storyteller",
+      "repo_url": "gitlab.com/storyteller-platform/storyteller",
+      "host": "gitlab.com",
+      "owner": "storyteller-platform",
+      "repo": "storyteller",
+      "app_references": [
+        "storyteller"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/storyteller-platform/storyteller/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/storyteller-platform/storyteller/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/timvisee/send",
+      "repo_url": "gitlab.com/timvisee/send",
+      "host": "gitlab.com",
+      "owner": "timvisee",
+      "repo": "send",
+      "app_references": [
+        "send-visee"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/timvisee/send/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/timvisee/send/-/raw/main/README.md?"
+    },
     {
       "repo_key": "gitlab.opencode.de/opentalk/ot-setup",
       "repo_url": "gitlab.opencode.de/opentalk/ot-setup",

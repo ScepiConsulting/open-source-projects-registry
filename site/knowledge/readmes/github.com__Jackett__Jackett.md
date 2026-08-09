@@ -107,7 +107,6 @@ Prior versions of Jackett are no longer supported.
  * ExtraTorrent.st
  * EZTV
  * FileMood
- * FilmesHdTorrent
  * Free JAV Torrent
  * GamesTorrents
  * HDRTorrent
@@ -329,7 +328,6 @@ Prior versions of Jackett are no longer supported.
  * CeskeForum
  * CGPeers [![(invite needed)][inviteneeded]](#)
  * CHDBits [![(invite needed)][inviteneeded]](#)
- * ChileBT
  * Cinemageddon [![(invite needed)][inviteneeded]](#)
  * CinemaMovieS_ZT
  * Cinematik
@@ -587,6 +585,7 @@ Prior versions of Jackett are no longer supported.
  * Shareisland
  * Shazbat
  * SiamBIT [PAY2DL]
+ * Simurg
  * Siqi
  * SkipTheCommercials
  * Slobit Games
@@ -637,7 +636,6 @@ Prior versions of Jackett are no longer supported.
  * Torrent-Syndikat [![(invite needed)][inviteneeded]](#)
  * TOrrent-tuRK (TORK)
  * Torrent.LT
- * TorrentAvenue
  * TorrentBD
  * TorrentBytes (TBy) [![(invite needed)][inviteneeded]](#)
  * TorrentCCF (TCCF)
@@ -645,6 +643,7 @@ Prior versions of Jackett are no longer supported.
  * TorrentDay (TD)
  * TorrentDD (TodayBit)
  * Torrenteros (TTR)
+ * TorrentHaven
  * TorrentHR
  * Torrenting (TT)
  * TorrentLeech (TL)

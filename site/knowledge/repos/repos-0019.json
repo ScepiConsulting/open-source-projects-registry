@@ -1,8 +1,53 @@
 {
   "chunk": 19,
   "count": 50,
-  "generated_at": "2026-08-02T06:03:39Z",
+  "generated_at": "2026-08-09T04:23:48Z",
   "items": [
+    {
+      "repo_key": "github.com/minthcm/minthcm",
+      "repo_url": "github.com/minthcm/minthcm",
+      "host": "github.com",
+      "owner": "minthcm",
+      "repo": "minthcm",
+      "app_references": [
+        "minthcm"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__minthcm__minthcm.md",
+      "readme_download_url": null,
+      "readme_sha256": "a557d669c7359a55d6af4542de0a76188196a038cd962a238855fb46597332d6",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/miroslavpejic85/mirotalk",
+      "repo_url": "github.com/miroslavpejic85/mirotalk",
+      "host": "github.com",
+      "owner": "miroslavpejic85",
+      "repo": "mirotalk",
+      "app_references": [
+        "mirotalk"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__miroslavpejic85__mirotalk.md",
+      "readme_download_url": null,
+      "readme_sha256": "f30fe0bb349fb9aee8a49bb3cfa1092fa23a5962971bb75c4d4b78a91567141a",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/misskey-dev/misskey",
+      "repo_url": "github.com/misskey-dev/misskey",
+      "host": "github.com",
+      "owner": "misskey-dev",
+      "repo": "misskey",
+      "app_references": [
+        "misskey"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__misskey-dev__misskey.md",
+      "readme_download_url": null,
+      "readme_sha256": "ea234da5e8bca9c25f0362ef2949c620ac5006a03896f7a50237be84a08a3802",
+      "error": null
+    },
     {
       "repo_key": "github.com/mjl-/mox",
       "repo_url": "github.com/mjl-/mox",
@@ -12,9 +57,9 @@
       "app_references": [
         "mox"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__mjl-__mox.md",
-      "readme_download_url": "https://raw.githubusercontent.com/mjl-/mox/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "942fecefcda124186de93decd9a701bb76b7ecf0034460e787897781a4a787c1",
       "error": null
     },
@@ -60,7 +105,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__mnfst__manifest.md",
       "readme_download_url": "https://raw.githubusercontent.com/mnfst/manifest/main/README.md",
-      "readme_sha256": "fdce060a7538f2d2f02c2639fc12c729039f77030232f54a7254bdad857e6cf8",
+      "readme_sha256": "d281161b9b4c335a99d1b018e6a551ef0a551cea3c669b47330a9ed460ce9930",
       "error": null
     },
     {
@@ -87,9 +132,9 @@
       "app_references": [
         "komodo"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__moghtech__komodo.md",
-      "readme_download_url": "https://raw.githubusercontent.com/moghtech/komodo/main/readme.md",
+      "readme_download_url": null,
       "readme_sha256": "59a871c5feb6223994537eadd63b1717c6b1215c0eb8dcc8e139808bf64d80ea",
       "error": null
     },
@@ -147,10 +192,10 @@
       "app_references": [
         "bazarr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__morpheus65535__bazarr.md",
-      "readme_download_url": null,
-      "readme_sha256": "5b6a21c59c26aa919dcae46a31ba2d5e390e3b5ed274379fede9bab05ec333dc",
+      "readme_download_url": "https://raw.githubusercontent.com/morpheus65535/bazarr/master/README.md",
+      "readme_sha256": "09f745ea883ad143d7b3b0fb6ae174123f63298dd311337718a874a2136fed2e",
       "error": null
     },
     {
@@ -192,10 +237,10 @@
       "app_references": [
         "logchef"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__mr-karan__logchef.md",
-      "readme_download_url": null,
-      "readme_sha256": "238cc6b523c7eb391c5bc996e7b2a9f41828fd31a0bae651b23266dd9c50208c",
+      "readme_download_url": "https://raw.githubusercontent.com/mr-karan/logchef/main/README.md",
+      "readme_sha256": "2945feecd5d4cb0eea78e9b2a0e673db34899fce990f5b8dc83c96b97bc8b2cc",
       "error": null
     },
     {
@@ -270,7 +315,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__mudler__LocalAI.md",
       "readme_download_url": "https://raw.githubusercontent.com/mudler/LocalAI/master/README.md",
-      "readme_sha256": "567e207da5477c1307c2df0f8525d71b40febade49a7cf4721d1011c9de8cab5",
+      "readme_sha256": "21bcfdc8c5b5250c23b1734e8452870a75db6a6ad36ecf44d3997d4922df895b",
       "error": null
     },
     {
@@ -327,10 +372,10 @@
       "app_references": [
         "speakr"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__murtaza-nasir__speakr.md",
-      "readme_download_url": null,
-      "readme_sha256": "343a36717310e2a69ac23d066e3ddb42acca41f4c4a178e3729bff8ca2cec7b4",
+      "readme_download_url": "https://raw.githubusercontent.com/murtaza-nasir/speakr/master/README.md",
+      "readme_sha256": "3633e747f3fe669a5c3f03c6079e236b93cf728b68cb5e9c48ab5c967b833e99",
       "error": null
     },
     {
@@ -387,9 +432,9 @@
       "app_references": [
         "trailarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__nandyalu__trailarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/nandyalu/trailarr/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f981084bf8130406077a5f73bec3cfa353235d7385f0a8c0cc1cd5481ea097ee",
       "error": null
     },
@@ -402,9 +447,9 @@
       "app_references": [
         "nanoclaw"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__nanocoai__nanoclaw.md",
-      "readme_download_url": "https://raw.githubusercontent.com/nanocoai/nanoclaw/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e4cf905a087e58c87a8c01a86af25a3ef81e3af7fb7e980e7d9a50a2dffc3889",
       "error": null
     },
@@ -462,9 +507,9 @@
       "app_references": [
         "meme-search"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__neonwatty__meme-search.md",
-      "readme_download_url": "https://raw.githubusercontent.com/neonwatty/meme-search/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "25fc3fca7371b7b792b29a36bc9fe883b87fc03da5e9e77207a1dbd7d61a89c4",
       "error": null
     },
@@ -657,10 +702,10 @@
       "app_references": [
         "nextcloud-social"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nextcloud__social.md",
-      "readme_download_url": null,
-      "readme_sha256": "95159c9419315234b5c861b8bcda5f15db6cb320fff54402cc112cb46f4f3daf",
+      "readme_download_url": "https://raw.githubusercontent.com/nextcloud/social/master/README.md",
+      "readme_sha256": "541aa2d7b0239079acf5c7f5a59a52ea0c4c5cb83fa193711d04703730a78fce",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__nextcloud__tasks.md",
       "readme_download_url": null,
       "readme_sha256": "d0a8eaaf2cfa9c9b3e132b9f6805bbc396a1f523f1d3db384416b96361625c34",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/nezhahq/nezha",
-      "repo_url": "github.com/nezhahq/nezha",
-      "host": "github.com",
-      "owner": "nezhahq",
-      "repo": "nezha",
-      "app_references": [
-        "nezha"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__nezhahq__nezha.md",
-      "readme_download_url": "https://raw.githubusercontent.com/nezhahq/nezha/master/README.md",
-      "readme_sha256": "c7e277e073fed47c0f2f4b384234ebeab2aa3255a8c34e1cc85bf9dda3cdd0ae",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/nginx-proxy/nginx-proxy",
-      "repo_url": "github.com/nginx-proxy/nginx-proxy",
-      "host": "github.com",
-      "owner": "nginx-proxy",
-      "repo": "nginx-proxy",
-      "app_references": [
-        "nginx-proxy"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__nginx-proxy__nginx-proxy.md",
-      "readme_download_url": null,
-      "readme_sha256": "f50da65d1b419d7f8d8d47cb37f8882b6d0f8d15503e0bd0854d2702b19dac99",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/nguyenjessev/liquor-locker",
-      "repo_url": "github.com/nguyenjessev/liquor-locker",
-      "host": "github.com",
-      "owner": "nguyenjessev",
-      "repo": "liquor-locker",
-      "app_references": [
-        "liquor-locker"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__nguyenjessev__liquor-locker.md",
-      "readme_download_url": null,
-      "readme_sha256": "2004ec13240e73cb653c18a2321d9a0f95e481bbdf997c4e10d13067572ddcda",
       "error": null
     }
   ]

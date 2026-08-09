@@ -1,8 +1,8 @@
 <div align="center" width="100%">
-  <img src="frontend/public/arralogo.svg" width="128" height="128" alt="Aurral Logo" />
-  
-# Aurral
-
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/src/assets/readme.svg" />
+    <img src="docs/src/assets/readme-dark.svg" width="600" alt="Aurral" />
+  </picture>
 </div>
 
 [![Docker](https://img.shields.io/badge/docker-ghcr.io%2Flklynet%2Faurral-blue?logo=docker&logoColor=white)](https://ghcr.io/lklynet/aurral)
@@ -30,7 +30,7 @@ Aurral is the Lidarr companion for self-hosted music discovery. Best-in-class re
 - **Activity**: Queue, review, and history for Lidarr requests, yt-dlp / slskd / Usenet downloads, and Aurral playlist jobs.
 - **Integrations**: Lidarr, Last.fm, ListenBrainz, Koito, yt-dlp, slskd, SABnzbd/NZBGet, Navidrome, Plex, Ticketmaster, Gotify, and webhooks.
 - **Playback**: Stream through Navidrome (M3U playlists) or Plex/Plexamp (API-synced playlists) from a dedicated download folder.
-- **Multi-user**: Per-user profiles, discovery layout, permissions, local auth, LAN auto-login, and reverse-proxy SSO.
+- **Multi-user**: Per-user profiles, discovery layout, permissions, local auth, LAN auto-login, reverse-proxy SSO, and native OIDC.
 
 ## Screenshots
 
@@ -59,17 +59,20 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /data:/data
+      - ${MEDIA_ROOT:-/srv/media}:/data
       - ./config:/config
 ```
 
-Change `/data:/data` to the **same host media path Lidarr already mounts**. If Lidarr's stack works, Aurral's filesystem is already right. Then set the Downloads Folder path in the UI. See [Match Lidarr](https://docs.aurral.org/getting-started/storage/).
+Set `MEDIA_ROOT` to the **same host media path that Lidarr already mounts**. Keep `/data` as the container path and use that same mapping for your download clients and Navidrome or Plex. Then set Aurral's Downloads Folder to a container path such as `/data/downloads/aurral`. See [Filesystem and mounts](https://docs.aurral.org/getting-started/storage/).
 
 ```bash
 docker compose up -d
 ```
 
 Open `http://localhost:3001`, create your admin account, and connect Lidarr.
+
+Want the latest merged changes? Use `ghcr.io/lklynet/aurral:nightly`. Nightly
+builds may be less stable than releases; see the [Docker image channels](https://docs.aurral.org/getting-started/docker/#which-image-tag-to-use).
 
 For a stack with Lidarr, slskd, and Navidrome, see [`docker-compose.example.yml`](docker-compose.example.yml). For Plex, see the [Plex setup guide](https://docs.aurral.org/integrations/plex/).
 

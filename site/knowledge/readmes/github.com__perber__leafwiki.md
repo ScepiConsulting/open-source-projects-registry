@@ -556,19 +556,37 @@ For most setups, prefer `--public-access` for read-only public access and the vi
 
 | Action                | Shortcut                               |
 |-----------------------|----------------------------------------|
+| Shortcuts help        | `Ctrl + /` / `Cmd + /`                 |
 | Edit mode             | `Ctrl + E` / `Cmd + E`                 |
 | Save                  | `Ctrl + S` / `Cmd + S`                 |
 | Search                | `Ctrl + Shift + F` / `Cmd + Shift + F` |
 | Navigation pane       | `Ctrl + Shift + E` / `Cmd + Shift + E` |
 | Go to page            | `Ctrl + Alt + P` / `Cmd + Option + P`  |
+| Toggle TOC            | `Ctrl + Shift + O` / `Cmd + Shift + O` |
+| Copy page link        | `Ctrl + Shift + S` / `Cmd + Shift + S` |
+| Share / permalink     | `Ctrl + Shift + L` / `Cmd + Shift + L` |
+| Page history          | `Ctrl + H` / `Cmd + H`                 |
+| Print page            | `Ctrl + P` / `Cmd + P`                 |
+| Delete page           | `Ctrl + Delete` / `Cmd + Delete`       |
 | Bold                  | `Ctrl + B` / `Cmd + B`                 |
 | Italic                | `Ctrl + I` / `Cmd + I`                 |
+| Insert link           | `Ctrl + K` / `Cmd + K`                 |
 | Headline 1–3          | `Ctrl + Alt + 1–3` / `Cmd + Alt + 1–3` |
 
 `Ctrl+V` / `Cmd+V` for pasting images and files works in the editor.  
 `Esc` closes modals, dialogs, and edit mode.
 
+Press `Ctrl+/` / `Cmd+/` in the app for the full in-product shortcuts list.
+
 ---
+
+## Relative Markdown Links
+
+LeafWiki resolves relative page links with **page-as-folder** semantics: the current page path is treated as a folder, so `[Setup](setup)` on `/docs/guide` resolves to `/docs/guide/setup`, not a sibling `/docs/setup`.
+
+A trailing `.md` suffix in a link target is ignored for page lookup (for example `setup.md` → `setup`), which matches common filesystem / Obsidian-style Markdown.
+
+This differs from plain filesystem tools that treat the current file''s directory as the base. A broader sibling-folder model is discussed in #1236.
 
 ## External Edits & Resync
 

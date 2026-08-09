@@ -1,8 +1,53 @@
 {
   "chunk": 16,
   "count": 50,
-  "generated_at": "2026-08-02T06:03:39Z",
+  "generated_at": "2026-08-09T04:23:48Z",
   "items": [
+    {
+      "repo_key": "github.com/jeffcaldwellca/mkcertWeb",
+      "repo_url": "github.com/jeffcaldwellca/mkcertWeb",
+      "host": "github.com",
+      "owner": "jeffcaldwellca",
+      "repo": "mkcertWeb",
+      "app_references": [
+        "mkcert-web-ui"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__jeffcaldwellca__mkcertWeb.md",
+      "readme_download_url": null,
+      "readme_sha256": "bdbcdca43c1cd6e026ab4609e6985a051612435175a1f31eeb197d98365536dd",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/jellydeck/moocup",
+      "repo_url": "github.com/jellydeck/moocup",
+      "host": "github.com",
+      "owner": "jellydeck",
+      "repo": "moocup",
+      "app_references": [
+        "moocup"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__jellydeck__moocup.md",
+      "readme_download_url": null,
+      "readme_sha256": "5c20efe8a83974cb112bbf244c0461f86ed327bf45ec7e1c22849579d6155db7",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/jellyfin/jellyfin",
+      "repo_url": "github.com/jellyfin/jellyfin",
+      "host": "github.com",
+      "owner": "jellyfin",
+      "repo": "jellyfin",
+      "app_references": [
+        "jellyfin"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__jellyfin__jellyfin.md",
+      "readme_download_url": null,
+      "readme_sha256": "88a24330cd3fb606ee827a5b5cf0449230627e6a711c445d84b6452d20afb257",
+      "error": null
+    },
     {
       "repo_key": "github.com/jeremehancock/Posteria",
       "repo_url": "github.com/jeremehancock/Posteria",
@@ -12,9 +57,9 @@
       "app_references": [
         "posteria"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__jeremehancock__Posteria.md",
-      "readme_download_url": "https://raw.githubusercontent.com/jeremehancock/Posteria/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1b9a33dd719264efa981b06f8a8f3ad08a10f2e1e9909605df688c5164fc4fd2",
       "error": null
     },
@@ -237,9 +282,9 @@
       "app_references": [
         "loops"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__joinloops__loops-server.md",
-      "readme_download_url": "https://raw.githubusercontent.com/joinloops/loops-server/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "97216d163bbdadeab9440bad6774b010ea8cef1316e61515c1d6216cea0a83ab",
       "error": null
     },
@@ -252,10 +297,10 @@
       "app_references": [
         "jellysweep"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jon4hz__jellysweep.md",
-      "readme_download_url": null,
-      "readme_sha256": "5ee274e32ca540861a1fbc7be8d96a6ca3c07dc288ec4f4a370a79cd69fdf0f5",
+      "readme_download_url": "https://raw.githubusercontent.com/jon4hz/jellysweep/main/README.md",
+      "readme_sha256": "20318259aa8714290e8fa7b1f8c2807cde7bdc228dff798811fb2feae71f5a5a",
       "error": null
     },
     {
@@ -432,10 +477,10 @@
       "app_references": [
         "maintenant"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__kOlapsis__maintenant.md",
-      "readme_download_url": null,
-      "readme_sha256": "e903160c19d551689378387b005871b20e96be57033e35daf6015b7e81fd8126",
+      "readme_download_url": "https://raw.githubusercontent.com/kOlapsis/maintenant/main/README.md",
+      "readme_sha256": "8290dbf7a8d9ad72803eb94de69a4a8cfef755e0e1754092b511b65102566a93",
       "error": null
     },
     {
@@ -537,9 +582,9 @@
       "app_references": [
         "karakeep"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__karakeep-app__karakeep.md",
-      "readme_download_url": "https://raw.githubusercontent.com/karakeep-app/karakeep/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "ecc3cd2eb9a38a919bea7ccb71cd9e83c2dfc01d03601a70879433e0d3f326d9",
       "error": null
     },
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__kikootwo__ReadMeABook.md",
       "readme_download_url": null,
       "readme_sha256": "01aa9fa7b80d02f0c82f6cdf0989a67cb54b111a34a577107024309d33390020",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/kimai/kimai",
-      "repo_url": "github.com/kimai/kimai",
-      "host": "github.com",
-      "owner": "kimai",
-      "repo": "kimai",
-      "app_references": [
-        "kimai"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__kimai__kimai.md",
-      "readme_download_url": null,
-      "readme_sha256": "c149b1087ac06e94cbdd71b5e6b75d1e473b7f32a442de73b806e7dcf1e0a2ca",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/kimdre/doco-cd",
-      "repo_url": "github.com/kimdre/doco-cd",
-      "host": "github.com",
-      "owner": "kimdre",
-      "repo": "doco-cd",
-      "app_references": [
-        "doco-cd"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__kimdre__doco-cd.md",
-      "readme_download_url": "https://raw.githubusercontent.com/kimdre/doco-cd/main/README.md",
-      "readme_sha256": "32fcdee3dd8259713e0bf817ebe1a22fc6ac874e5e40f14219e2040853d649a6",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/kite-org/kite",
-      "repo_url": "github.com/kite-org/kite",
-      "host": "github.com",
-      "owner": "kite-org",
-      "repo": "kite",
-      "app_references": [
-        "kite-kubernetes"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__kite-org__kite.md",
-      "readme_download_url": null,
-      "readme_sha256": "d0c593718be3230f9d8a01bb4bb34da74c14a5bb91859bd1cf2eb6828c07ae57",
       "error": null
     }
   ]

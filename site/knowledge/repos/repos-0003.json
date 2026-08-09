@@ -1,8 +1,23 @@
 {
   "chunk": 3,
   "count": 50,
-  "generated_at": "2026-08-02T06:03:38Z",
+  "generated_at": "2026-08-09T04:23:48Z",
   "items": [
+    {
+      "repo_key": "github.com/Drop-OSS/drop",
+      "repo_url": "github.com/Drop-OSS/drop",
+      "host": "github.com",
+      "owner": "Drop-OSS",
+      "repo": "drop",
+      "app_references": [
+        "drop"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__Drop-OSS__drop.md",
+      "readme_download_url": null,
+      "readme_sha256": "a24b9860aab2f657a331e07bd1fa1cdb684969b090260cfdfb401eb3d9b55ad7",
+      "error": null
+    },
     {
       "repo_key": "github.com/DroppedNeedle/DroppedNeedle",
       "repo_url": "github.com/DroppedNeedle/DroppedNeedle",
@@ -282,9 +297,9 @@
       "app_references": [
         "freshrss"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__FreshRSS__FreshRSS.md",
-      "readme_download_url": "https://raw.githubusercontent.com/FreshRSS/FreshRSS/edge/README.md",
+      "readme_download_url": null,
       "readme_sha256": "81313c0c5ff461d25c9f3779197e3a778a67822deb3805f2d2c9d17acb590cf6",
       "error": null
     },
@@ -447,10 +462,10 @@
       "app_references": [
         "habitica"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__HabitRPG__habitica.md",
-      "readme_download_url": null,
-      "readme_sha256": "6aa25ad76cc7535cf88e576266375e293f22953eccb0f190ace02b77e0746a9b",
+      "readme_download_url": "https://raw.githubusercontent.com/HabitRPG/habitica/develop/README.md",
+      "readme_sha256": "f5d2eda02e4db0da4531698e700a4d150bd3a678cd1d3e37fb9181da374ced68",
       "error": null
     },
     {
@@ -537,10 +552,10 @@
       "app_references": [
         "chronoframe"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__HoshinoSuzumi__chronoframe.md",
-      "readme_download_url": null,
-      "readme_sha256": "86cf3eafa2a67090d19c520414bc894c9161d4e0c374ca29471612500c746020",
+      "readme_download_url": "https://raw.githubusercontent.com/HoshinoSuzumi/chronoframe/main/README.md",
+      "readme_sha256": "206af713833fc4747ce8d5b773756f48f32625e6f3aa59100c26c5750e9cd587",
       "error": null
     },
     {
@@ -627,10 +642,10 @@
       "app_references": [
         "invoiceplane"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__InvoicePlane__InvoicePlane.md",
-      "readme_download_url": null,
-      "readme_sha256": "321f4978ef3345adb9a42818aa374fedad7da88c422fa9b268671a2455006ea9",
+      "readme_download_url": "https://raw.githubusercontent.com/InvoicePlane/InvoicePlane/develop/README.md",
+      "readme_sha256": "c4f50d5ac872ff2a50070eb30ca0a5131cca333f20321778c67ff6236e0ffdb5",
       "error": null
     },
     {
@@ -642,10 +657,10 @@
       "app_references": [
         "invoiceshelf"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__InvoiceShelf__InvoiceShelf.md",
-      "readme_download_url": null,
-      "readme_sha256": "54aaa2b3c8ce3b42ed6983f0c1a44671cf3628e6f3ec4a88d98ff763fd3c69db",
+      "readme_download_url": "https://raw.githubusercontent.com/InvoiceShelf/InvoiceShelf/3.x/README.md",
+      "readme_sha256": "513f5d6383bd5bc3efef675221f12125b774a1e1c74ac2a4578b354175a9351b",
       "error": null
     },
     {
@@ -690,7 +705,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Jackett__Jackett.md",
       "readme_download_url": "https://raw.githubusercontent.com/Jackett/Jackett/master/README.md",
-      "readme_sha256": "14cd79b24b8a2647c9fbe2b8b4de0069eae7f6048fc5a809d5c1c6508f31a529",
+      "readme_sha256": "8ff3a91e284f3c28c5b4ac8188f03e7da7fab1f4fb56a25a9f390401e46e5f05",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__JudoChinX__rangarr.md",
       "readme_download_url": null,
       "readme_sha256": "e4706a98f3f01a6f9340a388b1e49f035e665cf03ce21e94ba655b0576b876f7",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/KSJaay/Lunalytics",
-      "repo_url": "github.com/KSJaay/Lunalytics",
-      "host": "github.com",
-      "owner": "KSJaay",
-      "repo": "Lunalytics",
-      "app_references": [
-        "lunalytics"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__KSJaay__Lunalytics.md",
-      "readme_download_url": null,
-      "readme_sha256": "195f79293ac2e26b8fbf7b73f9b238357ee5c65a5db6ad9b2860ed0cf31a1531",
       "error": null
     }
   ]

@@ -1,7 +1,7 @@
 {
   "chunk": 1,
   "count": 50,
-  "generated_at": "2026-08-02T06:03:38Z",
+  "generated_at": "2026-08-09T04:23:48Z",
   "items": [
     {
       "repo_key": "akkoma.dev/AkkomaGang/akkoma",
@@ -492,9 +492,9 @@
       "app_references": [
         "blocky"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__0xERR0R__blocky.md",
-      "readme_download_url": "https://raw.githubusercontent.com/0xERR0R/blocky/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "1330aa10ab26108b35722e5670586bd28afecd424873cc54a348bf177aa5363d",
       "error": null
     },
@@ -507,9 +507,9 @@
       "app_references": [
         "nginx-ui"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__0xJacky__nginx-ui.md",
-      "readme_download_url": "https://raw.githubusercontent.com/0xJacky/nginx-ui/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7a0b8660099cab52152e29eea427bd220bfdbc0018845f89fa26c36399cf4bc5",
       "error": null
     },
@@ -552,10 +552,10 @@
       "app_references": [
         "1panel"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__1Panel-dev__1Panel.md",
-      "readme_download_url": null,
-      "readme_sha256": "33ef0c078b2c14dfa8e5309e785b03c454306419d9182006e82d52c29f33d44d",
+      "readme_download_url": "https://raw.githubusercontent.com/1Panel-dev/1Panel/dev-v2/README.md",
+      "readme_sha256": "594bf84dba4b6a14592d74e28e0b9079aae4be70312ae9a7a305e7dd75e8bb6a",
       "error": null
     },
     {
@@ -574,6 +574,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/291-Group/LAN-Orangutan",
+      "repo_url": "github.com/291-Group/LAN-Orangutan",
+      "host": "github.com",
+      "owner": "291-Group",
+      "repo": "LAN-Orangutan",
+      "app_references": [
+        "lan-orangutan"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__291-Group__LAN-Orangutan.md",
+      "readme_download_url": "https://raw.githubusercontent.com/291-Group/LAN-Orangutan/main/README.md",
+      "readme_sha256": "244cd1f01f3f19683b32cdf03b48b4d7f10a11f4251ba2c201eb29300c5c6ac9",
+      "error": null
+    },
+    {
       "repo_key": "github.com/3xpyth0n/ideon",
       "repo_url": "github.com/3xpyth0n/ideon",
       "host": "github.com",
@@ -582,9 +597,9 @@
       "app_references": [
         "ideon"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__3xpyth0n__ideon.md",
-      "readme_download_url": "https://raw.githubusercontent.com/3xpyth0n/ideon/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "47a6bd4ff1e043bb34b34652c38e2bb16cfbbe3e9f1312620ff1282bf976739f",
       "error": null
     },
@@ -645,7 +660,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__9001__copyparty.md",
       "readme_download_url": "https://raw.githubusercontent.com/9001/copyparty/hovudstraum/README.md",
-      "readme_sha256": "347544fe8c63648f974c5657e36df883122575207a7bde95da46051a4bb67048",
+      "readme_sha256": "7cb29bf6190cb372fec6dc27c5e699f3cef3f6c83edf8e618aa37d8fa1c9a4f2",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__AndrewPaglusch__FlashPaper.md",
       "readme_download_url": null,
       "readme_sha256": "e65c716b954c7a0527ab4b7c6c6c13eb07cf45feb4f23e03bdedd22ecde5bb0a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/AnthonyGress/lab-dash",
-      "repo_url": "github.com/AnthonyGress/lab-dash",
-      "host": "github.com",
-      "owner": "AnthonyGress",
-      "repo": "lab-dash",
-      "app_references": [
-        "lab-dash"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__AnthonyGress__lab-dash.md",
-      "readme_download_url": null,
-      "readme_sha256": "53492537532ce8d3083a0bdfa0a8d346582781ea0d3eb0d79ab10521cc2b1204",
       "error": null
     }
   ]

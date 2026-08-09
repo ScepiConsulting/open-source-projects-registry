@@ -1,8 +1,38 @@
 {
   "chunk": 15,
   "count": 50,
-  "generated_at": "2026-08-02T06:03:39Z",
+  "generated_at": "2026-08-09T04:23:48Z",
   "items": [
+    {
+      "repo_key": "github.com/hedgedoc/hedgedoc",
+      "repo_url": "github.com/hedgedoc/hedgedoc",
+      "host": "github.com",
+      "owner": "hedgedoc",
+      "repo": "hedgedoc",
+      "app_references": [
+        "hedgedoc"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__hedgedoc__hedgedoc.md",
+      "readme_download_url": null,
+      "readme_sha256": "5489be8491cee9aeced51eba21c08fb5b96b3fd54732bd440624786cbd35b45d",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/henriquesebastiao/downtify",
+      "repo_url": "github.com/henriquesebastiao/downtify",
+      "host": "github.com",
+      "owner": "henriquesebastiao",
+      "repo": "downtify",
+      "app_references": [
+        "downtify"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__henriquesebastiao__downtify.md",
+      "readme_download_url": null,
+      "readme_sha256": "8ff42360891ad99b7a6a1cceb24f3e7984960fa844f601a6e1a80ead0d4c8e7d",
+      "error": null
+    },
     {
       "repo_key": "github.com/henrygd/beszel",
       "repo_url": "github.com/henrygd/beszel",
@@ -177,10 +207,10 @@
       "app_references": [
         "hook0"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hook0__hook0.md",
-      "readme_download_url": null,
-      "readme_sha256": "1d30b4156e6fc86ac58bccbb35337c38098a010c6355f1f76f1b4394d5ac1348",
+      "readme_download_url": "https://raw.githubusercontent.com/hook0/hook0/master/README.md",
+      "readme_sha256": "20ab1f6c2402af7bfe42e4478252083ccbc2f9ed0451a4d6f9f33f2c108e601e",
       "error": null
     },
     {
@@ -222,9 +252,9 @@
       "app_references": [
         "hoodik"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__hudikhq__hoodik.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hudikhq/hoodik/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "bbcb973910be8b6a38ead9aed50bf6c0c2cf28de319e0fb3ded7b86ce40a0317",
       "error": null
     },
@@ -270,7 +300,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hunter-read__grimoire.md",
       "readme_download_url": "https://raw.githubusercontent.com/hunter-read/grimoire/main/README.md",
-      "readme_sha256": "9044e1f95779db3aa9ace218405664abb22463ecf31bad1f1721dd7444e1e9b0",
+      "readme_sha256": "846bdb48bac537b0a828f16bf0e722a7e7dc0e82136c60409bbff161a4c581d4",
       "error": null
     },
     {
@@ -330,7 +360,22 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__i3months__eziwiki.md",
       "readme_download_url": "https://raw.githubusercontent.com/i3months/eziwiki/main/README.md",
-      "readme_sha256": "3dc514a201f9598e35a0d1b08f3899f2ddcadc35353129f8197c5ca0b777ef68",
+      "readme_sha256": "526df1796958d71b07508d90c86d08c1e26066e9b74cd271250d3d8b9d19646f",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/iamspido/github-release-monitor",
+      "repo_url": "github.com/iamspido/github-release-monitor",
+      "host": "github.com",
+      "owner": "iamspido",
+      "repo": "github-release-monitor",
+      "app_references": [
+        "https://github.com/iamspido/github-release-monitor"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__iamspido__github-release-monitor.md",
+      "readme_download_url": "https://raw.githubusercontent.com/iamspido/github-release-monitor/main/README.md",
+      "readme_sha256": "69cda2a48ed93b1ec353ac1e35d61d7d76e2385dfe50ffcf9651e10ba6f2098a",
       "error": null
     },
     {
@@ -567,9 +612,9 @@
       "app_references": [
         "ironcalc"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ironcalc__IronCalc.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ironcalc/IronCalc/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c25b8d3698bdf0edeed2a75c40a62182278a8fd5af4751b563c24c543e37f3f6",
       "error": null
     },
@@ -612,9 +657,9 @@
       "app_references": [
         "invidious"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__iv-org__invidious.md",
-      "readme_download_url": "https://raw.githubusercontent.com/iv-org/invidious/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "df31edca3eb76a5790cbb84bc29f747c20b81e552965366acff9feeeab278506",
       "error": null
     },
@@ -642,9 +687,9 @@
       "app_references": [
         "faridoon"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__jamesread__Faridoon.md",
-      "readme_download_url": "https://raw.githubusercontent.com/jamesread/Faridoon/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "89bd0196a081fe1ac438c2637305278a7927e065bac3ded9560dd6a6744e84ef",
       "error": null
     },
@@ -702,55 +747,10 @@
       "app_references": [
         "tracktor"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__javedh-dev__tracktor.md",
-      "readme_download_url": null,
-      "readme_sha256": "e8a0321e3146eb930f4ee84eaabb69e984a84a9d0c99684a2b4a30b6d5d3992e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jeffcaldwellca/mkcertWeb",
-      "repo_url": "github.com/jeffcaldwellca/mkcertWeb",
-      "host": "github.com",
-      "owner": "jeffcaldwellca",
-      "repo": "mkcertWeb",
-      "app_references": [
-        "mkcert-web-ui"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jeffcaldwellca__mkcertWeb.md",
-      "readme_download_url": null,
-      "readme_sha256": "bdbcdca43c1cd6e026ab4609e6985a051612435175a1f31eeb197d98365536dd",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jellydeck/moocup",
-      "repo_url": "github.com/jellydeck/moocup",
-      "host": "github.com",
-      "owner": "jellydeck",
-      "repo": "moocup",
-      "app_references": [
-        "moocup"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jellydeck__moocup.md",
-      "readme_download_url": null,
-      "readme_sha256": "5c20efe8a83974cb112bbf244c0461f86ed327bf45ec7e1c22849579d6155db7",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/jellyfin/jellyfin",
-      "repo_url": "github.com/jellyfin/jellyfin",
-      "host": "github.com",
-      "owner": "jellyfin",
-      "repo": "jellyfin",
-      "app_references": [
-        "jellyfin"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__jellyfin__jellyfin.md",
-      "readme_download_url": null,
-      "readme_sha256": "88a24330cd3fb606ee827a5b5cf0449230627e6a711c445d84b6452d20afb257",
+      "readme_download_url": "https://raw.githubusercontent.com/javedh-dev/tracktor/dev/README.md",
+      "readme_sha256": "241854f89f7385ea403969ef846e354b22398484e359b08c472e087fb7669701",
       "error": null
     }
   ]

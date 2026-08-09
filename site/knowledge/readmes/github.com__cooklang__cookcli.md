@@ -54,10 +54,11 @@ any device with a web browser.
 
 ## 🚀 Getting Started
 
-First, install CookCLI using one of the methods below. CookCLI comes with a few sample recipes to play with:
+First, install CookCLI using one of the methods below. CookCLI comes with a few sample recipes to play with. `cook seed` populates its target directory with recipe files and folders, so create a dedicated directory for them first:
 
 ```bash
-$ cook seed
+$ mkdir my-recipes && cd my-recipes
+$ cook seed ./
 $ cook recipe "Neapolitan Pizza.cook"
 ```
 
@@ -204,8 +205,9 @@ cd CookCLI
 # Install frontend dependencies
 npm install
 
-# Build CSS (required for web UI)
+# Build CSS and JS (required for web UI; the build fails without them)
 npm run build-css
+npm run build-js
 
 # Build the CLI with web UI
 cargo build --release
@@ -321,6 +323,9 @@ cook build web dist --base-path ~/my-recipes
 
 # Build for hosting under a subpath
 cook build web --base-url /recipes/
+
+# Link back to the recipe repository from the footer
+cook build web --repo-url https://github.com/user/my-recipes
 ```
 
 ### `cook search`
@@ -371,11 +376,11 @@ cook doctor
 
 ### `cook seed`
 
-Add sample recipes to explore Cooklang features.
+Add sample recipes to explore Cooklang features. This populates the target directory with recipe files and folders, so point it at an empty or dedicated directory.
 
 ```bash
 # Add to current directory
-cook seed
+cook seed ./
 
 # Add to specific directory
 cook seed ~/my-recipes

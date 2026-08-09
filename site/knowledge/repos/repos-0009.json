@@ -1,8 +1,23 @@
 {
   "chunk": 9,
   "count": 50,
-  "generated_at": "2026-08-02T06:03:38Z",
+  "generated_at": "2026-08-09T04:23:48Z",
   "items": [
+    {
+      "repo_key": "github.com/asciinema/asciinema",
+      "repo_url": "github.com/asciinema/asciinema",
+      "host": "github.com",
+      "owner": "asciinema",
+      "repo": "asciinema",
+      "app_references": [
+        "asciinema"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__asciinema__asciinema.md",
+      "readme_download_url": null,
+      "readme_sha256": "32b115204e7851851e63786f2f0dd85ff981aeeb863338d6a62d6b25623f2e9e",
+      "error": null
+    },
     {
       "repo_key": "github.com/astuto/astuto",
       "repo_url": "github.com/astuto/astuto",
@@ -27,9 +42,9 @@
       "app_references": [
         "atuin"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__atuinsh__atuin.md",
-      "readme_download_url": "https://raw.githubusercontent.com/atuinsh/atuin/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "821630e7e66f537c4dfa57ee5146b5aa27c1a692b549a1cde19c87f735cf34d3",
       "error": null
     },
@@ -102,9 +117,9 @@
       "app_references": [
         "autobrr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__autobrr__autobrr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/autobrr/autobrr/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "52f281643142fe41a5e17a631fffa4dc6d735d4bcaf8f970b3b7693de065237b",
       "error": null
     },
@@ -282,9 +297,9 @@
       "app_references": [
         "basic-memory"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__basicmachines-co__basic-memory.md",
-      "readme_download_url": "https://raw.githubusercontent.com/basicmachines-co/basic-memory/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "76807ea6ec97a3d716ace23ecbb1c3980afd76d5fe6d8cb4d11103c5a023cd7c",
       "error": null
     },
@@ -357,9 +372,9 @@
       "app_references": [
         "koillection"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__benjaminjonard__koillection.md",
-      "readme_download_url": "https://raw.githubusercontent.com/benjaminjonard/koillection/1.8/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6725ce55cd6a9bfce2a9bd593d7354004fad37110f5fba1cb03abea5484e742e",
       "error": null
     },
@@ -552,10 +567,10 @@
       "app_references": [
         "checkmate"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__bluewave-labs__Checkmate.md",
-      "readme_download_url": null,
-      "readme_sha256": "617284bd6fcb603a1cd322f00f56ee528a6dcab4062ed41ae05d23e92da61bfe",
+      "readme_download_url": "https://raw.githubusercontent.com/bluewave-labs/Checkmate/develop/README.md",
+      "readme_sha256": "261509b6a47b3ff26879ee28abc5f1d4c25374de4b0886e53bf764bb6805af47",
       "error": null
     },
     {
@@ -570,7 +585,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__bookorbit__bookorbit.md",
       "readme_download_url": "https://raw.githubusercontent.com/bookorbit/bookorbit/main/README.md",
-      "readme_sha256": "0b3c2c6b7f9c634580047e391ed5007d086994efab2d003ea41934ff9dacbd13",
+      "readme_sha256": "d64978142399684f217ae69aca5ac9210e0dc7b5bc6df6f61007672e16bf393a",
       "error": null
     },
     {
@@ -597,10 +612,10 @@
       "app_references": [
         "borg"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__borgbackup__borg.md",
-      "readme_download_url": null,
-      "readme_sha256": "16dcdd1d86cf2984bd9cff33a4ec8040145cb4763c4943c7aeaa4f54616907c3",
+      "readme_download_url": "https://raw.githubusercontent.com/borgbackup/borg/master/README.rst",
+      "readme_sha256": "3e29785dd4323b26c6e2cb50f5f1a185d127b2078cd301f21fde760e1480b7e7",
       "error": null
     },
     {
@@ -612,9 +627,9 @@
       "app_references": [
         "vykar"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__borgbase__vykar.md",
-      "readme_download_url": "https://raw.githubusercontent.com/borgbase/vykar/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "3df024e936a65aca2e4207478f2ec9e075fbf895e86a6a822bda2289ed3db25a",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__bugsink__bugsink.md",
       "readme_download_url": null,
       "readme_sha256": "ed8c9320d1cf1a7aa6420c83d9f8eef58a68338dd406f556a2ffee9fb31c7f8e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/bulwarkmail/webmail",
-      "repo_url": "github.com/bulwarkmail/webmail",
-      "host": "github.com",
-      "owner": "bulwarkmail",
-      "repo": "webmail",
-      "app_references": [
-        "bulwark"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__bulwarkmail__webmail.md",
-      "readme_download_url": null,
-      "readme_sha256": "36c0cb30ba7f87d4412a94ce5acac9cfbcba5e45dc93f0c1c640c4fa952dab38",
       "error": null
     }
   ]

@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="eziwiki.png" alt="EziWiki">
+  <img src="eziwiki.webp" alt="EziWiki">
   <br/><hr/>
 </div>
 
@@ -16,7 +16,7 @@
 Write Markdown, get a fast static wiki.
 
 - **A file is a page** — drop a `.md` into `content/` and it is published; folders become sections
-- **Search, contents rail, wiki links, backlinks, and a graph view** — built in, no configuration
+- **Search, contents rail, wiki links, embeds, backlinks, and graph views** — built in, no configuration
 - **Rendered at build time** — no Markdown parser or highlighter ships to the browser
 - **Deploy anywhere** — the output is plain static files
 
@@ -108,7 +108,9 @@ export const payload: Payload = {
   global: {
     title: 'My Wiki',
     description: 'My personal knowledge base',
+    lang: 'en', // BCP 47 tag; set it if the wiki is not in English
     baseUrl: 'https://your-site.com',
+    repoUrl: 'https://github.com/you/your-wiki', // Optional; sidebar link and edit links
     urlStrategy: 'path', // 'path' (readable, SEO-friendly) | 'hash' (opaque)
     autoNavigation: true, // Discover content/ files not listed below
   },
@@ -238,6 +240,12 @@ Every page gets an automatic contents rail on wide screens, built from its `h2`
 through `h4` headings, with the current section highlighted as you scroll. It is
 rendered at build time, so it is in the HTML rather than assembled by script.
 
+### Heading Anchors
+
+Every heading below the title carries a link to itself, shown on hover or
+keyboard focus, so a section can be shared without reading an id out of the
+address bar.
+
 ### Wiki Links
 
 Link to a page by name, without knowing where it lives:
@@ -253,12 +261,318 @@ A shorthand matching several pages is refused rather than guessed at, and a
 target matching nothing renders as visibly broken text instead of a dead link.
 `npm run check:links` lists them all.
 
+Rest on any wiki link and a card shows the target's title and opening lines.
+Both are written onto the link during the build, so the card costs no request —
+and keyboard users get it on focus, dismissed with <kbd>Esc</kbd>.
+
+### Embeds and Transclusion
+
+A leading `!` shows the target instead of linking to it, the way a vault does:
+
+```markdown
+![[diagram.png]] # an image from public/, by name or by path
+![[diagram.png|Architecture]] # the label becomes alt text
+![[quick-start]] # another page's text, inline
+![[quick-start#prerequisites]] # just that section
+```
+
+An included page is boxed and carries a link back to where it is maintained, so
+a passage can live in one document and appear wherever it is needed rather than
+being copied.
+
+Transclusion applies when the embed is alone in its paragraph — blocks cannot
+sit inside a sentence — and a page cannot include itself, directly or through a
+chain. Nesting stops after three levels. Included headings stay out of the
+contents rail, which describes the page you are on.
+
+### Tags
+
+A file sits in one folder, so the sidebar shows one arrangement. `tags` in
+frontmatter give the other:
+
+```markdown
+---
+title: Deploying to Vercel
+tags: [deployment, hosting]
+---
+```
+
+Each subject gets a page at `/tags/<name>`, `/tags` lists them all, and every
+tagged page shows what it belongs to. Hidden pages stay out.
+
+### Crawlers and Answer Engines
+
+Every page carries a canonical URL, Open Graph and Twitter cards, `Article`
+structured data, and a `BreadcrumbList` matching the trail the page actually
+shows — a trail stated but not shown is the kind of mismatch that costs more
+than the markup gains.
+
+`sitemap.xml` dates each page from the commit that last touched it. That is the
+whole point of the field: a sitemap that stamps every page with the moment the
+site was published tells a crawler that all of it changed, every deploy, until
+the crawler stops believing the field. A page with no history yet carries no
+date rather than a guess, and an index page carries the newest date among the
+pages it lists.
+
+`llms.txt` is written for the other kind of reader. An answer engine arriving
+at a page gets navigation it cannot use, a contents rail, a search box, and the
+article somewhere inside; it has to infer what the site is and which pages
+matter, and the sidebar is thirty links while the article is one. The file
+states it instead — the wiki's name, what it is, and every page with a sentence
+about it, in reading order:
+
+```markdown
+# My Wiki
+
+> My personal knowledge base
+
+## Pages
+
+- [Quick Start](https://example.com/getting-started/quick-start/): Get going in 5 minutes.
+```
+
+It is generated from the same registry the sitemap uses, so a page added,
+renamed or re-described appears there without anyone maintaining a second list.
+Hidden pages are left out of both.
+
+### Wanted Pages
+
+A link to a page that does not exist yet is how a wiki grows: someone writes
+`[[deploying to fly]]` while writing about something else, because that is when
+they know the page is needed. `npm run check:links` collects those from the
+other end — by the page being asked for rather than by the page asking — so the
+report is a list of things to write, most-wanted first:
+
+```
+Wanted — 1 page linked to but not written, most-wanted first:
+
+  [[Deploying to Fly]] — wanted by 2 pages
+    content/deployment/static-export.md
+    content/deployment/vercel.md
+    npm run new deploying-to-fly
+```
+
+That last line is the whole of it. `npm run new` creates the file with its
+frontmatter, at the path the link implies:
+
+```bash
+npm run new guides/deploying
+npm run new "Deploying to Fly"                    # → deploying-to-fly.md
+npm run new guides/setup -- --title "Set it up"   # npm needs the `--`
+```
+
+A target written as a title keeps its capitalisation, which is what makes the
+link that asked for it resolve. Nothing else is needed — the page is published
+on the next build. An existing file is never overwritten.
+
+`/graph` lists the same wanted pages, so the gap is visible from the site as
+well as from the terminal.
+
+### Wiki Health
+
+`npm run check:links` also reports the two problems a link check cannot see,
+because they are about links that are missing rather than links that are wrong:
+**orphans** (nothing links here) and **dead ends** (no links out). Neither fails
+the build — a correct wiki can have both — but neither is visible from inside a
+single page either.
+
+### Diagrams
+
+A ```mermaid fence is drawn during the build and arrives as an SVG — no
+renderer ships to the browser, nothing shifts as the page loads, and a crawler
+sees the diagram. Colours come from the stylesheet, so it follows dark mode.
+
+`flowchart`, `sequenceDiagram`, `stateDiagram-v2`, `classDiagram` and
+`erDiagram` are supported; anything else stays a code block rather than
+stopping the build.
+
+### Code Blocks
+
+A fence can say more than its language:
+
+````markdown
+```typescript title="lib/greet.ts" {2,4-6} showLineNumbers
+
+```
+````
+
+`title=` (or `file=`) replaces the language in the bar, since a filename says
+more than "TypeScript" does. `{2,4-6}` marks the lines being discussed, so
+prose does not have to ask the reader to count. `showLineNumbers` runs a gutter
+down the left, drawn by a CSS counter rather than written into the markup —
+which is what keeps the numbers out of what gets copied.
+
+All of it is resolved during the build. An annotation meant for some other tool
+is ignored rather than rejected, so a document written elsewhere still renders
+as the code it is.
+
+### Maths
+
+`$…$` and `$$…$$` are typeset with [KaTeX](https://katex.org) during the build,
+so the browser receives finished markup — no formula parser is downloaded and
+nothing reflows once the page settles.
+
+```markdown
+The mass–energy relation is $E = mc^2$.
+
+$$
+\int_0^1 x^2 \, dx = \frac{1}{3}
+$$
+```
+
+Inline maths sits inside a sentence; a `$$` block stands alone and is centred.
+The only standing cost is KaTeX's stylesheet, 3.6 kB gzipped and shared by
+every page; its fonts are fetched only by the pages that actually draw a
+formula.
+
+### GitHub Flavored Markdown
+
+Tables, task lists, footnotes, strikethrough and bare URLs behave as they do on
+GitHub:
+
+```markdown
+| Option | Default |
+| ------ | ------: |
+| `lang` |    `en` |
+
+- [x] Written
+- [ ] Reviewed
+
+A claim worth sourcing[^1]. ~~Struck out.~~ <https://example.com>
+
+[^1]: Footnotes collect at the foot of the page, each linking back.
+```
+
+Emoji shortcodes such as `:smile:` are not expanded — write the character
+itself, 😊, which needs no build step and reads the same in the source file.
+
+### Callouts
+
+A blockquote opening with `[!KIND]` becomes a callout, using the syntax GitHub
+and Obsidian share:
+
+```markdown
+> [!WARNING] Mind the gap
+> A title on the marker line replaces the default.
+
+> [!TIP]- Folded away
+> A trailing `-` makes it a `<details>`, which needs no script.
+```
+
+`note`, `tip`, `important`, `warning` and `caution` each carry a colour, and
+Obsidian's longer list maps onto the nearest of them. An unrecognised kind
+stays an ordinary quote.
+
+### Aliases
+
+Pages move. Since a URL comes from a file's path, moving one breaks every link
+to the old address — declare it and the old URL keeps answering:
+
+```markdown
+---
+title: Setup
+aliases:
+  - guides/setup
+---
+```
+
+Each alias is built as a page that forwards, `noindex`, with its canonical
+pointing at the destination. An alias that shadows a real page, or that two
+pages claim, stops the build.
+
+### Reading Order
+
+Every page ends with links to the previous and next page. The sequence is the
+sidebar flattened, so it follows `order` and `_meta.json` without separate
+configuration, and hidden pages are skipped. The links carry `rel="prev"` and
+`rel="next"`.
+
+### Interface Language
+
+The pages are in whatever language they were written in, and so is the wiki
+around them. Set `global.lang` and the search box, the contents rail, the
+previous/next links and the rest follow:
+
+```typescript
+global: {
+  lang: 'ko',
+}
+```
+
+English and Korean are translated. Any other language writes its own words,
+one key at a time, and keeps the English for whatever it leaves out:
+
+```typescript
+global: {
+  lang: 'de',
+  strings: { search: 'Suchen…', onThisPage: 'Auf dieser Seite' },
+}
+```
+
+The keys are those of `Strings` in `lib/i18n/strings.ts`. Dates follow `lang`
+too, so a Korean wiki reads `2026년 8월 3일` rather than `August 3, 2026`.
+
+Resolved during the build and passed to the page as plain data: a reader
+downloads the one language the wiki is in, not every language it has been
+translated into.
+
+### Last Updated
+
+Every page says when it last changed. Nothing has to be maintained for that to
+be true: the date comes from the last commit that touched the file, which is
+the one record of a page's age that cannot fall out of step with the page.
+
+Override it from the frontmatter when the commit is not the story — a typo
+fixed today does not make a page from March any newer:
+
+```markdown
+---
+updated: 2026-03-14
+---
+```
+
+A page not yet committed carries no date rather than the build time, which
+would claim every page was revised the moment the site was published. Since the
+history is what supplies the dates, a shallow clone leaves most pages undated —
+on GitHub Actions, check out with `fetch-depth: 0`.
+
+The same date reaches structured data as `dateModified`, so a reader and a
+crawler are never told different things.
+
+### Edit This Page
+
+A wiki is worth more when whoever spots the mistake can fix it, and most of
+what decides whether they do is the distance between the two. Set `repoUrl` and
+every page carries a link straight to its own source:
+
+```typescript
+global: {
+  repoUrl: 'https://github.com/you/your-wiki',
+  editBranch: 'main', // optional; 'main' unless said otherwise
+}
+```
+
+github.com and gitlab.com are recognised from the URL alone. For anything else
+— a self-hosted forge, a different content directory — give the shape directly,
+with `{path}` where the file goes:
+
+```typescript
+editUrl: 'https://git.example.com/wiki/-/edit/main/content/{path}';
+```
+
+Configure neither and no page offers a link, which is what a private or
+unpublished wiki wants.
+
 ### Backlinks and Graph
 
 Every page ends with the pages that link to it, gathered from both wiki links
-and ordinary Markdown links. The `/graph` page draws the whole site — node size
-by link count, hover to isolate a neighbourhood, click to navigate. It is plain
-SVG with a small force-directed layout, so nothing extra loads on other pages.
+and ordinary Markdown links, and with a small graph of its own neighbourhood:
+the page, everything one link away in either direction, and the links among
+those neighbours.
+
+The `/graph` page draws the whole site — node size by link count, hover to
+isolate a neighbourhood, click to navigate. It is plain SVG with a small
+force-directed layout, so no charting library is downloaded anywhere.
 
 ### URL Strategies
 
@@ -313,7 +627,8 @@ exhaustive, since undeclared pages are still discovered and appended.
 npm run dev              # Development server
 npm run build            # Build for production
 npm run validate:payload # Check configuration
-npm run check:links      # Report links that point at no page
+npm run check:links      # Report unresolved links and pages worth writing
+npm run new <path>       # Create a page, frontmatter and all
 npm run build:search     # Regenerate the search index
 npm run show-urls        # List every page and its URL
 npm run build:template   # Rebuild the create-eziwiki template
