@@ -4,7 +4,7 @@
 
 # Figranium — Deterministic Control for an Agentic World
 
-Figranium is a self‑hosted, block-first automation control plane built for teams that want predictable, auditable browser workflows without pushing sensitive data to third‑party SaaS. It bundles a React/Vite frontend, an Express/Playwright backend, helper scripts, and optional CLI tooling so you can sketch blocks, inject JavaScript, rotate proxies, and run everything locally.
+Figranium is an open-source, self-hosted alternative to Apify and SaaS cloud scrapers, built to turn browser workflows into instant API endpoints for developers, API pipelines, and low-code tools like n8n and Activepieces. Powered by a React/Vite control plane and an Express/Playwright runtime, it lets you visually build stealth browser tasks, pass dynamic variables during runtime, handle automatic proxy rotation, and stream structured results or CSV exports on your own infrastructure—delivering the instant API convenience of cloud actors without usage credits, rate caps, or third-party data hosting.
 
 <div align="center">
   <img src="demo.gif" alt="Figranium Demo" width="100%">
@@ -22,37 +22,53 @@ Figranium is a self‑hosted, block-first automation control plane built for tea
 - **Task Scheduling** — run workflows automatically using visual interval/daily/weekly/monthly settings or advanced cron expressions.
 - **Security-first** — session authentication, IP allowlists, secret management, and audit trails live entirely inside your environment.
 
-# Architecture Snapshot
+# Official Partners
 
-## Figranite
-At the core of Figranium lies **Figranite**, a high-performance, deterministic workflow interpreter designed for stateful browser automation. It is the project's primary execution kernel, responsible for transforming abstract block definitions into sentient-like browser behavior.
+Figranium is proudly supported by:
 
-Key capabilities of **Figranite** include:
-- **Stateful Execution:** Manages complex variables and loop contexts across blocks.
-- **Human Physics Simulation:** Implements Bezier-curve cursor movements, randomized jitter, and fatigue-aware typing.
-- **Stealth Integration:** Works in tandem with the Stealth Browser engine to bypass modern bot detection.
-- **Recursive Logic:** Handles nested if/else, while, and foreach blocks with custom jump-map optimization.
-- **Security-First:** Executes within a protected context with built-in SSRF and private network protection.
+## Featured Partner
 
+<div align="center">
+  <a href="https://swiftproxy.net/?ref=figranium" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="swiftproxy_white.png">
+      <source media="(prefers-color-scheme: light)" srcset="swiftproxy.png">
+      <img src="swiftproxy.png" width="220" alt="Swiftproxy">
+    </picture>
+  </a>
+</div>
 
-1. **Frontend**  
-   - Vite with React (TypeScript) drives `/dashboard`, `/tasks`, `/settings`, `/executions`, and `/captures`.
-   - The Settings screen is tabbed (`System`, `Data`, `Proxies`) and houses panels for API keys, user agents, layout, storage, and version info.
-   - Components call `/api/*` endpoints through the Vite dev proxy (see `vite.config.mts`), sharing `APP_VERSION` via `src/utils/appInfo.ts`.
+## Integration Partner
 
-2. **Backend**  
-   - `server.js` (Express) handles auth (`/api/auth`), task metadata, hooks into Playwright, and exposes `/api/settings/*` for runtime configuration.
-   - Requirements: Node 18+ (LTS), Playwright bundled via `npm install`.
-   - Storage is plain‑file: `data/` for proxies and allowlists, `public/captures` for visuals, and browser session cookies stored internally.
+<div align="center">
+  <a href="https://simplynode.io/?utm_source=figranium" target="_blank">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="simplynode_white.png">
+      <source media="(prefers-color-scheme: light)" srcset="simplynode.png">
+      <img src="simplynode.png" width="220" alt="SimplyNode">
+    </picture>
+  </a>
+</div>
 
-3. **Scripts & automation**  
-   - `scripts/postinstall.js` runs when dependencies install (keep an eye if you customize).
-   - `agent.js` (powered by the **Figranite Engine**), `headful.js`, and `scrape.js` expose specialized runners; the CLI binary `bin/cli.js` wires them for `npx figranium`.
+## Infrastructure Backers
 
-4. **Code layout highlights**
-   - `src/App.tsx` glues together routing, alerts, and the sidebar that links dashboards, tasks, and settings.
-   - `src/components` houses reusable panels (API keys, storage, captures, proxies) that map directly to backend endpoints.
-   - `server.js` embeds all HTTP handlers in one file; use the `data/` helpers for proxies, API keys, and user agent preferences if you customize behavior.
+<div align="center">
+  <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Figranium">
+    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201" alt="DigitalOcean">
+  </a>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.mintlify.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="mintlify_white.svg">
+      <source media="(prefers-color-scheme: light)" srcset="mintlify.svg">
+      <img src="mintlify.svg" width="165" alt="Mintlify">
+    </picture>
+  </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://www.algolia.com">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Algolia_logo_full_blue.svg/1920px-Algolia_logo_full_blue.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20221025105233" width="165" alt="Algolia">
+  </a>
+</div>
 
 # Getting Started
 
@@ -123,6 +139,38 @@ Set `SESSION_SECRET` before any run. A quick generator:
 ```bash
 node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 ```
+
+# Architecture Snapshot
+
+## Figranite
+At the core of Figranium lies **Figranite**, a high-performance, deterministic workflow interpreter designed for stateful browser automation. It is the project's primary execution kernel, responsible for transforming abstract block definitions into sentient-like browser behavior.
+
+Key capabilities of **Figranite** include:
+- **Stateful Execution:** Manages complex variables and loop contexts across blocks.
+- **Human Physics Simulation:** Implements Bezier-curve cursor movements, randomized jitter, and fatigue-aware typing.
+- **Stealth Integration:** Works in tandem with the Stealth Browser engine to bypass modern bot detection.
+- **Recursive Logic:** Handles nested if/else, while, and foreach blocks with custom jump-map optimization.
+- **Security-First:** Executes within a protected context with built-in SSRF and private network protection.
+
+
+1. **Frontend**  
+   - Vite with React (TypeScript) drives `/dashboard`, `/tasks`, `/settings`, `/executions`, and `/captures`.
+   - The Settings screen is tabbed (`System`, `Data`, `Proxies`) and houses panels for API keys, user agents, layout, storage, and version info.
+   - Components call `/api/*` endpoints through the Vite dev proxy (see `vite.config.mts`), sharing `APP_VERSION` via `src/utils/appInfo.ts`.
+
+2. **Backend**  
+   - `server.js` (Express) handles auth (`/api/auth`), task metadata, hooks into Playwright, and exposes `/api/settings/*` for runtime configuration.
+   - Requirements: Node 18+ (LTS), Playwright bundled via `npm install`.
+   - Storage is plain‑file: `data/` for proxies and allowlists, `public/captures` for visuals, and browser session cookies stored internally.
+
+3. **Scripts & automation**  
+   - `scripts/postinstall.js` runs when dependencies install (keep an eye if you customize).
+   - `agent.js` (powered by the **Figranite Engine**), `headful.js`, and `scrape.js` expose specialized runners; the CLI binary `bin/cli.js` wires them for `npx figranium`.
+
+4. **Code layout highlights**
+   - `src/App.tsx` glues together routing, alerts, and the sidebar that links dashboards, tasks, and settings.
+   - `src/components` houses reusable panels (API keys, storage, captures, proxies) that map directly to backend endpoints.
+   - `server.js` embeds all HTTP handlers in one file; use the `data/` helpers for proxies, API keys, and user agent preferences if you customize behavior.
 
 # Configuration
 
@@ -320,24 +368,6 @@ Figranium includes a built-in scheduler that handles automated task execution wi
 - Follow the authors on `https://github.com/figranium` for releases.
 - Share automation recipes with other self-hosted users in your org, but respect the license for sharing infrastructure.
 - Join the community on [Discord](https://discord.gg/kPmfbgu9Xn).
-
-# Sponsors & Backers
-
-Figranium is proudly supported by:
-
-<div align="center">
-  <a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Figranium">
-    <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201" alt="DigitalOcean">
-  </a>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://www.mintlify.com">
-    <img src="https://mintcdn.com/mintlify/ZmWpbGQa5yv5AElR/logo/light.svg?fit=max&auto=format&n=ZmWpbGQa5yv5AElR&q=85&s=094e41f7b58b2cab0a6faa2bab2828e0" width="165" alt="Mintlify">
-  </a>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <a href="https://www.algolia.com">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Algolia_logo_full_blue.svg/1920px-Algolia_logo_full_blue.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20221025105233" width="165" alt="Algolia">
-  </a>
-</div>
 
 # Support the Project
 

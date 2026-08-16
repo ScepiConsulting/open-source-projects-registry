@@ -137,6 +137,7 @@ Prior versions of Jackett are no longer supported.
  * plugintorrent
  * PornoTorrent
  * PornRips
+ * PornXLab
  * Postman
  * RedeTorrent
  * RinTorNeT
@@ -158,6 +159,7 @@ Prior versions of Jackett are no longer supported.
  * torrent.by
  * torrent-pirat
  * Torrent9
+ * TorrentByte
  * TorrentDownload
  * TorrentGalaxyClone
  * TorrentKitty
@@ -257,7 +259,6 @@ Prior versions of Jackett are no longer supported.
  * 3D Torrents (3DT)
  * 4thD (4th Dimension) [![(invite needed)][inviteneeded]](#)
  * 52PT
- * 720pier
  * Abnormal (ABN)
  * ABtorrents (ABT + RNS)
  * AcrossTheTasman [![(invite needed)][inviteneeded]](#)
@@ -446,7 +447,6 @@ Prior versions of Jackett are no longer supported.
  * KrazyZone
  * Kufei (库非)
  * Kufirc
- * Kunlun (昆仑)
  * lajidui
  * Last Digital Underground (LDU)
  * LastFiles (LF)
@@ -485,7 +485,6 @@ Prior versions of Jackett are no longer supported.
  * MOJBLiNK
  * MomentPT [![(invite needed)][inviteneeded]](#)
  * MonikaDesign (MDU)
- * MoreThanTV (MTV) [![(invite needed)][inviteneeded]](#)
  * MouseBits
  * Musopia (音乐乌托邦)
  * Muxuege [![(invite needed)][inviteneeded]](#)

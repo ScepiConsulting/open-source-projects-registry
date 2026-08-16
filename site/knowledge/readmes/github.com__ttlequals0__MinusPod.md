@@ -60,12 +60,15 @@ Memory and VRAM tables are in [docs/installation.md](docs/installation.md).
 
 ## Quick start
 
+Minimum setup before first boot: `BASE_URL`, `MINUSPOD_MASTER_PASSPHRASE`, a provider credential (`ANTHROPIC_API_KEY`, `OPENROUTER_API_KEY`, or `OPENAI_BASE_URL` for a local endpoint), and `OPENAI_MODEL` to pick a model up front. Skip `OPENAI_MODEL` if you would rather choose a model in Settings > AI models on first run; either way, MinusPod will not process an episode until a model is configured. Everything else is configured from the web UI or the API: env vars only seed a setting the first time it is unset, and the stored value wins after that.
+
 ```bash
 # 1. Create environment file
 cat > .env << EOF
 ANTHROPIC_API_KEY=your-key-here
 BASE_URL=http://localhost:8000
 MINUSPOD_MASTER_PASSPHRASE=long-random-string-you-will-not-lose
+OPENAI_MODEL=claude-haiku-4-5
 EOF
 
 # 2. Create data directory
@@ -88,6 +91,7 @@ Access the web UI at `http://localhost:8000/ui/` to add and manage feeds.
 | Topic | |
 |---|---|
 | [How It Works & Detection Pipeline](docs/how-it-works.md) | Verification pass, sliding windows, queue, validation, pattern learning, audio analysis |
+| [Episode Processing Workflows](docs/workflows.md) | Visual map of the pipeline, the five processing modes, re-runs, and failure paths |
 | [Installation & Upgrading](docs/installation.md) | Requirements, quick start, CPU image, upgrading to 2.0.0+ |
 | [Web Interface](docs/web-interface.md) | Management UI, ad editor workflow, screenshots |
 | [Configuration & Experiments](docs/configuration.md) | Settings, per-stage LLM tuning, VAD gap detector, ad reviewer, reprocessing, community patterns, scheduled backups |

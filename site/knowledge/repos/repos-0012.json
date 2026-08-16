@@ -1,8 +1,38 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-08-09T04:23:48Z",
+  "generated_at": "2026-08-16T03:53:53Z",
   "items": [
+    {
+      "repo_key": "github.com/diced/zipline",
+      "repo_url": "github.com/diced/zipline",
+      "host": "github.com",
+      "owner": "diced",
+      "repo": "zipline",
+      "app_references": [
+        "zipline"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__diced__zipline.md",
+      "readme_download_url": null,
+      "readme_sha256": "3e8c513b322d2b842c97ee62136ce439621e31386d7bf675c5e1377831c53f1b",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dietrichmax/docker-staticmaps",
+      "repo_url": "github.com/dietrichmax/docker-staticmaps",
+      "host": "github.com",
+      "owner": "dietrichmax",
+      "repo": "docker-staticmaps",
+      "app_references": [
+        "docker-staticmaps"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dietrichmax__docker-staticmaps.md",
+      "readme_download_url": null,
+      "readme_sha256": "208c5c3a37c118e26512ef093d7f34b438e9a7265cbad0d3f9e8dc0c968a0b88",
+      "error": null
+    },
     {
       "repo_key": "github.com/dimkr/tootik",
       "repo_url": "github.com/dimkr/tootik",
@@ -282,10 +312,10 @@
       "app_references": [
         "dokku"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dokku__dokku.md",
-      "readme_download_url": null,
-      "readme_sha256": "7a88193b648f6b46f1e6bff769241d6b44ecfadc0b213118c0cee2b9a2fdd4e6",
+      "readme_download_url": "https://raw.githubusercontent.com/dokku/dokku/master/README.md",
+      "readme_sha256": "c5e03d374c5d48280216f8f21097df5ce358c2d72249ba09ff0dfb24d1fdf6b0",
       "error": null
     },
     {
@@ -330,7 +360,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dongdongbh__Mindwtr.md",
       "readme_download_url": "https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/README.md",
-      "readme_sha256": "549389ca45d4c294cf1212c93f55314ca181d8f9fdffb245f32cff7556663514",
+      "readme_sha256": "f0fbb388acf883b0d4fbca41f721b97965e3d4dc593d509cbf6969c4778274b6",
       "error": null
     },
     {
@@ -372,9 +402,9 @@
       "app_references": [
         "sftpgo"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__drakkan__sftpgo.md",
-      "readme_download_url": "https://raw.githubusercontent.com/drakkan/sftpgo/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d6c4c3670c8c1a4f3bbbd874ad5580cd78d3296d389f4d00b5652292012e708e",
       "error": null
     },
@@ -387,10 +417,25 @@
       "app_references": [
         "drawdb"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__drawdb-io__drawdb.md",
-      "readme_download_url": "https://raw.githubusercontent.com/drawdb-io/drawdb/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "9cf815b5d78ec4b68ad3049a9d61ac7d5b96f80e1326c7b950f0a78267943ced",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dreeveapp/dreeve",
+      "repo_url": "github.com/dreeveapp/dreeve",
+      "host": "github.com",
+      "owner": "dreeveapp",
+      "repo": "dreeve",
+      "app_references": [
+        "dreeve"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__dreeveapp__dreeve.md",
+      "readme_download_url": "https://raw.githubusercontent.com/dreeveapp/dreeve/master/README.md",
+      "readme_sha256": "d882951ade09dd867474cf0f0fdd58780f34c1d8cc348995eb96d5a552f96d9a",
       "error": null
     },
     {
@@ -447,9 +492,9 @@
       "app_references": [
         "dub"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dubinc__dub.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dubinc/dub/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "a8e631691913a61671e6755ec8f6798ac9def59326a7381cb61b0c8dc191629d",
       "error": null
     },
@@ -660,7 +705,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ellite__scrob.md",
       "readme_download_url": "https://raw.githubusercontent.com/ellite/scrob/main/README.md",
-      "readme_sha256": "1aa039579b32f8a1c97c63ffaeb05c1a5ec57deabe8977ced0d144d71ff7bcf3",
+      "readme_sha256": "b87bf56fe7b4d36479f7ec6b52792777b3edab75ffc14ea6e18d8ddef5e44c47",
       "error": null
     },
     {
@@ -707,51 +752,6 @@
       "readme_path": "knowledge/readmes/github.com__ente__ente.md",
       "readme_download_url": null,
       "readme_sha256": "d2af70e256ff732ddc002cd3f6937fa8deb1bb9f46fd130d4f5bb418b7a608fc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/epoupon/lms",
-      "repo_url": "github.com/epoupon/lms",
-      "host": "github.com",
-      "owner": "epoupon",
-      "repo": "lms",
-      "app_references": [
-        "lightweight-music-server"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__epoupon__lms.md",
-      "readme_download_url": null,
-      "readme_sha256": "9dbca1e2da5f4e83eae8276bf01b4d8c460e13fe31f44cb9e38860e5bd2abbcc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ergochat/ergo",
-      "repo_url": "github.com/ergochat/ergo",
-      "host": "github.com",
-      "owner": "ergochat",
-      "repo": "ergo",
-      "app_references": [
-        "ergo"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__ergochat__ergo.md",
-      "readme_download_url": null,
-      "readme_sha256": "1beb6f0c2f7947c0e75fc844dd2e9f7bded3e3d43f1aa9324d7b6f588e1d4207",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/error311/FileRise",
-      "repo_url": "github.com/error311/FileRise",
-      "host": "github.com",
-      "owner": "error311",
-      "repo": "FileRise",
-      "app_references": [
-        "filerise"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__error311__FileRise.md",
-      "readme_download_url": null,
-      "readme_sha256": "dea57de57321763378ce3a3b0d5d01e5bce7122e111873a440a8de44cdfca7eb",
       "error": null
     }
   ]

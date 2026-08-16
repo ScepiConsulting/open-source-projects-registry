@@ -47,6 +47,7 @@ This readme and the [docs/](docs/) directory are **versioned** to match the prog
 - Updates periodically A records for different DNS providers:
   - Aliyun
   - AllInkl
+  - Bunny
   - ChangeIP
   - Cloudflare
   - DD24
@@ -66,11 +67,13 @@ This readme and the [docs/](docs/) directory are **versioned** to match the prog
   - FreeDNS
   - Gandi
   - GCP
+  - Gigahost.no
   - GoDaddy
   - GoIP.de
   - He.net
   - Hetzner (legacy API)
   - Hetzner Cloud
+  - Hostinger
   - Infomaniak
   - INWX
     - Ionos
@@ -222,6 +225,7 @@ Check the documentation for your DNS provider:
 
 - [Aliyun](docs/aliyun.md)
 - [Allinkl](docs/allinkl.md)
+- [Bunny](docs/bunny.md)
 - [ChangeIP](docs/changeip.md)
 - [Cloudflare](docs/cloudflare.md)
 - [DD24](docs/dd24.md)
@@ -241,11 +245,13 @@ Check the documentation for your DNS provider:
 - [FreeDNS](docs/freedns.md)
 - [Gandi](docs/gandi.md)
 - [GCP](docs/gcp.md)
+- [Gigahost.no](docs/gigahostno.md)
 - [GoDaddy](docs/godaddy.md)
 - [GoIP.de](docs/goip.md)
 - [He.net](docs/he.net.md)
 - [Hetzner](docs/hetzner.md)
 - [HetznerCloud](docs/hetznercloud.md)
+- [Hostinger](docs/hostinger.md)
 - [Infomaniak](docs/infomaniak.md)
 - [INWX](docs/inwx.md)
 - [Ionos](docs/ionos.md)

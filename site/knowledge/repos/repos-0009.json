@@ -1,8 +1,23 @@
 {
   "chunk": 9,
   "count": 50,
-  "generated_at": "2026-08-09T04:23:48Z",
+  "generated_at": "2026-08-16T03:53:53Z",
   "items": [
+    {
+      "repo_key": "github.com/asciimoo/hister",
+      "repo_url": "github.com/asciimoo/hister",
+      "host": "github.com",
+      "owner": "asciimoo",
+      "repo": "hister",
+      "app_references": [
+        "hister"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__asciimoo__hister.md",
+      "readme_download_url": null,
+      "readme_sha256": "61cb77515204e7e6b9368dbcc6e0c1c63b5cd19b89fe7917598004f2b5823a83",
+      "error": null
+    },
     {
       "repo_key": "github.com/asciinema/asciinema",
       "repo_url": "github.com/asciinema/asciinema",
@@ -12,10 +27,10 @@
       "app_references": [
         "asciinema"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__asciinema__asciinema.md",
-      "readme_download_url": null,
-      "readme_sha256": "32b115204e7851851e63786f2f0dd85ff981aeeb863338d6a62d6b25623f2e9e",
+      "readme_download_url": "https://raw.githubusercontent.com/asciinema/asciinema/develop/README.md",
+      "readme_sha256": "1b6f324d0f1134ad11d9db60e064ee0547c8aa321ca42022802f3c1a3571f806",
       "error": null
     },
     {
@@ -72,10 +87,10 @@
       "app_references": [
         "aureus"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__aureuserp__aureuserp.md",
-      "readme_download_url": null,
-      "readme_sha256": "0efb38e1bf7770ed09aacbbbac75aaf0e6317d90820989f3d5ca5e8500d92241",
+      "readme_download_url": "https://raw.githubusercontent.com/aureuserp/aureuserp/master/README.md",
+      "readme_sha256": "058989a6399fcf24c7262c7f780fafc96be71c98e72f1cbbd3345c3da09891d0",
       "error": null
     },
     {
@@ -342,10 +357,10 @@
       "app_references": [
         "whoogle"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__benbusby__whoogle-search.md",
-      "readme_download_url": null,
-      "readme_sha256": "6dee61276e869610906713e57d6197f397a92239b7bdb0fa89a226e444e40d73",
+      "readme_download_url": "https://raw.githubusercontent.com/benbusby/whoogle-search/main/README.md",
+      "readme_sha256": "c78d8f3600bd82057e42c40254851c649c7c5f027818c42dfbdb8f0cb6547d95",
       "error": null
     },
     {
@@ -387,10 +402,10 @@
       "app_references": [
         "bewcloud"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__bewcloud__bewcloud.md",
-      "readme_download_url": null,
-      "readme_sha256": "63e38e841aff6fe3e929026328b8e284d6d21a1c21d9fecde957aa7d1f7bd9d8",
+      "readme_download_url": "https://raw.githubusercontent.com/bewcloud/bewcloud/main/README.md",
+      "readme_sha256": "62df0f214c6f2b8b67dbfa29f9598e897a451f24daa3c6b11015f5bfaf81d0d2",
       "error": null
     },
     {
@@ -462,10 +477,10 @@
       "app_references": [
         "birdnet-analyzer"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__birdnet-team__BirdNET-Analyzer.md",
-      "readme_download_url": null,
-      "readme_sha256": "93b76a8babc069696613aa9e51232291a72863225a027ecf0421771c0f18e99c",
+      "readme_download_url": "https://raw.githubusercontent.com/birdnet-team/BirdNET-Analyzer/main/README.md",
+      "readme_sha256": "4676bc2a95a4e1be9788c97197f93ac86f73d7c9da3601906ae21b33f7adfe2c",
       "error": null
     },
     {
@@ -567,9 +582,9 @@
       "app_references": [
         "checkmate"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__bluewave-labs__Checkmate.md",
-      "readme_download_url": "https://raw.githubusercontent.com/bluewave-labs/Checkmate/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "261509b6a47b3ff26879ee28abc5f1d4c25374de4b0886e53bf764bb6805af47",
       "error": null
     },
@@ -585,7 +600,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__bookorbit__bookorbit.md",
       "readme_download_url": "https://raw.githubusercontent.com/bookorbit/bookorbit/main/README.md",
-      "readme_sha256": "d64978142399684f217ae69aca5ac9210e0dc7b5bc6df6f61007672e16bf393a",
+      "readme_sha256": "02c5eb60e20b4dd49d7eae89d9dee70388c69f12455933ccab3a5cfbd9fe98cc",
       "error": null
     },
     {
@@ -612,9 +627,9 @@
       "app_references": [
         "borg"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__borgbackup__borg.md",
-      "readme_download_url": "https://raw.githubusercontent.com/borgbackup/borg/master/README.rst",
+      "readme_download_url": null,
       "readme_sha256": "3e29785dd4323b26c6e2cb50f5f1a185d127b2078cd301f21fde760e1480b7e7",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__budgetbee__budgetbee.md",
       "readme_download_url": null,
       "readme_sha256": "11205080c9d8db4a6999a768d224e3a4e73e135a37a6646e657cee05aa4119a3",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/bugsink/bugsink",
-      "repo_url": "github.com/bugsink/bugsink",
-      "host": "github.com",
-      "owner": "bugsink",
-      "repo": "bugsink",
-      "app_references": [
-        "bugsink"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__bugsink__bugsink.md",
-      "readme_download_url": null,
-      "readme_sha256": "ed8c9320d1cf1a7aa6420c83d9f8eef58a68338dd406f556a2ffee9fb31c7f8e",
       "error": null
     }
   ]

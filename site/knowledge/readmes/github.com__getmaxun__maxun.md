@@ -66,7 +66,7 @@ The most reliable proxy provider for web scrapping with the Highest Quality IP o
 <tr>
 <td width="30%" height="100">
 <a href="https://www.novada.com/?github-maxun">
-  <img src="https://github.com/user-attachments/assets/68262e31-639a-4d36-a281-e50b68fcdc92" alt="Novada" width="300" height="150">
+  <img src="https://github.com/user-attachments/assets/68262e31-639a-4d36-a281-e50b68fcdc92" alt="Novada"  width="350" height="150">
 </a>
 </td>
 <td width="70%">
@@ -80,9 +80,24 @@ Novada provides high-quality residential proxies and a powerful Scraper API for 
 </tr>
 
 <tr>
+<td width="20%" height="100">
+<a href="https://www.coreclaw.com/?utm_source=github&utm_medium=cpc&utm_campaign=max&utm_term=&utm_id=max">
+  <img src="https://github.com/user-attachments/assets/f3421d5c-d789-4f8c-8bfd-b41a81afdc68" alt="CoreClaw" width="400" height="150">
+</a>
+</td>
+<td width="80%">
+
+#### <a href="https://www.coreclaw.com/?utm_source=github&utm_medium=cpc&utm_campaign=max&utm_term=&utm_id=max">CoreClaw</a>
+
+CoreClaw — Production-ready Web Data APIs for AI agents and developers. Extract structured data from the web and build powerful automation workflows.
+<br />
+</td>
+</tr>
+
+<tr>
 <td width="30%" height="100">
 <a href="https://www.testmuai.com/?utm_medium=sponsor&utm_source=maxun">
-  <img src="https://github.com/user-attachments/assets/6c96005b-85df-43e0-9b63-96aaca676c11" alt="TestMu AI" width="300" height="150">
+  <img src="https://github.com/user-attachments/assets/6c96005b-85df-43e0-9b63-96aaca676c11" alt="TestMu AI"  width="350" height="150">
 </a>
 </td>
 <td width="70%">
@@ -183,9 +198,6 @@ Maxun can run locally with or without Docker
 ## Demos
 Maxun can be used for various use-cases, including lead generation, market research, content aggregation and more.
 View demos here: https://www.maxun.dev/usecases
-
-## Note
-This project is in early stages of development. Your feedback is very important for us - we're actively working on improvements. </a>
 
 ## License
 <p>

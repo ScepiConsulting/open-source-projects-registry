@@ -22,7 +22,7 @@ If you don't need the web GUI of NPMplus, you may also have a look at caddy: htt
 - smaller image based on alpine
 - ML-KEM support (also hardened TLS settings enforced)
 - https for the NPMplus interface
-- Goaccess included
+- Goaccess included, served under /goaccess of the web UI for logged in admins
 - easier punycode domain support
 - zstd and brotli compression
 - basic security headers always send
@@ -112,7 +112,7 @@ labels:
 12. Note that when using crowdsec requests will always be buffered, so setting `proxy_(request_)buffering` to off will not work
 
 ## Use of external php-fpm (recommended)
-2. to set it per location: press the gear button (on the tab itself, not the tab selection) on the details tab (or on the custom location you want to use), set the scheme to `path`, put in the path and paste the following in the new text field at the bottom, you need to adjust the last line (or use the advanced tab to apply it to all locations):
+To set it per location: press the gear button, set the scheme to `path`, put in the path and paste the following in the new text field at the bottom, you need to adjust the last line:
 ```
 location ~* [^/]\.php(?:$|/) {
   fastcgi_split_path_info ^(.*\.php)(/.*)$;

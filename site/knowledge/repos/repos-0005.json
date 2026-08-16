@@ -1,8 +1,23 @@
 {
   "chunk": 5,
   "count": 50,
-  "generated_at": "2026-08-09T04:23:48Z",
+  "generated_at": "2026-08-16T03:53:53Z",
   "items": [
+    {
+      "repo_key": "github.com/MylarComics/mylar3",
+      "repo_url": "github.com/MylarComics/mylar3",
+      "host": "github.com",
+      "owner": "MylarComics",
+      "repo": "mylar3",
+      "app_references": [
+        "mylar3"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__MylarComics__mylar3.md",
+      "readme_download_url": null,
+      "readme_sha256": "da83e819456674544168a5e0c4b0af291eaca852b61f0c370e416807ccc06cb3",
+      "error": null
+    },
     {
       "repo_key": "github.com/NLnetLabs/unbound",
       "repo_url": "github.com/NLnetLabs/unbound",
@@ -192,9 +207,9 @@
       "app_references": [
         "ombi"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Ombi-app__Ombi.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Ombi-app/Ombi/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6cf758fcdbda3b84a24dd1b0be2035dfd416a6538c5c602871b1d9b2b97fbfaa",
       "error": null
     },
@@ -207,9 +222,9 @@
       "app_references": [
         "oneuptime"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__OneUptime__oneuptime.md",
-      "readme_download_url": "https://raw.githubusercontent.com/OneUptime/oneuptime/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "285741f27d1517745cb29c183e738647f620a58fa817851c333eadd42ed1a2a9",
       "error": null
     },
@@ -357,9 +372,9 @@
       "app_references": [
         "patchmon"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__PatchMon__PatchMon.md",
-      "readme_download_url": "https://raw.githubusercontent.com/PatchMon/PatchMon/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "babccb370124804219afa535fa0daa8cb4baaf34fc3900bf372d2df2be8acf39",
       "error": null
     },
@@ -375,7 +390,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Pelski__ytzero.md",
       "readme_download_url": "https://raw.githubusercontent.com/Pelski/ytzero/main/README.md",
-      "readme_sha256": "0d0bc8630ed3def9be18ba491e69e8be3370feb5e93a657f1325594c6aeb767d",
+      "readme_sha256": "278ef169b022536688c094fdff73f90eeaecd63f87710a671e2c945160d59bae",
       "error": null
     },
     {
@@ -462,10 +477,10 @@
       "app_references": [
         "posthog"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__PostHog__posthog.md",
-      "readme_download_url": null,
-      "readme_sha256": "42eb69667ffeefec550ab8a88dc3fd670c44c69404003e8b6003bd42333b420a",
+      "readme_download_url": "https://raw.githubusercontent.com/PostHog/posthog/master/README.md",
+      "readme_sha256": "f98e9a0227a8e7fb88fd0507ea0f125d4de71c46795ca1662bfccc2e5ba82da8",
       "error": null
     },
     {
@@ -567,9 +582,9 @@
       "app_references": [
         "tugtainer"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Quenary__tugtainer.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Quenary/tugtainer/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7db563e3ed7b3c4b948808c7ccef3a77314f9228f095b92b51ca25de4fa49b63",
       "error": null
     },
@@ -612,9 +627,9 @@
       "app_references": [
         "rss-bridge"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__RSS-Bridge__rss-bridge.md",
-      "readme_download_url": "https://raw.githubusercontent.com/RSS-Bridge/rss-bridge/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4fde844250f7c1e14763cd41d48f7d15fe249044f9857b42ffdc53dc5ae91fd5",
       "error": null
     },
@@ -672,10 +687,10 @@
       "app_references": [
         "plex-rewind"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__RaunoT__plex-rewind.md",
-      "readme_download_url": null,
-      "readme_sha256": "c599141914aabd591cb394309312038181395d08dd9e062053f82cb1f825f068",
+      "readme_download_url": "https://raw.githubusercontent.com/RaunoT/plex-rewind/develop/README.md",
+      "readme_sha256": "6864fa7d60e3643f7d3abda5bdc341d75ca0c6c9da5c48162978ea4743a40d75",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__RemyFV__WoLi-webgui.md",
       "readme_download_url": null,
       "readme_sha256": "5479e7bff281baaad9c6fee3890ba88e687cec8d66630daa6845ad9bdc10954c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Revisor01/HymnoScribe",
-      "repo_url": "github.com/Revisor01/HymnoScribe",
-      "host": "github.com",
-      "owner": "Revisor01",
-      "repo": "HymnoScribe",
-      "app_references": [
-        "hymnoscribe"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Revisor01__HymnoScribe.md",
-      "readme_download_url": null,
-      "readme_sha256": "216cec72eceee7470297eba8738f9abf9258bc342749405b1f351611086db734",
       "error": null
     }
   ]

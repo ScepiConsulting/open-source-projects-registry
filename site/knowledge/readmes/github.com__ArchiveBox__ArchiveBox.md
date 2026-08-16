@@ -23,7 +23,7 @@ Without active preservation effort, everything on the internet eventually disapp
 *ArchiveBox is an open source tool that lets organizations & individuals archive both public & private web content while retaining control over their data. It can be used to save copies of bookmarks, preserve evidence for legal cases, backup photos from FB/Insta/Flickr or media from YT/Soundcloud/etc., save research papers, and more...*
 <br/>
 
-> ➡️ Get ArchiveBox with `uv tool install --python 3.13 --upgrade 'git+https://github.com/ArchiveBox/ArchiveBox.git@dev'` on [Linux](#quickstart)/[macOS](#quickstart), or via **[Docker](#quickstart)** ⭐️ on any OS.
+> ➡️ Get ArchiveBox with `uv tool install --python 3.13 --prerelease explicit --upgrade 'archivebox>=0.9.0rc0,<0.10'` on [Linux](#quickstart)/[macOS](#quickstart), or via **[Docker](#quickstart)** ⭐️ on Linux/macOS.
 
 *Once installed, you can interact with it through the: [Browser Extension](https://github.com/ArchiveBox/archivebox-browser-extension), [CLI](#usage), [self-hosted web interface](https://github.com/ArchiveBox/ArchiveBox/wiki/Publishing-Your-Archive), [Python API](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#python-shell-usage), or [filesystem](#static-archive-exporting).*
 
@@ -70,27 +70,26 @@ The goal is to sleep soundly knowing the part of the internet you care about wil
 <br/>
 <pre lang="bash"><code style="white-space: pre-line"># Option A: Get ArchiveBox with Docker Compose (recommended):
 mkdir -p ~/archivebox/data && cd ~/archivebox
-curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml   # edit options in this file as-needed
+curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
 docker compose pull
-docker compose run archivebox init
-docker compose run archivebox install
-docker compose run archivebox manage createsuperuser
-# docker compose run archivebox add 'https://example.com'
-# docker compose run archivebox help
-# docker compose up
+docker compose up -d --wait                                                # initializes new collections automatically
+docker compose exec archivebox archivebox manage createsuperuser          # create the first Web UI user
+# docker compose run --rm archivebox add 'https://example.com'
+# docker compose run --rm archivebox help
 <br/>
 <br/>
 # Option B: Or use it as a plain Docker container:
 mkdir -p ~/archivebox/data && cd ~/archivebox/data
-docker run -it -v $PWD:/data archivebox/archivebox:dev init
-docker run -it -v $PWD:/data archivebox/archivebox:dev install
+docker run --rm -it -v "$PWD:/data" archivebox/archivebox:dev init
+docker run --rm -it -v "$PWD:/data" archivebox/archivebox:dev install
+docker run --rm -it -v "$PWD:/data" archivebox/archivebox:dev manage createsuperuser
+docker run -d --name archivebox -v "$PWD:/data" -p 8000:8000 archivebox/archivebox:dev
 # docker run -it -v $PWD:/data archivebox/archivebox:dev add 'https://example.com'
 # docker run -it -v $PWD:/data archivebox/archivebox:dev help
-# docker run -it -v $PWD:/data -p 8000:8000 archivebox/archivebox:dev
 <br/>
 <br/>
 # Option C: Or install it with uv (see Quickstart below for apt, brew, and more)
-uv tool install --python 3.13 --upgrade 'git+https://github.com/ArchiveBox/ArchiveBox.git@dev'
+uv tool install --python 3.13 --prerelease explicit --upgrade 'archivebox>=0.9.0rc0,<0.10'
 mkdir -p ~/archivebox/data && cd ~/archivebox/data
 archivebox init
 archivebox install
@@ -104,7 +103,7 @@ curl -fsSL 'https://get.archivebox.io' | bash
 </code></pre>
 <br/>
 <sub>Open <a href="http://web.archivebox.localhost:8000"><code>http://web.archivebox.localhost:8000</code></a> for the public UI and <a href="http://admin.archivebox.localhost:8000"><code>http://admin.archivebox.localhost:8000</code></a> for the admin UI ➡️</sub><br/>
-<sub>Set <code>BASE_URL</code> to change the public base domain; <code>web.</code> and <code>admin.</code> subdomains are used automatically. <code>BIND_ADDR</code> only controls the local listen address.</sub>
+<sub>Set <code>BASE_URL</code> to change the public base domain. The default <code>auto</code> mode uses <code>web.</code> and <code>admin.</code> subdomains on <code>*.localhost</code>, but one host for ordinary DNS names. <code>BIND_ADDR</code> only controls the local listen address.</sub>
 </details>
 <br/>
 
@@ -169,14 +168,14 @@ ArchiveBox is free for everyone to self-host, but we also provide support, secur
 
 # Quickstart
 
-**🖥&nbsp; [Supported OSs](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems):** Linux/BSD, macOS, Windows (Docker) &nbsp; **👾&nbsp; CPUs:** `amd64` (`x86_64`), `arm64`, `arm7` <sup>(raspi>=3)</sup><br/>
+**🖥&nbsp; [Supported OSs](https://github.com/ArchiveBox/ArchiveBox/wiki/Install#supported-systems):** Ubuntu, macOS, Docker &nbsp; **👾&nbsp; CPUs:** `amd64` (`x86_64`), `arm64`<br/>
 
 <br/>
 
 #### ✳️&nbsp; Easy Setup
 
 <details>
-<summary><b><img src="https://user-images.githubusercontent.com/511499/117447182-29758200-af0b-11eb-97bd-58723fee62ab.png" alt="Docker" height="28px" align="top"/> <code>docker-compose</code></b>  (macOS/Linux/Windows) &nbsp; <b>👈&nbsp; recommended</b> &nbsp; <i>(click to expand)</i></summary>
+<summary><b><img src="https://user-images.githubusercontent.com/511499/117447182-29758200-af0b-11eb-97bd-58723fee62ab.png" alt="Docker" height="28px" align="top"/> <code>docker-compose</code></b>  (macOS/Linux) &nbsp; <b>👈&nbsp; recommended</b> &nbsp; <i>(click to expand)</i></summary>
 <br/>
 <i>👍 Docker Compose is recommended for the easiest install/update UX + best security + all <a href="#dependencies">extras</a> out-of-the-box.</i>
 <br/><br/>
@@ -184,21 +183,18 @@ ArchiveBox is free for everyone to self-host, but we also provide support, secur
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker</a> on your system (if not already installed).</li>
 <li>Download the <a href="https://raw.githubusercontent.com/ArchiveBox/ArchiveBox/dev/docker-compose.yml" download><code>docker-compose.yml</code></a> file into a new empty directory (can be anywhere).
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data && cd ~/archivebox
-# Read and edit docker-compose.yml options as-needed after downloading
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
 docker compose pull
 </code></pre></li>
-<li>Initialize the collection, then create an admin user (or set ADMIN_USERNAME/ADMIN_PASSWORD in docker-compose.yml)
-<pre lang="bash"><code style="white-space: pre-line">docker compose run archivebox init
-docker compose run archivebox install
-docker compose run archivebox manage createsuperuser
+<li>Start the server, which initializes a new collection automatically, then create the first admin user.
+<pre lang="bash"><code style="white-space: pre-line">docker compose up -d --wait
+docker compose exec archivebox archivebox manage createsuperuser
 </code></pre></li>
-<li>Next steps: Start the server then login to the Web UI <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
-<pre lang="bash"><code style="white-space: pre-line">docker compose up
-# completely optional, CLI can always be used without running a server
-# docker compose run [-T] archivebox [subcommand] [--help]
-docker compose run archivebox add 'https://example.com'
-docker compose run archivebox help
+<li>Next steps: Log in to the Admin UI at <a href="http://admin.archivebox.localhost:8000">http://admin.archivebox.localhost:8000</a>.
+<pre lang="bash"><code style="white-space: pre-line">
+# run CLI commands inside the server container started above
+docker compose exec archivebox archivebox add 'https://example.com'
+docker compose exec archivebox archivebox help
 </code></pre>
 <i>For more info, see <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Install#option-a-docker--docker-compose-setup-%EF%B8%8F">Install: Docker Compose</a> in the Wiki. ➡️</i>
 </li>
@@ -209,20 +205,20 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 </details>
 
 <details>
-<summary><b><img src="https://user-images.githubusercontent.com/511499/117447182-29758200-af0b-11eb-97bd-58723fee62ab.png" alt="Docker" height="28px" align="top"/> <code>docker run</code></b>  (macOS/Linux/Windows)</summary>
+<summary><b><img src="https://user-images.githubusercontent.com/511499/117447182-29758200-af0b-11eb-97bd-58723fee62ab.png" alt="Docker" height="28px" align="top"/> <code>docker run</code></b>  (macOS/Linux)</summary>
 <br/>
 <ol>
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker</a> on your system (if not already installed).</li>
 <li>Create a new empty directory and initialize your collection (can be anywhere).
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data && cd ~/archivebox/data
-docker run -v $PWD:/data -it archivebox/archivebox:dev init
-docker run -v $PWD:/data -it archivebox/archivebox:dev install
+docker run --rm -v $PWD:/data -it archivebox/archivebox:dev init
+docker run --rm -v $PWD:/data -it archivebox/archivebox:dev install
 </code></pre>
 </li>
-<li>Optional: Start the server then login to the Web UI <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
+<li>Optional: Start the server then log in to the Admin UI at <a href="http://admin.archivebox.localhost:8000">http://admin.archivebox.localhost:8000</a>.
 <pre lang="bash"><code style="white-space: pre-line">docker run -v $PWD:/data -p 8000:8000 archivebox/archivebox:dev
 # completely optional, CLI can always be used without running a server
-# docker run -v $PWD:/data -it [subcommand] [--help]
+# docker run -v $PWD:/data -it archivebox/archivebox:dev [subcommand] [--help]
 docker run -v $PWD:/data -it archivebox/archivebox:dev help
 </code></pre>
 <i>For more info, see <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Install#option-a-docker--docker-compose-setup-%EF%B8%8F">Install: Docker Compose</a> in the Wiki. ➡️</i>
@@ -264,10 +260,8 @@ See <a href="https://docs.sweeting.me/s/against-curl-sh">"Against curl | sh as a
 
 <li>Install <a href="https://docs.astral.sh/uv/getting-started/installation/">uv</a> on your system (if not already installed).</li>
 <li>Install the ArchiveBox package using <code>uv</code>.
-<pre lang="bash"><code style="white-space: pre-line">uv tool install --python 3.13 --upgrade 'git+https://github.com/ArchiveBox/ArchiveBox.git@dev'
+<pre lang="bash"><code style="white-space: pre-line">uv tool install --python 3.13 --prerelease explicit --upgrade 'archivebox>=0.9.0rc0,<0.10'
 archivebox version
-# install any missing extras shown using apt/brew/pkg/etc. see Wiki for instructions
-#    python@3.13 node curl wget git ripgrep ...
 </code></pre>
 <i>See the <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Install">Install: Bare Metal</a> Wiki for full install instructions for each OS...</i>
 </li>
@@ -277,7 +271,7 @@ archivebox init     # initialize a new collection
 archivebox install  # install all the runtime dependencies (e.g. chrome, single-file, yt-dlp, etc.)
 </code></pre>
 </li>
-<li>Create an admin account, then optionally start the server and log in to the Web UI at <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
+<li>Create an admin account, then optionally start the server and log in to the Admin UI at <a href="http://admin.archivebox.localhost:8000">http://admin.archivebox.localhost:8000</a>.
 <pre lang="bash"><code style="white-space: pre-line">archivebox manage createsuperuser
 archivebox server 0.0.0.0:8000
 # completely optional, CLI can always be used without running a server
@@ -314,7 +308,7 @@ archivebox add 'https://example.com'
 </code></pre>
 <br/>
 </li>
-<li>Create an admin account, then optionally start the server and log in to the Web UI at <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
+<li>Create an admin account, then optionally start the server and log in to the Admin UI at <a href="http://admin.archivebox.localhost:8000">http://admin.archivebox.localhost:8000</a>.
 <pre lang="bash"><code style="white-space: pre-line">archivebox manage createsuperuser
 archivebox server 0.0.0.0:8000
 # completely optional, CLI can always be used without running a server
@@ -331,13 +325,14 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 <details>
 <summary><b><img src="https://user-images.githubusercontent.com/511499/117447803-f2ec3700-af0b-11eb-87d3-671d114f011d.png" alt="homebrew" height="28px" align="top"/> <code>brew</code></b> (macOS and Linux)</summary>
 <br/>
+Run Homebrew as your normal non-root user on both macOS and Linux; do not use <code>sudo brew</code>.
 <ol>
 <li>Install <a href="https://brew.sh/#install">Homebrew</a> on your system (if not already installed).</li>
 <li>Install the ArchiveBox package using <code>brew</code>.
 <pre lang="bash"><code style="white-space: pre-line">brew tap archivebox/archivebox
 brew trust archivebox/archivebox
 brew install archivebox
-archivebox version                         # make sure all dependencies are installed
+archivebox version                         # verify the installed version
 </code></pre>
 <i>See the <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Install#option-c-bare-metal-setup">Install: Bare Metal</a> Wiki for more granular instructions for macOS... ➡️</i>
 </li>
@@ -347,7 +342,7 @@ archivebox init
 archivebox install
 </code></pre>
 </li>
-<li>Create an admin account, then optionally start the server and log in to the Web UI at <a href="http://archivebox.localhost:8000">http://archivebox.localhost:8000</a> ⇢ Admin.
+<li>Create an admin account, then optionally start the server and log in to the Admin UI at <a href="http://admin.archivebox.localhost:8000">http://admin.archivebox.localhost:8000</a>.
 <pre lang="bash"><code style="white-space: pre-line">archivebox manage createsuperuser
 archivebox server 0.0.0.0:8000
 # completely optional, CLI can always be used without running a server
@@ -406,7 +401,7 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for usage examples using the CLI, W
 <summary><img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/0c46e949-00fe-49c8-a613-ee14501c014c" alt="Self-hosting Platforms" height="28px" align="top"/><b> TrueNAS / UNRAID / YunoHost / Cloudron / etc.</b> (self-hosting solutions)</summary>
 <br/>
 
-> *Warning: These are contributed by external volunteers and may lag behind the official `pip` channel.*
+> *Warning: These are contributed by external volunteers and may lag behind the official Docker and `uv` channels.*
 
 <ul>
 <li><s>TrueNAS: <a href="https://truecharts.org/charts/stable/archivebox/">Official ArchiveBox TrueChart</a> / <a href="https://dev.to/finloop/setting-up-archivebox-on-truenas-scale-1788">Custom App Guide</a></s> (<a href="https://truecharts.org/news/scale-deprecation/">TrueCharts is discontinued</a>, wait for <a href="https://forums.truenas.com/t/the-future-of-electric-eel-and-apps/5409/">Electric Eel</a>)</li>
@@ -491,8 +486,8 @@ cd ~/archivebox/data         # IMPORTANT: cd into the directory
 archivebox version
 archivebox help
 
-# equivalent: docker compose run archivebox [subcommand] [--help]
-docker compose run archivebox help
+# equivalent: docker compose run --rm archivebox [subcommand] [--help]
+docker compose run --rm archivebox help
 
 # equivalent: docker run -it -v $PWD:/data archivebox/archivebox:dev [subcommand] [--help]
 docker run -it -v $PWD:/data archivebox/archivebox:dev help
@@ -537,12 +532,12 @@ archivebox help              # get list of archivebox subcommands that can be ru
 <pre lang="bash"><code style="white-space: pre-line">
 # make sure you have `docker-compose.yml` from the Quickstart instructions first
 <br/>
-# docker compose run archivebox [subcommand] [--help]
-docker compose run archivebox init
-docker compose run archivebox install
-docker compose run archivebox version
-docker compose run archivebox help
-docker compose run archivebox add 'https://example.com'
+# docker compose run --rm archivebox [subcommand] [--help]
+docker compose run --rm archivebox init
+docker compose run --rm archivebox install
+docker compose run --rm archivebox version
+docker compose run --rm archivebox help
+docker compose run --rm archivebox add 'https://example.com'
 # to start webserver: docker compose up
 </code></pre>
 <i>For more info, see our <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Docker#usage">Usage: Docker Compose CLI</a> wiki. ➡️</i>
@@ -585,12 +580,12 @@ find ./archive/users -path '*/snapshots/*/*/*/index.html'  # inspect snapshot da
 <details>
 <summary><b>🖥&nbsp; Web UI & API Usage</b></summary>
 <pre lang="bash"><code style="white-space: pre-line">
-# Start the server on bare metal (pip/apt/brew/etc):
+# Start the server on bare metal (uv/apt/brew):
 archivebox manage createsuperuser              # create a new admin user via CLI
 archivebox server 0.0.0.0:8000                 # start the server
 <br/>
 # Or with Docker Compose:
-nano docker-compose.yml                        # setup initial ADMIN_USERNAME & ADMIN_PASSWORD
+docker compose run --rm archivebox manage createsuperuser
 docker compose up                              # start the server
 <br/>
 # Or with a Docker container:
@@ -599,7 +594,7 @@ docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox:dev
 </code></pre>
 
 <sup>Open <a href="http://web.archivebox.localhost:8000"><code>http://web.archivebox.localhost:8000</code></a> for the public UI and <a href="http://admin.archivebox.localhost:8000"><code>http://admin.archivebox.localhost:8000</code></a> for the admin UI ➡️</sup><br/>
-<sup>Set <code>BASE_URL</code> to change the public base domain; <code>web.</code> and <code>admin.</code> subdomains are used automatically. <code>BIND_ADDR</code> only controls the local listen address.</sup>
+<sup>Set <code>BASE_URL</code> to change the public base domain. The default <code>auto</code> mode uses <code>web.</code> and <code>admin.</code> subdomains on <code>*.localhost</code>, but one host for ordinary DNS names. <code>BIND_ADDR</code> only controls the local listen address.</sup>
 <br/><br/>
 <i>For more info, see our <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#ui-usage">Usage: Web UI</a> wiki. ➡️</i>
 <br/><br/>
@@ -610,7 +605,7 @@ archivebox config --set PUBLIC_ADD_VIEW=True   # allow guests to submit URLs
 archivebox config --set PERMISSIONS=public     # make newly added snapshots public
 archivebox config --set PUBLIC_INDEX=True      # allow guests to see list of all snapshots
 # or
-docker compose run archivebox config --set PERMISSIONS=public
+docker compose run --rm archivebox config --set PERMISSIONS=public
 
 # restart the server to apply any config changes
 </code></pre>
@@ -628,7 +623,7 @@ docker compose run archivebox config --set PERMISSIONS=public
 
 <pre lang="bash"><code style="white-space: pre-line">
 archivebox add --depth=1 'https://example.com'                     # add a URL with uv-installed archivebox on the host
-docker compose run archivebox add --depth=1 'https://example.com'                       # or w/ Docker Compose
+docker compose run --rm archivebox add --depth=1 'https://example.com'                  # or w/ Docker Compose
 docker run -it -v $PWD:/data archivebox/archivebox:dev add --depth=1 'https://example.com'  # or w/ Docker, all equivalent
 </code></pre>
 
@@ -698,7 +693,7 @@ echo 'any text with <a href="https://example.com">urls</a> in it' | archivebox a
 # if using Docker, add -i when piping stdin:
 # echo 'https://example.com' | docker run -v $PWD:/data -i archivebox/archivebox:dev add
 # if using Docker Compose, add -T when piping stdin / stdout:
-# echo 'https://example.com' | docker compose run -T archivebox add
+# echo 'https://example.com' | docker compose run --rm -T archivebox add
 ```
 
 See the [Usage: CLI](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#CLI-Usage) page for documentation and examples.
@@ -771,7 +766,7 @@ The configuration is documented here: **[Configuration Wiki](https://github.com/
 <summary><i>Expand to see the most common options to tweak...</i></summary>
 <pre lang="bash"><code style="white-space: pre-line">
 # e.g. archivebox config --set TIMEOUT=120
-# or   docker compose run archivebox config --set TIMEOUT=120
+# or   docker compose run --rm archivebox config --set TIMEOUT=120
 <br/>
 TIMEOUT=240                # default: 60    add more seconds on slower networks
 CHECK_SSL_VALIDITY=False   # default: True  False = allow saving URLs w/ bad SSL
@@ -925,7 +920,7 @@ archivebox list --json --with-headers > index.json     # export to json blob
 archivebox list --csv=timestamp,url,title > index.csv  # export to csv spreadsheet
 
 # (if using Docker Compose, add the -T flag when piping)
-# docker compose run -T archivebox list --html 'https://example.com' > index.html
+# docker compose run --rm -T archivebox list --html 'https://example.com' > index.html
 </code></pre>
 
 The paths in the static exports are relative, make sure to keep them next to your `./archive` folder when backing them up or viewing them.
@@ -1102,7 +1097,7 @@ Because ArchiveBox is designed to ingest a large volume of URLs with multiple co
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Disk-Layout">Wiki: Usage (Disk Layout)</a></li>
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#output-folder">Wiki: Security Overview (Output-Folder)</a></li>
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#large-archives">Wiki: Usage (Large Archives)</a></li>
-<li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#do-not-run-as-root">Wiki: Security Overview (Do Not Run as Root)</a></li>
+<li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#run-archivebox-as-an-unprivileged-user">Wiki: Security Overview (Privilege Dropping)</a></li>
 </ul>
 
 

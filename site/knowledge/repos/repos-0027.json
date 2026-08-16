@@ -1,8 +1,68 @@
 {
   "chunk": 27,
-  "count": 10,
-  "generated_at": "2026-08-09T04:23:48Z",
+  "count": 14,
+  "generated_at": "2026-08-16T03:53:53Z",
   "items": [
+    {
+      "repo_key": "gitlab.com/gitlab-org/gitlab-foss",
+      "repo_url": "gitlab.com/gitlab-org/gitlab-foss",
+      "host": "gitlab.com",
+      "owner": "gitlab-org",
+      "repo": "gitlab-foss",
+      "app_references": [
+        "gitlab"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/gitlab-org/gitlab-foss/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/gitlab-org/gitlab-foss/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/glitchtip/glitchtip-backend",
+      "repo_url": "gitlab.com/glitchtip/glitchtip-backend",
+      "host": "gitlab.com",
+      "owner": "glitchtip",
+      "repo": "glitchtip-backend",
+      "app_references": [
+        "glitchtip"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/glitchtip/glitchtip-backend/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/glitchtip/glitchtip-backend/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/imn1/richy",
+      "repo_url": "gitlab.com/imn1/richy",
+      "host": "gitlab.com",
+      "owner": "imn1",
+      "repo": "richy",
+      "app_references": [
+        "richy"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/imn1/richy/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/imn1/richy/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "gitlab.com/jaywink/socialhome",
+      "repo_url": "gitlab.com/jaywink/socialhome",
+      "host": "gitlab.com",
+      "owner": "jaywink",
+      "repo": "socialhome",
+      "app_references": [
+        "socialhome"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'gitlab.com/jaywink/socialhome/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/jaywink/socialhome/-/raw/main/README.md?"
+    },
     {
       "repo_key": "gitlab.com/mayan-edms/mayan-edms",
       "repo_url": "gitlab.com/mayan-edms/mayan-edms",

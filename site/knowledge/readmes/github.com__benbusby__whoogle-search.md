@@ -17,7 +17,7 @@
 >
 >The code stays up for reference, and it's still MIT licensed — fork it and take it wherever you like. Everything below this notice describes how Whoogle worked while Google still allowed it to, and is kept as a record of that. Please don't expect any of it to work today.
 >
->To everyone who used, deployed, translated, packaged, and contributed to Whoogle over the years: thank you. It was a good run, and it ended on Google's terms, not ours.
+>To everyone who used, deployed, translated, packaged, and contributed to Whoogle over the years: thank you. It was a good run, and it ended on Google's terms, not ours. Although not free, many of us have switched to Kagi as our new alternative.
 
 ___
 

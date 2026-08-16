@@ -11,8 +11,8 @@
   </p>
 
   <p>
-    <a href="https://github.com/ulsklyc/yuvomi/releases"><img src="https://img.shields.io/github/v/release/ulsklyc/yuvomi?style=flat-square&color=6c3aed&label=release" alt="Latest Release"></a>
-    <a href="https://github.com/ulsklyc/yuvomi/stargazers"><img src="https://img.shields.io/github/stars/ulsklyc/yuvomi?style=flat-square&color=6c3aed&label=stars" alt="GitHub Stars"></a>
+    <a href="https://github.com/ulsklyc/yuvomi/releases"><img src="https://img.shields.io/github/v/release/ulsklyc/yuvomi?style=flat-square&color=6C3AED&label=release" alt="Latest Release"></a>
+    <a href="https://github.com/ulsklyc/yuvomi/stargazers"><img src="https://img.shields.io/github/stars/ulsklyc/yuvomi?style=flat-square&color=6C3AED&label=stars" alt="GitHub Stars"></a>
     <img src="https://img.shields.io/badge/PWA-installable-5A0FC8?style=flat-square&logo=pwa&logoColor=white" alt="PWA">
     <a href="https://github.com/ulsklyc/yuvomi/pkgs/container/yuvomi"><img src="https://img.shields.io/badge/ghcr.io-yuvomi-2496ED?style=flat-square&logo=docker&logoColor=white" alt="Docker Image"></a>
     <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue?style=flat-square" alt="MIT License"></a>
@@ -59,7 +59,7 @@
 <div align="center">
   <table>
     <tr>
-      <td align="center"><b>17</b><br><sub>modules</sub></td>
+      <td align="center"><b>18</b><br><sub>modules</sub></td>
       <td align="center"><sub>·</sub></td>
       <td align="center"><b>24</b><br><sub>languages</sub></td>
       <td align="center"><sub>·</sub></td>
@@ -106,6 +106,7 @@ Most families glue their life together from a dozen paid apps, each with its own
 | a grocery-list app | **Shopping** - shared, aisle-organized lists |
 | a pantry &amp; expiry tracker | **Pantry** - stock, storage location, best-before dates |
 | a document manager | **Documents** - tagged, searchable family files |
+| a home-inventory app | **Inventory** - owned belongings, purchase price, warranty, linked receipts |
 | a notes app &amp; contacts sync | **Notes &amp; Contacts** - Markdown notes, CardDAV sync |
 
 <br>
@@ -247,17 +248,18 @@ Most families glue their life together from a dozen paid apps, each with its own
 
 ## Modules
 
-Seventeen independent modules share one calm, consistent interface. Turn on what your household needs; the rest stays out of the way.
+Eighteen independent modules share one calm, consistent interface. Turn on what your household needs; the rest stays out of the way.
 
 | | Module | In one line |
 |:---:|---|---|
 | ![tasks](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/tasks.png) | **Tasks** | Kanban board with deadlines, priorities, subtasks, tags, recurring schedules and multi-member assignment. |
 | ![shopping](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/shopping.png) | **Shopping** | Collaborative lists grouped by aisle and ordered to match your shop, with swipe gestures and one-tap import from the meal plan. |
 | ![meals](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/meals.png) | **Meals** | Weekly drag-and-drop planner with a recipe sidebar and direct export to the shopping list. |
-| ![recipes](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/recipes.png) | **Recipes** | Create, duplicate and scale recipes, then pre-fill meal slots, send the ingredients straight to a shopping list, or save any planned meal. Optionally mirrors a self-hosted Mealie instance read-only. |
+| ![recipes](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/recipes.png) | **Recipes** | Create, duplicate and scale recipes, then pre-fill meal slots, send the ingredients straight to a shopping list, or save any planned meal. Optionally mirrors a self-hosted Mealie or Tandoor instance read-only. |
 | ![pantry](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/pantry.png) | **Pantry** | What is actually in the house: amount, storage location and best-before date, with expiry and low-stock filters and a two-way handover with the shopping list. |
 | ![calendar](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/calendar.png) | **Calendar** | Two-way sync with Google and CalDAV, ICS subscriptions, recurring events, holiday overlays and shared visibility. |
 | ![documents](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/documents.png) | **Documents** | Upload, tag, preview and organize family files, with optional WebDAV or Google Drive storage. |
+| ![inventory](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/inventory.png) | **Inventory** | What you own: brand, model, serial number, storage location, purchase price, warranty and condition, with linked receipts and bookings and reminders before a deadline runs out. |
 | ![budget](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/budget.png) | **Budget** | Income, expenses, accounts, loans, subscriptions and per-category planning, with a personal mode. |
 | ![housekeeping](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/housekeeping.png) | **Housekeeping** | Manage household staff: schedules, check-in/out, daily or hourly billing, chores and supply requests. |
 | ![rewards](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/rewards.png) | **Rewards** | Points on tasks credit assigned members, with a configurable default value for new tasks, a parent-approved catalog and an auditable ledger. |
@@ -265,7 +267,7 @@ Seventeen independent modules share one calm, consistent interface. Turn on what
 | ![notes](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/notes.png) | **Notes &amp; Contacts** | Colored Markdown sticky notes plus a contact directory with CardDAV sync and vCard import/export. |
 | ![birthdays](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/birthdays.png) | **Birthdays** | Birthday tracker with automatic calendar events, age display and reminders. |
 | ![family](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/family.png) | **Family** | Member profiles with roles, photos and contact details, synced to Contacts and Birthdays. New members join through an invite link and pick their own password. |
-| ![reminders](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/reminders.png) | **Reminders** | Task and calendar reminders via in-app badges, opt-in Web Push and household Gotify/ntfy channels. |
+| ![reminders](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/reminders.png) | **Reminders** | Task and calendar reminders via in-app badges, opt-in Web Push and household Gotify, ntfy or webhook channels. |
 | ![api-tokens](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/api-tokens.png) | **API Tokens** | Bearer / X-API-Key tokens with an OpenAPI 3.0 spec and a built-in MCP endpoint for AI agents. |
 | ![backup](https://raw.githubusercontent.com/ulsklyc/yuvomi/main/docs/icons/backup.png) | **Backup** | Manual and scheduled database backup/restore with pre-restore rollback and optional WebDAV upload. |
 
@@ -274,25 +276,40 @@ Seventeen independent modules share one calm, consistent interface. Turn on what
 
 <br>
 
-- **Tasks** - Deadlines, priorities, subtasks, recurring schedules, multi-member assignment, per-task visibility (only me / assignees / everyone), customizable categories, free-form tags, linked documents from the Documents module, an "assigned to me" filter, keyword search across title, description and tags, and a Kanban board. A recurring task can count its interval from the day you tick it off instead of from its due date, for everything whose rhythm starts with the action rather than with the calendar. Tapping a task opens a read view instead of the edit form, so the keyboard stays down when you only wanted to look something up; editing is a named second step, and the status can be moved on straight from the read view. A task sits in exactly one category but carries any number of tags: click a tag on a card to filter by it, combine several to narrow the list, rename or merge a tag across every task at once, or add and remove one on a whole selection. Optional two-way CalDAV sync with reminder lists (Apple Reminders, Radicale, Nextcloud): completing, editing or deleting a mirrored task reaches the server too, and tags travel both ways as the list's categories.
+- **Tasks** - Deadlines, priorities, subtasks, recurring schedules, multi-member assignment, per-task visibility (only me / assignees / everyone), customizable categories, free-form tags, linked documents from the Documents module, an "assigned to me" filter, keyword search across title, description and tags, and a Kanban board. A recurring task can count its interval from the day you tick it off instead of from its due date, for everything whose rhythm starts with the action rather than with the calendar. Tapping a task opens a read view instead of the edit form, so the keyboard stays down when you only wanted to look something up; editing is a named second step, and the status can be moved on straight from the read view. A task sits in exactly one category but carries any number of tags: click a tag on a card to filter by it, combine several to narrow the list, rename or merge a tag across every task at once, or add and remove one on a whole selection. Optional two-way CalDAV sync with reminder lists (Apple Reminders, Radicale, Nextcloud): a task created here can be sent to a reminder list of your choice, completing, editing or deleting it reaches the server too, and tags travel both ways as the list's categories. The list is picked in the task dialog, with a personal default under Settings → Personal → Task defaults.
 - **Shopping** - Collaborative lists grouped by aisle, with swipe gestures, per-item notes, one-tap import from the meal plan, and a handover of everything you ticked off straight into the Pantry. Both levels of the order are yours: drag the aisles into the order you walk them, and drag the items within an aisle - or move them with the arrow keys. New items join the end of their aisle, whichever module they arrive from. Items that came from a CalDAV reminder list show that list's categories as tags.
 - **Meals** - Weekly planner with multiple items per slot, weekly repeats, a drag-and-drop recipe sidebar, a one-click week randomizer, and direct export to the shopping list.
-- **Recipes** - Create, duplicate, and scale recipes; pre-fill meal slots, send the ingredients straight to a shopping list, or save any planned meal as a recipe. Optionally mirrors a self-hosted Mealie instance: its recipes show up alongside your own with a source badge and a link back, plan and shop with them like any other recipe, and Mealie stays the source of truth for their content - duplicate one to get an editable copy.
+- **Recipes** - Create, duplicate, and scale recipes; pre-fill meal slots, send the ingredients straight to a shopping list, or save any planned meal as a recipe. Optionally mirrors a self-hosted Mealie or Tandoor instance: their recipes show up alongside your own with a source badge and a link back, plan and shop with them like any other recipe, and the mirrored server stays the source of truth for their content - duplicate one to get an editable copy.
 - **Pantry** - What is actually in the house, as the fourth side of the kitchen: amount and unit, storage location, best-before date, an optional minimum stock, and a note. A quantity stepper books items in and out in one tap, status badges appear only where they matter (expired, expiring within a week, running low, out), and filters narrow the list to exactly those. Storage locations are renameable and sortable; deleting one keeps the stock. Runs in both directions with the shopping list: low or empty items go onto the list one at a time or all at once (topping up to the minimum stock), and everything ticked off after a shop can be booked into the pantry with its quantity and unit.
 - **Calendar** - two-way sync with Google (OAuth) and CalDAV (iCloud, Nextcloud, Radicale), where creating, editing, deleting and moving an event to another calendar all reach the server, ICS subscriptions, one-time import from an `.ics` file or shared feed into editable local events, recurring events with per-occurrence scope (edit or delete this event, this and following, or the whole series), attachments, holiday overlays, keyword search across title, location and notes (accent-insensitive), an "assigned to me" filter, per-event visibility, a default assignee per synced calendar, assigned members shown as avatars, a configurable week start (Monday, Sunday or Saturday), and a read-only `webcal://` export feed that can optionally show the assigned members in each event title. Tapping an appointment opens a read view first, which also states the recurrence in plain language, the reminders and the visibility; editing is a separate step.
 - **Documents** - Upload, tag, preview, and organize family files with per-document visibility. Multi-file upload, folders, sorting, counted category facets, and bulk move/archive/delete. Optional local folder, WebDAV or Google Drive storage plus Paperless-ngx and Papra (DMS) linking.
+- **Inventory** - What you own: brand, model, serial number, storage location, purchase price and date, warranty length, condition and status, and an optional photo. A two-level browse - metric cards and a category overview first, then a category's items grouped by storage location. Link receipts and manuals from Documents, and the purchase, a refund, a repair or an accessory from Budget - creating an item straight from a booking prefills its price. A derived warranty deadline reminds you 30 days before it ends, and up to ten custom tracked dates per item (TÜV, service, insurance renewal) join the same reminders and a subscribable ICS feed.
 - **Budget** - Income, expenses, recurring entries in any rhythm (weekly, monthly or yearly, every N of them - so every two weeks or every three months, not just the three fixed intervals), optionally booking only once you confirm them, with the amount and date correctable at that moment because not every service debits on the same day or to the cent, trend charts, a statistics tab, CSV export, accounts with starting balances and running totals plus net worth, loans in both directions (money you lent out counts as income when it comes back, a loan you took on counts as an expense when you pay it off, and each one can charge an account; optionally as an annuity with a fixed, variable or fixed-then-variable interest rate, with the payment, term and total interest derived live; each loan can run in its own currency with a fixed conversion rate into the budget currency), split expenses, subscription tracking with renewals, currencies and an optional end date (on a date or after N payments, then auto-completed), a planning tab with per-category monthly budgets and a savings goal (planned vs. actual), receipts on transactions and shared expenses (link a document already filed or upload a new file, several per entry), and an optional personal budget mode where each entry can be private or shared with a My budget / Household view.
 - **Housekeeping** - Manage household staff: schedules, check-in/out, daily or hourly billing, chores, and supply requests.
 - **Rewards** - Point values on tasks credit assigned members; an optional household default prefills new tasks and can be rolled out to unfinished ones when it changes; a reward catalog with parent-approved redemptions, per-member opt-in, and an auditable ledger.
-- **Health** - Per-member vitals (blood pressure, glucose, weight, SpO₂, temperature, sleep duration entered as hours and minutes, and mood on a five-step scale), medications with refill alerts, lab results, activity logs, and menstrual cycle tracking (period predictions, fertile window, cycle ring, pregnancy mode), with trend charts, CSV export, and per-entry visibility. An admin can let one member record for another, so a parent enters a child's fever and medication; the cycle diary stays excluded from that.
+- **Health** - Per-member vitals (blood pressure, glucose, weight, SpO₂, temperature, sleep duration entered as hours and minutes, and mood on a five-step scale), medications with refill alerts (a recorded dose can be corrected or taken back, so a mistap does not end up in the export), lab results, activity logs, and menstrual cycle tracking (period predictions, fertile window, cycle ring, pregnancy mode; each member can hide the cycle tab for themselves, since not everyone in a household has one), with trend charts, CSV export, and per-entry visibility. An admin can let one member record for another, so a parent enters a child's fever and medication; the cycle diary stays excluded from that.
 - **Notes &amp; Contacts** - Colored Markdown sticky notes that open in a rendered reader view (toggle to edit), with full-text search, a per-author filter and pinned notes grouped up front, plus a contact directory with CardDAV sync and multi-contact vCard import/export. Contacts follow the same grammar: tapping one shows it before it lets you change it, with every stored number, mail and address as its own tap target - the list only ever offered the first of each - and editing as a separate step.
 - **Birthdays** - Birthday tracker with automatic calendar events, age display, custom reminders, and selective import from synced contacts.
 - **Family** - Member profiles with roles, photos, and contact details, synced to Contacts and Birthdays.
-- **Reminders** - Task and calendar reminders via in-app badges, opt-in Web Push (HTTPS), and household Gotify/ntfy channels.
-- **API Tokens** - Bearer / X-API-Key tokens with an OpenAPI 3.0 spec and a built-in MCP endpoint (`/mcp`) that lets AI agents like Claude Desktop drive the whole API in natural language. Optional per-module read/write scopes keep a token, for example one handed to an AI client, off sensitive areas.
+- **Reminders** - Task and calendar reminders via in-app badges, opt-in Web Push (HTTPS), and household Gotify, ntfy or generic HTTP webhook channels. A webhook posts JSON to any endpoint with an optional write-only Bearer token, and an optional payload template shapes the body for services that expect their own format, such as Discord or Slack; see the [notification webhook guide](docs/notification-webhooks.md).
+- **API Tokens** - Bearer / X-API-Key tokens with an OpenAPI 3.0 spec and a built-in MCP endpoint (`/mcp`) that lets AI agents like Claude Desktop drive the whole API in natural language. Optional per-module read/write scopes keep a token, for example one handed to an AI client, off sensitive areas. An admin also picks which family member a token acts as, so an importer files entries under the member they belong to instead of under the admin who set it up.
 - **Backup** - Manual and scheduled database backup/restore with pre-restore rollback. Optional WebDAV upload (Nextcloud, ownCloud, etc.).
 
 </details>
+
+**Wall mode.** A dashboard on a kitchen or hallway tablet should be readable from across the room,
+not operated up close. Wall mode turns the overview on that one device into a quiet display: the
+time in display sizes, today's programme, who is up today as faces, and the weather with its
+forecast - no navigation, nothing to tap, and a way out that stays quietly in the corner until you
+touch the screen. Between 22:00 and 06:00 it dims itself and forces the dark ground, because the
+problem in a dark hallway is brightness, not colour. The switch lives under Settings → Appearance
+and is device-local, so turning it on at the wall tablet leaves every phone in the household
+untouched.
+
+**Immich photo screensaver.** After five minutes without activity, Yuvomi can replace the static app
+view with rotating photos from a self-hosted Immich library or selected album. Configure and preview
+it under Settings → Administration → Immich; credentials remain on the Yuvomi server. See the
+[Immich screensaver guide](docs/immich-screensaver.md).
 
 <sub>Full data model and per-module details live in the <a href="docs/SPEC.md">Spec</a>; building third-party drop-in modules is covered in the <a href="MODULES.md">module developer guide</a>.</sub>
 
@@ -305,7 +322,7 @@ Seventeen independent modules share one calm, consistent interface. Turn on what
 
 > **External document storage needs its own backup.** Database backups hold document metadata and links, not binaries stored in a local folder, on WebDAV, or in Google Drive; back up the selected target separately. Yuvomi visibility settings only control access through Yuvomi. Anyone with access to the connected `Yuvomi/Documents` Google Drive folder can view all files stored there. Admin-UI WebDAV targets must resolve to public addresses; for a trusted LAN or loopback target, set `DOCUMENT_STORAGE_WEBDAV_URL` via the deployment environment, or `DOCUMENT_STORAGE_WEBDAV_ALLOW_PRIVATE_NETWORK=true` to allow private targets from the UI too.
 
-> **Internal (LAN / private IP) targets are blocked by default.** SSRF protection rejects private, loopback, link-local, and internal-DNS URLs for ICS calendar subscriptions and WebDAV document storage. To use an internally-resolving URL, set the matching opt-in in your deployment environment: `ICS_SUBSCRIPTION_ALLOW_PRIVATE_NETWORK=true` for calendar feeds, `DOCUMENT_STORAGE_WEBDAV_ALLOW_PRIVATE_NETWORK=true` for document storage. See the [Installation Guide](docs/installation.md#environment-variables).
+> **Internal (LAN / private IP) targets are blocked by default.** SSRF protection rejects private, loopback, link-local, and internal-DNS URLs for ICS calendar subscriptions, WebDAV document storage, and recipe provider mirrors. To use an internally-resolving URL, set the matching opt-in in your deployment environment: `ICS_SUBSCRIPTION_ALLOW_PRIVATE_NETWORK=true` for calendar feeds, `DOCUMENT_STORAGE_WEBDAV_ALLOW_PRIVATE_NETWORK=true` for document storage, `RECIPE_PROVIDER_ALLOW_PRIVATE_NETWORK=true` for recipe provider mirrors. See the [Installation Guide](docs/installation.md#environment-variables).
 
 </details>
 
@@ -415,7 +432,7 @@ Nothing. Yuvomi is free and MIT-licensed. You provide the server; there is no su
 
 ## Under the hood
 
-- **Disciplined Liquid Glass UI** - readable work surfaces, subtle translucent navigation, spring animations, and module-tinted overlays, built in pure CSS with no framework.
+- **Apple HIG in the Liquid Glass language** - the system font stack and Apple's type scale, capsule controls, inset-grouped lists and spring motion. Glass is reserved for navigation, sheets and the action button; everything you read sits on an opaque surface. One colour carries the interface in every module, while each module keeps its own tone on its badge, its bars and its chips - both verified for WCAG AA in light and dark. Pure CSS, no framework.
 - **Zero build step** - pure ES modules, no bundler, no transpiler, no framework.
 - **Privacy first** - fully self-hosted, optional SQLCipher AES-256 database encryption, zero telemetry.
 - **SSO / OpenID Connect** - optional single sign-on via any OIDC provider (Authentik, Keycloak, Google, Microsoft Entra), configured with four env vars using the Authorization Code + PKCE flow.
@@ -438,7 +455,7 @@ Nothing. Yuvomi is free and MIT-licensed. You provide the server; there is no su
 
 ## Documentation
 
-[Installation](docs/installation.md) &nbsp;·&nbsp; [Spec &amp; data model](docs/SPEC.md) &nbsp;·&nbsp; [Third-party modules](MODULES.md) &nbsp;·&nbsp; [Contributing](CONTRIBUTING.md) &nbsp;·&nbsp; [Security](SECURITY.md) &nbsp;·&nbsp; [Privacy for self-hosters](docs/PRIVACY-FOR-SELFHOSTERS.md) &nbsp;·&nbsp; [Changelog](CHANGELOG.md) &nbsp;·&nbsp; [Backlog](BACKLOG.md)
+[Installation](docs/installation.md) &nbsp;·&nbsp; [Notification webhooks](docs/notification-webhooks.md) &nbsp;·&nbsp; [Spec &amp; data model](docs/SPEC.md) &nbsp;·&nbsp; [Third-party modules](MODULES.md) &nbsp;·&nbsp; [Contributing](CONTRIBUTING.md) &nbsp;·&nbsp; [Security](SECURITY.md) &nbsp;·&nbsp; [Privacy for self-hosters](docs/PRIVACY-FOR-SELFHOSTERS.md) &nbsp;·&nbsp; [Changelog](CHANGELOG.md) &nbsp;·&nbsp; [Backlog](BACKLOG.md)
 
 If you self-host Yuvomi in a GDPR context (EU/EEA, processing other people's data), read [docs/PRIVACY-FOR-SELFHOSTERS.md](docs/PRIVACY-FOR-SELFHOSTERS.md) before going live. It covers third-country assessments for every external service (weather, CalDAV/CardDAV, OIDC, WebDAV backup and document storage), data-processing-agreement notes, log-retention guidance, and a records-of-processing template.
 

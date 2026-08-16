@@ -1,8 +1,53 @@
 {
   "chunk": 13,
   "count": 50,
-  "generated_at": "2026-08-09T04:23:48Z",
+  "generated_at": "2026-08-16T03:53:53Z",
   "items": [
+    {
+      "repo_key": "github.com/epoupon/lms",
+      "repo_url": "github.com/epoupon/lms",
+      "host": "github.com",
+      "owner": "epoupon",
+      "repo": "lms",
+      "app_references": [
+        "lightweight-music-server"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__epoupon__lms.md",
+      "readme_download_url": null,
+      "readme_sha256": "9dbca1e2da5f4e83eae8276bf01b4d8c460e13fe31f44cb9e38860e5bd2abbcc",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/ergochat/ergo",
+      "repo_url": "github.com/ergochat/ergo",
+      "host": "github.com",
+      "owner": "ergochat",
+      "repo": "ergo",
+      "app_references": [
+        "ergo"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__ergochat__ergo.md",
+      "readme_download_url": null,
+      "readme_sha256": "1beb6f0c2f7947c0e75fc844dd2e9f7bded3e3d43f1aa9324d7b6f588e1d4207",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/error311/FileRise",
+      "repo_url": "github.com/error311/FileRise",
+      "host": "github.com",
+      "owner": "error311",
+      "repo": "FileRise",
+      "app_references": [
+        "filerise"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__error311__FileRise.md",
+      "readme_download_url": null,
+      "readme_sha256": "dea57de57321763378ce3a3b0d5d01e5bce7122e111873a440a8de44cdfca7eb",
+      "error": null
+    },
     {
       "repo_key": "github.com/esphome/esphome",
       "repo_url": "github.com/esphome/esphome",
@@ -102,10 +147,10 @@
       "app_references": [
         "evershop"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__evershopcommerce__evershop.md",
-      "readme_download_url": null,
-      "readme_sha256": "3cf015a0721f504efe82365d1a4232baba4a6babbb8c179098a51503570df361",
+      "readme_download_url": "https://raw.githubusercontent.com/evershopcommerce/evershop/dev/README.md",
+      "readme_sha256": "d8bb299232c5a3219194f9cb6595f2786bd56973748fdf63cd123202b5613f16",
       "error": null
     },
     {
@@ -192,10 +237,10 @@
       "app_references": [
         "fail2ban"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__fail2ban__fail2ban.md",
-      "readme_download_url": null,
-      "readme_sha256": "2044283ed8fcbb6e54c8b2f74abb10d2c3367237ddf747c16d0391b00fffed88",
+      "readme_download_url": "https://raw.githubusercontent.com/fail2ban/fail2ban/master/README.md",
+      "readme_sha256": "c506f1ec82fe34b0f91dd7d706073f1aaecc1f92ced36b35fbeba8332ee8606f",
       "error": null
     },
     {
@@ -222,10 +267,10 @@
       "app_references": [
         "meerkat-crm"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__fbuchner__meerkat-crm.md",
-      "readme_download_url": null,
-      "readme_sha256": "01d8ab24e0d5db7e5dd4e903b672e443a32f8b4b73f59e3c8ba14d18df7c8f3e",
+      "readme_download_url": "https://raw.githubusercontent.com/fbuchner/meerkat-crm/main/README.md",
+      "readme_sha256": "8bf809009075fabd3396fc193a86707c1e6927c8f36f96a634c057c3e1aab688",
       "error": null
     },
     {
@@ -255,7 +300,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__fccview__jotty.md",
       "readme_download_url": "https://raw.githubusercontent.com/fccview/jotty/main/README.md",
-      "readme_sha256": "cf6671583765d1389058f47331e2d4c6ac4cf03768dc41bae6bed732bf2907b7",
+      "readme_sha256": "bb42702868ad803f38673ec4a376e8980897663b7adff715eeb5f8249331cb5c",
       "error": null
     },
     {
@@ -315,7 +360,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__figranium__figranium.md",
       "readme_download_url": "https://raw.githubusercontent.com/figranium/figranium/main/README.md",
-      "readme_sha256": "317eb6e16a7bf5a4aea255fdb921f34bb3015a1a54bfebccace39c5e9cfb1762",
+      "readme_sha256": "dda8cfa648c6c89dfb88b0a681abff5ce4c8f2b8eebadc49201bafbf3c503551",
       "error": null
     },
     {
@@ -357,10 +402,10 @@
       "app_references": [
         "firefly-iii"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__firefly-iii__firefly-iii.md",
-      "readme_download_url": null,
-      "readme_sha256": "e3cf2d268bd549f5cf5a6b6faf77b8d4709955f78b15a55942a30b68ce0240d4",
+      "readme_download_url": "https://raw.githubusercontent.com/firefly-iii/firefly-iii/main/readme.md",
+      "readme_sha256": "8745fdd03e1e2fcdceb617cf27da734db1ad7a3b5e4f94d1ffc234b1cf9edd20",
       "error": null
     },
     {
@@ -405,7 +450,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__flohoss__gocron.md",
       "readme_download_url": "https://raw.githubusercontent.com/flohoss/gocron/main/README.md",
-      "readme_sha256": "d45c255db33a2550517e51814dd534114a432eabf03f49cd6ab8fc58b77f4034",
+      "readme_sha256": "3679f2a828da02d49144cfc622f2b3e5680c12722174568f7efcc8f35e1c509e",
       "error": null
     },
     {
@@ -570,7 +615,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__freescout-help-desk__freescout.md",
       "readme_download_url": "https://raw.githubusercontent.com/freescout-help-desk/freescout/dist/README.md",
-      "readme_sha256": "1902d60c07afe6040e8f16adbc5472f438c8dc512ba304592910aff439ee387a",
+      "readme_sha256": "b39679fbd64acfa81a1b05f76062438b90a932a9e764d3454a284a4ca5620f27",
       "error": null
     },
     {
@@ -672,10 +717,10 @@
       "app_references": [
         "notediscovery"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__gamosoft__NoteDiscovery.md",
-      "readme_download_url": null,
-      "readme_sha256": "7e8840c58f6f2d737ae7791bd2ab645a4ac6e325df4c709b01ecafcf74f73bda",
+      "readme_download_url": "https://raw.githubusercontent.com/gamosoft/NoteDiscovery/main/README.md",
+      "readme_sha256": "e873abddeec882ea04a6eadf284c441f59f29822eab11eae62e84273d91dedef",
       "error": null
     },
     {
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__garanda21__geoposler.md",
       "readme_download_url": null,
       "readme_sha256": "e66e43ad2b37b5b5c0cd14ba275580658b85db6fc8d87565db11ffc49cedc725",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/garethgeorge/backrest",
-      "repo_url": "github.com/garethgeorge/backrest",
-      "host": "github.com",
-      "owner": "garethgeorge",
-      "repo": "backrest",
-      "app_references": [
-        "backrest"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__garethgeorge__backrest.md",
-      "readme_download_url": null,
-      "readme_sha256": "35fc37ff659b590623defa54dc2c60d1b66a1ee9d0f4e964bfcdba731a3df0b9",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/gaseous-project/gaseous-server",
-      "repo_url": "github.com/gaseous-project/gaseous-server",
-      "host": "github.com",
-      "owner": "gaseous-project",
-      "repo": "gaseous-server",
-      "app_references": [
-        "gaseous"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__gaseous-project__gaseous-server.md",
-      "readme_download_url": null,
-      "readme_sha256": "b14eb680fa5542f1d0fd3c8e3546f9d7d438a44f23e1d5a7a84bbe0c919d7aab",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/gchq/CyberChef",
-      "repo_url": "github.com/gchq/CyberChef",
-      "host": "github.com",
-      "owner": "gchq",
-      "repo": "CyberChef",
-      "app_references": [
-        "cyberchef"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__gchq__CyberChef.md",
-      "readme_download_url": null,
-      "readme_sha256": "7795517d3c71b3c0d97c29718daefea5bef9bd024eff99e8a824908f0bc672a5",
       "error": null
     }
   ]

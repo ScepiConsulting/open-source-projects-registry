@@ -86,11 +86,6 @@ overview.
 
 ## Building
 
-Building asciinema from source requires the [Rust](https://www.rust-lang.org/)
-compiler (1.82 or later), and the [Cargo package
-manager](https://doc.rust-lang.org/cargo/). If they are not available via your
-system package manager then use [rustup](https://rustup.rs/).
-
 To download the source code, build the asciinema binary, and install it in
 `$HOME/.cargo/bin` in one go run:
 
@@ -98,14 +93,31 @@ To download the source code, build the asciinema binary, and install it in
 cargo install --locked --git https://github.com/asciinema/asciinema
 ```
 
-Then, ensure `$HOME/.cargo/bin` is in your shell's `$PATH`.
+This requires the Rust toolchain (1.82 or later) with Cargo, installed via your
+system package manager or [rustup](https://rustup.rs/).
 
-Alternatively, you can manually download the source code and build the asciinema
-binary with:
+Once installed, ensure `$HOME/.cargo/bin` is in your shell's `$PATH`.
+
+Alternatively, you can build from a local checkout. First download the source
+code:
 
 ```sh
 git clone https://github.com/asciinema/asciinema
 cd asciinema
+```
+
+The recommended way to get the toolchain is the Nix dev shell, which provides
+everything needed and just works:
+
+```sh
+nix develop
+```
+
+If you don't use Nix, you need Rust with Cargo, as above.
+
+Then build the binary with:
+
+```sh
 cargo build --release
 ```
 
@@ -134,10 +146,11 @@ generation (3.x) of the asciinema CLI, written in Rust.
 The previous generation (2.x), written in Python, can be found in the `python`
 branch.
 
-If you wish to propose non-trivial code changes, please first reach out to the
-team via [forum](https://discourse.asciinema.org/),
-[Matrix](https://matrix.to/#/#asciinema:matrix.org) or
-[IRC](https://web.libera.chat/#asciinema).
+For toolchain setup and build instructions, see [Building](#building). Run the
+test suite with `cargo test`.
+
+If you'd like to propose or submit any changes, please read the
+[contribution guidelines](CONTRIBUTING.md) first.
 
 ## Donations
 

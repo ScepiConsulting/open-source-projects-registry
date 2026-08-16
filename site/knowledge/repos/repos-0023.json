@@ -1,8 +1,53 @@
 {
   "chunk": 23,
   "count": 50,
-  "generated_at": "2026-08-09T04:23:48Z",
+  "generated_at": "2026-08-16T03:53:53Z",
   "items": [
+    {
+      "repo_key": "github.com/rundeck/rundeck",
+      "repo_url": "github.com/rundeck/rundeck",
+      "host": "github.com",
+      "owner": "rundeck",
+      "repo": "rundeck",
+      "app_references": [
+        "rundeck"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__rundeck__rundeck.md",
+      "readme_download_url": null,
+      "readme_sha256": "3a500b8f72716abb3e2634e6c82938f611208736dc71733bd7fe8239d00c7fcf",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/runs-on/runs-on",
+      "repo_url": "github.com/runs-on/runs-on",
+      "host": "github.com",
+      "owner": "runs-on",
+      "repo": "runs-on",
+      "app_references": [
+        "runson"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__runs-on__runs-on.md",
+      "readme_download_url": null,
+      "readme_sha256": "98e4e26bc52ef103eb8af04264993b7e0380e335adcabc4cc61728f8fce0ea97",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/runtipi/runtipi",
+      "repo_url": "github.com/runtipi/runtipi",
+      "host": "github.com",
+      "owner": "runtipi",
+      "repo": "runtipi",
+      "app_references": [
+        "runtipi"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__runtipi__runtipi.md",
+      "readme_download_url": null,
+      "readme_sha256": "1bbc78c0bf53327a650e6a26cc3a8a5e41d9eff9a2f1dc855d765730a4ab7478",
+      "error": null
+    },
     {
       "repo_key": "github.com/rustfs/rustfs",
       "repo_url": "github.com/rustfs/rustfs",
@@ -15,7 +60,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__rustfs__rustfs.md",
       "readme_download_url": "https://raw.githubusercontent.com/rustfs/rustfs/main/README.md",
-      "readme_sha256": "969e2d7b4e2a516eda227f9251dcbea401477c9a986d88f5ba186c4eed2ca274",
+      "readme_sha256": "1f6853a36d737f770c5ef536e9b8b0a1967a6ee164760e07ee007ab18b4a86b6",
       "error": null
     },
     {
@@ -102,10 +147,10 @@
       "app_references": [
         "sablier"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__sablierapp__sablier.md",
-      "readme_download_url": null,
-      "readme_sha256": "f1ab0bed131b99f2f5b1d4236d4072d0a089777fec22f8bed524154ee28fc4c1",
+      "readme_download_url": "https://raw.githubusercontent.com/sablierapp/sablier/main/README.md",
+      "readme_sha256": "316dfa105cce7d3fa16215d19a26845811688df190330aa669400d90e67693fe",
       "error": null
     },
     {
@@ -237,9 +282,9 @@
       "app_references": [
         "watcharr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__sbondCo__Watcharr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/sbondCo/Watcharr/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "24c14488395c166f2498fe7b3d833ccf115dbdeed2eb38ff1d968abbde4eb7b9",
       "error": null
     },
@@ -342,9 +387,9 @@
       "app_references": [
         "adventurelog"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__seanmorley15__AdventureLog.md",
-      "readme_download_url": "https://raw.githubusercontent.com/seanmorley15/AdventureLog/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "fc33c6f14cd12e37861d3ed080061315e97219509bc570e23036d7745c5e1cba",
       "error": null
     },
@@ -372,10 +417,10 @@
       "app_references": [
         "seaweedfs"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__seaweedfs__seaweedfs.md",
-      "readme_download_url": null,
-      "readme_sha256": "ade451242f503ed6f58e3f43ad1894a07d636990dab5b41da4a72c59897c287b",
+      "readme_download_url": "https://raw.githubusercontent.com/seaweedfs/seaweedfs/master/README.md",
+      "readme_sha256": "fdd43333c931b5f068c04d84067bc31118af1bde79c759b07f649064dedb5993",
       "error": null
     },
     {
@@ -387,10 +432,25 @@
       "app_references": [
         "rauthy"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__sebadob__rauthy.md",
-      "readme_download_url": "https://raw.githubusercontent.com/sebadob/rauthy/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f6d71b02d47fc55c72360adad6b4f42b623eb80fc968e9ed8d31afb9e7291564",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/securo-finance/securo",
+      "repo_url": "github.com/securo-finance/securo",
+      "host": "github.com",
+      "owner": "securo-finance",
+      "repo": "securo",
+      "app_references": [
+        "securo"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__securo-finance__securo.md",
+      "readme_download_url": "https://raw.githubusercontent.com/securo-finance/securo/main/README.md",
+      "readme_sha256": "7b07d8a52d463ff4c66f47423a2bc3dd4aadd6014e55267437b2fe9ab49dfe53",
       "error": null
     },
     {
@@ -522,9 +582,9 @@
       "app_references": [
         "shaarli"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__shaarli__Shaarli.md",
-      "readme_download_url": "https://raw.githubusercontent.com/shaarli/Shaarli/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e0df6dbfaccb0ff1d400c9e12d0c6e9ddb5eada03c5f13431597b9eb70c32b80",
       "error": null
     },
@@ -552,10 +612,10 @@
       "app_references": [
         "zen-notes"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__sheshbabu__zen.md",
-      "readme_download_url": null,
-      "readme_sha256": "9169aff67845c0031a7f96cf6e2544513ed047539181830ae1f1936ebe893058",
+      "readme_download_url": "https://raw.githubusercontent.com/sheshbabu/zen/master/readme.md",
+      "readme_sha256": "2ee97780044626aa9b26414418e42b09f5f3933d30e3a7a05bd49f4b0a2df1a0",
       "error": null
     },
     {
@@ -687,70 +747,10 @@
       "app_references": [
         "simplex-chat"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__simplex-chat__simplex-chat.md",
-      "readme_download_url": "https://raw.githubusercontent.com/simplex-chat/simplex-chat/stable/README.md",
+      "readme_download_url": null,
       "readme_sha256": "576ee3078c56e070e5401de213802493932821a9d93482ea652dc75d0fcc115c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/simular/authman-server",
-      "repo_url": "github.com/simular/authman-server",
-      "host": "github.com",
-      "owner": "simular",
-      "repo": "authman-server",
-      "app_references": [
-        "authman"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__simular__authman-server.md",
-      "readme_download_url": null,
-      "readme_sha256": "5941180c594436ddd859e75c6e2264f74837c96cd67dc9f00eb5e25e8f3690c1",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/sinamics/ztnet",
-      "repo_url": "github.com/sinamics/ztnet",
-      "host": "github.com",
-      "owner": "sinamics",
-      "repo": "ztnet",
-      "app_references": [
-        "ztnet"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__sinamics__ztnet.md",
-      "readme_download_url": null,
-      "readme_sha256": "0df3dd3e38975498ba84a82dfd1d2ed02c71d2965e67c878758bfe9448c4b0b8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/sirrobot01/decypharr",
-      "repo_url": "github.com/sirrobot01/decypharr",
-      "host": "github.com",
-      "owner": "sirrobot01",
-      "repo": "decypharr",
-      "app_references": [
-        "decypharr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__sirrobot01__decypharr.md",
-      "readme_download_url": null,
-      "readme_sha256": "ef3efd72971504aef8551a95ab18e207608f4293a8d030cee23b392c9b1b5d18",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/sissbruecker/linkding",
-      "repo_url": "github.com/sissbruecker/linkding",
-      "host": "github.com",
-      "owner": "sissbruecker",
-      "repo": "linkding",
-      "app_references": [
-        "linkding"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__sissbruecker__linkding.md",
-      "readme_download_url": null,
-      "readme_sha256": "ee0d7ad2b5508071b9f36cde500286a90dee41f3251197ff6c81dcfd499c3e8c",
       "error": null
     }
   ]

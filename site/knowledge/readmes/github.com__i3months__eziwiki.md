@@ -129,6 +129,11 @@ export const payload: Payload = {
       ],
     },
   ],
+  // Optional. Documents shown as images of their pages rather than in the
+  // viewer — for scans, which have no text to lose. See PDF Embeds below.
+  documents: {
+    raster: ['scans/**'],
+  },
   theme: {
     // Optional - uses defaults if omitted
     primary: '#2563eb',
@@ -272,6 +277,7 @@ A leading `!` shows the target instead of linking to it, the way a vault does:
 ```markdown
 ![[diagram.png]] # an image from public/, by name or by path
 ![[diagram.png|Architecture]] # the label becomes alt text
+![[manual.pdf]] # a PDF, in a viewer
 ![[quick-start]] # another page's text, inline
 ![[quick-start#prerequisites]] # just that section
 ```
@@ -284,6 +290,41 @@ Transclusion applies when the embed is alone in its paragraph — blocks cannot
 sit inside a sentence — and a page cannot include itself, directly or through a
 chain. Nesting stops after three levels. Included headings stay out of the
 contents rail, which describes the page you are on.
+
+### PDF Embeds
+
+A PDF embedded on its own line is shown as its first page, drawn to WebP during
+the build. Press Open and it becomes a viewer that follows the theme: pages
+drawn as you reach them, a counter that follows the scroll, zoom, download, and
+full screen.
+
+pdf.js — a megabyte of parser — is fetched only when a reader actually opens a
+document, so passing one by costs a single image. What the build emits is that
+image and a link to the file, which is also what a reader without JavaScript is
+left with.
+
+Posters need `npm i -D @napi-rs/canvas`, which is not installed by default; the
+build says so when it finds a PDF without it, and documents open either way. The
+data pdf.js fetches for character maps, standard fonts, and image codecs is
+staged into `public/pdfjs/` — but only when the wiki contains a PDF, so a wiki
+without one deploys nothing extra.
+
+Scans are the exception, and they opt in:
+
+```typescript
+documents: {
+  raster: ['scans/**'], // paths under public/; * ** ? understood
+}
+```
+
+Those documents get every page drawn instead, and are shown as those images —
+no viewer, no pdf.js, no script at all. A scanned page is already a picture and
+carries no text to select or search, so nothing is lost, and the demo scan is
+_smaller_ that way: 247 kB as a PDF, 90 kB as images.
+
+It stays opt-in because the same treatment ruins a text document — a six-page
+text PDF of 33 kB becomes 1.3 MB of WebP and loses its text layer with it — and
+nothing about a file says reliably which kind it is.
 
 ### Tags
 

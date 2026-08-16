@@ -1,8 +1,68 @@
 {
   "chunk": 20,
   "count": 50,
-  "generated_at": "2026-08-09T04:23:48Z",
+  "generated_at": "2026-08-16T03:53:53Z",
   "items": [
+    {
+      "repo_key": "github.com/nextcloud/social",
+      "repo_url": "github.com/nextcloud/social",
+      "host": "github.com",
+      "owner": "nextcloud",
+      "repo": "social",
+      "app_references": [
+        "nextcloud-social"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nextcloud__social.md",
+      "readme_download_url": null,
+      "readme_sha256": "541aa2d7b0239079acf5c7f5a59a52ea0c4c5cb83fa193711d04703730a78fce",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/nextcloud/spreed",
+      "repo_url": "github.com/nextcloud/spreed",
+      "host": "github.com",
+      "owner": "nextcloud",
+      "repo": "spreed",
+      "app_references": [
+        "nextcloud-talk"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nextcloud__spreed.md",
+      "readme_download_url": null,
+      "readme_sha256": "d8e0e6f76200db39c666b1e63c47c34df0b575a87855f71c9dea9c905d0aa8ad",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/nextcloud/tables",
+      "repo_url": "github.com/nextcloud/tables",
+      "host": "github.com",
+      "owner": "nextcloud",
+      "repo": "tables",
+      "app_references": [
+        "nextcloud-tables"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nextcloud__tables.md",
+      "readme_download_url": null,
+      "readme_sha256": "07d7d97817004e0fa64df76ce2d91ac64d3a5cecfa624fdc8865a384635ac4bf",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/nextcloud/tasks",
+      "repo_url": "github.com/nextcloud/tasks",
+      "host": "github.com",
+      "owner": "nextcloud",
+      "repo": "tasks",
+      "app_references": [
+        "nextcloud-tasks"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__nextcloud__tasks.md",
+      "readme_download_url": null,
+      "readme_sha256": "d0a8eaaf2cfa9c9b3e132b9f6805bbc396a1f523f1d3db384416b96361625c34",
+      "error": null
+    },
     {
       "repo_key": "github.com/nezhahq/nezha",
       "repo_url": "github.com/nezhahq/nezha",
@@ -15,7 +75,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__nezhahq__nezha.md",
       "readme_download_url": "https://raw.githubusercontent.com/nezhahq/nezha/master/README.md",
-      "readme_sha256": "508407cbd140285e0b3f9983cf43b8fa0e44b1edebecb7bc2c1bfef8c6cae65d",
+      "readme_sha256": "f30ab41df1d2558c67700c0efe26983f02e83f586a808f5beb3da4ccfccb3d2d",
       "error": null
     },
     {
@@ -72,9 +132,9 @@
       "app_references": [
         "glances"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__nicolargo__glances.md",
-      "readme_download_url": "https://raw.githubusercontent.com/nicolargo/glances/develop/README.rst",
+      "readme_download_url": null,
       "readme_sha256": "89675e6cf1a8f3dc9d2b97e0a54b4985fc3ff6ed5040404720c7c61397617fc9",
       "error": null
     },
@@ -177,9 +237,9 @@
       "app_references": [
         "yarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__nkanaev__yarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/nkanaev/yarr/master/readme.md",
+      "readme_download_url": null,
       "readme_sha256": "3ee780a3e2d1c98d38548259fea434017ee4f94467599dd8c5da223f30f9f42e",
       "error": null
     },
@@ -357,10 +417,10 @@
       "app_references": [
         "oauth2-proxy"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__oauth2-proxy__oauth2-proxy.md",
-      "readme_download_url": null,
-      "readme_sha256": "8e11ed180023b6efa67fc84204c0ca8d1429734949405d06c3560138d3d20bc5",
+      "readme_download_url": "https://raw.githubusercontent.com/oauth2-proxy/oauth2-proxy/master/README.md",
+      "readme_sha256": "027bc218b5968e7933da450f4f007ee7cea5ae9f61eef5eae14b1d597a4f2acb",
       "error": null
     },
     {
@@ -552,9 +612,9 @@
       "app_references": [
         "openclaw"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__openclaw__openclaw.md",
-      "readme_download_url": "https://raw.githubusercontent.com/openclaw/openclaw/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "495ca7a498358285ca15262004c0071dce498fd08e1f17765b376c466655b6e8",
       "error": null
     },
@@ -691,66 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__oppiliappan__lurker.md",
       "readme_download_url": null,
       "readme_sha256": "4af5e7fb188a0bf8b8351481b9b48fc31127993aaf4d820a6900b7b85a6e5be7",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/orhun/rustypaste",
-      "repo_url": "github.com/orhun/rustypaste",
-      "host": "github.com",
-      "owner": "orhun",
-      "repo": "rustypaste",
-      "app_references": [
-        "rustypaste"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__orhun__rustypaste.md",
-      "readme_download_url": null,
-      "readme_sha256": "9b6054f350b31861e20cde7b7c34db288464c5247b071efb824fb8fc3629ed99",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/origamivault/origamivault",
-      "repo_url": "github.com/origamivault/origamivault",
-      "host": "github.com",
-      "owner": "origamivault",
-      "repo": "origamivault",
-      "app_references": [
-        "origamivault"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__origamivault__origamivault.md",
-      "readme_download_url": null,
-      "readme_sha256": "3bb0f780fa176ccc16ca5079a13782e2cd6ceccb6906d0dec2b6c566bc1bc543",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/orthdron/subatic",
-      "repo_url": "github.com/orthdron/subatic",
-      "host": "github.com",
-      "owner": "orthdron",
-      "repo": "subatic",
-      "app_references": [
-        "subatic"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__orthdron__subatic.md",
-      "readme_download_url": null,
-      "readme_sha256": "f52eb678123aca2446d1ad0068b69645dbae264f80c3451ce19198ed5fcc462e",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/osTicket/osTicket",
-      "repo_url": "github.com/osTicket/osTicket",
-      "host": "github.com",
-      "owner": "osTicket",
-      "repo": "osTicket",
-      "app_references": [
-        "osticket"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__osTicket__osTicket.md",
-      "readme_download_url": null,
-      "readme_sha256": "a991a329a842522a2750732364dc6abe92f582ae9366421635a3d5ddeeaf7eab",
       "error": null
     }
   ]
