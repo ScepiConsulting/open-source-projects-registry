@@ -1,8 +1,68 @@
 {
   "chunk": 18,
   "count": 50,
-  "generated_at": "2026-08-16T03:53:53Z",
+  "generated_at": "2026-08-23T03:56:31Z",
   "items": [
+    {
+      "repo_key": "github.com/loganmarchione/docker-php-startpage",
+      "repo_url": "github.com/loganmarchione/docker-php-startpage",
+      "host": "github.com",
+      "owner": "loganmarchione",
+      "repo": "docker-php-startpage",
+      "app_references": [
+        "docker-php-startpage"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__loganmarchione__docker-php-startpage.md",
+      "readme_download_url": null,
+      "readme_sha256": "27cc1577290927b2535f98f6c1eeaf5dfe9c3090061e452118b934c7a8eb0184",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/logdyhq/logdy-core",
+      "repo_url": "github.com/logdyhq/logdy-core",
+      "host": "github.com",
+      "owner": "logdyhq",
+      "repo": "logdy-core",
+      "app_references": [
+        "logdy"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__logdyhq__logdy-core.md",
+      "readme_download_url": null,
+      "readme_sha256": "f8e165c24aa065a09591223c0ddbefece3cb486ff8ec015d1c838b21f6609ffe",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/logseq/logseq",
+      "repo_url": "github.com/logseq/logseq",
+      "host": "github.com",
+      "owner": "logseq",
+      "repo": "logseq",
+      "app_references": [
+        "logseq"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__logseq__logseq.md",
+      "readme_download_url": null,
+      "readme_sha256": "597bcf7218c37fdf053524467029e22db5c29faffd8fb21007512bbbd3affe56",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/logto-io/logto",
+      "repo_url": "github.com/logto-io/logto",
+      "host": "github.com",
+      "owner": "logto-io",
+      "repo": "logto",
+      "app_references": [
+        "logto"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__logto-io__logto.md",
+      "readme_download_url": null,
+      "readme_sha256": "6386fb6b534aee11852488647cf0ae27984b1ce53daa4c1f096aad9c18725d04",
+      "error": null
+    },
     {
       "repo_key": "github.com/lostb1t/replex",
       "repo_url": "github.com/lostb1t/replex",
@@ -57,9 +117,9 @@
       "app_references": [
         "its-mytabs"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__louislam__its-mytabs.md",
-      "readme_download_url": "https://raw.githubusercontent.com/louislam/its-mytabs/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "b2130fb3556583a13c3ebb0c50ec942ec9b23e1a5b8213d1c25f197b16652282",
       "error": null
     },
@@ -72,10 +132,10 @@
       "app_references": [
         "uptime-kuma"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__louislam__uptime-kuma.md",
-      "readme_download_url": null,
-      "readme_sha256": "46dfa3c6c7c4a0b889dc0add3f021e5e16b81f91ec30936a928399dc08c36135",
+      "readme_download_url": "https://raw.githubusercontent.com/louislam/uptime-kuma/master/README.md",
+      "readme_sha256": "5299c6ca24cd208a266203c4070e97da09d40a1433278f66f530b3ec983c946d",
       "error": null
     },
     {
@@ -195,7 +255,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__maathimself__mailflow.md",
       "readme_download_url": "https://raw.githubusercontent.com/maathimself/mailflow/main/README.md",
-      "readme_sha256": "febc07abf912629ee0c65cd51823aa50f657296a9f19ab6a391beaaa0d1bc0e1",
+      "readme_sha256": "0855f787a342bffc95ea338e5ab7e694a65987261bf8b61767e8d9a5ece56f2b",
       "error": null
     },
     {
@@ -304,6 +364,21 @@
       "error": null
     },
     {
+      "repo_key": "github.com/maildev/maildev",
+      "repo_url": "github.com/maildev/maildev",
+      "host": "github.com",
+      "owner": "maildev",
+      "repo": "maildev",
+      "app_references": [
+        "maildev"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__maildev__maildev.md",
+      "readme_download_url": "https://raw.githubusercontent.com/maildev/maildev/main/README.md",
+      "readme_sha256": "bfc1cf67134288bb149b56494ce4fa0639cd0376e5277f6289b44a4b9ce37ec9",
+      "error": null
+    },
+    {
       "repo_key": "github.com/makeplane/plane",
       "repo_url": "github.com/makeplane/plane",
       "host": "github.com",
@@ -405,7 +480,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__markusthiel__lumio.md",
       "readme_download_url": "https://raw.githubusercontent.com/markusthiel/lumio/main/README.md",
-      "readme_sha256": "53a0dbf29cdad8d726de422e9e8efa6c71ad4190933c88c533670088a4b8b7e3",
+      "readme_sha256": "9e6428a4ed8c14890a94c5c95eb51a65eea2ae2d6e8f876dbb27db09925ae330",
       "error": null
     },
     {
@@ -432,10 +507,10 @@
       "app_references": [
         "docktail"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__marvinvr__docktail.md",
-      "readme_download_url": null,
-      "readme_sha256": "7310b83665e2fbb2cbc25aa6c2a1efc538ac7b7c8865a52dab891a27c81181de",
+      "readme_download_url": "https://raw.githubusercontent.com/marvinvr/docktail/main/README.md",
+      "readme_sha256": "8060378d2e7539d8a3401affaa33ea36a87c15ee87e1a2d60af0fabdf8102cfa",
       "error": null
     },
     {
@@ -492,9 +567,9 @@
       "app_references": [
         "matomo"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__matomo-org__matomo.md",
-      "readme_download_url": "https://raw.githubusercontent.com/matomo-org/matomo/6.x-dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "7b7bdc9b5b3de2521927a48c01754d457547c930507f9cc1c3040061cdaa4985",
       "error": null
     },
@@ -507,10 +582,10 @@
       "app_references": [
         "mattermost"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__mattermost__mattermost.md",
-      "readme_download_url": null,
-      "readme_sha256": "44a585dd1a0c1309415819bbd8ae7fda5411cb994a25641d63423baa0991182e",
+      "readme_download_url": "https://raw.githubusercontent.com/mattermost/mattermost/master/README.md",
+      "readme_sha256": "092eeb91f44c962fe48c5f2677dc23435eddaafd6e869d591a6f0ac13eb537be",
       "error": null
     },
     {
@@ -552,9 +627,9 @@
       "app_references": [
         "mautic"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__mautic__mautic.md",
-      "readme_download_url": "https://raw.githubusercontent.com/mautic/mautic/7.x/README.md",
+      "readme_download_url": null,
       "readme_sha256": "cdb50a229645ed20947905a0c7f80428cd5da5604f0a68a2b26c3873a2d63079",
       "error": null
     },
@@ -582,10 +657,10 @@
       "app_references": [
         "ezbookkeeping"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__mayswind__ezbookkeeping.md",
-      "readme_download_url": null,
-      "readme_sha256": "378b08ecc26883a4f8b252c2d521c917e41f30691cdfa8b6f884ff78ed83ed54",
+      "readme_download_url": "https://raw.githubusercontent.com/mayswind/ezbookkeeping/main/README.md",
+      "readme_sha256": "d00397d3a30135885b64fba992fc6d9cc6b5e53863ebfc973a353e650d1661a3",
       "error": null
     },
     {
@@ -672,85 +747,10 @@
       "app_references": [
         "medusa"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__medusajs__medusa.md",
-      "readme_download_url": "https://raw.githubusercontent.com/medusajs/medusa/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "cea32947e8fed80dcee5388ec59f6bd93f5783ebc6d2efba226b2824a1c5f62f",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/meeb/tubesync",
-      "repo_url": "github.com/meeb/tubesync",
-      "host": "github.com",
-      "owner": "meeb",
-      "repo": "tubesync",
-      "app_references": [
-        "tubesync"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__meeb__tubesync.md",
-      "readme_download_url": null,
-      "readme_sha256": "9b2fec46d98eb48502bb487f4f45b5e0982479c14650b2828dff0cb605e7c8cc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/meilisearch/meilisearch",
-      "repo_url": "github.com/meilisearch/meilisearch",
-      "host": "github.com",
-      "owner": "meilisearch",
-      "repo": "meilisearch",
-      "app_references": [
-        "meilisearch"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__meilisearch__meilisearch.md",
-      "readme_download_url": null,
-      "readme_sha256": "83929117b73b31f7233abb5237bfd04141dc278f6d6597c38ee3b65b1a3501c3",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/mentholmike/wagmios",
-      "repo_url": "github.com/mentholmike/wagmios",
-      "host": "github.com",
-      "owner": "mentholmike",
-      "repo": "wagmios",
-      "app_references": [
-        "wagmios"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__mentholmike__wagmios.md",
-      "readme_download_url": null,
-      "readme_sha256": "ab0decf95f43484fbcb5544cd081ee3cfb72c19948a06851d07b8eff069f4597",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/metabase/metabase",
-      "repo_url": "github.com/metabase/metabase",
-      "host": "github.com",
-      "owner": "metabase",
-      "repo": "metabase",
-      "app_references": [
-        "metabase"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__metabase__metabase.md",
-      "readme_download_url": null,
-      "readme_sha256": "11bd2caca0fb26bf548a8d5bd3ae0e16892166741894b38d4f423944f4d7fd2c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/miantiao-me/BroadcastChannel",
-      "repo_url": "github.com/miantiao-me/BroadcastChannel",
-      "host": "github.com",
-      "owner": "miantiao-me",
-      "repo": "BroadcastChannel",
-      "app_references": [
-        "broadcastchannel"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__miantiao-me__BroadcastChannel.md",
-      "readme_download_url": null,
-      "readme_sha256": "07ca36c51fec61355bb97519ed085e6fc83b207e7d7c916c843b7c3bda3e3ba5",
       "error": null
     }
   ]

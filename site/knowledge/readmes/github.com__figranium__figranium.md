@@ -31,9 +31,9 @@ Figranium is proudly supported by:
 <div align="center">
   <a href="https://swiftproxy.net/?ref=figranium" target="_blank">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="swiftproxy_white.png">
-      <source media="(prefers-color-scheme: light)" srcset="swiftproxy.png">
-      <img src="swiftproxy.png" width="220" alt="Swiftproxy">
+      <source media="(prefers-color-scheme: dark)" srcset="partner-assets/swiftproxy_white.png">
+      <source media="(prefers-color-scheme: light)" srcset="partner-assets/swiftproxy.png">
+      <img src="partner-assets/swiftproxy.png" width="220" alt="Swiftproxy">
     </picture>
   </a>
 </div>
@@ -43,9 +43,9 @@ Figranium is proudly supported by:
 <div align="center">
   <a href="https://simplynode.io/?utm_source=figranium" target="_blank">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="simplynode_white.png">
-      <source media="(prefers-color-scheme: light)" srcset="simplynode.png">
-      <img src="simplynode.png" width="220" alt="SimplyNode">
+      <source media="(prefers-color-scheme: dark)" srcset="partner-assets/simplynode_white.png">
+      <source media="(prefers-color-scheme: light)" srcset="partner-assets/simplynode.png">
+      <img src="partner-assets/simplynode.png" width="220" alt="SimplyNode">
     </picture>
   </a>
 </div>
@@ -59,14 +59,22 @@ Figranium is proudly supported by:
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.mintlify.com">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="mintlify_white.svg">
-      <source media="(prefers-color-scheme: light)" srcset="mintlify.svg">
-      <img src="mintlify.svg" width="165" alt="Mintlify">
+      <source media="(prefers-color-scheme: dark)" srcset="partner-assets/mintlify_white.svg">
+      <source media="(prefers-color-scheme: light)" srcset="partner-assets/mintlify.svg">
+      <img src="partner-assets/mintlify.svg" width="165" alt="Mintlify">
     </picture>
   </a>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <a href="https://www.algolia.com">
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Algolia_logo_full_blue.svg/1920px-Algolia_logo_full_blue.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20221025105233" width="165" alt="Algolia">
+  </a>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="https://neon.com">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="partner-assets/neon_white.png">
+      <source media="(prefers-color-scheme: light)" srcset="partner-assets/neon.png">
+      <img src="partner-assets/neon.png" width="165" alt="Mintlify">
+    </picture>
   </a>
 </div>
 
@@ -187,6 +195,13 @@ Key capabilities of **Figranite** include:
 | `DB_POSTGRESDB_PORT` | Port for the PostgreSQL database (required if DB_TYPE is postgres). | — |
 | `DB_POSTGRESDB_USER` | Username for the PostgreSQL database (required if DB_TYPE is postgres). | — |
 | `DB_POSTGRESDB_PASSWORD` | Password for the PostgreSQL database (required if DB_TYPE is postgres). | — |
+| `USE_CLOAK_ENGINE` | Set to `true` to run the browser engine on CloakBrowser (stealth-patched Chromium) instead of the default Playwright stealth stack. | `false` |
+| `CLOAKBROWSER_LICENSE_KEY` | CloakBrowser license key for the latest binary (read natively by cloakbrowser; `npx cloakbrowser login` writes `~/.cloakbrowser/license.key`). Without a key the free legacy binary is used. | — |
+| `OHMYCAPTCHA_URL` | **[Broken — `solve_captcha` currently not functional; timing out]** Base URL for the `solve_captcha` agent action's captcha-solving service. An embedded `ohmycaptcha` instance runs locally by default; set this to point at an external instance instead. | `http://127.0.0.1:8000` |
+| `OHMYCAPTCHA_CLIENT_KEY` | Client key for the captcha-solving service. Auto-generated for the embedded instance; required when using an external `OHMYCAPTCHA_URL`. | auto-generated |
+| `CLOUD_API_KEY` / `CLOUD_BASE_URL` / `CLOUD_MODEL` | An OpenAI-compatible API key/endpoint/model, forwarded through to the embedded `ohmycaptcha` instance. Required for reCAPTCHA v2's audio-challenge fallback (used whenever a click-only solve isn't enough — common for headless/datacenter traffic); without it, those challenges fail with `ERROR_CAPTCHA_UNSOLVABLE`. hCaptcha, Turnstile, and reCAPTCHA v3 don't need this. | — |
+
+> **Note on `solve_captcha` outside Docker:** the embedded `ohmycaptcha` instance is only started automatically inside the Docker image (`entrypoint.sh`/`start-captcha.sh`). If you're running Figranium via `npm run dev`/`npm run server` on bare metal, run `npm run captcha:dev` in a separate terminal first (requires `python3`/`pip3`; it clones and starts `ohmycaptcha` on `127.0.0.1:8000` the same way the container does) — otherwise `solve_captcha` actions will fail with a connection error.
 
 Proxy rotation also respects `data/proxies.json` (see below), and `data/allowed_ips.json` works as an alternate allowlist format.
 
@@ -354,6 +369,7 @@ Figranium includes a built-in scheduler that handles automated task execution wi
 - [x] **Highlight tool** — add a feature to highlight elements on the page (similar to a browser's inspect tool) to easily pick selectors and build workflows.
 - [x] **Cron triggers** — add support for scheduling tasks with cron expressions so workflows can run automatically on defined intervals.
 - [x] **Canvas notes** — add sticky-note-style annotations to the block canvas so operators can leave freeform comments and context alongside their workflows without affecting execution.
+- [ ] **Page triggers** - trigger a task automatically when a web page changes a certain way.
 
 # Security Considerations
 

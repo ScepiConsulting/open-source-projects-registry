@@ -97,13 +97,14 @@ The **YT-DLP Integration** plugin (disabled by default) uses [yt-dlp](https://gi
 - **Automatic downloads** — videos you schedule for later are fetched ahead of time; optionally every fresh upload from followed channels.
 - **Watch your way** — when a video isn't downloaded yet, choose: play from YouTube now, or wait for a priority download and watch locally. Either can be the default.
 - **A real player** — instant seeking, chapter and SponsorBlock markers on the seek bar, keyboard shortcuts, picture-in-picture, Media Session — with the same progress tracking as the embedded player.
-- **Smart retention** — keep files for N days, drop them after watching, protect liked and pinned videos, and cap total disk usage. Everything is cleaned up automatically.
+- **Smart retention** — keep files for N days or retain them in a profile until manually deleted; optionally drop watched files, protect liked and pinned videos, and cap total shared disk usage. The storage cap can still evict unprotected downloads retained by a profile.
 - **Household-aware** — one download serves every profile, and child profiles can be limited to downloaded videos only.
 
 The Docker image and native installer bundle yt-dlp, ffmpeg, and Deno. Deno is
 the JavaScript runtime yt-dlp uses to solve YouTube's extraction challenges;
-manual installations must provide Deno 2.3 or newer on `PATH`. YT Zero keeps
-yt-dlp updated daily. Details and the full settings reference:
+manual installations must provide Deno 2.3 or newer on `PATH`. Administrators
+can update yt-dlp from the UI and choose stable or nightly releases plus an
+automatic-update interval. Details and the full settings reference:
 **[YT-DLP Integration](https://github.com/Pelski/ytzero/wiki/YT-DLP-Integration)**.
 
 ## Audio mode

@@ -39,6 +39,8 @@ Open `http://localhost:5230` and start writing.
 
 ### Native Binary
 
+Native macOS binaries require macOS 13 Ventura or later.
+
 ```bash
 curl -fsSL https://raw.githubusercontent.com/usememos/memos/main/scripts/install.sh | sh
 ```
@@ -79,4 +81,17 @@ Memos is open-source software licensed under the [MIT License](LICENSE). See our
 
 ---
 
-**[Website](https://usememos.com)** • **[Documentation](https://usememos.com/docs)** • **[Demo](https://demo.usememos.com/)** • **[Discord](https://discord.gg/tfPJa4UmAv)** • **[X/Twitter](https://x.com/usememos)**
+[Website](https://usememos.com) • [Documentation](https://usememos.com/docs) • [Demo](https://demo.usememos.com/) • [Discord](https://discord.gg/tfPJa4UmAv) • [X/Twitter](https://x.com/usememos)
+
+<p>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=usememos/memos&type=rank&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/badge?repo=usememos/memos&type=rank" />
+    <img alt="Star History Rank" src="https://api.star-history.com/badge?repo=usememos/memos&type=rank" />
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/badge?repo=usememos/memos&type=trending&theme=dark" />
+    <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/badge?repo=usememos/memos&type=trending" />
+    <img alt="GitHub Trending Repository of the Day" src="https://api.star-history.com/badge?repo=usememos/memos&type=trending" />
+  </picture>
+</p>

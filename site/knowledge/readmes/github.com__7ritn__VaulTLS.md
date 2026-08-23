@@ -74,6 +74,11 @@ For VaulTLS the required variables can be configured via environmental variables
 | `VAULTLS_OIDC_ID`           | `[client_id]`                                        |
 | `VAULTLS_OIDC_SECRET`       | `[client_secret]`                                    |
 
+Some OIDC providers such as Zitadel supply multiple elements in the `aud` claim.
+To specify additional trusted audiences, specify them in a comma-separated list in the
+`VAULTLS_OIDC_ADDITIONAL_AUDIENCES` env variable or in the settings file. Configuration
+via web UI is not possible.
+
 ### Container Secrets
 Certain environment variables can be container secrets instead of regular variables.
 VaulTLS will try to read secrets from `/run/secrets/<ENV_NAME>`, if you want to specify a different path, you can do so in the environmental variable.
@@ -118,7 +123,14 @@ openssl pkcs12 -in INFILE.p12 -out OUTFILE.key -nodes -nocerts
 ```
 
 ### Certificate Revocation Lists (CRL)
-TLS certificates cannot be simply deleted since their validity period is cryptographically encoded in the certificate. VaulTLS provides the CRL mechanism to revoke certificates. This file is used by the validation side (such as the server for client certificates) to check if the certificate has been revoked. CRLs are stored as files under `/app/data/crl/`. They can be downloaded in the CA tab of the frontend and can be retrieved from the API under `/api/certificates/ca/<id>/crl`. They do not require authentication to be accessed.
+TLS certificates cannot be simply deleted since their validity period is cryptographically encoded in the
+certificate. VaulTLS provides the CRL mechanism to revoke certificates. This file is used by the validation
+side (such as the server for client certificates) to check if the certificate has been revoked.
+CRLs are stored as files under `/app/data/crl/`. They can be downloaded in the CA tab of the frontend and
+can be retrieved from the API under `/api/certificates/ca/<id>/crl`. They do not require authentication to
+be accessed. Furthermore, VaulTLS hosts the CRL file directory under port 2277. This port can be exposed publicly.
+In combination with the CRL Distribution Point extension, you can specify the URL from where the CRL files are
+available for automatic validation. Specify URL using the `VAULTLS_CRL_DP_URL` env variable.
 
 ### SSH Certificates
 VaulTLS also supports SSH certificates. To use these you must manually create a new SSH CA in the CA tab. Since SSH does not provide a bundled file format to store the private key and certificate, the file is provided as a ZIP archive.

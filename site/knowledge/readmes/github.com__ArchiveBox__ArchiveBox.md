@@ -73,7 +73,7 @@ mkdir -p ~/archivebox/data && cd ~/archivebox
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
 docker compose pull
 docker compose up -d --wait                                                # initializes new collections automatically
-docker compose exec archivebox archivebox manage createsuperuser          # create the first Web UI user
+# open http://admin.archivebox.localhost:8000 to finish setup
 # docker compose run --rm archivebox add 'https://example.com'
 # docker compose run --rm archivebox help
 <br/>
@@ -82,8 +82,8 @@ docker compose exec archivebox archivebox manage createsuperuser          # crea
 mkdir -p ~/archivebox/data && cd ~/archivebox/data
 docker run --rm -it -v "$PWD:/data" archivebox/archivebox:dev init
 docker run --rm -it -v "$PWD:/data" archivebox/archivebox:dev install
-docker run --rm -it -v "$PWD:/data" archivebox/archivebox:dev manage createsuperuser
 docker run -d --name archivebox -v "$PWD:/data" -p 8000:8000 archivebox/archivebox:dev
+# open http://admin.archivebox.localhost:8000 to finish setup
 # docker run -it -v $PWD:/data archivebox/archivebox:dev add 'https://example.com'
 # docker run -it -v $PWD:/data archivebox/archivebox:dev help
 <br/>
@@ -186,11 +186,10 @@ ArchiveBox is free for everyone to self-host, but we also provide support, secur
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
 docker compose pull
 </code></pre></li>
-<li>Start the server, which initializes a new collection automatically, then create the first admin user.
+<li>Start the server, which initializes a new collection automatically.
 <pre lang="bash"><code style="white-space: pre-line">docker compose up -d --wait
-docker compose exec archivebox archivebox manage createsuperuser
 </code></pre></li>
-<li>Next steps: Log in to the Admin UI at <a href="http://admin.archivebox.localhost:8000">http://admin.archivebox.localhost:8000</a>.
+<li>Open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:8000/admin/">http://admin.archivebox.localhost:8000/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the web setup wizard.
 <pre lang="bash"><code style="white-space: pre-line">
 # run CLI commands inside the server container started above
 docker compose exec archivebox archivebox add 'https://example.com'
@@ -215,7 +214,7 @@ docker run --rm -v $PWD:/data -it archivebox/archivebox:dev init
 docker run --rm -v $PWD:/data -it archivebox/archivebox:dev install
 </code></pre>
 </li>
-<li>Optional: Start the server then log in to the Admin UI at <a href="http://admin.archivebox.localhost:8000">http://admin.archivebox.localhost:8000</a>.
+<li>Optional: Start the server, then open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:8000/admin/">http://admin.archivebox.localhost:8000/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the web setup wizard.
 <pre lang="bash"><code style="white-space: pre-line">docker run -v $PWD:/data -p 8000:8000 archivebox/archivebox:dev
 # completely optional, CLI can always be used without running a server
 # docker run -v $PWD:/data -it archivebox/archivebox:dev [subcommand] [--help]
@@ -271,9 +270,8 @@ archivebox init     # initialize a new collection
 archivebox install  # install all the runtime dependencies (e.g. chrome, single-file, yt-dlp, etc.)
 </code></pre>
 </li>
-<li>Create an admin account, then optionally start the server and log in to the Admin UI at <a href="http://admin.archivebox.localhost:8000">http://admin.archivebox.localhost:8000</a>.
-<pre lang="bash"><code style="white-space: pre-line">archivebox manage createsuperuser
-archivebox server 0.0.0.0:8000
+<li>Optionally start the server, then open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:8000/admin/">http://admin.archivebox.localhost:8000/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the same web setup wizard used by Docker installs.
+<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:8000
 # completely optional, CLI can always be used without running a server
 # archivebox [subcommand] [--help]
 archivebox help
@@ -303,14 +301,13 @@ sudo apt install archivebox
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data
 cd ~/archivebox/data
 archivebox init
-archivebox install
+sudo archivebox install
 archivebox add 'https://example.com'
 </code></pre>
 <br/>
 </li>
-<li>Create an admin account, then optionally start the server and log in to the Admin UI at <a href="http://admin.archivebox.localhost:8000">http://admin.archivebox.localhost:8000</a>.
-<pre lang="bash"><code style="white-space: pre-line">archivebox manage createsuperuser
-archivebox server 0.0.0.0:8000
+<li>Optionally start the server, then open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:8000/admin/">http://admin.archivebox.localhost:8000/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the same web setup wizard used by Docker installs.
+<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:8000
 # completely optional, CLI can always be used without running a server
 # archivebox [subcommand] [--help]
 archivebox help
@@ -318,7 +315,7 @@ archivebox help
 </li>
 </ol>
 See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
-<sub>The apt package is a thin dev-channel wrapper around the normal Python install flow. See the <a href="https://github.com/ArchiveBox/debian-archivebox"><code>debian-archivebox</code></a> repo for details, and run <code>sudo archivebox install</code> only if you want it to install missing system packages via apt.</sub>
+<sub>The apt package is a thin dev-channel wrapper around the normal Python install flow. <code>sudo archivebox install</code> uses apt for missing system dependencies while preserving ownership of the user-owned collection. See the <a href="https://github.com/ArchiveBox/debian-archivebox"><code>debian-archivebox</code></a> repo for details.</sub>
 <br/><br/>
 </details>
 
@@ -342,9 +339,8 @@ archivebox init
 archivebox install
 </code></pre>
 </li>
-<li>Create an admin account, then optionally start the server and log in to the Admin UI at <a href="http://admin.archivebox.localhost:8000">http://admin.archivebox.localhost:8000</a>.
-<pre lang="bash"><code style="white-space: pre-line">archivebox manage createsuperuser
-archivebox server 0.0.0.0:8000
+<li>Optionally start the server, then open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:8000/admin/">http://admin.archivebox.localhost:8000/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the same web setup wizard used by Docker installs.
+<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:8000
 # completely optional, CLI can always be used without running a server
 # archivebox [subcommand] [--help]
 archivebox help
@@ -581,19 +577,17 @@ find ./archive/users -path '*/snapshots/*/*/*/index.html'  # inspect snapshot da
 <summary><b>🖥&nbsp; Web UI & API Usage</b></summary>
 <pre lang="bash"><code style="white-space: pre-line">
 # Start the server on bare metal (uv/apt/brew):
-archivebox manage createsuperuser              # create a new admin user via CLI
 archivebox server 0.0.0.0:8000                 # start the server
 <br/>
 # Or with Docker Compose:
-docker compose run --rm archivebox manage createsuperuser
 docker compose up                              # start the server
 <br/>
 # Or with a Docker container:
-docker run -v $PWD:/data -it archivebox/archivebox:dev manage createsuperuser
 docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox:dev
 </code></pre>
 
-<sup>Open <a href="http://web.archivebox.localhost:8000"><code>http://web.archivebox.localhost:8000</code></a> for the public UI and <a href="http://admin.archivebox.localhost:8000"><code>http://admin.archivebox.localhost:8000</code></a> for the admin UI ➡️</sup><br/>
+<sup>Open <a href="http://admin.archivebox.localhost:8000/admin/"><code>http://admin.archivebox.localhost:8000/admin/</code></a> to create the first admin and finish web setup. Use <a href="http://web.archivebox.localhost:8000"><code>http://web.archivebox.localhost:8000</code></a> for the public UI. ➡️</sup><br/>
+<sup>Advanced: <code>archivebox manage createsuperuser</code> remains available for creating accounts from the CLI.</sup><br/>
 <sup>Set <code>BASE_URL</code> to change the public base domain. The default <code>auto</code> mode uses <code>web.</code> and <code>admin.</code> subdomains on <code>*.localhost</code>, but one host for ordinary DNS names. <code>BIND_ADDR</code> only controls the local listen address.</sup>
 <br/><br/>
 <i>For more info, see our <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#ui-usage">Usage: Web UI</a> wiki. ➡️</i>

@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-16T03:53:53Z",
+  "generated_at": "2026-08-23T03:56:30Z",
   "summary": {
-    "apps": 1336,
-    "repos": 1314,
-    "readme_ok": 158,
-    "readme_not_modified": 1103,
+    "apps": 1340,
+    "repos": 1318,
+    "readme_ok": 167,
+    "readme_not_modified": 1098,
     "readme_error": 53
   },
   "failed_repos": [
@@ -102,6 +102,11 @@
       "repo_key": "codeberg.org/silverpill/mitra",
       "repo_url": "codeberg.org/silverpill/mitra",
       "error": "worker_exception: Invalid URL 'codeberg.org/silverpill/mitra/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/silverpill/mitra/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/socialhome/socialhome",
+      "repo_url": "codeberg.org/socialhome/socialhome",
+      "error": "worker_exception: Invalid URL 'codeberg.org/socialhome/socialhome/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/socialhome/socialhome/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/superseriousbusiness/gotosocial",
@@ -217,11 +222,6 @@
       "repo_key": "gitlab.com/imn1/richy",
       "repo_url": "gitlab.com/imn1/richy",
       "error": "worker_exception: Invalid URL 'gitlab.com/imn1/richy/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/imn1/richy/-/raw/main/README.md?"
-    },
-    {
-      "repo_key": "gitlab.com/jaywink/socialhome",
-      "repo_url": "gitlab.com/jaywink/socialhome",
-      "error": "worker_exception: Invalid URL 'gitlab.com/jaywink/socialhome/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitlab.com/jaywink/socialhome/-/raw/main/README.md?"
     },
     {
       "repo_key": "gitlab.com/mayan-edms/mayan-edms",

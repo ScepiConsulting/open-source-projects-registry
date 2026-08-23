@@ -59,9 +59,10 @@ Certain values can be set via environment variables, using the `-e` parameter on
 
 * __DOWNLOAD_DIR__: Path to where the downloads will be saved. Defaults to `/downloads` in the Docker image, and `.` otherwise.
 * __AUDIO_DOWNLOAD_DIR__: Path to where audio-only downloads will be saved, if you wish to separate them from the video downloads. Defaults to the value of `DOWNLOAD_DIR`.
-* __CUSTOM_DIRS__: Whether to enable downloading videos into custom directories within the __DOWNLOAD_DIR__ (or __AUDIO_DOWNLOAD_DIR__). When enabled, a dropdown appears next to the Add button to specify the download directory. Defaults to `true`.
+* __CUSTOM_DIRS__: Whether to enable downloading videos into custom directories within the __DOWNLOAD_DIR__ (or __AUDIO_DOWNLOAD_DIR__). When enabled, a **Download Folder** field appears under **Advanced Options**, where the directory for each download can be specified. Defaults to `true`.
 * __CREATE_CUSTOM_DIRS__: Whether to support automatically creating directories within the __DOWNLOAD_DIR__ (or __AUDIO_DOWNLOAD_DIR__) if they do not exist. When enabled, the download directory selector supports free-text input, and the specified directory will be created recursively. Defaults to `true`.
-* __CUSTOM_DIRS_EXCLUDE_REGEX__: Regular expression to exclude some custom directories from the dropdown. Empty regex disables exclusion. Defaults to `(^|/)[.@].*$`, which means directories starting with `.` or `@`.
+* __CUSTOM_DIRS_EXCLUDE_REGEX__: Regular expression to exclude some custom directories from the folder field's suggestions. Empty regex disables exclusion. Defaults to `(^|/)[.@].*$`, which means directories starting with `.` or `@`.
+* __DEFAULT_FOLDER__: Custom directory to pre-select in the download folder field, relative to __DOWNLOAD_DIR__ (or __AUDIO_DOWNLOAD_DIR__), for when most downloads go to the same place. It is only a starting value — the field stays editable, so any other folder can still be picked per download. Requires __CUSTOM_DIRS__; ignored with a warning otherwise. Defaults to empty, i.e. the base download directory.
 * __DOWNLOAD_DIRS_INDEXABLE__: If `true`, the download directories (__DOWNLOAD_DIR__ and __AUDIO_DOWNLOAD_DIR__) are indexable on the web server. Defaults to `false`.
 * __STATE_DIR__: Path to where MeTube will store its persistent state files (`queue.json`, `pending.json`, `completed.json`, `subscriptions.json`). Defaults to `/downloads/.metube` in the Docker image, and `.` otherwise.
 * __TEMP_DIR__: Path where intermediary download files will be saved. Defaults to `/downloads` in the Docker image, and `.` otherwise.
@@ -83,6 +84,8 @@ Certain values can be set via environment variables, using the `-e` parameter on
 * __ALLOW_PRIVATE_ADDRESSES__: Whether to allow downloads from private, loopback, link-local and other non-global addresses. Defaults to `false`, which protects against SSRF by refusing URLs that resolve to internal hosts. Set to `true` only in trusted environments — for example when routing traffic through a proxy/VPN client in Fake-IP mode (sing-box, Clash, Mihomo), which resolves hosts to the `198.18.0.0/15` range. Enabling this disables the SSRF protection entirely, so only use it when you control the network. You do **not** need this to use a proxy on an internal address: a proxy configured through the `proxy` option in `YTDL_OPTIONS` (or the `*_proxy` environment variables) is always reachable at its own host and port, wherever it lives.
 * __YTDL_NIGHTLY_UPDATE_TIME__: If set, will cause MeTube to use [nightly yt-dlp builds](https://github.com/yt-dlp/yt-dlp-nightly-builds) instead of the stable releases. Set to the time (`HH:MM`, 24-hour) when you want the daily upgrades and MeTube restart to happen. Defaults to empty (disabled).
 
+A filename that would exceed the limit the filesystem accepts is shortened to fit, keeping its extension, with room left for the suffixes yt-dlp adds while downloading. Sites that put a long description in the title would otherwise fail the download outright with `File name too long`. Use `trim_file_name` in `YTDL_OPTIONS` if you want names shorter than the filesystem's own limit, or `restrictfilenames` to strip non-ASCII characters.
+
 Enabling `writeinfojson` or `writethumbnail` in `YTDL_OPTIONS` also writes a feed-level `.info.json` and thumbnail when you add a playlist or channel. These reuse the template of the items they belong to — `OUTPUT_TEMPLATE_CHANNEL` or `OUTPUT_TEMPLATE_PLAYLIST` — evaluated against the feed itself, so with the defaults they land in the same folder as the videos, named after the feed. Set `allow_playlist_files` to `false` in `YTDL_OPTIONS` to skip them.
 
 ### 🌐 Web Server & URLs
@@ -95,7 +98,7 @@ Enabling `writeinfojson` or `writethumbnail` in `YTDL_OPTIONS` also writes a fee
 * __HTTPS__: Use `https` instead of `http` (__CERTFILE__ and __KEYFILE__ required). Defaults to `false`.
 * __CERTFILE__: HTTPS certificate file path.
 * __KEYFILE__: HTTPS key file path.
-* __CORS_ALLOWED_ORIGINS__: Comma-separated list of origins permitted to make cross-origin requests to the MeTube API; `*` allows all. When unset or empty, all cross-origin requests are denied. Required for browser extensions and bookmarklets — see [Sending links to MeTube](#-sending-links-to-metube).
+* __CORS_ALLOWED_ORIGINS__: Comma-separated list of origins permitted to make cross-origin requests to the MeTube API; `*` allows all. When unset or empty, all cross-origin requests are denied. Required for browser extensions and bookmarklets — see [Sending links to MeTube](#-sending-links-to-metube). Naming origins explicitly also lets them send credentials (a login cookie, or the `Authorization` header a reverse proxy checks), which `*` deliberately does not: it would let any site you visit drive your instance with your own session.
 * __ROBOTS_TXT__: A path to a `robots.txt` file mounted in the container.
 
 ## 🎛️ Configuring yt-dlp options
@@ -240,7 +243,7 @@ __Browser extensions__ allow right-clicking videos and sending them directly to 
 * __Chrome:__ contributed by [Rpsl](https://github.com/rpsl) — install from the [Chrome Webstore](https://chrome.google.com/webstore/detail/metube-downloader/fbmkmdnlhacefjljljlbhkodfmfkijdh) or [from sources](https://github.com/Rpsl/metube-browser-extension).
 * __Firefox:__ contributed by [nanocortex](https://github.com/nanocortex) — install from [Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon/metube-downloader) or get sources [here](https://github.com/nanocortex/metube-firefox-addon).
 
-__Bookmarklets__ send the currently open page to MeTube with one click. Add the origins of the sites where you use them to `CORS_ALLOWED_ORIGINS`, e.g. `https://www.youtube.com,https://www.vimeo.com`. The code (Chrome and Firefox variants, contributed by [kushfest](https://github.com/kushfest) and [shoonya75](https://github.com/shoonya75)) is in the [Bookmarklets wiki page](https://github.com/alexta69/metube/wiki/Bookmarklets).
+__Bookmarklets__ send the currently open page to MeTube with one click. Add the origins of the sites where you use them to `CORS_ALLOWED_ORIGINS`, e.g. `https://www.youtube.com,https://www.vimeo.com`. If your instance sits behind authentication, list the origins individually rather than using `*` — only named origins are allowed to send credentials. The code (Chrome and Firefox variants, contributed by [kushfest](https://github.com/kushfest) and [shoonya75](https://github.com/shoonya75)) is in the [Bookmarklets wiki page](https://github.com/alexta69/metube/wiki/Bookmarklets).
 
 __iOS Shortcut:__ [rithask](https://github.com/rithask) created an [iOS shortcut](https://www.icloud.com/shortcuts/66627a9f334c467baabdb2769763a1a6) for sending URLs to MeTube from Safari's share menu; it prompts for your instance address on first use.
 

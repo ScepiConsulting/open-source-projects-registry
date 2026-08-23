@@ -4,7 +4,7 @@
 </p>
 
 <h3 align="center">
-Your note-taking and documentation platform.
+Powerful note-taking without the hassle.
 </h3>
 
 <br>
@@ -16,6 +16,10 @@ Your note-taking and documentation platform.
 
 Discover all the features [here](https://poznote.com/selfhosting.html).
 
+### Screenshots
+
+See all the screenshots [here](https://poznote.com/screenshots.html).
+
 ### Demo
 
 https://demo.poznote.com
@@ -25,7 +29,7 @@ https://demo.poznote.com
 
 ### They talk about Poznote
 
-https://poznote.com/index.html#press
+https://poznote.com/press.html
 
 ## Table of content
 
@@ -630,6 +634,7 @@ Notes:
 - Click **Remove** to delete the file and disable the custom stylesheet.
 - Poznote appends a cache-busting `v=` parameter automatically.
 - The stylesheet is injected near the end of `<head>`, so it can override the default application styles.
+- The brand colour and the dark/black palette are CSS variables, so a theme is a few lines: override `--pz-accent`, `--pz-accent-hover`, `--pz-accent-rgb` on `:root` and the `--dm-*` variables on `html[data-theme='dark']`. The list lives in `src/css/dark-mode/variables.css`, with an example in `src/css/README.md`.
 - Only administrators can upload or remove the custom CSS file.
 
 </details>
@@ -751,13 +756,15 @@ Configure it in **Settings > S3 Attachments** (administrators only).
 - **Migration**: Move existing attachment files between the local disk and the bucket, in both directions and for every user. Migration runs in batches and can be safely interrupted and resumed.
 - **Privacy**: Attachments are stored under `attachments/{user id}/` in the bucket and are always served through Poznote, so the bucket can stay private.
 - **Quotas**: A per-user S3 storage quota can be set, and S3 usage appears in the admin storage statistics.
-- **Backups**: Zip exports include S3 attachments by default (fetched from the bucket on the fly). An option in the Backup window lets you leave them out for a lighter archive.
+- **Backups**: Zip exports include S3 attachments by default (fetched from the bucket on the fly), whether they are made from the Backup window, through the REST API or by the automatic S3 backups. An option in the Backup window lets you leave them out for a lighter archive. If the bucket cannot be read while an archive is being built, the export fails with an error instead of producing an archive with missing files.
 
-Restoring a backup that was made without its S3 attachments is refused while S3 storage is active, because a full restore replaces the bucket content. To restore it anyway, rebuild a complete archive first:
+Restoring a backup that is missing some of the attachment files it references is refused while S3 storage is enabled, because a full restore replaces the bucket content and the missing files would be lost. Two ways to restore such a backup:
 
-1. Download the **Attachments Export** from the Backup window: it contains every attachment of your account in a `files/` folder.
-2. Unzip the backup, copy the files from `files/` into the backup's `attachments/` folder, and zip it again. Careful when re-zipping: select the backup's contents (`database/`, `entries/`, `attachments/`, ...) and compress that selection, not the folder containing them. The folders must sit at the root of the zip, otherwise the restore reports that `database/poznote_backup.sql` is missing.
-3. Restore the rebuilt zip normally.
+- **Easiest**: turn off the "Store attachments in S3" switch (keep the credentials), restore the backup, then turn the switch back on. A restore in local mode never touches the bucket, and the attachments still stored there keep being served. This is also the right path on a fresh server when the bucket is intact, since the attachments export of the other option needs an instance that still knows the notes.
+- **Rebuild a complete archive**:
+  1. Download the **Attachments Export** from the Backup window: it contains every attachment of your account in a `files/` folder.
+  2. Unzip the backup, copy the files from `files/` into the backup's `attachments/` folder, and zip it again. Careful when re-zipping: select the backup's contents (`database/`, `entries/`, `attachments/`, ...) and compress that selection, not the folder containing them. The folders must sit at the root of the zip, otherwise the restore reports that `database/poznote_backup.sql` is missing.
+  3. Restore the rebuilt zip normally.
 
 > Git Sync ignores attachments while S3 storage is enabled.
 
@@ -1033,7 +1040,9 @@ Server: my-server.com
 
 Poznote includes an integrated AI chat that connects to any OpenAI-compatible server, a local [Ollama](https://ollama.com) or [LM Studio](https://lmstudio.ai) instance, or a cloud provider like [Anthropic (Claude)](https://www.anthropic.com) or OpenAI. Once configured, an **AI** button appears in the dashboard toolbar and opens the chat panel right there.
 
-The assistant is global, MCP-style: it has tools to **search and read all your notes**, and uses them on its own to answer questions, like "what do my notes say about X?", cross-note summaries, finding that note you half remember. When you explicitly ask for it, it can also **create a note, rename one, or rewrite its content** (there is deliberately no delete tool). Answers are streamed and rendered as Markdown.
+The assistant is global, MCP-style: it has tools to **search and read your notes**, and uses them on its own to answer questions, like "what do my notes say about X?", cross-note summaries, finding that note you half remember. When you explicitly ask for it, it can also **create a note, rename one, or rewrite its content** (there is deliberately no delete tool). Answers are streamed and rendered as Markdown.
+
+The assistant is **scoped to the current workspace**: it only sees, searches and edits the notes of the workspace you opened the chat in, and new notes are created there. To ask about another workspace, switch to it first.
 
 To enable it, go to **Settings → Admin Tools → AI Assistant** (administrator only), pick a provider and use **Test connection** to verify the server and choose a model. The configuration applies to the whole instance: once enabled by the administrator, every user profile gets the chat.
 

@@ -234,7 +234,8 @@ Reactive Resume is and always will be free and open-source. If it has helped you
 Other ways to support:
 
 - Star this repository
-- Report bugs and suggest features
+- Report reproducible bugs and suggest actionable features
+- Help other users in [GitHub Discussions](https://github.com/amruthpillai/reactive-resume/discussions/categories/q-a)
 - Improve documentation
 - Help with translations
 
@@ -242,9 +243,9 @@ Other ways to support:
 
 <a href="https://www.star-history.com/?repos=amruthpillai%2Freactive-resume&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=amruthpillai/reactive-resume&type=date&theme=dark&legend=top-left&sealed_token=BF8sVMes0z5BhdkMhtFklhxeikeGUrSyW-CcY9E_RCQI5zqUHEbMRwcB075fUewbAtlNoCnDlWhDWjrDGhTcXMojsS2I0RCqcL-Y9p3Ez3H1A2QpRMthjFilP0YOCJEE9AZqRrqzlvj1uU2y5ixarXOuUXuuSw5DkLMViSMD8Ldl0H3BEgclnjWw4fI4" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=amruthpillai/reactive-resume&type=date&legend=top-left&sealed_token=BF8sVMes0z5BhdkMhtFklhxeikeGUrSyW-CcY9E_RCQI5zqUHEbMRwcB075fUewbAtlNoCnDlWhDWjrDGhTcXMojsS2I0RCqcL-Y9p3Ez3H1A2QpRMthjFilP0YOCJEE9AZqRrqzlvj1uU2y5ixarXOuUXuuSw5DkLMViSMD8Ldl0H3BEgclnjWw4fI4" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=amruthpillai/reactive-resume&type=date&legend=top-left&sealed_token=BF8sVMes0z5BhdkMhtFklhxeikeGUrSyW-CcY9E_RCQI5zqUHEbMRwcB075fUewbAtlNoCnDlWhDWjrDGhTcXMojsS2I0RCqcL-Y9p3Ez3H1A2QpRMthjFilP0YOCJEE9AZqRrqzlvj1uU2y5ixarXOuUXuuSw5DkLMViSMD8Ldl0H3BEgclnjWw4fI4" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=amruthpillai/reactive-resume&type=date&theme=dark&legend=top-left&sealed_token=QmaOn4Ech499R6kpQe8ONn911UjGUaJfQBT0MXlQLU9hTo-Ie7lTxIILWbBvmtzDGHk7ziWKN_N5iM5mgP8widn_FGHd9-PHNokPtSji8XLgbFpqatgyqIDPnOys-IhO40W3J0HeH07FL-Q8Bq6ArRk3LDtJDwjh4m0ya-2L59ULb7BaqxkSDuCytkCr" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=amruthpillai/reactive-resume&type=date&legend=top-left&sealed_token=QmaOn4Ech499R6kpQe8ONn911UjGUaJfQBT0MXlQLU9hTo-Ie7lTxIILWbBvmtzDGHk7ziWKN_N5iM5mgP8widn_FGHd9-PHNokPtSji8XLgbFpqatgyqIDPnOys-IhO40W3J0HeH07FL-Q8Bq6ArRk3LDtJDwjh4m0ya-2L59ULb7BaqxkSDuCytkCr" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=amruthpillai/reactive-resume&type=date&legend=top-left&sealed_token=QmaOn4Ech499R6kpQe8ONn911UjGUaJfQBT0MXlQLU9hTo-Ie7lTxIILWbBvmtzDGHk7ziWKN_N5iM5mgP8widn_FGHd9-PHNokPtSji8XLgbFpqatgyqIDPnOys-IhO40W3J0HeH07FL-Q8Bq6ArRk3LDtJDwjh4m0ya-2L59ULb7BaqxkSDuCytkCr" />
  </picture>
 </a>
 
@@ -259,6 +260,10 @@ Contributions make open-source thrive. Whether fixing a typo or adding a feature
 5. Open a Pull Request
 
 See the [development setup guide](https://docs.rxresu.me/contributing/development) for detailed instructions on how to set up the project locally.
+
+Maintainers review the [`status: needs triage` queue](https://github.com/amruthpillai/reactive-resume/issues?q=is%3Aissue+is%3Aopen+label%3A%22status%3A+needs+triage%22)
+weekly. Triaged bugs become `status: confirmed`; feature proposals become `status: accepted`; reports that need details become
+`status: needs info`.
 
 ## License
 

@@ -168,6 +168,23 @@ The old version 1 is moved to the [v1 branch](https://github.com/PhiTux/DailyTxT
 
 
 ---
+
+#### 2.6.4 (testing)
+```
+- Updated dependencies for security reasons
+- Bugfix: Better date-change of calendar when switching between read-/write-mode
+- Bugfix: GPX-track is now shown in popup in reading-mode
+- Bugfix: Selection of map-type is now always visible
+- CSS: "written on" now doesn't jump with/without date
+```
+
+
+### 2.6.3 (2026-08-16)
+```
+- Bugfix (again): Larger data-import is no longer running into timeout
+```
+
+
 ### 2.6.2 (2026-06-07)
 ```
 - Bugfix: Larger data-import is no longer running into timeout

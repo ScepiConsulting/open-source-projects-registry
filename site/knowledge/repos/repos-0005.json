@@ -1,8 +1,38 @@
 {
   "chunk": 5,
   "count": 50,
-  "generated_at": "2026-08-16T03:53:53Z",
+  "generated_at": "2026-08-23T03:56:30Z",
   "items": [
+    {
+      "repo_key": "github.com/MoldyTaint/Cinephage",
+      "repo_url": "github.com/MoldyTaint/Cinephage",
+      "host": "github.com",
+      "owner": "MoldyTaint",
+      "repo": "Cinephage",
+      "app_references": [
+        "cinephage"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__MoldyTaint__Cinephage.md",
+      "readme_download_url": null,
+      "readme_sha256": "7d857570c6575f29879c85c2f80a527175554562d9a718c6c92da9b5067af534",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/Mozzo1000/booklogr",
+      "repo_url": "github.com/Mozzo1000/booklogr",
+      "host": "github.com",
+      "owner": "Mozzo1000",
+      "repo": "booklogr",
+      "app_references": [
+        "booklogr"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__Mozzo1000__booklogr.md",
+      "readme_download_url": null,
+      "readme_sha256": "561c9a8e2104d92003ab7553ee03340d4b3e1e7da5516c680aeb7e6fd32a1262",
+      "error": null
+    },
     {
       "repo_key": "github.com/MylarComics/mylar3",
       "repo_url": "github.com/MylarComics/mylar3",
@@ -12,10 +42,10 @@
       "app_references": [
         "mylar3"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__MylarComics__mylar3.md",
-      "readme_download_url": null,
-      "readme_sha256": "da83e819456674544168a5e0c4b0af291eaca852b61f0c370e416807ccc06cb3",
+      "readme_download_url": "https://raw.githubusercontent.com/MylarComics/mylar3/stable/README.md",
+      "readme_sha256": "02c3c6c3efd5d15a1b72f6e99c2765b6183a22a1d1f106d8a35ee218f533ca7a",
       "error": null
     },
     {
@@ -132,10 +162,10 @@
       "app_references": [
         "notifuse"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Notifuse__notifuse.md",
-      "readme_download_url": null,
-      "readme_sha256": "bb4247dab6d39379c8250c59388779bc3e554107b6d94d211e48ef437b9e1752",
+      "readme_download_url": "https://raw.githubusercontent.com/Notifuse/notifuse/main/README.md",
+      "readme_sha256": "7a4cdfe18853f67609499b68ef1401096d26b7f611d607ed83e4931d800098f0",
       "error": null
     },
     {
@@ -327,10 +357,10 @@
       "app_references": [
         "opnform"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__OpnForm__OpnForm.md",
-      "readme_download_url": null,
-      "readme_sha256": "b2b05b1b5896bd8546f5505fdc048c69bb36c8643f6ed7401721c736a43fe315",
+      "readme_download_url": "https://raw.githubusercontent.com/OpnForm/OpnForm/main/README.md",
+      "readme_sha256": "9e0d888dca002ffc45baa3b5a69ce9eef47950ad22001f017035e8a2c7015e16",
       "error": null
     },
     {
@@ -390,7 +420,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Pelski__ytzero.md",
       "readme_download_url": "https://raw.githubusercontent.com/Pelski/ytzero/main/README.md",
-      "readme_sha256": "278ef169b022536688c094fdff73f90eeaecd63f87710a671e2c945160d59bae",
+      "readme_sha256": "f20a33063ff04a38c4c6891c10ad112c5f9d9a79c604d7dbb0202057b3e126b4",
       "error": null
     },
     {
@@ -432,10 +462,10 @@
       "app_references": [
         "dailytxt"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__PhiTux__DailyTxT.md",
-      "readme_download_url": null,
-      "readme_sha256": "c9b111c137c93512d30fd490ef054f9e38918dee9286028ff52d6489c6e63185",
+      "readme_download_url": "https://raw.githubusercontent.com/PhiTux/DailyTxT/main/README.md",
+      "readme_sha256": "2fd71053e8ba7802504ffe3651d3be7cd2935b4501c81682449297c8c712d32a",
       "error": null
     },
     {
@@ -462,10 +492,10 @@
       "app_references": [
         "portabase"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Portabase__portabase.md",
-      "readme_download_url": null,
-      "readme_sha256": "37989f13327267f2b76db780f295585cc57f6e5ce5579ab7f4536e1aa11a4e69",
+      "readme_download_url": "https://raw.githubusercontent.com/Portabase/portabase/main/README.md",
+      "readme_sha256": "7b7aec18f95b3973c6f5c67fb251ec48648cf1de8898ea882178b62d6c13de76",
       "error": null
     },
     {
@@ -477,10 +507,25 @@
       "app_references": [
         "posthog"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__PostHog__posthog.md",
-      "readme_download_url": "https://raw.githubusercontent.com/PostHog/posthog/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f98e9a0227a8e7fb88fd0507ea0f125d4de71c46795ca1662bfccc2e5ba82da8",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/Pouzor/homelable",
+      "repo_url": "github.com/Pouzor/homelable",
+      "host": "github.com",
+      "owner": "Pouzor",
+      "repo": "homelable",
+      "app_references": [
+        "homelable"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__Pouzor__homelable.md",
+      "readme_download_url": "https://raw.githubusercontent.com/Pouzor/homelable/main/README.md",
+      "readme_sha256": "8d8e3ea3a1d3c9619449d818f34b1e77e9b38af8d49faa688f69e6b7d1d0b096",
       "error": null
     },
     {
@@ -642,10 +687,10 @@
       "app_references": [
         "rackula"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__RackulaLives__Rackula.md",
-      "readme_download_url": null,
-      "readme_sha256": "5416bd85228674a60c2f9a87ba2bd432c9338b3146a8d69a2820bc0f86b16aaf",
+      "readme_download_url": "https://raw.githubusercontent.com/RackulaLives/Rackula/main/README.md",
+      "readme_sha256": "a43800f7e1b381008d20ebe2ae5c6733316d6d7b17189b02d278bc2135b9eb36",
       "error": null
     },
     {
@@ -687,9 +732,9 @@
       "app_references": [
         "plex-rewind"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__RaunoT__plex-rewind.md",
-      "readme_download_url": "https://raw.githubusercontent.com/RaunoT/plex-rewind/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "6864fa7d60e3643f7d3abda5bdc341d75ca0c6c9da5c48162978ea4743a40d75",
       "error": null
     },
@@ -706,51 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__Readarr__Readarr.md",
       "readme_download_url": null,
       "readme_sha256": "e22fce66836a3bf47d7ed4cc1fe4d05594e248bb06a694ce9fe59a59b1c6ecee",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Reaparr/Reaparr",
-      "repo_url": "github.com/Reaparr/Reaparr",
-      "host": "github.com",
-      "owner": "Reaparr",
-      "repo": "Reaparr",
-      "app_references": [
-        "reaparr"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Reaparr__Reaparr.md",
-      "readme_download_url": null,
-      "readme_sha256": "6817aac9c7c7e51ffdd9c43493b18f5391a2a2e3c258bf6b91e23f50216ec36a",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/Receipt-Wrangler/receipt-wrangler",
-      "repo_url": "github.com/Receipt-Wrangler/receipt-wrangler",
-      "host": "github.com",
-      "owner": "Receipt-Wrangler",
-      "repo": "receipt-wrangler",
-      "app_references": [
-        "receipt-wrangler"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Receipt-Wrangler__receipt-wrangler.md",
-      "readme_download_url": null,
-      "readme_sha256": "ba1e1a3a54faabdd28c00fe6b58eb3c6789bf00fe32ec7ef9846363e10c816bc",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/RemyFV/WoLi-webgui",
-      "repo_url": "github.com/RemyFV/WoLi-webgui",
-      "host": "github.com",
-      "owner": "RemyFV",
-      "repo": "WoLi-webgui",
-      "app_references": [
-        "woli-webgui"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__RemyFV__WoLi-webgui.md",
-      "readme_download_url": null,
-      "readme_sha256": "5479e7bff281baaad9c6fee3890ba88e687cec8d66630daa6845ad9bdc10954c",
       "error": null
     }
   ]

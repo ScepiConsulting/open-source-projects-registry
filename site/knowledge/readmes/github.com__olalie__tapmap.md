@@ -78,13 +78,15 @@ TapMap makes this visible so you can:
 
 ## What TapMap shows
 
-- Services your computer connects to  
-- Their approximate locations on a world map  
-- Nearby locations highlighted when multiple connections overlap  
+- Services your computer connects to
+- Their approximate locations on a world map
+- Application information for each network operator
+- Operating system verification status for applications
+- Nearby locations highlighted when multiple connections overlap
 - Insights panel showing new and frequent activity over time
-- Daily Activity Report with application patterns, provider analysis, and activity timelines  
-- Unmapped public services with missing geolocation  
-- Established LAN and LOCAL services  
+- Daily Activity Report with application patterns, provider analysis, and activity timelines
+- Unmapped public services with missing geolocation
+- Established LAN and LOCAL services
 - Local open ports (TCP LISTEN and UDP bound)
 
 All data is collected locally on your machine.
@@ -93,10 +95,11 @@ All data is collected locally on your machine.
 
 ## How to use
 
-- Hover map markers for a summary
-- Click map markers for detailed information
-- Open the menu in the upper-left corner to access Insights, network views, and application information
-- Open the Daily Activity Report with D
+- Hover map markers to see applications using the selected network operator
+- Click map markers for detailed application information
+- Enable **Technical details** in the **NETWORK** menu to display executable paths, processes, PIDs, signatures, and other technical information
+- Open the menu in the upper-left corner to access Insights and network tools
+- Open the Daily Activity Report with **D**
 - Click countries in Insights to zoom to a country
 
 ---
@@ -133,6 +136,7 @@ TapMap follows a simple local pipeline:
 It uses:
 
 - `psutil` (Windows and Linux) or `lsof` (macOS) to read active network connections
+- Operating system metadata and verification mechanisms to identify and verify applications
 - GeoIP databases for IP geolocation
 - Dash and Plotly to render an interactive world map
 
@@ -168,9 +172,10 @@ Installation, updates, provider selection, and manual installation are documente
 
 Additional documentation:
 
-- [Docker](https://olalie.github.io/tapmap/docker/)
+- [Application Information](https://olalie.github.io/tapmap/application-information/)
 - [GeoIP Database Management](https://olalie.github.io/tapmap/geodb-management/)
 - [Environment Variables](https://olalie.github.io/tapmap/environment-variables/)
+- [Docker](https://olalie.github.io/tapmap/docker/)
 - [Backend Testing](https://olalie.github.io/tapmap/backend-testing/)
 - [Privacy Policy](https://olalie.github.io/tapmap/privacy/)
 
@@ -181,9 +186,16 @@ Additional documentation:
 ![TapMap features](docs/images/features.gif)
 
 #### Main view
-Interactive world map with live connections, Insights, and quick access to major features.
+
+Interactive world map with live connections, application information, operating system verification status, Insights, and quick access to major features.
 
 ![Main view](docs/images/menu_and_insights.png)
+
+#### Application information
+
+Hover over map markers to see the applications using each network operator. Click a marker for additional application details or enable **Technical details** for executable paths, processes, PIDs, signatures, and other technical information.
+
+![Application information](docs/images/application_info.png)
 
 #### Daily Activity Report
 Historical analysis of applications, providers, countries, and activity patterns observed during the last 30 days.
@@ -216,6 +228,7 @@ Inspect connections that could not be geolocated and therefore do not appear on 
 | U   | Unmapped public services |
 | L   | Established LAN/LOCAL services |
 | O   | Open ports |
+| T   | Toggle Technical details |
 | G   | GeoIP Database Management |
 | E   | Export cache |
 | C   | Clear cache |
@@ -307,6 +320,10 @@ Run tests:
 ---
 
 #### Build distribution packages (optional)
+
+Install build dependencies:
+
+    pip install -r requirements-build.txt
 
 Build the distribution package for the current platform:
 

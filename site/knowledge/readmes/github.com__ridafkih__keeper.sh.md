@@ -4,7 +4,7 @@
 
 Keeper.sh is a simple & open-source calendar syncing tool. It allows you to pull events from your Google Calendar, Outlook, iCloud, Fastmail, CalDAV server, or remotely hosted iCal and ICS links, and push them to one or many calendars so the time slots can align across them all. Google, Outlook, iCloud, Fastmail, and CalDAV are first-class integrations that can each be used as a source or as a destination, while iCal and ICS links are pull-only. It also serves as a global MCP server and API for you or your agents to manage all your calendars from one convenient interface.
 
-The recommended way to run it is the hosted version at [keeper.sh](https://keeper.sh/register): the same code, minus the server, the domain, the upgrades, the backups and the Google and Microsoft sign-in apps you would otherwise register yourself. Self-hosting is a first-class path and every Pro feature is included when you self-host — that is not a trial, and it is not going away. It costs you the upkeep instead of the $5.
+The recommended way to run it is the hosted version at [keeper.sh](https://www.keeper.sh/register): the same code, minus the server, the domain, the upgrades, the backups and the Google and Microsoft sign-in apps you would otherwise register yourself. Self-hosting is a first-class path and every Pro feature is included when you self-host — that is not a trial, and it is not going away. It costs you the upkeep instead of the $5.
 
 # Features
 
@@ -127,12 +127,12 @@ Neither half is schedule-only. `POST /api/v1/sync`, or `trigger_sync` over MCP, 
 
 This is the version I would point most people at, including people perfectly capable of running it themselves. It is the same engine on hardware I keep running, so the hours go into your calendar instead of your infrastructure — and paying for it is what funds the work on both versions.
 
-Head to [keeper.sh](https://keeper.sh/register) to get started with the cloud-hosted version.
+Head to [keeper.sh](https://www.keeper.sh/register) to get started with the cloud-hosted version.
 
 |                             | Free       | Pro (Cloud-Hosted) | Pro (Self-Hosted) |
 | --------------------------- | ---------- | ------------------ | ----------------- |
 | **Monthly Price**           | $0 USD     | $5 USD             | $0                |
-| **Annual Price**            | $0 USD     | $42 USD (-30%)     | $0                |
+| **Annual Price**            | $0 USD     | $45 USD (-25%)     | $0                |
 | **Refresh Interval**        | 30 minutes | 1 minute           | 1 minute          |
 | **Linked Account Limit**    | 2          | ∞                  | ∞                 |
 | **Sync Mapping Limit**      | 3          | ∞                  | ∞                 |
@@ -181,8 +181,8 @@ There are seven images currently available: two designed for convenience, and fi
 | MICROSOFT_CLIENT_ID            | `api`, `cron`, `worker` | Optional. Required for Microsoft Outlook integration.                                                                                                               |
 | MICROSOFT_CLIENT_SECRET        | `api`, `cron`, `worker` | Optional. Required for Microsoft Outlook integration.                                                                                                               |
 | POSTGRES_PASSWORD              | `standalone`  | Optional. Custom password for the internal PostgreSQL database in `keeper-standalone`. If unset, defaults to `keeper`. The database is not exposed outside the container, so this is low risk, but can be set for defense in depth. |
+| BLOCK_PRIVATE_RESOLUTION       | `api`, `cron`, `worker` | Optional. Set to `true` to block outbound fetches (ICS subscriptions, CalDAV servers) from resolving to private/reserved network addresses. Prevents SSRF. Defaults to `false` for backward compatibility with self-hosted setups that use local CalDAV/ICS servers. |
 | BLOCK_PRIVATE_RESOLUTION       | `api`, `cron` | Optional. Set to `true` to block outbound fetches (ICS subscriptions, CalDAV servers) from resolving to private/reserved network addresses. Prevents SSRF. Defaults to `false` for backward compatibility with self-hosted setups that use local CalDAV/ICS servers. |
-| PRIVATE_RESOLUTION_WHITELIST          | `api`, `cron` | Optional. When `BLOCK_PRIVATE_RESOLUTION` is `true`, this comma-separated list of hostnames or IPs is exempt from the restriction.<br><br>e.g. `192.168.1.50,radicale.local,10.0.2.12` |
 | TRUSTED_ORIGINS                | `api`         | Optional. Comma-separated list of additional trusted origins for CSRF protection.<br><br>e.g. `http://192.168.1.100,http://keeper.local,https://keeper.example.com` |
 | WEBHOOK_PUBLIC_URL             | `api`, `cron` | Optional. Public HTTPS origin that Google Calendar and Microsoft Graph can reach your instance on. Setting it turns on realtime push, so Keeper.sh picks up calendar changes within seconds instead of waiting for the next poll. Leave it unset and nothing changes: polling continues exactly as before and no subscription is ever registered with a provider. Realtime push is a Pro feature, and self-hosted instances with `COMMERCIAL_MODE` off are treated as Pro. Must be a public `https://` origin with no query string or fragment — `localhost`, private-range and `.local` addresses are rejected at boot, since no provider could deliver to them.<br><br>e.g. `https://keeper.example.com` |
 | PUSH_REDUCED_POLLING           | `cron`        | Optional. Reserved for a future release that lengthens the polling interval for calendars with a proven-healthy push subscription. Has no effect today.              |
@@ -278,7 +278,7 @@ The following will generate a `.env` file that contains the key used to generate
 ```bash
 cat > .env << EOF
 # BETTER_AUTH_SECRET and ENCRYPTION_KEY are required.
-# TRUSTED_ORIGINS is required if you plan on accessing Keeper from an
+# TRUSTED_ORIGINS is required if you plan on accessing Keeper.sh from an
 # origin other than http://localhost/
 BETTER_AUTH_SECRET=$(openssl rand -base64 32)
 ENCRYPTION_KEY=$(openssl rand -base64 32)
@@ -594,7 +594,7 @@ Keeper.sh includes an optional MCP server that lets AI agents (such as Claude) a
 
 | Tool                  | Description                                                                                                                                   |
 | --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
-| `list_calendars`      | List all calendars connected to Keeper, including provider name and account.                                                                   |
+| `list_calendars`      | List all calendars connected to Keeper.sh, including provider name and account.                                                                   |
 | `get_event_count`     | Get the number of calendar events. Optionally scoped to a date range with `from` and `to` ISO 8601 datetimes.                                  |
 | `get_events`          | Get calendar events within a date range. Accepts ISO 8601 datetimes and an IANA timezone identifier used to localize event times.              |
 | `get_event`           | Get a single calendar event by its ID.                                                                                                         |

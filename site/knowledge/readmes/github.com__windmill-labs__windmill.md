@@ -31,7 +31,7 @@ Scripts are turned into sharable UIs automatically, and can be composed together
 </p>
 
 <p align="center">
-  <a href="https://app.windmill.dev">Try it</a> - <a href="https://www.windmill.dev/">Website</a> - <a href="https://www.windmill.dev/docs/intro/">Docs</a> - <a href="https://discord.gg/V7PM2YHsPB">Discord</a> - <a href="https://hub.windmill.dev">Hub</a> - <a href="https://www.windmill.dev/docs/misc/contributing">Contributor's guide</a>
+  <a href="https://app.windmill.dev">Try it</a> - <a href="https://www.windmill.dev/">Website</a> - <a href="https://www.windmill.dev/docs/intro/">Docs</a> - <a href="https://discord.gg/V7PM2YHsPB">Discord</a> - <a href="https://hub.windmill.dev">Hub</a> - <a href="./CONTRIBUTING.md">Contributing</a>
 </p>
 
 # Windmill - Developer platform for APIs, background jobs, workflows and UIs
@@ -62,6 +62,7 @@ https://github.com/user-attachments/assets/d80de1d9-64de-4d89-aacd-6df23fa81fc4
   - [Run a local dev setup](#run-a-local-dev-setup)
     - [Frontend only](#frontend-only)
     - [Backend + Frontend](#backend--frontend)
+  - [Contributing](#contributing)
   - [Contributors](#contributors)
   - [Copyright](#copyright)
 
@@ -284,6 +285,7 @@ On self-hosted instances, you might want to import all the approved resource typ
 | MIN_FREE_DISK_SPACE_MB              | 15000                            | Minimum amount of free space on worker. Sends critical alert if worker has less free space.                                                                                                        | Worker                |
 | RUN_UPDATE_CA_CERTIFICATE_AT_START  | false                            | If true, runs CA certificate update command at startup before other initialization                                                                                                                 | All                   |
 | RUN_UPDATE_CA_CERTIFICATE_PATH      | /usr/sbin/update-ca-certificates | Path to the CA certificate update command/script to run when RUN_UPDATE_CA_CERTIFICATE_AT_START is true                                                                                            | All                   |
+| GOOGLE_APPLICATION_CREDENTIALS      | None                             | (ee only) Credentials file for GCP Pub/Sub triggers that authenticate as the instance rather than through a `gcloud` resource (workspace admins only). Application default credentials also resolve the gcloud well-known file and the GCE metadata server. Workload Identity Federation files work with the `file`, `url` and `aws` credential sources; the `executable` source is not supported. | Server                |
 
 ## Run a local dev setup
 
@@ -328,6 +330,12 @@ running options.
    1. `env DATABASE_URL=<YOUR_DATABASE_URL> RUST_LOG=info cargo run`
    2. You can specify any feature flag you want to enable, for example `cargo run --features python` to enable the python executor.
 7. Windmill should be available at `http://localhost:3000`
+
+## Contributing
+
+At this time, we are not seeking outside contribution. Bug reports and feature requests remain very
+welcome, and small, trivially-verified PRs that fix a problem are still accepted. See
+[CONTRIBUTING.md](./CONTRIBUTING.md) for the full policy.
 
 ## Contributors
 

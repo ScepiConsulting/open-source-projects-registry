@@ -1,7 +1,7 @@
 # Runtipi — A personal homeserver for everyone
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-56-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-57-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 [![License](https://img.shields.io/github/license/runtipi/runtipi)](https://github.com/runtipi/runtipi/blob/master/LICENSE)
@@ -29,10 +29,10 @@ Runtipi is a personal homeserver orchestrator that makes it easy to manage and r
 
 Thanks to our generous sponsors for supporting the development of Runtipi:
 
-| CodeRabbit       |
-|------------------|
-| <img src="https://raw.githubusercontent.com/runtipi/runtipi/develop/screenshots/sponsors/coderabbit.png" alt="CodeRabbit logo" width="200"/> |
-| [coderabbit.ai](https://coderabbit.ai?utm_source=runtipi&utm_campaign=readme) |
+| CodeRabbit       | TestMu AI        |
+|------------------| ------------------|
+| <img src="https://raw.githubusercontent.com/runtipi/runtipi/develop/screenshots/sponsors/coderabbit.png" alt="CodeRabbit logo" width="200"/> | <img src="https://assets.testmu.ai/resources/images/logos/logo.svg" style="vertical-align: middle;" width="250" height="45" />
+| [coderabbit.ai](https://coderabbit.ai?utm_source=runtipi&utm_campaign=readme) | Browser testing via [testmu.ai](https://www.testmu.ai/?utm_source=runtipi&utm_medium=sponsor)
 
 ## Getting started
 
@@ -156,6 +156,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/skajmer"><img src="https://avatars.githubusercontent.com/u/64442855?v=4?s=100" width="100px;" alt="skajmer"/><br /><sub><b>skajmer</b></sub></a><br /><a href="#translation-skajmer" title="Translation">🌍</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/AlphaRyz3"><img src="https://avatars.githubusercontent.com/u/71471476?v=4?s=100" width="100px;" alt="AlphaRyze"/><br /><sub><b>AlphaRyze</b></sub></a><br /><a href="#translation-AlphaRyz3" title="Translation">🌍</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jnth"><img src="https://avatars.githubusercontent.com/u/7796167?v=4?s=100" width="100px;" alt="Jonathan Virga"/><br /><sub><b>Jonathan Virga</b></sub></a><br /><a href="https://github.com/runtipi/runtipi/commits?author=jnth" title="Code">💻</a></td>
+    </tr>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/existentialcoder"><img src="https://avatars.githubusercontent.com/u/32480876?v=4?s=100" width="100px;" alt="Shravan Balasubramanian"/><br /><sub><b>Shravan Balasubramanian</b></sub></a><br /><a href="https://github.com/runtipi/runtipi/commits?author=existentialcoder" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

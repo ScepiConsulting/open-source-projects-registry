@@ -1,8 +1,53 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-08-16T03:53:53Z",
+  "generated_at": "2026-08-23T03:56:31Z",
   "items": [
+    {
+      "repo_key": "github.com/devrsi0n/chirpy",
+      "repo_url": "github.com/devrsi0n/chirpy",
+      "host": "github.com",
+      "owner": "devrsi0n",
+      "repo": "chirpy",
+      "app_references": [
+        "chirpy"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__devrsi0n__chirpy.md",
+      "readme_download_url": null,
+      "readme_sha256": "f2c5d184f1c8c97240e73e1b5caad1da4841cbbc99467233e12ebcc6c0f9ceea",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dgtlmoon/changedetection.io",
+      "repo_url": "github.com/dgtlmoon/changedetection.io",
+      "host": "github.com",
+      "owner": "dgtlmoon",
+      "repo": "changedetection.io",
+      "app_references": [
+        "changedetection"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dgtlmoon__changedetection.io.md",
+      "readme_download_url": null,
+      "readme_sha256": "eac116207f6be25f096bb272f94695aeca7ee8f1d45cc562e0e556e1222f8e68",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/dh1011/subscription-manager",
+      "repo_url": "github.com/dh1011/subscription-manager",
+      "host": "github.com",
+      "owner": "dh1011",
+      "repo": "subscription-manager",
+      "app_references": [
+        "subscription-manager"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__dh1011__subscription-manager.md",
+      "readme_download_url": null,
+      "readme_sha256": "49caed408ae93e91589daf26d88526b641fe83bdb06e833d7e52ed37bfacaaf5",
+      "error": null
+    },
     {
       "repo_key": "github.com/diced/zipline",
       "repo_url": "github.com/diced/zipline",
@@ -12,10 +57,10 @@
       "app_references": [
         "zipline"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__diced__zipline.md",
-      "readme_download_url": null,
-      "readme_sha256": "3e8c513b322d2b842c97ee62136ce439621e31386d7bf675c5e1377831c53f1b",
+      "readme_download_url": "https://raw.githubusercontent.com/diced/zipline/trunk/README.md",
+      "readme_sha256": "c4d8407babf342b6711cefd60a0f155fa1aef7ad4a5ccddb6224ed12b50acefe",
       "error": null
     },
     {
@@ -42,10 +87,10 @@
       "app_references": [
         "tootik"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dimkr__tootik.md",
-      "readme_download_url": null,
-      "readme_sha256": "bf51fbd39efacdadefaeed3d1758d3cbb5e61c8e49597b28abeed2837a641e44",
+      "readme_download_url": "https://raw.githubusercontent.com/dimkr/tootik/main/README.md",
+      "readme_sha256": "593330ddcee70107e5407a89667810f57af120e6cbf532c1908e49ae2c74c751",
       "error": null
     },
     {
@@ -312,9 +357,9 @@
       "app_references": [
         "dokku"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dokku__dokku.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dokku/dokku/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c5e03d374c5d48280216f8f21097df5ce358c2d72249ba09ff0dfb24d1fdf6b0",
       "error": null
     },
@@ -360,7 +405,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dongdongbh__Mindwtr.md",
       "readme_download_url": "https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/README.md",
-      "readme_sha256": "f0fbb388acf883b0d4fbca41f721b97965e3d4dc593d509cbf6969c4778274b6",
+      "readme_sha256": "82c8e061d0ede14395c15d0f24682276d4ed2ec5d88f9ee377bae74e52af84d3",
       "error": null
     },
     {
@@ -417,10 +462,10 @@
       "app_references": [
         "drawdb"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__drawdb-io__drawdb.md",
-      "readme_download_url": null,
-      "readme_sha256": "9cf815b5d78ec4b68ad3049a9d61ac7d5b96f80e1326c7b950f0a78267943ced",
+      "readme_download_url": "https://raw.githubusercontent.com/drawdb-io/drawdb/main/README.md",
+      "readme_sha256": "222fab72a21b26516a5cc633d3908c7a75be9af2aba5770badccef899791bbde",
       "error": null
     },
     {
@@ -435,7 +480,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dreeveapp__dreeve.md",
       "readme_download_url": "https://raw.githubusercontent.com/dreeveapp/dreeve/master/README.md",
-      "readme_sha256": "d882951ade09dd867474cf0f0fdd58780f34c1d8cc348995eb96d5a552f96d9a",
+      "readme_sha256": "59e108cf31a3941f5d2ddf892fc72cb22e1dba098758b4f82343af75cf6ddfd7",
       "error": null
     },
     {
@@ -705,53 +750,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__ellite__scrob.md",
       "readme_download_url": "https://raw.githubusercontent.com/ellite/scrob/main/README.md",
-      "readme_sha256": "b87bf56fe7b4d36479f7ec6b52792777b3edab75ffc14ea6e18d8ddef5e44c47",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/emoncms/emoncms",
-      "repo_url": "github.com/emoncms/emoncms",
-      "host": "github.com",
-      "owner": "emoncms",
-      "repo": "emoncms",
-      "app_references": [
-        "emoncms"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__emoncms__emoncms.md",
-      "readme_download_url": null,
-      "readme_sha256": "0e099a563f6cb6281435dd86526a37ecee225ec627d571078d5bfd4c0f59ca90",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/enchant97/note-mark",
-      "repo_url": "github.com/enchant97/note-mark",
-      "host": "github.com",
-      "owner": "enchant97",
-      "repo": "note-mark",
-      "app_references": [
-        "note-mark"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__enchant97__note-mark.md",
-      "readme_download_url": null,
-      "readme_sha256": "d6a98181311e1306f9a36aed9cd6180a7acb87552e7f0ab281bfc4864ba5cd97",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ente/ente",
-      "repo_url": "github.com/ente/ente",
-      "host": "github.com",
-      "owner": "ente",
-      "repo": "ente",
-      "app_references": [
-        "ente-auth",
-        "ente-photos"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__ente__ente.md",
-      "readme_download_url": null,
-      "readme_sha256": "d2af70e256ff732ddc002cd3f6937fa8deb1bb9f46fd130d4f5bb418b7a608fc",
+      "readme_sha256": "e8c24027f42f9d008499aaf5ae702c2abff3a026a61c77aa2a5a5e58d4e486d1",
       "error": null
     }
   ]
