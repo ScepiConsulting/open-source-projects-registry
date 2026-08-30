@@ -97,6 +97,7 @@ homebutler report --json
 - **Run a doctor check** — diagnose resource pressure, stopped containers, public ports, backup hygiene, notifications, and report baseline readiness
 - **Catch crashes** — save logs before/after Docker, systemd, or PM2 restarts and detect flapping loops
 - **Verify backups** — boot backups in isolated containers before you trust them
+- **See a Proxmox cluster** — nodes, QEMU and LXC guests, storage, and task status, with power actions that name their target explicitly
 - **Use it anywhere** — CLI, JSON, web dashboard, or MCP for AI agents without giving them SSH
 
 ## Why homebutler?
@@ -173,6 +174,7 @@ Findings
 
 ```bash
 homebutler inventory scan
+homebutler inventory show --filter exposed
 homebutler inventory export --format mermaid
 homebutler --json inventory scan
 ```
@@ -276,6 +278,26 @@ homebutler watch start                  # Foreground, Ctrl+C to stop
 homebutler watch start --interval 10s   # Custom poll interval (default 30s)
 ```
 
+```bash
+homebutler watch install     # register it with systemd or launchd
+homebutler watch installed   # is it registered?
+homebutler watch uninstall
+```
+
+`watch install` hands the loop to whatever supervises the host — a systemd user
+unit on Linux, a launchd agent on macOS — so monitoring survives logout and
+reboot. Both are user-level and neither is a preference: on Linux the watch list
+lives in your home directory, so a root unit would find an empty list; on macOS
+Docker Desktop only runs inside a logged-in session, so a LaunchDaemon would
+poll a daemon that is not there. On Linux a user unit stops at logout unless you
+run `sudo loginctl enable-linger $USER`, which `watch install` tells you.
+
+`watch start` is the monitoring process. It watches the containers and services
+on the watch list for restarts, checks CPU, memory and disk against your
+thresholds, and runs any remediation rules you have configured — one process,
+one set of notification providers. `alerts --watch` still exists and does the
+threshold half on its own.
+
 When a crash is detected, you'll see:
 
 ```
@@ -353,7 +375,37 @@ alerts:
       metric: cpu
       threshold: 90
       action: notify
+
+    - name: elsa-monitor-down
+      metric: container
+      kind: systemd          # docker (default) | systemd | pm2
+      watch: [lh-elsa-monitor.service]
+      action: restart
 ```
+
+### Restarting things that are not containers
+
+`action: restart` restarts Docker containers unless the rule says otherwise.
+`kind: systemd` or `kind: pm2` points it at a service or a PM2 app instead.
+
+The kind is written on the rule rather than looked up from the watch list, so
+restarting a host service is something you asked for in the config. It also
+means every rule written before `kind` existed keeps meaning exactly what it
+meant.
+
+Two things worth knowing before using it:
+
+**`systemctl restart` needs root or a polkit rule.** Running homebutler
+unprivileged, a systemd restart will be refused, reported as failed, and
+warned about when `alerts --watch` starts rather than when the rule first
+fires.
+
+**A target that is flapping is not restarted.** Restarting something already
+in a restart loop feeds the loop, and most systemd units carry
+`Restart=always`, so homebutler restarting them fights systemd's own backoff.
+The thresholds are the `watch.flapping` ones above, and the skip is reported
+rather than counted as either success or failure. This applies to Docker
+targets too.
 
 Legacy `~/.homebutler/watch/config.json` is still read as a fallback for watch-specific settings, and legacy `alerts.yaml` notify/webhook provider settings are still accepted for older setups.
 
@@ -364,7 +416,9 @@ Legacy `~/.homebutler/watch/config.json` is still read as a fallback for watch-s
 - `watch.notify_on: off` — disable watch notifications without removing provider config
 - `watch.cooldown: 5m` — suppress duplicate notifications for the same event fingerprint during the cooldown window
 - `watch.flapping` — optional advanced tuning for restart-loop detection
-- `watch.retention.max_incidents: 200` — how many incidents to keep on disk, newest first. Each incident stores up to 100 captured log lines, so the directory grows fastest exactly when a service is restarting in a loop. Set `-1` to keep everything.
+- `watch.retention.max_incidents: 200` — how many incidents to keep on disk, newest first. The directory grows fastest exactly when a service is restarting in a loop. Set `-1` to keep everything.
+
+  Each incident keeps up to 100 captured log lines per side, and at most 64 KB of them. Line counts alone do not bound a file: one stack trace or JSON document on a single line is arbitrarily long, and a container being OOM-killed is exactly the one likely to write one. A log that does not fit keeps its end — the last thing a process said is what explains why it stopped — and says how much was dropped.
 
 These settings can also be written under a `watch.notify:` block, which is the
 canonical form:
@@ -388,6 +442,34 @@ Both spellings are read, so either layout works. If a file contains both, the
 homebutler watch remove nginx           # Stop watching
 homebutler watch check                  # One-shot check (no continuous monitoring)
 ```
+
+### 🧊 Proxmox VE
+
+```bash
+homebutler proxmox status
+homebutler proxmox guests --status running
+homebutler proxmox guest shutdown --node pve1 --type lxc --vmid 105 --confirm
+homebutler proxmox task UPID:pve1:... --node pve1
+```
+
+A Proxmox endpoint is its own kind of target, configured under `proxmox:` with an
+API token rather than SSH, so it does not join the `--server` or `--all` fan-out.
+TLS verification stays on: trust comes from a pinned SHA-256 fingerprint, then a
+CA file, and only then an explicit `insecure` fallback.
+
+Reads are plain. Power actions are not: every one of them takes an explicit
+endpoint, node, guest type and VMID, and refuses to run without `--confirm`,
+which is checked before the token is even read. `shutdown` asks the guest to shut
+down cleanly — it is not Proxmox's hard `stop`, which cuts power and can leave a
+filesystem behind it. A successful action reports the task it submitted, not that
+the guest finished; `proxmox task` answers that separately.
+
+`proxmox script` prints the install command for a Community Script pinned to one
+commit, along with a warning that the script is not reviewed by homebutler and
+runs as root. It never fetches or runs it — see [#62](https://github.com/Higangssh/homebutler/issues/62)
+for why that line is where it is.
+
+📖 **[Proxmox setup, tokens, and TLS →](docs/proxmox.md)**
 
 ### 🖥️ TUI Dashboard
 
@@ -510,6 +592,7 @@ Commands:
   watch add/list/remove  Manage watched containers
   watch check/start   One-shot or continuous restart detection
   watch history/show  Browse restart history
+  proxmox status      Proxmox VE cluster, nodes, guests, and storage
   serve               Web dashboard (browser-based, go:embed)
 
 Flags:
@@ -536,7 +619,10 @@ Commands:
   watch list          Show watched containers
   watch remove <name> Remove container from watch list
   watch check         One-shot restart check
-  watch start         Continuous restart monitoring loop
+  watch start         Continuous monitoring: restarts, thresholds, rules
+  watch install       Register watch with systemd or launchd
+  watch installed     Report whether it is registered
+  watch uninstall     Remove the service unit
   watch history       List restart history (alias: incidents)
   watch show <id>     Show restart details with logs
   serve               Web dashboard (browser-based, go:embed)
@@ -544,6 +630,20 @@ Commands:
   docker restart <n>  Restart a container
   docker stop <n>     Stop a container
   docker logs <n>     Show container logs
+  docker top <n>      Show processes running inside a container
+  docker inspect <n>  Show image, state, ports, mounts, networks, health
+  report              What changed since the last snapshot
+  inventory scan      Map containers, ports, and topology
+  inventory show      Same as scan (--filter exposed narrows it)
+  inventory export    Export the map (--format mermaid)
+  proxmox status      Proxmox VE cluster, nodes, guests, storage
+  proxmox guests      List QEMU and LXC guests
+  proxmox node <n>    Node detail
+  proxmox guest ...   start / shutdown / reboot (needs --confirm)
+  proxmox task <upid> Task status for an action already submitted
+  proxmox tasks       Recent tasks on a node
+  proxmox script      Community Script install commands (prints, never runs)
+  notify test         Send a test notification through configured providers
   wake <name>         Send Wake-on-LAN packet
   ports               List open ports with process info
   ps                  Show top processes (alias: processes)
@@ -551,7 +651,7 @@ Commands:
   ps --limit 20       Show top 20 (default: 10, 0 = all)
   network scan        Discover devices on LAN
   alerts              Show current alert status
-  alerts --watch      Continuous monitoring with real-time alerts
+  alerts --watch      Thresholds only (watch start covers these too)
   trust <server>      Register SSH host key (TOFU)
   backup              Backup Docker volumes, compose files, and env
   backup list         List existing backups
@@ -580,6 +680,9 @@ Flags:
   --local             Upgrade only the local binary (skip remote servers)
   --local <path>      Use local binary for deploy (air-gapped)
   --service <name>    Target a specific Docker service (backup/restore)
+  --allow-bind <path> Host path a restore may write a bind mount to (repeatable)
+  --endpoint <name>   Proxmox endpoint from config (optional if only one)
+  --confirm           Required for a Proxmox guest power action
   --to <path>         Custom backup destination directory
   --archive <path>    Specific backup archive for drill
   --all               Verify all supported apps (backup drill)
@@ -822,6 +925,15 @@ All three call the same `internal/` packages — no code duplication.
 ## Contributing
 
 Contributions welcome! Please open an issue first to discuss what you'd like to change.
+[CONTRIBUTING.md](CONTRIBUTING.md) covers what homebutler accepts and what a new
+target has to prove.
+
+## Security
+
+Found a vulnerability? Report it privately through
+[the Security tab](https://github.com/Higangssh/homebutler/security/advisories/new)
+rather than a public issue. [SECURITY.md](SECURITY.md) covers what is in scope
+and what to expect.
 
 ## License
 

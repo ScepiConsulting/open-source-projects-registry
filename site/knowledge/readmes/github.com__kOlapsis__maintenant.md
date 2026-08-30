@@ -149,6 +149,54 @@ kubectl apply -f deploy/kubernetes/
 
 maintenant auto-detects the in-cluster API. Read-only RBAC, namespace filtering, workload-level monitoring out of the box.
 
+### Native Linux install (no Docker)
+
+Run maintenant as a systemd service directly on any amd64 or arm64 Linux host. The published binaries are statically linked, so the same file runs on Debian, Ubuntu, RHEL, Alpine or Arch with nothing to install alongside it.
+
+**One-liner:**
+
+```bash
+curl -fsSL https://install.maintenant.dev | sudo bash
+```
+
+Installs the binary to `/usr/local/bin/maintenant`, creates a `maintenant` system user, enables the systemd service, and starts it immediately.
+
+**With custom configuration:**
+
+```bash
+curl -fsSL https://install.maintenant.dev | sudo bash -s -- \
+  --addr 0.0.0.0:8080 \
+  --baseUrl https://monitoring.example.com \
+  --organisationName "Acme Corp" \
+  --logLevel info
+```
+
+Configuration flags are persisted to `/etc/maintenant/maintenant.env` and reloaded on every `systemctl restart maintenant`. All `MAINTENANT_*` environment variables have a `--flagName` equivalent — run `maintenant --help` to see the full list.
+
+```bash
+# Useful commands after install
+systemctl status maintenant
+journalctl -fu maintenant
+maintenant --help
+maintenant --version
+```
+
+> For pinning a specific version, air-gapped installs, uninstall, and supply-chain verification, see the **[install documentation](https://docs.maintenant.dev/install)**.
+
+### Hetzner Cloud
+
+```bash
+hcloud server create \
+  --name maintenant \
+  --type cx22 \
+  --image ubuntu-24.04 \
+  --location nbg1 \
+  --ssh-key my-key \
+  --user-data-from-file deploy/hetzner/cloud-init.yaml
+```
+
+The [cloud-init file](deploy/hetzner/cloud-init.yaml) installs Docker and starts maintenant on first boot, with the dashboard bound to loopback. Cloud Firewall rules, Hetzner Volumes for the database, agent enrolment over a private Cloud Network, Load Balancer checks and Kubernetes clusters built with `kube-hetzner` / `hetzner-k3s` / Talos are covered in the **[Hetzner Cloud Deployment Guide](https://docs.maintenant.dev/guides/hetzner/)**.
+
 > For detailed setup instructions, advanced configuration, and label reference, see the **[full documentation](https://kolapsis.github.io/maintenant/)**.
 
 ---
@@ -165,7 +213,13 @@ Monitor your entire fleet from a single pane of glass. One central **server** re
 
 ```bash
 # On each remote host — one command, generated for you in the UI
-curl -fsSL https://install.maintenant.dev | sudo bash -s -- \
+docker run -d \
+  --name maintenant-agent \
+  --restart unless-stopped \
+  -v /var/run/docker.sock:/var/run/docker.sock:ro \
+  -v /proc:/host/proc:ro \
+  -v maintenant-agent-data:/var/lib/maintenant \
+  ghcr.io/kolapsis/maintenant:latest \
   --mode=agent \
   --server=grpcs://monitoring.example.com \
   --enrollment-token=mnt_enr_XXXXXXXXXXXXXXXX \
@@ -243,6 +297,7 @@ Built-in [Model Context Protocol](https://modelcontextprotocol.io/) server. Quer
 | ----------------------------------- | ----------------------- | ----------------------------------------------- |
 | `MAINTENANT_ADDR`                   | `127.0.0.1:8080`        | HTTP bind address                               |
 | `MAINTENANT_DB`                     | `./maintenant.db`       | SQLite database path                            |
+| `MAINTENANT_DATABASE_URL`           | *(empty)*               | PostgreSQL DSN, server/embedded only            |
 | `MAINTENANT_BASE_URL`               | `http://localhost:8080` | Base URL (used for heartbeat ping URLs and as the status page fallback) |
 | `MAINTENANT_STATUS_URL`             | —                       | Canonical public URL of the status page (e.g. `https://status.example.com`). Optional — falls back to `{BASE_URL}/status`. |
 | `MAINTENANT_ORGANISATION_NAME`      | `Maintenant`            | Organisation name on the status page            |
@@ -377,6 +432,7 @@ Each snapshot contains the following fields and **nothing else** (full wire form
 **Application fields** (this product owns these):
 
 - `edition` — `community`, `personal` or `pro`
+- `storage_engine` — `sqlite` or `postgres` (nothing else about the database)
 - `containers_total` — count of auto-discovered containers
 - `endpoints_total` — count of configured HTTP/TCP endpoints
 - `heartbeats_total` — count of configured heartbeat monitors
@@ -631,7 +687,7 @@ Full REST API under `/api/v1/` for automation and integration.
 ```
 
 - **Single binary** — Frontend embedded via `embed.FS`. One file to deploy. The same binary runs in three modes: `embedded` (single host, default), `server` (central ingestion), and `agent` (remote host) — see [Multi-Host Monitoring](#multi-host-monitoring).
-- **Zero dependencies** — SQLite is the only required datastore. No Redis, no Postgres, no message queue. The container runtime (Docker / Kubernetes) is **optional**: maintenant starts and serves endpoints, SSL, and heartbeat monitors even without a runtime socket — container monitoring resumes automatically when the runtime becomes available.
+- **Zero dependencies** — SQLite is the only required datastore. No Redis, no message queue, nothing to administer. A fleet operator may optionally back the server on a PostgreSQL they already run ([why](docs/guides/postgresql.md)); an agent is always SQLite. The container runtime (Docker / Kubernetes) is **optional**: maintenant starts and serves endpoints, SSL, and heartbeat monitors even without a runtime socket — container monitoring resumes automatically when the runtime becomes available.
 - **Real-time** — SSE pushes every state change to the browser instantly.
 - **Read-only** — maintenant never touches your containers. Observe only.
 - **Label-driven** — Configure monitoring through Docker labels. No YAML to maintain.
@@ -658,7 +714,7 @@ Full REST API under `/api/v1/` for automation and integration.
         <li>HTTP / TCP endpoint monitoring <sub>(up to 10)</sub></li>
         <li>Heartbeat &amp; cron monitoring <sub>(up to 5)</sub></li>
         <li>TLS certificate tracking <sub>(up to 5)</sub></li>
-        <li>Resource metrics (CPU, RAM, net, disk)</li>
+        <li>Resource metrics (CPU, RAM, net, disk) <sub>(7 days of history)</sub></li>
         <li>Network security insights</li>
         <li>Update intelligence (digest scan)</li>
         <li>Alert engine + webhook + Discord</li>
@@ -679,7 +735,7 @@ Full REST API under `/api/v1/` for automation and integration.
         <li><strong>CVE enrichment</strong> + risk scoring per container</li>
         <li><strong>Unified security posture</strong> dashboard</li>
         <li><strong>Incident management</strong> with public timeline</li>
-        <li>Changelog, resource history, OCSP stapling</li>
+        <li>Changelog, <strong>30 days</strong> of resource history, OCSP stapling</li>
       </ul>
       <p>For one person, on infrastructure they own or run for themselves — freelancers included. It does not cover monitoring someone else's infrastructure or reselling Maintenant as a service, and carries no support commitment.</p>
       <p>Includes <strong>one year of product updates</strong>, then €59 per extra year. Every version released inside that year stays licensed for life.</p>
@@ -698,6 +754,7 @@ Full REST API under `/api/v1/` for automation and integration.
         <li><strong>Subscriber notifications</strong> (email, webhook)</li>
         <li><strong>Status page branding</strong></li>
         <li><strong>The right to use Maintenant on behalf of others</strong></li>
+        <li><strong>90 days</strong> of resource history</li>
         <li><strong>Priority email support</strong></li>
       </ul>
       <p><a href="https://maintenant.dev/pricing/"><strong>Start free trial →</strong></a></p>
@@ -783,27 +840,33 @@ MAINTENANT_LICENSE_KEY=your-license-key
 
 ## Support the project
 
-maintenant is built independently in Bordeaux, France. No VC, no tracking, no telemetry, no data collection, no acquisition exit. The only way this keeps going is if users who benefit from it give back. **Here's how, ranked by impact:**
+maintenant is built independently in Bordeaux, France. No VC, no tracking, no acquisition exit, and no data collection beyond [anonymous opt-out telemetry](#telemetry). The only way this keeps going is if users who benefit from it give back. **Here's how, ranked by impact:**
 
 <table>
   <tr>
-    <td width="33%" valign="top" align="center">
+    <td width="25%" valign="top" align="center">
       <h3>1. Buy a licence</h3>
       <p><strong>Personal €149</strong> once · <strong>Pro €29/mo</strong></p>
       <p><sub>The single most impactful way to support the project. Unlocks advanced features AND funds development. Personal if the infrastructure is yours, Pro if you run it for others.</sub></p>
       <p><a href="https://maintenant.dev/pricing/"><strong>See editions →</strong></a></p>
     </td>
-    <td width="33%" valign="top" align="center">
+    <td width="25%" valign="top" align="center">
       <h3>2. Sponsor</h3>
       <p><strong>Any amount</strong> · one-off or monthly</p>
       <p><sub>Don't need a paid edition? Sponsor on GitHub. Every sponsor gets credited in the <a href="#backers">Backers</a> wall below.</sub></p>
       <p><a href="https://github.com/sponsors/kolapsis"><strong>Sponsor →</strong></a></p>
     </td>
-    <td width="33%" valign="top" align="center">
+    <td width="25%" valign="top" align="center">
       <h3>3. Spread the word</h3>
       <p><strong>Free · 10 seconds</strong></p>
       <p><sub>Star the repo, share on HN / Lobsters / Reddit / LinkedIn. Discoverability is oxygen for indie projects.</sub></p>
       <p><a href="https://github.com/kolapsis/maintenant"><strong>Star repo →</strong></a></p>
+    </td>
+    <td width="25%" valign="top" align="center">
+      <h3>4. Tell me how you use it</h3>
+      <p><strong>Two minutes</strong></p>
+      <p><sub>Read by the developer, quoted only if you allow it.</sub></p>
+      <p><a href="https://maintenant.dev/feedback/"><strong>Give feedback →</strong></a></p>
     </td>
   </tr>
 </table>

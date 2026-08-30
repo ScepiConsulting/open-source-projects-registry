@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-08-23T03:56:30Z",
+  "generated_at": "2026-08-30T09:03:24Z",
   "summary": {
     "apps": 1340,
     "repos": 1318,
-    "readme_ok": 167,
-    "readme_not_modified": 1098,
-    "readme_error": 53
+    "readme_ok": 148,
+    "readme_not_modified": 1116,
+    "readme_error": 54
   },
   "failed_repos": [
     {
@@ -52,6 +52,11 @@
       "repo_key": "codeberg.org/karrot/karrot-backend",
       "repo_url": "codeberg.org/karrot/karrot-backend",
       "error": "worker_exception: Invalid URL 'codeberg.org/karrot/karrot-backend/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/karrot/karrot-backend/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/mrmn/PdfDing",
+      "repo_url": "codeberg.org/mrmn/PdfDing",
+      "error": "worker_exception: Invalid URL 'codeberg.org/mrmn/PdfDing/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/mrmn/PdfDing/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/nwithan8/plex-prerolls",

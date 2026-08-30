@@ -33,11 +33,12 @@ MinusPod is a self-hosted server that removes ads before you ever hit play. It t
 - Podcasting 2.0: regenerated transcripts and chapters, AI-content disclosure, value-for-value tags passed through
 - Optional Podping listener refreshes a feed within seconds of the host announcing a new episode, on top of scheduled polling
 - OPML import/export, and an optional cover-art badge that marks the re-feed
+- Local feeds: build a feed from your own audio files instead of an upstream RSS feed, with single or bulk episode upload, a dry-run import preview, and the same ad-removal pipeline as a subscribed feed
 
 **Interface and ops**
 - Web UI with a waveform ad editor, plus feed, episode, pattern, sponsor, history, and stats views
 - Stats and cost analytics: ads cut, time saved, token usage and spend
-- Retention controls, encrypted backups, webhooks, and a full REST API with OpenAPI
+- Retention controls (global or per feed, including a never-delete archive mode), encrypted backups, webhooks, and a full REST API with OpenAPI
 - Single shared-password auth; runs behind a reverse proxy or Cloudflare tunnel
 
 ## How it works
@@ -102,6 +103,7 @@ Access the web UI at `http://localhost:8000/ui/` to add and manage feeds.
 | [Whisper / Transcription](docs/transcription.md) | GPU compute types, whisper.cpp, Groq, OpenAI Whisper, timeouts |
 | [Intel GPU Transcription (OpenVINO)](docs/transcription-openvino.md) | Offload Whisper to an Intel GPU via the OpenVINO Model Server |
 | [Finding Feeds & Usage](docs/feeds-and-usage.md) | Podcast search, finding RSS feeds, Audiobookshelf |
+| [Local Feeds](docs/local-feeds.md) | Build a feed from your own audio files: creation, uploads, bulk archive import, naming scheme, JSON sidecar schema |
 | [API & Webhooks](docs/api-and-webhooks.md) | REST endpoints, webhook events, payload templates |
 | [Security, Storage & Custom Assets](docs/security-and-storage.md) | Remote access, login lockout, backups, custom markers |
 | [Podcasting 2.0](docs/podcasting-2.0.md) | What MinusPod emits, regenerates, and deliberately strips from the Podcast Namespace, and why |
@@ -110,6 +112,10 @@ Access the web UI at `http://localhost:8000/ui/` to add and manage feeds.
 | [LLM Benchmark Report](benchmarks/llm/results/report.md) | Per-model F1, JSON compliance, latency, and cost across the benchmarked models |
 
 Or browse the [full docs index](docs/README.md).
+
+## Contributing
+
+Bug reports, feature requests, enhancements, and general feedback are all welcome. Open an issue using one of the templates, or send a pull request if you already have a fix in hand. For larger changes, open an issue first so we can talk through the approach before you write code. Two areas have their own contribution flows: ad patterns ([Community Patterns](patterns/README.md)) and benchmark results ([Benchmark Contributing](benchmarks/llm/CONTRIBUTING.md)). Fork-derived features and community bug reports are credited in the CHANGELOG.md entry that ships them; merged commits are credited automatically on the repo's contributors graph.
 
 ## Disclaimer
 

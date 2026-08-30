@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="apps/mobile/assets/images/icon.png" width="120" alt="Mindwtr Logo">
+<a href="https://mindwtr.app"><img src="apps/mobile/assets/images/icon.png" width="120" alt="Mindwtr Logo"></a>
 
 # Mindwtr
 
@@ -107,17 +107,19 @@ If you know GTD: that is Capture, Clarify, Organize, Engage, and Reflect, end to
 
 **Don't show me a cockpit when I just want to ride a bike.**
 
-Mindwtr is simple by default and powerful when you need it:
+Mindwtr is simple by default, powerful when you need it, and forgiving when life gets messy:
 
 - Advanced options stay hidden until they matter.
 - Fewer fields, fewer knobs, fewer distractions.
 - Clarity beats clutter: we say no to feature creep.
+- Come back after two weeks away and you get a manageable next step, not a guilt trip. No streaks, no productivity scores.
 
 ## Features
 
 - The full GTD loop, guided: capture, sort, do, review.
 - Focus view puts today's schedule and your next actions on one screen.
 - Your data lives on your device. Sync is optional, and you pick where: iCloud on Apple devices, Dropbox, a shared folder, your own server, or WebDAV.
+- WebDAV servers must return strong ETags and enforce conditional writes. During connection setup, Mindwtr verifies create-only writes, exact replacements, stale-write rejection, and conditional cleanup; providers that cannot prevent one device from overwriting another device’s generation are refused.
 - Projects with sections, areas, and manual task ordering for bigger plans.
 - Import tasks from your Obsidian notes, with links back to the source (desktop).
 - Optional AI helper: connect your own OpenAI, Gemini, or Claude account, or run a private AI on your own computer. Off by default.
@@ -329,10 +331,13 @@ Thanks to these monthly sponsors for supporting Mindwtr. Companies interested in
   <a href="https://github.com/alxgda" title="@alxgda">
     <img src="docs/assets/sponsors/alxgda.png" width="60" height="60" alt="@alxgda" />
   </a>
+  <a href="https://github.com/nomisterling" title="@nomisterling">
+    <img src="docs/assets/sponsors/nomisterling.png" width="60" height="60" alt="@nomisterling" />
+  </a>
 </p>
 
 <p align="center">
-  <sub><a href="https://github.com/jarrydstan">@jarrydstan</a> · <a href="https://github.com/ronmolenda">@ronmolenda</a> · <a href="https://github.com/karl1990">@karl1990</a> · <a href="https://github.com/srijan">@srijan</a> · <a href="https://github.com/davibicudo">@davibicudo</a> · <a href="https://github.com/PLPeeters">@PLPeeters</a> · <a href="https://github.com/danhs">@danhs</a> · <a href="https://github.com/NikoScotch">@NikoScotch</a> · <a href="https://github.com/nicopico-dev">@nicopico-dev</a> · <a href="https://github.com/Hillside502">@Hillside502</a> · <a href="https://github.com/alxgda">@alxgda</a></sub>
+  <sub><a href="https://github.com/jarrydstan">@jarrydstan</a> · <a href="https://github.com/ronmolenda">@ronmolenda</a> · <a href="https://github.com/karl1990">@karl1990</a> · <a href="https://github.com/srijan">@srijan</a> · <a href="https://github.com/davibicudo">@davibicudo</a> · <a href="https://github.com/PLPeeters">@PLPeeters</a> · <a href="https://github.com/danhs">@danhs</a> · <a href="https://github.com/NikoScotch">@NikoScotch</a> · <a href="https://github.com/nicopico-dev">@nicopico-dev</a> · <a href="https://github.com/Hillside502">@Hillside502</a> · <a href="https://github.com/alxgda">@alxgda</a> · <a href="https://github.com/nomisterling">@nomisterling</a></sub>
 </p>
 
 ---

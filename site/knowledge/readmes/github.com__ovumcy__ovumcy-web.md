@@ -24,7 +24,7 @@
   <a href="https://github.com/ovumcy/ovumcy-web/commits/main"><img src="https://img.shields.io/github/last-commit/ovumcy/ovumcy-web" alt="Last Commit"></a>
   <a href="https://www.gnu.org/licenses/agpl-3.0"><img src="https://img.shields.io/badge/License-AGPL%20v3-blue.svg" alt="License: AGPL v3"></a>
   <a href="https://pkg.go.dev/github.com/ovumcy/ovumcy-web"><img src="https://pkg.go.dev/badge/github.com/ovumcy/ovumcy-web.svg" alt="Go Reference"></a>
-  <a href="https://go.dev/"><img src="https://img.shields.io/badge/Go-1.26+-00ADD8?logo=go" alt="Go Version"></a>
+  <a href="https://go.dev/"><img src="https://img.shields.io/badge/Go-1.26.6+-00ADD8?logo=go" alt="Go Version"></a>
   <a href="https://github.com/ovumcy/ovumcy-web/actions/workflows/docker-image.yml"><img src="https://img.shields.io/badge/Docker-ready-2496ED?logo=docker" alt="Docker"></a>
   <a href="https://github.com/ovumcy/ovumcy-web/blob/main/docs/self-hosted.md"><img src="https://img.shields.io/badge/Self--hosted-yes-2ea44f" alt="Self-hosted"></a>
   <a href="https://github.com/ovumcy/ovumcy-web#privacy-and-security"><img src="https://img.shields.io/badge/Telemetry-none-2ea44f" alt="No telemetry"></a>
@@ -118,7 +118,7 @@ No — you run it yourself, on your own server, with no vendor account in the mi
 
 ### Where is the data stored?
 
-On the server you deploy Ovumcy to, and nowhere else. SQLite is the default and works out of the box; PostgreSQL is there when you want it for a more involved setup.
+On the server you deploy Ovumcy to. SQLite is the default and works out of the box; PostgreSQL is there when you want it for a more involved setup. Nothing leaves that server unless you switch it on yourself: the optional webhook reminders POST the predicted dates to a URL you choose, and a calendar app you subscribe to the `.ics` feed fetches those dates wherever it runs — onto Google's or Apple's servers if that is where your calendar lives.
 
 ### Does Ovumcy use analytics or ad trackers?
 
@@ -324,7 +324,7 @@ For production-style setups:
 
 Requirements:
 
-- Go 1.26+
+- Go 1.26.6+
 - Node.js 22+
 
 ```bash
@@ -390,6 +390,9 @@ AUDIT_LOG_ENABLED=false
 # RATE_LIMIT_FORGOT_PASSWORD_WINDOW=1h
 # RATE_LIMIT_LOGOUT_MAX=60
 # RATE_LIMIT_LOGOUT_WINDOW=15m
+# Per-account (identity-keyed) logout budget, separate from the per-IP pair above
+# RATE_LIMIT_LOGOUT_ACCOUNT_MAX=20
+# RATE_LIMIT_LOGOUT_ACCOUNT_WINDOW=15m
 # RATE_LIMIT_API_MAX=300
 # RATE_LIMIT_API_WINDOW=1m
 # Calendar feed: kept well below the API budget on purpose — every request costs
@@ -468,8 +471,10 @@ Notes:
 Common commands from the repository root:
 
 ```bash
-# scoped past node_modules/, where a vendored JS dep ships a .go file
-go test ./cmd/... ./internal/... ./migrations/... ./scripts/... ./web/...
+# scoped past node_modules/, where a vendored JS dep ships a .go file;
+# -timeout 20m raises Go's 10-minute PER PACKAGE default, which internal/api
+# outruns on a dev host (see TESTING.md)
+go test ./cmd/... ./internal/... ./migrations/... ./scripts/... ./web/... -timeout 20m
 npm run build
 go run ./cmd/ovumcy
 ```
@@ -482,7 +487,8 @@ Project structure:
 - `internal/db` - persistence and migrations
 - `web/` - templates, JavaScript, and CSS assets
 
-CI runs staticcheck, `go vet`, tests, and frontend build on pushes and pull requests.
+CI runs staticcheck, `go vet`, tests, and the frontend build on pull requests and on the merge queue's validation of the commit that lands.
+The post-merge run on `main` deliberately skips that work — the queue already proved this exact commit — and executes only the work the queue does not: the cross-browser e2e, image-smoke and Postgres-smoke lanes, and the image publish.
 Dedicated security workflows run CodeQL plus `gosec`, `govulncheck`, Trivy filesystem/container scanning, and publish a CycloneDX image SBOM artifact for each scan run.
 
 Beyond plain unit and integration tests, the suite uses property-based tests,

@@ -1,8 +1,23 @@
 {
   "chunk": 15,
   "count": 50,
-  "generated_at": "2026-08-23T03:56:31Z",
+  "generated_at": "2026-08-30T09:03:25Z",
   "items": [
+    {
+      "repo_key": "github.com/guillevc/yubal",
+      "repo_url": "github.com/guillevc/yubal",
+      "host": "github.com",
+      "owner": "guillevc",
+      "repo": "yubal",
+      "app_references": [
+        "yubal"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__guillevc__yubal.md",
+      "readme_download_url": null,
+      "readme_sha256": "834fe5c9ae451f745cd16dbc4784a2e38b7f1068038fce2e99c02cd8f51459b6",
+      "error": null
+    },
     {
       "repo_key": "github.com/haiwen/seafile",
       "repo_url": "github.com/haiwen/seafile",
@@ -327,9 +342,9 @@
       "app_references": [
         "anonymousoverflow"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__httpjamesm__AnonymousOverflow.md",
-      "readme_download_url": "https://raw.githubusercontent.com/httpjamesm/AnonymousOverflow/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f406a62410519e71cb0ae046aada638368e9f1fb821bfa0f4d3138b987fd761d",
       "error": null
     },
@@ -342,10 +357,10 @@
       "app_references": [
         "hoodik"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hudikhq__hoodik.md",
-      "readme_download_url": null,
-      "readme_sha256": "bbcb973910be8b6a38ead9aed50bf6c0c2cf28de319e0fb3ded7b86ce40a0317",
+      "readme_download_url": "https://raw.githubusercontent.com/hudikhq/hoodik/master/README.md",
+      "readme_sha256": "0d88793a99c3f35b355f67f06011d24769807ae9ab680ee68c6f7950177f2d40",
       "error": null
     },
     {
@@ -357,10 +372,10 @@
       "app_references": [
         "huginn"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__huginn__huginn.md",
-      "readme_download_url": null,
-      "readme_sha256": "d003fd656bf5152d00e6234e5fba1cd0aa911306893ec861859306c1cfe452ae",
+      "readme_download_url": "https://raw.githubusercontent.com/huginn/huginn/master/README.md",
+      "readme_sha256": "dbb7fe716c3e162b2ff5f87cdeb4bb569fee4813deacf98f8b2c5d1397dfe1c5",
       "error": null
     },
     {
@@ -390,7 +405,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__hunter-read__grimoire.md",
       "readme_download_url": "https://raw.githubusercontent.com/hunter-read/grimoire/main/README.md",
-      "readme_sha256": "db5378b803f6ac946afc86a295bd64c77be6ede5013126b24d0dfea954fc1f96",
+      "readme_sha256": "7a0515301470698f0ed8349315542b6aa9163dabff177e0478d53b1c9ac0b44e",
       "error": null
     },
     {
@@ -417,9 +432,9 @@
       "app_references": [
         "hyvor-relay"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__hyvor__relay.md",
-      "readme_download_url": "https://raw.githubusercontent.com/hyvor/relay/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "aae8b5baf0eb37a76a1e50ad56d12b8ec314b86030576910b560136723d7cdd8",
       "error": null
     },
@@ -447,10 +462,10 @@
       "app_references": [
         "eziwiki"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__i3months__eziwiki.md",
-      "readme_download_url": null,
-      "readme_sha256": "1b3c444e27e484c6e5de99cdf2f04a0fbfc565d1782ad0deccfedd9e290594b4",
+      "readme_download_url": "https://raw.githubusercontent.com/i3months/eziwiki/main/README.md",
+      "readme_sha256": "c62a5a821e31273cb094c8cad63d19b8f136c927ca5d056f0ad81e5b0073fd2d",
       "error": null
     },
     {
@@ -465,7 +480,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__iamspido__github-release-monitor.md",
       "readme_download_url": "https://raw.githubusercontent.com/iamspido/github-release-monitor/main/README.md",
-      "readme_sha256": "c2f72fb9c7b9a9411a9d3553ac1af3250b8da35a7153bc7c106f35955256828f",
+      "readme_sha256": "4f8b4bed6c6ca7d18e51f96591ae8ef640a86300a3c58e7909109f63d227b6f0",
       "error": null
     },
     {
@@ -492,9 +507,9 @@
       "app_references": [
         "omnitools"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__iib0011__omni-tools.md",
-      "readme_download_url": "https://raw.githubusercontent.com/iib0011/omni-tools/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c29ddcb31bce4695fb5e5ab9030debe73f93af61f3c499acd5b4576e42f26ca1",
       "error": null
     },
@@ -537,9 +552,9 @@
       "app_references": [
         "immich-frame"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__immichFrame__ImmichFrame.md",
-      "readme_download_url": "https://raw.githubusercontent.com/immichFrame/ImmichFrame/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "4800bdabd95aae5d2767479c0d0835921cb361d034c408ee7d9dcd3b084c2a40",
       "error": null
     },
@@ -567,9 +582,9 @@
       "app_references": [
         "inbucket"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__inbucket__inbucket.md",
-      "readme_download_url": "https://raw.githubusercontent.com/inbucket/inbucket/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d509a002aee82a660c529d27ff8f9eda57a0ce685310e052c946ec1c1c027956",
       "error": null
     },
@@ -732,25 +747,10 @@
       "app_references": [
         "trip"
       ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__itskovacs__trip.md",
-      "readme_download_url": "https://raw.githubusercontent.com/itskovacs/trip/main/README.md",
-      "readme_sha256": "8abcad63787a47837f9907ee148d517ec47141d45de05f1cafdc491b67aa38ba",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/itskovacs/wingfit",
-      "repo_url": "github.com/itskovacs/wingfit",
-      "host": "github.com",
-      "owner": "itskovacs",
-      "repo": "wingfit",
-      "app_references": [
-        "wingfit"
-      ],
       "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__itskovacs__wingfit.md",
+      "readme_path": "knowledge/readmes/github.com__itskovacs__trip.md",
       "readme_download_url": null,
-      "readme_sha256": "08de31c2add75e7d12b5d755b52224770c5936f12ce03f2c8160eed707ce0c35",
+      "readme_sha256": "8abcad63787a47837f9907ee148d517ec47141d45de05f1cafdc491b67aa38ba",
       "error": null
     }
   ]

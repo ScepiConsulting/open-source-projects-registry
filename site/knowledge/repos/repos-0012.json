@@ -1,8 +1,23 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-08-23T03:56:31Z",
+  "generated_at": "2026-08-30T09:03:25Z",
   "items": [
+    {
+      "repo_key": "github.com/deuxfleurs-org/garage",
+      "repo_url": "github.com/deuxfleurs-org/garage",
+      "host": "github.com",
+      "owner": "deuxfleurs-org",
+      "repo": "garage",
+      "app_references": [
+        "garage"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__deuxfleurs-org__garage.md",
+      "readme_download_url": null,
+      "readme_sha256": "be8e6a944255100ce3571b226c7561b28678c3079b89bd5e279ac1119d79286e",
+      "error": null
+    },
     {
       "repo_key": "github.com/devrsi0n/chirpy",
       "repo_url": "github.com/devrsi0n/chirpy",
@@ -60,7 +75,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__diced__zipline.md",
       "readme_download_url": "https://raw.githubusercontent.com/diced/zipline/trunk/README.md",
-      "readme_sha256": "c4d8407babf342b6711cefd60a0f155fa1aef7ad4a5ccddb6224ed12b50acefe",
+      "readme_sha256": "26ca73a30a1efe1ca314c92af3008c94e9d42b1c1b794917b2d75e614d88d595",
       "error": null
     },
     {
@@ -87,9 +102,9 @@
       "app_references": [
         "tootik"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dimkr__tootik.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dimkr/tootik/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "593330ddcee70107e5407a89667810f57af120e6cbf532c1908e49ae2c74c751",
       "error": null
     },
@@ -297,10 +312,10 @@
       "app_references": [
         "documenso"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__documenso__documenso.md",
-      "readme_download_url": null,
-      "readme_sha256": "c14dc471e251850028ff36b83f76c9a1161b55b574430143eef62440a6f50cbf",
+      "readme_download_url": "https://raw.githubusercontent.com/documenso/documenso/main/README.md",
+      "readme_sha256": "5de4149f5b1b7f330ceb8147a3390de316b3c18eab5a724629e7dfb492e72b27",
       "error": null
     },
     {
@@ -405,7 +420,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dongdongbh__Mindwtr.md",
       "readme_download_url": "https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/README.md",
-      "readme_sha256": "82c8e061d0ede14395c15d0f24682276d4ed2ec5d88f9ee377bae74e52af84d3",
+      "readme_sha256": "fe227d2b63e02de3d1f4d19831af6bcb29cdaa6a4f70e21342a7992ce1febb81",
       "error": null
     },
     {
@@ -462,9 +477,9 @@
       "app_references": [
         "drawdb"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__drawdb-io__drawdb.md",
-      "readme_download_url": "https://raw.githubusercontent.com/drawdb-io/drawdb/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "222fab72a21b26516a5cc633d3908c7a75be9af2aba5770badccef899791bbde",
       "error": null
     },
@@ -477,9 +492,9 @@
       "app_references": [
         "dreeve"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__dreeveapp__dreeve.md",
-      "readme_download_url": "https://raw.githubusercontent.com/dreeveapp/dreeve/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "59e108cf31a3941f5d2ddf892fc72cb22e1dba098758b4f82343af75cf6ddfd7",
       "error": null
     },
@@ -567,10 +582,10 @@
       "app_references": [
         "duplicati"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__duplicati__duplicati.md",
-      "readme_download_url": null,
-      "readme_sha256": "3bce44887e50b39070ed0f75ac90b52a44f3e30b4050ce093b471a4685f36d38",
+      "readme_download_url": "https://raw.githubusercontent.com/duplicati/duplicati/master/README.md",
+      "readme_sha256": "e7b6bd0a212898a784a6f872841223b2c1d37babf795defbcbaa26795f3e4846",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__ellite__Wallos.md",
       "readme_download_url": null,
       "readme_sha256": "3d82ffd4d5f38466904c9a8486ee6d84baac2b6e81dafcdbec699041081b0e9c",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/ellite/scrob",
-      "repo_url": "github.com/ellite/scrob",
-      "host": "github.com",
-      "owner": "ellite",
-      "repo": "scrob",
-      "app_references": [
-        "scrob"
-      ],
-      "readme_status": "ok",
-      "readme_path": "knowledge/readmes/github.com__ellite__scrob.md",
-      "readme_download_url": "https://raw.githubusercontent.com/ellite/scrob/main/README.md",
-      "readme_sha256": "e8c24027f42f9d008499aaf5ae702c2abff3a026a61c77aa2a5a5e58d4e486d1",
       "error": null
     }
   ]

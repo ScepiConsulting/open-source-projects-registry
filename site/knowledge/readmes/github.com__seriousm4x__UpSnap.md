@@ -18,21 +18,13 @@
     </div>
 </div>
 
-> [!NOTE]
->
-> #### UpSnap is, and always will be, free and open source software.
->
-> If someone is asking you to pay money for access to UpSnap binaries, source code, or licenses, you are being scammed.
->
-> The official and only trusted source for UpSnap is this repository (and its linked releases).
-> Do not pay third parties for something that is provided here for free.
-
 ## ✨ Features
 
 - 🚀 One-Click Device Wake-Up Dashboard
 - ⏰ Timed Events via Cron for Automation
 - 🔌 Ping Any Port You Choose
 - 🔍 Discover Devices with Network Scanning (nmap required)
+- 📌 Optional IP Address Tracking per Device via periodic ARP scan (nmap required, no extra privileges beyond network scanning)
 - ❎️ Shutdown Devices with a Custom Command
 - 👤 Secured User Management
 - 🌐 i18n support for [these](/frontend/translations) languages
@@ -195,7 +187,3 @@ pnpm run dev
 ```
 
 Open up [http://localhost:5173/](http://localhost:5173/), create an admin user and add some devices.
-
-## 🌟 Star History
-
-[![Star History Chart](https://api.star-history.com/svg?repos=seriousm4x/UpSnap&type=Date&theme=dark)](https://star-history.com/#seriousm4x/UpSnap&Date)

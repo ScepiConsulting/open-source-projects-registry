@@ -5,18 +5,17 @@
 ![Docker Pulls](https://img.shields.io/docker/pulls/arabcoders/ytptube.svg)
 ![GHCR Pulls](https://ghcr-badge.elias.eu.org/shield/arabcoders/ytptube/ytptube)
 
-YTPTube is a self-hosted download manager, automation interface, and media-library preparation layer for
+YTPTube is a self-hosted download manager, automation interface, and media library preparation layer for
 [yt-dlp](https://github.com/yt-dlp/yt-dlp). It handles one-off downloads, recurring sources, metadata-based rules,
 concurrent queues, and organized output from the same web interface.
 
-The main workflow combines three parts:
+YTPTube's automation tools can be used separately or together:
 
 - **Tasks** check channels, playlists, feeds, and supported custom sources on a schedule.
-- **Conditions** inspect metadata returned by yt-dlp and apply matching options.
 - **Presets** store reusable yt-dlp options, output templates, paths, cookies, and post-processing settings.
+- **Conditions** optionally inspect metadata returned by yt-dlp and apply matching options.
 
-This lets a scheduled source discover an item, select options from its metadata, and add it to the download queue 
-without manual work. See [Features](FEATURES.md) for the full workflow.
+See [Features](docs/features.md) for the full workflow.
 
 ## Screenshots
 
@@ -35,54 +34,39 @@ The interface is available in English, العربية, Français, 中文, and �
 - Individual URLs, playlists, channels, live streams, and upcoming streams
 - Concurrent downloads with global and per-extractor limits
 - Scheduled Tasks for recurring sources and sites without RSS feeds
-- Reusable Presets, including mobile, audio-only, resolution, NFO Maker, and media-server presets
+- Reusable default presets, including NFO Maker and media-server presets
 - Conditions that apply yt-dlp options from extracted metadata
 - Notifications for selected events through Apprise or direct HTTP webhooks
 - [Firefox](https://addons.mozilla.org/en-US/firefox/addon/ytptube-extension/) and [Chrome/Chromium](https://chromewebstore.google.com/detail/ytptube-extension/kiepfnpeflemfokokgjiaelddchglfil) extensions
-- [iOS Shortcuts](FEATURES.md#send-links-to-ytptube), a [bookmarklet](FAQ.md#simple-bookmarklet), and an [HTTP API](API.md)
-- A file browser and built-in player with external sidecar subtitle support
-- Kodi-style TV and movie NFO sidecars, `.info.json` metadata, artwork, and media-library naming
+- [iOS Shortcuts](docs/features.md#send-links-to-ytptube), a [bookmarklet](FAQ.md#simple-bookmarklet), and an [HTTP API](API.md)
+- A file browser and built-in player with external sidecar subtitle support and optional file action controls
+- Kodi-style TV and movie NFO sidecars, `.info.json` metadata, artwork, and media library naming
 - curl-cffi impersonation and a bundled PO-token provider
-- Browser extraction through Playwright attached to an existing Chrome instance over CDP
-- FlareSolverr or Trawl integration for supported WAF challenge flows
+- An optional browser extraction over existing Chrome instance
+- Optional direct yt-dlp control through the terminal interface
+- Optional integration with FlareSolverr or Trawl to allow yt-dlp to bypass some WAF protection.
 - Queue and archive controls, live logs, diagnostics, and optional resource monitoring
-- An optional interactive yt-dlp terminal for trusted administrators
-- Docker, Podman, Unraid, and native builds for Windows, macOS, and Linux
+- Docker, Podman, Unraid, and [native builds](docs/native-builds.md) for Windows, macOS, and Linux
 
-Read [Features](FEATURES.md) for details and links to the relevant configuration guides.
+Read [Features](docs/features.md) for details and links to the relevant configuration guides.
 
 ## Media Libraries
 
-YTPTube does more than place downloaded files in a folder. Its NFO Maker integration turns yt-dlp metadata into
-Kodi-style TV or movie `.nfo` sidecars, cleans descriptions for library use, creates stable IDs, and keeps each NFO
-beside its media file. NFO files can be generated during the download or later from History.
+YTPTube NFO Maker integration turns yt-dlp metadata into Kodi-style TV or movie `.nfo` sidecars, cleans descriptions for
+library use, creates stable IDs, and keeps each NFO beside its media file. NFO files can be generated during the download
+or later from history.
 
-Scheduled Tasks can separately create collection metadata and artwork, including `tvshow.nfo`, `.info.json`, poster,
-fanart, banner, icon, thumbnail, and landscape images when the source provides them. A separate info-reader Preset writes
-predictable channel and season layouts with yt-dlp metadata for compatible Jellyfin, Emby, Plex, and WatchState workflows.
+Scheduled Tasks can separately create collection metadata like `tvshow.nfo`, `.info.json`, and artwork images when the 
+source provides them. A separate info-reader Preset writes predictable channel and season layouts with yt-dlp metadata 
+for compatible Jellyfin, Emby, Plex, and WatchState workflows.
 
-See [Media Servers and NFO Maker](FEATURES.md#media-servers-and-nfo-maker) for the three workflows and their limits.
+See [Media Servers and NFO Maker](docs/features.md#media-servers-and-nfo-maker) for the three workflows and their limits.
 
 ## Quick Start
 
-Create `compose.yaml`:
-
-```yaml
-services:
-  ytptube:
-    image: ghcr.io/arabcoders/ytptube:latest
-    container_name: ytptube
-    restart: unless-stopped
-    user: "${UID:-1000}:${UID:-1000}"
-    environment:
-      - YTP_TEMP_PATH=/downloads/tmp
-      - YTP_DOWNLOAD_PATH=/downloads/files
-    ports:
-      - "8081:8081"
-    volumes:
-      - ./config:/config:rw
-      - ./downloads:/downloads:rw
-```
+The included [`compose.yaml`](compose.yaml) runs YTPTube with the bundled POT provider, Chromium browser extraction, and
+FlareSolverr support. It also contains commented host-specific examples for hardware acceleration and NFS/SMB storage.
+See the [environment variable reference](FAQ.md#environment-variables) for additional application settings.
 
 Create the directories and start the container:
 
@@ -93,15 +77,15 @@ docker compose up -d
 
 Open `http://localhost:8081` and create the first local account.
 
-The container runs as your user and group IDs so downloaded files remain accessible to the host account. Podman users 
+The container runs as your user and group IDs so downloaded files remain accessible to the host account. Podman users
 can replace the `user` line with `userns_mode: keep-id` and run `podman-compose up -d`.
 
 <details>
-<summary>Docker command without Compose</summary>
+<summary>Docker command</summary>
 
 ```bash
 mkdir -p ./{config,downloads/{files,tmp}} && docker run -itd --rm \
-  --user "${UID}:${UID}" \
+  --user "$(id -u):$(id -g)" \
   --name ytptube \
   -e YTP_TEMP_PATH=/downloads/tmp \
   -e YTP_DOWNLOAD_PATH=/downloads/files \
@@ -114,7 +98,7 @@ mkdir -p ./{config,downloads/{files,tmp}} && docker run -itd --rm \
 </details>
 
 <details>
-<summary>Podman command without Compose</summary>
+<summary>Podman command</summary>
 
 ```bash
 mkdir -p ./{config,downloads/{files,tmp}} && podman run -itd --rm \
@@ -134,22 +118,12 @@ mkdir -p ./{config,downloads/{files,tmp}} && podman run -itd --rm \
 
 ### Unraid
 
-Install the **Community Applications** plugin, search for **ytptube**, and use the preconfigured template.
+Install the **Community Applications** plugin, search for **ytptube**, and use the pre-configured template.
 
 ### Native Builds
 
-ZIP archives for Windows, Linux, and macOS are published on the [GitHub Releases](https://github.com/arabcoders/ytptube/releases) page. Archive names follow this pattern:
-
-```text
-ytptube-{OS}-{arch}-{tag}.zip
-```
-
-Extract the archive and run `YTPTube`, or `YTPTube.exe` on Windows. Native builds disable application authentication 
-by default. Set `YTP_DISABLE_AUTH=false` to require a local account.
-
-Native builds do not support automatic yt-dlp or custom-package updates. The built-in player also requires 
-`ffmpeg` on `PATH`. Some extractors require [Deno](https://deno.land/#installation). 
-See [Manually update yt-dlp in a native executable](FAQ.md#manually-update-yt-dlp-in-native-executable).
+Download the Windows, macOS, or Linux archive from [GitHub Releases](https://github.com/arabcoders/ytptube/releases).
+Read the [native-build guide](docs/native-builds.md) for installation and usage instructions.
 
 ## Security
 
@@ -164,7 +138,9 @@ to report vulnerabilities.
 
 ## Documentation
 
-- [Features](FEATURES.md)
+- [Documentation index](docs/README.md)
+- [Features](docs/features.md)
+- [Native builds](docs/native-builds.md)
 - [Configuration, usage, and troubleshooting](FAQ.md)
 - [HTTP API](API.md)
 - [Security policy](SECURITY.md)
@@ -172,17 +148,16 @@ to report vulnerabilities.
 
 ## Project Policy
 
-YTPTube is a personal-first project. Contributions are welcome after prior discussion, but the maintainer may decline 
-changes that do not fit the project's direction. Unsolicited pull requests may be closed. Read [CONTRIBUTING.md](CONTRIBUTING.md) 
-before starting work. 
+YTPTube is a personal-first project. Contributions are welcome ONLY after approval from the maintainer following prior 
+discussion. Any unsolicited pull requests will be declined. Read [CONTRIBUTING.md](CONTRIBUTING.md) before starting any 
+work to not waste your and the maintainer's time.
 
 AI-assisted tools have been used in this project and will continue to be used where I find them useful. This project is
 built for my own needs and use cases, and I maintain it according to my own preferences.
 
 You are welcome to use it if it works for you, but I will not change the project's development approach to accommodate 
-objections to the use of AI tools. I believe these tools can be genuinely useful when used appropriately. If the use of 
-AI-assisted tools is a deal-breaker for you, this project may simply not be the right fit. You are, of course, free to 
-use or build an alternative that better matches your preferences.
+your objections. I believe these tools can be genuinely useful when used appropriately. If the use of AI-assisted tools 
+is a deal-breaker for you, this project may not be the right fit for you. Feel free to build your own.
 
 YTPTube is not affiliated with yt-dlp or any supported service. It is intended for downloading content you are 
 permitted to access, not for piracy or unlawful use.

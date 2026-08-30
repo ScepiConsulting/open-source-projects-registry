@@ -1,8 +1,23 @@
 {
   "chunk": 18,
   "count": 50,
-  "generated_at": "2026-08-23T03:56:31Z",
+  "generated_at": "2026-08-30T09:03:25Z",
   "items": [
+    {
+      "repo_key": "github.com/log-forge/logforge",
+      "repo_url": "github.com/log-forge/logforge",
+      "host": "github.com",
+      "owner": "log-forge",
+      "repo": "logforge",
+      "app_references": [
+        "logforge"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__log-forge__logforge.md",
+      "readme_download_url": null,
+      "readme_sha256": "7669fc1b9408ab583368ed1165d522f0d5f706e2dfae15c24cb822abc91856c4",
+      "error": null
+    },
     {
       "repo_key": "github.com/loganmarchione/docker-php-startpage",
       "repo_url": "github.com/loganmarchione/docker-php-startpage",
@@ -135,7 +150,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__louislam__uptime-kuma.md",
       "readme_download_url": "https://raw.githubusercontent.com/louislam/uptime-kuma/master/README.md",
-      "readme_sha256": "5299c6ca24cd208a266203c4070e97da09d40a1433278f66f530b3ec983c946d",
+      "readme_sha256": "46dfa3c6c7c4a0b889dc0add3f021e5e16b81f91ec30936a928399dc08c36135",
       "error": null
     },
     {
@@ -252,9 +267,9 @@
       "app_references": [
         "mailflow"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__maathimself__mailflow.md",
-      "readme_download_url": "https://raw.githubusercontent.com/maathimself/mailflow/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "0855f787a342bffc95ea338e5ab7e694a65987261bf8b61767e8d9a5ece56f2b",
       "error": null
     },
@@ -375,7 +390,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__maildev__maildev.md",
       "readme_download_url": "https://raw.githubusercontent.com/maildev/maildev/main/README.md",
-      "readme_sha256": "bfc1cf67134288bb149b56494ce4fa0639cd0376e5277f6289b44a4b9ce37ec9",
+      "readme_sha256": "8ddb132b9a7ad001c38efd6882021cb7b9b32ec88d88ba200455f6d066319ce5",
       "error": null
     },
     {
@@ -387,10 +402,10 @@
       "app_references": [
         "plane"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__makeplane__plane.md",
-      "readme_download_url": null,
-      "readme_sha256": "5d283b9e137447b10f41bfd9e814e8c38973dab2d9271e0f0aef804e9e9c2fd7",
+      "readme_download_url": "https://raw.githubusercontent.com/makeplane/plane/preview/README.md",
+      "readme_sha256": "1527e5cd40ef95906faebb6f795e1260321e8296f97b9cc6365a77983197d677",
       "error": null
     },
     {
@@ -477,9 +492,9 @@
       "app_references": [
         "lumio"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__markusthiel__lumio.md",
-      "readme_download_url": "https://raw.githubusercontent.com/markusthiel/lumio/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "9e6428a4ed8c14890a94c5c95eb51a65eea2ae2d6e8f876dbb27db09925ae330",
       "error": null
     },
@@ -510,7 +525,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__marvinvr__docktail.md",
       "readme_download_url": "https://raw.githubusercontent.com/marvinvr/docktail/main/README.md",
-      "readme_sha256": "8060378d2e7539d8a3401affaa33ea36a87c15ee87e1a2d60af0fabdf8102cfa",
+      "readme_sha256": "1bbad7a5efaa2e6a638d050662ba727b9e14d9d5d9612adf127ce837245147c0",
       "error": null
     },
     {
@@ -582,9 +597,9 @@
       "app_references": [
         "mattermost"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__mattermost__mattermost.md",
-      "readme_download_url": "https://raw.githubusercontent.com/mattermost/mattermost/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "092eeb91f44c962fe48c5f2677dc23435eddaafd6e869d591a6f0ac13eb537be",
       "error": null
     },
@@ -597,10 +612,10 @@
       "app_references": [
         "nametag"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__mattogodoy__nametag.md",
-      "readme_download_url": null,
-      "readme_sha256": "bc177ebb5f9da02b97742372838e8f9cd5887a531deb52a7f37044cc9f694ad0",
+      "readme_download_url": "https://raw.githubusercontent.com/mattogodoy/nametag/master/README.md",
+      "readme_sha256": "140f435b5bcdbff8ec2ad6eb774b4ae9c55e8011af769d4cd8543f3218fa2ba7",
       "error": null
     },
     {
@@ -612,10 +627,10 @@
       "app_references": [
         "wastebin"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__matze__wastebin.md",
-      "readme_download_url": null,
-      "readme_sha256": "6500d353ca132974fe1a805c9f454d42ea966a7712f2a9bbe441eb5a086b912a",
+      "readme_download_url": "https://raw.githubusercontent.com/matze/wastebin/master/README.md",
+      "readme_sha256": "48f1917f8ff8693889a241e7562d354cb82752348b1f0216adef0e12670642fc",
       "error": null
     },
     {
@@ -657,9 +672,9 @@
       "app_references": [
         "ezbookkeeping"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__mayswind__ezbookkeeping.md",
-      "readme_download_url": "https://raw.githubusercontent.com/mayswind/ezbookkeeping/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "d00397d3a30135885b64fba992fc6d9cc6b5e53863ebfc973a353e650d1661a3",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__mediacms-io__mediacms.md",
       "readme_download_url": null,
       "readme_sha256": "c02608dbbf737d7c24ffd919de481f7c1977bd673f5d3a50f5c02862c917ecf8",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/medusajs/medusa",
-      "repo_url": "github.com/medusajs/medusa",
-      "host": "github.com",
-      "owner": "medusajs",
-      "repo": "medusa",
-      "app_references": [
-        "medusa"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__medusajs__medusa.md",
-      "readme_download_url": null,
-      "readme_sha256": "cea32947e8fed80dcee5388ec59f6bd93f5783ebc6d2efba226b2824a1c5f62f",
       "error": null
     }
   ]

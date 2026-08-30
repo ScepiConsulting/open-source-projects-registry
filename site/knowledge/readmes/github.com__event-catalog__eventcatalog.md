@@ -11,7 +11,7 @@ Document systems, domains, services, messages and schemas. Document your archite
 Customize your documentation to fit your workflow. Automate it, customize it, visualize it.
 
 [![main](https://github.com/event-catalog/eventcatalog/actions/workflows/verify-build.yml/badge.svg)](https://github.com/event-catalog/eventcatalog/actions/workflows/verify-build.yml)
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/event-catalog/eventcatalog/blob/main/LICENSE)
+[![License](https://img.shields.io/badge/License-MIT%20%2B%20Commercial-blue.svg)](https://github.com/event-catalog/eventcatalog/blob/main/LICENSE)
 [![npm version](https://badge.fury.io/js/@eventcatalog%2Fcore.svg)](https://badge.fury.io/js/@eventcatalog/core)
 [![All Contributors](https://img.shields.io/badge/all_contributors-69-orange.svg?style=flat-square)](#contributors-)
 
@@ -246,6 +246,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/jdebarochez"><img src="https://avatars.githubusercontent.com/u/3436890?v=4?s=100" width="100px;" alt="Jean de Barochez"/><br /><sub><b>Jean de Barochez</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/commits?author=jdebarochez" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/cog06"><img src="https://avatars.githubusercontent.com/u/44521955?v=4?s=100" width="100px;" alt="cog06"/><br /><sub><b>cog06</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/issues?q=author%3Acog06" title="Bug reports">🐛</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://cksource.com"><img src="https://avatars.githubusercontent.com/u/93583958?v=4?s=100" width="100px;" alt="Dominik Szczepaniak"/><br /><sub><b>Dominik Szczepaniak</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/issues?q=author%3Adszczepaniak-cksource" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://chabalierlucas.com"><img src="https://avatars.githubusercontent.com/u/8735725?v=4?s=100" width="100px;" alt="Lucas Chabalier"/><br /><sub><b>Lucas Chabalier</b></sub></a><br /><a href="https://github.com/event-catalog/eventcatalog/commits?author=lucactusss" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>
@@ -271,4 +272,5 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 ## License
 
-MIT.
+EventCatalog uses a mixed-license model. Most of the repository is licensed under MIT; paid feature directories identified
+in the root [LICENSE](LICENSE) use the EventCatalog Commercial License.

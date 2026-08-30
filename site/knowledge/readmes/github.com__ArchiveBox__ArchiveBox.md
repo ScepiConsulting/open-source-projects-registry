@@ -23,7 +23,7 @@ Without active preservation effort, everything on the internet eventually disapp
 *ArchiveBox is an open source tool that lets organizations & individuals archive both public & private web content while retaining control over their data. It can be used to save copies of bookmarks, preserve evidence for legal cases, backup photos from FB/Insta/Flickr or media from YT/Soundcloud/etc., save research papers, and more...*
 <br/>
 
-> ➡️ Get ArchiveBox with `uv tool install --python 3.13 --prerelease explicit --upgrade 'archivebox>=0.9.0rc0,<0.10'` on [Linux](#quickstart)/[macOS](#quickstart), or via **[Docker](#quickstart)** ⭐️ on Linux/macOS.
+> ➡️ Get ArchiveBox with `pip install archivebox>=0.9.0rc0'` on [Linux](#quickstart)/[macOS](#quickstart), or via **[Docker](#quickstart)** ⭐️ on Linux/macOS.
 
 *Once installed, you can interact with it through the: [Browser Extension](https://github.com/ArchiveBox/archivebox-browser-extension), [CLI](#usage), [self-hosted web interface](https://github.com/ArchiveBox/ArchiveBox/wiki/Publishing-Your-Archive), [Python API](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#python-shell-usage), or [filesystem](#static-archive-exporting).*
 
@@ -98,7 +98,7 @@ archivebox install
 # archivebox server 0.0.0.0:8000
 <br/>
 <br/>
-# Option D: Or use the optional auto setup script to install it
+# Option D: Or use the uv install shortcut for Option C
 curl -fsSL 'https://get.archivebox.io' | bash
 </code></pre>
 <br/>
@@ -135,27 +135,6 @@ curl -fsSL 'https://get.archivebox.io' | bash
 - [**Saves all pages to archive.org as well**](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#save_archive_dot_org) by default for redundancy (can be [disabled](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#stealth-mode) for local-only mode)
 - Advanced users: support for archiving [content requiring login/paywall/cookies](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_user_data_dir) (see wiki security caveats!)
 - Planned: support for running [JS during archiving](https://github.com/ArchiveBox/ArchiveBox/issues/51) to adblock, [autoscroll](https://github.com/ArchiveBox/ArchiveBox/issues/80), [modal-hide](https://github.com/ArchiveBox/ArchiveBox/issues/175), [thread-expand](https://github.com/ArchiveBox/ArchiveBox/issues/345)
-
-<br/>
-
-## 🤝 Professional Integration
-
-ArchiveBox is free for everyone to self-host, but we also provide support, security review, and custom integrations to help NGOs, governments, and other organizations [run ArchiveBox professionally](https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102):
-
-- **Journalists:**
-  `crawling during research`, `preserving cited pages`, `fact-checking & review`  
-- **Lawyers:**
-  `collecting & preserving evidence`, `detecting changes`, `tagging & review`  
-- **Researchers:**
-  `analyzing social media trends`, `getting LLM training data`, `crawling pipelines`
-- **Individuals:**
-  `saving bookmarks`, `preserving portfolio content`, `legacy / memoirs archival`
-- **Governments:**
-  `snapshotting public service sites`, `recordkeeping compliance`
-
-> ***[Contact us](https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102)** if your org wants help using ArchiveBox professionally.*  
-> We offer: setup & support, CAPTCHA/ratelimit unblocking, SSO, audit logging/chain-of-custody, and more  
-> *ArchiveBox is a 🏛️ 501(c)(3) [nonprofit FSP](https://hackclub.com/hcb/) and all our work supports open-source development.* 
 
 <br/>
 
@@ -229,18 +208,17 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 </details>
 
 <details>
-<summary><b><img src="https://user-images.githubusercontent.com/511499/117456282-08665e80-af16-11eb-91a1-8102eff54091.png" alt="curl sh automatic setup script" height="28px" align="top"/> <code>bash</code> auto-setup script</b>  (macOS/Linux)</summary>
+<summary><b><img src="https://user-images.githubusercontent.com/511499/117456282-08665e80-af16-11eb-91a1-8102eff54091.png" alt="curl sh uv install shortcut" height="28px" align="top"/> <code>bash</code> uv install shortcut</b>  (macOS/Linux/BSD)</summary>
 <br/>
 <ol>
-<li>Install <a href="https://docs.docker.com/get-docker/">Docker</a> on your system (optional, highly recommended but not required).</li>
-<li>Run the automatic setup script.
+<li>Run the shortcut for the <code>uv</code> install method. It installs <code>uv</code> first when needed.
 <pre lang="bash"><code style="white-space: pre-line">curl -fsSL 'https://get.archivebox.io' | bash</code></pre>
 <i>For more info, see <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Install#option-b-automatic-setup-script">Install: Bare Metal</a> in the Wiki. ➡️</i>
 </li>
 </ol>
 
 See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
-See <a href="https://github.com/ArchiveBox/ArchiveBox/blob/dev/bin/setup.sh"><code>setup.sh</code></a> for the source code of the auto-install script.<br/>
+See <a href="https://github.com/ArchiveBox/ArchiveBox/blob/dev/bin/setup.sh"><code>setup.sh</code></a> for the source code of the <code>uv</code> install shortcut.<br/>
 See <a href="https://docs.sweeting.me/s/against-curl-sh">"Against curl | sh as an install method"</a> blog post for my thoughts on the shortcomings of this install method.
 <br/><br/>
 </details>
@@ -361,7 +339,7 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 
 <ul>
 <li>Arch: <a href="https://aur.archlinux.org/packages/archivebox/"><code>yay -S archivebox</code></a> (contributed by <a href="https://github.com/imlonghao"><code>@imlonghao</code></a>, maintained by <a href="https://github.com/jasongodev"><code>@jasongodev</code></a>)</li>
-<li>FreeBSD: <a href="https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup"><code>curl -fsSL 'https://get.archivebox.io' | bash</code></a> (uses <code>pkg</code> + <code>uv</code> under-the-hood)</li>
+<li>FreeBSD: <a href="https://github.com/ArchiveBox/ArchiveBox#%EF%B8%8F-easy-setup"><code>curl -fsSL 'https://get.archivebox.io' | bash</code></a> (uses <code>uv</code>)</li>
 <li>Nix: <a href="https://github.com/NixOS/nixpkgs/blob/master/pkgs/applications/misc/archivebox/default.nix"><code>nix-env --install archivebox</code></a> (contributed by <a href="https://github.com/siraben"><code>@siraben</code></a>)</li>
 <li>Guix: <a href="https://packages.guix.gnu.org/packages/archivebox/"><code>guix install archivebox</code></a> (contributed by <a href="https://github.com/rakino"><code>@rakino</code></a>)</li>
 <li>More: <a href="https://github.com/ArchiveBox/ArchiveBox/issues/new"><i>contribute another distribution...!</i></a></li>
@@ -418,18 +396,9 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for usage examples using the CLI, W
 </details>
 
 <details>
-<summary><img src="https://user-images.githubusercontent.com/511499/117448723-1663b180-af0d-11eb-837f-d43959227810.png" alt="paid" height="27px" align="top"/> Paid hosting solutions (cloud VPS)</summary>
+<summary><img src="https://user-images.githubusercontent.com/511499/117448723-1663b180-af0d-11eb-837f-d43959227810.png" alt="paid" height="27px" align="top"/> Third-party paid hosting options (cloud VPS)</summary>
 <br/>
 <ul>
-<li><a href="https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102">
- <img src="https://img.shields.io/badge/Custom_Development-ArchiveBox.io-%231a1a1a.svg?style=flat" height="22px"/>
-</a> (<a href="https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102">get hosting, support, and feature customization directly from us</a>)</li>
-<li><a href="https://monadical.com">
- <img src="https://img.shields.io/badge/General_Dev_Consulting-Monadical.com-%231a1a1a.svg?style=flat" height="22px"/>
-</a> (<a href="https://monadical.com/contact-us.html">generalist consultancy that has ArchiveBox experience</a>)</li>
-<br/>
-Other providers of paid ArchiveBox hosting (not officially endorsed):<br/>
-<br/><br/>
 <li><a href="https://elest.io/open-source/archivebox"><img src="https://img.shields.io/badge/Managed_Hosting-Elest.io-%23193f7e.svg?style=flat" height="22px"/></a></li>
 <li><a href="https://www.stellarhosted.com/archivebox/"><img src="https://img.shields.io/badge/Semi_Managed_Hosting-StellarHosted.com-%23193f7e.svg?style=flat" height="22px"/></a> (USD $29-250/mo, <a href="https://www.stellarhosted.com/archivebox/#pricing">pricing</a>)</li>
 <li><a href="https://www.pikapods.com/pods?run=archivebox"><img src="https://img.shields.io/badge/Semi_Managed_Hosting-PikaPods.com-%2343a047.svg?style=flat" height="22px"/></a> (from USD $2.6/mo)</li>
@@ -451,7 +420,7 @@ Other providers of paid ArchiveBox hosting (not officially endorsed):<br/>
 <sub><i>Referral links marked 🎗 provide $5-10 of free credit for new users and help pay for our <a href="https://demo.archivebox.io">demo server</a> hosting costs.</i></sub>
 </ul>
 
-For more discussion on managed and paid hosting options see here: <a href="https://github.com/ArchiveBox/ArchiveBox/issues/531">Issue #531</a>.
+For more discussion on third-party hosting options see here: <a href="https://github.com/ArchiveBox/ArchiveBox/issues/531">Issue #531</a>.
 
 </details>
 
@@ -713,7 +682,7 @@ It uses all available methods out-of-the-box, but you can disable extractors and
 <summary><i>Expand to see the full list of ways it saves each page...</i></summary>
 
 
-<code>data/archive/{Snapshot.id}/</code><br/>
+<code>data/archive/users/{username}/snapshots/{YYYYMMDD}/{domain}/{Snapshot.id}/</code><br/>
 <ul>
 <li><strong>Index:</strong> <code>index.html</code> &amp; <code>index.json</code> HTML and JSON index files containing metadata and details</li>
 <li><strong>Title</strong>, <strong>Favicon</strong>, <strong>Headers</strong> Response headers, site favicon, and parsed site title</li>
@@ -880,7 +849,7 @@ The on-disk layout is optimized to be easy to browse by hand and durable long-te
                                 ...
 </code></pre>
 
-Each snapshot subfolder includes static metadata and plain extractor output files. ArchiveBox also maintains a backwards-compatible <code>data/archive/TIMESTAMP</code> symlink for each snapshot.
+Each snapshot subfolder includes static metadata and plain extractor output files. Current releases do not create top-level <code>data/archive/TIMESTAMP</code> projections; legacy timestamp directories are migrated into the user-scoped tree by <code>archivebox update --migrate-only</code>.
 
 <h4>Learn More</h4>
 <ul>
@@ -1015,7 +984,7 @@ archivebox config --set SERVER_SECURITY_MODE=safe-onedomain-nojsreplay
 
 ### Working Around Sites that Block Archiving
 
-For various reasons, many large sites (Reddit, Twitter, Cloudflare, etc.) actively block archiving or bots in general. There are a number of approaches to work around this, and we also provide <a href="https://docs.monadical.com/s/archivebox-consulting-services">consulting services</a> to help here.
+For various reasons, many large sites (Reddit, Twitter, Cloudflare, etc.) actively block archiving or bots in general. There are a number of approaches to work around this.
 
 <br/>
 <details>
@@ -1254,13 +1223,6 @@ ArchiveBox is neither the highest fidelity nor the simplest tool available for s
 </details>
 
 <br/>
-
-**Need help building a custom archiving solution?**
-
-> ✨ **[Hire the team that built Archivebox](https://zulip.archivebox.io/#narrow/stream/167-enterprise/topic/welcome/near/1191102) to solve archiving for your org.** ([@ArchiveBoxApp](https://twitter.com/ArchiveBoxApp))
-
-<br/>
-
 
 <div align="center" style="text-align: center">
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/897f7a88-1265-4aab-b80c-b1640afaad1f" width="100%" alt="documentation graphic">
@@ -1564,8 +1526,6 @@ Copy a similar plugin as a template to modify, then open a new PR to add it in t
 
 <br/>
 <div align="center" style="text-align: center">
-<b><a href="https://docs.sweeting.me/s/archivebox-consulting-services">🏛️ Contact us for professional support 💬</a></b><br/>
-<br/><br/>
 <a href="https://hcb.hackclub.com/donations/start/archivebox"><img src="https://img.shields.io/badge/Donate-Directly-%13DE5D26.svg"/></a> &nbsp;
 <a href="https://github.com/sponsors/pirate"><img src="https://img.shields.io/badge/Github_Sponsors-%23B7CDFE.svg"/></a> &nbsp;
 <a href="https://www.patreon.com/theSquashSH"><img src="https://img.shields.io/badge/Patreon-%23DD5D76.svg"/></a> &nbsp;

@@ -7,7 +7,7 @@
 
   <p>
     Tasks, calendar, budget, groceries, meals, health and more - for a family, a couple,
-    or just you. Eighteen modules on a server you own, and the only thing that leaves it
+    or just you. Nineteen modules on a server you own, and the only thing that leaves it
     is a version check.
   </p>
 
@@ -34,7 +34,7 @@
     <img src="docs/screenshots/dashboard-light-web.webp" alt="The Yuvomi dashboard: today's tasks, calendar events, meals and the shopping list on one screen" width="820">
   </picture>
 
-  <sub><b>18</b> modules &nbsp;·&nbsp; <b>24</b> languages &nbsp;·&nbsp; <b>0</b> trackers &nbsp;·&nbsp; optional <b>AES-256</b> database encryption &nbsp;·&nbsp; <b>MIT</b></sub>
+  <sub><b>19</b> modules &nbsp;·&nbsp; <b>24</b> languages &nbsp;·&nbsp; <b>0</b> trackers &nbsp;·&nbsp; optional <b>AES-256</b> database encryption &nbsp;·&nbsp; <b>MIT</b></sub>
 </div>
 
 Most households glue their life together from a dozen paid apps, each with its own account, its
@@ -68,28 +68,29 @@ This is the part a folder full of separate apps cannot do:
 - **A ticked-off chore pays out.** Points on a task land on the assigned member's account, and the reward catalog spends them.
 - **A filed receipt hangs on the booking.** Upload it once and it belongs to the transaction, the shared expense and the inventory item at the same time.
 
-## The eighteen modules
+## The nineteen modules
 
 Turn on what your household needs; the rest stays out of the way.
 
 | Module | In one line |
 |---|---|
-| **Tasks** | Kanban board with deadlines, priorities, subtasks, tags, recurring schedules and multi-member assignment. Attach documents and discuss a task in comments. |
+| **Tasks** | Kanban board with deadlines, priorities, subtasks, tags, recurring schedules and multi-member assignment. Attach documents and discuss a task in comments. A history view shows what was completed, grouped by day, with who ticked it off - and when a recurring chore was last done. Lock a task so only its creator and admins can redefine it, while everyone else can still tick it off. |
 | **Shopping** | Shared lists grouped by aisle and ordered to match your shop, with swipe gestures and one-tap import from the meal plan. |
 | **Meals** | Weekly drag-and-drop planner with a recipe sidebar and direct export to the shopping list. |
 | **Recipes** | Create, duplicate and scale recipes, then pre-fill meal slots or send the ingredients to a shopping list. A Mealie or Tandoor instance can be mirrored read-only. |
-| **Pantry** | What is actually in the house: amount, storage location and best-before date, with expiry and low-stock filters. |
-| **Calendar** | Two-way sync with Google and CalDAV, one-way Outlook push via Microsoft Graph, calendar subscriptions, recurring events, holiday overlays and per-event visibility. |
+| **Pantry** | What is actually in the house: amount, storage location and best-before date, with expiry and low-stock filters and a notification before a date is reached. |
+| **Calendar** | Two-way sync with Google and CalDAV, one-way Outlook push via Microsoft Graph, calendar subscriptions, recurring events, holiday overlays, filtering by person and per-event visibility. |
 | **Documents** | Upload, tag, preview and organize family files, with optional WebDAV or Google Drive storage. |
 | **Inventory** | What you own: purchase price, warranty, condition and storage location, with linked receipts and deadline reminders. Off by default; households turn it on. |
-| **Budget** | Income, expenses, accounts, loans, subscriptions and per-category planning, with a personal mode. |
+| **Budget** | Income, expenses, accounts, loans, subscriptions and per-category planning, with a personal mode. An entry can share its amount while keeping its title and category private, so a shared account's balance stays right. |
 | **Housekeeping** | Household staff: schedules, check-in/out, daily or hourly billing, chores and supply requests. |
 | **Rewards** | Points on tasks credit the assigned member, with a parent-approved catalog and an auditable ledger. |
 | **Health** | Per-member vitals, medications, labs, activity and cycle tracking, with trend charts. |
-| **Notes &amp; Contacts** | Colored Markdown sticky notes plus a contact directory with CardDAV sync and vCard import/export. |
+| **Schedule** | Rotating shift patterns and fixed weekly timetables from one cycle model, with per-day overrides and an explicit free day. The calendar shows them as a read-only overlay computed on read, so changing a pattern leaves no stale appointments behind. Off by default. |
+| **Notes &amp; Contacts** | Colored Markdown sticky notes with checklists you tick off by tapping them, plus a contact directory with CardDAV sync and vCard import/export. |
 | **Birthdays** | Birthday tracker with automatic calendar events, age display and reminders. |
 | **Family** | Member profiles with roles, photos and contact details. New members join through an invite link and pick their own password. |
-| **Reminders** | Reminders on tasks and events via in-app badges, opt-in push, and household Gotify, ntfy or webhook channels. |
+| **Reminders** | Reminders on tasks, events, subscription renewals, warranties, inventory deadlines and best-before dates, via in-app badges, opt-in push, and household Gotify, ntfy or webhook channels. A reminder on a shared event reaches everyone assigned to it, each with their own copy to move or dismiss. |
 | **API Tokens** | Bearer / X-API-Key tokens with an OpenAPI 3.0 spec and a built-in MCP endpoint for AI agents. Writes are retry-safe via an optional `Idempotency-Key` header. |
 | **Backup** | Manual and scheduled backup/restore with pre-restore rollback and optional cloud upload. |
 
@@ -105,7 +106,7 @@ drop-in module is covered in the [module guide](MODULES.md).
 - **Image** - `ghcr.io/ulsklyc/`<wbr>`yuvomi:latest`, about 500 MB.
 - **Needs** - 256 MB RAM and one port, 3000 by default.
 - **Writes** - four volumes you own: data, backups, modules, documents.
-- **Outbound** - one update check against the GitHub releases API, nothing else. Weather, calendar sync and cloud backup stay off until you fill in credentials.
+- **Outbound** - one update check against the GitHub releases API, nothing else. Block it and nothing breaks: the changelog then reads the history that ships with your installation, only the hint about a newer version stays away. Weather, calendar sync and cloud backup stay off until you fill in credentials.
 - **Your data** - one SQLite file at `/data/yuvomi.db`. Copying it is the whole export, unless you moved document storage to a folder, WebDAV or Drive; those files then need their own backup.
 
 ### Docker or Podman
@@ -190,7 +191,7 @@ no subscription, no upsell and no paid tier.
 - **No build step** - pure ES modules and plain CSS. No bundler, no transpiler, no framework, no runtime CDN.
 - **Apple HIG in the Liquid Glass language** - the system font stack and Apple's type scale, capsule controls, inset-grouped lists and spring motion, verified for WCAG AA in light and dark.
 - **Privacy first** - fully self-hosted, optional SQLCipher AES-256 database encryption, zero telemetry.
-- **Sign-in that scales to a household** - optional single sign-on via any OIDC provider, invite links instead of handed-over passwords, and optional self-service password reset by email.
+- **Sign-in that scales to a household** - optional two-factor authentication (TOTP with recovery codes, enforceable household-wide), optional single sign-on via any OIDC provider (with a switch for whether an unknown identity gets an account, so a provider that serves more than this household does not hand everyone a way in, and another for making SSO the only way in at all), invite links instead of handed-over passwords, and optional self-service password reset by email.
 - **24 languages** with automatic detection. A separate household setting decides the language of entries Yuvomi creates itself, so an exported calendar speaks your household's language instead of English.
 
 <p align="center">

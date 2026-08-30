@@ -14,13 +14,14 @@ Automatic updates are disabled by default. You can enable only what you need.
 - [deploy](#deploy)
 - [private registries](#private-registries)
 - [custom labels](#custom-labels)
-- [notifications](#notifications)
+- [notifications](./docs/NOTIFICATIONS.md)
 - [auth](#auth)
 - [api](#api)
 - [env](#env)
 - [check and update](./docs/CHECK_AND_UPDATE.md)
 - [screenshots](./docs/SCREENSHOTS.md)
 - [contributing](./docs/CONTRIBUTING.md)
+- [security](./docs/SECURITY.md)
 
 ## Main features:
 
@@ -69,16 +70,22 @@ Automatic updates are disabled by default. You can enable only what you need.
 - ### Remote hosts
 
   > [!IMPORTANT]
-  > Agent host URLs that resolve to private or reserved networks are blocked by default (SSRF protection).
+  > Agent host URLs that resolve to private or reserved networks are blocked by default (best-effort check; see the [security policy](./docs/SECURITY.md)).
+  > The agent client then connects only to the addresses that passed that check, without replacing the hostname (TLS / virtual hosts stay intact).
   > If your remote agent is on a LAN or Docker network, allow it on the primary instance via **AGENT_ALLOW_NETWORKS** (e.g. `192.168.0.0/24`) and/or **AGENT_ALLOW_ENDPOINTS** (e.g. `10.0.0.5:9413`).
-  > See [.env.example](./.env.example) for details. By default, only the built-in agent endpoint `127.0.0.1:8001` is allowed when `AGENT_ENABLED=true`.
+  > See [.env.example](./.env.example).
+  > By default, only the built-in agent endpoint `127.0.0.1:8001` is allowed when `AGENT_ENABLED=true`.
 
   To manage remote hosts from one UI, you have to deploy the Tugtainer Agent.
   To do so, you can use [docker-compose.agent.yml](./docker-compose.agent.yml) or the following docker commands.
 
   After deploying the agent, in the UI follow Menu -> Hosts, and add it with the respective parameters. The **Agent secret** field should match the **AGENT_SECRET** you've provided for the agent container.
 
-  Backend and agent use HTTP to communicate, so you can use a reverse proxy for HTTPS.
+  Backend and agent use HTTP by default. You can put a reverse proxy in front for HTTPS.
+
+  - Public CA (Let's Encrypt, etc.): set the host URL to `https://…`, leave **SSL** on, leave **Custom CA** empty.
+  - Private CA or self-signed: paste the CA PEM (or the self-signed certificate) into **Custom CA**, keep **SSL** on. The certificate hostname/SAN must match the URL host.
+  - TLS on the agent without a reverse proxy: mount cert/key into the agent container and pass `--ssl-certfile` / `--ssl-keyfile` via `command` (see [docker-compose.agent.yml](./docker-compose.agent.yml)). Paste the corresponding CA in the host settings. The image healthcheck uses `http://localhost:8001` and may fail if uvicorn serves only HTTPS.
 
   ```bash
   # pull image
@@ -169,69 +176,6 @@ Failure semantics:
 The hooks form is hidden in the UI for protected containers (see
 [Custom labels](#custom-labels)), since protected containers are never
 updated by the app.
-
-## Notifications:
-
-The app uses [Apprise](https://github.com/caronc/apprise?tab=readme-ov-file#productivity-based-notifications) to send notifications and [Jinja2](https://jinja.palletsprojects.com/en/stable/) to generate their content. You can view the documentation for each of them for more details.
-
-Jinja2 custom filters:
-
-- any_worthy - checks that at least one of the items has result equal to "available", "updated", "rolled_back" or "failed"
-
-Jinja2 context schema:
-
-```json
-{
-  "hostname": "Tugtainer container hostname",
-  "results": [
-    {
-      "host_id": 0,
-      "host_name": "string",
-      "items": [
-        {
-          "container": {
-            "id": "string",
-            "image": "string",
-            "...other keys of 'docker container inspect' in snake_case": {},
-          },
-          "local_image": {
-            "id": "string",
-            "repo_digests": [
-              "digest1",
-              "digest2",
-            ],
-            "...other keys of 'docker image inspect' in snake_case": {},
-          },
-          "remote_image": {
-            "...same schema as for local_image": {},
-          },
-          "local_digests": [
-            "list of platform specific image digests",
-          ],
-          "remote_digests": [
-            "list of platform specific image digests",
-          ],
-          "result": "not_available|available|available(notified)|updated|rolled_back|failed|None"
-        }
-      ],
-      "prune_result": "string",
-    }
-  ]
-}
-```
-
-"result" options:
-
-- "not_available": No new image found.
-- "available": New image available for the container.
-- "available(notified)": New image available for the container, but it was in the previous notification. The app preserves digests of new images, so if another new image has appeared, the result will still be "available".
-- "updated": Container successfully recreated with the new image.
-- "rolled_back": The app failed to recreate the container, but was able to restore it with the old image.
-- "failed": The app failed to recreate the container.
-
-The notification is sent only if the body is not empty. For instance, if there are only containers with "available(notified)" results, the body will be empty (with the default template), and the notification will not be sent.
-
-If you want to restore the default template, it's [here](./backend/const.py)
 
 ## Auth
 

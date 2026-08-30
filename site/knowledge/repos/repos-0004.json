@@ -1,8 +1,23 @@
 {
   "chunk": 4,
   "count": 50,
-  "generated_at": "2026-08-23T03:56:30Z",
+  "generated_at": "2026-08-30T09:03:25Z",
   "items": [
+    {
+      "repo_key": "github.com/Jackett/Jackett",
+      "repo_url": "github.com/Jackett/Jackett",
+      "host": "github.com",
+      "owner": "Jackett",
+      "repo": "Jackett",
+      "app_references": [
+        "jackett"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__Jackett__Jackett.md",
+      "readme_download_url": "https://raw.githubusercontent.com/Jackett/Jackett/master/README.md",
+      "readme_sha256": "fce235583fd865caed6dde3abda1729f1a3f103a70de7e724eb769b96f20a4d4",
+      "error": null
+    },
     {
       "repo_key": "github.com/Jaredharper1/Sortarr",
       "repo_url": "github.com/Jaredharper1/Sortarr",
@@ -87,9 +102,9 @@
       "app_references": [
         "kavita"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Kareadita__Kavita.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Kareadita/Kavita/develop/README.md",
+      "readme_download_url": null,
       "readme_sha256": "c418289222b8f01170d365262797101167f9ebc2b71041048603dc9cb1fa39e8",
       "error": null
     },
@@ -120,7 +135,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Kobii-git__rackpad.md",
       "readme_download_url": "https://raw.githubusercontent.com/Kobii-git/rackpad/main/README.md",
-      "readme_sha256": "f4c0dd57dd26532d0013165b92b00776b6fe6dc582543d5361635b70cb59f5a6",
+      "readme_sha256": "e1b06680e4b2dd511726db56c3b2fbf8765083a9c2ae2eb50e3d4998447b5879",
       "error": null
     },
     {
@@ -207,9 +222,9 @@
       "app_references": [
         "dvinyl"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Kyonew__DVinyl.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Kyonew/DVinyl/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "10d063102f4f203426232e7089487f528be449a6b024a3670caf90adc15ecc8b",
       "error": null
     },
@@ -462,9 +477,9 @@
       "app_references": [
         "sunshine"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__LizardByte__Sunshine.md",
-      "readme_download_url": "https://raw.githubusercontent.com/LizardByte/Sunshine/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "39082f5403beafb9541ee7db51584173de59fba594b19efcb116ef8c62c1a922",
       "error": null
     },
@@ -492,10 +507,10 @@
       "app_references": [
         "open-archiver"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__LogicLabs-OU__OpenArchiver.md",
-      "readme_download_url": null,
-      "readme_sha256": "fc98cebb96baf1fecd496d3a493bb322b202ab1611e35d78db950b885015cf00",
+      "readme_download_url": "https://raw.githubusercontent.com/LogicLabs-OU/OpenArchiver/main/README.md",
+      "readme_sha256": "5bafda79146b8feff20a2f99a6d7cda6ed575f84ab5dacc26641981c132a8501",
       "error": null
     },
     {
@@ -582,9 +597,9 @@
       "app_references": [
         "lychee"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__LycheeOrg__Lychee.md",
-      "readme_download_url": "https://raw.githubusercontent.com/LycheeOrg/Lychee/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "73415ea55d6bdcf1976b795bb9c3d8fe2f8c31518ff8dddf40dd74709bb7532b",
       "error": null
     },
@@ -615,7 +630,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Maintainerr__Maintainerr.md",
       "readme_download_url": "https://raw.githubusercontent.com/Maintainerr/Maintainerr/development/README.md",
-      "readme_sha256": "92c4aadf6f8f5e6bc4e575e98c3a999195c71549bcb24e9eda4bce9e2ee0faad",
+      "readme_sha256": "b186229ea971f419e756962eeea89f73ed89487ced35adac604e00733a8f3f37",
       "error": null
     },
     {
@@ -717,10 +732,10 @@
       "app_references": [
         "memtly"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Memtly__Memtly.Community.md",
-      "readme_download_url": null,
-      "readme_sha256": "c8502ddc2e535132c2f481a86ecf02d66c8cd04fd8d2338dd0478a0647ef1093",
+      "readme_download_url": "https://raw.githubusercontent.com/Memtly/Memtly.Community/master/readme.md",
+      "readme_sha256": "cc2131ca096d6707c886290dbf0652ac2e61fc47188522b86680107ae4eeeabe",
       "error": null
     },
     {
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__MertJSX__folderhost.md",
       "readme_download_url": null,
       "readme_sha256": "fcf2d6994049b7e62ec2ff28aff21554ed56077da6b21e128c4a995266266421",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/MizuchiLabs/mantrae",
-      "repo_url": "github.com/MizuchiLabs/mantrae",
-      "host": "github.com",
-      "owner": "MizuchiLabs",
-      "repo": "mantrae",
-      "app_references": [
-        "mantrae"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__MizuchiLabs__mantrae.md",
-      "readme_download_url": null,
-      "readme_sha256": "632c93b9a4f52f11b3464383819f09d54d9907c7fa785d010cb55b49fcb4d0d6",
       "error": null
     }
   ]

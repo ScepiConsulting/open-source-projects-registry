@@ -81,14 +81,19 @@ Pick the path that fits you. Both run the same product on the same Markdown.
 - Requires Python via [`uv`](https://docs.astral.sh/uv/)
 
 ```bash
-uv tool install basic-memory
+uv tool install basic-memory --prerelease=allow
 ```
+
+`--prerelease=allow` is required: Basic Memory 0.23 depends on a FastMCP 4
+pre-release, and `uv` only accepts pre-releases of transitive dependencies when
+told to — without the flag it silently installs an older release. The same flag
+goes on every `uvx` / `uv tool upgrade` command below.
 
 For Postgres deployments that store semantic vectors in Milvus, install the
 first-party optional extra instead:
 
 ```bash
-uv tool install "basic-memory[milvus]"
+uv tool install "basic-memory[milvus]" --prerelease=allow
 ```
 
 [**Configure your client ↓**](#connect-your-ai-client)
@@ -241,12 +246,12 @@ the `memory-*` directories from `skills/` into your agent's skills directory.
 Hermes keeps its native plugin shape under [`integrations/hermes`](integrations/hermes):
 
 ```bash
-hermes plugins install basicmachines-co/basic-memory --path integrations/hermes
+hermes plugins install basicmachines-co/basic-memory/integrations/hermes
 ```
 
-If your Hermes build lacks subpath installs, use the final deprecated
-`basicmachines-co/hermes-basic-memory` pointer release until host support
-lands.
+Hermes does not install a plugin's Python dependencies, so also add the `mcp`
+package to the Hermes venv — see the [plugin README](integrations/hermes/README.md#install)
+for that step and the supported Hermes releases.
 
 ### OpenClaw
 
@@ -275,7 +280,7 @@ Edit `~/Library/Application Support/Claude/claude_desktop_config.json`:
   "mcpServers": {
     "basic-memory": {
       "command": "uvx",
-      "args": ["basic-memory", "mcp"]
+      "args": ["--prerelease=allow", "basic-memory", "mcp"]
     }
   }
 }
@@ -289,7 +294,7 @@ Restart Claude Desktop. Notes live in `~/basic-memory` by default.
 ### Claude Code
 
 ```bash
-claude mcp add basic-memory -- uvx basic-memory mcp
+claude mcp add basic-memory -- uvx --prerelease=allow basic-memory mcp
 ```
 
 For the full memory bridge — session briefings, pre-compaction checkpoints, and
@@ -303,7 +308,7 @@ Add to `~/.codex/config.toml`:
 ```toml
 [mcp_servers.basic-memory]
 command = "uvx"
-args = ["basic-memory", "mcp"]
+args = ["--prerelease=allow", "basic-memory", "mcp"]
 ```
 
 Codex can keep its default MCP approval behavior, or you can pre-approve eligible
@@ -312,7 +317,7 @@ Basic Memory tools by adding this server-scoped setting to the same table:
 ```toml
 [mcp_servers.basic-memory]
 command = "uvx"
-args = ["basic-memory", "mcp"]
+args = ["--prerelease=allow", "basic-memory", "mcp"]
 default_tools_approval_mode = "approve"
 ```
 
@@ -331,7 +336,7 @@ Add to `.cursor/mcp.json` (project) or `~/.cursor/mcp.json` (global):
   "mcpServers": {
     "basic-memory": {
       "command": "uvx",
-      "args": ["basic-memory", "mcp"]
+      "args": ["--prerelease=allow", "basic-memory", "mcp"]
     }
   }
 }
@@ -347,7 +352,7 @@ Add to your User Settings (JSON):
     "servers": {
       "basic-memory": {
         "command": "uvx",
-        "args": ["basic-memory", "mcp"]
+        "args": ["--prerelease=allow", "basic-memory", "mcp"]
       }
     }
   }
@@ -686,15 +691,5 @@ Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
 ## License
 
 [AGPL-3.0](LICENSE).
-
-## Star History
-
-<a href="https://www.star-history.com/#basicmachines-co/basic-memory&Date">
- <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/svg?repos=basicmachines-co/basic-memory&type=Date&theme=dark" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/svg?repos=basicmachines-co/basic-memory&type=Date" />
-   <img alt="Star History Chart" src="https://api.star-history.com/svg?repos=basicmachines-co/basic-memory&type=Date" />
- </picture>
-</a>
 
 Built with ♥️ by [Basic Machines](https://basicmachines.co?utm_source=github&utm_medium=referral&utm_campaign=readme)

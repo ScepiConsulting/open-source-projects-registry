@@ -655,10 +655,6 @@ More stars ! 🌟
 
 Please give us a star on `GitHub`_ if you like this project.
 
-.. image:: https://api.star-history.com/svg?repos=nicolargo/glances&type=Date
-    :target: https://www.star-history.com/#nicolargo/glances&Date
-    :alt: Star history
-
 .. _psutil: https://github.com/giampaolo/psutil
 .. _Brew: https://formulae.brew.sh/formula/glances
 .. _Python: https://www.python.org/getit/

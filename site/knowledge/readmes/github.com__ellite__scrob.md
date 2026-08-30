@@ -26,6 +26,7 @@ Scrob syncs your libraries from **Jellyfin**, **Plex**, **Emby**, **Nuvio**, **A
   - [First Setup](#first-setup)
   - [Updating](#updating)
 - [Configuration](#configuration)
+  - [TheTVDB metadata](#thetvdb-metadata)
 - [ARVIO Cloud Synchronization](#arvio-cloud-synchronization)
 - [Nuvio Cloud Synchronization](#nuvio-cloud-synchronization)
   - [Connect Nuvio](#connect-nuvio)
@@ -319,6 +320,27 @@ Remove the `scrob-db` service and set `DATABASE_URL` to your existing instance:
 DATABASE_URL: postgresql+asyncpg://user:password@your-db-host:5432/scrob
 ```
 
+### TheTVDB metadata
+
+TMDB covers the great majority of titles. A **TheTVDB** key is optional and only affects TVDB-specific paths:
+
+- shows and episodes that exist on TheTVDB but not on TMDB;
+- TVDB-ordered episode mapping (absolute numbering, common for anime and long-running shows) and TVDB season metadata;
+- matching otherwise-unmatched local episodes through TheTVDB.
+
+With no key configured, all of the above fall back to TMDB-only behaviour; nothing else is affected.
+
+**Which credential to get.** TheTVDB v4 has two key types:
+
+| Type | Where | Auth | Notes |
+|---|---|---|---|
+| Free **project** key | [thetvdb.com/api-information](https://thetvdb.com/api-information) | API key only | Free for projects under the revenue threshold in TheTVDB's terms. Requires attribution — Scrob displays a "Metadata provided by TheTVDB" link on every TVDB-sourced page and in **About**. |
+| **Subscriber-supported** key | TheTVDB dashboard | API key **+ subscriber PIN** | Enter both the key and the PIN in Scrob. |
+
+Configure it per-user in **Settings → General → TVDB API Key** (with the **Subscriber PIN** field for a subscriber key), or server-wide in **Admin → Settings → TVDB** as a fallback for all users. Use **Test key** to verify the pair before saving.
+
+**Rotation / revocation.** Scrob caches the TheTVDB login token in memory for up to 29 days per key. After changing or removing the key or PIN in settings, the new credential takes effect on the next lookup; a stale token for the old credential is discarded on restart.
+
 ## ARVIO Cloud Synchronization
 
 Scrob supports pull synchronization from **ARVIO Cloud** (`https://auth.arvio.tv/.netlify/functions`), importing watched movies, watched episodes, and continue watching playback progress per profile.
@@ -532,8 +554,12 @@ Plex webhooks require a **Plex Pass** subscription.
 Kodi scrobbling uses the **[scrob-kodi](https://github.com/ellite/scrob-kodi)** add-on - no manual webhook configuration needed.
 
 1. Install the **scrob-kodi** add-on from the [scrob-kodi repository](https://github.com/ellite/scrob-kodi).
-2. In the add-on settings, enter your Scrob URL and your API key (found in **Connections → API Key**).
+2. In the add-on settings, enter your Scrob URL, then either:
+   - **Authorize with Scrob** (recommended) - the add-on shows a short code; open `your-scrob-url/link` in a browser, sign in, and approve. This works with 2FA accounts, never exposes your password, and the device can be revoked on its own from **Connections → Connected Apps**.
+   - or paste your **API key** (found in **Connections → API Key**) - still fully supported, and the only option if your Scrob instance predates device linking.
 3. The add-on will automatically send playback events to Scrob as you watch.
+
+The `POST /api/proxy/webhooks/kodi` endpoint (and the `kodi/history`, `kodi/ratings`, `kodi/rating` helpers the add-on uses for library sync) accept either an `Authorization: Bearer` device token or the `?api_key=` query parameter.
 
 ## OIDC / Single Sign-On
 

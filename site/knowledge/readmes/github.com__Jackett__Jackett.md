@@ -257,6 +257,7 @@ Prior versions of Jackett are no longer supported.
  * 13City
  * 1ptbar
  * 3D Torrents (3DT)
+ * 3D Vault
  * 4thD (4th Dimension) [![(invite needed)][inviteneeded]](#)
  * 52PT
  * 720pier
@@ -354,9 +355,11 @@ Prior versions of Jackett are no longer supported.
  * Diablo Torrent
  * DICMusic [![(invite needed)][inviteneeded]](#)
  * DigitalCore (DC)
+ * Diginette
  * DimeADozen (EzTorrent)
  * DiscFan [![(invite needed)][inviteneeded]](#)
  * DocsPedia
+ * DreadVault
  * Drugari
  * DS-Reloaded
  * dubhe (天枢) [![(invite needed)][inviteneeded]](#)
@@ -596,7 +599,6 @@ Prior versions of Jackett are no longer supported.
  * SportsCora
  * SportsCult
  * SpringSunday (SSD) [![(invite needed)][inviteneeded]](#)
- * SunnyPT [![(invite needed)][inviteneeded]](#)
  * Superbits (SBS)
  * Swarmazon
  * TangPT (躺平)
@@ -670,6 +672,7 @@ Prior versions of Jackett are no longer supported.
  * WinterSakura [![(invite needed)][inviteneeded]](#)
  * World-In-HD [![(invite needed)][inviteneeded]](#)
  * World-of-Tomorrow [![(invite needed)][inviteneeded]](#)
+ * XDY (修道院)
  * Xingtan (杏坛) [![(invite needed)][inviteneeded]](#)
  * Xingwan (星湾) [![(invite needed)][inviteneeded]](#)
  * Xingyung (星陨阁) [![(invite needed)][inviteneeded]](#)

@@ -119,6 +119,10 @@ Looking for a backend (python) / frontend developers (Angular) to help with the 
 
 ## License
 
+Made with ❤️ by [nandyalu](https://github.com/nandyalu)
+
+Copyright © 2024 - present nandyalu
+
 This project is licensed under the terms of the GPL v3 license. See [GPL-3.0 license](https://github.com/nandyalu/trailarr?tab=GPL-3.0-1-ov-file) for more details.
 
 ## Disclaimer

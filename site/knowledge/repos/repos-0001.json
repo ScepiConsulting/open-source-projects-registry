@@ -1,7 +1,7 @@
 {
   "chunk": 1,
   "count": 50,
-  "generated_at": "2026-08-23T03:56:30Z",
+  "generated_at": "2026-08-30T09:03:25Z",
   "items": [
     {
       "repo_key": "akkoma.dev/AkkomaGang/akkoma",
@@ -137,6 +137,21 @@
       "readme_download_url": null,
       "readme_sha256": null,
       "error": "worker_exception: Invalid URL 'codeberg.org/karrot/karrot-backend/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/karrot/karrot-backend/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "codeberg.org/mrmn/PdfDing",
+      "repo_url": "codeberg.org/mrmn/PdfDing",
+      "host": "codeberg.org",
+      "owner": "mrmn",
+      "repo": "PdfDing",
+      "app_references": [
+        "pdfding"
+      ],
+      "readme_status": "error",
+      "readme_path": null,
+      "readme_download_url": null,
+      "readme_sha256": null,
+      "error": "worker_exception: Invalid URL 'codeberg.org/mrmn/PdfDing/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://codeberg.org/mrmn/PdfDing/-/raw/main/README.md?"
     },
     {
       "repo_key": "codeberg.org/nwithan8/plex-prerolls",
@@ -567,9 +582,9 @@
       "app_references": [
         "1panel"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__1Panel-dev__1Panel.md",
-      "readme_download_url": "https://raw.githubusercontent.com/1Panel-dev/1Panel/dev-v2/README.md",
+      "readme_download_url": null,
       "readme_sha256": "f49b8541446f32bfca76208311bab4c9221bc8aa002e84279a17b608190a61bc",
       "error": null
     },
@@ -657,9 +672,9 @@
       "app_references": [
         "vaultls"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__7ritn__VaulTLS.md",
-      "readme_download_url": "https://raw.githubusercontent.com/7ritn/VaulTLS/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "392abb19cd2932e307d6beb1e52591167821466933fe7d099b26cafee4edb38f",
       "error": null
     },
@@ -702,9 +717,9 @@
       "app_references": [
         "adguard-home"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__AdguardTeam__AdGuardHome.md",
-      "readme_download_url": "https://raw.githubusercontent.com/AdguardTeam/AdGuardHome/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "9b7848a880da6ca684f7787f0bf95e70a814f77d68a15fd26ce3ce9bb9259022",
       "error": null
     },
@@ -736,21 +751,6 @@
       "readme_path": "knowledge/readmes/github.com__AlexGustafsson__cupdate.md",
       "readme_download_url": null,
       "readme_sha256": "e102d7f115a2c9393f1e9ce69344fc07dbed9d6b0efb38db696bf8d055fd20af",
-      "error": null
-    },
-    {
-      "repo_key": "github.com/AnalogJ/scrutiny",
-      "repo_url": "github.com/AnalogJ/scrutiny",
-      "host": "github.com",
-      "owner": "AnalogJ",
-      "repo": "scrutiny",
-      "app_references": [
-        "scrutiny"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__AnalogJ__scrutiny.md",
-      "readme_download_url": null,
-      "readme_sha256": "c7a0e9350d2df53b06e1616daf76b709787df8f8289fc070f3c9009ee5a19b13",
       "error": null
     }
   ]
