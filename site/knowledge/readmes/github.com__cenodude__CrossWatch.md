@@ -44,7 +44,7 @@
 </p>
 
 
-**CrossWatch (CW)** is a synchronization engine that act as a bridge and keeps your **Plex, Jellyfin, Emby, SIMKL, Floppy, FlickList, Trakt, AniList, TMDb, MDBList, PublicMetaDB, PunchPlay, BingeBase, Scrob, Tautulli, Kodi, Nuvio, Stremio and CW local tracker** in sync. It runs locally with a web UI where you link accounts, define sync pairs, run them manually or on a schedule, and review stats and history. CW also includes its own tracker to keep your data safe with snapshots. With Profiles, you can manage separate sync setups for yourself and for friends or family too, with their own servers and/or tracker API's.
+**CrossWatch (CW)** is a synchronization engine that act as a bridge and keeps your **Plex, Jellyfin, Emby, SIMKL, Floppy, FlickList, Trakt, AniList, TMDb, MDBList, PublicMetaDB, PunchPlay, BingeBase, Scrob, Tautulli, Kodi, Nuvio, Stremio and CW local tracker** in sync. It runs locally with a web UI or/and Command-Line Interface (CLI) where you link accounts, define sync pairs, run them manually or on a schedule, and review stats and history. CW also includes its own tracker to keep your data safe with snapshots. With Profiles, you can manage separate sync setups for yourself and for friends or family too, with their own servers and/or tracker API's.
 
 ### CW in a nutshell:
 * **One brain for all your media syncs** A single place to configure everything.
@@ -55,19 +55,21 @@
 * **Synchronization**
   * Watchlists, Ratings, History, Progress and Collections
   * Rewatches: keep separate plays in sync for supported trackers.
-  * Anime ID mapping (powered by AniBridge and animeApi) for AniList and SIMKL pairs, with custom mappings.
+  * Anime ID mapping (powered by AniBridge and animeApi) for AniList, SIMKL and CW tracker pairs, with custom mappings.
 * **Scrobble (tracks your activity)**
   * **Watcher** (Plex/Emby/Jellyfin/Kodi/Scrob to supported trackers)
     * Does not require Plex Pass or Emby Premiere. Yay!
   * **Webhooks** (Plex/Emby/Jellyfin to supported trackers)
+  * Anime ID mapping for watcher and webhooks for supported providers.
 * **Tools**
   * Analyzer: Finds items that are **stuck** or inconsistent between providers.
   * Playback Progress Manager: View and edit unfinished playback sessions across providers.
   * Editor: Inspect and adjust your items and add or block items.
+  * Import and Export: Import your tracker files and export your data.
   * Events Viewer: Search and inspect sync runs.
   * Captures: Rollback tool for provider watchlist, ratings, and history.
 
-And much, much more...such as:
+And much more...such as:
 * Simple and advanced scheduling: From standard to more detailed pair schedules
 * CW Tracker Keeps snapshots/backups from your media servers and trackers.
 * Unified Watchlist: View all watchlist items in one place.
@@ -152,7 +154,7 @@ The one-shot command exits `0` on success and `1` when the sync reports errors o
 <a href="https://www.buymeacoffee.com/cenodude">
   <img alt="Buy Me a Coffee" src="https://img.shields.io/badge/Buy%20Me%20a%20Coffee-support-ffdd00?style=for-the-badge&logo=buy-me-a-coffee&logoColor=000000">
 </a><center><br>
-Every cent goes to the <b>ALS Foundation</b> in the Netherlands</center>
+Every cent goes directly to the <b>ALS Foundation</b> in the Netherlands</center>
 <br/>
 <br/>
 

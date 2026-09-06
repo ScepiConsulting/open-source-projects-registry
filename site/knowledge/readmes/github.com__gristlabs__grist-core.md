@@ -485,7 +485,6 @@ Grist can be configured in many ways. Here are the main environment variables it
 | GRIST_SESSION_COOKIE | if set, overrides the name of Grist's cookie |
 | GRIST_SESSION_DOMAIN | if set, associates the cookie with the given domain - otherwise defaults to GRIST_DOMAIN |
 | GRIST_SESSION_SECRET | a key used to encode sessions |
-| GRIST_SKIP_BUNDLED_WIDGETS | if set, Grist will ignore any bundled widgets included via NPM packages. |
 | GRIST_SQLITE_MODE | if set to `wal`, use SQLite in [WAL mode](https://www.sqlite.org/wal.html), if set to `sync`, use SQLite with [SYNCHRONOUS=full](https://www.sqlite.org/pragma.html#pragma_synchronous)
 | GRIST_ANON_PLAYGROUND | When set to `false` deny anonymous users access to the home page (but documents can still be shared to anonymous users). Defaults to `true`, unless GRIST_ORG_CREATION_ANYONE is `false`. |
 | GRIST_FORCE_LOGIN | Setting it to `true` is similar to setting `GRIST_ANON_PLAYGROUND: false` but it blocks any anonymous access (thus any document shared publicly actually requires the users to be authenticated before consulting them) |
@@ -495,8 +494,7 @@ Grist can be configured in many ways. Here are the main environment variables it
 | GRIST_TEMPLATE_ORG | set to an org "domain" to show public docs from that org |
 | GRIST_HELP_CENTER | set the help center link ref |
 | GRIST_TERMS_OF_SERVICE_URL | if set, adds terms of service link |
-| FREE_COACHING_CALL_URL | set the link to the human help (example: email adress or meeting scheduling tool) |
-| GRIST_CONTACT_SUPPORT_URL | set the link to contact support on error pages (example: email adress or online form) |
+| GRIST_CONTACT_SUPPORT_URL | set the link to contact support on error pages (example: email address or online form) |
 | GRIST_ONBOARDING_VIDEO_ID | set the ID of the YouTube video shown on the homepage and during onboarding |
 | GRIST_CUSTOM_COMMON_URLS | overwrite the default commons URLs. Its value is expected to be a JSON object and a subset of the [ICommonUrls interface](./app/common/ICommonUrls.ts). |
 | GRIST_SUPPORT_ANON | if set to 'true', show UI for anonymous access (not shown by default) |

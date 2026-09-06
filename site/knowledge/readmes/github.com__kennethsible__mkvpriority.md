@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD033 MD041 -->
 <div align="center">
-  <img alt="MKVPriority Banner" src="images/mkvpriority_banner.svg" width="600">
+  <img alt="MKVPriority Banner" src="https://raw.githubusercontent.com/kennethsible/mkvpriority/refs/heads/main/images/mkvpriority_banner.svg" width="600">
 </div>
 <p align="center">
 <img src="https://github.com/kennethsible/mkvpriority/actions/workflows/publish.yaml/badge.svg" alt="Docker Release" />
@@ -86,12 +86,14 @@ mkvpriority:
   container_name: mkvpriority
   user: ${PUID}:${PGID}
   environment:
-    WEBHOOK_PORT: '8080'
+    WEBHOOK_PORT: "8080"
     MKVPRIORITY_ARGS: >
       --archive /config/archive.db
   volumes:
     - /path/to/media:/media
     - /path/to/mkvpriority/config:/config
+  ports:
+    - 8080:8080
   restart: unless-stopped
 ```
 
@@ -109,13 +111,15 @@ mkvpriority:
   container_name: mkvpriority
   user: ${PUID}:${PGID}
   environment:
-    WEBHOOK_PORT: '8080'
+    WEBHOOK_PORT: "8080"
     MKVPRIORITY_ARGS: >
       --config /config/anime.toml::anime
       --archive /config/archive.db
   volumes:
     - /path/to/media:/media
     - /path/to/mkvpriority/config:/config
+  ports:
+    - 8080:8080
   restart: unless-stopped
 ```
 
@@ -161,6 +165,16 @@ Naming Format: {basename}.{language}.{default,forced}.{srt,ass}
 > [!NOTE]
 > To avoid changing internal track flags and *only* use external subtitles, use the subtitle extractor with the `--dry-run` argument since subtitle extraction still runs during a dry run, which only prevents changes to the MKV container.
 
+### Example: Subtitle Converter
+
+You can use the `subtitle_converter` extension to convert external subtitles between formats. Converting styled subtitles (`.ass`) to plain text (`.srt`) prevents server transcoding on devices with limited subtitle support. Conversely, converting plain text subtitles to stylized allows you to chain this module with the `subtitle_restyler` extension to apply advanced typography and consistent styling across your library.
+
+```toml
+convert_external_subtitles = true
+convert_target_format = "ass"
+convert_remove_source = false
+```
+
 ### Example: Subtitle Restyler
 
 You can use the `subtitle_restyler` extension to restyle external subtitles by defining style overrides in your config file. Since this extension operates on external subtitles, it can be seamlessly chained with the subtitle extractor. To ensure this extension only restyles dialogue subtitles, it filters out styles that exceed calibrated thresholds for spatial, karaoke, and drawing tags. A complete list of restylable attributes can be found in the extension's Python script on GitHub.
@@ -195,21 +209,21 @@ You can easily write your own post-processing scripts to handle custom logic.
 
    ```python
    class Extension(ABC):
-    def __init__(self, extension_name: str | None = None):
-        name = extension_name or self.__class__.__name__
-        self.extension_logger = logging.getLogger(name)
+       def __init__(self, extension_name: str | None = None):
+           name = extension_name or self.__class__.__name__
+           self.extension_logger = logging.getLogger(name)
 
-    @abstractmethod
-    def process_file(
-        self,
-        file_path: Path,
-        video_tracks: list[Track],
-        audio_tracks: list[Track],
-        subtitle_tracks: list[Track],
-        config: Config,
-        dry_run: bool = False,
-    ) -> None:
-        raise NotImplementedError
+       @abstractmethod
+       def process_file(
+           self,
+           file_path: Path,
+           video_tracks: list[Track],
+           audio_tracks: list[Track],
+           subtitle_tracks: list[Track],
+           config: Config,
+           dry_run: bool = False,
+       ) -> None:
+           raise NotImplementedError
    ```
 
 3. Use `-i/--include` with the script name (without the `.py` extension):

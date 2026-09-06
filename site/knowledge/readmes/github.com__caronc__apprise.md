@@ -95,6 +95,7 @@ The table below identifies the services this tool supports and some example serv
 | [Kumulos](https://appriseit.com/services/kumulos/) | kumulos:// | (TCP) 443 | kumulos://apikey/serverkey
 | [LaMetric Time](https://appriseit.com/services/lametric/) | lametric:// | (TCP) 443 | lametric://apikey@device_ipaddr<br/>lametric://apikey@hostname:port<br/>lametric://client_id@client_secret
 | [Lark](https://appriseit.com/services/lark/) | lark://  | (TCP) 443   | lark://BotToken
+| [Lauther](https://appriseit.com/services/lauther/) | lauther:// | (TCP) 443 | lauther://Token
 | [Line](https://appriseit.com/services/line/) | line:// | (TCP) 443 | line://Token@User<br/>line://Token/User1/User2/UserN
 | [Mailgun](https://appriseit.com/services/mailgun/) | mailgun:// | (TCP) 443 | mailgun://user@hostname/apikey<br />mailgun://user@hostname/apikey/email<br />mailgun://user@hostname/apikey/email1/email2/emailN<br />mailgun://user@hostname/apikey/?name="From%20User"
 | [MailerSend](https://appriseit.com/services/mailersend/) | mailersend://  | (TCP) 443   | mailersend://APIToken:FromEmail/<br />mailersend://APIToken:FromEmail/ToEmail<br />mailersend://APIToken:FromEmail/ToEmail1/ToEmail2/ToEmailN/
@@ -144,6 +145,7 @@ The table below identifies the services this tool supports and some example serv
 | [ServerChan](https://appriseit.com/services/serverchan/) | schan://   | (TCP) 443    | schan://sendkey/
 | [Session Open Group Server](https://appriseit.com/services/sogs/) | session:// or sessions:// | (TCP) 80 or 443 | sessions://public_key:seed@hostname/room<br />sessions://public_key:seed@hostname/room1/room2<br />sessions://public_key:seed@hostname:port/room<br />session://public_key:seed@hostname/room
 | [Signal API](https://appriseit.com/services/signal/) | signal://  or signals:// | (TCP) 80 or 443  | signal://hostname:port/FromPhoneNo<br/>signal://hostname:port/FromPhoneNo/ToPhoneNo<br/>signal://hostname:port/FromPhoneNo/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
+| [Signalgrid](https://appriseit.com/services/signalgrid/) | signalgrid://  | (TCP) 443   | signalgrid://CLIENT_KEY/CHANNEL<br />signalgrid://CLIENT_KEY/CHANNEL1/CHANNEL2<br />signalgrid://CLIENT_KEY/CHANNEL?critical=true
 | [SIGNL4](https://appriseit.com/services/signl4/) | signl4://  | (TCP) 80 or 443  | signl4://hostname
 | [SimplePush](https://appriseit.com/services/simplepush/) | spush://   | (TCP) 443    | spush://apikey<br />spush://salt:password@apikey<br />spush://apikey?event=Apprise
 | [Slack](https://appriseit.com/services/slack/) | slack://  | (TCP) 443   | slack://TokenA/TokenB/TokenC/<br />slack://TokenA/TokenB/TokenC/Channel<br />slack://botname@TokenA/TokenB/TokenC/Channel<br />slack://user@TokenA/TokenB/TokenC/Channel1/Channel2/ChannelN

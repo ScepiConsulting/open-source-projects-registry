@@ -195,6 +195,7 @@ Prior versions of Jackett are no longer supported.
  * comicat
  * Deildu
  * Devil-Torrents
+ * Draupnirr (Yggrasil)
  * DreamingTree
  * DXP (Deaf Experts)
  * Electro-Torrent
@@ -345,6 +346,7 @@ Prior versions of Jackett are no longer supported.
  * cyanbug (大青虫)
  * CyclingArchiveClub [![(invite needed)][inviteneeded]](#)
  * CZTeam
+ * DanishBits
  * Darkpeers
  * Das Unerwartete (D-U)
  * DataScene (DS)
@@ -355,7 +357,6 @@ Prior versions of Jackett are no longer supported.
  * Diablo Torrent
  * DICMusic [![(invite needed)][inviteneeded]](#)
  * DigitalCore (DC)
- * Diginette
  * DimeADozen (EzTorrent)
  * DiscFan [![(invite needed)][inviteneeded]](#)
  * DocsPedia
@@ -373,7 +374,6 @@ Prior versions of Jackett are no longer supported.
  * Explosiv-World (E-W)
  * ExtremeBits
  * F1Carreras
- * F1GP
  * FANO.IN [![(invite needed)][inviteneeded]](#)
  * Fappaizuri
  * Femdomcult
@@ -472,7 +472,6 @@ Prior versions of Jackett are no longer supported.
  * M-Team - TP (MTTP) [![(invite needed)][inviteneeded]](#)
  * MaDs Revolution
  * Majomparádé (TurkDepo)
- * Making Off
  * Malayabits
  * Mansão dos Animes (MDAN)
  * March [![(invite needed)][inviteneeded]](#)
@@ -598,6 +597,7 @@ Prior versions of Jackett are no longer supported.
  * Spirit of Revolution [![(invite needed)][inviteneeded]](#)
  * SportsCora
  * SportsCult
+ * Sportz247
  * SpringSunday (SSD) [![(invite needed)][inviteneeded]](#)
  * Superbits (SBS)
  * Swarmazon
@@ -623,6 +623,7 @@ Prior versions of Jackett are no longer supported.
  * The Vault (TVBZ)
  * The-New-Fun
  * TheLeachZone (TLZ)
+ * Thor HUB
  * TJUPT (北洋园PT)
  * TLFBits [![(invite needed)][inviteneeded]](#)
  * TmGHuB (TH) [![(invite needed)][inviteneeded]](#)

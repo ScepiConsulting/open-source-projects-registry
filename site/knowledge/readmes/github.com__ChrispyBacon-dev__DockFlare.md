@@ -18,7 +18,7 @@
 <a href="https://github.com/ChrispyBacon-dev/DockFlare/stargazers">
   <img src="https://img.shields.io/github/stars/ChrispyBacon-dev/DockFlare?style=for-the-badge" alt="Stars">
 </a>
-  <a href="https://github.com/ChrispyBacon-dev/DockFlare/releases"><img src="https://img.shields.io/badge/Release-v3.1.4-blue.svg?style=for-the-badge" alt="Release"></a>
+  <a href="https://github.com/ChrispyBacon-dev/DockFlare/releases"><img src="https://img.shields.io/badge/Release-v3.1.5-blue.svg?style=for-the-badge" alt="Release"></a>
   <a href="https://hub.docker.com/r/alplat/dockflare"><img src="https://img.shields.io/docker/pulls/alplat/dockflare?style=for-the-badge" alt="Docker Pulls"></a>
   <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Made%20with-Python-1f425f.svg?style=for-the-badge" alt="Python"></a>
   <a href="https://github.com/ChrispyBacon-dev/DockFlare/blob/main/LICENSE.MD"><img src="https://img.shields.io/badge/License-GPL--3.0-blue.svg?style=for-the-badge" alt="License"></a>
@@ -312,6 +312,8 @@ Use labels for most workloads while managing exceptions in UI. DockFlare merges 
 Run a central master with agents on remote Docker hosts. Agents stream host-local container events and execute commands while the master owns policy and Cloudflare configuration decisions.
 
 Multi-agent setup guide: [https://dockflare.app/docs/multi-server-agent](https://dockflare.app/docs/multi-server-agent)
+
+Agent source and standalone deployment files: [`dockflare-agent/`](dockflare-agent/)
 
 ## Access Control Model
 

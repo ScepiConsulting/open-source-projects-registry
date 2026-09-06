@@ -13,7 +13,7 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.49+-red.svg)](https://streamlit.io)
 [![Latest Release](https://img.shields.io/github/v/release/EgalitarianMonkey/hometube)](https://github.com/EgalitarianMonkey/hometube/releases)
 [![Docker Image](https://ghcr-badge.egpl.dev/egalitarianmonkey/hometube/latest_tag?trim=major&label=Docker)](https://github.com/EgalitarianMonkey/hometube/pkgs/container/hometube)
-[![License](https://img.shields.io/badge/License-AGPL--3.0-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-AGPL--3.0--or--later-green.svg)](LICENSE)
 
 <br/>
 
@@ -555,9 +555,9 @@ HomeTube configuration is managed through the `.env` file:
 |`YTDLP_CUSTOM_ARGS`|Custom yt-dlp arguments||`--max-filesize 5M --write-info-json`|
 |`REMOVE_TMP_FILES_AFTER_DOWNLOAD`|Remove temporary files after successful download|`false`|`true,false` (false = keep for debugging/reuse)|
 |`NEW_DOWNLOAD_WITHOUT_TMP_FILES`|Clean tmp folder before each new download|`false`|`true,false` (true = fresh start, useful after errors)|
-|**Media Server Integration**||||
-|`JELLYFIN_BASE_URL`|Base URL of your Jellyfin server||`https://jellyfin.local:8096`|
-|`JELLYFIN_API_KEY`|Jellyfin API key used to trigger library scans||`0123456789abcdef0123456789abcdef`|
+|**Media server**||||
+|`JELLYFIN_BASE_URL`|Address of the Jellyfin server to notify after a download||`https://jellyfin.local:8096`|
+|`JELLYFIN_API_KEY`|API key allowed to request a library refresh||`0123456789abcdef0123456789abcdef`|
 |**Docker-specific Variables**||||
 |`VIDEOS_FOLDER_DOCKER_HOST`|Host videos folder in Docker context|**Must be defined**|`/mnt/data/videos` if in Docker container else `/downloads`|
 |`TMP_DOWNLOAD_FOLDER_DOCKER_HOST`|Host tmp download videos folder in Docker context|**Must be defined**|`/mnt/data/hometube/tmp` if in Docker container else `./tmp`|
@@ -707,7 +707,9 @@ Every contribution is appreciated! 🙏
 
 ## 📄 License
 
-This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE) file for details.
+HomeTube is free software under the **GNU Affero General Public License, version 3 or later** — see [LICENSE](LICENSE) for the full text.
+
+Copyright © 2025-2026 Yann Orieult, sole author and maintainer. [NOTICE](NOTICE) records copyright and licensing, [AUTHORS](AUTHORS) records authorship, and [CONTRIBUTING.md](CONTRIBUTING.md#-licensing-of-contributions) sets out the terms that apply to contributions.
 
 ## 🙏 Acknowledgments
 

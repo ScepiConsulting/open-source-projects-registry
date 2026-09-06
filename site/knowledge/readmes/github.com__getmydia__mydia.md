@@ -2,7 +2,7 @@
 
 [![CI](https://github.com/getmydia/mydia/actions/workflows/ci.yml/badge.svg)](https://github.com/getmydia/mydia/actions/workflows/ci.yml)
 [![Documentation](https://github.com/getmydia/mydia/actions/workflows/ci-docs.yml/badge.svg)](https://docs.mydia.dev)
-[![TestFlight](https://img.shields.io/badge/TestFlight-Join%20iOS%20Beta-0D96F6?logo=apple&logoColor=white)](https://testflight.apple.com/join/KFSYxaQP)
+[![TestFlight](https://img.shields.io/badge/TestFlight-Install%20on%20iOS-0D96F6?logo=apple&logoColor=white)](https://testflight.apple.com/join/KFSYxaQP)
 
 **Your personal media companion, built with Phoenix LiveView**
 
@@ -11,7 +11,10 @@ A modern, self-hosted media management platform for tracking, organizing, and mo
 > **Warning:** Mydia is in early development (0.x.x). Expect breaking changes. [Report issues](https://github.com/getmydia/mydia/issues) or [request features](https://github.com/getmydia/mydia/issues/new).
 
 <p align="center">
-  <img src="screenshots/homepage.png" alt="Mydia Dashboard" width="800" />
+  <picture>
+    <source media="(prefers-color-scheme: light)" srcset="screenshots/homepage-light.png" />
+    <img src="screenshots/homepage.png" alt="Mydia Dashboard" width="800" />
+  </picture>
 </p>
 
 ## Quick Start
@@ -71,10 +74,18 @@ Open http://localhost:4000 and create your admin account.
 A cross-platform app that streams your library from anywhere over an encrypted
 peer-to-peer connection. No port forwarding, no VPN.
 
+<p align="center">
+  <img src="screenshots/player-desktop.png" alt="Mydia Player on the desktop" width="800" />
+</p>
+
+| Home | Shows |
+|:----:|:-----:|
+| ![Mydia Player home](screenshots/player-home.png) | ![Mydia Player shows library](screenshots/player-shows.png) |
+
 | Platform | Get it | Notes |
 |---|---|---|
 | Android | [Download APK](https://mydia.dev/download/android) | Allow installs from unknown sources |
-| iOS | [Join the TestFlight beta](https://testflight.apple.com/join/KFSYxaQP) | Needs the TestFlight app |
+| iOS | [Install via TestFlight](https://testflight.apple.com/join/KFSYxaQP) | Needs the TestFlight app |
 | macOS | [Download .dmg](https://mydia.dev/download/macos) | Notarized, updates itself |
 | Windows | [Download installer](https://mydia.dev/download/windows) | Per-user install, unsigned build |
 | Linux | [Flatpak](https://mydia.dev/download/flatpak) or [.tar.gz](https://mydia.dev/download/linux) | Flatpak recommended |
@@ -94,9 +105,12 @@ Full documentation available at **[docs.mydia.dev](https://docs.mydia.dev)**
 
 ## Screenshots
 
-| Movies | TV Shows | Calendar |
-|:------:|:--------:|:--------:|
-| ![Movies](screenshots/movies.png) | ![TV Shows](screenshots/tv-shows.png) | ![Calendar](screenshots/calendar.png) |
+Shown in the dark theme. Mydia ships light, dark and follow-your-system, and the
+dashboard above switches with your GitHub theme.
+
+| Movies | TV Shows | Series | Calendar |
+|:------:|:--------:|:------:|:--------:|
+| ![Movies](screenshots/movies.png) | ![TV Shows](screenshots/tv-shows.png) | ![Series](screenshots/series.png) | ![Calendar](screenshots/calendar.png) |
 
 ## Contributing
 

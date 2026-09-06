@@ -7,8 +7,8 @@
 
   <p>
     Tasks, calendar, budget, groceries, meals, health and more - for a family, a couple,
-    or just you. Nineteen modules on a server you own, and the only thing that leaves it
-    is a version check.
+    or just you. Nineteen modules for one household of up to six people, on a server you
+    own, and the only thing that leaves it is a version check.
   </p>
 
   <p>
@@ -75,7 +75,7 @@ Turn on what your household needs; the rest stays out of the way.
 | Module | In one line |
 |---|---|
 | **Tasks** | Kanban board with deadlines, priorities, subtasks, tags, recurring schedules and multi-member assignment. Attach documents and discuss a task in comments. A history view shows what was completed, grouped by day, with who ticked it off - and when a recurring chore was last done. Lock a task so only its creator and admins can redefine it, while everyone else can still tick it off. |
-| **Shopping** | Shared lists grouped by aisle and ordered to match your shop, with swipe gestures and one-tap import from the meal plan. |
+| **Shopping** | Shared lists grouped by aisle and ordered to match your shop, with swipe gestures and one-tap import from the meal plan. Send a list to whoever is doing the run by email. |
 | **Meals** | Weekly drag-and-drop planner with a recipe sidebar and direct export to the shopping list. |
 | **Recipes** | Create, duplicate and scale recipes, then pre-fill meal slots or send the ingredients to a shopping list. A Mealie or Tandoor instance can be mirrored read-only. |
 | **Pantry** | What is actually in the house: amount, storage location and best-before date, with expiry and low-stock filters and a notification before a date is reached. |
@@ -88,16 +88,17 @@ Turn on what your household needs; the rest stays out of the way.
 | **Health** | Per-member vitals, medications, labs, activity and cycle tracking, with trend charts. |
 | **Schedule** | Rotating shift patterns and fixed weekly timetables from one cycle model, with per-day overrides and an explicit free day. The calendar shows them as a read-only overlay computed on read, so changing a pattern leaves no stale appointments behind. Off by default. |
 | **Notes &amp; Contacts** | Colored Markdown sticky notes with checklists you tick off by tapping them, plus a contact directory with CardDAV sync and vCard import/export. |
-| **Birthdays** | Birthday tracker with automatic calendar events, age display and reminders. |
+| **Birthdays** | Birthday and optional name-day tracker with automatic calendar events, age display and reminders. |
 | **Family** | Member profiles with roles, photos and contact details. New members join through an invite link and pick their own password. |
-| **Reminders** | Reminders on tasks, events, subscription renewals, warranties, inventory deadlines and best-before dates, via in-app badges, opt-in push, and household Gotify, ntfy or webhook channels. A reminder on a shared event reaches everyone assigned to it, each with their own copy to move or dismiss. |
+| **Reminders** | Reminders on tasks, events, subscription renewals, warranties, inventory deadlines and best-before dates, via in-app badges, opt-in push, and household Gotify, ntfy, webhook or email channels. A reminder on a shared event reaches everyone assigned to it, each with their own copy to move or dismiss. |
 | **API Tokens** | Bearer / X-API-Key tokens with an OpenAPI 3.0 spec and a built-in MCP endpoint for AI agents. Writes are retry-safe via an optional `Idempotency-Key` header. |
 | **Backup** | Manual and scheduled backup/restore with pre-restore rollback and optional cloud upload. |
 
 Two more things you only get on your own server: **wall mode** turns the kitchen tablet into a
 readable-from-across-the-room display, and an **Immich screensaver** rotates your own photos when
 the screen goes idle. Every module in full detail is in the [spec](docs/SPEC.md); building your own
-drop-in module is covered in the [module guide](MODULES.md).
+drop-in module - with its own dashboard widgets, permissions and translations - is covered in the
+[module guide](MODULES.md).
 
 ---
 
@@ -209,7 +210,11 @@ no subscription, no upsell and no paid tier.
 
 ## Documentation
 
-[Installation](docs/installation.md) &nbsp;·&nbsp; [Spec &amp; data model](docs/SPEC.md) &nbsp;·&nbsp; [Third-party modules](MODULES.md) &nbsp;·&nbsp; [Notification webhooks](docs/notification-webhooks.md) &nbsp;·&nbsp; [Immich screensaver](docs/immich-screensaver.md) &nbsp;·&nbsp; [Contributing](CONTRIBUTING.md) &nbsp;·&nbsp; [Security](SECURITY.md) &nbsp;·&nbsp; [Changelog](CHANGELOG.md) &nbsp;·&nbsp; [Backlog](BACKLOG.md)
+[Installation](docs/installation.md) &nbsp;·&nbsp; [Spec &amp; data model](docs/SPEC.md) &nbsp;·&nbsp; [Third-party modules](MODULES.md) &nbsp;·&nbsp; [Notification webhooks](docs/notification-webhooks.md) &nbsp;·&nbsp; [Immich screensaver](docs/immich-screensaver.md) &nbsp;·&nbsp; [Contributing](CONTRIBUTING.md) &nbsp;·&nbsp; [Releasing](docs/RELEASING.md) &nbsp;·&nbsp; [Security](SECURITY.md) &nbsp;·&nbsp; [Changelog](CHANGELOG.md) &nbsp;·&nbsp; [Backlog](BACKLOG.md) &nbsp;·&nbsp; [Scope](docs/SCOPE.md) &nbsp;·&nbsp; [Decisions](docs/DECISIONS.md) &nbsp;·&nbsp; [Roadmap](docs/ROADMAP.md)
+
+**User guide (community-maintained):** @Kyrodan writes a [user documentation site](https://kyrodan.github.io/yuvomi-docs/)
+in his own repository. It is not part of this project and can lag behind a release, so where it and
+the sources above disagree, the ones above are right.
 
 If you self-host Yuvomi in a GDPR context (EU/EEA, processing other people's data), read
 [privacy for self-hosters](docs/PRIVACY-FOR-SELFHOSTERS.md) before going live. It covers

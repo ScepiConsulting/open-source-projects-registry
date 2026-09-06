@@ -7,16 +7,11 @@
 <p align="center">A modern, fast, and self-hosted dashboard for your links and services.</p>
 
 <p align="center">
-  <a href="https://github.com/codewec/dashlit/actions/workflows/docker.yml">
-    <img alt="Build" src="https://img.shields.io/github/actions/workflow/status/codewec/dashlit/docker.yml?branch=main&label=build">
-  </a>
-  <a href="https://github.com/codewec/dashlit/releases">
-  <img alt="GitHub Release" src="https://img.shields.io/github/v/release/codewec/dashlit"></a>
+  <a href="https://github.com/codewec/dashlit/actions/workflows/docker.yml"><img alt="Build" src="https://img.shields.io/github/actions/workflow/status/codewec/dashlit/docker.yml?branch=main&label=build"></a>
+  <a href="https://github.com/codewec/dashlit/releases"><img alt="GitHub Release" src="https://img.shields.io/github/v/release/codewec/dashlit"></a>
   <a href="https://codewec.github.io/dashlit/"><img alt="Documentation" src="https://img.shields.io/badge/docs-read-brightgreen?logo=readthedocs"></a>
   <a href="https://github.com/codewec/dashlit/discussions"><img alt="GitHub Discussions" src="https://img.shields.io/github/discussions/all/codewec/dashlit"></a>
-   <a href="https://catppuccin.com/">
-    <img alt="Catppuccin themes" src="https://img.shields.io/badge/themes-Catppuccin-cba6f7?logo=catppuccin&logoColor=1e1e2e">
-  </a>
+  <a href="https://catppuccin.com/"><img alt="Catppuccin themes" src="https://img.shields.io/badge/themes-Catppuccin-cba6f7?logo=catppuccin&logoColor=1e1e2e"></a>
   <a href="LICENSE"><img alt="License" src="https://img.shields.io/github/license/codewec/dashlit"></a>
 </p>
 
@@ -39,7 +34,7 @@
 - URL availability monitoring with live status chips
 - Local password authentication and OIDC, including Pocket ID
 - User profile and administration pages
-- Import, export, and cloning for dashboards, groups, and items
+- Import, export, and cloning for dashboards, groups, and items, including copying groups between dashboards
 - Built-in icon search across selfh.st/icons and Iconify
 - Automatic light/dark icon pairing from selfh.st and light rendering of monochrome Iconify icons on dark themes
 - Multiple light and dark Catppuccin-inspired themes
@@ -47,7 +42,7 @@
 
 ## Run with Docker
 
-The current image is published for `linux/amd64` and `linux/arm64` under the `main` tag.
+The current release is published for `linux/amd64`, `linux/arm64`, and `linux/arm/v7` (armhf) under the `main` tag.
 
 ```bash
 docker pull ghcr.io/codewec/dashlit:main
@@ -64,10 +59,13 @@ Open [http://localhost:3000](http://localhost:3000). The first account created w
 
 ### Docker Compose
 
-For production, copy [`.env.example`](.env.example) to `.env`, set at least `JWT_SECRET`, and run:
+Download the production Compose file, generate a random `JWT_SECRET`, and start DashLit:
 
 ```bash
-docker compose -f docker-compose.yml up -d
+mkdir dashlit && cd dashlit
+curl -fsSLo docker-compose.yml https://raw.githubusercontent.com/codewec/dashlit/main/docker-compose.yml
+printf 'JWT_SECRET=%s\n' "$(openssl rand -hex 32)" > .env
+docker compose up -d
 ```
 
 The production compose file pulls `ghcr.io/codewec/dashlit:main`. Pin a release by setting `DASHLIT_TAG`, for example:
@@ -83,6 +81,44 @@ docker compose up --build -d
 ```
 
 Application state, uploaded icons, and the SQLite database are stored under `/data` in the container.
+
+## Install on Linux or Proxmox
+
+DashLit can run directly on an existing systemd-based Linux installation without Docker. Run the installer as root:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/codewec/dashlit/main/scripts/install.sh | sudo bash
+```
+
+The installer downloads the matching `amd64`, `arm64`, or `armv7` binary from the latest GitHub Release, verifies its SHA-256 checksum, creates a dedicated `dashlit` user, and starts a hardened systemd service on port `8080`. Configuration is stored in `/etc/dashlit/dashlit.env` and persistent data in `/var/lib/dashlit`.
+
+Install future releases with:
+
+```bash
+sudo dashlit-update
+```
+
+Remove the service and binary while keeping configuration and data for a later reinstall:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/codewec/dashlit/main/scripts/uninstall.sh | sudo bash
+```
+
+To permanently remove configuration and application data as well, pass `--purge`:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/codewec/dashlit/main/scripts/uninstall.sh | sudo bash -s -- --purge
+```
+
+To create a dedicated unprivileged Debian LXC on a Proxmox VE host, run this command in the Proxmox shell:
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/codewec/dashlit/main/scripts/proxmox-lxc.sh)"
+```
+
+The container receives its own address over DHCP and serves DashLit on port `80`, so it opens directly at `http://CONTAINER_IP`. The script automatically chooses the next container ID and suitable storage. Its defaults can be overridden with `DASHLIT_CTID`, `DASHLIT_HOSTNAME`, `DASHLIT_STORAGE`, `DASHLIT_TEMPLATE_STORAGE`, `DASHLIT_BRIDGE`, `DASHLIT_IP_CONFIG`, `DASHLIT_CORES`, `DASHLIT_MEMORY`, and `DASHLIT_DISK`.
+
+Community Scripts currently requires new application requests to demonstrate at least 1,000 GitHub stars or comparable public adoption. DashLit does not yet meet that threshold, so the project provides and maintains its own installer instead of publishing an unofficial dependency on a fork of ProxmoxVE.
 
 ## Migrate from legacy DashLit
 
@@ -108,16 +144,20 @@ Most container installations only need to set `JWT_SECRET` and, when required, t
 | Variable                        | Default             | Description                                            |
 | ------------------------------- | ------------------- | ------------------------------------------------------ |
 | `JWT_SECRET`                    | Development value   | Signing secret; always replace in production           |
+| `INITIAL_ADMIN_USERNAME`        | Empty               | Username for one-time first administrator creation     |
+| `INITIAL_ADMIN_PASSWORD`        | Empty               | Password for one-time first administrator creation     |
 | `DEV_MODE`                      | `false`             | Enable development diagnostics                         |
 | `OIDC_ISSUER`                   | Empty               | OIDC issuer URL; leave empty to disable OIDC           |
 | `OIDC_CLIENT_ID`                | Empty               | OIDC client ID                                         |
 | `OIDC_CLIENT_SECRET`            | Empty               | OIDC client secret                                     |
 | `OIDC_REDIRECT_URL`             | Local callback      | Public callback URL                                    |
 | `OIDC_BUTTON_TITLE`             | `Sign in with OIDC` | OIDC button label                                      |
+| `OIDC_INSECURE_SKIP_TLS_VERIFY` | `false`             | Disable OIDC TLS verification for local testing only   |
 | `DISABLE_PASSWORD_REGISTRATION` | `false`             | Disable password registration                          |
 | `DISABLE_OIDC_REGISTRATION`     | `false`             | Prevent OIDC from creating new users                   |
 | `DISABLE_OIDC_USER_MERGE`       | `false`             | Prevent OIDC identities from linking to existing users |
 | `DISABLE_PASSWORD_LOGIN`        | `false`             | Disable password login once OIDC is configured         |
+| `UPDATE_CHECK_ENABLED`          | `true`              | Check GitHub Releases for a newer stable version       |
 
 ### Advanced runtime settings
 
@@ -128,6 +168,10 @@ The container image already provides appropriate values for these internal setti
 | `ADDR`          | `:8080`                  | Internal HTTP listen address                                          |
 | `DATA_DIR`      | `./data`                 | Database, uploaded icons, and cache directory; the image uses `/data` |
 | `DATABASE_PATH` | `$DATA_DIR/bookmarks.db` | Custom SQLite database path                                           |
+
+Release builds embed their Git tag and commit in the executable. Check a native installation with `dashlit --version`; the same version is shown in the application footer. Update checks run only for administrator sessions, are cached for 12 hours, and failures never prevent DashLit from starting. Regular users receive no available-release information. Set `UPDATE_CHECK_ENABLED=false` to disable the outbound GitHub request.
+
+To provision the first administrator non-interactively, set both `INITIAL_ADMIN_USERNAME` and `INITIAL_ADMIN_PASSWORD` before the first start. The password must contain at least six characters. DashLit creates the account only while the users table is empty; after any user exists, both variables are ignored and can be removed from the deployment configuration. They do not reset or update an existing account.
 
 When DashLit is behind a reverse proxy, use the external HTTPS address for the callback:
 
@@ -182,7 +226,7 @@ make git-cliff-install
 make changelog-preview
 ```
 
-Releases use tags such as `v1.0.0`. Each release publishes a matching versioned container image and creates a GitHub Release. The `main` image tag follows the current generation, while `latest` remains on the legacy generation and is intentionally not published by these workflows.
+Releases use tags such as `v1.0.0`. Each release publishes both the matching versioned container image and the stable `main` image, then creates a GitHub Release. Pushes to the `main` branch publish the development image as `dev`. The `latest` tag remains on the legacy generation and is intentionally not published by these workflows.
 
 See [RELEASING.md](RELEASING.md) for the complete maintainer release procedure.
 

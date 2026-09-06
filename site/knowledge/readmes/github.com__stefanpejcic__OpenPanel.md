@@ -57,7 +57,7 @@ The result: VPS-level isolation on shared hosting infrastructure, without the VP
 **Why use OpenPanel for your hosting business?**
 
 - focus on [security](https://openpanel.com/docs/articles/security/securing-openpanel/)
-- billing integrations: [FOSSBilling](https://openpanel.com/docs/articles/extensions/openpanel-and-fossbilling/), [WHMCS](https://openpanel.com/docs/articles/extensions/openpanel-and-whmcs/), [Blesta](https://openpanel.com/docs/articles/extensions/openpanel-and-blesta/) paymenter.org[^1]
+- billing integrations: [FOSSBilling](https://openpanel.com/docs/articles/extensions/openpanel-and-fossbilling/), [WHMCS](https://openpanel.com/docs/articles/extensions/openpanel-and-whmcs/), [Blesta](https://openpanel.com/docs/articles/extensions/openpanel-and-blesta/), paymenter.org[^1]
 - dedicated [MySQL, Percona or MariaDB per user](https://openpanel.com/docs/articles/docker/how-to-set-mysql-mariadb-per-user-in-openpanel/)
 - dedicated [Apache, Nginx, OpenLitespeed, Openresty + Varnish per user](https://openpanel.com/docs/articles/docker/how-to-set-nginx-apache-varnish-per-user-in-openpanel/)
 - [detailed activity log](https://openpanel.com/docs/panel/account/account_activity/#recorded-actions) for all user actions.
@@ -80,19 +80,19 @@ OpenPanel is a truly [OS-agnostic](https://www.techtarget.com/whatis/definition/
 <!-- OS_TEST_RESULTS_START -->
 | Operating System | Version | Last Tested | Status | Average install time[^2] | Notes |
 |---|---|---|---|---|---|
-| Ubuntu | 22 | 2026-08-03 13:11 UTC | ❌ Fail |  |  |
-| Ubuntu | 24 | 2026-08-03 13:18 UTC | ✅ Pass | 2m5s | **recommended for AMD CPU** |
-| Ubuntu | 26 | 2026-08-03 13:15 UTC | ✅ Pass | 2m35s |  |
+| Ubuntu | 22 | 2026-09-04 09:00 UTC | ❌ Fail |  |  |
+| Ubuntu | 24 | 2026-09-04 09:10 UTC | ✅ Pass | 2m6s | **recommended for AMD CPU** |
+| Ubuntu | 26 | 2026-09-04 09:03 UTC | ✅ Pass | 2m55s |  |
 | Debian | 10 | | | |  |
-| Debian | 11 | 2026-08-03 13:21 UTC | ❌ Fail |  |  |
-| Debian | 12 | 2026-08-03 13:24 UTC | ✅ Pass | 1m25s |  |
-| Debian | 13 | 2026-08-03 13:26 UTC | ✅ Pass | 1m54s |  |
+| Debian | 11 | 2026-09-04 09:15 UTC | ❌ Fail |  |  |
+| Debian | 12 | 2026-09-04 09:17 UTC | ❌ Fail | 1m25s |  |
+| Debian | 13 | 2026-09-04 09:20 UTC | ✅ Pass | 1m56s |  |
 | AlmaLinux | 9.5 | | |  | **recommended for ARM CPU** |
-| AlmaLinux | 10 | 2026-08-03 12:46 UTC | ✅ Pass | 2m40s |  |
+| AlmaLinux | 10 | 2026-09-04 08:20 UTC | ✅ Pass | 8m51s |  |
 | RockyLinux | 9.6 | | | |  |
-| RockyLinux | 10 | 2026-08-03 13:29 UTC | ❌ Fail |  |  |
+| RockyLinux | 10 | 2026-09-04 09:25 UTC | ❌ Fail |  |  |
 | CentOS | 9.5 | | | |  |
-| CentOS | 10 | 2026-08-03 13:00 UTC | ✅ Pass | 3m21s |  |
+| CentOS | 10 | 2026-09-04 08:56 UTC | ❌ Fail | 8m20s |  |
 | openEuler | 24 | | Untested |  |  |
 | ZorinOS | 18 | 2026-07-21 09:43 UTC | ✅ Pass |  |  |
 

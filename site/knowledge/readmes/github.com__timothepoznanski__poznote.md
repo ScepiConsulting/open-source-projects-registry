@@ -9,7 +9,17 @@ Powerful note-taking without the hassle.
 
 <h3 align="center">
 A free, self-hosted, open-source alternative to Notion, Obsidian, Evernote, or OneNote.
-<h3 align="center">
+</h3>
+
+<p align="center">
+  <a href="https://github.com/timothepoznanski/poznote/releases"><img src="https://img.shields.io/github/v/release/timothepoznanski/poznote?label=release&color=1f6feb" alt="Latest release"></a>
+  <a href="https://github.com/timothepoznanski/poznote/pkgs/container/poznote"><img src="https://img.shields.io/badge/ghcr.io-poznote-2496ed?logo=docker&logoColor=white" alt="Docker image"></a>
+  <a href="https://github.com/timothepoznanski/poznote/blob/main/LICENCE"><img src="https://img.shields.io/github/license/timothepoznanski/poznote?color=44cc11" alt="License MIT"></a>
+  <a href="https://github.com/timothepoznanski/poznote/stargazers"><img src="https://img.shields.io/github/stars/timothepoznanski/poznote?color=f5b400" alt="GitHub stars"></a>
+  <a href="https://github.com/timothepoznanski/poznote/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/timothepoznanski/poznote?label=issues%20closed&color=44cc11" alt="Closed issues"></a>
+  <a href="https://github.com/timothepoznanski/poznote/discussions"><img src="https://img.shields.io/github/discussions/timothepoznanski/poznote?label=discussions&logo=github&color=8957e5" alt="GitHub Discussions"></a>
+  <a href="https://demo.poznote.com"><img src="https://img.shields.io/badge/demo-live-brightgreen" alt="Live demo"></a>
+</p>
 
 <p align="center">
   <img src="images/pres1.png" alt="Poznote-light" width="100%">
@@ -17,7 +27,7 @@ A free, self-hosted, open-source alternative to Notion, Obsidian, Evernote, or O
 
 ### Features
 
-Discover all the features [here](https://poznote.com/selfhosting.html).
+Discover all the features [here](https://poznote.com/#features).
 
 ### Screenshots
 
@@ -34,6 +44,12 @@ https://demo.poznote.com
 
 https://poznote.com/press.html
 
+### Discord
+
+Join the community to ask questions, share feedback or follow the development:
+
+https://discord.gg/AWhWWSEkJ
+
 ## Table of content
 
 - [Install](#install)
@@ -42,6 +58,7 @@ https://poznote.com/press.html
 - [Update application](#update-application)
 - [Authentication](#authentication)
 - [Note types](#note-types)
+- [Snapshots](#snapshots)
 - [Personalization](#personalization)
 - [Multi-users](#multi-users)
 - [Activity Log](#activity-log)
@@ -559,6 +576,15 @@ Poznote supports two primary note formats, each tailored for different workflows
 *   **Format:** New entries are created as HTML or Markdown notes, depending on the "Diary entry format" setting under **Settings > Display**.
 </details>
 
+## Snapshots
+
+Snapshots keep earlier versions of a note's content so you can go back to a previous state from the note's **Snapshots** menu.
+
+*   **Automatic:** a snapshot is taken the first time a note is opened each day. The 3 most recent automatic snapshots are kept per note; this number can be changed under **Settings > Behavior > Snapshots**.
+*   **Manual:** "Take snapshot now" adds a snapshot at any time. Manual snapshots are unlimited and do not count toward that number.
+*   **Expiry:** every snapshot, automatic or manual, is deleted 30 days after it was taken. A snapshot can also be deleted by hand from the Snapshots modal.
+*   **Attachments and images:** snapshots only store the note text. Attachments are never copied, so a file referenced by several snapshots exists once on disk. A file removed from a note stays on disk, hidden from the note, as long as a snapshot still contains it, so restoring that snapshot brings it back. It is deleted for good once the last snapshot containing it expires or is deleted, or when the note is permanently deleted. Keeping more snapshots therefore never duplicates files. It only keeps removed files around for longer, 30 days at most.
+
 ## Personalization
 
 Poznote offers several built-in personalization options directly from the application, without requiring any configuration file changes.
@@ -600,6 +626,7 @@ Configure it in **Settings > Appearance > UI Customization**.
 
 - **Granular Control:** Toggle visibility for home cards, toolbar actions, slash menu items, and more.
 - **Per-User:** Each user can have their own unique interface layout.
+- **Administrators:** The same modal shows a second "Users" column next to the administrator's own "Me" column, to hide elements for every user of the instance (administrators excepted).
 - **Searchable:** Easily find the element you want to hide using the filter in the configuration modal.
 
 </details>
@@ -690,7 +717,9 @@ For the complete reference, covering every event, the exact payload fields (`dat
 
 ## Git Synchronization
 
-Poznote supports automatic and manual synchronization with **GitHub** or **Forgejo**. Each user configures their own repository independently. There is no shared global repository.
+Poznote supports automatic and manual synchronization with **GitHub**, **GitLab** (gitlab.com or a self-hosted instance) or **Forgejo**. Each user configures their own repository independently. There is no shared global repository.
+
+Git Sync talks to the provider's REST API over HTTPS, so authentication is always token-based. SSH keys are not used.
 
 <details>
 <summary><strong>How to configure Git Sync</strong></summary>
@@ -706,10 +735,10 @@ Toggle **Git Sync** to enabled in the **Advanced Settings** section of the Setti
 
 | Field | Description |
 |---|---|
-| Provider | `GitHub` or `Forgejo` |
-| API Base URL | GitHub: auto-filled (read-only). Forgejo: your instance URL, e.g. `https://forgejo.example.com/api/v1` |
-| Access Token | GitHub PAT (`ghp_...`) or Forgejo token (Settings > Applications) |
-| Repository | `owner/repo` format |
+| Provider | `GitHub`, `GitLab` or `Forgejo` |
+| API Base URL | GitHub: auto-filled (read-only). GitLab: `https://gitlab.com/api/v4`, or your instance URL, e.g. `https://gitlab.example.com/api/v4`. Forgejo: your instance URL, e.g. `https://forgejo.example.com/api/v1` |
+| Access Token | GitHub PAT (`ghp_...`), GitLab token with the `api` scope (`glpat-...`, personal or project access token) or Forgejo token (Settings > Applications) |
+| Repository | `owner/repo` format. GitLab: the full project path, including subgroups, e.g. `group/subgroup/project` |
 | Branch | Default: `main` |
 | Author Name / Email | Used for commit metadata |
 
@@ -724,6 +753,17 @@ When enabled by the user, Poznote will automatically:
 - **Push** on every note create, update, or delete
 
 Manual push/pull is also available from the **Dashboard** via the **Push** and **Pull** cards.
+
+---
+
+**Synced workspaces**
+
+By default every workspace is synced. In **Settings > Git Sync**, each user can instead restrict Git Sync to selected workspaces:
+
+- Only notes and attachments from the selected workspaces are pushed and pulled.
+- A pull never touches notes in the other workspaces.
+- A push removes repository files that fall outside the selected workspaces, so the repository always mirrors exactly the synced set.
+- The Push and Pull sidebar buttons, automatic push, and the pull prompt only appear while viewing a synced workspace.
 
 </details>
 
@@ -794,6 +834,8 @@ Single ZIP containing database, all notes, and attachments for all workspaces:
   - Includes an `index.html` at the root for offline browsing
   - Notes are organized by workspace and folder
   - Attachments are accessible via clickable links
+
+The archive is built in the background by a worker process, not during the request that starts it, so a large account cannot hit a browser or reverse proxy timeout. The page follows the progress of the job, and the download starts on its own once the file is ready. You can leave the page and come back, the preparation continues. A prepared archive stays available for 24 hours, and a button lets you delete it right away.
 
 #### Per-User vs Complete Backups
 
@@ -905,6 +947,12 @@ Upload the complete backup ZIP to restore everything:
   - Replaces database, restores all notes, and attachments
   - Works for all workspaces at once
 
+There is no practical size limit. The archive is uploaded in slices (a slice that fails is retried instead of losing the whole upload), reassembled on the server, then extracted and restored by a background worker, so neither the browser nor a reverse proxy in front of the instance can time the restore out. A progress bar covers the whole pipeline: upload, extraction, database, notes, then attachments. When the restore finishes, Poznote asks which workspace you want to open.
+
+Restoring from an S3 bucket (see [S3 Backups](#s3-backups)) runs as the same background job, so fetching a large archive from the bucket and restoring it does not depend on a request staying alive either.
+
+If the upload is not possible at all, the Restore / Import page also offers a direct copy fallback: copy the archive into the Poznote container at exactly `/tmp/backup_restore.zip` over SSH, reload the page, and restore from there.
+
 </details>
 
 <a id="import-individual-notes"></a>
@@ -929,6 +977,8 @@ Import a ZIP archive containing multiple notes:
   - Support `.html`, `.md`, `.markdown` or `.txt` files types
   - ZIP archives can contain up to 300 files, configurable in Settings > Advanced Settings > Import Limits
   - When importing a ZIP archive, Poznote automatically detects and recreates the folder structure
+
+There is no practical size limit on the archive. Like a complete restore, it is uploaded in slices (a slice that fails is retried instead of losing the whole upload), reassembled on the server, then processed by a background worker, so neither the browser nor a reverse proxy in front of the instance can time the import out. A progress bar covers the whole pipeline: upload, images and attachments, then notes.
 
 </details>
 
@@ -1029,7 +1079,7 @@ The assistant is global, MCP-style: it has tools to **search and read your notes
 
 The assistant is **scoped to the current workspace**: it only sees, searches and edits the notes of the workspace you opened the chat in, and new notes are created there. To ask about another workspace, switch to it first.
 
-To enable it, go to **Settings → Admin Tools → AI Assistant** (administrator only), pick a provider and use **Test connection** to verify the server and choose a model. The configuration applies to the whole instance: once enabled by the administrator, every user profile gets the chat.
+To enable it, go to **Settings → Admin Tools → AI Assistant** (administrator only), pick a provider and use **Check access and list models** to verify the server and choose a model from the ones it offers. The configuration applies to the whole instance: once enabled by the administrator, every user profile gets the chat.
 
 For the full configuration guide, covering providers, choosing a model, and how to connect a local Ollama/LM Studio server from the Poznote container (finding the right URL, `OLLAMA_HOST`, Docker networking), see the [AI Assistant documentation](docs/AI-ASSISTANT.md).
 
@@ -1059,6 +1109,8 @@ POZNOTE_MCP_PORT=9000 POZNOTE_DEBUG=true docker compose up -d --force-recreate m
 These are container/runtime overrides, not Poznote UI settings. You can pass them inline as shown above or place them in `.env` before recreating the `mcp-server` container.
 
 Only the exact lowercase values `true` and `false` are recognized for `POZNOTE_DEBUG`. After changing settings, recreate the container; a simple restart does not reload environment variables.
+
+**Security:** the MCP port is published on `127.0.0.1` only, so by default nothing outside your machine can reach it. If you expose it further (reverse proxy, LAN, or a non-Docker install), set `POZNOTE_MCP_AUTH_TOKEN` in `.env` and the server will require an `Authorization: Bearer <token>` header from every client. When run outside Docker, `poznote-mcp serve` binds to `127.0.0.1` by default. Details in the [Security section](docs/MCP-SERVER.md#security) of the MCP documentation.
 
 ## Chrome Extension
 

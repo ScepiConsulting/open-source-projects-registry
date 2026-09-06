@@ -1,10 +1,10 @@
-<img src="https://piwigo.org/plugins/piwigo-piwigodotorg/images/piwigo.org.svg" width="200" alt="Piwigo logo">
+<img src="https://piwigo.org/plugins/piwigo-website/images/piwigo.org.svg" width="200" alt="Piwigo logo">
 
 Manage your photo library. Piwigo is open source photo gallery software for the web. Designed for organisations, teams and individuals.
 
-![screenshot](https://piwigo.org/screenshots/github-screenshot-2.10.jpg)
+![screenshot](https://piwigo.org/plugins/piwigo-website/images/home/top.webp)
 
-The [piwigo.org](https://piwigo.org) website introduces you to Piwigo. You'll find a demo, forums, wiki and news.
+The [piwigo.org](https://piwigo.org) website introduces you to Piwigo. You'll find listing of features, demos, forums, documentation, news, tesimonials, examples...
  
 ## Requirements
 
@@ -15,13 +15,7 @@ The [piwigo.org](https://piwigo.org) website introduces you to Piwigo. You'll fi
 
 ## Quick start install
 
-### NetInstall
-
- * Download the [NetInstall script](https://piwigo.org/download/dlcounter.php?code=netinstall)
- * Transfer the script to your web space with any FTP client
- * Open the script in you web browser (for example http://example.com/piwigo-netinstall.php) and follow the steps
-
-[More information](https://piwigo.org/guides/install/netinstall)
+If you do not have your own server, consider the [Piwigo Cloud](https://piwigo.org/get-piwigo#cloud) "ready-to-use" solution.
 
 ### Manual
 
@@ -29,13 +23,15 @@ The [piwigo.org](https://piwigo.org) website introduces you to Piwigo. You'll fi
  * Transfer everything to your web space with any FTP client
  * Open your website (for example http://example.com/piwigo) and follow the steps
 
-[More information](https://piwigo.org/guides/install/manual)
+[More information](https://doc.piwigo.org/self-hosting-piwigo/install-guides/manual-install/)
 
-If you do not have your own server, consider the [piwigo.com](https://piwigo.com/) hosting solution.
+### Docker
+
+[Installation guide with Docker](https://doc.piwigo.org/self-hosting-piwigo/install-guides/docker-install/)
 
 ## Contributing
 
-Piwigo is widely driven by its community; if you want to improve the code, fork this repo and submit your changes to the `master` branch. See our [Contribution guide](https://github.com/Piwigo/Piwigo/blob/master/docs/CONTRIBUTING.md).
+Piwigo is widely driven by its community; if you want to improve the code, fork this repo and submit your changes to the `master` branch. See our [Contribution guide](https://github.com/Piwigo/Piwigo/blob/master/docs/CONTRIBUTING.md). There are other kind of contributions, see [our contributing page on piwigo.org](https://piwigo.org/get-involved)
 
 ## License
 

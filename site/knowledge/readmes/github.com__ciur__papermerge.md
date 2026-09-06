@@ -1,8 +1,23 @@
-<h1 align="center">Papermerge DMS</h1>
+# ⚠️ ARCHIVED - See papermerge-core
 
-<p align="center">
-<img src="./artwork/logo-w160px.png" />
-</p>
+This repository is archived. Papermerge development has moved to:
+
+→ **[papermerge/papermerge-core](https://github.com/papermerge/papermerge-core)**
+
+For the latest open-source version, issues, PRs, and maintainer opportunities, 
+go to the organization repository above.
+
+---
+
+# ⚠️ Important
+
+After 9 years of OSS development, I'm now focusing on Papermerge Cloud (SaaS).
+The OSS version is seeking active maintainers.
+
+Interested in maintaining Papermerge OSS? 
+→ [See GitHub issue #1318](https://github.com/papermerge/papermerge-core/issues/1318)
+
+------
 
 Papermerge DMS or simply Papermerge is a open source document management
 system designed to work with scanned documents (also called digital
@@ -23,34 +38,6 @@ browser.
 
 ![Papermerge](./artwork/papermerge3-3.png)
 
-
-## Repositories
-
-**This is meta-repository** - which means that source code of the
-application is not here. **This repository is used to track project's existence,
-status and its issues.**
-
-As the application grew it was necessary to split it
-into multiple repositories and in same time move new repositories under
-[Papermerge Github Organization](https://github.com/papermerge).
-
-| Repository      | Description |
-| :---------------|-------------|
-| [ciur/papermerge](https://github.com/ciur/papermerge)| Meta-repository which keeps track the project existence, status, and its issues.|
-| [papermerge/papermerge-core](https://github.com/papermerge/papermerge-core)| Source code for REST API Backend server. The heart of the project.|
-| [papermerge/documentation](https://github.com/papermerge/documentation)| Source code for the documentation.|
-
-## Other Resources
-
-| Resource        | Description |
-|-----------------|-------------|
-|[https://docs.papermerge.io](https://docs.papermerge.io/)| Documentation |
-|[https://papermerge.com](https://papermerge.com) | Homepage |
-|[https://demo.papermerge.com](https://demo.papermerge.com) | Online Demo (username: demo, password: demo) |
-|[https://papermerge.blog](https://papermerge.blog) | Blog |
-|[YouTube Channel](https://www.youtube.com/@papermerge) | YouTube channel |
-|[X/Former Twitter](https://twitter.com/papermerge) | X/Former Twitter |
-|[Reddit](https://www.reddit.com/r/Papermerge/) | Reddit |
 
 ## Features Highlight
 

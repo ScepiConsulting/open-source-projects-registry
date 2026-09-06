@@ -65,7 +65,7 @@ Every feature, with how to turn it on and use it, is described in **[FEATURES.md
 
 ## Installation
 
-Docker (from the **[pre-built GHCR images](./INSTALLATION.md#pre-built-docker-images)**), Proxmox LXC, build from source, configuration, and development setup are all covered in **[INSTALLATION.md](./INSTALLATION.md)**.
+Docker (from the **[pre-built GHCR images](./INSTALLATION.md#pre-built-docker-images)**), Proxmox LXC, **[bare metal without Docker](./INSTALLATION.md#bare-metal--no-docker)** (`sudo bash scripts/install-baremetal.sh` — systemd unit plus nginx on a Debian/Ubuntu host), build from source, configuration, and development setup are all covered in **[INSTALLATION.md](./INSTALLATION.md)**.
 
 ---
 
@@ -109,6 +109,14 @@ SCANNER_HTTP_VERIFY_TLS=false     # verify TLS certs on the HTTP probe
 ```
 
 The listed ports are appended to nmap's `-p` spec. Invalid entries (out-of-range, malformed, or reversed ranges) are silently skipped.
+
+### MAC addresses (Docker)
+
+The scan reports no MAC address when the backend runs on a Docker bridge
+network — ARP is layer 2, and from a bridge every LAN host sits behind the
+Docker gateway. It also means a DHCP device that changes IP comes back as a new
+inventory entry, since matching prefers the MAC. Fix and caveats:
+[INSTALLATION.md](./INSTALLATION.md#scanning-from-docker--mac-addresses).
 
 ### macOS / root privileges
 
@@ -328,8 +336,8 @@ Homelable can exposes a [Model Context Protocol](https://modelcontextprotocol.io
 
 | | Action |
 |---|---|
-| **Read** | List all nodes, edges, full canvas, pending devices, scan history |
-| **Write** | Add / update / delete nodes and edges, trigger a network scan, approve or hide discovered devices |
+| **Read** | List all nodes, edges, full canvas, zones, designs, the device inventory and scan history — and the rack canvases: racks, mounted gear, patched cables |
+| **Write** | Add / update / delete nodes, edges and zones, trigger a network scan, approve / hide / restore discovered devices, create and edit inventory entries, build racks and mount, move and patch the gear in them |
 
 ### Setup
 
@@ -405,6 +413,8 @@ Or add it manually to `~/.claude.json`:
 - *"Add a new LXC container named `pihole` at 192.168.1.5, connected to my switch."*
 - *"Trigger a network scan on 192.168.1.0/24 and show me the pending devices."*
 - *"Show me the full canvas topology."*
+- *"How much free U is left in the garage rack?"*
+- *"Mount the NAS in rack 1 and patch its first port to port 12 of the patch panel."*
 
 ### Security
 

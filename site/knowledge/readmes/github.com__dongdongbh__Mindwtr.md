@@ -74,12 +74,17 @@ _Mindwtr = "mind like water": the calm you get when nothing is rattling around i
 </div>
 
 <div align="center">
-  <video src="https://github.com/user-attachments/assets/e62ac128-467d-4e2f-beb0-7fc3c947bfeb" width="60%" autoplay loop muted playsinline></video>
+  <video src="https://github.com/user-attachments/assets/40dd65b9-96cb-44e4-98d9-4dc08f329b45" width="60%" autoplay loop muted playsinline></video>
   
-  <video src="https://github.com/user-attachments/assets/d6688a01-989f-41b9-b190-94b21b0ae821" width="25%" autoplay loop muted playsinline></video>
+  <video src="https://github.com/user-attachments/assets/8bd97267-4455-483a-961e-f77ef854a6ce" width="25%" autoplay loop muted playsinline></video>
 
   <p>
-    <i>Local-First GTD on Arch Linux & Android</i>
+    <i>Local-First GTD on desktop & mobile</i>
+  </p>
+  <p>
+    🎥 <b><a href="https://youtu.be/c-1Fxx5gFlo">Full desktop tutorial</a></b>
+    ·
+    <b><a href="https://youtu.be/FApCFhViwJE">Full mobile tutorial</a></b>
   </p>
 </div>
 
@@ -102,6 +107,12 @@ Your head is for having ideas, not for holding them (David Allen, who wrote the 
 4. **Reset weekly.** A guided review catches loose ends, so the list stays trustworthy and your head stays clear.
 
 If you know GTD: that is Capture, Clarify, Organize, Engage, and Reflect, end to end. If you don't, no problem: Mindwtr walks you through each step, and [GTD in 15 minutes](https://hamberg.no/gtd) is a friendly introduction whenever you're curious.
+
+<p align="center">
+  <a href="https://docs.mindwtr.app/assets/diagrams/gtd-workflow"><img src="https://docs.mindwtr.app/assets/diagrams/gtd-workflow.svg" alt="The GTD loop as Mindwtr runs it: capture into the Inbox, clarify, organize into projects and lists, review weekly, then work from Focus" width="900"></a>
+  <br>
+  <sub>The whole loop on one page. <a href="https://docs.mindwtr.app/assets/diagrams/gtd-workflow">Open the interactive diagram</a></sub>
+</p>
 
 ## Philosophy
 
@@ -149,6 +160,7 @@ Mindwtr is simple by default, powerful when you need it, and forgiving when life
 - ⏳ **Waiting For** - Delegated items
 - 💭 **Someday/Maybe** - Deferred ideas
 - 📅 **Calendar** - Time-based planning with adjustable mobile week density
+- 📊 **Timeline** - Dated tasks and projects as bars from start to due date, colored by project, with day/week/month zoom (desktop, optional)
 - 📋 **Board** - Kanban-style drag-and-drop
 - 📝 **Review** - Daily + weekly review workflows
 - 📦 **Archived** - Hidden history, searchable when needed
@@ -166,7 +178,7 @@ Mindwtr is simple by default, powerful when you need it, and forgiving when life
 - ✅ **Audio Capture** - Quick voice capture with automatic transcription and task creation
 - 🧭 **Copilot Suggestions** - Optional context/tag/time hints while typing
 - 🍅 **Pomodoro Focus (Optional)** - 15/3, 25/5, 50/10 timer panel in Focus view with one optional custom preset
-- 🔔 **Notifications** - Separate start and due reminders with snooze
+- 🔔 **Notifications** - Separate start and due reminders (snooze on mobile)
 - 📊 **Daily Digest** - Morning briefing + evening review
 - 📅 **Weekly Review** - Customizable weekly reminder
 

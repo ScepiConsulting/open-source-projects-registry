@@ -22,6 +22,11 @@ YT Zero turns YouTube back into a simple reader for channels you chose on purpos
 
 It reads public YouTube RSS feeds, stores everything in your own SQLite or PostgreSQL database, and gives you a calm place to sort, schedule, watch, archive, and revisit videos from creators you already follow. With the optional [yt-dlp](https://github.com/yt-dlp/yt-dlp) integration it can even download those videos and play them from disk, in its own player.
 
+PostgreSQL deployments can run multiple HTTP replicas with one nominated
+background worker. See the [clustered deployment configuration](https://github.com/Pelski/ytzero/wiki/Configuration#clustered-postgresql-deployment)
+for worker, shared-storage, and load-balancer requirements. SQLite deployments
+remain single-instance.
+
 If the problem is "YouTube is good at surfacing more, not better," YT Zero is the opposite: a quiet inbox, your own rules, and a player built around intentional watching.
 
 ![YT Zero main feed](docs/assets/feed.png)
@@ -88,7 +93,7 @@ YT Zero removes that layer. It keeps subscriptions, watch progress, playlists, t
 - **Audio mode** — switch regular videos and active livestreams to an audio-only player with Media Session controls, background playback, seeking, volume control, and per-profile browser persistence. It uses yt-dlp directly and does not require downloads to be enabled.
 - **Internationalization** — complete UI catalogues for English (`en`), Polish
   (`pl`), German (`de`), French (`fr`), Spanish (`es`), Brazilian Portuguese
-  (`pt-BR`), Russian (`ru`), and Japanese (`ja`). Language is selected per
+  (`pt-BR`), Russian (`ru`), Japanese (`ja`), and Hungarian (`hu`). Language is selected per
   profile. See the [localization guide](docs/localization.md) for native names,
   locale behavior, and contribution notes.
 
@@ -318,14 +323,21 @@ Licensed under the **GNU Affero General Public License v3.0 only** (`AGPL-3.0-on
 
 ## Thanks
 
-Thanks to [Green-Kite](https://github.com/Green-Kite) for help with the German language support and updating the wiki.
+YT Zero is better because of the people who contribute translations, testing,
+research, ideas, and code. Special thanks to:
 
-Thanks to [baldemar-wuda](https://github.com/baldemar-wuda) for extensive testing, great suggestions, and finding bugs.
-
-Thanks to [@Taruvi](https://github.com/Taruvi) for helping with issues, testing the app, and coming up with interesting feature ideas.
-
-Audio mode works thanks to **[@cerede2000](https://github.com/cerede2000)**, whose implementation, research, exceptionally detailed issue reports, and continued testing have helped make YT Zero better.
+| Contributor | Contributions |
+| --- | --- |
+| <a href="https://github.com/Green-Kite"><img src="https://github.com/Green-Kite.png?size=40" height="20" alt="@Green-Kite avatar"> <strong>@Green-Kite</strong></a> | German language support and wiki updates. |
+| <a href="https://github.com/Zan1456"><img src="https://github.com/Zan1456.png?size=40" height="20" alt="@Zan1456 avatar"> <strong>@Zan1456</strong></a> | Hungarian language support. |
+| <a href="https://github.com/cerede2000"><img src="https://github.com/cerede2000.png?size=40" height="20" alt="@cerede2000 avatar"> <strong>@cerede2000</strong></a> | French translation and major contributions to audio mode through implementation, research, detailed issue reports, and continued testing. |
+| <a href="https://github.com/baldemar-wuda"><img src="https://github.com/baldemar-wuda.png?size=40" height="20" alt="@baldemar-wuda avatar"> <strong>@baldemar-wuda</strong></a> | Extensive testing, thoughtful suggestions, and bug reports. |
+| <a href="https://github.com/Taruvi"><img src="https://github.com/Taruvi.png?size=40" height="20" alt="@Taruvi avatar"> <strong>@Taruvi</strong></a> | Issue support, hands-on testing, and feature ideas. |
 
 ## Development note
 
 AI-assisted coding tools have been used selectively to support development tasks such as code exploration, prototyping, and review. Project direction, architectural decisions, validation, and responsibility for the final code remain with the maintainers.
+
+<div align="center">
+  <img src="docs/assets/ai-generated.svg" width="160" alt="AI-generated content">
+</div>

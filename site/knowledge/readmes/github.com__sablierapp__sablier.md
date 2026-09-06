@@ -74,7 +74,7 @@ You can install Sablier using one of the following methods:
 
 <!-- x-release-please-start-version -->
 ![Docker Pulls](https://img.shields.io/docker/pulls/sablierapp/sablier)
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/sablierapp/sablier/1.17.0)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/sablierapp/sablier/1.18.0)
 <!-- x-release-please-end -->
 
 - **Docker Hub**: [sablierapp/sablier](https://hub.docker.com/r/sablierapp/sablier)
@@ -85,7 +85,7 @@ You can install Sablier using one of the following methods:
 ```yaml
 services:
   sablier:
-    image: sablierapp/sablier:1.17.0 # x-release-please-version
+    image: sablierapp/sablier:1.18.0 # x-release-please-version
     command:
       - start
       - --provider.name=docker
@@ -99,13 +99,13 @@ services:
 
 <!-- x-release-please-start-version -->
 ```bash
-docker run -p 10000:10000 -v /var/run/docker.sock:/var/run/docker.sock sablierapp/sablier:1.17.0
+docker run -p 10000:10000 -v /var/run/docker.sock:/var/run/docker.sock sablierapp/sablier:1.18.0
 ```
 
 > [!TIP]
 > Verify the image signature to ensure authenticity:
 > ```bash
-> gh attestation verify --owner sablierapp oci://sablierapp/sablier:1.17.0
+> gh attestation verify --owner sablierapp oci://sablierapp/sablier:1.18.0
 > ```
 
 <!-- x-release-please-end -->
@@ -281,7 +281,7 @@ sablier --configFile=path/to/myconfigfile.yml
 
 ```yaml
 provider:
-  # Provider to use to manage containers (docker, swarm, kubernetes, podman, proxmox_lxc)
+  # Provider to use to manage containers (docker, swarm, kubernetes, podman, proxmox_lxc, systemd)
   name: docker
   # Reject requests for containers/services that don't have the Sablier enable label
   reject-unlabeled-requests: false
@@ -374,7 +374,7 @@ sablier --help
 
 # or
 
-docker run sablierapp/sablier:1.17.0 --help
+docker run sablierapp/sablier:1.18.0 --help
 ```
 <!-- x-release-please-end -->
 
@@ -471,6 +471,21 @@ Sablier supports Proxmox VE for managing LXC containers on demand via the Proxmo
 - Discovers containers by `sablier` tag
 
 📚 **[Full Documentation](https://sablierapp.dev/#/providers/proxmox_lxc)**
+
+---
+
+### Systemd
+
+<img src="./docs/static/assets/img/systemd.svg" alt="Systemd" width="100" align="right" />
+
+Sablier integrates with systemd to manage units on demand, including per-user services when needed.
+
+**Features:**
+- Connects to the systemd D-Bus
+- Starts/stops explicitly opted-in systemd units
+- Supports system or user instances
+
+📚 **[Full Documentation](https://sablierapp.dev/tutorials/providers/systemd/)**
 
 ## Scale Mode
 

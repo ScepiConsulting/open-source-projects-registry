@@ -5,8 +5,9 @@
 <h1 align="center">HomeButler</h1>
 
 <p align="center">
-  <strong>Know what changed before you fix it.</strong><br>
-  A single Go binary for running a small home server without babysitting it.
+  <strong>Only the changes worth mentioning.</strong><br>
+  A single Go binary that remembers what your server looked like last time,
+  and tells you — or an agent — what moved.
 </p>
 
 <p align="center">
@@ -27,14 +28,46 @@
 </p>
 
 <p align="center">
-  <img src="assets/report-card.svg" alt="homebutler report output: current status, needs attention, notable changes, and suggested actions" width="620">
+  <img src="assets/report-card.svg" alt="homebutler report output: a port answered by a different service flagged under Needs Attention, then what changed since the last report — a container gone, one new, one recreated behind the same name, a process running a different invocation, a port that changed owner — then current status and the command to verify the port" width="620">
 </p>
 
 Section rules, labels, and severities are colour-coded in a terminal. Colour is
 dropped automatically when output is piped, redirected, or run from cron.
 
-That is the whole idea. Most homelab tools show you a graph of right now. HomeButler
-remembers what your server looked like last time and tells you what moved.
+That is the whole idea. Most homelab tools show you a graph of right now, and leave
+"does this matter?" to you. HomeButler remembers what your server looked like last
+time, decides what is worth saying, and says it — six containers before and six after
+is not "no change" when one of them is a different container.
+
+### Reading a change
+
+Every line is three columns: **what kind of change**, **what it happened to**, and
+**what exactly happened**. The kind is one of eight words, and it is the same word in
+`--json`, so an agent branches on it without reading prose:
+
+| Kind | Means | You would see it after |
+| --- | --- | --- |
+| `gone` | it was there last time and is not now | `docker rm`, a service stopping, a port closing |
+| `new` | it was not there last time and is now | starting anything |
+| `replaced` | same name, different thing underneath | `docker compose up -d` — the container is recreated, so the name and the count are unchanged |
+| `image` | same container, different image | pulling a new tag |
+| `state` | same container, running where it was stopped, or the reverse | a crash, or bringing something back up |
+| `port` | same port, a different process answering on it | one service taking over another's port |
+| `disk` | a mount moved by more than half a gigabyte | anything that writes |
+| `skipped` | the comparison could not be made | Docker was down when either snapshot was taken |
+
+`replaced` is the one the rest of this exists for. A container recreated under the
+same name leaves every count identical, which is why a report that compares counts —
+as this one did before 0.26.0 — answers "no significant changes" while the thing you
+were running has been swapped out underneath you.
+
+`skipped` is the second: homebutler says it could not compare rather than reporting
+nothing changed. An all-clear it cannot stand behind is worse than no answer.
+
+The header names the snapshot being compared against, so "what changed" is never
+ambiguous about the window it covers.
+
+📖 **[What earns a line, and what is deliberately suppressed →](docs/report.md)**
 
 HomeButler helps you answer the boring but painful questions every homelab eventually creates:
 
@@ -94,10 +127,10 @@ homebutler report --json
 
 - **Install apps** — deploy Uptime Kuma, Jellyfin, Pi-hole, Gitea, Portainer, and more with one command
 - **Map your server** — see containers, exposed ports, system ports, and service topology
-- **Run a doctor check** — diagnose resource pressure, stopped containers, public ports, backup hygiene, notifications, and report baseline readiness
+- **Run a doctor check** — diagnose resource pressure, stopped containers, public ports, backup hygiene, notifications, report baseline readiness, and configured Proxmox endpoint reachability
 - **Catch crashes** — save logs before/after Docker, systemd, or PM2 restarts and detect flapping loops
 - **Verify backups** — boot backups in isolated containers before you trust them
-- **See a Proxmox cluster** — nodes, QEMU and LXC guests, storage, and task status, with power actions that name their target explicitly
+- **See a Proxmox cluster** — nodes, QEMU and LXC guests, storage, task status, and honest dashboard freshness, with power actions that name their target explicitly
 - **Use it anywhere** — CLI, JSON, web dashboard, or MCP for AI agents without giving them SSH
 
 ## Why homebutler?
@@ -134,7 +167,7 @@ homebutler doctor --json            # automation / MCP friendly
   <img src="assets/doctor-card.svg" alt="homebutler doctor reporting a full disk, a stopped container, and a missing report baseline, each with the command to run next" width="700">
 </p>
 
-`doctor` is a read-only preflight for the problems homelab users usually discover too late: high disk or memory usage, stopped containers, public bind ports, stale or missing backups, missing notifications, and whether `report` has a baseline for change detection. Every finding names the next command to run, so `--strict` makes it usable from cron or CI.
+`doctor` is a read-only preflight for the problems homelab users usually discover too late: high disk or memory usage, stopped containers, public bind ports, stale or missing backups, missing notifications, whether `report` has a baseline for change detection, and whether each configured Proxmox endpoint is reachable with the token it has. Every finding names the next command to run, so `--strict` makes it usable from cron or CI — including a Proxmox host that is unreachable or rebooting.
 
 ### 🗂 Config Validation
 
@@ -298,6 +331,13 @@ thresholds, and runs any remediation rules you have configured — one process,
 one set of notification providers. `alerts --watch` still exists and does the
 threshold half on its own.
 
+Every endpoint under `proxmox:` in your config is polled too: unreachable or
+ACL-filtered endpoints and any guest listed under that endpoint's `guests:`
+report one incident when the problem starts and one recovery incident when it
+clears. A guest not listed there is observational only — `watch start` never
+alerts on it, deliberately stopped or not. See
+[Proxmox setup →](docs/proxmox.md#watch-integration) for the `guests:` field.
+
 When a crash is detected, you'll see:
 
 ```
@@ -459,10 +499,14 @@ CA file, and only then an explicit `insecure` fallback.
 
 Reads are plain. Power actions are not: every one of them takes an explicit
 endpoint, node, guest type and VMID, and refuses to run without `--confirm`,
-which is checked before the token is even read. `shutdown` asks the guest to shut
-down cleanly — it is not Proxmox's hard `stop`, which cuts power and can leave a
-filesystem behind it. A successful action reports the task it submitted, not that
-the guest finished; `proxmox task` answers that separately.
+which is checked before any credential is read. They also need their own
+`action_token_id` (plus `action_token` or `action_token_file`) configured on
+the endpoint — the read token alone will not start, reboot, or shut down a
+guest; see [Proxmox setup →](docs/proxmox.md) for creating that second token.
+`shutdown` asks the guest to shut down cleanly — it is not Proxmox's hard
+`stop`, which cuts power and can leave a filesystem behind it. A successful
+action reports the task it submitted, not that the guest finished; `proxmox
+task` answers that separately.
 
 `proxmox script` prints the install command for a Community Script pinned to one
 commit, along with a warning that the script is not reviewed by homebutler and
@@ -597,6 +641,7 @@ Commands:
 
 Flags:
   --json              JSON output (default: human-readable)
+  --verbose, -v       Show detailed error information
   --server <name>     Run on a specific remote server
   --all               Run on all configured servers in parallel
   --port <number>     Port for serve command (default: 8080)
@@ -670,6 +715,7 @@ Commands:
 
 Flags:
   --json              JSON output (default: human-readable)
+  --verbose, -v       Show detailed error information
   --server <name>     Run on a specific remote server
   --all               Run on all configured servers in parallel
   --port <number>     Port for serve command (default: 8080)
@@ -778,6 +824,8 @@ Supports health checks for: `nginx-proxy-manager`, `vaultwarden`, `uptime-kuma`,
 ```bash
 homebutler init    # interactive setup wizard
 ```
+
+📖 **[What `report` compares →](docs/report.md)** — what earns a line, what is deliberately suppressed, and why.
 
 📖 **[Configuration details →](docs/configuration.md)** — config file locations, watch/notify options, and advanced alert thresholds.
 

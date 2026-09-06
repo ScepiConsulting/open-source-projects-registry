@@ -28,10 +28,11 @@ Anchor focuses on speed, privacy, simplicity, and reliability across mobile and 
 - **Note Backgrounds** - Customize notes with solid colors and patterns
 - **Pin Notes** - Pin important notes for quick access
 - **Archive Notes** - Archive notes for later reference
+- **Reminders** - Set a time on any note and get a notification on your phone, once or repeating
 - **Search** - Search notes locally by title or content
 - **Trash** - Soft delete notes with recovery period
 - **Automatic Sync** - Sync changes across devices when online
-- **Import & Export** - Export your full library, and import it back or bring notes in from Google Keep
+- **Import & Export** - Back up your full library, or move notes in and out as plain Markdown
 - **Home Screen Widget** - Quick access to your notes from the Android home screen
 - **Admin Panel** - User management, registration control, and system statistics
 - **OIDC Authentication** - Sign in with OpenID Connect providers (Pocket ID, Authelia, Keycloak, etc.)
@@ -234,7 +235,6 @@ Logs are stored locally on the device only (rolling, ~2 MB max).
 
 Future planned features:
 
-- Reminders and notifications
 - Real-time collaboration
 
 ## Tech Stack

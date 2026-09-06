@@ -38,9 +38,9 @@ I created it because :
 
 2FAuth provides several security mechanisms to protect your 2FA data as best as possible.
 
-### Single user app
+### Multi-user app
 
-You have to create a user account and authenticate yourself to use the app. It is not possible to create more than one user account, the app is thought for personal use.
+You have to create a user account and authenticate yourself to use the app. Since version 4.0, you have the ability to allow multiple user accounts for different people. You can allow public registration, limit registration by email domain name, or turn registration off alltogether. You can also limit registration to SSO only. 
 
 ### Modern authentication
 
