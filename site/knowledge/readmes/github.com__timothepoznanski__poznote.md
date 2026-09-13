@@ -1,3 +1,15 @@
+<!-- lang-selector -->
+<p align="center">
+  <b>English</b> ·
+  <a href="README.fr.md">Français</a> ·
+  <a href="README.de.md">Deutsch</a> ·
+  <a href="README.es.md">Español</a> ·
+  <a href="README.pt.md">Português</a> ·
+  <a href="README.ru.md">Русский</a> ·
+  <a href="README.zh-cn.md">简体中文</a>
+</p>
+<!-- /lang-selector -->
+
 
 <p align="center">
   <img src="images/poznote-logo-text.png" alt="Poznote Logo" width="400">
@@ -57,6 +69,7 @@ https://discord.gg/AWhWWSEkJ
 - [Change Settings](#change-settings)
 - [Update application](#update-application)
 - [Authentication](#authentication)
+- [App Passwords](#app-passwords)
 - [Note types](#note-types)
 - [Snapshots](#snapshots)
 - [Personalization](#personalization)
@@ -71,6 +84,7 @@ https://discord.gg/AWhWWSEkJ
 - [Offline View](#offline-view)
 - [Multiple Instances](#multiple-instances)
 - [AI Assistant](#ai-assistant)
+- [Transcription (speech to text)](#transcription-speech-to-text)
 - [MCP Server](#mcp-server)
 - [Chrome Extension](#chrome-extension)
 - [Share to Poznote on Android](#share-to-poznote-on-android)
@@ -239,6 +253,24 @@ See the cloud hosting options at [poznote.com/hosting.html](https://poznote.com/
 
 </details>
 
+<a id="proxmox"></a>
+<details>
+<summary><strong>🗄️ Proxmox VE</strong></summary><br>
+
+On a Proxmox VE host, the Proxmox VE Community Scripts project installs Poznote in its own container with a single command, no Docker involved: it creates an unprivileged Debian 13 LXC (1 vCPU, 512 MB of RAM and a 4 GB disk by default) and serves Poznote from nginx and PHP inside it.
+
+Run this from the Proxmox host shell:
+
+```bash
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/community-scripts/ProxmoxVE/main/ct/poznote.sh)"
+```
+
+Poznote then answers at `http://<container-ip>:8040`, with the same default credentials as any other install. To update it later, run `update` in the container console.
+
+This script is written and maintained by the community, not by Poznote. See the [Poznote script page](https://community-scripts.org/scripts/poznote) for its options and notes.
+
+</details>
+
 <a id="kubernetes"></a>
 <details>
 <summary><strong>☸️ Kubernetes with Helm</strong></summary>
@@ -352,18 +384,30 @@ Rename the default administrator account and change the default password after t
 
 Most day-to-day settings are changed from the Poznote interface. Use the `.env` file only for deployment/runtime values that are read when containers start.
 
-Use the `.env` file for:
+<details>
+<summary><strong>Use the <code>.env</code> file for</strong></summary>
+<br>
 
 - `HTTP_WEB_PORT`
 - `POZNOTE_OIDC_CLIENT_ID`
 - `POZNOTE_OIDC_CLIENT_SECRET`
 - `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN`
 - Optional runtime overrides such as `POZNOTE_MCP_PORT` and `POZNOTE_DEBUG`
+- `POZNOTE_PHP_FPM_MAX_CHILDREN` to change the number of simultaneous PHP requests (default 10) on a busy instance, see the [Troubleshooting Guide](docs/TROUBLESHOOTING.md#the-app-stops-answering-under-load)
+- `POZNOTE_PHP_MEMORY_LIMIT` to change the PHP memory limit per request, in MB (default 512), see the [Troubleshooting Guide](docs/TROUBLESHOOTING.md#a-request-runs-out-of-memory)
+- `POZNOTE_SETTINGS_PASSWORD` to ask for an extra password before the Settings page opens, left empty by default
+- `POZNOTE_MCP_AUTH_TOKEN` to require a bearer token from MCP clients, see [MCP Server](#mcp-server)
 
-Use the UI for:
+</details>
+
+<details>
+<summary><strong>Use the UI for</strong></summary>
+<br>
 
 - Admin/global settings such as OIDC provider settings, Git Sync enablement, import limits, and custom CSS upload
 - User/profile settings such as local account passwords, theme, font sizes, note sorting, workspace background, and hidden UI elements
+
+</details>
 
 
 ### Modify System Settings (`.env`)
@@ -426,7 +470,7 @@ Your data is preserved in the `./data` directory and will not be affected by the
 
 ## Authentication
 
-Poznote supports multiple authentication methods including local accounts and external identity providers.
+Poznote supports multiple authentication methods including local accounts and external identity providers. Apps and extensions that talk to the REST API use [app passwords](#app-passwords), a separate credential described in the next section.
 
 <details>
 <summary><strong>Local Accounts Authentication</strong></summary>
@@ -449,7 +493,7 @@ Change the default password and rename the account after the first login.
 Passwords are managed through the Poznote web interface, not through `.env`:
 
 - Users can change their own password from **Settings > Change Password**.
-- Administrators can set a custom password for any user or reset it to the default from **Settings > User Management**.
+- Administrators can set a custom password for any user or reset it to the default from **Settings > Admin Tools > User Management**.
 - The **Remember me** option keeps the session for 30 days.
 - Changing a password invalidates existing remember-me cookies for that user.
 
@@ -475,9 +519,10 @@ Poznote supports OpenID Connect (authorization code + PKCE) for single sign-on i
 2. Users authenticate with the OIDC authorization code flow secured by PKCE.
 3. Access can be restricted with allowed groups and, if needed, a legacy allowed users list.
 4. After authentication, Poznote links the identity in this order: `sub` (`oidc_subject`), then `preferred_username`, then `email`.
-5. If auto-create users is enabled and no profile matches, Poznote creates one automatically. Such a profile has **no password at all**: it never went through the initial-credential handover an admin does when creating an account, so it does not answer to the default password. Sign-in goes through the provider, or an admin sets an explicit password from **Settings > Admin Tools > Users**.
+5. If auto-create users is enabled and no profile matches, Poznote creates one automatically. Such a profile has **no password at all**: it never went through the initial-credential handover an admin does when creating an account, so it does not answer to the default password. Sign-in goes through the provider, or an admin sets an explicit password from **Settings > Admin Tools > User Management**.
 6. If `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true`, the username/password form is hidden and the login page becomes SSO-only.
 7. REST API clients can authenticate with `Authorization: Bearer <OIDC JWT>` when OIDC is enabled; Poznote validates the provider JWKS, issuer, expiration, audience, and configured access controls.
+8. Clients that cannot perform an OIDC flow at all (browser extension, mobile app, scripts) use an [app password](#app-passwords) instead, which each user creates from their own settings.
 
 #### Configuration
 
@@ -497,7 +542,7 @@ POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=false
 
 Use `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true` if you want to hide the local username/password form and force SSO-only login. This is the only switch that blocks password authentication: it removes the form, rejects password POSTs server-side, and hides the "Change Password" setting.
 
-> **Recovering from an identity provider outage.** SSO-only means exactly that: while `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true`, nobody can sign in with a password, admins included, so there is no in-browser escape hatch. This is deliberate, since an attacker who compromised an admin account cannot re-enable password login to give themselves a persistent way in. Recovery needs server access: set `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=false` in `.env`, restart the container, and sign in with a local password. Before enabling SSO-only, make sure at least one admin account has an explicit password set (**Settings > Admin Tools > Users**), otherwise flipping the flag back will not help. Note that an admin profile auto-provisioned by OIDC has no password until one is set.
+> **Recovering from an identity provider outage.** SSO-only means exactly that: while `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true`, nobody can sign in with a password, admins included, so there is no in-browser escape hatch. This is deliberate, since an attacker who compromised an admin account cannot re-enable password login to give themselves a persistent way in. Recovery needs server access: set `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=false` in `.env`, restart the container, and sign in with a local password. Before enabling SSO-only, make sure at least one admin account has an explicit password set (**Settings > Admin Tools > User Management**), otherwise flipping the flag back will not help. Note that an admin profile auto-provisioned by OIDC has no password until one is set.
 
 > **Breaking change:** previous OIDC settings in `.env` are no longer read, except `POZNOTE_OIDC_CLIENT_ID`, `POZNOTE_OIDC_CLIENT_SECRET`, and `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN`. After upgrading, re-enter the other OIDC settings from the admin page.
 
@@ -511,6 +556,20 @@ From the OIDC admin page, configure:
 If auto-provisioning is enabled, Poznote generates a username from the OIDC claims (`preferred_username`, `nickname`, email local part, `name`, then `sub`) and stores the OIDC subject on the created profile.
 
 </details>
+
+## App Passwords
+
+Apps cannot sign in through an identity provider the way a browser can. An **app password** is a separate credential you create for one client (the browser extension, a phone, a script) and can revoke at any time, so you never have to hand out your account password.
+
+Create one from **Settings > App passwords**: give it a name, optionally an expiry, and copy the generated secret. It is shown once and never again. Then, in the client, enter your usual username and the app password where it asks for a password. It travels as ordinary HTTP Basic Auth, so every existing client works as-is:
+
+```bash
+curl -u 'username:pzn_2f7c…' https://YOUR_SERVER/api/v1/notes
+```
+
+An app password only reaches the REST API, and only for its own profile: it cannot open the web interface, call an admin endpoint, change your password or manage your account, even when the account is an administrator. A leaked one therefore exposes the notes of one account and nothing more, and revoking it closes the hole. On an SSO-only instance, where accounts created by OIDC have no password at all, it is the only credential the API accepts over Basic Auth.
+
+The full list of limits and the endpoints that manage app passwords are in the [REST API documentation](docs/API-REST.md#authentication).
 
 ## Note types
 
@@ -534,7 +593,7 @@ Poznote supports two primary note formats, each tailored for different workflows
 *   **Editor:** Markdown syntax editor with real-time preview.
 *   **Storage:** Saved as `.md` files in the user data directory.
 *   **Exclusive Features:**
-    *   **Mermaid Diagrams:** </strong> Native support for generating diagrams (flowcharts, sequence, etc.) via ` ```mermaid ` code blocks.
+    *   **Mermaid Diagrams:** Native support for generating diagrams (flowcharts, sequence, etc.) via ` ```mermaid ` code blocks.
     *   **Math Equations:** Robust LaTeX support for mathematical formulas using `$ inline $` and `$$ block $$` syntax.
     *   **Portability:** Standard Markdown format compatible with any external editor or static site generator.
 </details>
@@ -546,7 +605,7 @@ Poznote supports two primary note formats, each tailored for different workflows
 *   **Usage:** Manage tasks and projects with interactive checklists.
 *   **Workflow:** Track progress with checkboxes that can be toggled directly in the editor or the notes list. A progress bar shows the completion of each list.
 *   **Task Options:** Each task can have a due date with an optional time, a reminder notification that fires at the due time, and an important flag, and can be moved to another list.
-*   **Tasks Page:** A dedicated Tasks page, accessible from the dashboard, gathers every task from all your task lists in one place, with status filters (to do, important, overdue, with due date, completed), a text filter, and a quick "Add task" button.
+*   **Tasks Page:** A dedicated Tasks page, opened from the left icon rail, gathers in one place every task of your task lists and, optionally, the checkboxes sitting inside ordinary notes. It offers status filters (to do, important, overdue, with due date, completed), a text filter, and a calendar view of the tasks that carry a due date.
 *   **Public Collaboration:** Task lists can be shared via a public URL. If edit permissions are granted, external collaborators can check items off the list without needing a Poznote account.
 </details>
 
@@ -562,8 +621,10 @@ Poznote supports two primary note formats, each tailored for different workflows
 <summary><strong>Templates</strong></summary>
 &nbsp;
 
-*   **Functionality:** Create pre-filled notes to standardize your documentation.
-*   **Usage:** Notes marked as templates can be duplicated to create new notes with the same structure, tags, and content, saving time on repetitive tasks.
+*   **Functionality:** Reuse pre-written content to standardize your documentation, from a full note to a short snippet.
+*   **Setup:** Put the notes you want to reuse in a folder named `Templates` (sub-folders are fine). A workspace named `Templates` works too and is offered from every workspace. The name is also recognized in the language of the interface (`Modèles`, `Vorlagen`, `Plantillas`, `Modelos`, `Шаблоны`, `模板`).
+*   **Insert into a note:** Type `/template` (or `/` followed by the template's title) in an HTML or Markdown note and pick a template: its content is pasted at the cursor, converted if the template and the note are not of the same type.
+*   **New note from a template:** Duplicate the template note, or duplicate a whole `Templates` folder to start a project with a ready-made folder structure.
 </details>
 
 <details>
@@ -571,40 +632,65 @@ Poznote supports two primary note formats, each tailored for different workflows
 &nbsp;
 
 *   **Usage:** Write one note per day, journal-style, from a dedicated Diary board.
-*   **Workflow:** The "Today's entry" button opens today's note, creating it if needed, titled with the current date and stored automatically in a `Diary/YYYY/MM` folder structure.
+*   **Workflow:** The "Create today's entry" button creates today's note (it reads "Go to today's entry" once the note exists), titled with the current date and stored automatically in a `Diary/YYYY/MM` folder structure.
 *   **Board View:** Entries are displayed as cards grouped by month, newest first, with a filter to quickly find past entries.
-*   **Format:** New entries are created as HTML or Markdown notes, depending on the "Diary entry format" setting under **Settings > Display**.
+*   **Journal View:** The scroll button next to the view controls switches to one reading column: every entry with its full content, newest first, loaded as you scroll. The filter works there too.
+*   **Format:** New entries are created as HTML or Markdown notes, depending on the "Diary entry format" setting under **Settings > Behavior**.
 </details>
 
 ## Snapshots
 
 Snapshots keep earlier versions of a note's content so you can go back to a previous state from the note's **Snapshots** menu.
 
+<details>
+<summary><strong>How snapshots work</strong></summary>
+<br>
+
 *   **Automatic:** a snapshot is taken the first time a note is opened each day. The 3 most recent automatic snapshots are kept per note; this number can be changed under **Settings > Behavior > Snapshots**.
-*   **Manual:** "Take snapshot now" adds a snapshot at any time. Manual snapshots are unlimited and do not count toward that number.
+*   **Manual:** "Take snapshot now" adds a snapshot at any time, and so does **Ctrl + Alt + S** (Cmd + Alt + S on Mac) while a note is open. Manual snapshots are unlimited and do not count toward that number.
+*   **Before an AI edit:** a snapshot is taken automatically right before the [AI assistant](#ai-assistant) or the [MCP server](#mcp-server) changes the content of a note, so a rewrite that goes wrong is one click away from being undone. These snapshots are labeled "Before AI edit" or "Before MCP edit" in the history, are skipped when the latest snapshot already holds the same content, and the 20 most recent ones are kept per note, a number you can change in **Settings → Snapshots** (1 to 200) if your instance edits a lot of notes through AI or MCP.
 *   **Expiry:** every snapshot, automatic or manual, is deleted 30 days after it was taken. A snapshot can also be deleted by hand from the Snapshots modal.
 *   **Attachments and images:** snapshots only store the note text. Attachments are never copied, so a file referenced by several snapshots exists once on disk. A file removed from a note stays on disk, hidden from the note, as long as a snapshot still contains it, so restoring that snapshot brings it back. It is deleted for good once the last snapshot containing it expires or is deleted, or when the note is permanently deleted. Keeping more snapshots therefore never duplicates files. It only keeps removed files around for longer, 30 days at most.
+
+</details>
 
 ## Personalization
 
 Poznote offers several built-in personalization options directly from the application, without requiring any configuration file changes.
 
 <details>
-<summary><strong>Display Settings</strong></summary>
+<summary><strong>Display, Behavior and Markdown Settings</strong></summary>
 <br>
 
 Under **Settings > Display**, you can configure:
 
-- **Theme:** switch between light and dark mode
-- **Font size:** adjust text size for notes, sidebar, and code blocks
-- **Note sorting:** choose how notes are ordered in the list
-- **Task list insert order:** control where new tasks are inserted
-- **Show creation date:** toggle the creation date badge on notes
-- **Show folder note counts:** display the number of notes in each folder
-- **Show notes after folders:** list notes without folders below the folder list
+- **App font:** pick the typeface used across the interface
+- **Font size:** adjust text size for notes, sidebar, code blocks, and the settings page
+- **Note colors:** choose the palette offered when colouring a note
+- **Icons by note type:** give task lists and Markdown notes their own icon in the notes list
 - **Index icon scaling:** resize icons in the note index
+- **Icon sidebar order:** reorder the buttons of the left icon rail and change their colors (a right-click on a button of the rail also opens the color picker)
 - **Note content width:** control the max width of the note editor area
+- **Attachment previews:** show attachments as previews inside the note
+- **Default image border:** frame inserted images without adding padding
+- **Highlight current folder tree:** dim the notes and folders outside the folder hierarchy you are working in
+- **Login page title:** change the title shown on the login page
+- **Element visibility:** hide the interface elements you do not use, see below
+
+Under **Settings > Behavior**, you can configure:
+
+- **Note sorting:** choose how notes are ordered in the list
+- **Note age filter:** only list the notes updated within the chosen number of days
+- **Snapshots:** how many automatic snapshots are kept per note
+- **Task list insert order:** control where new tasks are inserted
+- **Show notes after folders:** list notes without folders below the folder list
 - **Code block word wrap:** enable or disable word wrap in code blocks
+- **Diary entry format:** create diary entries as HTML or Markdown notes
+- Interface language, timezone and date format, attachments and backlinks at the bottom of a note, spell check, and the keyboard shortcuts
+
+Under **Settings > Markdown**, you can configure the default view mode, the editor font, framed and coloured Markdown, and code block line numbers.
+
+The theme is not a card here: the button at the bottom of the left icon rail walks through the themes, and an administrator chooses which ones it offers in **Settings > Admin Tools > Theme list**.
 
 </details>
 
@@ -612,7 +698,7 @@ Under **Settings > Display**, you can configure:
 <summary><strong>Workspace Background Image</strong></summary>
 <br>
 
-You can set a background image per workspace — upload a custom image and adjust its opacity from the Display settings to give each workspace its own visual identity.
+You can set a background image per workspace: open the **Workspaces** page and use the **Background** action of the workspace to upload an image and adjust its opacity, so each workspace gets its own visual identity.
 
 </details>
 
@@ -622,9 +708,9 @@ You can set a background image per workspace — upload a custom image and adjus
 
 Poznote allows you to declutter the interface by hiding elements you don't use.
 
-Configure it in **Settings > Appearance > UI Customization**.
+Configure it in **Settings > Display > Element visibility**.
 
-- **Granular Control:** Toggle visibility for home cards, toolbar actions, slash menu items, and more.
+- **Granular Control:** Toggle visibility for home cards, toolbar actions, slash menu items, and more. The creation date badge on notes (**Show creation date**) and the note count next to each folder (**Show folder note counts**) are turned on and off here too.
 - **Per-User:** Each user can have their own unique interface layout.
 - **Administrators:** The same modal shows a second "Users" column next to the administrator's own "Me" column, to hide elements for every user of the instance (administrators excepted).
 - **Searchable:** Easily find the element you want to hide using the filter in the configuration modal.
@@ -635,19 +721,88 @@ Configure it in **Settings > Appearance > UI Customization**.
 <summary><strong>Custom CSS Overrides</strong></summary>
 <br>
 
-If you want to adjust fonts, spacing, or other visual details beyond the built-in options, you can upload an extra stylesheet that is applied to every HTML page for all users.
+If you want to adjust fonts, spacing, or other visual details beyond the built-in options, you can upload extra stylesheets that are applied to every HTML page for all users.
 
-Configure it in **Settings > Appearance > Custom CSS**.
+Configure them in **Settings > Admin Tools > Custom CSS path**.
 
 Notes:
 
 - Click **Upload CSS file** to select a `.css` file from your computer.
-- The file is uploaded and stored in `data/css/` (your Docker volume), so it survives image updates.
-- Click **Remove** to delete the file and disable the custom stylesheet.
+- Every uploaded file is kept, so you can store several themes and switch between them without uploading again.
+- The modal lists what is stored: pick the one to apply to every user, or **No custom CSS** to go back to the built-in appearance, then click **Save**.
+- Uploading a file that has the name of a stored one replaces that theme.
+- The files are stored in `data/css/` (your Docker volume), so they survive image updates.
+- Click the bin icon next to a theme to delete that file from your volume.
 - Poznote appends a cache-busting `v=` parameter automatically.
 - The stylesheet is injected near the end of `<head>`, so it can override the default application styles.
-- The brand colour and the dark/black palette are CSS variables, so a theme is a few lines: override `--pz-accent`, `--pz-accent-hover`, `--pz-accent-rgb` on `:root` and the `--dm-*` variables on `html[data-theme='dark']`. The list lives in `src/css/dark-mode/variables.css`, with an example in `src/css/README.md`.
-- Only administrators can upload or remove the custom CSS file.
+- Only administrators can upload, apply or delete a custom CSS file.
+
+### The theme list
+
+**Settings > Admin Tools > Theme list** says what the theme button at the bottom of the icon rail walks through: one theme per click, in the order shown.
+
+- Tick the built-in themes you want to keep, and leave out the ones nobody uses.
+- Tick a stored CSS file to offer it as a theme of its own. It gets a palette icon and the name of the file.
+- Use the arrows to set the order the button walks through.
+- A custom theme paints over a light or a dark base, which the file cannot say on its own: choose it next to the file. That is what `data-theme` is set to, so a stylesheet written for the dark mode needs **Dark** here.
+- The list is a global setting, so everyone walks through the same themes; which one is applied stays each user's own choice.
+- Whoever is on a theme you take out of the list gets the first theme of the list right away.
+- Picking a custom theme loads that file for that user only, in place of the stylesheet applied instance-wide.
+- Deleting a CSS file removes it from the list too.
+- With a single theme in the list there is nothing to walk to, so the button opens this list for an administrator, and does nothing for everyone else.
+
+**Before writing any CSS**, check whether a built-in theme already does what you want: the theme button at the bottom of the icon rail walks through Light, Dark, Black, Lavender, Sepia and Terminal.
+
+### Examples
+
+Colours, spacing, radii and font weights are design tokens, so most changes are a short list of variable overrides rather than a fight with selectors. The full list is in `src/public/css/tokens.css`.
+
+**Change the accent colour**
+
+```css
+:root {
+    --pz-accent: #d6336c;
+    --pz-accent-hover: #a61e4d;
+    --pz-accent-rgb: 214, 51, 108;   /* same colour, channels only, used for tints */
+}
+html[data-theme='dark'] {
+    --dm-accent: #f783ac;            /* lighter, because it sits on a dark ground */
+}
+```
+
+Two tokens rather than one because a *fill* and a *label* cannot be the same colour: `--pz-accent` fills buttons, `--dm-accent` is the accent as text in dark mode.
+
+**Recolour the note toolbar icons**
+
+```css
+.note-edit-toolbar .toolbar-btn i,
+.note-edit-toolbar .toolbar-btn [class*="lucide-"],
+.note-edit-toolbar .toolbar-btn:hover i,
+.note-edit-toolbar .toolbar-btn:hover [class*="lucide-"] {
+    color: #e5322d !important;
+}
+```
+
+Icons are CSS masks painted with `background-color: currentColor`, so `color` is all you need. `!important` is needed here because a few of those icons already carry a colour of their own (the star when a note is a favourite, the share icon when it is published, the paperclip when it has attachments).
+
+No CSS needed to colour a single icon: right-click it in the note toolbar or in the icon rail and pick a colour. Those colours are saved per user and leave the state colours above alone.
+
+**Warm up the whole interface**
+
+```css
+:root {
+    --pz-bg: #f6ecd8;          /* page and note background */
+    --pz-surface: #efe0c4;     /* panels, cards, menus */
+    --pz-text: #3b2c1a;
+    --pz-border: #d4bd94;
+}
+```
+
+**Write a full theme**
+
+Override the tokens on `:root` for light and on `:root[data-theme='dark']` for dark, and nothing else. `src/public/css/README.md` documents every token and shows a complete example; the built-in Lavender, Sepia and Terminal themes in `src/public/css/tokens.css` are the same thing, written the same way.
+
+One thing a theme cannot reach yet: a handful of icons that a page rule colours explicitly render in the generic icon grey in dark mode.
 
 </details>
 
@@ -655,65 +810,47 @@ Notes:
 
 > Not to be confused with the [Multiple Instances](#multiple-instances) feature.
 
-Poznote features a multi-user architecture with isolated data spaces for each profile while still allowing controlled collaboration on the same instance.
+Poznote is multi-user: each profile has its own notes, workspaces, tags, folders, attachments and settings, and signs in with its own username or email address and password.
 
-- **Data isolation**: Each profile has its own notes, workspaces, tags, folders, attachments, and user settings.
-- **Per-profile authentication**: Users sign in with their own username or email address and password. Until a password is changed in the UI, built-in defaults are used (`admin` for administrators, `user` for standard users).
-- **User management**: Administrators can create, disable, and manage profiles from **Settings > Admin Tools > Users**.
-- **Delegated account access**: Administrators can grant one user access to another user's account. When a user can open multiple accounts, Poznote asks which account to use after login and clearly indicates when the session is **acting as** another user.
-- **Owner/admin safeguards**: Opening another user's account does not transfer ownership. Sensitive actions such as password changes, backup/restore, Git Sync configuration, and global admin settings remain restricted to the appropriate owner or administrator.
-- **Read-only sharing**: Notes, folders, and entire workspaces can be shared in **Read-only** mode with other users of the same instance or publicly through dedicated links.
-- **Single-editor locking**: When several users can access the same note, Poznote allows only one active editor at a time. Other users can still open the note in read-only mode, see who currently holds the lock, and take over editing after reopening the note once the lock is released or expires.
-- **Tenant isolation (SaaS mode)**: Administrators can block selected capabilities for non-admin users, such as discovering the other accounts of the instance and sharing with them, or registering personal webhooks. Administrators are never affected. Leave everything unchecked for a family or team instance.
+- **User management**: administrators create, disable and manage profiles from **Settings > Admin Tools > User Management**, and can give a user access to another user's account without transferring its ownership.
+- **Sharing**: notes, folders and entire workspaces can be shared with other users of the instance, read-only or editable, or publicly through dedicated links. When several users can access the same note, only one edits it at a time and the others see who holds the lock.
+- **Tenant isolation (SaaS mode)**: administrators can stop non-admin users from discovering the other accounts of the instance, sharing with them, or registering personal webhooks. Leave everything unchecked for a family or team instance.
 
-
-### Architecture & Structure
+<details>
+<summary><strong>Data layout on disk</strong></summary>
+<br>
 
 Poznote uses a master database (`data/master.db`) for shared coordination data, and separate per-user databases and files for actual note content.
 
 ```
 data/
 ├── master.db                    # Profiles, global settings, shared links, account access, edit locks
+├── css/                         # Custom CSS files uploaded by an administrator
 └── users/
     ├── 1/                       # User ID 1 (default admin)
     │   ├── database/poznote.db  # User's notes database
     │   ├── entries/             # User's note files (HTML/MD)
-    │   └── attachments/         # User's attachments
+    │   ├── attachments/         # User's attachments
+    │   ├── snapshots/           # Earlier versions of the user's notes
+    │   ├── backgrounds/         # Workspace background images
+    │   └── backups/             # Backup archives prepared for download
     ├── 2/                       # User ID 2
     └── ...
 ```
 
+</details>
+
 ## Activity Log
 
-Poznote keeps a history of the sensitive operations performed on the instance, so administrators can see what happened, when, and by whom. It is available from **Settings > Admin Tools > Activity log** and is restricted to administrators.
+Poznote keeps a history of the sensitive operations performed on the instance, so administrators can see what happened, when, and by whom: logins and logouts, account and quota changes, workspace creation and sharing, backups and restores, trash emptying and permanent deletions, app passwords. It is available from **Settings > Admin Tools > Activity log**, restricted to administrators, and the help icon at the top of the page lists every recorded operation.
 
-Each entry records the date and time, the account concerned, the action, and a short summary such as the name of the deleted workspace or the number of notes removed. Hover the help icon at the top of the page for the full list of recorded operations, which covers:
-
-- **Sessions**: logins and logouts.
-- **Accounts**: profile changes (username, email, name), quota changes, activation and deactivation, admin role granted or revoked, account deletion, and delegated account access granted or revoked.
-- **Workspaces**: creation, deletion, sharing and unsharing.
-- **Data**: backup creation and restore, trash emptying, and permanent note deletion.
-
-Routine activity is deliberately left out: writing or moving a note to the trash is not recorded, and neither are API calls authenticated on each request, which would otherwise turn the log into a traffic dump.
-
-The log records that an operation happened, not the data it touched. **Note content is never written to it**, and neither are tags, folders, or attachments. A deletion entry identifies the note by its title and workspace so the event can be recognised, nothing more.
-
-> **No password is ever written to the log**, in any form. Where a password is relevant, for example on a protected shared workspace, only the fact that one is set is recorded.
-
-Entries are kept for 90 days by default. The retention period can be changed to 30, 90 or 365 days, or set to unlimited, and the log can be cleared manually from the same page.
+The log records that an operation happened, not the data it touched: note content and passwords are never written to it, and routine activity such as writing a note or moving it to the trash is left out. Entries are kept for 90 days by default (30, 90, 365 days or unlimited), and the log can be cleared from the same page.
 
 ## Webhooks
 
-Poznote can notify external services when something happens on the instance, by sending outgoing webhooks (HTTP POST requests with a JSON payload) to the endpoints you register. This makes it easy to plug Poznote into automation tools such as n8n, Zapier, or your own scripts. Poznote only emits webhooks: what the receiving endpoint does with them (send an email, trigger a workflow, ...) is up to you.
+Poznote can notify external services when something happens on the instance, by sending outgoing webhooks (HTTP POST requests with a JSON payload) to the endpoints you register, so it plugs into automation tools such as n8n, Zapier, or your own scripts. Administrators register instance events (accounts, quotas, signups) under **Settings > Admin Tools > Admin Webhooks**, and every user can register endpoints for their own notes and reminders under **Settings > User Webhooks**.
 
-There are two levels of webhooks:
-
-- **Admin Webhooks** (**Settings > Admin Tools > Admin Webhooks**, administrators only): instance events such as `user.created`, `user.updated`, `user.activated`, `user.deactivated`, `user.deleted`, `settings.language_changed`, `signup.cap_reached`, `quota.notes_reached`, and `quota.storage_reached`.
-- **User Webhooks** (**Settings > User Webhooks**): each account can register its own endpoints for events about its own content: `note.created`, `note.shared`, and reminder events. These events are only ever delivered to the endpoints registered by the account that produced them, never to another user's.
-
-Deliveries are JSON POST requests signed with HMAC-SHA256 when the webhook has a secret (same scheme as GitHub webhooks). Note content is never sent, payloads carry only metadata, and reminder events come in three variants so you choose how much data leaves the instance.
-
-For the complete reference, covering every event, the exact payload fields (`data.user`, `data.note`, ...), signature verification with code examples, delivery guarantees, and the Instance URL configuration for direct note links, see the **[Webhooks documentation](docs/WEBHOOKS.md)**.
+Deliveries are signed with HMAC-SHA256 when the webhook has a secret, and note content is never sent. Every event, the payload fields, signature verification and delivery guarantees are covered in the **[Webhooks documentation](docs/WEBHOOKS.md)**.
 
 ## Git Synchronization
 
@@ -725,9 +862,9 @@ Git Sync talks to the provider's REST API over HTTPS, so authentication is alway
 <summary><strong>How to configure Git Sync</strong></summary>
 <br>
 
-**Step 1 — Enable the feature (admin, in Settings > Advanced Settings)**
+**Step 1 — Enable the feature (admin, in Settings > Admin Tools)**
 
-Toggle **Git Sync** to enabled in the **Advanced Settings** section of the Settings page. This enables Git Sync globally and makes the user-level **Git Sync** card/configuration available from **Settings**.
+Toggle **Git Sync** to enabled in the **Admin Tools** section of the Settings page. This enables Git Sync globally and makes the user-level **Git Sync** card/configuration available from **Settings**.
 
 ---
 
@@ -752,7 +889,7 @@ When enabled by the user, Poznote will automatically:
 - **Pull** on login
 - **Push** on every note create, update, or delete
 
-Manual push/pull is also available from the **Dashboard** via the **Push** and **Pull** cards.
+Manual push/pull is also available from the **Push** and **Pull** buttons of the left icon rail.
 
 ---
 
@@ -870,8 +1007,9 @@ tar -czvf poznote-full-backup.tar.gz data/
 
 Export individual notes using the **Export** button in the note toolbar:
 
-  - **HTML notes:** Export to HTML or PDF format
-  - **Markdown notes:** Export to HTML, Markdown or PDF format
+  - **HTML notes:** Export to HTML, or to a single HTML file with the images embedded
+  - **Markdown notes:** Export to Markdown, to HTML, or to a single HTML file with the images embedded
+  - **Task lists:** the same options, plus a raw JSON export of the list
 
 </details>
 
@@ -962,8 +1100,8 @@ If the upload is not possible at all, the Restore / Import page also offers a di
 
 Import one or more HTML, Markdown or text notes directly:
 
-  - Support `.html`, `.md`, `.markdown` or `.txt` files types
-  - Up to 50 files can be selected at once, configurable in Settings > Advanced Settings > Import Limits
+  - Supports `.html`, `.md`, `.markdown`, `.txt` and `.json` file types
+  - Up to 50 files can be selected at once, configurable in Settings > Admin Tools > Import Limits
 
 </details>
 
@@ -974,8 +1112,8 @@ Import one or more HTML, Markdown or text notes directly:
 
 Import a ZIP archive containing multiple notes:
 
-  - Support `.html`, `.md`, `.markdown` or `.txt` files types
-  - ZIP archives can contain up to 300 files, configurable in Settings > Advanced Settings > Import Limits
+  - Supports `.html`, `.md`, `.markdown` or `.txt` file types
+  - ZIP archives can contain up to 300 files, configurable in Settings > Admin Tools > Import Limits
   - When importing a ZIP archive, Poznote automatically detects and recreates the folder structure
 
 There is no practical size limit on the archive. Like a complete restore, it is uploaded in slices (a slice that fails is retried instead of losing the whole upload), reassembled on the server, then processed by a background worker, so neither the browser nor a reverse proxy in front of the instance can time the import out. A progress bar covers the whole pipeline: upload, images and attachments, then notes.
@@ -989,7 +1127,7 @@ There is no practical size limit on the archive. Like a complete restore, it is 
 
 Import a ZIP archive containing multiple notes from Obsidian:
 
-  - ZIP archives can contain up to 300 files, configurable in Settings > Advanced Settings > Import Limits
+  - ZIP archives can contain up to 300 files, configurable in Settings > Admin Tools > Import Limits
   - Poznote automatically detects and recreates the folder structure
   - Poznote automatically detects existing tags to create
   - Poznote automatically imports images if they are at the zip file root
@@ -1003,9 +1141,9 @@ Import a ZIP archive containing multiple notes from Obsidian:
 Markdown files can include YAML front matter to specify note metadata. The following keys are supported:
 
   - `title` — Override the note title (default: filename without extension)
-  - `folder` — Override the target folder selection (folder must exist in the workspace)
+  - `folder` — Override the target folder. A plain name must match a folder that already exists in the workspace; a path such as `Projects/2026` creates the folders it needs.
   - `tags` — Array of tags to apply to the note. Supports both inline `[tag1, tag2]` and multi-line syntax
-  - `favorite` — Mark note as favorite (`true`/`false` or `1`/`0`)
+  - `favorite` — Mark note as favorite (`true` or `false`)
   - `created` — Set custom creation date (format: `YYYY-MM-DD HH:MM:SS`)
   - `updated` — Set custom update date (format: `YYYY-MM-DD HH:MM:SS`)
 
@@ -1073,54 +1211,36 @@ Server: my-server.com
 
 ## AI Assistant
 
-Poznote includes an integrated AI chat that connects to any OpenAI-compatible server, a local [Ollama](https://ollama.com) or [LM Studio](https://lmstudio.ai) instance, or a cloud provider like [Anthropic (Claude)](https://www.anthropic.com) or OpenAI. Once configured, an **AI** button appears in the dashboard toolbar and opens the chat panel right there.
+Poznote includes an integrated AI chat that connects to a local [Ollama](https://ollama.com) or [LM Studio](https://lmstudio.ai) instance, a cloud provider like [Anthropic (Claude)](https://www.anthropic.com) or OpenAI, or any OpenAI-compatible server. It searches and reads your notes to answer questions and, when you ask for it, creates, rewrites and organizes them, within the workspace you opened the chat in.
 
-The assistant is global, MCP-style: it has tools to **search and read your notes**, and uses them on its own to answer questions, like "what do my notes say about X?", cross-note summaries, finding that note you half remember. When you explicitly ask for it, it can also **create a note, rename one, or rewrite its content** (there is deliberately no delete tool). Answers are streamed and rendered as Markdown.
+An administrator enables it from **Settings → Admin Tools → AI Assistant**, and every profile then gets an **AI assistant** button in the left icon rail. The AI server is called from the Poznote server, never from your browser, so with a local Ollama instance your notes never leave your machine.
 
-The assistant is **scoped to the current workspace**: it only sees, searches and edits the notes of the workspace you opened the chat in, and new notes are created there. To ask about another workspace, switch to it first.
+What the assistant can do, choosing a provider and a model, personal API keys, and connecting a local server from the Poznote container are covered in the [AI Assistant documentation](docs/AI-ASSISTANT.md). To let an external AI assistant (VS Code Copilot, Claude CLI...) manage your notes instead, see the [MCP Server](#mcp-server) below.
 
-To enable it, go to **Settings → Admin Tools → AI Assistant** (administrator only), pick a provider and use **Check access and list models** to verify the server and choose a model from the ones it offers. The configuration applies to the whole instance: once enabled by the administrator, every user profile gets the chat.
+## Transcription (speech to text)
 
-For the full configuration guide, covering providers, choosing a model, and how to connect a local Ollama/LM Studio server from the Poznote container (finding the right URL, `OLLAMA_HOST`, Docker networking), see the [AI Assistant documentation](docs/AI-ASSISTANT.md).
+Turn voice into note text with a speech-to-text server you run yourself. Poznote embeds no speech model: it talks to any server exposing the OpenAI audio API (`POST /v1/audio/transcriptions`), such as a self-hosted Whisper, so the audio never has to leave your machine.
 
-The AI server is called from the Poznote server, never from your browser. With a local Ollama instance, your notes and conversations never leave your machine. To let an external AI assistant (VS Code Copilot, Claude CLI...) manage your notes instead, see the [MCP Server](#mcp-server) below.
+Once an administrator enables it in **Settings → Admin Tools → Transcription**, you get **Dictate** under **Insert** in the slash menu, and a **Transcribe** button on audio attachments.
+
+Setting up a server, choosing a model, and everything else is in the [Transcription documentation](docs/TRANSCRIPTION.md).
 
 ## MCP Server
 
-Poznote includes a Model Context Protocol (MCP) server that enables AI assistants like GitHub Copilot to interact with your notes using natural language. For example:
+Poznote includes a Model Context Protocol (MCP) server that enables AI assistants like GitHub Copilot or Claude CLI to interact with your notes using natural language. For example:
 
 - "Create a new note titled 'Meeting Notes' with the content..."
 - "Search for notes about 'Docker'"
 - "List all notes in my Poznote workspace"
 - "Update note 42 with new information"
 
-<p align="center">
-  <img src="docs/mcp-poznote.gif" alt="Poznote MCP Server demo" width="100%">
-</p>
-
-For setup and usage instructions, see the [MCP Server documentation](docs/MCP-SERVER.md).
-
-The MCP server uses default settings (port `8045`, debug off). To override:
-
-```bash
-POZNOTE_MCP_PORT=9000 POZNOTE_DEBUG=true docker compose up -d --force-recreate mcp-server
-```
-
-These are container/runtime overrides, not Poznote UI settings. You can pass them inline as shown above or place them in `.env` before recreating the `mcp-server` container.
-
-Only the exact lowercase values `true` and `false` are recognized for `POZNOTE_DEBUG`. After changing settings, recreate the container; a simple restart does not reload environment variables.
-
-**Security:** the MCP port is published on `127.0.0.1` only, so by default nothing outside your machine can reach it. If you expose it further (reverse proxy, LAN, or a non-Docker install), set `POZNOTE_MCP_AUTH_TOKEN` in `.env` and the server will require an `Authorization: Bearer <token>` header from every client. When run outside Docker, `poznote-mcp serve` binds to `127.0.0.1` by default. Details in the [Security section](docs/MCP-SERVER.md#security) of the MCP documentation.
+The MCP server ships with the official `docker-compose.yml` and is published on `127.0.0.1` only, so nothing outside your machine can reach it by default. Setup, client configuration, port and debug overrides, and how to protect it with `POZNOTE_MCP_AUTH_TOKEN` when you expose it further are covered in the [MCP Server documentation](docs/MCP-SERVER.md).
 
 ## Chrome Extension
 
-The **Poznote URL Saver** is a browser extension that allows you to quickly save the URL or even a full-page screenshot of the current page to your Poznote instance with a single click.
+The **Poznote URL Saver** is a browser extension that saves the URL, or even a full-page screenshot, of the current page to your Poznote instance with a single click. Install it from the Chrome Web Store: [Install extension](https://chromewebstore.google.com/detail/bmjclfamahegmgillaghhmnbkjebipbh?utm_source=item-share-cb)
 
-<p align="center">
-  <img src="images/chrome-extension.png" alt="Poznote Chrome Extension" width="50%">
-</p>
-
-Install the extension directly from the Chrome Web Store → [Install extension](https://chromewebstore.google.com/detail/bmjclfamahegmgillaghhmnbkjebipbh?utm_source=item-share-cb)
+The extension connects to your instance with your username and an [app password](#app-passwords). The setup steps are in the [Chrome Extension documentation](docs/CHROME-EXTENSION.md).
 
 ## Share to Poznote on Android
 
@@ -1146,6 +1266,10 @@ For the complete API reference with all endpoints, parameters, and curl examples
 curl -u 'username:password' -H "X-User-ID: 1" \
   http://YOUR_SERVER/api/v1/notes
 
+# Same, with an app password created in Settings > App passwords
+# (works on SSO-only instances; X-User-ID is implied)
+curl -u 'username:pzn_2f7c…' http://YOUR_SERVER/api/v1/notes
+
 # Create a note
 curl -X POST -u 'username:password' -H "X-User-ID: 1" \
   -H "Content-Type: application/json" \
@@ -1155,13 +1279,13 @@ curl -X POST -u 'username:password' -H "X-User-ID: 1" \
 
 ### Interactive Documentation (Swagger)
 
-Access the **Swagger UI** directly from Poznote at `Settings > API Documentation` to browse all endpoints, view request/response schemas, and test API calls interactively.
+Access the **Swagger UI** directly from Poznote at `Settings > About > API REST` to browse all endpoints, view request/response schemas, and test API calls interactively.
 
 ## Tech Stack
 
 Poznote prioritizes simplicity and portability - no complex frameworks, no heavy dependencies. Just straightforward, reliable web technologies that ensure your notes remain accessible and under your control.
 
-**Privacy-First Architecture:** Poznote operates entirely locally with no external connections required for functionality. All libraries (Excalidraw, Mermaid, KaTeX) are bundled and served from your own instance. The only outbound connection is a daily update check.
+**Privacy-First Architecture:** Poznote operates entirely locally with no external connections required for functionality. All libraries (Excalidraw, Mermaid, KaTeX) are bundled and served from your own instance. Out of the box the only outbound connection is a daily update check; the optional features you turn on yourself (Git Sync, S3, an AI provider, webhooks, SMTP, OIDC) are the only other ones.
 
 <details>
 <summary>If you are interested in the tech stack on which Poznote is built, <strong>have a look here.</strong></summary>
@@ -1195,5 +1319,5 @@ Poznote prioritizes simplicity and portability - no complex frameworks, no heavy
 - **Nginx + PHP-FPM** - High-performance web server with FastCGI Process Manager
 - **Alpine Linux** - Secure, lightweight base image
 - **Docker** - Containerization for easy deployment and portability
-- **Python 3.12 (Alpine)** - MCP server runtime with httpx, uvicorn, fastmcp, and mcp libraries for AI assistant integration
+- **Python 3.12 (Alpine)** - MCP server runtime with the httpx, uvicorn and fastmcp libraries for AI assistant integration
 </details>

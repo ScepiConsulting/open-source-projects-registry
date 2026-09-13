@@ -2,14 +2,13 @@
   <img src="https://raw.githubusercontent.com/figranium/figranium/main/banner.png" alt="Figranium Banner">
 </div>
 
-# Figranium — Deterministic Control for an Agentic World
+# Figranium
 
 Figranium is an open-source, self-hosted alternative to Apify and SaaS cloud scrapers, built to turn browser workflows into instant API endpoints for developers, API pipelines, and low-code tools like n8n and Activepieces. Powered by a React/Vite control plane and an Express/Playwright runtime, it lets you visually build stealth browser tasks, pass dynamic variables during runtime, handle automatic proxy rotation, and stream structured results or CSV exports on your own infrastructure—delivering the instant API convenience of cloud actors without usage credits, rate caps, or third-party data hosting.
 
 <div align="center">
   <img src="screenshot.png" alt="Figranium Demo" width="100%">
   <p align="center">
-    <i>Watch a video walkthrough of Figranium usage: <b><a href="demo.webm">demo.webm</a></b> or <b><a href="demo.mp4">demo.mp4</a></b></i>
   </p>
 </div>
 
@@ -29,11 +28,11 @@ Figranium is proudly supported by:
 ## Featured Partner
 
 <div align="center">
-  <a href="https://swiftproxy.net/?ref=figranium" target="_blank">
+  <a href="https://www.thordata.com/?ls=github&lk=figranium" target="_blank">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="partner-assets/swiftproxy_white.png">
-      <source media="(prefers-color-scheme: light)" srcset="partner-assets/swiftproxy.png">
-      <img src="partner-assets/swiftproxy.png" width="220" alt="Swiftproxy">
+      <source media="(prefers-color-scheme: dark)" srcset="partner-assets/thordata_white.svg">
+      <source media="(prefers-color-scheme: light)" srcset="https://gologin.com/wp-content/uploads/WP-PROXY-THUMBNAIL-4-1.png">
+      <img src="https://gologin.com/wp-content/uploads/WP-PROXY-THUMBNAIL-4-1.png" width="220" alt="Thordata">
     </picture>
   </a>
 </div>
@@ -96,20 +95,7 @@ cd figranium-server
 
 Create a docker-compose.yml file in your project directory:
 ```bash
-services:
-  figranium:
-    image: ghcr.io/figranium/figranium:latest
-    container_name: figranium
-    ports:
-      - "11345:11345"
-      - "54311:54311"
-    volumes:
-      - ./data:/app/data
-      - ./captures:/app/public/captures
-    environment:
-      - PORT=11345
-      - SESSION_SECRET=your_secure_random_string
-    restart: unless-stopped
+wget https://raw.githubusercontent.com/figranium/figranium/main/docker-compose.deploy.yml -O docker-compose.yml
 ```
 ### 3. Start with Docker Compose
 
@@ -117,28 +103,6 @@ Run the following command to start the application in detached mode:
 ```bash
 docker compose up -d
 ```
-
-
-## Git Clone (Multi-arch / ARM / Apple Silicon)
-
-The easiest way to run Figranium on any architecture (including M1/M2/M3 Macs) is via Docker Compose.
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/figranium/figranium.git
-cd figranium
-```
-
-2. Start the services:
-
-```bash
-docker compose up --build -d
-```
-
-Visit `http://localhost:11345`.
-
-> The first visit loads the login/setup screen. After you create the admin account and sign in, the dashboard replaces the login view and stays visible for as long as the session remains valid; returning users are redirected straight to the dashboard until they explicitly log out or the session expires.
 
 ## Session Secret
 
@@ -160,9 +124,10 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 | `VITE_BACKEND_PORT` | Backend port for proxying + scripts. | `11345` |
 | `DB_TYPE` | Optional database type overriding disk storage. Set to `postgres` to use PostgreSQL. | — |
 | `DB_POSTGRESDB_HOST` | Hostname for the PostgreSQL database (required if DB_TYPE is postgres). | — |
-| `DB_POSTGRESDB_PORT` | Port for the PostgreSQL database (required if DB_TYPE is postgres). | — |
+| `DB_POSTGRESDB_PORT` | Port number for the PostgreSQL database (required if DB_TYPE is postgres). | — |
 | `DB_POSTGRESDB_USER` | Username for the PostgreSQL database (required if DB_TYPE is postgres). | — |
 | `DB_POSTGRESDB_PASSWORD` | Password for the PostgreSQL database (required if DB_TYPE is postgres). | — |
+| `DB_POSTGRESDB_DATABASE` | Database name for PostgreSQL. | `postgres` |
 | `USE_CLOAK_ENGINE` | Set to `true` to run the browser engine on CloakBrowser (stealth-patched Chromium) instead of the default Playwright stealth stack. | `false` |
 | `CLOAKBROWSER_LICENSE_KEY` | CloakBrowser license key for the latest binary (read natively by cloakbrowser; `npx cloakbrowser login` writes `~/.cloakbrowser/license.key`). Without a key the free legacy binary is used. | — |
 | `CAPTCHA_SOLVER_URL` | Optional YesCaptcha/AntiCaptcha-compatible endpoint. Remote solving is attempted first. | — |
@@ -257,7 +222,6 @@ Proxies can be defined via the UI or `data/proxies.json`:
 - Import/export operations live behind `/api/settings/proxies/import`.
 
 # API Surface
-
 Figranium exposes a comprehensive REST API for integration with agents (like OpenClaw) or custom automation scripts. All endpoints are hosted locally, typically on port `11345`.
 
 **Authentication:** 
@@ -346,6 +310,8 @@ Figranium includes a built-in scheduler that handles automated task execution wi
 - [x] **Storage cleanup** — the standalone Captures page lets you review and clear captured media, while the backend exposes `/api/clear-screenshots` and `/api/clear-cookies` for storage maintenance.
 - [x] **IP rotation tooling** — build a settings workflow for importing proxies and automatically rotating them.
 - [x] **API key workflow** — the API key panel already supports regenerating and copying keys via `/api/settings/api-key`, so secure API access is ready without extra setup.
+- [ ] **[Scoped API keys](https://github.com/figranium/figranium/issues/405)** — support multiple individually revocable API keys with explicit permissions so integrations can be limited to only the task, execution, scheduling, data, or administrative capabilities they need.
+- [ ] **[Password manager & credential injector](https://github.com/figranium/figranium/issues/406)** — securely store credentials and inject them into browser tasks at runtime without exposing plaintext secrets in task definitions, logs, execution history, or API responses.
 - [x] **Task proxy rotation toggle** — the “Rotate Proxies” option in each task ties into the Settings rotation controls, enabling rotation per execution.
 - [x] **Spatial editor transition** — transition to a spatial editor like that of activepieces (top priority).
 - [ ] **[Action key combos](https://github.com/figranium/figranium/issues/366)** — add modifier shortcuts (e.g., Ctrl+Click, Shift+Scroll) so tasks can more closely mirror real user interactions.
@@ -364,7 +330,7 @@ Figranium includes a built-in scheduler that handles automated task execution wi
 - [ ] **[Session recording redaction](https://github.com/figranium/figranium/issues/373)** — add toggles to redact sensitive fields (passwords, credit cards) from recordings/logs before storing them.
 - [ ] **[Two-factor authentication](https://github.com/figranium/figranium/issues/374)** — add optional TOTP/second-factor support to Settings/Auth so operators can lock down the UI with 2FA.
 - [ ] **[Automatic self-healing selectors](https://github.com/figranium/figranium/issues/375)** — add selector fallback and recovery logic so tasks can repair broken locators after layout changes without manual intervention.
-- [ ] **[Multilingual text selectors with translate.js](https://github.com/figranium/figranium/issues/365)** — use translate.js so text-based selectors can match equivalent elements when the target page is displayed in another language.
+- [x] **[Multilingual task pages with translate.js](https://github.com/figranium/figranium/issues/365)** — tasks can opt in to translating browser-rendered pages to a chosen language before their actions and extraction run.
 - [ ] **[AI-assisted fixing](https://github.com/figranium/figranium/issues/376)** — add an “AI auto-fix” helper that suggests layout, selector, and proxy tweaks after failed runs, letting teams approve or discard the proposed changes without switching contexts.
 - [ ] **[Companion app](https://github.com/figranium/figranium/issues/377)** — build a lightweight companion app that mirrors critical dashboard notifications (failures, capture completions, proxy issues) so operators can stay informed without opening the full UI.
 - [x] **Community presets hub** — build a marketplace where users can publish task/workspace presets, browse and download others’ submissions, and choose to offer each preset either for free or as a paid template so creators can monetize standalone workflows while keeping the free option available.
@@ -375,6 +341,7 @@ Figranium includes a built-in scheduler that handles automated task execution wi
 - [x] **Cron triggers** — add support for scheduling tasks with cron expressions so workflows can run automatically on defined intervals.
 - [x] **Canvas notes** — add sticky-note-style annotations to the block canvas so operators can leave freeform comments and context alongside their workflows without affecting execution.
 - [ ] **[Page triggers](https://github.com/figranium/figranium/issues/380)** - trigger a task automatically when a web page changes a certain way.
+- [ ] **[Task-dedicated browser state & cookie buckets](https://github.com/figranium/figranium/issues/382)** — persist isolated browser state per bucket so tasks can retain logins across executions or intentionally share the same browser identity with related tasks.
 
 # Security Considerations
 

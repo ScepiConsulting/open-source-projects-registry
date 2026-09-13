@@ -27,6 +27,7 @@
 - 📌 Optional IP Address Tracking per Device via periodic ARP scan (nmap required, no extra privileges beyond network scanning)
 - ❎️ Shutdown Devices with a Custom Command
 - 👤 Secured User Management
+- 📋 Superuser Logs Page
 - 🌐 i18n support for [these](/frontend/translations) languages
 - 🎨 35 Themes
 - 🐳 [Docker images](https://github.com/seriousm4x/UpSnap/pkgs/container/upsnap) for amd64, arm64, arm/v7, arm/v6
@@ -60,6 +61,8 @@ For more options check `./upsnap --help` or visit [PocketBase documentation](htt
 Just pull and run the image: `docker run --network=host seriousm4x/upsnap:latest` or you can use the [docker-compose](docker-compose.yml) example. See the comments in the file for customization.
 
 To run as non-root, refer to the Wiki: [Use non-root user](https://github.com/seriousm4x/UpSnap/wiki/Use-non%E2%80%90root-user)
+
+Set `UPSNAP_LOG_LEVEL` to `DEBUG`, `INFO`, `WARN`, `ERROR`, or `OFF` to control UpSnap console logs. Default is `INFO`. PocketBase log persistence and retention remain configurable in PocketBase settings. PocketBase's `--dev` mode prints all logs regardless of this setting.
 
 ### Change port (Docker)
 

@@ -27,6 +27,7 @@ Scrob syncs your libraries from **Jellyfin**, **Plex**, **Emby**, **Nuvio**, **A
   - [Updating](#updating)
 - [Configuration](#configuration)
   - [TheTVDB metadata](#thetvdb-metadata)
+  - [RPDB rating posters](#rpdb-rating-posters)
 - [ARVIO Cloud Synchronization](#arvio-cloud-synchronization)
 - [Nuvio Cloud Synchronization](#nuvio-cloud-synchronization)
   - [Connect Nuvio](#connect-nuvio)
@@ -70,6 +71,7 @@ Scrob syncs your libraries from **Jellyfin**, **Plex**, **Emby**, **Nuvio**, **A
 - **Social**: Follow other users and see their activity.
 - **Release schedule**: Movie pages show the full release schedule - theatrical, digital, and physical dates - sourced from TMDB.
 - **TMDB integration**: Rich metadata for every title - posters, backdrops, cast, crew, trailers, collections, and more.
+- **RPDB rating posters**: Optionally use RatingPosterDB movie and show posters with embedded ratings. Configure your own key and customize the artwork and rating sources through RPDB.
 - **Metadata language**: Set a preferred display language per profile - titles, overviews, and episode names show translated where available, independent of the rest of the UI's language.
 - **Search**: Search TMDB across movies, shows, people, and collections, merged with your local library data.
 - **Pick a Movie / Pick a Show**: Get a suggestion on what to watch next from your library or your streaming services based on your preferences.
@@ -78,6 +80,7 @@ Scrob syncs your libraries from **Jellyfin**, **Plex**, **Emby**, **Nuvio**, **A
 - **Continue Watching & Next Up**: Dashboard cards showing in-progress items and the next episode to watch in each series.
 - **Statistics**: A per-user stats page - watch time, activity charts, ratings breakdown, and most-watched people/networks - filterable by all-time, year, month, week, or a custom period.
 - **Season & episode tracking**: Detailed season views with per-episode watched state and progress.
+- **Episode ordering**: Watch a show in an alternate episode order - DVD, absolute, alternate or regional order from TheTVDB, or any TMDB episode group (story arc, production, digital). Chosen per show from the **Episode order** control on the show page; every surface the show's episodes appear on - show, season and episode pages, Next Up, Now Playing, the calendar, history and cards - renumbers to match. TheTVDB-sourced orders need a TheTVDB key; TMDB episode groups don't.
 - **Cast & crew pages**: Full filmography for any person, linked to your library.
 - **Radarr & Sonarr integration**: Add movies and shows to Radarr/Sonarr directly from the Scrob UI.
 - **Plex watchlist automation**: Automatically send items from your Plex watchlist (and selected friends' watchlists) to Radarr or Sonarr.
@@ -325,7 +328,7 @@ DATABASE_URL: postgresql+asyncpg://user:password@your-db-host:5432/scrob
 TMDB covers the great majority of titles. A **TheTVDB** key is optional and only affects TVDB-specific paths:
 
 - shows and episodes that exist on TheTVDB but not on TMDB;
-- TVDB-ordered episode mapping (absolute numbering, common for anime and long-running shows) and TVDB season metadata;
+- alternate episode orderings from TheTVDB - DVD, absolute (common for anime), alternate, regional - plus TVDB season metadata, selectable per show under **Episode order** (TMDB episode groups work without a key);
 - matching otherwise-unmatched local episodes through TheTVDB.
 
 With no key configured, all of the above fall back to TMDB-only behaviour; nothing else is affected.
@@ -340,6 +343,14 @@ With no key configured, all of the above fall back to TMDB-only behaviour; nothi
 Configure it per-user in **Settings → General → TVDB API Key** (with the **Subscriber PIN** field for a subscriber key), or server-wide in **Admin → Settings → TVDB** as a fallback for all users. Use **Test key** to verify the pair before saving.
 
 **Rotation / revocation.** Scrob caches the TheTVDB login token in memory for up to 29 days per key. After changing or removing the key or PIN in settings, the new credential takes effect on the next lookup; a stale token for the old credential is discarded on restart.
+
+### RPDB rating posters
+
+To enable [RatingPosterDB](https://ratingposterdb.com/) posters, enter your RPDB API key in **Settings → General → RPDB API Key**, test it, and save. This is a personal display preference: it applies only to your browsing, including when viewing another user's public profile or list. Clear the key and save to return to the original artwork.
+
+Choose poster styles and rating sources in the [RPDB manager](https://manager.ratingposterdb.com/); available customizations depend on your RPDB plan. Scrob uses RPDB's account-default posters and falls back to the original artwork when an RPDB image cannot load. Movie and show portraits, including parent-show portraits in history and Next Up, can use RPDB. Episode stills, season-specific artwork, backdrops, people and collection artwork stay unchanged.
+
+Rating posters are fetched server-side through the same image proxy as TMDB and TheTVDB artwork, so your key stays on the server and is never placed in the page. It is not written into shared media metadata, and data exports include it only when you explicitly select **API Keys**. Existing metadata and the server's image cache are unchanged.
 
 ## ARVIO Cloud Synchronization
 

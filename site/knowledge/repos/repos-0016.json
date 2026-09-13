@@ -1,23 +1,8 @@
 {
   "chunk": 16,
   "count": 50,
-  "generated_at": "2026-09-06T07:46:36Z",
+  "generated_at": "2026-09-13T08:07:51Z",
   "items": [
-    {
-      "repo_key": "github.com/itskovacs/wingfit",
-      "repo_url": "github.com/itskovacs/wingfit",
-      "host": "github.com",
-      "owner": "itskovacs",
-      "repo": "wingfit",
-      "app_references": [
-        "wingfit"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__itskovacs__wingfit.md",
-      "readme_download_url": null,
-      "readme_sha256": "08de31c2add75e7d12b5d755b52224770c5936f12ce03f2c8160eed707ce0c35",
-      "error": null
-    },
     {
       "repo_key": "github.com/iv-org/invidious",
       "repo_url": "github.com/iv-org/invidious",
@@ -42,9 +27,9 @@
       "app_references": [
         "pulsarr"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__jamcalli__Pulsarr.md",
-      "readme_download_url": "https://raw.githubusercontent.com/jamcalli/Pulsarr/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "e427fcba6091cb2be311acc16b77e773f144f33290149f497c4b422dfe3e1ce9",
       "error": null
     },
@@ -117,9 +102,9 @@
       "app_references": [
         "tracktor"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__javedh-dev__tracktor.md",
-      "readme_download_url": "https://raw.githubusercontent.com/javedh-dev/tracktor/dev/README.md",
+      "readme_download_url": null,
       "readme_sha256": "05d1985aeb3bbb8e982502f1889c645e1c40d430646bf93cb6498d7fcd8ec8a3",
       "error": null
     },
@@ -417,10 +402,10 @@
       "app_references": [
         "jellysweep"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__jon4hz__jellysweep.md",
-      "readme_download_url": null,
-      "readme_sha256": "290ab9bbfde916a2b857d16f4aa41c691535981eb38cd0504c5cdf7c2caff9b8",
+      "readme_download_url": "https://raw.githubusercontent.com/jon4hz/jellysweep/main/README.md",
+      "readme_sha256": "029e3da67351deb257d63fefe0f708940108b6b6d15e777f33453fb33234ebda",
       "error": null
     },
     {
@@ -480,7 +465,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__journiv__journiv-app.md",
       "readme_download_url": "https://raw.githubusercontent.com/journiv/journiv-app/main/README.md",
-      "readme_sha256": "1d67a2e2c725a47e838e4ac25167de915eb390300945c2f1fe3573dc7ea4b7e7",
+      "readme_sha256": "33be76ba357710c4f656174ad0f6aa6177f1ce3287b198991f7ff61fded14498",
       "error": null
     },
     {
@@ -600,7 +585,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__kOlapsis__maintenant.md",
       "readme_download_url": "https://raw.githubusercontent.com/kOlapsis/maintenant/main/README.md",
-      "readme_sha256": "915d1ff43391b36ff319d7b9091fab102b23792e5597dc781207d2c2cc95058f",
+      "readme_sha256": "a3dcd7131084db8955c19dd45ca2704136e7267a99e91fc27c9706922378eb43",
       "error": null
     },
     {
@@ -657,10 +642,10 @@
       "app_references": [
         "kan"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__kanbn__kan.md",
-      "readme_download_url": null,
-      "readme_sha256": "7edf1fa0e98f3165d35eb833dd197d914c5bd25c6cb30639a37fb89b68a521fe",
+      "readme_download_url": "https://raw.githubusercontent.com/kanbn/kan/main/README.md",
+      "readme_sha256": "76131ef2e108f0577be5389a071fd08580b0cd6321164a6ca33d649988c4e10c",
       "error": null
     },
     {
@@ -732,10 +717,10 @@
       "app_references": [
         "borg-ui"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__karanhudia__borg-ui.md",
-      "readme_download_url": null,
-      "readme_sha256": "b302d85eb19dfca1c90a92c66a4a4bd61d099270fd44550f7c911eeb19d1bfa8",
+      "readme_download_url": "https://raw.githubusercontent.com/karanhudia/borg-ui/main/README.md",
+      "readme_sha256": "52c01d8867d0f66881b6da46aa283e599058944db2f974fc893219f6f48a70f6",
       "error": null
     },
     {
@@ -751,6 +736,21 @@
       "readme_path": "knowledge/readmes/github.com__karlomikus__bar-assistant.md",
       "readme_download_url": null,
       "readme_sha256": "285c0dd9995f0eb599aa66f1a8901c2b129c338fb6797e0fd159d69189ed5f91",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/kasmtech/KasmVNC",
+      "repo_url": "github.com/kasmtech/KasmVNC",
+      "host": "github.com",
+      "owner": "kasmtech",
+      "repo": "KasmVNC",
+      "app_references": [
+        "kasm-workspaces"
+      ],
+      "readme_status": "not_modified",
+      "readme_path": "knowledge/readmes/github.com__kasmtech__KasmVNC.md",
+      "readme_download_url": null,
+      "readme_sha256": "69e7ee7c5b66ea91f77befe2db30aa78302dfcee0b0a482ae536174667d5822c",
       "error": null
     }
   ]

@@ -14,6 +14,8 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/ferronserver/ferron?style=flat-square)](https://hub.docker.com/r/ferronserver/ferron)
 [![GitHub Repo stars](https://img.shields.io/github/stars/ferronweb/ferron?style=flat-square)](https://github.com/ferronweb/ferron)
 
+English | [Polski](./README.pl.md)
+
 ## Why Ferron?
 
 Built to set up quickly, behave predictably, and hold up reliably in production.
@@ -115,7 +117,7 @@ The full directive reference is in [docs/configuration/](https://ferron.sh/docs/
 
 ## Contributing
 
-Feedback, bug reports, and testing are welcome. When reporting issues, include your configuration file, `--verbose` output, and steps to reproduce.
+Feedback, bug reports, and testing are welcome. When reporting issues, include your configuration file, `--verbose` output, and steps to reproduce. See [CONTRIBUTING.md](./CONTRIBUTING.md) for setup, checks, and guidelines.
 
 ## License
 

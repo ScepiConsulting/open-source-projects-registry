@@ -1,23 +1,8 @@
 {
   "chunk": 12,
   "count": 50,
-  "generated_at": "2026-09-06T07:46:36Z",
+  "generated_at": "2026-09-13T08:07:51Z",
   "items": [
-    {
-      "repo_key": "github.com/deuxfleurs-org/garage",
-      "repo_url": "github.com/deuxfleurs-org/garage",
-      "host": "github.com",
-      "owner": "deuxfleurs-org",
-      "repo": "garage",
-      "app_references": [
-        "garage"
-      ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__deuxfleurs-org__garage.md",
-      "readme_download_url": null,
-      "readme_sha256": "be8e6a944255100ce3571b226c7561b28678c3079b89bd5e279ac1119d79286e",
-      "error": null
-    },
     {
       "repo_key": "github.com/devrsi0n/chirpy",
       "repo_url": "github.com/devrsi0n/chirpy",
@@ -312,9 +297,9 @@
       "app_references": [
         "documenso"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__documenso__documenso.md",
-      "readme_download_url": "https://raw.githubusercontent.com/documenso/documenso/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "5d26fe9a49507c3937d1a7950e0c4e620b1db08c741f8a36b98a83c90529e87b",
       "error": null
     },
@@ -420,7 +405,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__dongdongbh__Mindwtr.md",
       "readme_download_url": "https://raw.githubusercontent.com/dongdongbh/Mindwtr/main/README.md",
-      "readme_sha256": "d37f39133408b02229f517c0b7a27365865d58cb2818a0206ff7370ecce9248d",
+      "readme_sha256": "9073f731680e2bddf9d0c34bf145e66f4e47d151e9b2406963a66857d3cbdd5d",
       "error": null
     },
     {
@@ -751,6 +736,21 @@
       "readme_path": "knowledge/readmes/github.com__ellite__Wallos.md",
       "readme_download_url": null,
       "readme_sha256": "3d82ffd4d5f38466904c9a8486ee6d84baac2b6e81dafcdbec699041081b0e9c",
+      "error": null
+    },
+    {
+      "repo_key": "github.com/ellite/scrob",
+      "repo_url": "github.com/ellite/scrob",
+      "host": "github.com",
+      "owner": "ellite",
+      "repo": "scrob",
+      "app_references": [
+        "scrob"
+      ],
+      "readme_status": "ok",
+      "readme_path": "knowledge/readmes/github.com__ellite__scrob.md",
+      "readme_download_url": "https://raw.githubusercontent.com/ellite/scrob/main/README.md",
+      "readme_sha256": "dacc46dbe912a4839720252ecd51c58d0b678fd4d9d350833b7769e5ba120b01",
       "error": null
     }
   ]

@@ -109,6 +109,15 @@ Star RustFS on GitHub and be instantly notified of new releases.
 
 ## Quickstart
 
+> [!IMPORTANT]
+> **Pool expansion notice:**
+>
+> - A single-node single-drive (SNSD) deployment is supported only as a standalone local path. It cannot expand in place or be added as a Pool. To move to a multi-drive topology, create a new deployment and migrate data through S3.
+> - Keep an existing multi-drive Pool's endpoints and Erasure Set width unchanged; expand by appending a new Pool. With ellipsis-based expansion, every Pool argument must contain an ellipsis expression and expand to at least two drive endpoints.
+> - Single-node multi-drive Pools and multi-node Pools with one drive per node are allowed, subject to valid Erasure Set geometry and EC settings; acceptance does not guarantee host-failure tolerance.
+>
+> These topology rules follow MinIO, but automatic parity selection differs between the projects. See the [Pool layout compatibility and regression tests](docs/testing/pool-layout-compatibility.md) before expanding a deployment.
+
 To get started with RustFS, follow these steps:
 
 ### 1. One-click Installation (Option 1)
@@ -132,7 +141,7 @@ chown -R 10001:10001 data logs
 docker run -d -p 9000:9000 -p 9001:9001 -v $(pwd)/data:/data -v $(pwd)/logs:/logs rustfs/rustfs:latest
 
 # Using specific version
-docker run -d -p 9000:9000 -p 9001:9001 -v $(pwd)/data:/data -v $(pwd)/logs:/logs rustfs/rustfs:1.0.0-rc.5
+docker run -d -p 9000:9000 -p 9001:9001 -v $(pwd)/data:/data -v $(pwd)/logs:/logs rustfs/rustfs:1.0.0-rc.6
 ```
 
 If you use [podman](https://github.com/containers/podman) instead of docker, you can install the RustFS with the below command
@@ -202,7 +211,10 @@ For developers who want to build RustFS Docker images from source with multi-arc
 
 ```bash
 # Build multi-architecture images locally
-./docker-buildx.sh --build-arg RELEASE=latest
+./docker-buildx.sh
+
+# Build a single-platform image locally
+./docker-buildx.sh -p linux/amd64
 
 # Build and push to registry
 ./docker-buildx.sh --push

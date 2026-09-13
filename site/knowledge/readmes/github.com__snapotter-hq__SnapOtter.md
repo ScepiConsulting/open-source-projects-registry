@@ -65,10 +65,7 @@ services:
     image: snapotter/snapotter:latest
     ports: ["1349:1349"]
     environment:
-      # Requests are served by a role that can only read and write rows. The
-      # owner connects only during boot, to migrate and to grant.
-      DATABASE_URL: postgres://${POSTGRES_APP_USER:-snapotter_app}:${POSTGRES_APP_PASSWORD:-snapotter_app}@postgres:5432/${POSTGRES_DB:-snapotter}
-      DATABASE_MIGRATION_URL: postgres://${POSTGRES_USER:-snapotter}:${POSTGRES_PASSWORD:-snapotter}@postgres:5432/${POSTGRES_DB:-snapotter}
+      DATABASE_URL: postgres://snapotter:snapotter@postgres:5432/snapotter
       REDIS_URL: redis://redis:6379
     volumes:
       - SnapOtter-data:/data
@@ -77,10 +74,10 @@ services:
   postgres:
     image: postgres:17-alpine
     environment:
-      POSTGRES_USER: ${POSTGRES_USER:-snapotter}
-      # Change this and POSTGRES_APP_PASSWORD for any non-local deployment.
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-snapotter}
-      POSTGRES_DB: ${POSTGRES_DB:-snapotter}
+      POSTGRES_USER: snapotter
+      # Change this for any non-local deployment.
+      POSTGRES_PASSWORD: snapotter
+      POSTGRES_DB: snapotter
     volumes: ["SnapOtter-pgdata:/var/lib/postgresql/data"]
     restart: unless-stopped
   redis:
@@ -156,6 +153,19 @@ If SnapOtter has replaced a paid subscription or two in your workflow, a small s
 </a>
 
 <!-- sponsors -->
+<p align="center">
+  SnapOtter is free and open source, made possible by the people below.
+</p>
+
+<p align="center">
+  <a href="https://github.com/dominic427"><img src="https://github.com/dominic427.png?size=72" width="72" height="72" alt="Dominic Lopez"></a>
+  <a href="https://github.com/highb"><img src="https://github.com/highb.png?size=72" width="72" height="72" alt="Brandon High"></a>
+  <a href="https://github.com/CSP-Tom"><img src="https://github.com/CSP-Tom.png?size=72" width="72" height="72" alt="Tom"></a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/dominic427">@dominic427</a> &nbsp;&middot;&nbsp; <a href="https://github.com/highb">@highb</a> &nbsp;&middot;&nbsp; <a href="https://github.com/CSP-Tom">@CSP-Tom</a>
+</p>
 <!-- sponsors -->
 
 <p align="center">

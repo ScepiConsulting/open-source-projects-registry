@@ -3,17 +3,17 @@
 # What is this?
 
 <p>
-    Filestash started as a storage agnostic Dropbox-like file manager that speaks every storage protocol (<a href="https://www.filestash.app/ftp-client.html">FTP</a>, <a href="https://www.filestash.app/ssh-file-transfer.html">SFTP</a>, <a href="https://www.filestash.app/s3-browser.html">S3</a>, <a href="https://www.filestash.app/smb-client.html">SMB</a>, <a href="https://www.filestash.app/webdav-client.html">WebDAV</a>, IPFS, and <a href="https://www.filestash.app/docs/plugin/#storage">about 20 more</a>). It grew into what we want to be the world's best file management platform, centered around <strong>3 pillars</strong>:
+    Filestash started as a storage agnostic Dropbox-like file manager that speaks every storage protocol (<a href="https://www.filestash.app/ftp-client.html">FTP</a>, <a href="https://www.filestash.app/ssh-file-transfer.html">SFTP</a>, <a href="https://www.filestash.app/s3-browser.html">S3</a>, <a href="https://www.filestash.app/smb-client.html">SMB</a>, <a href="https://www.filestash.app/webdav-client.html">WebDAV</a>, IPFS, and <a href="https://www.filestash.app/docs/plugin/#storage">about 20 more</a>). It grew into what we want to be the world's best file management platform, centered around <strong>3 separate products</strong>:
 </p>
 
 <ol>
-    <li><strong>Web client</strong> <i>(the file manager available from your browser)</i>: <a href="https://www.filestash.app/docs/install-and-upgrade/#configuration">documentation</a> / <a href="https://www.filestash.app/img/screenshots/feature1.png">screenshot</a> </li>
+    <li><strong>Web client</strong> <i>(the file manager available from your browser)</i>: <a href="https://www.filestash.app/docs/install-and-upgrade/#configuration">documentation</a> / <a href="https://www.filestash.app/img/screenshots/feature1.png">screenshot</a> / <a href="https://demo.filestash.app">demo</a></li>
     <li><strong>Native client</strong> <i>(to sync your data on your device)</i>: <a href="https://github.com/mickael-kerjean/fdrive">repo</a> / screenshots for <a href="https://downloads.filestash.app/img/app-filestash-www-img-screenshots-fdrive-mac.png">mac</a>, <a href="https://downloads.filestash.app/img/app-filestash-www-img-screenshots-fdrive-windows.png">windows</a>, <a href="https://downloads.filestash.app/img/app-filestash-www-img-screenshots-fdrive-linux.png">linux</a>, <a href="https://downloads.filestash.app/img/app-filestash-www-img-screenshots-fdrive-android.png">android</a> & <a href="https://downloads.filestash.app/img/app-filestash-www-img-screenshots-fdrive-iphone.png">iphone</a></li>
     <li><strong>Gateways</strong> <i>(to expose your storages over any protocol)</i>: <a href="https://www.filestash.app/docs/guide/sftp-gateway.html#working-example">showcase</a> </li>
 </ol>
 
 <p>
-    The philosophy that guides this project is: "anything that's not a fundamental truth of the universe lives in a plugin". That keeps the core lean and fast, and the opinions replaceable, so when your requirements get deep or weird, the answer is a plugin, not a fork.
+    The philosophy that guides this project is: "anything that's not a fundamental truth of the universe lives in a plugin". That keeps the core lean and fast, and the opinions replaceable, so when your requirements get deep or weird, the answer is a plugin, not a fork. You only carry the bloat you really need.
 </p>
 
 <p>
@@ -52,7 +52,7 @@
         <img src="https://www.filestash.app/img/screenshots/theme_ibm.png" height="150" />
     </li>
     <li>AI features for <a href="https://www.filestash.app/docs/guide/search.html">search</a>, <a href="https://www.filestash.app/features/smart-folder.html">smart folders</a> and OCRs.</li>
-    <li>... and much <sub>much <sub>more (versioning, audit, public site, antivirus, quota, chat, chromecast support, on demand video transcoding, mounting shared links as network drive, ...)</sub></sub><br> As a rule of thumb, if your problem involves files, we either already <a href="https://www.filestash.app/docs/plugin/">have a plugin</a> for it or can make a plugin for it</li>
+    <li>... and much <sub>much <sub>more (versioning, audit, public site, antivirus, quota, chat, chromecast support, on demand video transcoding, mounting shared links as network drive, ...)</sub></sub> As a rule of thumb, if your problem involves files, we either already <a href="https://www.filestash.app/docs/plugin/">have a plugin</a> for it or can make a plugin for it</li>
 </ul>
 
 # Plugins

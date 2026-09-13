@@ -20,6 +20,8 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/henriquesebastiao/downtify?color=blue)](https://hub.docker.com/r/henriquesebastiao/downtify)
 [![Visitors](https://api.visitorbadge.io/api/visitors?path=henriquesebastiao%2Fdowntify&label=repository%20visits&countColor=%231182c3&style=flat)](https://github.com/henriquesebastiao/downtify)
 
+**[📚 Full documentation](https://henriquesebastiao.github.io/downtify/)**
+
 </div>
 
 https://github.com/user-attachments/assets/9711efe8-a960-4e1a-8d55-e0d1c20208f7
@@ -39,16 +41,20 @@ It resolves track metadata directly from Spotify's public embed pages, finds the
 | Feature | Details |
 |---------|---------|
 | 🎵 **Tracks, albums & playlists** | Any Spotify link works — single track, full album, or entire playlist |
-| 👁️ **Playlist Monitor** | Watch playlists and **auto-download new songs** as they are added to Spotify |
+| 👁️ **Playlist & Artist Watch** | Watch Spotify or YouTube Music playlists **and artists** — new songs and new releases download automatically |
 | 🎨 **Rich metadata** | Album art, title, artist, album, year — all embedded in every file |
 | 🎚️ **Multiple formats** | MP3 · FLAC · M4A · OGG · OPUS |
 | 🔎 **Free-text search** | Search YouTube Music directly — no Spotify link needed |
+| 📥 **CSV library import** | Import a library export from Soundiiz, TuneMyMusic or Exportify and queue the whole thing |
 | 🔑 **Zero credentials** | No Spotify API key, no account, no Premium required |
 | 🔔 **Real-time progress** | Live download progress via WebSocket — no page reload needed |
 | 🐳 **One Docker command** | Up and running in under a minute |
 | 🏠 **Home server platforms** | Available on Umbrel, CasaOS and HomeDock |
 | 🎧 **Built-in player** | Play your downloaded music straight from the web UI — progress bar, shuffle, repeat, volume |
-| 🌍 **Multi-language UI** | English (default), Spanish and Brazilian Portuguese — easy to add more |
+| 🌍 **Multi-language UI** | English (default) plus 6 more languages — easy to add more |
+| 📱 **Installable (PWA)** | Add Downtify to your iOS or Android home screen — launches full-screen, no browser chrome |
+| 🍪 **Cookie upload** | Upload a YouTube `cookies.txt` from the settings screen to download explicit/age-restricted tracks — no bind mounts, works on Windows |
+| 🔔 **Update notifications** | Hourly check against GitHub Releases; a footer notice appears when a newer version is out |
 
 ---
 
@@ -121,18 +127,22 @@ Spotify embed page  →  YouTube Music search  →  yt-dlp + ffmpeg + mutagen
 
 ## 👁️ Playlist Monitor
 
-The **Playlist Monitor** lets Downtify watch your favorite Spotify playlists and automatically download any new songs added to them — hands-free.
+The **Playlist Monitor** lets Downtify watch your favorite Spotify and YouTube Music playlists — and the artists you follow — and automatically download new songs and new releases, hands-free.
 
 **How to use it:**
 
 1. Click the eye icon (👁) in the navigation bar
-2. Paste a Spotify playlist URL
-3. Choose how often Downtify should check for new tracks (every 15 min up to once a day)
+2. Paste a Spotify or YouTube Music playlist URL, or an **artist** URL (Spotify, or YouTube Music such as `music.youtube.com/@artist`) to watch everything they release
+3. Choose how often Downtify should check for new tracks (every 15 min up to once a month)
 4. Click **Watch**
 
-From that point on, whenever a new song appears in the playlist on Spotify, Downtify will detect and download it on the next scheduled check. Tracks that were already in the playlist when you added it are skipped — only *new* additions are downloaded.
+From that point on, whenever a new song appears in the playlist, Downtify will detect and download it on the next scheduled check. Tracks that were already in the playlist when you added it are skipped — only *new* additions are downloaded.
 
-You can pause, resume, force an immediate check, or stop monitoring any playlist at any time from the same page.
+Adding an **artist** works the same way: Downtify downloads their discography and then watches for new releases, so you don't need a dedicated playlist per artist. Each watch shows a **Spotify** or **YouTube Music** badge. You can pause, resume, force an immediate check, or stop any watch at any time from the same page.
+
+YouTube Music playlists are handy for songs that aren't on Spotify: each track is downloaded from the exact video in the playlist.
+
+Playlists checked daily or less often can be pinned to a specific hour (e.g. always sync overnight at 3 AM) with the `DOWNTIFY_MONITOR_SYNC_TIME` and `TZ` environment variables, and can be sorted by date added, title, frequency, track count, or status. See **[Playlist Monitor](https://henriquesebastiao.github.io/downtify/features/playlist-monitor/)** in the full docs for details.
 
 ---
 
@@ -146,6 +156,19 @@ Access the settings panel (⚙️ icon) to configure:
 | **Bitrate** | 128 · 192 · 256 · 320 kbps (ignored for FLAC) |
 | **Audio provider** | YouTube Music |
 | **Organize by artist** | Off (default) · On |
+| **Parallel downloads** | 1–30 concurrent downloads (default 3) |
+| **Delay between downloads** | 0–300 seconds (default 0 = off) |
+| **Download cover art** | On (default) · Off |
+| **Cover art resolution** | 300–1200px (default 600) |
+| **Overwrite existing files** | On (default) · Off |
+
+**Delay between downloads** waits a configurable number of seconds between songs instead of firing requests back-to-back — combined with a lower **Parallel downloads** value, it's the main tool for avoiding YouTube rate limits on large unattended downloads.
+
+**Cover art resolution** raises the size Downtify requests for YouTube Music-sourced cover art — handy if you feed your library into a media server like Plex that shows higher-resolution artwork than the 600px default. Turn **Download cover art** off entirely to skip fetching artwork — smaller, faster downloads.
+
+Turn **Overwrite existing files** off to save bandwidth: a song that's already anywhere in your download folder (library root, another playlist's folder, an artist/album folder) isn't downloaded again. Useful when the same track is in several playlists or already in your library.
+
+See **[Download Settings](https://henriquesebastiao.github.io/downtify/features/download-settings/)** for the full reference.
 
 ### 📁 Organize by artist
 
@@ -175,8 +198,15 @@ When the setting is **off** (default), the existing behaviour is preserved: sing
 | Spotify track | ✅ |
 | Spotify album | ✅ |
 | Spotify playlist | ✅ |
+| YouTube Music playlist | ✅ |
 | YouTube Music search (free text) | ✅ |
 | Direct YouTube link | ✅ |
+
+---
+
+## 📥 Import a library CSV
+
+Already exported your library from [Soundiiz](https://soundiiz.com/), [TuneMyMusic](https://www.tunemymusic.com/) or [Exportify](https://github.com/watsonbox/exportify)? Click **"Import a library CSV"** below the search box on the home page and pick the file — Downtify reads its Title/Artist columns and queues every track for download. See **[Library Import](https://henriquesebastiao.github.io/downtify/features/library-import/)** in the full docs for supported columns, limits, and rate-limiting tips.
 
 ---
 
@@ -213,23 +243,32 @@ Downtify ships with a clean web player so you don't need a separate app to liste
 - **Repeat** modes: off → all → one
 - Volume slider with mute toggle (volume is remembered between sessions)
 - Side queue listing every track in your library, each one with its own thumbnail and the currently playing one highlighted
+- **Playing from** selector — play just one downloaded playlist, artist or album instead of your whole library queued at once. See **[Built-in Player](https://henriquesebastiao.github.io/downtify/features/player/)** in the full docs.
 
 The player parses `Artist - Title.ext` filenames so the now-playing card shows artist and title nicely, and pulls the cover art directly from the audio file's embedded tags (the same artwork Downtify wrote at download time). Playback uses your browser's native HTML5 audio element — no extra dependencies, no extra processes.
+
+The **Library** page has the same playlist/artist/album filter to narrow down the file list before playing, re-downloading or deleting a track. Check boxes let you select any number of tracks — including ones on other pages — and delete them all in one go; "Select all" grabs every track matching the current filter, so deleting a whole album or artist is just: filter to it, select all, delete.
+
+---
+
+## 📱 Install as an App (PWA)
+
+Downtify's web UI can be installed to your phone's home screen — on **iOS** (Safari: Share → Add to Home Screen) and **Android** (Chrome: ⋮ → Add to Home screen) — and launches full-screen with the Downtify icon, no browser address bar. See **[Install as an App](https://henriquesebastiao.github.io/downtify/features/pwa/)** in the full docs.
 
 ---
 
 ## 🌍 Internationalization
 
-Downtify's UI is fully translatable. The default language is **English**, with **Spanish** and **Brazilian Portuguese** included out of the box. You can switch languages from **Settings → Language**; your choice is saved in the browser's `localStorage` and applied instantly without a reload.
+Downtify's UI is fully translatable. The default language is **English**, with **Spanish, Brazilian Portuguese, French, Turkish, Greek and Hungarian** included out of the box. You can switch languages from **Settings → Language**; your choice is saved in the browser's `localStorage` and applied instantly without a reload.
 
 ### Contributing translations
 
 Adding a new language is a small, three-step change — no build tooling beyond the existing Vite setup is required.
 
-1. **Copy the English file as a starting point.** Locale files live in `frontend/src/i18n/locales/`. Each file exports a single object whose keys match the structure of `en.js` exactly. Pick an [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the file name (e.g. `fr.js`, `de.js`, `it.js`, `ja.js`, `pt-PT.js`).
+1. **Copy the English file as a starting point.** Locale files live in `frontend/src/i18n/locales/`. Each file exports a single object whose keys match the structure of `en.js` exactly. Pick an [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) for the file name (e.g. `de.js`, `it.js`, `ja.js`, `pt-PT.js`).
 
    ```bash
-   cp frontend/src/i18n/locales/en.js frontend/src/i18n/locales/fr.js
+   cp frontend/src/i18n/locales/en.js frontend/src/i18n/locales/de.js
    ```
 
 2. **Translate the values.** Keep the keys, the placeholder tokens (e.g. `{count}`, `{name}`, `{file}`) and the overall shape unchanged — only the strings on the right-hand side should change. Update the `language.name` field at the top of the file to the **native** name of the language ("Français", "Deutsch", "Italiano"…) — this is the label that appears in the language picker.
@@ -237,13 +276,17 @@ Adding a new language is a small, three-step change — no build tooling beyond 
 3. **Register the locale** in `frontend/src/i18n/index.js`:
 
    ```js
-   import fr from './locales/fr.js'
+   import de from './locales/de.js'
 
    export const AVAILABLE_LOCALES = [
      { code: 'en', name: 'English', messages: en },
      { code: 'es', name: 'Español', messages: es },
      { code: 'pt-BR', name: 'Português (BR)', messages: ptBR },
-     { code: 'fr', name: 'Français', messages: fr }, // new entry
+     { code: 'fr', name: 'Français', messages: fr },
+     { code: 'tr', name: 'Türkçe', messages: tr },
+     { code: 'el', name: 'Ελληνικά', messages: el },
+     { code: 'hu', name: 'Magyar', messages: hu },
+     { code: 'de', name: 'Deutsch', messages: de }, // new entry
    ]
    ```
 
@@ -257,6 +300,26 @@ That's it. Rebuild the frontend (`cd frontend && npm run build`) — your langua
 - After translating, run `npm run dev` from `frontend/` and click through every page in your language to spot anything that overflows or reads oddly in context.
 
 Pull requests with new translations are very welcome — just open a PR against `main`.
+
+---
+
+## 🩹 Troubleshooting
+
+Most download problems have the same root cause: **YouTube wants a signed-in session**. Upload a `cookies.txt` in **Settings (⚙️) → YouTube cookies** and they usually go away.
+
+| Problem | Likely cause | Fix |
+|---------|--------------|-----|
+| A song with **explicit content** won't download (`Sign in to confirm your age`) | YouTube only serves age-restricted tracks to a signed-in adult account | Upload a `cookies.txt` in **Settings → YouTube cookies** |
+| Downloads fail, hang or say the format is unavailable | YouTube is challenging/rate-limiting the requests — common on a VPS or VPN | Upload a `cookies.txt`; then raise *Delay between downloads* and lower *Parallel downloads* in Settings; then try `DOWNTIFY_FORCE_IPV4=1`; then update the image |
+| `DOWNTIFY_COOKIES_FILE` seems ignored (especially on **Windows / Docker Desktop**) | The variable needs a *container* path and a bind mount — a `C:\...` path never works | Skip the variable and upload the file in **Settings → YouTube cookies** instead |
+| The cookie upload button is greyed out | `DOWNTIFY_COOKIES_FILE` is set, so the deployment owns that file | Unset the variable and recreate the container |
+| Uploaded cookies / settings vanish after an update | `/data` isn't a persistent volume | Keep `- downtify_data:/data` in your compose file |
+| Upload rejected as invalid | The file isn't a **Netscape** cookie jar (JSON, spreadsheet or a copied header) | Re-export with a cookies.txt browser extension, from a `youtube.com` tab |
+| A watched playlist re-downloads tracks you already have | The files are no longer in the downloads directory | Keep `/downloads` persistent; moving files *within* it is fine |
+
+Cookies expire — if age-restricted downloads start failing again, export a fresh file and upload it as a replacement.
+
+Full details, including how to export the file and what it contains: **[YouTube Cookies](https://henriquesebastiao.github.io/downtify/features/youtube-cookies/)** and **[Troubleshooting](https://henriquesebastiao.github.io/downtify/troubleshooting/)** in the docs.
 
 ---
 

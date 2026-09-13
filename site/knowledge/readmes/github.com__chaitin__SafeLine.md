@@ -91,7 +91,7 @@ List of the main features as follows:
 ## 🚀 Quickstart
 
 > [!WARNING]
-> 中国大陆用户安装国际版可能会导致无法连接云服务，请查看 [中文版安装文档](https://docs.waf-ce.chaitin.cn/zh/%E4%B8%8A%E6%89%8B%E6%8C%87%E5%8D%97/%E5%AE%89%E8%A3%85%E9%9B%B7%E6%B1%A0)
+> 中国大陆用户安装国际版可能会导致无法连接云服务，请查看 [中文版安装文档](https://help.waf-ce.chaitin.cn/node/01973fc6-df0f-7650-bafa-8ed8d2fc2bc1)
 
 #### 📦 Installing
 
