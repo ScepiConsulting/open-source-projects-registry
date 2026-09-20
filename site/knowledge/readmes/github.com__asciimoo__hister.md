@@ -34,7 +34,7 @@ Hister is a private search engine for the pages you visit and the files you keep
 
 No configuration is required for a local personal setup. See the [complete quickstart](https://hister.org/docs/quickstart) to choose what Hister indexes.
 
-To search existing content, [import browser history](https://hister.org/docs/import#importing-browser-history), [index local directories](https://hister.org/docs/configuration#local-directory-indexing), or [import files](https://hister.org/docs/import#importing-files).
+To search existing content, [import browser history](https://hister.org/docs/import#importing-browser-history), [import browser bookmarks](https://hister.org/docs/import#importing-browser-bookmarks), [index local directories](https://hister.org/docs/configuration#local-directory-indexing), or [import files](https://hister.org/docs/import#importing-files).
 
 Alternative installation methods include Homebrew (`brew install hister`), Docker, and Nix. See the [installation guide](https://hister.org/docs/installing) for instructions.
 
@@ -45,7 +45,7 @@ Alternative installation methods include Homebrew (`brew install hister`), Docke
 - **Automatic browser indexing**: Save newly visited pages with the Firefox or Chrome extension.
 - **Powerful queries**: Use field filters, phrases, wildcards, negation, aliases, and result priorities.
 - **Optional semantic search**: Find documents by meaning through an embeddings endpoint you configure.
-- **Crawler and browser import**: Index websites or bring in existing browser history.
+- **Crawler and browser import**: Index websites or bring in existing browser history and bookmarks.
 - **Web, terminal, and MCP clients**: Search from the browser, TUI, command line, or an AI assistant.
 - **Multi user support**: Keep each user's documents and search results separate on a shared server.
 
@@ -56,6 +56,10 @@ Alternative installation methods include Homebrew (`brew install hister`), Docke
 By default, Hister has no telemetry and no cloud sync. The browser extension sends indexed page content only to the Hister server you configure, apart from downloading page favicons. The server stores documents and search indexes on that server.
 
 Optional semantic search sends document text to the embeddings endpoint you choose. Review the [privacy overview](https://hister.org/docs/intro#privacy) and [semantic search configuration](https://hister.org/docs/configuration#semantic-search) before enabling remote integrations.
+
+## Why Hister?
+
+Unlike traditional search engines, Hister builds a personal search index from the web pages and files you choose to keep. Your content stays on your Hister server, making it useful for finding information you've already encountered without relying on a third-party search provider.
 
 ## Development
 

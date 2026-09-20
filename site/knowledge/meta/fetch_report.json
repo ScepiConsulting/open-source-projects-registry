@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-09-13T08:07:51Z",
+  "generated_at": "2026-09-20T08:25:05Z",
   "summary": {
     "apps": 1340,
     "repos": 1318,
-    "readme_ok": 142,
-    "readme_not_modified": 1122,
-    "readme_error": 54
+    "readme_ok": 157,
+    "readme_not_modified": 1106,
+    "readme_error": 55
   },
   "failed_repos": [
     {
@@ -167,6 +167,11 @@
       "repo_key": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
       "repo_url": "gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS",
       "error": "worker_exception: Invalid URL 'gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md': No scheme supplied. Perhaps you meant https://gitea.baerentsen.space/FrederikBaerentsen/ComicOPDS/-/raw/main/README.md?"
+    },
+    {
+      "repo_key": "github.com/0xchasercat/flint",
+      "repo_url": "github.com/0xchasercat/flint",
+      "error": "github_readme_http_404"
     },
     {
       "repo_key": "github.com/7eventy7/trackly",

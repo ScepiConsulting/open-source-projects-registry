@@ -179,7 +179,7 @@ Prior versions of Jackett are no longer supported.
  * XXXClub
  * xxxtor
  * YTS.ag
- * Zamunda RIP
+ * Zamunda LIFE
 </details>
 
 <details> <summary> <b> Supported Semi-Private Trackers </b> </summary>
@@ -364,7 +364,6 @@ Prior versions of Jackett are no longer supported.
  * Drugari
  * DS-Reloaded
  * dubhe (天枢) [![(invite needed)][inviteneeded]](#)
- * Ebooks-Shares [![(invite needed)][inviteneeded]](#)
  * Empornium (EMP) [![(invite needed)][inviteneeded]](#)
  * eMuwarez
  * eStone (BigTorrent)

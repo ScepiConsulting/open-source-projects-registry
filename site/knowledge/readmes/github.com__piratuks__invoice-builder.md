@@ -8,6 +8,7 @@
 ![macOS](https://img.shields.io/badge/macOS-DMG-lightgrey?logo=apple&logoColor=white)
 ![Docker](https://img.shields.io/badge/Docker-blue?style=flat-square&logo=docker&logoColor=white)
 [![GHCR](https://img.shields.io/badge/ghcr.io-invoice--builder-blue?style=flat-square&logo=github)](https://github.com/piratuks/invoice-builder/pkgs/container/invoice-builder)
+[![GitHub Sponsors](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ec5990?logo=github)](https://github.com/sponsors/piratuks)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FF813F?style=flat&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/evaldizi)
 
 <a href="https://trendshift.io/repositories/17939?utm_source=repository-badge&amp;utm_medium=badge&amp;utm_campaign=badge-repository-17939" target="_blank" rel="noopener noreferrer"><img src="https://trendshift.io/api/badge/repositories/17939" alt="piratuks%2Finvoice-builder | Trendshift" width="250" height="55"/></a>
@@ -19,6 +20,9 @@
 
 No accounts. No cloud. No subscriptions.  
 Your data stays on your machine in a database file you own.
+
+> ☕ **Support Invoice Builder**
+> If this project saves you time, you can help keep it maintained through [GitHub Sponsors](https://github.com/sponsors/piratuks) or [Buy Me a Coffee](https://www.buymeacoffee.com/evaldizi).
 
 ## 📸 Screenshots
 
@@ -54,6 +58,7 @@ If you value **privacy, portability, and control**, this app is built for you.
 - Export invoices in UBL 2.1 / Peppol BIS Billing 3.0 XML format, fully compliant for automated e-invoicing
 - Export invoices in XRechnung (UBL 2.1) XML format, fully compliant for automated e-invoicing
 - Native receipt printing for invoices and quotes in desktop Electron mode, including compact 80mm thermal receipt layouts for retail checkout workflows
+- Receipt printing for invoices in web/Docker mode via the browser's own print dialog (e.g. "Save as PDF" as the destination)
 - Log out from the sidebar to return to the database selection screen and switch databases without restarting the app
 
 ### Business Data Management
@@ -88,8 +93,8 @@ If you value **privacy, portability, and control**, this app is built for you.
 - Attachments: include images in PDFs
 - Signature support: upload or hand-draw signatures and apply them to PDFs
 - Style profiles are now available for invoices and quotes, enabling quick, consistent theming
-- Layouts page for importing and managing JSON-driven invoice PDF compositions
-- Layout JSON controls section order, visibility, header composition, supported block placement, spacing, and table sizing
+- Layouts and Visual Layout Builder for importing, creating, editing, and exporting V1/V2 invoice PDF compositions without manually writing JSON, with nested regions, sidebars, landscape layouts, rows, columns, grids, drag-and-drop, keyboard actions, undo/redo, live preview, and controlled content flow
+- Layout JSON controls section order, visibility, header composition, supported block placement, spacing, table sizing, and page-level regions
 - Export individual layouts as reusable JSON files
 - See [LAYOUT.md](LAYOUT.md) for the complete layout JSON structure and usage guide
 - Show quantity, unit, and row number in the PDF item table
@@ -455,6 +460,8 @@ Please open an issue before starting major work to ensure alignment.
 
 | Version | Status                |
 | ------- | --------------------- |
+| v2.9.0  | ✅ Actively supported |
+| v2.8.0  | ✅ Actively supported |
 | v2.7.1  | ✅ Actively supported |
 | v2.7.0  | ✅ Actively supported |
 
@@ -469,7 +476,7 @@ See the [LICENSE](LICENSE) file for details.
 
 Invoice Builder is maintained by a single developer. Your support helps keep updates coming and new features rolling out!
 
-Want to be a part of this project’s journey? You can support it here: [Buy Me a Coffee](https://www.buymeacoffee.com/evaldizi)
+Want to be a part of this project’s journey? You can support it here: [GitHub Sponsors](https://github.com/sponsors/piratuks) or [Buy Me a Coffee](https://www.buymeacoffee.com/evaldizi)
 
 ### 💖 Supporters
 

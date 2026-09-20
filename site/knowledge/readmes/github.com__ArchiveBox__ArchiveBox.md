@@ -73,15 +73,15 @@ mkdir -p ~/archivebox/data && cd ~/archivebox
 curl -fsSL 'https://docker-compose.archivebox.io' > docker-compose.yml
 docker compose pull
 docker compose up -d --wait                                                # initializes new collections automatically
-# open http://admin.archivebox.localhost:8000 to finish setup
+# open http://admin.archivebox.localhost:5797 to finish setup
 # docker compose run --rm archivebox add 'https://example.com'
 # docker compose run --rm archivebox help
 <br/>
 <br/>
 # Option B: Or use it as a plain Docker container:
 mkdir -p ~/archivebox/data && cd ~/archivebox/data
-docker run -d --name archivebox -v "$PWD:/data" -p 8000:8000 archivebox/archivebox:dev
-# open http://admin.archivebox.localhost:8000 to finish setup
+docker run -d --name archivebox -v "$PWD:/data" -p 5797:5797 archivebox/archivebox:dev
+# open http://admin.archivebox.localhost:5797 to finish setup
 # docker run -it -v $PWD:/data archivebox/archivebox:dev add 'https://example.com'
 # docker run -it -v $PWD:/data archivebox/archivebox:dev help
 <br/>
@@ -93,14 +93,14 @@ archivebox init
 archivebox install
 # archivebox add 'https://example.com'
 # archivebox help
-# archivebox server 0.0.0.0:8000
+# archivebox server 0.0.0.0:5797
 <br/>
 <br/>
 # Option D: Or use the uv install shortcut for Option C
 curl -fsSL 'https://get.archivebox.io' | bash
 </code></pre>
 <br/>
-<sub>Open <a href="http://web.archivebox.localhost:8000"><code>http://web.archivebox.localhost:8000</code></a> for the public UI and <a href="http://admin.archivebox.localhost:8000"><code>http://admin.archivebox.localhost:8000</code></a> for the admin UI ➡️</sub><br/>
+<sub>Open <a href="http://web.archivebox.localhost:5797"><code>http://web.archivebox.localhost:5797</code></a> for the public UI and <a href="http://admin.archivebox.localhost:5797"><code>http://admin.archivebox.localhost:5797</code></a> for the admin UI ➡️</sub><br/>
 <sub>Set <code>BASE_URL</code> to change the public base domain. The default <code>auto</code> mode uses <code>web.</code> and <code>admin.</code> subdomains on <code>*.localhost</code>, but one host for ordinary DNS names. <code>BIND_ADDR</code> only controls the local listen address.</sub>
 </details>
 <br/>
@@ -129,7 +129,7 @@ curl -fsSL 'https://get.archivebox.io' | bash
 - [**Extracts a wide variety of content out-of-the-box**](https://github.com/ArchiveBox/ArchiveBox/issues/51): [media (yt-dlp), articles (readability), code (git), etc.](#output-formats)
 - [**Supports scheduled/realtime importing**](https://github.com/ArchiveBox/ArchiveBox/wiki/Scheduled-Archiving) from [many types of sources](#input-formats)
 - [**Uses standard, durable, long-term formats**](#output-formats) like HTML, JSON, PDF, PNG, MP4, TXT, and WARC
-- [**Powerful CLI**](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#CLI-Usage), [**self-hosted web UI**](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#UI-Usage), [Python API](https://docs.archivebox.io/en/dev/apidocs/archivebox/archivebox.html) (BETA), [REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496) (ALPHA), or [desktop app](https://github.com/ArchiveBox/electron-archivebox)
+- [**Powerful CLI**](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#CLI-Usage), [**self-hosted web UI**](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#UI-Usage), [Python API](https://docs.archivebox.io/en/dev/apidocs/archivebox/archivebox.html) (BETA), [REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496) (ALPHA), or [desktop app](https://electron.archivebox.io/)
 - [**Saves all pages to archive.org as well**](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#save_archive_dot_org) by default for redundancy (can be [disabled](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#stealth-mode) for local-only mode)
 - Advanced users: support for archiving [content requiring login/paywall/cookies](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_user_data_dir) (see wiki security caveats!)
 - Planned: support for running [JS during archiving](https://github.com/ArchiveBox/ArchiveBox/issues/51) to adblock, [autoscroll](https://github.com/ArchiveBox/ArchiveBox/issues/80), [modal-hide](https://github.com/ArchiveBox/ArchiveBox/issues/175), [thread-expand](https://github.com/ArchiveBox/ArchiveBox/issues/345)
@@ -152,6 +152,17 @@ curl -fsSL 'https://get.archivebox.io' | bash
 #### ✳️&nbsp; Easy Setup
 
 <details>
+<summary><b><img src="https://app.archivebox.io/docs/icons/apple.svg" alt="Apple" height="28px" align="top"/> <code>ArchiveBox Server.app</code></b> (macOS)</summary>
+<br/>
+<ol>
+<li><a href="https://github.com/ArchiveBox/ios-archivebox/releases">Download <code>ArchiveBox Server.app</code></a>, move it to Applications, and open it.</li>
+<li>Set up an admin account and generate an API Key.</li>
+<li>Use the Web UI or <a href="https://app.archivebox.io/"><code>ArchiveBox.app</code></a>, and optionally connect REST API clients, the <a href="https://app.archivebox.io/">mobile app</a>, the <a href="https://extension.archivebox.io/">browser extension</a>, and other integrations to your server using your API Key.</li>
+</ol>
+<br/>
+</details>
+
+<details>
 <summary><b><img src="https://user-images.githubusercontent.com/511499/117447182-29758200-af0b-11eb-97bd-58723fee62ab.png" alt="Docker" height="28px" align="top"/> <code>docker-compose</code></b>  (macOS/Linux) &nbsp; <b>👈&nbsp; recommended</b> &nbsp; <i>(click to expand)</i></summary>
 <br/>
 <i>👍 Docker Compose is recommended for the easiest install/update UX + best security + all <a href="#dependencies">extras</a> out-of-the-box.</i>
@@ -166,7 +177,7 @@ docker compose pull
 <li>Start the server, which initializes a new collection automatically.
 <pre lang="bash"><code style="white-space: pre-line">docker compose up -d --wait
 </code></pre></li>
-<li>Open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:8000/admin/">http://admin.archivebox.localhost:8000/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the web setup wizard.
+<li>Open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:5797/admin/">http://admin.archivebox.localhost:5797/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the web setup wizard.
 <pre lang="bash"><code style="white-space: pre-line">
 # run CLI commands inside the server container started above
 docker compose exec archivebox archivebox add 'https://example.com'
@@ -187,10 +198,10 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker</a> on your system (if not already installed).</li>
 <li>Create a new empty directory and start the server, which initializes the collection automatically (can be anywhere).
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data && cd ~/archivebox/data
-docker run -d --name archivebox -v $PWD:/data -p 8000:8000 archivebox/archivebox:dev
+docker run -d --name archivebox -v $PWD:/data -p 5797:5797 archivebox/archivebox:dev
 </code></pre>
 </li>
-<li>Open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:8000/admin/">http://admin.archivebox.localhost:8000/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the web setup wizard.
+<li>Open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:5797/admin/">http://admin.archivebox.localhost:5797/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the web setup wizard.
 <pre lang="bash"><code style="white-space: pre-line">
 # completely optional, CLI can always be used without running a server
 # docker exec archivebox archivebox [subcommand] [--help]
@@ -245,8 +256,8 @@ archivebox init     # initialize a new collection
 archivebox install  # install all the runtime dependencies (e.g. chrome, single-file, yt-dlp, etc.)
 </code></pre>
 </li>
-<li>Optionally start the server, then open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:8000/admin/">http://admin.archivebox.localhost:8000/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the same web setup wizard used by Docker installs.
-<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:8000
+<li>Optionally start the server, then open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:5797/admin/">http://admin.archivebox.localhost:5797/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the same web setup wizard used by Docker installs.
+<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:5797
 # completely optional, CLI can always be used without running a server
 # archivebox [subcommand] [--help]
 archivebox help
@@ -281,8 +292,8 @@ archivebox add 'https://example.com'
 </code></pre>
 <br/>
 </li>
-<li>Optionally start the server, then open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:8000/admin/">http://admin.archivebox.localhost:8000/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the same web setup wizard used by Docker installs.
-<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:8000
+<li>Optionally start the server, then open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:5797/admin/">http://admin.archivebox.localhost:5797/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the same web setup wizard used by Docker installs.
+<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:5797
 # completely optional, CLI can always be used without running a server
 # archivebox [subcommand] [--help]
 archivebox help
@@ -314,8 +325,8 @@ archivebox init
 archivebox install
 </code></pre>
 </li>
-<li>Optionally start the server, then open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:8000/admin/">http://admin.archivebox.localhost:8000/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the same web setup wizard used by Docker installs.
-<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:8000
+<li>Optionally start the server, then open <code>/admin/</code> on the hostname or IP used to reach ArchiveBox (local example: <a href="http://admin.archivebox.localhost:5797/admin/">http://admin.archivebox.localhost:5797/admin/</a>) to create the first admin. If <code>BASE_URL</code> is not configured yet, continue through the same web setup wizard used by Docker installs.
+<pre lang="bash"><code style="white-space: pre-line">archivebox server 0.0.0.0:5797
 # completely optional, CLI can always be used without running a server
 # archivebox [subcommand] [--help]
 archivebox help
@@ -354,17 +365,12 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for usage examples using the CLI, W
 <br/>
 <ol>
 <li>Install <a href="https://docs.docker.com/get-docker/">Docker</a> on your system (if not already installed).</li>
-<li>Download a binary release for your OS or build the native app from source<br/>
-<ul>
-<li>macOS: <a href="https://github.com/ArchiveBox/ArchiveBox/releases/download/v0.6.2/Electron-ArchiveBox-macOS-x64-0.6.2.app.zip" download><code>ArchiveBox.app.zip</code></a></li>
-<li>Linux: <code>ArchiveBox.deb</code> (alpha: <a href="https://github.com/ArchiveBox/electron-archivebox#quickstart">build manually</a>)</li>
-<li>Windows: <code>ArchiveBox.exe</code> (beta: <a href="https://github.com/ArchiveBox/electron-archivebox#quickstart">build manually</a>)</li>
-</ul>
-</li>
+<li><a href="https://electron.archivebox.io/#get-started">Download the latest installer for Windows, Linux, or Mac</a>.</li>
+<li>Install and open ArchiveBox Desktop, then create your local administrator account to start archiving.</li>
 </ol>
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/575ef92f-bb3e-4a7c-a4ba-986c1fd76ecf" width="320px">
 <br/>
-<i>✨ Alpha (contributors wanted!)</i>: for more info, see the: <a href="https://github.com/ArchiveBox/electron-archivebox">Electron ArchiveBox</a> repo.
+<a href="https://electron.archivebox.io/">Desktop app guide</a> · <a href="https://electron.archivebox.io/screenshots/">Screenshots</a>
 <br/>
 </details>
 
@@ -426,7 +432,7 @@ For more discussion on third-party hosting options see here: <a href="https://gi
 #### ➡️&nbsp; Next Steps
 
 - Import URLs from some of the supported [Input Formats](#input-formats) or view the supported [Output Formats](#output-formats)...
-- (Optional) [Import browser cookies and settings into a persona](docs/Personas.md): `archivebox persona create --import=chrome personal`. For Docker on macOS/Windows, run this import on the host into the shared data directory first.
+- (Optional) [Import browser cookies and settings into a persona](docs/Chromium-Install.md#import-an-existing-browser-profile).
 - Tweak your UI or archiving behavior [Configuration](#configuration), read about some of the [Caveats](#caveats), or [Troubleshoot](https://github.com/ArchiveBox/ArchiveBox/wiki/Troubleshooting)
 - Read about the [Dependencies](#dependencies) used for archiving, the [Upgrading Process](https://github.com/ArchiveBox/ArchiveBox/wiki/Upgrading-or-Merging-Archives), or the [Archive Layout](#archive-layout) on disk...
 - Or check out our full [Documentation](#documentation) or [Community Wiki](#internet-archiving-ecosystem)...
@@ -454,11 +460,6 @@ docker compose run --rm archivebox help
 # equivalent: docker run -it -v $PWD:/data archivebox/archivebox:dev [subcommand] [--help]
 docker run -it -v $PWD:/data archivebox/archivebox:dev help
 
-# optional: import your browser cookies into a persona for logged-in archiving
-archivebox persona create --import=chrome personal
-# supported: chrome/chromium/brave/edge (Chromium-based only)
-# use --profile to target a specific profile (e.g. Default, Profile 1)
-# re-running import replaces this persona with the selected profile and exported cookies
 ```
 
 #### ArchiveBox Subcommands
@@ -538,16 +539,16 @@ find ./archive/users -path '*/snapshots/*/*/*/index.html'  # inspect snapshot da
 <summary><b>🖥&nbsp; Web UI & API Usage</b></summary>
 <pre lang="bash"><code style="white-space: pre-line">
 # Start the server on bare metal (uv/apt/brew):
-archivebox server 0.0.0.0:8000                 # start the server
+archivebox server 0.0.0.0:5797                 # start the server
 <br/>
 # Or with Docker Compose:
 docker compose up                              # start the server
 <br/>
 # Or with a Docker container:
-docker run -v $PWD:/data -it -p 8000:8000 archivebox/archivebox:dev
+docker run -v $PWD:/data -it -p 5797:5797 archivebox/archivebox:dev
 </code></pre>
 
-<sup>Open <a href="http://admin.archivebox.localhost:8000/admin/"><code>http://admin.archivebox.localhost:8000/admin/</code></a> to create the first admin and finish web setup. Use <a href="http://web.archivebox.localhost:8000"><code>http://web.archivebox.localhost:8000</code></a> for the public UI. ➡️</sup><br/>
+<sup>Open <a href="http://admin.archivebox.localhost:5797/admin/"><code>http://admin.archivebox.localhost:5797/admin/</code></a> to create the first admin and finish web setup. Use <a href="http://web.archivebox.localhost:5797"><code>http://web.archivebox.localhost:5797</code></a> for the public UI. ➡️</sup><br/>
 <sup>Advanced: <code>archivebox manage createsuperuser</code> remains available for creating accounts from the CLI.</sup><br/>
 <sup>Set <code>BASE_URL</code> to change the public base domain. The default <code>auto</code> mode uses <code>web.</code> and <code>admin.</code> subdomains on <code>*.localhost</code>, but one host for ordinary DNS names. <code>BIND_ADDR</code> only controls the local listen address.</sup>
 <br/><br/>
@@ -564,6 +565,20 @@ docker compose run --rm archivebox config --set PERMISSIONS=public
 
 # restart the server to apply any config changes
 </code></pre>
+</details>
+
+<br/>
+
+<details>
+<summary><b><img src="https://app.archivebox.io/docs/icons/apple.svg" alt="Apple" height="22px" align="top"/> <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.17.0/icons/windows11/windows11-original.svg" alt="Windows" height="22px" align="top"/> 🐧&nbsp; Desktop / Mobile / Extension Usage</b></summary>
+<br/>
+
+- 📱 [<code>ArchiveBox</code> iOS Mobile App](https://app.archivebox.io/)
+- 🖥️ [<code>ArchiveBox.app</code> macOS Desktop App](https://app.archivebox.io/)
+- 🧩 [ArchiveBox Browser Extension](https://extension.archivebox.io/)
+- 💻 [Linux/Windows Desktop App (Requires Docker Desktop)](https://electron.archivebox.io/)
+
+<br/>
 </details>
 
 <br/>
@@ -619,7 +634,10 @@ docker run -it -v $PWD:/data archivebox/archivebox:dev add --depth=1 'https://ex
 
 
 - <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/ff20d251-5347-4b85-ae9b-83037d0ac01e" height="28px"/> <b>From the official <a href="https://github.com/ArchiveBox/archivebox-extension">ArchiveBox Browser Extension</a></b>  
-  <i>Provides realtime archiving of browsing history or selected pages from Chrome/Chromium/Firefox browsers.</i>
+  <i>Provides realtime archiving of browsing history or selected pages from Chrome/Chromium/Firefox/Safari browsers.</i>
+
+- <img src="https://app.archivebox.io/App/AppIcon.icon/Assets/ArchiveBox.png" alt="ArchiveBox app icon" height="28px"/> <b>From the official <a href="https://app.archivebox.io/">ArchiveBox macOS Desktop App or iOS Mobile App</a></b><br/>
+  <i>Save directly from the Share menu or Siri/Shortcuts to your server.</i>
 
 - <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/64078483-21d7-4eb1-aa6e-9ad55afe45b8" height="22px"/> From manual imports of URLs from RSS, JSON, CSV, TXT, SQL, HTML, Markdown, etc. files  
   <i>ArchiveBox supports injesting URLs in [any text-based format](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#Import-a-list-of-URLs-from-a-text-file).</i>
@@ -932,7 +950,7 @@ archivebox manage createsuperuser
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Publishing-Your-Archive">Wiki: Publishing Your Archive</a></li>
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview">Wiki: Security Overview</a></li>
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#setting-up-a-chromium-user-profile">Wiki: Chromium Install (Setting Up a User Profile)</a></li>
-<li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Personas">Wiki: Personas (browser profiles and cookies)</a></li>
+<li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#import-an-existing-browser-profile">Wiki: Chrome profiles and cookies</a></li>
 <li><a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#default_persona">Wiki: Configuration (<code>DEFAULT_PERSONA</code>)</a></li>
 </ul>
 
@@ -986,7 +1004,7 @@ For various reasons, many large sites (Reddit, Twitter, Cloudflare, etc.) active
 
 <ul>
 <li>Set <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#curl_user_agent"><code>CHROME_USER_AGENT</code>, <code>WGET_USER_AGENT</code>, <code>CURL_USER_AGENT</code></a> to impersonate a real browser (by default, ArchiveBox reveals that it's a bot when using the default user agent settings)</li>
-<li>Set up a logged-in browser session for archiving by <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Personas">importing a dedicated browser profile into a persona</a></li>
+<li>Set up a logged-in browser session for archiving by <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#import-an-existing-browser-profile">importing a dedicated browser profile into a persona</a></li>
 <li>Rewrite your URLs before archiving to swap in alternative frontends that are more bot-friendly e.g.<br>
 <code>reddit.com/some/url</code> -&gt; <code>teddit.net/some/url</code>: <a href="https://github.com/mendel5/alternative-front-ends">https://github.com/mendel5/alternative-front-ends</a></li>
 </ul>
@@ -1041,8 +1059,8 @@ Because ArchiveBox is designed to ingest a large volume of URLs with multiple co
 </li>
 <li><strong>Don't store large collections on older filesystems like EXT3/FAT</strong> as they may not be able to handle more than 50k directory entries in the <code>data/archive/</code> folder.
 </li>
-<li><strong>Try to keep the <code>data/index.sqlite3</code> file on local drive (not a network mount)</strong> or SSD for maximum performance, however the <code>data/archive/</code> folder can be on a network mount or slower HDD.</li>
-<li>If using Docker or NFS/SMB/FUSE for the <code>data/archive/</code> folder, make sure the mounted data directory is writable by its intended owner and consider disabling <a href="https://github.com/ArchiveBox/ArchiveBox/issues/1304"><code>root_squash</code></a> on your fileshare server.
+<li><strong>Keep the <code>data/index.sqlite3</code> file on a reliable local drive (not a network mount)</strong> or SSD when using SQLite; the <code>data/archive/</code> folder can be on a network mount or slower HDD.</li>
+<li>If using Docker or NFS/SMB/FUSE for the <code>data/archive/</code> folder, configure the server-side UID/GID mapping or ACL so ArchiveBox's non-root user can create and remove files. <code>root_squash</code> is compatible when the selected non-root identity has write access; do not rely on container root to override server-side permissions.
 </li>
 </ul>
 
@@ -1323,10 +1341,10 @@ archivebox init
 archivebox install         # detect and install all extractor dependencies
 
 # Run the development server w/ autoreloading (but no bg workers)
-archivebox server --debug --reload 0.0.0.0:8000
+archivebox server --debug --reload 0.0.0.0:5797
 
 # Run the production server (with bg workers but no autoreloading)
-archivebox server 0.0.0.0:8000
+archivebox server 0.0.0.0:5797
 ```
 
 #### 2. Option B: Build the docker container and use that for development instead
@@ -1338,10 +1356,10 @@ archivebox server 0.0.0.0:8000
 ./bin/build_docker.sh dev
 
 # Run the development server w/ autoreloading (but no bg workers)
-docker run -it -v $PWD/data:/data -v $PWD/archivebox:/app/archivebox -p 8000:8000 archivebox/archivebox:dev server --init --debug --reload 0.0.0.0:8000
+docker run -it -v $PWD/data:/data -v $PWD/archivebox:/app/archivebox -p 5797:5797 archivebox/archivebox:dev server --init --debug --reload 0.0.0.0:5797
 
 # Run the production server (with bg workers but no autoreloading)
-docker run -it -v $PWD/data:/data -v $PWD/archivebox:/app/archivebox -p 8000:8000 archivebox/archivebox:dev server --init
+docker run -it -v $PWD/data:/data -v $PWD/archivebox:/app/archivebox -p 5797:5797 archivebox/archivebox:dev server --init
 
 # (remove the --reload flag and add the --nothreading flag when profiling with the django debug toolbar)
 # When using --reload, make sure any files you create can be read by the user in the Docker container, eg with 'chmod a+rX'.
@@ -1363,11 +1381,11 @@ You can also run all these in Docker. For more examples see the GitHub Actions C
 archivebox config --set DEBUG=True
 
 # OR you can run a dev server with DEBUG=True in a few ways:
-archivebox server --debug --reload 0.0.0.0:8000
+archivebox server --debug --reload 0.0.0.0:5797
 # or
-archivebox server --debug 0.0.0.0:8000
+archivebox server --debug 0.0.0.0:5797
 # or
-env DEBUG=True daphne -b 0.0.0.0 -p 8000 archivebox.core.asgi:application
+env DEBUG=True daphne -b 0.0.0.0 -p 5797 archivebox.core.asgi:application
 ```
 
 https://stackoverflow.com/questions/1074212/how-can-i-see-the-raw-sql-queries-django-is-running
@@ -1402,7 +1420,7 @@ services:
 
 # or with plain Docker:
 docker build -t archivebox:dev https://github.com/ArchiveBox/ArchiveBox.git#dev
-docker run -it -v $PWD:/data -p 8000:8000 archivebox:dev
+docker run -it -v $PWD:/data -p 5797:5797 archivebox:dev
 
 # or with uv:
 uv tool install --python 3.13 --upgrade 'git+https://github.com/ArchiveBox/ArchiveBox.git@dev'

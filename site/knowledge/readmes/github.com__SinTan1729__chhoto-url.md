@@ -43,6 +43,10 @@ to rewrite it in Rust and add some features to it that I thought were essential 
 Chhoto (ছোট, [pronunciation](https://en.wiktionary.org/wiki/ছোট)) is the Bangla word
 for small. URL means, well... URL. So the name simply means Small URL.
 
+# Installation and configuration
+
+[See here.](./docs/INSTALLATION.md)
+
 # Demo
 
 Link: [demo.chhoto.link](https://demo.chhoto.link)</br>
@@ -72,7 +76,7 @@ Password: `chhoto-url-demo-pass`
 - Supports operation using API key, and lets the user provide hashed password and API key.
 - Has a robust JSON-RPC adjacent API.
 - Has a mobile friendly UI, and automatic dark mode.
-- Can serve a custom landing page, if needed.
+- Supports customized site title, and can even serve a custom landing page, if needed.
 - Has a public mode, where anyone can add links without authentication. Deleting
   or listing available links will need admin access using the password. It's also
   possible to completely disable the frontend. It's also possible to force an expiry
@@ -106,10 +110,6 @@ Password: `chhoto-url-demo-pass`
   <img src="docs/screenshot-desktop.webp" height="250" alt="desktop screenshot" />
   <img src="docs/screenshot-mobile.webp" height="250" alt="mobile screenshot" />
 </p>
-
-# Installation and configuration
-
-[See here.](./docs/INSTALLATION.md)
 
 # Instructions for CLI usage
 

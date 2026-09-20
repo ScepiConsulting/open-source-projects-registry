@@ -1,12 +1,12 @@
 <!-- lang-selector -->
 <p align="center">
   <b>English</b> ·
-  <a href="README.fr.md">Français</a> ·
-  <a href="README.de.md">Deutsch</a> ·
-  <a href="README.es.md">Español</a> ·
-  <a href="README.pt.md">Português</a> ·
-  <a href="README.ru.md">Русский</a> ·
-  <a href="README.zh-cn.md">简体中文</a>
+  <a href="docs/README.fr.md">Français</a> ·
+  <a href="docs/README.de.md">Deutsch</a> ·
+  <a href="docs/README.es.md">Español</a> ·
+  <a href="docs/README.pt.md">Português</a> ·
+  <a href="docs/README.ru.md">Русский</a> ·
+  <a href="docs/README.zh-cn.md">简体中文</a>
 </p>
 <!-- /lang-selector -->
 
@@ -247,9 +247,10 @@ docker compose up -d
 <details>
 <summary><strong>☁️ Cloud</strong></summary><br>
 
-Don't want to manage a server? Poznote can be deployed in the cloud in a few minutes.
+Don't want to manage a server? Two hosts run Poznote for you. With either one, you first need to create an account with the host, then you deploy Poznote from their catalog in a few clicks. Both give you free credit when you sign up, so you can try without paying anything.
 
-See the cloud hosting options at [poznote.com/hosting.html](https://poznote.com/hosting.html).
+- **[Caliber Node](https://calibernode.com/cloud-apps/poznote)**, from $2.50 a month: updates arrive as soon as they are released, fixed plans (you move up to the next tier if you need more), SSH console and automatic snapshots included. A good fit if you want as little to manage as possible and don't have that many notes.
+- **[PikaPods](https://www.pikapods.com/pods?run=poznote)**, from $2 a month: updates are tested before rollout so they arrive a little later, RAM, CPU and disk can be adjusted independently, backups run automatically but you set up where they are stored (S3). A good fit if you want room to grow as your notes pile up.
 
 </details>
 
@@ -395,6 +396,7 @@ Most day-to-day settings are changed from the Poznote interface. Use the `.env` 
 - Optional runtime overrides such as `POZNOTE_MCP_PORT` and `POZNOTE_DEBUG`
 - `POZNOTE_PHP_FPM_MAX_CHILDREN` to change the number of simultaneous PHP requests (default 10) on a busy instance, see the [Troubleshooting Guide](docs/TROUBLESHOOTING.md#the-app-stops-answering-under-load)
 - `POZNOTE_PHP_MEMORY_LIMIT` to change the PHP memory limit per request, in MB (default 512), see the [Troubleshooting Guide](docs/TROUBLESHOOTING.md#a-request-runs-out-of-memory)
+- `POZNOTE_LISTEN_PORT` to change the port the web server listens on inside the container (default 80), only needed with `network_mode: host`, see the [Troubleshooting Guide](docs/TROUBLESHOOTING.md#running-with-host-network)
 - `POZNOTE_SETTINGS_PASSWORD` to ask for an extra password before the Settings page opens, left empty by default
 - `POZNOTE_MCP_AUTH_TOKEN` to require a bearer token from MCP clients, see [MCP Server](#mcp-server)
 
@@ -634,7 +636,7 @@ Poznote supports two primary note formats, each tailored for different workflows
 *   **Usage:** Write one note per day, journal-style, from a dedicated Diary board.
 *   **Workflow:** The "Create today's entry" button creates today's note (it reads "Go to today's entry" once the note exists), titled with the current date and stored automatically in a `Diary/YYYY/MM` folder structure.
 *   **Board View:** Entries are displayed as cards grouped by month, newest first, with a filter to quickly find past entries.
-*   **Journal View:** The scroll button next to the view controls switches to one reading column: every entry with its full content, newest first, loaded as you scroll. The filter works there too.
+*   **Journal View:** The scroll button next to the view controls switches to one reading column: every entry with its full content, newest first, loaded as you scroll. The filter works there too. Click an entry, or its pencil, to edit it right there; changes are saved as you type.
 *   **Format:** New entries are created as HTML or Markdown notes, depending on the "Diary entry format" setting under **Settings > Behavior**.
 </details>
 
@@ -814,6 +816,7 @@ Poznote is multi-user: each profile has its own notes, workspaces, tags, folders
 
 - **User management**: administrators create, disable and manage profiles from **Settings > Admin Tools > User Management**, and can give a user access to another user's account without transferring its ownership.
 - **Sharing**: notes, folders and entire workspaces can be shared with other users of the instance, read-only or editable, or publicly through dedicated links. When several users can access the same note, only one edits it at a time and the others see who holds the lock.
+- **Editing the same note**: one person edits at a time. When a note is locked, the read-only banner offers to **take over**: the previous editor's screen turns read-only and their unsaved changes stay in their browser, offered again once the note is free. An open note picks up changes made elsewhere within a few seconds. For a **Markdown** note with unsaved edits on both sides, the two sets of changes are merged automatically when they touch different lines, and a banner lets you choose when they overlap. Rich-text notes are never merged, you choose which version to keep. Keep scripts and other code in fenced code blocks (```` ``` ````): raw HTML outside a code block is sanitized on save, which can make an otherwise clean merge look like a conflict.
 - **Tenant isolation (SaaS mode)**: administrators can stop non-admin users from discovering the other accounts of the instance, sharing with them, or registering personal webhooks. Leave everything unchecked for a family or team instance.
 
 <details>
@@ -1122,18 +1125,41 @@ There is no practical size limit on the archive. Like a complete restore, it is 
 
 <a id="import-obsidian-notes"></a>
 <details>
-<summary><strong>Import Obsidian Notes</strong></summary>
+<summary><strong>Migrate an Obsidian vault</strong></summary>
 <br>
 
-Import a ZIP archive containing multiple notes from Obsidian:
+An Obsidian vault is a folder of Markdown files, so it can be imported as it is, in a single ZIP archive.
 
-  - ZIP archives can contain up to 300 files, configurable in Settings > Admin Tools > Import Limits
-  - Poznote automatically detects and recreates the folder structure
-  - Poznote automatically detects existing tags to create
-  - Poznote automatically imports images if they are at the zip file root
+**Steps**
+
+1. Compress your vault folder into a ZIP file. There is nothing to clean up first: hidden folders such as `.obsidian` or `.trash` are ignored.
+2. In Poznote, open **Settings > Restore/Import** and go to the section that imports files and ZIP archives. Pick the destination workspace (a new, empty workspace makes the result easy to check), select the ZIP and start the import. Dropping the ZIP onto the notes list of the main page does the same thing.
+3. Read the summary shown at the end: it gives the number of notes, folders, images and PDF files imported, and names the files that could not be.
+
+A ZIP can hold up to 300 notes (images and PDF files do not count), a limit an administrator can raise in Settings > Admin Tools > Import Limits. The size of the archive is not limited, see [Import ZIP file](#import-zip-notes).
+
+**What is carried over**
+
+  - Notes: every `.md` file becomes a Markdown note named after the file, or after the `title` key of its front matter.
+  - Folders: the folder tree of the vault is recreated, subfolders included. When the whole vault sits in a single top-level folder of the ZIP, that folder is skipped.
+  - Tags: the `tags` key of the front matter, and a line of `#tags` at the very top of a note. Spaces in a tag become underscores.
+  - Front matter: `title`, `folder`, `tags`, `favorite`, `created` and `updated` are read, see [Markdown Front Matter Support](#markdown-front-matter).
+  - Links between notes: `[[Note title]]` works as it is. Poznote resolves it by title, shows it as an internal link and counts it in the backlinks and in the graph.
+  - Images: `![[image.png]]`, `![[image.png|caption]]` and `![caption](image.png)` become attachments of the note and are displayed in place, wherever the image is stored in the vault (next to the notes, in a subfolder or in an `attachments` folder).
+  - PDF files: a PDF linked from a note (`![[file.pdf]]`, `[[file.pdf]]` or a Markdown link) is attached to that note, and the link points to the attachment. Any other PDF, next to the notes or in an `attachments` folder, becomes a note named after the file, with the PDF as its attachment, in the folder matching its place in the vault.
+
+**What is not**
+
+  - Links with an alias or a heading (`[[Note|alias]]`, `[[Note#Heading]]`) stay in the text but do not resolve to a note.
+  - Note embeds (`![[Other note]]`) and plugin content: Dataview queries, `.canvas` files, drawings made with the Obsidian Excalidraw plugin.
+  - Tags written in the middle of a note stay as plain text.
+  - Files of other types lying next to the notes (audio, video, Office documents) are ignored. Attach them to the relevant note afterwards.
+
+Images and PDF files are matched by file name, not by path. If two files of the vault share the same name, rename one of them before the import.
 
 </details>
 
+<a id="markdown-front-matter"></a>
 <details>
 <summary><strong>Markdown Front Matter Support</strong></summary>
 <br>

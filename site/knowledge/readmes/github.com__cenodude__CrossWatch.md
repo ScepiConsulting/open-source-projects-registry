@@ -1,7 +1,4 @@
-
-<img width="1672" height="941" alt="59d12c86-1022-4b0e-92a0-70474db3ef41" src="https://github.com/user-attachments/assets/88602f46-8974-44f9-afca-5c9f977452db" />
-
-
+<img width="1672" height="941" alt="crosswatch_overview" src="https://github.com/user-attachments/assets/06355278-8cdc-4a13-95ae-89f924fd0975" />
 </center>
 
 <p align="center" style="font-size:14px;">
@@ -44,7 +41,7 @@
 </p>
 
 
-**CrossWatch (CW)** is a synchronization engine that act as a bridge and keeps your **Plex, Jellyfin, Emby, SIMKL, Floppy, FlickList, Trakt, AniList, TMDb, MDBList, PublicMetaDB, PunchPlay, BingeBase, Scrob, Tautulli, Kodi, Nuvio, Stremio and CW local tracker** in sync. It runs locally with a web UI or/and Command-Line Interface (CLI) where you link accounts, define sync pairs, run them manually or on a schedule, and review stats and history. CW also includes its own tracker to keep your data safe with snapshots. With Profiles, you can manage separate sync setups for yourself and for friends or family too, with their own servers and/or tracker API's.
+**CrossWatch (CW)** is a synchronization engine that act as a bridge and keeps your **Plex, Jellyfin, Emby, SIMKL, Floppy, FlickList, Trakt, AniList, TMDb, MDBList, PublicMetaDB, PunchPlay, BingeBase, Scrob, Tautulli, Tracearr, Kodi, Nuvio, Stremio and CW local tracker** in sync. It runs locally with a web UI or/and Command-Line Interface (CLI) where you link accounts, define sync pairs, run them manually or on a schedule, and review stats and history. CW also includes its own tracker to keep your data safe with snapshots. With Profiles, you can manage separate sync setups for yourself and for friends or family too, with their own servers and/or tracker API's.
 
 ### CW in a nutshell:
 
@@ -82,7 +79,7 @@ And much more...such as:
 * CW Tracker Keeps snapshots/backups from your media servers and trackers.
 * Unified Watchlist: View all watchlist items in one place.
 * Player card: Shows what you are currently watching in real time.
-* Fallback GUID: Revives old items from  your Plex library.
+* Recover Plex history: Import history for removed Plex items into your CW tracker.
 
 ### Download
 [![Guide: Installation](https://img.shields.io/badge/Guide-INSTALLATION-0d6efd?style=for-the-badge)](https://wiki.crosswatch.app/getting-started/installation)

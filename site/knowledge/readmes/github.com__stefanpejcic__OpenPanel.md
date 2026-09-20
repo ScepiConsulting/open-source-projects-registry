@@ -58,8 +58,8 @@ The result: VPS-level isolation on shared hosting infrastructure, without the VP
 
 - focus on [security](https://openpanel.com/docs/articles/security/securing-openpanel/)
 - billing integrations: [FOSSBilling](https://openpanel.com/docs/articles/extensions/openpanel-and-fossbilling/), [WHMCS](https://openpanel.com/docs/articles/extensions/openpanel-and-whmcs/), [Blesta](https://openpanel.com/docs/articles/extensions/openpanel-and-blesta/), paymenter.org[^1]
-- dedicated [MySQL, Percona or MariaDB per user](https://openpanel.com/docs/articles/docker/how-to-set-mysql-mariadb-per-user-in-openpanel/)
-- dedicated [Apache, Nginx, OpenLitespeed, Openresty + Varnish per user](https://openpanel.com/docs/articles/docker/how-to-set-nginx-apache-varnish-per-user-in-openpanel/)
+- dedicated [MySQL, Percona or MariaDB per user](https://openpanel.com/docs/articles/containers/how-to-set-mysql-mariadb-per-user-in-openpanel/)
+- dedicated [Apache, Nginx, OpenLitespeed, Openresty + Varnish per user](https://openpanel.com/docs/articles/containers/how-to-set-nginx-apache-varnish-per-user-in-openpanel/)
 - [detailed activity log](https://openpanel.com/docs/panel/account/account_activity/#recorded-actions) for all user actions.
 - low maintenance: each user manages [their own services](https://openpanel.com/docs/panel/advanced/services/) and [backups](https://openpanel.com/docs/panel/files/backups/)
 - Import accounts from [cPanel](https://openpanel.com/docs/articles/transfers/import-cpanel-backup-to-openpanel/) and [CyberPanel](https://github.com/stefanpejcic/CyberPanel-to-OpenPanel) backups
@@ -80,17 +80,17 @@ OpenPanel is a truly [OS-agnostic](https://www.techtarget.com/whatis/definition/
 <!-- OS_TEST_RESULTS_START -->
 | Operating System | Version | Last Tested | Status | Average install time[^2] | Notes |
 |---|---|---|---|---|---|
-| Ubuntu | 24 | 2026-09-13 07:39 UTC | ❌ Fail | 2m2s | **recommended for AMD CPU** |
-| Ubuntu | 26 | 2026-09-13 07:33 UTC | ❌ Fail | 2m46s |  |
-| Debian | 12 | 2026-09-13 07:44 UTC | ❌ Fail | 1m25s |  |
-| Debian | 13 | 2026-09-13 07:46 UTC | ❌ Fail | 1m54s |  |
+| Ubuntu | 24 | 2026-09-20 07:52 UTC | ✅ Pass | 2m7s | **recommended for AMD CPU** |
+| Ubuntu | 26 | 2026-09-20 07:43 UTC | ✅ Pass | 2m58s |  |
+| Debian | 12 | 2026-09-20 08:00 UTC | ❌ Fail | 1m25s |  |
+| Debian | 13 | 2026-09-20 08:02 UTC | ✅ Pass | 2m5s |  |
 | AlmaLinux | 9.7 | 2026-09-07 11:46 UTC | ✅ Pass | 1m42s | **recommended for ARM CPU** |
-| AlmaLinux | 10 | 2026-09-13 07:00 UTC | ❌ Fail | 9m20s |  |
+| AlmaLinux | 10 | 2026-09-20 07:00 UTC | ✅ Pass | 9m13s |  |
 | OracleLinux | 10 | |  |  |  |
 | RockyLinux | 9.6 | | | |  |
-| RockyLinux | 10 | 2026-09-13 07:51 UTC | ❌ Fail |  |  |
+| RockyLinux | 10 | 2026-09-20 08:10 UTC | ❌ Fail |  |  |
 | CentOS | 9.5 | | | |  |
-| CentOS | 10 | 2026-09-13 07:22 UTC | ❌ Fail | 9m23s |  |
+| CentOS | 10 | 2026-09-20 07:29 UTC | ✅ Pass | 8m20s |  |
 
 <!-- OS_TEST_RESULTS_END -->
 

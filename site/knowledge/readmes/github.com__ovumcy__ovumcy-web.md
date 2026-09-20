@@ -26,6 +26,7 @@
   <a href="https://pkg.go.dev/github.com/ovumcy/ovumcy-web"><img src="https://pkg.go.dev/badge/github.com/ovumcy/ovumcy-web.svg" alt="Go Reference"></a>
   <a href="https://go.dev/"><img src="https://img.shields.io/badge/Go-1.27.1+-00ADD8?logo=go" alt="Go Version"></a>
   <a href="https://github.com/ovumcy/ovumcy-web/actions/workflows/docker-image.yml"><img src="https://img.shields.io/badge/Docker-ready-2496ED?logo=docker" alt="Docker"></a>
+  <a href="https://github.com/ovumcy/ovumcy-web/pkgs/container/ovumcy-web"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fovumcy%2Fovumcy-web%2Fbadges%2Fpulls.json&logo=docker" alt="Docker pulls"></a>
   <a href="https://github.com/ovumcy/ovumcy-web/blob/main/docs/self-hosted.md"><img src="https://img.shields.io/badge/Self--hosted-yes-2ea44f" alt="Self-hosted"></a>
   <a href="https://github.com/ovumcy/ovumcy-web#privacy-and-security"><img src="https://img.shields.io/badge/Telemetry-none-2ea44f" alt="No telemetry"></a>
 </p>
@@ -381,7 +382,11 @@ TRUSTED_PROXIES=127.0.0.1,::1
 # Per-action audit logs to stderr. Default off. Enable only when investigating an incident.
 AUDIT_LOG_ENABLED=false
 
-# Rate limits (defaults shown); see SECURITY.md's Rate Limits section for the full policy
+# Rate limits (defaults shown); see SECURITY.md's Rate Limits section for the full policy.
+# Each *_MAX has a ceiling (100 for login/register/forgot-password, 600 logout, 200 logout
+# account, 3000 api, 120 calendar feed) and each *_WINDOW must be between 1s and 24h; a value
+# outside its range is logged at boot and the default is used instead — a limiter cannot be
+# widened past its ceiling, let alone switched off. To widen a budget, shorten its window.
 # RATE_LIMIT_LOGIN_MAX=8
 # RATE_LIMIT_LOGIN_WINDOW=15m
 # RATE_LIMIT_REGISTER_MAX=8

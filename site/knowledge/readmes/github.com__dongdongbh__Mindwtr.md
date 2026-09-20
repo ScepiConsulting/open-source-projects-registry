@@ -99,7 +99,7 @@ For more about the method, read [GTD in 15 minutes](https://hamberg.no/gtd) or [
 
 - **GTD from capture to review.** Work through your Inbox, plan projects, and follow a guided weekly review to keep both your next steps and longer-term plans in view.
 - **Your data stays yours.** Keep tasks on your device, work offline, and export a backup. Sync is optional: choose [iCloud, Dropbox, a shared folder, WebDAV, or your own server](https://docs.mindwtr.app/data-sync/).
-- **The same workflow on your phone and computer.** Use the full GTD workflow on Windows, macOS, Linux, iPhone, iPad, and Android, with 20 language options.
+- **The same workflow on your phone and computer.** Use the full GTD workflow on Windows, macOS, Linux, iPhone, iPad, and Android, with 23 language options.
 - **Bring your existing tasks.** [Import from Todoist, TickTick, OmniFocus, and more](https://docs.mindwtr.app/import/) so you can start with the plans you've already made.
 - **Add the tools you need.** Plan with a calendar, set up recurring tasks, and keep notes and attachments with your work. AI assistance is off by default and yours to enable.
 
@@ -155,7 +155,16 @@ brew install --cask mindwtr
 ```
 
 ```powershell
+# WinGet
 winget install dongdongbh.Mindwtr
+
+# Scoop (our own bucket, updated automatically on every release)
+scoop bucket add mindwtr https://github.com/dongdongbh/homebrew-mindwtr
+scoop install mindwtr
+
+# Scoop alternative: the community-maintained Extras bucket
+scoop bucket add extras
+scoop install extras/mindwtr
 ```
 
 For APT/RPM repo setup, source builds, portable ZIPs, mobile store variants, and Docker setup, use the full install guides above.

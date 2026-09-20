@@ -171,6 +171,7 @@ The table below identifies the services this tool supports and some example serv
 | [WxPusher](https://appriseit.com/services/wxpusher/) | wxpusher://  | (TCP) 443   | wxpusher://AppToken@UserID1/UserID2/UserIDN<br/>wxpusher://AppToken@Topic1/Topic2/Topic3<br/>wxpusher://AppToken@UserID1/Topic1/
 | [XBMC](https://appriseit.com/services/xbmc/) | xbmc:// or xbmcs://    | (TCP) 8080 or 443   | xbmc://hostname<br />xbmc://user@hostname<br />xbmc://user:password@hostname:port
 | [XMPP](https://appriseit.com/services/xmpp/) | xmpp:// or xmpps://    | (TCP) 5222 or 5223   | xmpp://user:pass@hostname<br />xmpps://user:pass@hostname/jid<br />xmpps://user:pass@hostname/jid1/jid2@example.ca
+| [YouLMK](https://appriseit.com/services/youlmk/) | youlmk://  | (TCP) 443   | youlmk://ylk_token<br/>youlmk://k_key<br/>youlmk://ylk_token?priority=critical<br/>youlmk://ylk_token?failure=critical&url=https://example.com/runs/1
 | [Zoom](https://appriseit.com/services/zoom/) | zoom://  | (TCP) 443   | zoom://WebhookID/Token
 | [Zulip Chat](https://appriseit.com/services/zulip/) | zulip://  | (TCP) 443   | zulip://botname@Organization/Token<br />zulip://botname@Organization/Token/Stream<br />zulip://botname@Organization/Token/Email
 
@@ -210,6 +211,7 @@ SMS Notifications for the most part do not have a both a `title` and `body`.  Th
 | [SMSEagle](https://appriseit.com/services/smseagle/) | smseagle:// or smseagles:// | (TCP) 80 or 443  | smseagles://hostname:port/ToPhoneNo<br/>smseagles://hostname:port/@ToContact<br/>smseagles://hostname:port/#ToGroup<br/>smseagles://hostname:port/ToPhoneNo1/#ToGroup/@ToContact/
 | [SMS Manager](https://appriseit.com/services/sms_manager/) | smsmgr://  | (TCP) 443   | smsmgr://ApiKey@ToPhoneNo<br/>smsmgr://ApiKey@ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
 | [SMSC](https://appriseit.com/services/smsc/) | smsc://  | (TCP) 443   | smsc://login:password@ToPhoneNo<br/>smsc://login:password@ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
+| [Telnyx](https://appriseit.com/services/telnyx/) | telnyx://  | (TCP) 443   | telnyx://ApiKey@FromPhoneNo<br/>telnyx://ApiKey@FromPhoneNo/ToPhoneNo<br/>telnyx://ApiKey@FromPhoneNo/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/<br/>telnyx://ApiKey@FromPhoneNo/ToPhoneNo?profile=MessagingProfileID
 | [Threema Gateway](https://appriseit.com/services/threema/) | threema://  | (TCP) 443   | threema://GatewayID@secret/ToPhoneNo<br/>threema://GatewayID@secret/ToEmail<br/>threema://GatewayID@secret/ToThreemaID/<br/>threema://GatewayID@secret/ToEmail/ToThreemaID/ToPhoneNo/...
 | [Trigv](https://trigv.com/) | trigv:// or trigvs:// | (TCP) 80 or 443 | trigvs://APIKey<br/>trigvs://APIKey/channel<br/>trigv://APIKey@hostname/channel
 | [Notifyre](https://appriseit.com/services/notifyre/) | notifyre://  | (TCP) 443   | notifyre://ApiKey/ToPhoneNo<br/>notifyre://ApiKey/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN<br/>notifyre://ApiKey/ToFaxNo?mode=fax<br/>notifyre://ApiKey/ToFaxNo?mode=fax&from=+FromNo

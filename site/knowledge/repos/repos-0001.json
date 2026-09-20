@@ -1,7 +1,7 @@
 {
   "chunk": 1,
   "count": 50,
-  "generated_at": "2026-09-13T08:07:51Z",
+  "generated_at": "2026-09-20T08:25:05Z",
   "items": [
     {
       "repo_key": "akkoma.dev/AkkomaGang/akkoma",
@@ -522,10 +522,10 @@
       "app_references": [
         "blocky"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__0xERR0R__blocky.md",
-      "readme_download_url": null,
-      "readme_sha256": "1330aa10ab26108b35722e5670586bd28afecd424873cc54a348bf177aa5363d",
+      "readme_download_url": "https://raw.githubusercontent.com/0xERR0R/blocky/main/README.md",
+      "readme_sha256": "c9e8f14f270fadb56d105c860703b1b1d568cbc1f77b41feb4c3353e83061e76",
       "error": null
     },
     {
@@ -537,10 +537,10 @@
       "app_references": [
         "nginx-ui"
       ],
-      "readme_status": "not_modified",
+      "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__0xJacky__nginx-ui.md",
-      "readme_download_url": null,
-      "readme_sha256": "eeb708ef1cd9032f31c26c0e40bb6ed98b009b935f5ae97403e6632da17bc8c4",
+      "readme_download_url": "https://raw.githubusercontent.com/0xJacky/nginx-ui/dev/README.md",
+      "readme_sha256": "3b3db289a38e26dbe4e9e9d4d39620e82cdd1c599bc26593c7f39536f0858fd5",
       "error": null
     },
     {
@@ -552,11 +552,11 @@
       "app_references": [
         "flint"
       ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__0xchasercat__flint.md",
+      "readme_status": "error",
+      "readme_path": null,
       "readme_download_url": null,
-      "readme_sha256": "b687bd1ed7e2fa6c937733c98463b2c9e084df36780e3a899246a906b3af415a",
-      "error": null
+      "readme_sha256": null,
+      "error": "github_readme_http_404"
     },
     {
       "repo_key": "github.com/0xfurai/peekaping",
@@ -687,9 +687,9 @@
       "app_references": [
         "copyparty"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__9001__copyparty.md",
-      "readme_download_url": "https://raw.githubusercontent.com/9001/copyparty/hovudstraum/README.md",
+      "readme_download_url": null,
       "readme_sha256": "2de7c4ff0b9b894d2074194b01c834fd014ad62cd984b971c38e0de6dbca5ac8",
       "error": null
     },

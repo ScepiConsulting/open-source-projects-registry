@@ -50,7 +50,7 @@ I built the first version in **Next.js**, but it turned out to be very resource-
 - **Ultra-lightweight** - ~16 MB on disk, ~2.5 MB RAM
 - **Multiple lists** - Create separate lists for different stores or purposes, with custom icons
 - **PWA** - Install on your phone like a native app
-- **Offline mode** - Add, edit, check/uncheck products without internet (auto-sync when back online)
+- **Offline mode** - Create, edit and delete lists, sections and products without internet, with automatic synchronization when the connection returns
 - **Auto-completion** - Fuzzy search suggestions from your history, remembers sections
 - Organize products into sections (e.g., Dairy, Vegetables, Cleaning)
 - Mark products as purchased
@@ -58,11 +58,30 @@ I built the first version in **Next.js**, but it turned out to be very resource-
 - Real-time synchronization (WebSocket)
 - Responsive interface (mobile-first)
 - **Dark mode** - Automatic theme based on system preferences
-- Multi-language support (PL, EN, DE, ES, FR, PT, UK, NO, LT, EL, SK, SV, RU)
+- Support for [18 languages](i18n/README.md#supported-languages), including all offline and synchronization messages
 - Simple login system
 - Rate limiting protection against brute-force attacks
 - **REST API** - Programmatic access for integrations and migrations ([docs](https://github.com/PanSalut/Koffan/wiki/REST-API))
 - **Outbound webhooks** - Signed item events for automation tools such as n8n, Node-RED, and Zapier ([docs](https://github.com/PanSalut/Koffan/wiki/Webhooks))
+
+## Shopping Offline
+
+Open Koffan online and sign in once so the app and shopping data can be saved on your device. For offline page loads and the installed PWA, serve Koffan over HTTPS; `localhost` also works for development. A plain HTTP address on your home network does not provide the same offline support.
+
+| What you can manage offline | Supported actions |
+|-----------------------------|-------------------|
+| Lists | Create, rename, change icons, reorder and delete |
+| Sections | Create, rename, reorder, change sorting and delete |
+| Products | Add, edit names and notes, change quantities, check/uncheck, mark as uncertain, move, reorder and delete |
+| Bulk actions | Check/uncheck an entire section, delete purchased products and delete selected sections |
+
+You can create a new list with new sections and products entirely offline. Changes are saved on the device before the view updates and remain available after a page reload or reopening the app. When the connection returns, Koffan automatically sends pending changes and refreshes the list. Retrying a request after a lost response does not duplicate the same operation.
+
+Other shoppers see your offline changes after they reach the server. Changes to different products are combined. For overlapping edits, the last value accepted by the server for each updated field wins. Saving product details sends its name, note and quantity together.
+
+If a change cannot be applied, for example because another shopper deleted the edited product, it stays pending and the app offers retry and discard controls. Discarding a failed change can also remove local changes that depend on it.
+
+Initial setup and login, imports, and history management require a connection. Clearing site data removes unsynchronized changes, and browser or operating-system storage cleanup can also remove offline data.
 
 ## Tech Stack
 
@@ -94,7 +113,7 @@ Download from [go.dev/dl](https://go.dev/dl/)
 ```bash
 git clone https://github.com/PanSalut/Koffan.git
 cd Koffan
-go run main.go
+go run .
 ```
 
 App available at http://localhost:3000
@@ -103,7 +122,7 @@ Default password: `shopping123`
 
 To set a custom password:
 ```bash
-APP_PASSWORD=yourpassword go run main.go
+APP_PASSWORD=yourpassword go run .
 ```
 
 ## Arch Linux (AUR)
@@ -152,14 +171,18 @@ docker-compose up -d
 | `PORT` | `8080` (Docker) / `3000` (local) | Server port |
 | `HTTP_READ_BUFFER_SIZE` | `16384` | Max size in bytes for request headers (raise if you see HTTP 431 behind an SSO proxy) |
 | `DB_PATH` | `./shopping.db` | Database file path |
-| `DEFAULT_LANG` | `en` | Default UI language (pl, en, de, es, fr, pt, uk, no, lt, el, sk, ru) |
-| `LOGIN_MAX_ATTEMPTS` | `5` | Max login attempts before lockout |
+| `DEFAULT_LANG` | `en` | Default UI language ([supported codes](i18n/README.md#supported-languages)) |
+| `LOGIN_MAX_ATTEMPTS` | `5` | Max failed login attempts before lockout; set to `0` to disable login rate limiting |
 | `LOGIN_WINDOW_MINUTES` | `15` | Time window for counting attempts |
 | `LOGIN_LOCKOUT_MINUTES` | `30` | Lockout duration after exceeding limit |
 | `API_TOKEN` | *(disabled)* | Enable REST API with this token ([docs](https://github.com/PanSalut/Koffan/wiki/REST-API)) |
 | `WEBHOOK_URL` | *(disabled)* | HTTP or HTTPS endpoint for outbound item events |
 | `WEBHOOK_SECRET` | *(none)* | Secret used to sign webhook payloads with HMAC-SHA256 |
 | `WEBHOOK_EVENTS` | *(all item events)* | Comma-separated filter: `item.created`, `item.updated`, `item.completed`, `item.deleted` |
+
+### Login Rate Limiting
+
+If your reverse proxy already handles rate limiting (for example, Traefik with CrowdSec), set `LOGIN_MAX_ATTEMPTS=0` in the container environment and restart Koffan. This disables the built-in login limiter while keeping password authentication enabled. `LOGIN_WINDOW_MINUTES` and `LOGIN_LOCKOUT_MINUTES` have no effect when the limiter is disabled.
 
 ### Outbound Webhooks
 
@@ -198,6 +221,9 @@ docker run -d -p 80:8080 -e APP_PASSWORD=your-password -v koffan-data:/data koff
 Data is stored in `/data/shopping.db`. The volume ensures your data persists across deployments.
 
 ## Documentation
+
+- [Offline behavior](#shopping-offline) - Capabilities, synchronization and limitations
+- [Translation guide](i18n/README.md) - Supported languages and updating translations
 
 For more information, check the **[Wiki](https://github.com/PanSalut/Koffan/wiki)**:
 

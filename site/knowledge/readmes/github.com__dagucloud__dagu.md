@@ -745,6 +745,18 @@ JSON or text format logging (`DAGU_LOG_FORMAT`). Logs are stored per-run with se
 - Per-DAG webhook endpoints with token authentication
 - Delivery requires the event store, notification store, and writable notification state store
 
+SMTP inherited from global or workspace `base.yaml` is omitted from new run
+snapshots (`dag.json`). Retries, restarts, and queued runs use the current base
+SMTP configuration. Removing it disables email notifications unless the original
+DAG defines SMTP. Other base settings and the original DAG YAML remain captured.
+Runs without captured base configuration use the current base configuration in
+full; an explicitly empty captured configuration only reloads SMTP.
+
+SMTP written directly in DAG YAML, values stored in `env`, distributed task
+payloads, and workspace bundles are still retained. Existing history files and
+backups are not rewritten. Upgrade processes that read run snapshots (CLI, API,
+and scheduler) together so retries can reload base SMTP.
+
 Scoped notification routing is broken in v2.11.0-v2.11.2. Use v2.11.3 or later.
 
 ## Artifacts
@@ -868,10 +880,30 @@ set or append the verified client address. Keep trusted proxy ranges narrow.
 | `DAGU_DAG_DISCOVERY_SYMLINKS` | `false` | Include recursive file symlinks and allow external targets |
 | `DAGU_LOG_DIR` | `~/.local/share/dagu/logs` | Log files |
 | `DAGU_DATA_DIR` | `~/.local/share/dagu/data` | Application state |
+| `DAGU_SUSPEND_FLAGS_DIR` | `{DAGU_DATA_DIR}/suspend` | DAG suspension flags |
 | `DAGU_TOOLS_DIR` | `{DAGU_DATA_DIR}/tools` | Managed DAG tool cache |
 | `DAGU_DAG_STATE_DIR` | `{DAGU_DATA_DIR}/dag-state` | Persistent DAG state files |
 | `DAGU_DAG_RUN_WORK_DIR` | `{DAGU_DATA_DIR}/dag-run-work` | Per-run working directories |
 | `DAGU_BASE_CONFIG` | - | Shared base configuration applied to all DAGs |
+
+Suspend flags default to `paths.data_dir/suspend`. Explicit
+`paths.suspend_flags_dir` settings, including environment variables and legacy
+configuration keys, retain their configured location and disable legacy fallback
+and migration. A path outside `data_dir` produces a warning because all server
+and scheduler processes must share the same suspension state.
+
+With the default path, flags in the previous default directory remain readable.
+After acquiring leadership, the scheduler copies them into `data_dir/suspend`
+before processing runs. Startup preserves the original flags. Suspending a DAG
+writes its new flag before removing its legacy flag; resuming removes both.
+Migration and state changes are serialized across processes.
+
+During upgrade, make the same legacy flags available to the server and scheduler;
+reconcile any private per-host flag directories first. Upgrade all processes
+together before changing suspension state. Older processes writing legacy flags
+are not supported alongside upgraded processes. Until scheduler migration has
+completed, include the legacy directory in backups. When rolling back, explicitly
+configure the older version to use the new shared suspend directory.
 
 Set the per-run work root in `config.yaml`, or use the corresponding environment variable above:
 

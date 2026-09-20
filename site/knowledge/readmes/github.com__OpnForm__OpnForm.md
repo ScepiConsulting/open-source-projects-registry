@@ -47,6 +47,8 @@ The easiest way to get started with OpnForm is through our [official managed ser
 
 For self-hosted installations, please refer to our [Deployment Guides](https://docs.opnform.com/deployment). For local development, we provide a minimal Docker-based setup - check out our [Docker Development Guide](https://docs.opnform.com/deployment/docker-development).
 
+The client `npm run build` also checks the public form bundle size and eager dependencies. This check reads `.nuxt/dist/client/_nuxt`, independently of Nitro's deployment output directory (including AWS Amplify's `.amplify-hosting`). Run its regression tests from `client/` with `node --test scripts/check-public-form-bundle.test.mjs`.
+
 ## Codex worktrees
 
 Codex creates an isolated local environment for each worktree. It uses a dedicated PostgreSQL Docker volume and local Laravel/Nuxt processes, so sibling worktrees do not share ports, data, or API configuration.
@@ -69,6 +71,10 @@ Run the browser suite against the running worktree with:
 ```bash
 ./scripts/codex-worktree-test-e2e.sh
 ```
+
+## PDF template fields
+
+The PDF editor removes zones linked to deleted fields and lists them before you continue. Save the template to keep the cleanup. Mappings retain field names when created or saved, so deleted fields can still be identified. Older mappings without a saved name appear as “Deleted field” with their page number.
 
 ## Support & Community
 
