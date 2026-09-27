@@ -46,7 +46,7 @@ Screenshots and the feature tour are at [tracearr.com](https://tracearr.com), th
 
 **Live TV & Music** - Track live TV sessions and music playback alongside movies and shows.
 
-**Stream Map** - Where your streams come from, on a world map you host yourself. The vector basemap ships inside the container, so there are no tile keys and no requests to a third-party tile service.
+**Stream Map** - Where your streams come from, on a world map you host yourself. The vector basemap ships inside the container, so there are no tile keys and no requests to a third-party tile service. Give a server a location and its local network plays show there too.
 
 **Automations** - A trigger fires, conditions decide whether it matters, actions run. Eighteen triggers cover sessions, accounts, library changes, server health, update availability, and newsletter results. Actions send a notification, adjust trust, message the client, or stop the stream, and an `if` action branches on conditions. Twenty-two templates ship built in, among them impossible travel, too many streams at once, simultaneous locations, device velocity, geo restrictions, account inactivity, no 4K transcodes, and stop paused streams. Any automation exports to a share code another instance can paste in.
 
@@ -178,6 +178,9 @@ cp .env.example .env
 # Run migrations
 pnpm --filter @tracearr/server db:migrate
 
+# Build the stream map basemap (about 550 MB, once)
+pnpm basemap
+
 # Start dev servers
 pnpm dev
 ```
@@ -203,7 +206,7 @@ Frontend runs at `localhost:5173`, API at `localhost:3000`.
 
 **Fastify** over Express because it's measurably faster and schema validation catches bad requests before they hit handlers.
 
-**MapLibre with a bundled PMTiles basemap** replaces the old raster tiles. The archive ships in the image, so the map works on an instance with no outbound internet access.
+**MapLibre with a bundled PMTiles basemap** replaces the old raster tiles. The archive is a zoom 8 extract of the Protomaps planet build, made at image build time by `scripts/fetch-basemap.sh`, and ships in the image, so the map works on an instance with no outbound internet access.
 
 **SSE for instant sessions** - Plex streams session updates in real-time via Server-Sent Events, so streams appear the moment they start. Jellyfin and Emby get the same through the [Tracearr SSE plugin](https://github.com/Tracearr/Media-Server-SSE); without it they fall back to polling.
 

@@ -1,25 +1,37 @@
 <div align="center">
 
-# BookOrbit
+<h1>
+  <img src="docs/images/bookorbit-icon.png" alt="" width="128" height="128"><br>
+  BookOrbit
+</h1>
 
 A self-hosted library and reading platform for ebooks, PDFs, audiobooks, and comics.
 
-Copyright (C) 2025-2026 neon and BookOrbit contributors.
-
 [![Latest release](https://img.shields.io/github/v/release/bookorbit/bookorbit?label=latest&style=flat-square)](https://github.com/bookorbit/bookorbit/releases)
 [![Stars](https://img.shields.io/github/stars/bookorbit/bookorbit?style=flat-square&color=FFC72C)](https://github.com/bookorbit/bookorbit/stargazers)
+[![GHCR Pulls](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fghcr-badge.elias.eu.org%2Fapi%2Fbookorbit%2Fbookorbit%2Fbookorbit&query=downloadCount&label=Docker%20Pulls&logo=docker&style=flat-square&color=2496ed)](https://github.com/bookorbit/bookorbit/pkgs/container/bookorbit)
 [![CI](https://img.shields.io/github/actions/workflow/status/bookorbit/bookorbit/ci.yml?branch=main&style=flat-square&label=CI)](https://github.com/bookorbit/bookorbit/actions/workflows/ci.yml)
 [![Release](https://img.shields.io/github/actions/workflow/status/bookorbit/bookorbit/release.yml?style=flat-square&label=release)](https://github.com/bookorbit/bookorbit/actions/workflows/release.yml)
 [![Coverage](https://img.shields.io/codecov/c/github/bookorbit/bookorbit?style=flat-square&flag=server&token=F6TADEFCUV&label=server%20coverage)](https://codecov.io/gh/bookorbit/bookorbit)
-[![Crowdin](https://img.shields.io/badge/Crowdin-translate-2E3340?style=flat-square&logo=crowdin&logoColor=white)](https://crowdin.com/project/bookorbit)
 
 [![Website](https://img.shields.io/badge/Website-bookorbit.app-blue?style=flat-square&logo=googlechrome&logoColor=white&color=4169E1)](https://bookorbit.app)
 [![Demo](https://img.shields.io/badge/Demo-live-brightgreen?style=flat-square&logo=rocket&logoColor=white&color=40a829)](https://demo.bookorbit.app/magic?token=2d92cb900e184cf0eb8b11f72cffc6011673d1016e1b300d750eb3d76abc1572)
-[![GHCR Pulls](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fghcr-badge.elias.eu.org%2Fapi%2Fbookorbit%2Fbookorbit%2Fbookorbit&query=downloadCount&label=Docker%20Pulls&logo=docker&style=flat-square&color=2496ed)](https://github.com/bookorbit/bookorbit/pkgs/container/bookorbit)
+[![App Store](https://img.shields.io/badge/App_Store-download-0D96F6?style=flat-square&logo=appstore&logoColor=white)](https://apps.apple.com/us/app/bookorbit-the-official-app/id6811807346)
+[![Crowdin](https://img.shields.io/badge/Crowdin-translate-2E3340?style=flat-square&logo=crowdin&logoColor=white)](https://crowdin.com/project/bookorbit)
 [![Contributing](https://img.shields.io/badge/Contributing-guide-orange?style=flat-square&logo=handshake&logoColor=white)](https://github.com/bookorbit/bookorbit/blob/main/docs/CONTRIBUTING.md)
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL_v3-blue.svg?style=flat-square&color=B461B3)](LICENSE)
 
 ![BookOrbit dashboard showing reading stats, widgets, and book shelves](docs/images/dashboard-overview.png)
+
+<p align="center">
+  <a href="#what-is-bookorbit">Overview</a> &bull;
+  <a href="#live-demo">Live Demo</a> &bull;
+  <a href="#bookorbit-for-iphone-and-apple-watch">iOS &amp; Apple Watch</a> &bull;
+  <a href="#features">Features</a> &bull;
+  <a href="#quick-start-docker">Quick Start</a> &bull;
+  <a href="#managed-hosting">Managed Hosting</a> &bull;
+  <a href="#koreader-plugin">KOReader</a> &bull;
+  <a href="#documentation-and-contributing">Docs</a>
+</p>
 
 </div>
 
@@ -27,7 +39,7 @@ Copyright (C) 2025-2026 neon and BookOrbit contributors.
 
 ## What is BookOrbit?
 
-**[BookOrbit](https://bookorbit.app)** organizes your books and reads them back to you anywhere: the web reader, a Kobo, or KOReader. Progress, highlights, and reading status move between all three, so you can start a chapter in one place and finish it in another.
+**[BookOrbit](https://bookorbit.app)** organizes your books and lets you enjoy them anywhere: on iPhone, Apple Watch, the web, Kobo, or KOReader. Your reading progress, highlights, and status stay synchronized, so you can start a chapter in one place and continue in another.
 
 Around that core sit 14 metadata providers, reading statistics and achievements, OPDS and Send-to-Kindle delivery, multi-user accounts with OIDC/SSO, and automatic sync out to Hardcover, Readwise, and StoryGraph. All of it runs on infrastructure you control.
 
@@ -41,11 +53,39 @@ Try the live instance before you install. No account required.
 
 > **Note:** The demo includes a sample library of public domain books. Some administrative features are limited in the public demo. Self-hosting BookOrbit provides the full experience.
 
+## BookOrbit for iPhone and Apple Watch
+
+Take your library anywhere with the official native BookOrbit app. Read ebooks, PDFs, and comics; stream or download audiobooks; use text to speech; and keep reading offline. The app connects directly to your self-hosted BookOrbit server, while Apple Watch brings downloaded audiobooks and synchronized playback progress to your wrist.
+
+![BookOrbit on iPhone showing the home screen, Read Along, and audiobook playback alongside the Apple Watch library](docs/images/ios-app-hero.webp)
+
+<div align="center">
+
+<a href="https://apps.apple.com/us/app/bookorbit-the-official-app/id6811807346"><img src="https://toolbox.marketingtools.apple.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download BookOrbit on the App Store" height="54"></a>
+
+<sub>Requires BookOrbit v3.0.0 or later and iOS 26 or later. Apple Watch features require watchOS 26 or later.</sub>
+
+</div>
+
+<details>
+<summary><strong>Explore all 14 screenshots</strong></summary>
+
+### iPhone
+
+![Ten BookOrbit iPhone screens showing the home experience, Read Along, audiobook playback, book requests, appearance customization, text to speech, reading activity, achievements, shelves, and offline downloads](docs/images/ios-app-gallery.webp)
+
+### Apple Watch
+
+![Four BookOrbit Apple Watch screens showing the offline library, the app menu, audiobook playback, and playback settings](docs/images/apple-watch-showcase.webp)
+
+</details>
+
 ## Features
 
 ### Reading Experience & Sync
 
 - **Built-in Web Readers**: Ebooks (EPUB, KEPUB, MOBI, AZW3, AZW, FB2), PDFs, comics (CBZ, CBR, CB7), and audiobooks (M4B, MP3, M4A, OPUS, OGG, FLAC), with no extra plugins required.
+- **Native iPhone & Apple Watch Apps**: Read, listen, download, upload, and synchronize with your BookOrbit server from a native, offline-capable iPhone app. Send audiobooks to Apple Watch for independent offline playback and later progress reconciliation.
 - **Three-Way Sync (Kobo + KOReader + BookOrbit)**: Progress and annotations flow bidirectionally between Kobo devices, KOReader, and the BookOrbit web reader. Pick up on any surface where you left off on another, including highlights and deletions.
 - **KOReader Plugin**: An on-device catalog browser with search, download, and status and rating management, alongside full progress and annotation sync.
 - **Annotations & Highlights**: Highlights from the web reader, KOReader, and Kobo merge into one searchable hub. Filter by color, style, and source; export as Markdown, CSV, or JSON.
@@ -85,29 +125,7 @@ JWT_SECRET=                # signs login tokens          - openssl rand -hex 32
 SETUP_BOOTSTRAP_TOKEN=     # one-time setup wizard token - openssl rand -hex 16
 ```
 
-Sensitive values can instead be supplied through mounted files by setting the corresponding `_FILE` variable, such as `JWT_SECRET_FILE=/run/secrets/bookorbit_jwt_secret`. Leave the direct variable blank, mount the file into every service that uses it, and restart. Keep the blank assignment rather than deleting the line: the bundled `docker-compose.yml` marks `POSTGRES_PASSWORD`, `JWT_SECRET`, and `SETUP_BOOTSTRAP_TOKEN` as required, so removing them entirely fails before the container starts. BookOrbit rejects configurations where both forms are non-empty, and rejects a file that is missing, unreadable, or empty. This convention is supported for database credentials, application encryption keys, `GITHUB_RELEASES_TOKEN`, `JWT_SECRET`, and `SETUP_BOOTSTRAP_TOKEN`.
-
-For example, a Compose override can mount one database password file into both containers:
-
-```yaml
-services:
-  app:
-    secrets: [bookorbit_postgres_password]
-  postgres:
-    environment:
-      POSTGRES_PASSWORD_FILE: ${POSTGRES_PASSWORD_FILE?required}
-    secrets: [bookorbit_postgres_password]
-
-secrets:
-  bookorbit_postgres_password:
-    file: ./secrets/postgres_password
-```
-
-Set `POSTGRES_PASSWORD=` and `POSTGRES_PASSWORD_FILE=/run/secrets/bookorbit_postgres_password` in `.env`. The override passes the file path to PostgreSQL while the app receives it from the existing `.env` import. Other container platforms may mount secret files directly without a Compose override.
-
-On a NAS, or any host where your book folder is owned by a user other than UID 1000, also set `PUID` and `PGID` to match that owner. Run `id -u` and `id -g` as the owning user to find them. Getting these wrong is the most common cause of permission errors on first scan.
-
-Optionally set `LIBRARY_BROWSE_ROOT=/books` to start the library folder picker at `/books` instead of `/`.
+On a NAS, or any host where your book folder is owned by a user other than UID 1000, also set `PUID` and `PGID` to match that owner. Getting these wrong is the most common cause of permission errors on first scan.
 
 Then start:
 
@@ -117,11 +135,19 @@ docker compose up -d
 
 Open `http://your-server-ip:3000` and complete setup using your `SETUP_BOOTSTRAP_TOKEN`.
 
-After configuring OIDC and linking at least one active administrator, you can set `DISABLE_LOCAL_AUTH=true` and restart BookOrbit to remove and reject password sign-in. BookOrbit refuses to start if that would leave no usable OIDC administrator. Set it back to `false` and restart to recover access during an identity-provider outage.
+For the full installation guide including reverse proxy setup, file permissions on NAS, secrets from mounted files, external databases, OIDC hardening, and environment variable reference, see **[bookorbit.app/installation](https://bookorbit.app/installation)**.
 
-An OIDC provider signed by a private certificate authority requires its PEM CA bundle to be mounted read-only in the BookOrbit container. Set `NODE_EXTRA_CA_CERTS` to that in-container path and restart BookOrbit. This adds the private authority to Node's normal certificate verification; it does not disable TLS security. Private-network issuers also require `OIDC_ALLOW_LOCAL_ISSUERS=true`.
+## Managed Hosting
 
-For the full installation guide including reverse proxy setup, file permissions on NAS, external databases, and environment variable reference, see **[bookorbit.app/installation](https://bookorbit.app/installation)**.
+Prefer a hosted instance without managing Docker or servers? [Zenith offers BookOrbit hosting](https://zenith.hosting/host/bookorbit) with a web file browser for uploads, access controls, and resource usage insights.
+
+[![Deploy with Zenith](https://cdn.zenith.hosting/buttons/deploy-with-zenith.svg)](https://zenith.hosting/host/bookorbit)
+
+## How I Actually Use BookOrbit
+
+One read-along EPUB3 per book: listened to on iPhone, carried offline to Apple Watch for runs, read on a Kobo through KOReader, and picked up again on the laptop. One file, one reading position, no reconciling an audiobook against an ebook.
+
+Read the full walkthrough at **[bookorbit.app/my-workflow](https://bookorbit.app/my-workflow)**.
 
 ## KOReader Plugin
 
@@ -163,12 +189,15 @@ When adding user-facing text in code, add the Vue I18n key only to `client/src/l
 
 ## Support
 
+- **Support development:** [Open Collective](https://opencollective.com/bookorbit)
 - **Questions and discussion:** [GitHub Discussions](https://github.com/bookorbit/bookorbit/discussions)
 - **Bug reports:** [GitHub Issues](https://github.com/bookorbit/bookorbit/issues/new?template=bug_report.yml)
 - **Feature requests:** [GitHub Issues](https://github.com/bookorbit/bookorbit/issues/new?template=feature_request.yml)
 - **Security vulnerabilities:** Follow the private reporting process in the [Security Policy](.github/SECURITY.md).
 
 ## License and Attribution
+
+Copyright (C) 2025-2026 neon and BookOrbit contributors.
 
 BookOrbit is licensed under the **[GNU Affero General Public License v3.0 only](LICENSE)**.
 

@@ -459,6 +459,8 @@ HortusFox provides various console commands in addition to the inbuilt commands.
 | Command  | Description | Parameters |
 | ------------- | ------------- | ------------- |
 | php asatru product:version | Show current product version | _none_ |
+| php asatru migrate:version | Incrementially update the current product version | _none_ |
+| php asatru migrate:email | Update product contact E-Mail address | `mailbox@domain.tld` new e-mail address |
 | php asatru migrate:upgrade  | Perform upgrade from last version to current version | _none_ |
 | php asatru migrate:specific  | Perform version specific migration upgrade | `version` for the version, e.g. `5.3` |
 | php asatru calendar:classes  | Add default calendar classes | `--force` to drop all previous classes |

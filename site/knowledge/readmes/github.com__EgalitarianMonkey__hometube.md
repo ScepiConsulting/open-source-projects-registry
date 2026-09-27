@@ -27,6 +27,8 @@ Download, process, and organize ads-free best-quality videos at Home.
 
 A new self-hosted engine built on the same idea, taken further: URLs, files and text in — media, transcripts, summaries, translations and documents out. It ships a HomeTube app of its own, plus Content Studio, a REST API, a Python SDK and CLI, a browser extension, and an MCP server your AI agents can drive. **HomeTube keeps being developed and maintained** — Content is where the idea goes next.
 
+**Don't want to set up Docker yet?** [**Try HomeTube in your browser**](https://hometube-app.latentnoise.dev) — sign in with your email, and process your first videos on a free quota. Hit the quota and there are two ways on, both fine by us: self-host it for free, forever (that's what this repository is for), or let someone else run the server.
+
 <br/>
 
 </div>
@@ -627,7 +629,7 @@ DEBUG=1 python -c "import app.main" 2>/dev/null
 
 - ✅ **Stable**: Core functionality tested and reliable
 - 🔄 **Active Development**: Regular updates, fixes and fresh yt-dlp releases
-- 🧪 **Test Coverage**: 84% on testable modules ([details](docs/testing.md))
+- 🧪 **Test Coverage**: 358 tests, 22% of statements across `app/`, concentrated on the utility modules ([details](docs/testing.md))
 - 📦 **Production Ready**: Docker images available on GHCR
 - 🏠 **HomeLab Optimized**: Designed for self-hosted environments
 - 🌱 **Next generation**: The platform it grew into is [Content](#-what-comes-next-content)

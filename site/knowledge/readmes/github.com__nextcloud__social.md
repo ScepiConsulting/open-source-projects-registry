@@ -76,6 +76,18 @@ One box, and everything a post can carry.
 - **Quote a post**, with the original author's permission carried on the wire (FEP-044f).
 - **Say what language it is in**, starting from your Nextcloud language.
 - **Send it later.** Pick a time at least five minutes out and Post becomes Schedule.
+- **A short post as a card.** Anything up to 120 characters, with nothing attached, can
+  go out drawn big on colour — six backgrounds, the first in your own colour. It is
+  sent as a picture of the words with the words as its description, and the words stay
+  in the post too, so every server shows the card and every reader can still search it
+  and hear it read aloud.
+- **`/dice`, `/flip` and `/pick`.** Type `/dice` (or `/dice 20`), `/flip`, or
+  `/pick pizza, pasta, sushi` and the game is played when the post goes out: the dice
+  tumble in the composer for half a second and land, and what is posted is plain
+  text — `🎲 4`, `🪙 heads`, `🎯 pasta` — so a Mastodon reader sees the same result.
+- **Posting feels like posting.** The box answers with a quick sweep of light, and the
+  new post drops into place at the top of the timeline with a glow in your colour,
+  instead of simply being there.
 - **Mentions and hashtags** typed by hand become real recipients and real tags.
 
 ## 📖 Read
@@ -88,6 +100,19 @@ them. **Photos** and **Videos** carry the same switcher, so the pictures of the 
 you follow, of this instance and of the whole Fediverse are one click apart.
 
 <img src="img/readme/post-actions.gif" alt="Hovering a post opens its actions" width="680">
+
+![My interests in the settings](img/readme/interests.png)
+
+- **My interests** — the second feed in the switcher, right after My Feed, made of the hashtags you actually
+  read. Social notices what you stay on, what you scroll past, and what you like,
+  boost, reply to, bookmark and open, and keeps a list of hashtags from it; the feed
+  is the last week's posts carrying them, the best matches and the freshest first, no
+  author allowed to fill it, and now and then a hashtag that often travels with yours.
+  Every post says why it is there, and **Less like this** in its menu takes it out.
+  **Settings → My interests** draws the list as a cloud — the bigger the hashtag, the
+  more it counts — where you drag, pin, remove and add them, choose languages, pause
+  or turn it off. It never leaves this server and nobody else sees it.
+  Administrators can switch it off or make it opt-in.
 
 ![Stories](img/readme/stories.png)
 
@@ -103,14 +128,30 @@ you follow, of this instance and of the whole Fediverse are one click apart.
   and the poster is told and sees what was said; watching one posted elsewhere sends a
   receipt to its author, so their own server can count it. The other direction is not ours to fix: Pixelfed sends
   stories only to instances it has identified as Pixelfed.
+- **Text stories and stickers.** A story can be a few words on a coloured card instead
+  of a picture — the type shrinks as you write, the way the picture will — and a
+  picture story can carry stickers: eight emoji and a line of your own words, dragged
+  where you want them (or moved with the arrow keys) and baked into the picture before
+  it goes up, so they arrive on Pixelfed where you put them.
 - **Photos and Videos are timelines of their own**, drawn as grids and asked of the
   server rather than filtered out of a page you already have.
-- **News** — a third one beside them, over what people are reading rather than what
-  they showed: posts linking to an article, and articles themselves, which is what a
-  blog on Plume, WriteFreely, Ghost or WordPress federates. Drawn as a list, led by
-  the headline. The **News** tab of Discover ranks the articles being shared here
-  most often, and each one opens into what people here said about it — which is the
-  thing a feed reader cannot do.
+- **Shorts**, in the sidebar under Videos, is the same videos as a stack: one at a
+  time, full height, playing as it comes past and stopping as it goes — the shape
+  somebody arriving from TikTok or YouTube Shorts already knows. A switch in the corner
+  picks whose videos: the people you follow, this server, or everywhere. It plays with
+  sound, or muted with a "Tap for sound" hint when the browser will not start with it,
+  one video at a time with the rest paused rather than left buffering, and reachable
+  with the arrow keys and the space bar. The **+** opens a composer made for a short:
+  upload a video, drop one on it, or record one with the camera (a 3-2-1 countdown,
+  front or back camera, 15 s, 60 s or 3 min; browsers offer the camera over https
+  only). Then trim it with two handles over a
+  strip of stills, pick the frame people see before it plays as its cover, write a
+  caption with one-press trending hashtags, choose who can watch and whether it is
+  sensitive, and post, with progress while it is cut, uploaded and published. The
+  trimming happens in the browser, so what goes up is what you watched; a browser
+  that cannot cut a video posts the whole one and says so. A heart button likes the video and sends hearts up the edge;
+  a double tap on the video likes it and puts a heart where your finger was (and never
+  takes a like back); `l` does the same from the keyboard.
 ![Videos, including federated PeerTube channels](img/readme/videos.jpg)
 
 - **PeerTube, properly — in both directions.** A PeerTube video arrives with its
@@ -147,8 +188,9 @@ you follow, of this instance and of the whole Fediverse are one click apart.
   previews for anything marked sensitive.
 - **An ALT badge on every described picture**, wherever it is drawn, that shows the
   description when pressed.
-- **Lists**, made and filled in Settings or from anybody's profile — and **every
-  Nextcloud group you are in is already a list**, built and maintained by nobody.
+- **Lists**, made and filled in Settings or from anybody's profile — and **the
+  Nextcloud groups your administrator chose** are lists of their own, built and
+  maintained by nobody.
 - **Follow a hashtag** and it reads exactly like following a person.
 - **Filter out words you would rather not read** — **Blocking → Filtered words**. A
   filter is a handful of words, the timelines it applies in, and whether a matching
@@ -223,9 +265,16 @@ six ways:
 - **Trending hashtags**, ranked over a window you choose from one hour to ten days. The
   busiest hour and the busiest ten days are genuinely different lists, not one list
   relabelled.
+- **What other servers are talking about**, under the trending list, and a box that
+  **finds a hashtag** across them. A small server's own trending list is a list of
+  what the few people on it posted today, and a new one's is empty; this asks other
+  servers the same question and says whose answer it is — "busy on mastodon.social
+  and misskey.io" rather than a number from nowhere. Ranked by how many servers named
+  a tag, because instances differ in size by four orders of magnitude and adding their
+  counts together would make the biggest one's opinion everybody's. Nothing is fetched
+  or stored: a hashtag is a string, and following one from here brings in posts the
+  same way following any hashtag does.
 - **Trending pictures and videos.**
-- **The articles being shared here**, under **News** — with what people here said about
-  each one, which is the part a feed reader cannot do.
 
 The sidebar has its own way in: **Explore**, one collapsible entry holding the
 hashtags you follow, your lists, and what this server is busy with right now — in that
@@ -272,11 +321,12 @@ own unified search. No external search engine to run.
   Pixelfed, moderatable, with its own followers. The membership is the group,
   asked live, so leaving it takes the account away with it. Who wrote each post
   is recorded and shown to the team and to moderators, and to nobody else.
-- **Your year, as a report** — Mastodon's `#Wrapstodon`: twelve months of what
-  you posted and who arrived, the hashtags you used, the three posts that
-  travelled furthest, and a one-word description of how you use the account.
-  Computed from the posts already here, so it cannot go stale and needs no job
-  to run.
+- **Your year, as a report** — Mastodon's `#Wrapstodon`, through the API only
+  (`/api/v1/annual_reports`; the web client has no page for it yet): twelve
+  months of what you posted and who arrived, the hashtags you used, the three
+  posts that travelled furthest, and a one-word description of how you use the
+  account. Computed from the posts already here, so it cannot go stale and needs
+  no job to run.
 - **Quote controls** — who may quote each of your posts (anybody, your
   followers, nobody), who already has, and a button that detaches one and tells
   their server. Mastodon 4.5's `quote_approval_policy`, its quote list and its
@@ -351,7 +401,22 @@ own unified search. No external search engine to run.
   server's own rows the moment you open the page, so nothing can be stale, and the page
   says what it cannot know — reach is your followers plus the followers of whoever
   boosted you, overlapping audiences counted twice, and it names how many boosters'
-  audiences this server has never been told about.
+  audiences this server has never been told about. Beside the estimate it also reports
+  the number of servers your posts were actually delivered to, which is measured.
+- **Choose the window** — all time, or the last 30, 90 or 365 days — and the page says
+  which one it counted. The result is held for fifteen minutes so a reload is free, with
+  a button to count it again, and another to **take the numbers with you** as a CSV or a
+  JSON file: nothing here is stored on the server, so the only copy of a month's figures
+  is the one you keep.
+- **What you did**, beside what came back: posts of your own, replies and boosts, month
+  by month. A quiet month in the other chart means either you were quiet or nobody
+  answered, and this is how you tell which. With it, **how steadily you post** — the
+  days you posted on, your longest run and your longest silence.
+- **Who you talk with**, from the replies rather than from who you follow: the people
+  who answer you and the people you answer, and how many of the first are people you do
+  not follow. **Your pictures and whether they describe themselves**, which is the one
+  number on the page you can move on your own. And what you write in and where your
+  links go.
 
 ## 🔔 Notifications
 
@@ -384,11 +449,12 @@ remote server. A **follow request carries Accept and Decline on the bell entry i
 
 ![Settings](img/readme/settings.png)
 
-Everything about your account in one page: the name you publish under, whether people
-must ask before they follow you, whether other servers may suggest you and index your
-public posts, whether this is an automated account, and the audience every new post
-starts with. Only what you changed is sent, so a display name your Nextcloud gets from
-elsewhere is never written back.
+Everything about your account in one page: whether people must ask before they follow
+you, whether other servers may suggest you and index your public posts, whether this is
+an automated account, and the audience every new post starts with. Only what you changed
+is sent. The name you publish under is not here — it belongs to your Nextcloud account
+and the page links to where it is changed, rather than offering a second place to edit
+it that would do nothing on an instance whose accounts come from LDAP.
 
 ![Scheduled posts](img/readme/scheduled.png)
 
@@ -439,6 +505,13 @@ the composer's toolbar wraps instead of pushing Post off the edge, and a post's 
 gives up the column it kept for an avatar that is no longer beside it. Dark mode is
 the same app, not a second design.
 
+**Sound and touch**, in Settings: a soft tick on a like, a breath of air when a post
+goes out, a two-note chime when a direct message arrives, and a short tap in the hand
+on a phone. Sound is off until you turn it on; vibration is on, and your system's
+setting for less motion turns it off too. Both are kept on the device rather than the
+account, so the laptop at work can stay quiet while your phone taps back. The sounds
+are synthesised in the browser, so there is nothing to download.
+
 ## 🧩 It is a Nextcloud app, so it behaves like one
 
 - **Share to Social, from Files.** Select a picture or a video — up to ten — pick
@@ -448,7 +521,7 @@ the same app, not a second design.
   document or a Deck card and it becomes a card with the author, the text and the first
   picture. Only what anybody could read is rendered, because the card is cached once
   for everyone who sees the link.
-- **Nine Dashboard widgets** and an entry in the **contacts menu**.
+- **Dashboard widgets** and an entry in the **contacts menu**.
 - **The Activity app** lists your follows, mentions, boosts and favourites, and puts
   them in the Activity digest mail. Activity's own notifications stay off: the bell is
   the bell.
@@ -476,7 +549,8 @@ the same app, not a second design.
   "tell me when they post", and its opposite number — **hide their boosts**, which
   keeps what somebody passes on out of your timelines while leaving everything they
   write themselves.
-- **Per-user domain blocks** and conversation mute, through the API.
+- **Per-user domain blocks** — **Blocking → Hidden servers** — and conversation
+  mute, which is through the API only.
 - **Nothing is sent to a third party.** No geocoder — a place on a post is one this
   instance has seen or one you name yourself, because sending somebody's location to a
   stranger at the moment they are deciding whether to publish it is exactly the failure
@@ -523,9 +597,11 @@ the administration settings:
   deliveries still queued towards it.
 - **Setup checks in Administration → Overview** — whether `.well-known/webfinger`
   answers, whether the address Social builds its ids from is still the server's,
-  whether the delivery job has run lately, and whether anything is stuck.
-  `occ social:check:install` runs the same four and exits non-zero, so a deployment
-  script can ask.
+  whether the delivery job has run lately, whether anything is stuck, whether
+  Mastodon apps can reach the API, and more (see
+  [docs/Admin.md](docs/Admin.md#the-setup-checks)). `occ social:check:install` runs
+  the WebFinger, address, delivery-job, queue and client-API ones and exits
+  non-zero on an error, so a deployment script can ask.
 
 ![Statistics](img/readme/statistics.png)
 
@@ -560,15 +636,16 @@ else's.
   `occ social:queue:process`.
 - **Inbox forwarding**, so a reply from a stranger's instance reaches your followers —
   forwarded untouched and only when it carries its author's linked-data signature.
-- **26 `occ` commands**, documented in [docs/OCC-Commands.md](docs/OCC-Commands.md).
+- **`occ` commands**, documented in [docs/OCC-Commands.md](docs/OCC-Commands.md).
 
 > [!IMPORTANT]
-> **Third-party Mastodon clients cannot reach the API yet.** Every route is served
-> under `/apps/social/`, and the Mastodon client protocol has no way to be told about a
-> non-root API base — so a client given your domain looks for `/api/v1/...` and finds
-> nothing. Serving those paths at the domain root is the one thing standing between
-> this and stock clients. See
-> [docs/Mastodon-Compatibility.md](docs/Mastodon-Compatibility.md).
+> **Mastodon apps work once the web server maps `/api` and `/oauth` onto the app.**
+> Every route is served under `/apps/social/`, and a Mastodon app given your domain
+> looks for `/api/v1/...` at its root. The rules for Apache and nginx are in
+> [`contrib/webserver/`](contrib/webserver), explained in
+> [docs/Admin.md](docs/Admin.md#mastodon-apps-cannot-connect), and
+> Administration → Overview says whether they are in place. It is a web-server
+> change, not an app setting.
 
 ## 🚧 Not implemented yet
 
@@ -668,8 +745,20 @@ composer run test:unit      # PHP: vendor/bin/phpunit -c tests/phpunit.xml
 npm ci
 npm test                    # JS: vitest run (tests/js/** and src/**/*.test.js)
 npm run test:coverage       # with a coverage report in coverage/js
-npm run typecheck           # tsc over the plain-JS half of src/, against src/types/
+npm run typecheck           # tsc over the plain-JS half of src/, then vue-tsc over all of it
+npm run typecheck:baseline  # rewrite the vue-tsc baseline after fixing errors in it
 ```
+
+`npm run typecheck` runs two checks. `tsc` holds the types, services, stores and
+utilities to the JSDoc typedefs in `src/types/` and allows no errors
+(`jsconfig.json`). `vue-tsc` then checks every `.js` and `.vue` file in `src/`
+with the same options (`jsconfig.vue.json`), and `tools/typecheck.mjs` compares
+what it reports with `tests/js/typecheck-baseline.json`, the errors the tree
+already had: an error the baseline does not list for that file — or one more of
+an error than it counts — fails. The baseline records file, error code and
+message, not line numbers, so an edit elsewhere in a file does not disturb it.
+When a change removes errors the check says so and passes; run
+`npm run typecheck:baseline` and commit the smaller baseline with the change.
 
 PHP tests live in `tests/` mirroring `lib/` (`lib/Service/PostService.php` →
 `tests/Service/PostServiceTest.php`). Everything a class needs is mocked; the
@@ -763,6 +852,13 @@ occ social:reset
 - [docs/User-Guide.md](docs/User-Guide.md)
   is the guide for the people using the app: getting an account, following,
   posting, reading, managing the account, keyboard shortcuts.
+- [docs/My-Interests.md](docs/My-Interests.md)
+  is a specification, not a description of anything that exists: a feed built
+  from the hashtags somebody's reading shows they care about, with every learned
+  interest visible and editable. It records the decisions an interview settled —
+  what is learned, what is deliberately not, how a user turns it off and what
+  happens to what was learned — so that whoever implements it does not have to
+  take them again. Nothing in it is built; the header says so.
 - Before picking up refactoring work, read
   [docs/Technical-Debt.md](docs/Technical-Debt.md)
   — what in the app is old, borrowed or load-bearing, and what changing it would

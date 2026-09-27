@@ -40,7 +40,7 @@ For the production Compose stack, NVIDIA GPU acceleration, and configuration, se
 ## Key Features
 
 - **200+ tools across 5 modalities:**
-  - **Image (107):** resize, crop, compress, convert, watermark, color adjust, beautify screenshots, generate memes, vectorize, GIF tools, find duplicates, passport photos, plus dedicated format converters (JPG to PNG, HEIC to JPG, WebP to PNG, image to PDF, and more). Supports 55+ input formats (including 23 camera RAW formats) and 17 output formats
+  - **Image (112):** resize, crop, compress, convert, watermark, color adjust, beautify screenshots, generate memes, vectorize, GIF tools, find duplicates, passport photos, plus dedicated format converters (JPG to PNG, HEIC to JPG, WebP to PNG, image to PDF, and more). Supports 55+ input formats (including 23 camera RAW formats) and 17 output formats
   - **Video (57):** convert, compress, trim, resize, crop, merge, video-to-GIF, extract audio, stabilize, change FPS, burn/extract subtitles, plus dedicated converters (MOV to MP4, MKV to MP4, MP4 to MP3, and more)
   - **Audio (27):** convert, trim, normalize, volume, fade, pitch shift, silence removal, noise reduction, merge/split, waveform, plus dedicated converters (M4A to MP3, AAC to MP3, OGG to WAV, and more)
   - **PDF (29):** merge, split, compress, convert, protect/unlock, redact, sign, watermark, page numbers, OCR, plus PDF to JPG/PNG/TIFF
@@ -158,13 +158,14 @@ If SnapOtter has replaced a paid subscription or two in your workflow, a small s
 </p>
 
 <p align="center">
-  <a href="https://github.com/dominic427"><img src="https://github.com/dominic427.png?size=72" width="72" height="72" alt="Dominic Lopez"></a>
+  <a href="https://github.com/kkwpsi"><img src="https://github.com/kkwpsi.png?size=72" width="72" height="72" alt="Karol"></a>
   <a href="https://github.com/highb"><img src="https://github.com/highb.png?size=72" width="72" height="72" alt="Brandon High"></a>
   <a href="https://github.com/CSP-Tom"><img src="https://github.com/CSP-Tom.png?size=72" width="72" height="72" alt="Tom"></a>
+  <a href="https://github.com/dominic427"><img src="https://github.com/dominic427.png?size=72" width="72" height="72" alt="Dominic Lopez"></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/dominic427">@dominic427</a> &nbsp;&middot;&nbsp; <a href="https://github.com/highb">@highb</a> &nbsp;&middot;&nbsp; <a href="https://github.com/CSP-Tom">@CSP-Tom</a>
+  <a href="https://github.com/kkwpsi">@kkwpsi</a> &nbsp;&middot;&nbsp; <a href="https://github.com/highb">@highb</a> &nbsp;&middot;&nbsp; <a href="https://github.com/CSP-Tom">@CSP-Tom</a> &nbsp;&middot;&nbsp; <a href="https://github.com/dominic427">@dominic427</a>
 </p>
 <!-- sponsors -->
 

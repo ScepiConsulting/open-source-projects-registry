@@ -4,9 +4,15 @@ A lightweight, self-hosted note-taking application with filesystem-based storage
 
 **Auth** : If you don't set the SECRET_KEY environment variable the default secret key is `nanote` though you should set your own key
 
-## Screenshot
+## Screenshots
 
-![Screenshot](https://raw.githubusercontent.com/omarmir/nanote/refs/heads/master/screenshot.png 'Nanote screenshot')
+### Home
+
+![Nanote home page showing notebooks and recent notes](https://raw.githubusercontent.com/omarmir/nanote/master/screenshot-home.png)
+
+### Note editor
+
+![Nanote showing notebook navigation and a Markdown note with a checklist](https://raw.githubusercontent.com/omarmir/nanote/master/screenshot.png)
 
 ## Features
 
@@ -93,6 +99,12 @@ docker compose -d up
 ### Contributing
 
 Right now, the place that needs the most help is the home page, it's hard to read so some help there would be appreciated. Open an issue and discuss the issue first. Nanote is distributed under the GNU Affero General Public License.
+
+### Translations
+
+Use the language menu beside the GitHub icon to switch between English, French, and Simplified Chinese. Your choice is saved in a browser cookie.
+
+Translation files are in [`i18n/locales`](i18n/locales). You can edit `zh-CN.json` directly to change Chinese wording. To add another language, copy `en.json`, translate its values while preserving keys and placeholders such as `{note}`, and register the new file in `nuxt.config.ts` under `i18n.locales`.
 
 ### Local Development
 

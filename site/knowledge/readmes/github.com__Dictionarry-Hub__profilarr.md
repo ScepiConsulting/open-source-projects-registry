@@ -145,25 +145,32 @@ them on the same channel.
 | `TZ`                     | `Etc/UTC`                                                         | Timezone for scheduling                                                               |
 | `PORT`                   | `6868`                                                            | Web UI port                                                                           |
 | `HOST`                   | `0.0.0.0`                                                         | Bind address                                                                          |
-| `AUTH`                   | `on`                                                              | Auth mode (`on`, `oidc`, `off`)                                                       |
-| `OIDC_CLIENT_SECRET`     | -                                                                 | OIDC client secret (when `AUTH=oidc`)                                                 |
-| `OIDC_CLIENT_ID`         | -                                                                 | OIDC client ID (when `AUTH=oidc`)                                                     |
-| `OIDC_DISCOVERY_URL`     | -                                                                 | OIDC discovery URL (when `AUTH=oidc`)                                                 |
+| `AUTH`                   | `on`                                                              | Login `on` or `off` (`oidc` is a deprecated alias for `on`)                           |
+| `OIDC_CLIENT_SECRET`     | -                                                                 | OIDC client secret (set all three OIDC values to enable SSO)                          |
+| `OIDC_CLIENT_ID`         | -                                                                 | OIDC client ID (set all three OIDC values to enable SSO)                              |
+| `OIDC_DISCOVERY_URL`     | -                                                                 | OIDC discovery URL (set all three OIDC values to enable SSO)                          |
 | `ORIGIN`                 | -                                                                 | Public URL when running behind a reverse proxy (e.g. `https://profilarr.example.com`) |
 | `PARSER_HOST`            | `localhost`                                                       | Parser service host                                                                   |
 | `PARSER_PORT`            | `5000`                                                            | Parser service port                                                                   |
 | `PROFILARR_API_KEY`      | -                                                                 | Plaintext runtime secret for `X-Api-Key` auth                                         |
 | `PROFILARR_BULLETIN_URL` | `https://raw.githubusercontent.com/Dictionarry-Hub/bulletin/main` | Override for the announcement feed + release manifest base URL                        |
+| `HTTPS_PROXY`            | -                                                                 | Proxy for outbound `https://` requests                                                |
+| `HTTP_PROXY`             | -                                                                 | Proxy for outbound `http://` requests                                                 |
+| `ALL_PROXY`              | -                                                                 | Proxy for both `http://` and `https://` requests                                      |
+| `NO_PROXY`               | -                                                                 | Comma-separated hosts, IPs or ranges that bypass the proxy                            |
 
 `PROFILARR_API_KEY` must be at least 32 characters long. It is not persisted to
-SQLite or bcrypt-hashed; while set, it overrides the stored database key.
-Removing it reactivates the stored database key if one exists.
+SQLite or bcrypt-hashed. It always has full access and works alongside any keys
+created in Settings > Security.
 
 > [!NOTE]
 > When using OIDC `ORIGIN=` _must_ be set to your Profilarr URL, and Profilarr
 > expects `{ORIGIN}/auth/oidc/callback` for the redirect URL
 > (e.g. `https://profilarr.example.com/auth/oidc/callback`). Many
 > IdPs will infer this automatically.
+
+To route outbound requests through an HTTP or SOCKS5 proxy, see
+[Outbound Proxy](docs/backend/utilities.md#outbound-proxy).
 
 See the [documentation](https://dictionarry.dev/) for full setup and
 configuration guides.

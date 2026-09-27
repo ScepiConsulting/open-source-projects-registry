@@ -131,8 +131,8 @@ curl -fsSL 'https://get.archivebox.io' | bash
 - [**Uses standard, durable, long-term formats**](#output-formats) like HTML, JSON, PDF, PNG, MP4, TXT, and WARC
 - [**Powerful CLI**](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#CLI-Usage), [**self-hosted web UI**](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#UI-Usage), [Python API](https://docs.archivebox.io/en/dev/apidocs/archivebox/archivebox.html) (BETA), [REST API](https://github.com/ArchiveBox/ArchiveBox/issues/496) (ALPHA), or [desktop app](https://electron.archivebox.io/)
 - [**Saves all pages to archive.org as well**](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#save_archive_dot_org) by default for redundancy (can be [disabled](https://github.com/ArchiveBox/ArchiveBox/wiki/Security-Overview#stealth-mode) for local-only mode)
-- Advanced users: support for archiving [content requiring login/paywall/cookies](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_user_data_dir) (see wiki security caveats!)
-- Planned: support for running [JS during archiving](https://github.com/ArchiveBox/ArchiveBox/issues/51) to adblock, [autoscroll](https://github.com/ArchiveBox/ArchiveBox/issues/80), [modal-hide](https://github.com/ArchiveBox/ArchiveBox/issues/175), [thread-expand](https://github.com/ArchiveBox/ArchiveBox/issues/345)
+- Support for archiving [content requiring login/paywall/cookies](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#chrome_user_data_dir) (see wiki security caveats!)
+- Support for running [JS during archiving](https://github.com/ArchiveBox/ArchiveBox/issues/51) to adblock, [infiniscroll](https://github.com/ArchiveBox/ArchiveBox/issues/80), [modal-hide](https://github.com/ArchiveBox/ArchiveBox/issues/175), [thread-expand](https://github.com/ArchiveBox/ArchiveBox/issues/345)
 
 <br/>
 
@@ -565,6 +565,8 @@ docker compose run --rm archivebox config --set PERMISSIONS=public
 
 # restart the server to apply any config changes
 </code></pre>
+
+Snapshot caching follows each snapshot's saved `PERMISSIONS`, including inherited defaults and snapshot overrides. Public content can be cached by browsers and shared proxies/CDNs; private and unlisted content uses `Cache-Control: private` so only the user's browser can cache it. Both retain normal artifact cache lifetimes and validators for fast repeat viewing. Authentication handoffs are not stored. Changing permissions does not revoke copies already cached under the previous policy; purge any affected shared cache when needed.
 </details>
 
 <br/>
@@ -1003,13 +1005,10 @@ For various reasons, many large sites (Reddit, Twitter, Cloudflare, etc.) active
 
 
 <ul>
-<li>Set <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration#curl_user_agent"><code>CHROME_USER_AGENT</code>, <code>WGET_USER_AGENT</code>, <code>CURL_USER_AGENT</code></a> to impersonate a real browser (by default, ArchiveBox reveals that it's a bot when using the default user agent settings)</li>
-<li>Set up a logged-in browser session for archiving by <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#import-an-existing-browser-profile">importing a dedicated browser profile into a persona</a></li>
+<li>Set up a logged-in browser session for archiving by <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Chromium-Install#import-an-existing-browser-profile">importing a chrome profile into a persona</a></li>
 <li>Rewrite your URLs before archiving to swap in alternative frontends that are more bot-friendly e.g.<br>
 <code>reddit.com/some/url</code> -&gt; <code>teddit.net/some/url</code>: <a href="https://github.com/mendel5/alternative-front-ends">https://github.com/mendel5/alternative-front-ends</a></li>
 </ul>
-
-In the future we plan on adding support for running JS scripts during archiving to block ads, cookie popups, modals, and fix other issues. Follow here for progress: <a href="https://github.com/ArchiveBox/ArchiveBox/issues/51">Issue #51</a>.
 
 </details>
 <br/>

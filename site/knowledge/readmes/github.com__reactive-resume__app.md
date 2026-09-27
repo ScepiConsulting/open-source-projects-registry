@@ -165,7 +165,7 @@ For detailed setup instructions, environment configuration, and self-hosting gui
 
 | Category         | Technology                      |
 | ---------------- | ------------------------------- |
-| Framework        | TanStack Start (React 19, Vite) |
+| Framework        | TanStack Router (React 19, Vite) |
 | Runtime          | Node.js                         |
 | Language         | TypeScript                      |
 | Database         | PostgreSQL with Drizzle ORM     |
@@ -189,7 +189,13 @@ The full documentation lives at [docs.rxresu.me](https://docs.rxresu.me):
 
 ## Self-Hosting
 
-Reactive Resume can be self-hosted using Docker. The stack includes:
+Reactive Resume supports Docker and Vercel Hobby.
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Freactive-resume%2Freactive-resume&project-name=reactive-resume&repository-name=reactive-resume&env=AUTH_SECRET%2CENCRYPTION_SECRET&envDescription=Generate+two+independent+secrets+with+openssl+rand+-hex+32.+Keep+these+values+across+deployments.&envLink=https%3A%2F%2Fdocs.rxresu.me%2Fself-hosting%2Fvercel&stores=%5B%7B%22type%22%3A%22integration%22%2C%22protocol%22%3A%22storage%22%2C%22integrationSlug%22%3A%22neon%22%2C%22productSlug%22%3A%22neon%22%7D%2C%7B%22type%22%3A%22integration%22%2C%22protocol%22%3A%22storage%22%2C%22integrationSlug%22%3A%22upstash%22%2C%22productSlug%22%3A%22upstash-kv%22%7D%2C%7B%22type%22%3A%22blob%22%2C%22access%22%3A%22private%22%7D%5D)
+
+Vercel provisions Neon PostgreSQL, private Blob storage, and Upstash Redis through its deployment wizard. Supply two persistent secrets, then deploy. See the [Vercel guide](docs/self-hosting/vercel.mdx) for setup, limits, and optional SMTP/OAuth configuration.
+
+For Docker, the stack includes:
 
 - **PostgreSQL** — Database for storing user data and resumes
 - **SeaweedFS** (optional) — S3-compatible storage for file uploads
@@ -237,9 +243,9 @@ Other ways to support:
 
 <a href="https://www.star-history.com/?repos=reactive-resume%2Freactive-resume&type=date&legend=top-left">
  <picture>
-   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=reactive-resume/reactive-resume&type=date&theme=dark&legend=top-left&sealed_token=QmaOn4Ech499R6kpQe8ONn911UjGUaJfQBT0MXlQLU9hTo-Ie7lTxIILWbBvmtzDGHk7ziWKN_N5iM5mgP8widn_FGHd9-PHNokPtSji8XLgbFpqatgyqIDPnOys-IhO40W3J0HeH07FL-Q8Bq6ArRk3LDtJDwjh4m0ya-2L59ULb7BaqxkSDuCytkCr" />
-   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=reactive-resume/reactive-resume&type=date&legend=top-left&sealed_token=QmaOn4Ech499R6kpQe8ONn911UjGUaJfQBT0MXlQLU9hTo-Ie7lTxIILWbBvmtzDGHk7ziWKN_N5iM5mgP8widn_FGHd9-PHNokPtSji8XLgbFpqatgyqIDPnOys-IhO40W3J0HeH07FL-Q8Bq6ArRk3LDtJDwjh4m0ya-2L59ULb7BaqxkSDuCytkCr" />
-   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=reactive-resume/reactive-resume&type=date&legend=top-left&sealed_token=QmaOn4Ech499R6kpQe8ONn911UjGUaJfQBT0MXlQLU9hTo-Ie7lTxIILWbBvmtzDGHk7ziWKN_N5iM5mgP8widn_FGHd9-PHNokPtSji8XLgbFpqatgyqIDPnOys-IhO40W3J0HeH07FL-Q8Bq6ArRk3LDtJDwjh4m0ya-2L59ULb7BaqxkSDuCytkCr" />
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=reactive-resume/reactive-resume&type=date&theme=dark&legend=top-left" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=reactive-resume/reactive-resume&type=date&legend=top-left" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=reactive-resume/reactive-resume&type=date&legend=top-left" />
  </picture>
 </a>
 

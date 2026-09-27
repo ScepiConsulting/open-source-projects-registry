@@ -27,6 +27,7 @@
   <a href="https://go.dev/"><img src="https://img.shields.io/badge/Go-1.27.1+-00ADD8?logo=go" alt="Go Version"></a>
   <a href="https://github.com/ovumcy/ovumcy-web/actions/workflows/docker-image.yml"><img src="https://img.shields.io/badge/Docker-ready-2496ED?logo=docker" alt="Docker"></a>
   <a href="https://github.com/ovumcy/ovumcy-web/pkgs/container/ovumcy-web"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2Fovumcy%2Fovumcy-web%2Fbadges%2Fpulls.json&logo=docker" alt="Docker pulls"></a>
+  <a href="https://hub.docker.com/r/ovumcy/ovumcy-web"><img src="https://img.shields.io/docker/pulls/ovumcy/ovumcy-web" alt="Docker Pulls"></a>
   <a href="https://github.com/ovumcy/ovumcy-web/blob/main/docs/self-hosted.md"><img src="https://img.shields.io/badge/Self--hosted-yes-2ea44f" alt="Self-hosted"></a>
   <a href="https://github.com/ovumcy/ovumcy-web#privacy-and-security"><img src="https://img.shields.io/badge/Telemetry-none-2ea44f" alt="No telemetry"></a>
 </p>
@@ -271,6 +272,14 @@ Uses the prebuilt image from GHCR pinned to the latest tagged release by default
 
 Tagged releases from `v0.7.1` onward publish under the GHCR namespace `ghcr.io/ovumcy/ovumcy-web`.
 
+The same image is mirrored to Docker Hub as `docker.io/ovumcy/ovumcy-web`, under the same tags and
+at the same digest: the mirror is a copy of the signed manifest, not a second build. Substitute that
+name into any command below to pull or verify what Docker Hub serves. The mirror is signed on Docker
+Hub itself, by the same workflow identity and over that same digest, and the build provenance is
+issued against the digest rather than against a registry — so both registries answer to the same
+checks, and the release workflow refuses to report a mirror published until it has run the signature
+check below against Docker Hub.
+
 **Verify the image before running (recommended).** Every published image is Cosign-signed (keyless, via GitHub Actions OIDC — no long-lived signing key), carries a SLSA build-provenance attestation, and ships an SBOM attached at build time. To verify a tagged release (needs [`cosign`](https://docs.sigstore.dev/cosign/installation/) and the [`gh`](https://cli.github.com/) CLI):
 
 ```bash
@@ -313,7 +322,7 @@ docker buildx imagetools inspect ghcr.io/ovumcy/ovumcy-web:v1.9.2 --format '{{ .
 
 Then open `http://127.0.0.1:8080`.
 
-The base compose file now binds to loopback by default. For an intentional LAN/private-network bind, set `HOST_BIND_ADDRESS` in `.env` to a specific private IP you control before starting the stack.
+The base compose file now binds to loopback by default. For an intentional LAN/private-network bind, set `HOST_BIND_ADDRESS` in `.env` to a specific private IP you control before starting the stack. Only compose reads `HOST_BIND_ADDRESS`; the [Manual](#manual) path below ignores it.
 
 For production-style setups:
 
@@ -322,6 +331,8 @@ For production-style setups:
 - choose one storage engine per deployment, because there is no automatic SQLite-to-Postgres migration tool yet.
 
 ### Manual
+
+A binary started this way listens on `PORT` (default `8080`) on every interface; `HOST_BIND_ADDRESS` has no effect outside compose. On a machine other hosts can reach, block the port with a firewall.
 
 Requirements:
 
@@ -386,7 +397,9 @@ AUDIT_LOG_ENABLED=false
 # Each *_MAX has a ceiling (100 for login/register/forgot-password, 600 logout, 200 logout
 # account, 3000 api, 120 calendar feed) and each *_WINDOW must be between 1s and 24h; a value
 # outside its range is logged at boot and the default is used instead — a limiter cannot be
-# widened past its ceiling, let alone switched off. To widen a budget, shorten its window.
+# widened past its ceiling, let alone switched off. The login, register and forgot-password
+# pairs are also held to at most 30 requests per minute (MAX over WINDOW, e.g. 100 with 200s);
+# a pair above that is logged and both halves fall back to the defaults.
 # RATE_LIMIT_LOGIN_MAX=8
 # RATE_LIMIT_LOGIN_WINDOW=15m
 # RATE_LIMIT_REGISTER_MAX=8
@@ -427,12 +440,12 @@ Important notes:
 - `SECRET_KEY` takes precedence if both `SECRET_KEY` and `SECRET_KEY_FILE` are set.
 - `DEFAULT_LANGUAGE` supports `en`, `ru`, `es`, `fr`, `de`, and `it`.
 - `REGISTRATION_MODE` supports `open` and `closed`; use `closed` for pre-provisioned or otherwise operator-restricted internet-facing instances where self-service sign-up must stay disabled.
-- `HOST_BIND_ADDRESS=127.0.0.1` keeps the base compose path local/private by default. Only change it deliberately for a specific private-network bind.
+- `HOST_BIND_ADDRESS=127.0.0.1` keeps the base compose path local/private by default. Only change it deliberately for a specific private-network bind. It is a compose setting, not an app setting: the binary ignores it and listens on `PORT` on every interface.
 - Set `COOKIE_SECURE=true` when serving over HTTPS.
 - `AUDIT_LOG_ENABLED` is off by default. Per-action security-event lines are suppressed; Go panics, startup errors, and the Fiber request log stay enabled. Flip to `true` only when investigating a specific incident, and remember the resulting stream contains `user_id` and is as sensitive as the database. See [docs/security/logging.md](docs/security/logging.md#logging-policy).
 - OIDC sign-in is optional, supports `hybrid` and `oidc_only` login modes, and requires HTTPS plus `COOKIE_SECURE=true`.
 - `OIDC_CA_FILE` is optional and lets Ovumcy trust a readable PEM CA bundle for private or internal identity-provider certificates.
-- The first OIDC sign-in uses an existing `(issuer, subject)` link when present, otherwise it falls back to a verified email match.
+- The first OIDC sign-in uses an existing `(issuer, subject)` link when present; a verified email claim that matches an existing local account does **not** link automatically — the callback refuses and redirects to `/login`. Completing the link needs the account's current password to start a Settings step-up and a fresh re-authentication at the provider, or the operator CLI for an account with no working sign-in — see [docs/oidc.md](docs/oidc.md#current-contract).
 - `OIDC_AUTO_PROVISION=true` is supported only with `REGISTRATION_MODE=open`; it creates `owner` accounts and can be restricted with `OIDC_AUTO_PROVISION_ALLOWED_DOMAINS`.
 - Auto-provisioned users start without a local password. They can set one later in `Settings` to enable recovery codes and password-confirmed danger-zone actions.
 - `OIDC_LOGOUT_MODE` controls whether logout stays local or redirects to the provider when discovery metadata includes `end_session_endpoint`.
@@ -483,9 +496,9 @@ Common commands from the repository root:
 
 ```bash
 # scoped past node_modules/, where a vendored JS dep ships a .go file;
-# -timeout 20m raises Go's 10-minute PER PACKAGE default, which internal/api
+# -timeout 30m raises Go's 10-minute PER PACKAGE default, which internal/api
 # outruns on a dev host (see TESTING.md)
-go test ./cmd/... ./internal/... ./migrations/... ./scripts/... ./web/... -timeout 20m
+go test ./cmd/... ./internal/... ./migrations/... ./scripts/... ./web/... -timeout 30m
 npm run build
 go run ./cmd/ovumcy
 ```

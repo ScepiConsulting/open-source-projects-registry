@@ -151,6 +151,20 @@ Users can now choose between:
 
 This makes Invoice Builder flexible for both lightweight personal use and more advanced multi‑device or multi‑user environments.
 
+### Multi-session web mode
+
+Web/Docker mode supports multiple independent browser sessions without a shared server-wide current database:
+
+- Each browser session receives an opaque server-issued session token.
+- Each session/workspace is bound to its selected SQLite or PostgreSQL database.
+- Requests resolve the database from the session context, so one browser cannot switch another browser's active database.
+- Sessions expire automatically and stale database handles are cleaned up.
+- Session tokens are held in `HttpOnly` cookies and are not accessible to browser scripts.
+- Connection details are never persisted in the browser; reconnect after a backend restart.
+- Deploy web mode behind HTTPS; the reverse proxy must forward `X-Forwarded-Proto: https` so the session cookie is marked `Secure`.
+
+This is session isolation, not account authentication. The current application has no user login, roles, or workspace membership system. Electron desktop windows use separate database contexts locally.
+
 ## 🧑‍💻 Self-Hosting (Docker)
 
 Invoice Builder can also be self-hosted using Docker for users who prefer running it on their own server or NAS.
@@ -217,6 +231,27 @@ docker compose -f docker-compose.standalone.yml up -d
 | ---- | ---------------------------- |
 | 3000 | Node.js REST API + SQLite/PG |
 | 3001 | Static SPA served by `serve` |
+
+### Running without Docker Compose
+
+`docker pull` only downloads the image. To start the single-container image directly, provide the startup service and compiled migration directory:
+
+```bash
+docker pull ghcr.io/piratuks/invoice-builder:latest
+docker run -d \
+  --name invoice-builder \
+  -p 3001:3001 \
+  -e SERVICE=all \
+  -e NODE_ENV=docker \
+  -e FE_SERVER_URL=http://localhost:3001 \
+  -e MIGRATIONS_PATH=/app/dist-be/backend/server/shared/migrations \
+  -v invoice-builder-data:/data \
+  ghcr.io/piratuks/invoice-builder:latest
+```
+
+Open `http://localhost:3001` after the container starts. Port `3000` is used internally by nginx and does not need to be published. Add `-p 3000:3000` only when direct access to the backend API is required.
+
+The `SERVICE` and `MIGRATIONS_PATH` values are supplied automatically when using `docker compose`; they are required here because `docker pull` does not apply Compose configuration.
 
 ---
 
@@ -460,6 +495,7 @@ Please open an issue before starting major work to ensure alignment.
 
 | Version | Status                |
 | ------- | --------------------- |
+| v2.10.0 | ✅ Actively supported |
 | v2.9.0  | ✅ Actively supported |
 | v2.8.0  | ✅ Actively supported |
 | v2.7.1  | ✅ Actively supported |

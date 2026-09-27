@@ -65,7 +65,7 @@ $ > exit
     * `ANCHR_DB_PORT`: MongoDB port (default: `27017`)
     * `ANCHR_DB_NAME`: MongoDB database name (default: `anchr`)
     * `ANCHR_UPLOAD_DIR`: Absolute path to a file system directory (must exist!) to persist uploaded images to (default: `/var/data/anchr`)
-    * `ANCHR_SECRET`: A (preferably long), random character sequence to be used for the JSON Web Token (default: `shhh`)
+    * `ANCHR_SECRET`: A (preferably long), random character sequence to be used for the JSON Web Token (**required**) (e.g. use `openssl rand -hex 16`)
     * `ANCHR_LOG_PATH`: Absolute file path for access logs (directory must exist!) (default:  `/var/log/anchr/access.log`)
     * `ANCHR_ERROR_LOG_PATH`: Absolute file path for error logs (directory must exist!) (default: `/var/log/anchr/error.log`)
     * `ANCHR_GOOGLE_API_KEY`: Your API key for Google APIs (required for safe browse checking incoming shortlinks), which you get from the [Developers Console](https://console.developers.google.com/apis/) (default: `''`, leave blank to disable safe browse checking)

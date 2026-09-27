@@ -598,6 +598,7 @@ Dagu includes built-in actions that run within the Dagu process or on the select
 | `http.request` | HTTP requests with headers, auth, and request bodies |
 | `chat.completion` | Run an LLM chat completion step |
 | `harness.run` | Run external coding-agent CLIs such as Claude Code, Codex, Gemini CLI, Cursor, and DeepSeek Harness |
+| `browser.extract` / `browser.run` | Automate websites in a local Chrome with natural-language actions, structured extraction, and human input |
 | `postgres.query` / `postgres.import` | PostgreSQL queries and imports |
 | `sqlite.query` / `sqlite.import` | SQLite queries and imports |
 | `redis.<operation>` | Redis commands, pipelines, and Lua scripts |
@@ -611,6 +612,8 @@ Dagu includes built-in actions that run within the Dagu process or on the select
 | `wait.duration` / `wait.until` / `wait.file` / `wait.http` | Wait for time, file state, or HTTP readiness |
 | `human.task` | Wait for acknowledgement or typed operator input before downstream steps continue |
 | `mail.send` | Send email via SMTP |
+| `mail.search` | Find email in an IMAP mailbox |
+| `mail.organize` | Mark, move, archive, or trash email |
 | `template.render` | Text generation with template rendering |
 | `router.route` | Conditional step routing based on values and patterns |
 | `dag.run` | Invoke another DAG as a sub-workflow with params and dependencies |

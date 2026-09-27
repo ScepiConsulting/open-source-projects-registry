@@ -21,6 +21,8 @@
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
   <a href="https://github.com/Higangssh/homebutler/releases"><img src="https://img.shields.io/github/v/release/Higangssh/homebutler" alt="Release"></a>
   <a href="https://glama.ai/mcp/servers/Higangssh/homebutler"><img src="https://glama.ai/mcp/servers/Higangssh/homebutler/badges/score.svg" alt="homebutler MCP server"></a>
+  <a href="https://coveralls.io/github/Higangssh/homebutler?branch=main"><img src="https://coveralls.io/repos/github/Higangssh/homebutler/badge.svg?branch=main" alt="Coverage Status"></a>
+  <a href="https://pkg.go.dev/github.com/Higangssh/homebutler"><img src="https://pkg.go.dev/badge/github.com/Higangssh/homebutler.svg" alt="Go Reference"></a>
 </p>
 
 <p align="center">
@@ -158,7 +160,15 @@ HomeButler answers the question none of them ask: **what is different from last 
 
 - **No agent on the machines it watches.** The binary is put there once with `homebutler deploy` and runs only when asked, over SSH — no daemon, no open port, nothing listening between runs.
 - **The judgement is a written rule, not a model.** What earns a line is in [docs/report.md](docs/report.md), and the same input gives the same report — no AI required, no account, no paid tier.
-- **It checks that a backup comes back.** `backup drill` unpacks an archive into an isolated container on a network and port of its own, starts the app on that data, and waits for it to answer an HTTP health check.
+- **It checks that a backup comes back.** A backup you have never restored is a folder. `backup drill` boots the archive as a second copy of the app, on a network and port of its own, and requires it to answer an HTTP health check before calling the archive good — then removes everything it made. A failed drill exits non-zero, so `backup drill --all` belongs in the same cron entry as `backup`. [docs/backup.md](docs/backup.md#drill-proving-the-backup-comes-back) has what it does and what it does not prove.
+
+  ```
+  🔐 Integrity: ✅ tar valid (8 files)
+  🚀 Boot: ✅ container started in 0s
+  🌐 Health: ✅ HTTP 200 on port 60405
+
+  ✅ DRILL PASSED
+  ```
 
 ## Core workflows
 
@@ -194,7 +204,7 @@ caller filters on it without reading the title:
 | `system` | CPU, memory, disk |
 | `docker` | containers that are stopped or unhealthy |
 | `exposure` | ports listening on every interface |
-| `backup` | backups missing, stale, or never drilled |
+| `backup` | backups missing, stale, never drilled, or growing without a retention limit |
 | `report` | whether there is a baseline to compare against |
 | `watch` | targets listed with nothing polling them |
 | `notifications` | channels configured, or never tested |
@@ -342,6 +352,7 @@ would prune the baseline you wanted to compare against. Saving one is a button.
 homebutler serve              # Start on port 8080
 homebutler serve --port 3000  # Custom port
 homebutler serve --demo       # Demo mode with realistic sample data
+homebutler serve install      # Let the host keep it running
 ```
 
 </details>
@@ -803,7 +814,13 @@ Flags:
 homebutler serve                # http://localhost:8080
 homebutler serve --port 3000    # custom port
 homebutler serve --demo         # demo mode with sample data
+homebutler serve install        # hand it to launchd or systemd, so it survives logout
+homebutler serve uninstall      # and take it back
 ```
+
+The installed unit records the address and never the token — that comes from
+`web.token` in the config file, because `--token` is visible in `ps` to every
+user on the machine.
 
 📖 **[Web dashboard details →](docs/web-dashboard.md)**
 
@@ -842,7 +859,7 @@ Default thresholds: CPU 90%, Memory 85%, Disk 90%. Start with `watch`, then add 
 
 **"Having a backup" and "being able to restore" are different things.**
 
-Backup Drill boots your backup in an isolated Docker environment and verifies the app actually responds — like a fire drill for your data.
+Backup Drill boots your backup in an isolated Docker environment and verifies the app actually responds — like a fire drill for your data. A failed drill exits non-zero.
 
 ```bash
 homebutler backup drill uptime-kuma        # verify one app
@@ -850,6 +867,8 @@ homebutler backup drill --all              # verify all apps
 homebutler backup drill --json             # machine-readable output
 homebutler backup drill --archive ./file   # use a specific backup
 ```
+
+Full walkthrough, including what a passing drill does *not* prove: [docs/backup.md](docs/backup.md#drill-proving-the-backup-comes-back).
 
 **What happens:**
 1. Finds the latest backup archive
@@ -943,7 +962,10 @@ Auto-detects OS/architecture, downloads the latest release, and installs to PATH
 npm install -g homebutler
 ```
 
-Downloads the Go binary automatically. Use `npx -y homebutler@latest` to run without installing globally.
+Downloads the Go binary automatically. This package publishes one command,
+`homebutler-mcp`, and it starts the MCP server — `npx -y homebutler@latest`
+launches that, not the CLI. For the command line, use one of the other
+installs above.
 
 ### Go Install
 

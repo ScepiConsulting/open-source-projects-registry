@@ -81,7 +81,7 @@ https://discord.gg/AWhWWSEkJ
 - [S3 Backups](#s3-backups)
 - [Backup / Export](#backup--export)
 - [Restore / Import](#restore--import)
-- [Offline View](#offline-view)
+- [Offline](#offline)
 - [Multiple Instances](#multiple-instances)
 - [AI Assistant](#ai-assistant)
 - [Transcription (speech to text)](#transcription-speech-to-text)
@@ -247,10 +247,7 @@ docker compose up -d
 <details>
 <summary><strong>☁️ Cloud</strong></summary><br>
 
-Don't want to manage a server? Two hosts run Poznote for you. With either one, you first need to create an account with the host, then you deploy Poznote from their catalog in a few clicks. Both give you free credit when you sign up, so you can try without paying anything.
-
-- **[Caliber Node](https://calibernode.com/cloud-apps/poznote)**, from $2.50 a month: updates arrive as soon as they are released, fixed plans (you move up to the next tier if you need more), SSH console and automatic snapshots included. A good fit if you want as little to manage as possible and don't have that many notes.
-- **[PikaPods](https://www.pikapods.com/pods?run=poznote)**, from $2 a month: updates are tested before rollout so they arrive a little later, RAM, CPU and disk can be adjusted independently, backups run automatically but you set up where they are stored (S3). A good fit if you want room to grow as your notes pile up.
+Don't want to manage a server? A hosting company can run Poznote for you and keep it online. See the available hosts and how to choose between them [here](https://poznote.com/hosting.html).
 
 </details>
 
@@ -470,6 +467,33 @@ docker compose up -d
 
 Your data is preserved in the `./data` directory and will not be affected by the update.
 
+### Beta versions
+
+Beta versions bring new features before they are released as stable, and are listed as pre-releases on the [releases page](https://github.com/timothepoznanski/poznote/releases). They are published under the `latest-and-beta` tag, which always points to the newest version, beta or stable.
+
+To use them, change the two `image` lines of your `docker-compose.yml` and keep the rest of the file as it is:
+```yaml
+services:
+  webserver:
+    image: ghcr.io/timothepoznanski/poznote:latest-and-beta
+    ...
+  mcp-server:
+    image: ghcr.io/timothepoznanski/poznote-mcp:latest-and-beta
+    ...
+```
+
+With the [rootless](#rootless) variant, the webserver image in `docker-compose.rootless.yml` becomes `poznote:latest-and-beta-rootless`, and the MCP image is the same `poznote-mcp:latest-and-beta`.
+
+Download the images and restart the containers:
+```bash
+docker compose pull
+docker compose up -d
+```
+
+*   **Before switching:** a beta can still contain bugs, so make a [backup](#backup--export) first. Problems can be reported in the [GitHub issues](https://github.com/timothepoznanski/poznote/issues) or on [Discord](https://discord.gg/AWhWWSEkJ).
+*   **Updates:** each `docker compose pull` then gets the newest beta, or the stable version once it is released. The update procedure above downloads a new `docker-compose.yml` that uses the stable tags again, so change the two `image` lines once more after that step.
+*   **Back to stable:** a beta can change the database, so going back to an older stable version may not work. Wait for the next stable version, which includes the changes of the beta, then follow the update procedure above.
+
 ## Authentication
 
 Poznote supports multiple authentication methods including local accounts and external identity providers. Apps and extensions that talk to the REST API use [app passwords](#app-passwords), a separate credential described in the next section.
@@ -499,6 +523,16 @@ Passwords are managed through the Poznote web interface, not through `.env`:
 - The **Remember me** option keeps the session for 30 days.
 - Changing a password invalidates existing remember-me cookies for that user.
 
+#### Two-factor authentication
+
+Each user can turn on two-factor authentication (TOTP) from **Settings > Two-factor authentication**. After the password, the login form then asks for a 6-digit code from an authenticator app (Aegis, Google Authenticator, 1Password, Bitwarden...).
+
+- Setup shows a QR code, drawn in the browser, and ten single-use recovery codes to keep in case the phone is lost.
+- It protects password sign-in. An SSO login is left to the identity provider and its own second factor.
+- While it is on, the REST API no longer accepts the account password on its own: give clients an [app password](#app-passwords), or send the current code in the `X-Poznote-OTP` header.
+- An administrator can turn it off for a user who lost both their device and their recovery codes, from **Settings > Admin Tools > User Management** (password dialog).
+- Turning it on or off invalidates existing remember-me cookies for that user.
+
 #### Default passwords
 
 - Administrator accounts: `admin`
@@ -525,6 +559,7 @@ Poznote supports OpenID Connect (authorization code + PKCE) for single sign-on i
 6. If `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true`, the username/password form is hidden and the login page becomes SSO-only.
 7. REST API clients can authenticate with `Authorization: Bearer <OIDC JWT>` when OIDC is enabled; Poznote validates the provider JWKS, issuer, expiration, audience, and configured access controls.
 8. Clients that cannot perform an OIDC flow at all (browser extension, mobile app, scripts) use an [app password](#app-passwords) instead, which each user creates from their own settings.
+9. [Two-factor authentication](#two-factor-authentication) only covers the password form: an SSO login never asks for the Poznote code. Require a second factor in the identity provider instead. A user who has both a password and an SSO identity keeps both ways in, and the SSO one is only as strong as the provider's policy.
 
 #### Configuration
 
@@ -578,7 +613,7 @@ The full list of limits and the endpoints that manage app passwords are in the [
 Poznote supports two primary note formats, each tailored for different workflows.
 
 <details>
-<summary><strong>HTML Notes</strong></summary>
+<summary><strong>Rich Text Notes</strong></summary>
 &nbsp;
 
 *   **Editor:** Direct WYSIWYG (What You See Is What You Get) editing.
@@ -625,7 +660,7 @@ Poznote supports two primary note formats, each tailored for different workflows
 
 *   **Functionality:** Reuse pre-written content to standardize your documentation, from a full note to a short snippet.
 *   **Setup:** Put the notes you want to reuse in a folder named `Templates` (sub-folders are fine). A workspace named `Templates` works too and is offered from every workspace. The name is also recognized in the language of the interface (`Modèles`, `Vorlagen`, `Plantillas`, `Modelos`, `Шаблоны`, `模板`).
-*   **Insert into a note:** Type `/template` (or `/` followed by the template's title) in an HTML or Markdown note and pick a template: its content is pasted at the cursor, converted if the template and the note are not of the same type.
+*   **Insert into a note:** Type `/template` (or `/` followed by the template's title) in a rich text or Markdown note and pick a template: its content is pasted at the cursor, converted if the template and the note are not of the same type.
 *   **New note from a template:** Duplicate the template note, or duplicate a whole `Templates` folder to start a project with a ready-made folder structure.
 </details>
 
@@ -637,7 +672,7 @@ Poznote supports two primary note formats, each tailored for different workflows
 *   **Workflow:** The "Create today's entry" button creates today's note (it reads "Go to today's entry" once the note exists), titled with the current date and stored automatically in a `Diary/YYYY/MM` folder structure.
 *   **Board View:** Entries are displayed as cards grouped by month, newest first, with a filter to quickly find past entries.
 *   **Journal View:** The scroll button next to the view controls switches to one reading column: every entry with its full content, newest first, loaded as you scroll. The filter works there too. Click an entry, or its pencil, to edit it right there; changes are saved as you type.
-*   **Format:** New entries are created as HTML or Markdown notes, depending on the "Diary entry format" setting under **Settings > Behavior**.
+*   **Format:** New entries are created as rich text or Markdown notes, depending on the "Diary entry format" setting under **Settings > Behavior**.
 </details>
 
 ## Snapshots
@@ -648,7 +683,7 @@ Snapshots keep earlier versions of a note's content so you can go back to a prev
 <summary><strong>How snapshots work</strong></summary>
 <br>
 
-*   **Automatic:** a snapshot is taken the first time a note is opened each day. The 3 most recent automatic snapshots are kept per note; this number can be changed under **Settings > Behavior > Snapshots**.
+*   **Automatic:** a snapshot is taken the first time a note is opened each day. The 3 most recent automatic snapshots are kept per note; this number can be changed under **Settings > Actions > Snapshots**.
 *   **Manual:** "Take snapshot now" adds a snapshot at any time, and so does **Ctrl + Alt + S** (Cmd + Alt + S on Mac) while a note is open. Manual snapshots are unlimited and do not count toward that number.
 *   **Before an AI edit:** a snapshot is taken automatically right before the [AI assistant](#ai-assistant) or the [MCP server](#mcp-server) changes the content of a note, so a rewrite that goes wrong is one click away from being undone. These snapshots are labeled "Before AI edit" or "Before MCP edit" in the history, are skipped when the latest snapshot already holds the same content, and the 20 most recent ones are kept per note, a number you can change in **Settings → Snapshots** (1 to 200) if your instance edits a lot of notes through AI or MCP.
 *   **Expiry:** every snapshot, automatic or manual, is deleted 30 days after it was taken. A snapshot can also be deleted by hand from the Snapshots modal.
@@ -687,7 +722,7 @@ Under **Settings > Behavior**, you can configure:
 - **Task list insert order:** control where new tasks are inserted
 - **Show notes after folders:** list notes without folders below the folder list
 - **Code block word wrap:** enable or disable word wrap in code blocks
-- **Diary entry format:** create diary entries as HTML or Markdown notes
+- **Diary entry format:** create diary entries as rich text or Markdown notes
 - Interface language, timezone and date format, attachments and backlinks at the bottom of a note, spell check, and the keyboard shortcuts
 
 Under **Settings > Markdown**, you can configure the default view mode, the editor font, framed and coloured Markdown, and code block line numbers.
@@ -768,11 +803,11 @@ Colours, spacing, radii and font weights are design tokens, so most changes are 
     --pz-accent-rgb: 214, 51, 108;   /* same colour, channels only, used for tints */
 }
 html[data-theme='dark'] {
-    --dm-accent: #f783ac;            /* lighter, because it sits on a dark ground */
+    --pz-accent-text: #f783ac;       /* lighter, because it sits on a dark ground */
 }
 ```
 
-Two tokens rather than one because a *fill* and a *label* cannot be the same colour: `--pz-accent` fills buttons, `--dm-accent` is the accent as text in dark mode.
+Two tokens rather than one because a *fill* and a *label* cannot be the same colour: `--pz-accent` fills buttons, `--pz-accent-text` is the accent as text, icons and outlines. In a light theme it follows `--pz-accent` by itself; a dark ground needs a lighter value. Every token keeps the same `--pz-*` name in every theme, only its value changes. The `--dm-*` names of older stylesheets keep working.
 
 **Recolour the note toolbar icons**
 
@@ -804,8 +839,6 @@ No CSS needed to colour a single icon: right-click it in the note toolbar or in 
 
 Override the tokens on `:root` for light and on `:root[data-theme='dark']` for dark, and nothing else. `src/public/css/README.md` documents every token and shows a complete example; the built-in Lavender, Sepia and Terminal themes in `src/public/css/tokens.css` are the same thing, written the same way.
 
-One thing a theme cannot reach yet: a handful of icons that a page rule colours explicitly render in the generic icon grey in dark mode.
-
 </details>
 
 ## Multi-users
@@ -815,7 +848,7 @@ One thing a theme cannot reach yet: a handful of icons that a page rule colours 
 Poznote is multi-user: each profile has its own notes, workspaces, tags, folders, attachments and settings, and signs in with its own username or email address and password.
 
 - **User management**: administrators create, disable and manage profiles from **Settings > Admin Tools > User Management**, and can give a user access to another user's account without transferring its ownership.
-- **Sharing**: notes, folders and entire workspaces can be shared with other users of the instance, read-only or editable, or publicly through dedicated links. When several users can access the same note, only one edits it at a time and the others see who holds the lock.
+- **Sharing**: notes and folders can be shared with other users of the instance, read-only or editable, or publicly through dedicated links. An entire workspace can be shared with other users of the instance, who find it in their workspace menu and edit it alongside its owner. When several users can access the same note, only one edits it at a time and the others see who holds the lock.
 - **Editing the same note**: one person edits at a time. When a note is locked, the read-only banner offers to **take over**: the previous editor's screen turns read-only and their unsaved changes stay in their browser, offered again once the note is free. An open note picks up changes made elsewhere within a few seconds. For a **Markdown** note with unsaved edits on both sides, the two sets of changes are merged automatically when they touch different lines, and a banner lets you choose when they overlap. Rich-text notes are never merged, you choose which version to keep. Keep scripts and other code in fenced code blocks (```` ``` ````): raw HTML outside a code block is sanitized on save, which can make an otherwise clean merge look like a conflict.
 - **Tenant isolation (SaaS mode)**: administrators can stop non-admin users from discovering the other accounts of the instance, sharing with them, or registering personal webhooks. Leave everything unchecked for a family or team instance.
 
@@ -1010,7 +1043,7 @@ tar -czvf poznote-full-backup.tar.gz data/
 
 Export individual notes using the **Export** button in the note toolbar:
 
-  - **HTML notes:** Export to HTML, or to a single HTML file with the images embedded
+  - **Rich text notes:** Export to HTML, or to a single HTML file with the images embedded
   - **Markdown notes:** Export to Markdown, to HTML, or to a single HTML file with the images embedded
   - **Task lists:** the same options, plus a raw JSON export of the list
 
@@ -1202,9 +1235,35 @@ updated: 2024-01-20 15:45:00
 </details>
 
 
-## Offline View
+## Offline
+
+Poznote keeps working without a network in two ways: the notes you modified recently, your favorites and the notes or folders you choose to keep stay available in your browser, ready to be read and edited, and a complete backup can be browsed anywhere as a read-only export.
+
+<details>
+<summary><strong>Offline notes</strong></summary>
+<br>
+
+The notes you modified in the last 5 days are kept in each browser where you use Poznote, and this copy is refreshed after every save. In a classroom, on a train or anywhere without Wi-Fi, open the usual Poznote address: the browser shows the offline version of Poznote, with the same sidebar, editors, toolbar, search and tabs (a double-click or a middle-click opens a note in a new tab, and the tabs open online come back), listing only the notes kept offline.
+
+*   **Signing in:** type the password you last signed in with in this browser, it is checked without the server. If you never typed your password in this browser (SSO, automatic sign-in), the last account used there opens with a **Continue as** button.
+*   **Reading and editing:** Rich text notes, Markdown notes and task lists open in their usual editor, and new notes can be created. The / menu and the right-click menu work too, without the commands that need the server (pictures and files to upload, templates, drawings, links to other notes). Other note types, such as drawings, stay online only. Changes are kept in the browser until they are sent.
+*   **Keep offline:** favorites are always kept, and **Keep offline** in the menu of a note or of a folder (subfolders included) keeps it whatever its date, with all its attachments (PDF, audio, files) up to 25 MB each. The same menu of a note says whether it is available offline in this browser, and the Notes and Folders pages mark the notes and folders available offline in this browser. The Notes page can also keep several notes offline at once (or stop), from its bulk actions, and the Folders page has **Keep offline** in the menu of each folder.
+*   **Offline page:** the **Offline** button of the icon sidebar lists the notes and folders kept offline, like the Shares page: folders as a tree with their notes, why each note is kept (kept offline, in a folder kept offline, favorite, modified recently), a filter, and a button to keep a note offline or stop. A warning icon marks a note this browser does not hold yet.
+*   **Back online:** the changes are sent automatically. If a note was also changed on the server in the meantime, both versions are merged when possible, otherwise your offline version is kept as a separate note named "... (offline copy)". A note deleted on the server in the meantime is created again.
+*   **Settings:** **Settings > Actions > Offline notes** sets how many days of notes are kept (5 by default, up to 30, 0 turns offline notes off) and shows what the current browser holds.
+*   **Limits:** at most 300 notes and 50 MB of text, the most recently modified first. Files are kept too: the pictures shown in these notes, and every attachment (PDF, audio, files) of the favorites and the notes kept with **Keep offline**, up to 25 MB each, 400 files and 200 MB in total, and never more than half the free space of the browser. A larger file stays online only, and the note says so when it is opened offline.
+*   **Requirements:** Poznote must be served over HTTPS (browsers keep pages offline only on a secure connection, `http://localhost` also works) and opened once online in the browser, after signing in, for the copy to be made.
+*   **Privacy:** only the notes of your own account are kept, not those of an account or a workspace shared with you. They are stored unencrypted in the browser. Signing out removes them from the browser (changes not sent yet too, after a warning that lists them): on a shared computer, sign out when you leave. Signing out also works without a network, from the offline page: the notes are removed at once, and the session on the server ends the next time Poznote opens online.
+
+</details>
+
+<details>
+<summary><strong>Offline export</strong></summary>
+<br>
 
 The **📦 Complete Backup** creates a standalone offline version of your notes. Simply extract the ZIP and open `index.html` in any web browser. This allows you to read your notes offline, but without the full Poznote functionality, it's a read-only export.
+
+</details>
 
 ## Multiple Instances
 
@@ -1247,7 +1306,7 @@ What the assistant can do, choosing a provider and a model, personal API keys, a
 
 Turn voice into note text with a speech-to-text server you run yourself. Poznote embeds no speech model: it talks to any server exposing the OpenAI audio API (`POST /v1/audio/transcriptions`), such as a self-hosted Whisper, so the audio never has to leave your machine.
 
-Once an administrator enables it in **Settings → Admin Tools → Transcription**, you get **Dictate** under **Insert** in the slash menu, and a **Transcribe** button on audio attachments.
+Once an administrator enables it in **Settings → Admin Tools → Transcription**, **Record audio** under **Insert** in the slash menu gains a **Transcribe** button next to **Insert the audio**, and audio attachments get a **Transcribe** button.
 
 Setting up a server, choosing a model, and everything else is in the [Transcription documentation](docs/TRANSCRIPTION.md).
 

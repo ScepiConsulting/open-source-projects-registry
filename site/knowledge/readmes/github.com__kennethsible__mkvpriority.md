@@ -20,6 +20,7 @@
 - Deprioritizes **unwanted audio and subtitle tracks** (e.g., English dubs, commentary tracks, signs/songs)
 - Identifies **forced subtitle tracks** using dialogue-density heuristics without relying solely on track names
 - Suppresses default flags during **native audio playback** to prevent unnecessary subtitles for dialogue
+- Evaluates external **sidecar subtitles** alongside embedded tracks and updates their filename flags on disk
 - Periodically scans your media library using a **cron schedule** and processes new MKV files with a database
 - Integrates with Radarr and Sonarr using a **custom script** to process new MKV files as they are imported
 - Supports extension modules for optional, user-defined **post-processors** to handle specialized workflows
@@ -178,11 +179,11 @@ You can use the `subtitle_extractor` extension to extract embedded subtitles fla
 
 ```toml
 [subtitle_profiles.global]
-convert_external_subtitles = true
+extract_embedded_subtitles = true
 ```
 
 ```text
-Format:  {filename}.{language}.{default,forced}.{srt,ass}
+Format:  {file_stem}.{language}.{default,forced}.{ext}
 Example: Princess Mononoke (1997).eng.default.ass
 ```
 
@@ -195,8 +196,19 @@ You can use the `subtitle_converter` extension to convert external subtitles bet
 
 ```toml
 [subtitle_profiles.global]
+convert_external_subtitles = true
 convert_target_format = "ass"
 convert_remove_source = false
+```
+
+### Example: Subtitle Renamer
+
+You can use the `subtitle_renamer` extension to rename external sidecar subtitles to reflect their updated track states. When processing an MKV file, sidecar files are identified, normalized to ISO 639-2/T language codes, and scored alongside embedded tracks. If the track flags for an external subtitle change, this extension renames the file on disk to reflect its new flags, appending or stripping `.default` or `.forced` from the filename and standardizing the language code.
+
+```toml
+[subtitle_profiles.global]
+rename_external_subtitles = true
+rename_language_format = "3-letter"
 ```
 
 ### Example: Subtitle Restyler
@@ -211,18 +223,42 @@ Outline = 3.6
 Shadow = 1.5
 ```
 
-### Example: Multiplexer (Strip/Reorder Tracks)
+```text
+Format:  {file_stem}.{language}[.default][.forced][.{track_name}].{ext}
+Example: Princess Mononoke (1997).jpn.default.commentary.ass
+```
 
-You can use the `multiplexer` extension to strip tracks for unwanted languages and reorder tracks by priority scores. Since remuxing conflicts with the core "no-remux" design, these features are delegated to an extension module. To enable them, add the `[multiplexer]` section to your config file and include this extension in your arguments.
+> [!NOTE]
+> The naming format for external subtitles follows the guidelines for both [Jellyfin](https://jellyfin.org/docs/general/server/media/movies/?libType=shows#external-subtitles-and-audio-tracks) and [Plex](https://support.plex.tv/articles/200471133-adding-local-subtitles-to-your-media/).
+
+### Example: Multiplexer
+
+You can use the `multiplexer` extension to strip tracks with unwanted languages and reorder tracks by priority scores. Since remuxing involves unpacking and rewriting the container, these features are delegated to an extension module. To enable them, add the `[multiplexer]` section to your config file and include this extension in your arguments.
 
 ```toml
+[audio_profiles.strip]
+audio_mode = ["enabled"]
+
+[subtitle_profiles.strip]
+subtitle_mode = ["enabled"]
+
 [multiplexer]
-strip_tracks = true
-reorder_tracks = true
-remux_audio_profile = "default"
-remux_subtitle_profile = "dialogue"
+multiplex_container = true
+remove_original_container = true
+remove_external_subtitles = true
 mkvmerge_arguments = []
+
+strip_unscored_tracks = true
+strip_audio_profile = "strip"
+strip_subtitle_profile = "strip"
+
+order_tracks_by_score = true
+order_audio_profile = "default"
+order_subtitle_profile = "dialogue"
 ```
+
+> [!NOTE]
+> To avoid stripping tracks with your preferred languages, create profiles specifically for stripping tracks without any filters.
 
 ### Creating Extensions
 
@@ -248,6 +284,7 @@ You can easily write your own post-processing scripts to handle custom logic.
            audio_tracks: list[Track],
            subtitle_tracks: list[Track],
            config: Config,
+           database: Database | None = None,
            dry_run: bool = False,
        ) -> None:
            raise NotImplementedError
