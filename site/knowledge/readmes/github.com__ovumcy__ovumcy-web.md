@@ -296,6 +296,8 @@ gh attestation verify oci://ghcr.io/ovumcy/ovumcy-web:v1.9.2 --repo ovumcy/ovumc
 docker buildx imagetools inspect ghcr.io/ovumcy/ovumcy-web:v1.9.2 --format '{{ json .SBOM }}'
 ```
 
+**An untagged, unsigned digest can exist in the GHCR package, and it is safe to ignore.** The release workflow pushes the image by digest, scans every platform, and only then signs and tags it. When the scan refuses, or a step between the push and the signature fails, that digest stays in the public package: no tag, no signature, still pullable by digest, and printed in the failed run's log. Nothing you are told to run resolves to it — every command above names a tag, every tag the workflow writes points at a signed digest, and the Cosign check in step 1 fails on a digest that was never signed. It is kept rather than deleted on purpose: deleting it would need delete rights over the whole package inside the publish job — a `delete:packages` token, or the Admin role for this repository's `GITHUB_TOKEN` on the package — and either would let a compromised publish step delete signed releases too, a larger risk than an unsigned digest that verification already refuses.
+
 For public GHCR images, pull does not require GitHub login. `docker compose up -d` is enough because `pull_policy: always` is enabled.
 
 ```bash
@@ -323,6 +325,8 @@ docker buildx imagetools inspect ghcr.io/ovumcy/ovumcy-web:v1.9.2 --format '{{ .
 Then open `http://127.0.0.1:8080`.
 
 The base compose file now binds to loopback by default. For an intentional LAN/private-network bind, set `HOST_BIND_ADDRESS` in `.env` to a specific private IP you control before starting the stack. Only compose reads `HOST_BIND_ADDRESS`; the [Manual](#manual) path below ignores it.
+
+**Upgrading an existing install to v2.0.0 or later: take the new compose file first.** Changing only `OVUMCY_IMAGE` on a compose file from v1.9.2 or earlier starts the new image without the `ovumcy_fence` volume it expects at `/app/fence`. The container still reports healthy, but the calendar-feed restore fence has nowhere to keep its marker, so every armed calendar feed is disarmed on every start, and `ovumcy reset-password` and `ovumcy users delete` refuse. Download the new `docker-compose.yml` (or the compose file of the example stack you run), or add the volume by hand: `- ovumcy_fence:/app/fence` under the service's `volumes:` (a postgres example stack has no such key on the app service yet, so add it) and an `ovumcy_fence:` entry under the top-level `volumes:`. The example stacks also forward settings an older copy leaves out, `REGISTRATION_MODE` among them, so an old stack ignores those values in `.env` until its compose file is replaced, and a value `.env` already holds for one of them takes effect at the first start of the new file: `REGISTRATION_MODE`, `HSTS_ENABLED`, `AUDIT_LOG_ENABLED` and `WEBHOOK_BLOCK_PRIVATE_ADDRESSES` refuse to start the app on a value they cannot read, so review `.env` for these keys before upgrading. The full sequence is in the [Safe Upgrade Procedure](docs/self-hosted.md#safe-upgrade-procedure).
 
 For production-style setups:
 
@@ -395,17 +399,23 @@ AUDIT_LOG_ENABLED=false
 
 # Rate limits (defaults shown); see SECURITY.md's Rate Limits section for the full policy.
 # Each *_MAX has a ceiling (100 for login/register/forgot-password, 600 logout, 200 logout
-# account, 3000 api, 120 calendar feed) and each *_WINDOW must be between 1s and 24h; a value
-# outside its range is logged at boot and the default is used instead — a limiter cannot be
-# widened past its ceiling, let alone switched off. The login, register and forgot-password
-# pairs are also held to at most 30 requests per minute (MAX over WINDOW, e.g. 100 with 200s);
-# a pair above that is logged and both halves fall back to the defaults.
+# account, 3000 api, 120 calendar feed) and each *_WINDOW must be between 1s and 24h (1m and
+# 24h for the login, register, forgot-password, 2FA challenge and password-reset redeem
+# windows); a value outside its range is logged at boot and the default is used instead — a limiter cannot be
+# widened past its ceiling, let alone switched off. The login, register, forgot-password, 2FA
+# challenge and password-reset redeem pairs are also held to at most 30 requests per minute
+# (MAX over WINDOW, e.g. 100 with 200s); a pair above that, or an out-of-range window, is
+# logged and both halves fall back to the defaults.
 # RATE_LIMIT_LOGIN_MAX=8
 # RATE_LIMIT_LOGIN_WINDOW=15m
 # RATE_LIMIT_REGISTER_MAX=8
 # RATE_LIMIT_REGISTER_WINDOW=15m
 # RATE_LIMIT_FORGOT_PASSWORD_MAX=8
 # RATE_LIMIT_FORGOT_PASSWORD_WINDOW=1h
+# RATE_LIMIT_TOTP_CHALLENGE_MAX=8
+# RATE_LIMIT_TOTP_CHALLENGE_WINDOW=15m
+# RATE_LIMIT_PASSWORD_RESET_REDEEM_MAX=8
+# RATE_LIMIT_PASSWORD_RESET_REDEEM_WINDOW=15m
 # RATE_LIMIT_LOGOUT_MAX=60
 # RATE_LIMIT_LOGOUT_WINDOW=15m
 # Per-account (identity-keyed) logout budget, separate from the per-IP pair above

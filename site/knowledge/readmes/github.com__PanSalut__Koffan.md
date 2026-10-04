@@ -125,6 +125,12 @@ To set a custom password:
 APP_PASSWORD=yourpassword go run .
 ```
 
+The stylesheet `static/app.css` is prebuilt with Tailwind CSS. After changing classes in `templates/` or `static/*.js`, rebuild it (Node.js required):
+```bash
+npm install
+npm run build:css
+```
+
 ## Arch Linux (AUR)
 
 Arch Linux users can install Koffan from the [AUR](https://aur.archlinux.org/packages/koffan) using an AUR helper:

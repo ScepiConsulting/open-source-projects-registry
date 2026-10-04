@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/getmydia/mydia/actions/workflows/ci.yml/badge.svg)](https://github.com/getmydia/mydia/actions/workflows/ci.yml)
 [![Documentation](https://github.com/getmydia/mydia/actions/workflows/ci-docs.yml/badge.svg)](https://docs.mydia.dev)
+[![Code health](https://api.repowise.dev/badge/health/getmydia/mydia.svg)](https://repowise.dev/repo/getmydia/mydia)
+[![repowise](https://api.repowise.dev/badge/wiki/getmydia/mydia.svg)](https://repowise.dev/repo/getmydia/mydia)
 [![TestFlight](https://img.shields.io/badge/TestFlight-Install%20on%20iOS-0D96F6?logo=apple&logoColor=white)](https://testflight.apple.com/join/KFSYxaQP)
 
 **Your personal media companion, built with Phoenix LiveView**
@@ -61,13 +63,62 @@ Open http://localhost:4000 and create your admin account.
 ## Features
 
 - **Unified Media Management** - Movies + TV shows with TMDB/TVDB metadata
-- **Automated Downloads** - Quality profiles, smart release ranking
+- **Automated Downloads** - Monitored search, quality profiles, automatic upgrades
+- **Release Ranking** - Picks the right release for you: the right episode, your languages, your quality profile and custom formats
 - **Download Clients** - qBittorrent, Transmission, rqbit, SABnzbd, NZBGet, debrid providers
 - **Indexers** - Prowlarr, Jackett, built-in Cardigann (experimental)
 - **Multi-User** - Admin/guest roles with request workflow
 - **SSO** - Local auth + OIDC/OpenID Connect
 - **Import Lists** - Sync from TMDB watchlists, popular, trending (experimental)
 - **Real-Time UI** - Phoenix LiveView with instant updates
+
+## How Mydia Picks a Release
+
+Automatic and manual search rank releases the same way. Automatic search grabs
+the top one; manual search shows you the list in that order.
+
+```mermaid
+flowchart TD
+    A[Releases found by your indexers] --> B[Drop wrong and unwanted releases]
+    B --> C[Order the rest by what you asked for]
+    C --> D{Who is choosing}
+    D -->|Automatic search| E[Grab the top release]
+    D -->|You, in manual search| F[See the same order and pick]
+```
+
+**Dropped before ranking**
+
+- Fake or malformed release names
+- A different title than the one searched *
+- Tags you blocked
+- Custom formats your profile rejects
+- Sources your profile excludes, such as cam rips *
+- Resolutions below your profile's minimum *
+- Usenet posts too new to be complete
+
+\* Manual search keeps these at the bottom of the list instead.
+
+**Ranking order**, each step only breaking ties left by the one above
+
+1. Right season and episode
+2. Preferred audio language
+3. Resolution, in your profile's order; unlisted resolutions last
+4. Number of preferred audio languages
+5. Custom format score
+6. Quality score: about 60% profile fit (resolution, codec, audio, source,
+   size, HDR), plus seeders or Usenet completeness, plus name match. Torrents
+   with 0 seeders lose 30%.
+
+**Upgrades**
+
+- Found with the same ranking
+- Must beat your current file by the profile's upgrade margin, or add a
+  preferred audio language
+- Checked twice: the release before download, the real file after
+- Your old file is kept until the new one passes
+
+More detail: [Why Mydia Picked That Release](docs/using/explanation/quality-decisions.md)
+and [Custom Formats](docs/configuration/custom-formats.md).
 
 ## Mydia Player
 
@@ -87,7 +138,7 @@ peer-to-peer connection. No port forwarding, no VPN.
 | Android | [Download APK](https://mydia.dev/download/android) | Allow installs from unknown sources; updates itself afterward, track chosen in Settings |
 | iOS | [Install via TestFlight](https://testflight.apple.com/join/KFSYxaQP) | Needs the TestFlight app |
 | macOS | [Download .dmg](https://mydia.dev/download/macos) | Notarized, updates itself |
-| Windows | [Download installer](https://mydia.dev/download/windows) | Per-user install, unsigned build |
+| Windows | `irm https://mydia.dev/install.ps1 \| iex` in PowerShell, or [download installer](https://mydia.dev/download/windows) | Per-user install. The command avoids the SmartScreen prompt the unsigned installer gets |
 | Linux | [Flatpak](https://mydia.dev/download/flatpak) or [.tar.gz](https://mydia.dev/download/linux) | Flatpak recommended |
 | Web | Served by your own Mydia server at `/player` | Nothing to install |
 

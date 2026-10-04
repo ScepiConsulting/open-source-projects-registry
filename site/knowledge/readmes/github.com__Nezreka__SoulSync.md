@@ -45,7 +45,7 @@
 - **Video**
   - [Movies, TV & YouTube](#video-movies-tv--youtube)
 - **Platform**
-  - [Automations](#automations) · [Profiles & access](#profiles--access) · [Chat & arcade](#chat--arcade) · [API & webhooks](#api--webhooks) · [Mobile, PWA & theming](#mobile-pwa--theming)
+  - [Automations](#automations) · [Profiles & access](#profiles--access) · [Chat & arcade](#chat--arcade) · [API & webhooks](#api--webhooks) · [Mobile, PWA & theming](#mobile-pwa--theming) · [Companion browser extension](#companion-browser-extension)
 - [Installation](#installation) · [Setup guide](#setup-guide) · [Architecture](#architecture) · [Contributing](#contributing) · [License](#license)
 
 ---
@@ -138,6 +138,7 @@ One search box with three modes.
 - **Quarantine & review**: anything that fails is held with its reason and uploader. Approve it, recover it to staging, or delete it. Removed files go to a **recycle bin** with configurable retention.
 - **Tagging**: Picard-style **MusicBrainz release preflight** pins one release per album so every track agrees. Tags are written with mutagen (ID3v2.4, FLAC, Vorbis, MP4), enriched in the order you choose.
 - **Extras**: preferred-source cover art with a minimum size, synced lyrics from LRClib, **ReplayGain 2.0** (track + album), optional lossy copies (MP3 / Opus / AAC), and **atomic album publishing** so half-downloaded albums never appear in your server.
+- **File organization**: templates for albums, singles, compilations, playlists, music videos, podcasts and audiobooks (`$albumartist/$album/$track - $title` and friends), including beets-compatible `$atypes` release labels so `[2017][EP][Live] Audiotree Live` and a plain `[2019] Tokyo` come out of the same template.
 - **File organization**: templates for albums, singles, playlists, music videos, podcasts and audiobooks (`$albumartist/$albumartist - $album/$track - $title` and friends).
 
 ## Discover
@@ -324,6 +325,18 @@ Soulseek rooms and private messages through slskd, in a Discord-style layout.
 
 - Fully responsive, and installable as a **PWA** (cover art cached for speed, never stale pages).
 - Accent colours (presets or any custom colour), a sidebar visualizer, background particles, worker orbs, and **Reduce Visual Effects** / **Max Performance** switches for low-power devices.
+
+## Companion browser extension
+
+**[SoulSync Companion](https://github.com/Nezreka/soulsync-extension)** puts your server's knowledge on the pages where you discover music. While browsing Spotify, Deezer, YouTube, Bandcamp, SoundCloud or Tidal, small pills next to artists, albums, tracks and playlists show your real library state — **✓ In library**, **＋ Wishlist**, **👁 Watching** — and one click wishlists a track, watches an artist, or saves a whole playlist straight to your server. Chrome and Firefox, one Manifest V3 codebase.
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Nezreka/soulsync-extension/main/docs/images/popup-now-playing.png" alt="SoulSync Companion popup" width="420">
+</p>
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Nezreka/soulsync-extension/main/docs/images/badges-spotify-artists.png" alt="SoulSync Companion badges on Spotify" width="720">
+</p>
 
 ---
 

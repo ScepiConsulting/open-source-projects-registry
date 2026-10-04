@@ -1,7 +1,7 @@
 {
   "chunk": 6,
   "count": 50,
-  "generated_at": "2026-09-27T09:04:33Z",
+  "generated_at": "2026-10-04T09:29:27Z",
   "items": [
     {
       "repo_key": "github.com/Readarr/Readarr",
@@ -72,11 +72,11 @@
       "app_references": [
         "hymnoscribe"
       ],
-      "readme_status": "not_modified",
-      "readme_path": "knowledge/readmes/github.com__Revisor01__HymnoScribe.md",
+      "readme_status": "error",
+      "readme_path": null,
       "readme_download_url": null,
-      "readme_sha256": "216cec72eceee7470297eba8738f9abf9258bc342749405b1f351611086db734",
-      "error": null
+      "readme_sha256": null,
+      "error": "github_readme_http_404"
     },
     {
       "repo_key": "github.com/Rheosoph/flow-like",
@@ -102,9 +102,9 @@
       "app_references": [
         "quickdrop"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__RoastSlav__quickdrop.md",
-      "readme_download_url": "https://raw.githubusercontent.com/RoastSlav/quickdrop/master/README.md",
+      "readme_download_url": null,
       "readme_sha256": "dd43b4c222e930b3c423375ba558bbd20689eef0f63a172c8026af6cdbcc491a",
       "error": null
     },
@@ -222,9 +222,9 @@
       "app_references": [
         "fireshare"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__ShaneIsrael__fireshare.md",
-      "readme_download_url": "https://raw.githubusercontent.com/fireshare-app/fireshare/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "97da6f9310b4e8235ae4aac189bf81d209d3e32abc3b58f825eb36b765a58934",
       "error": null
     },
@@ -327,9 +327,9 @@
       "app_references": [
         "alexandrie"
       ],
-      "readme_status": "ok",
+      "readme_status": "not_modified",
       "readme_path": "knowledge/readmes/github.com__Smaug6739__Alexandrie.md",
-      "readme_download_url": "https://raw.githubusercontent.com/Smaug6739/Alexandrie/main/README.md",
+      "readme_download_url": null,
       "readme_sha256": "41bc70387fe2812d3c086cde33f761f6855666e0d2b51e85ba0ef4d8194e8406",
       "error": null
     },
@@ -705,7 +705,7 @@
       "readme_status": "ok",
       "readme_path": "knowledge/readmes/github.com__Termix-SSH__Termix.md",
       "readme_download_url": "https://raw.githubusercontent.com/Termix-SSH/Termix/main/README.md",
-      "readme_sha256": "d05c3e48b761825f410e3a07847a70b34a9846ca0f41197ede31868990d144a1",
+      "readme_sha256": "cdb5dd0cfbe7fd96e0de8d36c2e9d38dc2aba7d33764e7ed816d83c08df5ac6b",
       "error": null
     },
     {

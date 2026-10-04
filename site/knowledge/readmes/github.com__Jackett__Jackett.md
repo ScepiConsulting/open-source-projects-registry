@@ -85,6 +85,7 @@ Prior versions of Jackett are no longer supported.
  * ACG.RIP
  * Anibt
  * AniLibria
+ * Anime Tosho
  * AniRena
  * AniSource
  * ApacheTorrent
@@ -154,7 +155,6 @@ Prior versions of Jackett are no longer supported.
  * TheRARBG
  * Tokyo Tosho
  * Torrent Downloads
- * Torrent Oyun indir
  * Torrent[CORE]
  * torrent.by
  * torrent-pirat
@@ -167,7 +167,6 @@ Prior versions of Jackett are no longer supported.
  * Torrents.csv
  * Torrentsome (토렌트썸)
  * Torrenttip (토렌트팁)
- * U2P
  * U3C3
  * Uindex
  * UzTracker
@@ -186,7 +185,6 @@ Prior versions of Jackett are no longer supported.
 
  * AniDUB
  * Anime by Belka (Аниме от Белки)
- * Anime Tosho
  * AnimeLayer
  * Best-Torrents [PAY2DL]
  * BitMagnet (Local DHT) [[site](https://github.com/bitmagnet-io/bitmagnet)]
@@ -270,6 +268,7 @@ Prior versions of Jackett are no longer supported.
  * AGSVPT (Arctic Global Seed Vault)
  * Aidoru!Online
  * Aither
+ * AlaBala
  * alingPT
  * AlphaRatio (AR)
  * AmigosShareClub (ASC)
@@ -301,10 +300,10 @@ Prior versions of Jackett are no longer supported.
  * BigCore
  * Bit-Bázis
  * BIT-HDTV
+ * BitAgent [![(invite needed)][inviteneeded]](#)
  * Bitded
  * bitGAMER
  * BitHUmen
- * Bitpalace
  * BitPorn
  * BitTorrentFiles
  * BiTTuRK
@@ -338,7 +337,6 @@ Prior versions of Jackett are no longer supported.
  * CinemaZ (EuTorrents)
  * ClearJAV
  * Coastal-Music-Crew (C-M-C)
- * ConCen (Conspiracy Central) [![(invite needed)][inviteneeded]](#)
  * Concertos
  * CrabPT (蟹黄堡)
  * CrazySpirits
@@ -359,6 +357,7 @@ Prior versions of Jackett are no longer supported.
  * DICMusic [![(invite needed)][inviteneeded]](#)
  * DigitalCore (DC)
  * DimeADozen (EzTorrent)
+ * DirtyBytes
  * DiscFan [![(invite needed)][inviteneeded]](#)
  * DocsPedia
  * DreadVault
@@ -521,7 +520,9 @@ Prior versions of Jackett are no longer supported.
  * Peeratiko
  * PeerGarden
  * Peers.FM
+ * Periodical [![(invite needed)][inviteneeded]](#)
  * Phoenix Project
+ * PhoenixPT (凤凰PT)
  * PigNetwork (猪猪网)
  * PixelCove (Ultimate Gamer)
  * PiXELHD (PxHD) [![(invite needed)][inviteneeded]](#)
@@ -599,6 +600,7 @@ Prior versions of Jackett are no longer supported.
  * SportsCult
  * Sportz247
  * SpringSunday (SSD) [![(invite needed)][inviteneeded]](#)
+ * Stellarwinds
  * Superbits (SBS)
  * Swarmazon
  * TangPT (躺平)
@@ -614,10 +616,10 @@ Prior versions of Jackett are no longer supported.
  * The Falling Angels (TFA)
  * The Geeks
  * The Kitchen (TK)
+ * The New Heaven [![(invite needed)][inviteneeded]](#)
  * The New Retro
  * The Occult (TO)
  * The Old School (TOS)
- * The Paradiese
  * The Place (TP)
  * The Show (TSBZ)
  * The Vault (TVBZ)

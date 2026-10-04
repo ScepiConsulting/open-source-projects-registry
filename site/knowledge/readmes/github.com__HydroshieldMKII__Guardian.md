@@ -7,14 +7,13 @@
 [![Docker Pulls](https://img.shields.io/docker/pulls/hydroshieldmkii/guardian.svg?label=pulls%20(v2))](https://hub.docker.com/r/hydroshieldmkii/guardian)
 [![Legacy Pulls](https://img.shields.io/docker/pulls/hydroshieldmkii/guardian-frontend.svg?label=pulls%20(v1))](https://hub.docker.com/r/hydroshieldmkii/guardian-frontend)
 [![Stars](https://img.shields.io/github/stars/HydroshieldMKII/Guardian.svg?style=flat)](https://github.com/HydroshieldMKII/Guardian/stargazers)
-[![Discord](https://img.shields.io/discord/1415505445883215955?logo=discord&label=Discord)](https://discord.gg/xTKuHyhdS4)
 
 ![Guardian Banner](https://github.com/user-attachments/assets/ff8b9bbc-f5d4-451a-bdc1-cb2354023c8b)
 
 Guardian is an access-control layer for Plex Media Server. It polls the Plex sessions API, matches each stream against per-user and per-device policy, and terminates the sessions that fail.
 
 > [!WARNING]
-> **Looking for a maintainer.** Reach out on [Discord](https://discord.gg/xTKuHyhdS4) or in [Discussions](https://github.com/HydroshieldMKII/Guardian/discussions).
+> **Looking for a maintainer.** Reach out in [Discussions](https://github.com/HydroshieldMKII/Guardian/discussions).
 >
 > Do not expose Guardian directly to the internet. Run it on a LAN, behind a VPN, or behind a reverse proxy with SSO.
 
@@ -118,7 +117,7 @@ docker compose exec guardian node backend/src/scripts/disable-captcha.js
 
 **Reset emails not arriving** — confirm SMTP works with the test button, confirm `APP_URL` is set, and confirm the admin account has an email address.
 
-Otherwise, ask on [Discord](https://discord.gg/xTKuHyhdS4) or open an [issue](https://github.com/HydroshieldMKII/Guardian/issues).
+Otherwise, open an [issue](https://github.com/HydroshieldMKII/Guardian/issues).
 
 ## Development
 
@@ -140,4 +139,4 @@ Open an issue with the bug or feature template, or a pull request with the check
 
 ## License
 
-Released under the [PolyForm Noncommercial License 1.0.0](LICENSE.md). Fork it, change it and share it for any noncommercial purpose, keeping the copyright notice with it. Commercial use is not covered. The software comes with no warranty.
+Released under the [PolyForm Noncommercial License 1.0.0](LICENSE.md).

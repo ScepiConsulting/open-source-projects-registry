@@ -10,7 +10,7 @@
 
 **Kuvasz** [ˈkuvɒs] is an open-source, self-hosted uptime & SSL monitoring service with [**status pages**](https://demo.kuvasz-uptime.dev/status), designed to help you keep track of your websites and services. It provides a modern, user-friendly interface, a powerful REST API + MCP server, maintenance windows and supports multiple notification channels like email, Discord, Slack, Telegram, Microsoft Teams, Apprise, Pushover, PagerDuty and custom webhooks.
 
-![Kuvasz](docs/docs/images/feature_carousel.webp)
+![Kuvasz](docs/docs/images/ui/dashboard.webp)
 
 ## [📖 Documentation](https://kuvasz-uptime.dev)
 
@@ -37,6 +37,7 @@ If you want to get started quickly, please refer to the [**Deployment guide**](h
 - **Ping (ICMP) monitoring**: Check the reachability and latency of any host by sending ICMP echo requests (pings) to it.
 - **TCP port monitoring**: Check whether any TCP service — databases, SMTP, SSH, message brokers, and more — accepts connections, and track connect latency.
 - **DNS monitoring**: Check that a name resolves, assert on the returned records (`A`, `MX`, `TXT`, `NS`, and more) with exact, substring or regex matchers, verify the response code, and optionally get notified when the resolved records change behind your back.
+- **Docker monitoring**: Check whether your containers are actually running and healthy - including their healthchecks, exit codes and OOM kills - through the Docker daemon, locally or remotely (TLS and mutual TLS included), and optionally track their CPU and memory usage.
 - **Notifications on a per-monitor basis**: Configure different notification channels for each monitor, allowing you to tailor alerts to your specific needs.
 - **Status pages**: Create public or private status pages to keep your users or your own team informed about the status of your services.
 - **Sleek UI**: Kuvasz has a modern, responsive, and user-friendly interface that makes it easy to manage your monitors.
@@ -76,6 +77,7 @@ If you want to get started quickly, please refer to the [**Deployment guide**](h
 | **Ping (ICMP) monitoring**           |      ✅       |        ✅        |        ✅        |
 | **TCP monitoring**                   |      ✅       |        ✅        |        ✅        |
 | **DNS monitoring**                   |      ✅       |        ❌        |        ✅        |
+| **Docker container monitoring**      |      ✅       |        ❌        |        ❌        |
 | **Domain expiration monitoring**     |      ❌       |        ❌        |        ✅        |
 | **Notifications**                    |               |                  |                  |
 | Email                                |      ✅       |        ✅        |        ✅        |

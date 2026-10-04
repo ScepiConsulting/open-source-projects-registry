@@ -85,6 +85,7 @@ The table below identifies the services this tool supports and some example serv
 | [Feishu](https://appriseit.com/services/feishu/) | feishu://    | (TCP) 443    | feishu://token
 | [Flock](https://appriseit.com/services/flock/) | flock://    | (TCP) 443    | flock://token<br/>flock://botname@token<br/>flock://app_token/u:userid<br/>flock://app_token/g:channel_id<br/>flock://app_token/u:userid/g:channel_id
 | [Flowtriq](https://appriseit.com/services/flowtriq/) | flowtriq:// or flowtriqs://    | (TCP) 80 or 443    | flowtriq://apikey@hostname/webhook/path<br />flowtriqs://apikey@hostname/webhook/path
+| [GoAlert](https://appriseit.com/services/goalert/) | goalert:// or goalerts://    | (TCP) 80 or 443    | goalert://hostname/integration_key<br />goalerts://hostname/integration_key1/integration_key2<br />goalerts://hostname/path/integration_key
 | [Google Chat](https://appriseit.com/services/googlechat/) | gchat://    | (TCP) 443    | gchat://workspace/key/token
 | [Gotify](https://appriseit.com/services/gotify/) | gotify:// or gotifys://   | (TCP) 80 or 443    | gotify://hostname/token<br />gotifys://hostname/token?priority=high
 | [GroupMe](https://appriseit.com/services/groupme/) | groupme://   | (TCP) 443   | groupme://bot_id<br />groupme://bot_id/access_token
@@ -113,7 +114,7 @@ The table below identifies the services this tool supports and some example serv
 | [Misskey](https://appriseit.com/services/misskey/) | misskey:// or misskeys://| (TCP) 80 or 443  | misskey://access_token@hostname
 | [MQTT](https://appriseit.com/services/mqtt/) | mqtt://  or mqtts:// | (TCP) 1883 or 8883   | mqtt://hostname/topic<br />mqtt://user@hostname/topic<br />mqtts://user:pass@hostname:9883/topic
 | [Nextcloud](https://appriseit.com/services/nextcloud/) | ncloud:// or nclouds:// | (TCP) 80 or 443 | ncloud://adminuser:pass@host/User<br/>nclouds://adminuser:pass@host/User1/User2/UserN
-| [NextcloudTalk](https://appriseit.com/services/nextcloudtalk/) | nctalk:// or nctalks:// | (TCP) 80 or 443 | nctalk://user:pass@host/RoomId<br/>nctalks://user:pass@host/RoomId1/RoomId2/RoomIdN
+| [NextcloudTalk](https://appriseit.com/services/nextcloudtalk/) | nctalk:// or nctalks:// | (TCP) 80 or 443 | nctalk://user:pass@host/RoomId<br/>nctalks://user:pass@host/RoomId1/RoomId2/RoomIdN<br/>nctalks://host/RoomId?secret=BotSecret
 | [Notica](https://appriseit.com/services/notica/) | notica://  | (TCP) 443   | notica://Token/
 | [Notifiarr](https://appriseit.com/services/notifiarr/) | notifiarr:// | (TCP) 443 | notifiarr://apikey/#channel<br />notifiarr://apikey/#channel1/#channel2/#channeln
 | [Notifico](https://appriseit.com/services/notifico/) | notifico:// or notificos://  | (TCP) 80 or 443   | notifico://ProjectID/MessageHook/<br />notifico://host/ProjectID/MessageHook/<br />notificos://host/ProjectID/MessageHook/
@@ -154,7 +155,7 @@ The table below identifies the services this tool supports and some example serv
 | [Signal API](https://appriseit.com/services/signal/) | signal://  or signals:// | (TCP) 80 or 443  | signal://hostname:port/FromPhoneNo<br/>signal://hostname:port/FromPhoneNo/ToPhoneNo<br/>signal://hostname:port/FromPhoneNo/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
 | [Signalgrid](https://appriseit.com/services/signalgrid/) | signalgrid://  | (TCP) 443   | signalgrid://CLIENT_KEY/CHANNEL<br />signalgrid://CLIENT_KEY/CHANNEL1/CHANNEL2<br />signalgrid://CLIENT_KEY/CHANNEL?critical=true
 | [SIGNL4](https://appriseit.com/services/signl4/) | signl4://  | (TCP) 80 or 443  | signl4://hostname
-| [SimplePush](https://appriseit.com/services/simplepush/) | spush://   | (TCP) 443    | spush://apikey<br />spush://salt:password@apikey<br />spush://apikey?event=Apprise
+| [Simplepush](https://appriseit.com/services/simplepush/) | spush://   | (TCP) 443    | spush://APIToken<br />spush://APIToken/Topic<br />spush://Password@APIToken/Topic<br />spush://IntegrationToken/@Member<br />spush://IntegrationToken/?broadcast=yes
 | [Slack](https://appriseit.com/services/slack/) | slack://  | (TCP) 443   | slack://TokenA/TokenB/TokenC/<br />slack://TokenA/TokenB/TokenC/Channel<br />slack://botname@TokenA/TokenB/TokenC/Channel<br />slack://user@TokenA/TokenB/TokenC/Channel1/Channel2/ChannelN
 | [SMTP2Go](https://appriseit.com/services/smtp2go/) | smtp2go:// | (TCP) 443 | smtp2go://user@hostname/apikey<br />smtp2go://user@hostname/apikey/email<br />smtp2go://user@hostname/apikey/email1/email2/emailN<br />smtp2go://user@hostname/apikey/?name="From%20User"
 | [SparkPost](https://appriseit.com/services/sparkpost/) | sparkpost:// | (TCP) 443 | sparkpost://user@hostname/apikey<br />sparkpost://user@hostname/apikey/email<br />sparkpost://user@hostname/apikey/email1/email2/emailN<br />sparkpost://user@hostname/apikey/?name="From%20User"

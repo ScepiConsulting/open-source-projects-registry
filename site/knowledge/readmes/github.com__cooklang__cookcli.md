@@ -51,6 +51,7 @@ any device with a web browser.
 * 🛒 **Smart Shopping** - Generate organized shopping lists
 * 🔍 **Recipe Search** - Find recipes quickly
 * 📦 **Pantry Tracking** - Manage inventory and expiration dates
+* ☁️ **Sync** - after `cook login`, `cook server` keeps your recipe folder in step with your phone and desktop through [Cook Cloud sync](https://cook.md/) (Cook Basic)
 
 ## 🚀 Getting Started
 
@@ -139,11 +140,11 @@ Serving Web UI on http://localhost:9080
 Serving recipe files from: "/Users/chefalexey/recipes"
 ```
 
-<img width="600" alt="recipes" src="docs/screenshots/recipe-list.png?v=2" />
-<img width="600" alt="recipe" src="docs/screenshots/recipe-detail.png?v=2" />
-<img width="600" alt="menu" src="docs/screenshots/menu.png?v=2" />
-<img width="600" alt="shopping list" src="docs/screenshots/shopping-list.png?v=2" />
-<img width="600" alt="pantry" src="docs/screenshots/pantry.png?v=2" />
+<img width="600" alt="recipes" src="docs/screenshots/recipe-list.png?v=3" />
+<img width="600" alt="recipe" src="docs/screenshots/recipe-detail.png?v=3" />
+<img width="600" alt="menu" src="docs/screenshots/menu.png?v=3" />
+<img width="600" alt="shopping list" src="docs/screenshots/shopping-list.png?v=3" />
+<img width="600" alt="pantry" src="docs/screenshots/pantry.png?v=3" />
 
 
 ## 📦 Installation
@@ -172,6 +173,18 @@ sudo dnf install ./cookcli-<version>-1.fcXX.x86_64.rpm
 
 The package installs the `cook` binary and shell completions. To build the RPM
 yourself (or to set up a COPR repository), see [packaging/fedora](packaging/fedora).
+
+### Debian / Ubuntu
+
+Every [release](https://github.com/cooklang/CookCLI/releases) ships `.deb`
+packages for amd64 and arm64. They install on Debian 12+ and Ubuntu 22.04+:
+
+```bash
+sudo apt install ./cookcli_<version>-1_amd64.deb
+```
+
+The package installs the `cook` binary and shell completions. To build it
+yourself, see [packaging/debian](packaging/debian).
 
 ### Install with Cargo
 
@@ -336,7 +349,7 @@ cook server
 cook server --host
 
 # Only if you open it by host name instead of IP address: name that origin,
-# or the web UI can read but not save
+# or the server refuses to answer it
 cook server --host --cors-origin http://raspberrypi.local:9080
 
 # Use a different port
@@ -344,6 +357,79 @@ cook server --port 8080
 
 # Open browser immideately
 cook server --open
+
+# Require sign-in before anyone can change recipes (asks for a password)
+cook server user add alice
+```
+
+Without users, anyone who can reach the server can change your recipes. Once
+you add one, visitors can still browse, but creating, editing or deleting
+recipes and changing the pantry or the shopping list need a signed-in user.
+Manage users with `cook server user add|passwd|remove|list`; a running server
+picks up the changes on its own. See [Signing in to make
+changes](docs/server.md#signing-in-to-make-changes).
+
+#### Sign-in in a container
+
+The container image runs `cook server /recipes --host`, so the server is open
+to everyone who can reach the container. To require sign-in:
+
+1. **Give the container a configuration directory.** The image's user has no
+   home directory, so without one there is nowhere to keep the users file or
+   the key that signs session cookies. In `docker-compose.yml`:
+
+   ```yaml
+   services:
+     cookcli:
+       image: ghcr.io/cooklang/cookcli:latest
+       environment:
+         COOK_CONFIG_DIR: /config
+       ports:
+         - "9080:9080"
+       volumes:
+         - ./recipes:/recipes
+         - ./config:/config
+   ```
+
+   Create the folder yourself before the first start (`mkdir config`): a
+   folder Docker creates belongs to root, and the container runs as UID 1000,
+   which cannot write to it. If your own UID is not 1000, set `user:` as the
+   comment in `docker-compose.yml` explains.
+
+2. **Add the first user.** Before starting the container:
+
+   ```bash
+   docker compose run --rm cookcli cook server user add alice
+   docker compose up -d
+   ```
+
+   If it is already running, add the user inside it and restart it once.
+   Sign-in turns on when the server starts with a users file, so only this
+   first user needs a restart:
+
+   ```bash
+   docker compose exec cookcli cook server user add alice
+   docker compose restart cookcli
+   ```
+
+3. **Manage users in the running container.** No restart needed: the server
+   reloads the users file when it changes. Removing a user or changing their
+   password signs them out everywhere.
+
+   ```bash
+   docker compose exec cookcli cook server user add bob
+   docker compose exec cookcli cook server user passwd bob
+   docker compose exec cookcli cook server user remove bob
+   docker compose exec cookcli cook server user list
+   ```
+
+The password prompt does not echo what you type. `docker compose exec` and
+`run` give the command a terminal; with plain `docker`, pass `-it`
+(`docker exec -it <container> cook server user add bob`). From a script, with
+no terminal, pipe the password in and pass `-T`:
+
+```bash
+printf '%s\n' "$PASSWORD" | docker compose exec -T cookcli cook server user add bob
 ```
 
 ### `cook build web`
@@ -382,7 +468,8 @@ cook search -b ~/recipes pasta
 ### `cook import`
 
 Import recipes from websites and convert them to Cooklang format. Requires
-`OPENAI_API_KEY` environment variable set.
+`OPENAI_API_KEY` environment variable set. Or
+[convert a recipe to Cooklang](https://cook.md/cookifies/new) on cook.md (Cook Basic).
 
 ```bash
 # Import a recipe
@@ -490,8 +577,9 @@ Configuration files:
 
 Set `COOK_CONFIG_DIR` to use a different global configuration directory. It
 replaces the platform default above for *everything* CookCLI keeps there —
-`aisle.conf`, `pantry.conf`, your CookCloud session and the sync database — so
-it gives you a self-contained CookCLI:
+`aisle.conf`, `pantry.conf`, your CookCloud session, the sync database, and
+`cook server`'s users file, session key and signed-out sessions — so it gives
+you a self-contained CookCLI:
 
 ```bash
 COOK_CONFIG_DIR=~/kitchen/cook-config cook shopping-list dinner.cook
@@ -508,8 +596,8 @@ both.
 ### `COOK_CORS_ORIGIN`
 
 Set `COOK_CORS_ORIGIN` to name the origins `cook server` accepts browser
-requests from, separated by commas — the same values as `--cors-origin`, which
-overrides the variable:
+requests from, and so the host names it answers at, separated by commas — the
+same values as `--cors-origin`, which overrides the variable:
 
 ```bash
 COOK_CORS_ORIGIN=https://cook.example.com cook server --host
@@ -518,6 +606,17 @@ COOK_CORS_ORIGIN=https://cook.example.com cook server --host
 It exists for containers, where passing a flag means restating the image's
 whole command. An empty value means "unset". `--no-csrf-check` has no
 equivalent variable and has to be passed on the command line.
+
+### `COOK_USERS_FILE`
+
+Names the users file `cook server` reads to require sign-in, in place of
+`users.toml` in the configuration directory. `cook server user` edits the same
+file. `--users-file` overrides it, and an empty value means "unset". See
+[Signing in to make changes](docs/server.md#signing-in-to-make-changes).
+
+```bash
+COOK_USERS_FILE=/etc/cook/users.toml cook server --host
+```
 
 ### Aisle Configuration (`aisle.conf`)
 

@@ -222,7 +222,35 @@ cronitor configure
 # Optionally, restrict which system users' crontabs are loaded
 cronitor configure --users user1,user2
 ```
-For systemd and Docker examples, and security best‑practices, see the full [Dashboard documentation](https://crontab.guru/dashboard.html).
+### Docker
+
+The included `dockerfile` downloads and extracts the CLI for the target platform
+(`amd64`, `arm64`, or `arm`). Credentials are supplied when the container starts;
+do not put them in Docker build arguments or Dockerfile `ENV` instructions.
+The dashboard reads these environment variables directly, so no
+`cronitor configure` step is needed.
+
+Create a local `.env` file (ignored by Git) and set permissions with `chmod 600 .env`:
+
+```dotenv
+CRONITOR_DASH_USER=your-username
+CRONITOR_DASH_PASS='replace-with-a-strong-password'
+```
+
+Then build and start the dashboard:
+
+```sh
+docker compose -f compose.dashboard.yml up -d --build
+```
+
+Open `http://localhost:9000`, or use the SSH tunnel above for remote access.
+The Compose example requires both credentials and binds the port to localhost.
+Runtime environment variables remain accessible to Docker administrators.
+Configuration and container crontabs are stored in named volumes. This starts
+the dashboard only; running scheduled jobs also requires a cron daemon.
+
+The existing `docker-compose.yml` is for development. For systemd setup and
+additional deployment guidance, see the [Dashboard documentation](https://crontab.guru/dashboard.html).
 
 ## Configuration and secrets
 
@@ -256,6 +284,16 @@ Jobs that run as another user then need credentials from somewhere else:
 If the config file exists but cannot be read, the CLI prints one warning to stderr naming the path instead of running unconfigured.
 
 On Windows, new files get an owner-restricted ACL (Administrators and SYSTEM keep access, a platform limitation). Existing files keep their ACL unless `--restrict` is passed.
+
+### Telemetry host
+
+Pings go to `cronitor.link` by default, which is right for most workloads. For latency-sensitive workloads in Europe, send pings to the EU endpoint instead:
+
+```
+export CRONITOR_PING_API_HOST=eu.cronitor.link
+```
+
+You can also pass `--ping-api-host eu.cronitor.link`, or save it with `cronitor configure --ping-api-host eu.cronitor.link`. The EU endpoint accepts the same API keys and sends events to the same monitors. It changes only where requests are received; it is not a data residency option. A bare host gets `https://`. Retries still fall back to `cronitor.io`. A host outside `cronitor.link`, such as a private proxy, is used for every attempt.
 
 ## MCP Server (AI Integration)
 

@@ -391,8 +391,9 @@ unit on Linux, a launchd agent on macOS — so monitoring survives logout and
 reboot. Both are user-level and neither is a preference: on Linux the watch list
 lives in your home directory, so a root unit would find an empty list; on macOS
 Docker Desktop only runs inside a logged-in session, so a LaunchDaemon would
-poll a daemon that is not there. On Linux a user unit stops at logout unless you
-run `sudo loginctl enable-linger $USER`, which `watch install` tells you.
+poll a daemon that is not there. On Linux a user unit stops at logout unless
+lingering is on; `watch install` checks, and if it is off tells you to run
+`loginctl enable-linger $USER` (with sudo only if your system refuses it).
 
 `watch start` is the monitoring process. It watches the containers and services
 on the watch list for restarts, checks CPU, memory and disk against your
@@ -1037,7 +1038,8 @@ for change in report["notable_changes"]:
 ```
 
 Every line carries `text` as well, so a caller that only wants to print it does not have
-to put the sentence back together.
+to put the sentence back together. A run that found nothing returns `"notable_changes": []`,
+so the loop above does nothing on a quiet day.
 
 Nothing above this is homebutler's business: an MCP client, a chat bot, a cron line or a
 person at a terminal all reach the same answer.

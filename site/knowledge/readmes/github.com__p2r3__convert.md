@@ -44,18 +44,16 @@ Though please note, "converting X to Y doesn't work" is **not** a bug report. Ho
 
 ### Local development (Bun + Vite)
 
-1. Clone this repository _**WITH SUBMODULES**_. You can use `git clone --recursive https://github.com/p2r3/convert` for that. Omitting submodules will leave you missing a few dependencies.
+1. Clone this repository with `git clone https://github.com/p2r3/convert`.
 2. Install [Bun](https://bun.sh/).
 3. Run `bun install` to install dependencies.
-4. Run `bunx vite` to start the development server.
+4. Run `bun run dev` to start the development server.
 
 _The following steps are optional, but recommended for performance:_
 
 When you first open the page, it'll take a while to generate the list of supported formats for each tool. If you open the console, you'll see it complaining a bunch about missing caches.
 
-After this is done (indicated by a `Built initial format list` message in the console), use `printSupportedFormatCache()` to get a JSON string with the cache data. You can then save this string to `cache.json` to skip that loading screen on startup.
-
-If you run into issues where your changes seem to not be applying, try disabling this cache.
+You can generate this list beforehand and save it into `dist/` by running `bun run cache:build` after `bun run build`. If you run into issues where your changes seem to not be applying, try deleting `dist/cache.json`.
 
 ### Docker (prebuilt image)
 
@@ -95,29 +93,17 @@ Below is a super barebones handler that does absolutely nothing. You can use thi
 // file: dummy.ts
 
 import type { FileData, FileFormat, FormatHandler } from "../FormatHandler.ts";
-import CommonFormats, { Category } from "src/CommonFormats.ts";
+import Formats from "src/Formats.ts";
 
 class dummyHandler implements FormatHandler {
-  public name: string = "dummy";
-  public supportedFormats: FileFormat[] = [
-    // Example PNG format, with both input and output disabled
-    CommonFormats.PNG.builder("png").markLossless().allowFrom(false).allowTo(false),
-
-    // Alternatively, if you need a custom format, define it like so:
-    {
-      name: "CompuServe Graphics Interchange Format (GIF)",
-      format: "gif",
-      extension: "gif",
-      mime: "image/gif",
-      from: false,
-      to: false,
-      internal: "gif",
-      category: [Category.IMAGE, Category.VIDEO], // See src/CommonFormats.ts for valid categories
-      lossless: false,
-    },
+  public readonly name = "dummy";
+  public supportedFormats = [
+    Formats.PNG.builder("png").lossless().fromTo(),
+    // modifiers go before the direction
+    Formats.GIF.builder("gif").to(),
+    // add custom formats to Formats.ts
   ];
-  public ready: boolean = false;
-  public offload: boolean = true;
+  public ready = false;
 
   async init() {
     this.ready = true;
@@ -135,6 +121,8 @@ class dummyHandler implements FormatHandler {
 
 export default dummyHandler;
 ```
+
+After that, make sure to add add `dummy: []` into the HANDLERS array in [src/handlers/index.ts](src/handlers/index.ts) so it can be used in conversions.
 
 For more details on how all of these components work, refer to the doc comments in [src/FormatHandler.ts](src/FormatHandler.ts). You can also take a look at existing handlers to get a more practical example.
 
@@ -161,12 +149,11 @@ Not every handler needs a dedicated unit test, but handlers with non-trivial cus
 If your tool requires an external dependency (which it likely does), there are currently two well-established ways of going about this:
 
 - If it's an `npm` package, just install it to the project like you normally would.
-- If it's a Git repository, add it as a submodule to [src/handlers](src/handlers).
-- If neither of the above are available, then **as a last resort**, you may create a folder with the required assets under `src/handlers/handlerName`.
+- Everything else should use our build system. Usually you can just run `bun run build:add <name> <tar.gz or zip url>`, then `bun run build:assemble`, then import from the `built/<name>` folder. The full reference is under [recipe/README.md](recipe/README.md).
 
-**Please try to avoid CDNs (Content Delivery Networks).** They're really cool on paper, but they don't work well with TypeScript, and each one introduces a tiny bit of instability. For a project that leans heavily on external dependencies, those bits of instability can add up fast.
+**Please do not use CDNs (Content Delivery Networks).** They're really cool on paper, but they don't work well with TypeScript, and each one introduces a tiny bit of instability. For a project that leans heavily on external dependencies, those bits of instability can add up fast.
 
-- If you need to load a WebAssembly binary (or similar), add its path to [vite.config.js](vite.config.js) and target it under `/convert/wasm/`. **Do not link to node_modules**.
+- If you need to load a WebAssembly binary (or similar), use vite's ?url imports, like `import wasmUrl from "node_modules/stuff/wasm.wasm?url"` (or copy it into the output using vite.config.js). Don't try to fetch stuff from node_modules directly.
 
 ### AI Usage Policy
 
@@ -175,6 +162,7 @@ If you intend to use an LLM, agent-enabled IDE, or other AI-driven tool for your
 - Clearly state that you've used an LLM, ideally in your pull request's description. Do not attempt to pass off an AI's work as your own. I'm far more likely to accept a pull request that openly admits to using AI than one that does but pretends it doesn't. Transparency helps the maintainer (me) know what to keep an eye out for (e.g. hallucinations), and helps you keep yourself in check.
 - Do not overindulge. If your contribution is trivial or simple enough to be written by hand, please opt to write it by hand. This is especially true if it's your first contribution. You're much more likely to retain knowledge and understanding about architectural details if you've familiarized yourself with the process hands-on first.
 - Keep the scope to things you _could_ do by hand. LLMs are tools, and this is a community-driven project. Orchestrating an AI to write logic that you don't fully comprehend is not only reckless for a community project, it's also disrespectful towards human contributors who took the time to research their additions. In other words, there should _never_ be a scenario where you _need_ an LLM.
+- Do not write any of the pull request/issue text with an LLM, except for translation. I only want to talk with a real person.
 - Explain what you (and the LLM) are doing, in a way that makes it clear that you understand the changes you're making.
 
 Not adhering to these rules will likely get your pull request closed.
