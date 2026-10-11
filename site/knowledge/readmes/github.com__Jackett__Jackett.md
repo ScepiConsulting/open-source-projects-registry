@@ -173,7 +173,6 @@ Prior versions of Jackett are no longer supported.
  * VSTHouse
  * VST Torrentz
  * VSTorrent
- * Wolfmax4K
  * World-torrent
  * XXXClub
  * xxxtor
@@ -300,7 +299,7 @@ Prior versions of Jackett are no longer supported.
  * BigCore
  * Bit-Bázis
  * BIT-HDTV
- * BitAgent [![(invite needed)][inviteneeded]](#)
+ * BitAgent
  * Bitded
  * bitGAMER
  * BitHUmen
@@ -376,6 +375,7 @@ Prior versions of Jackett are no longer supported.
  * FANO.IN [![(invite needed)][inviteneeded]](#)
  * Fappaizuri
  * Femdomcult
+ * FileIplay
  * FileList (FL)
  * FinElite (FE) [![(invite needed)][inviteneeded]](#)
  * Flood (FLD)
@@ -589,7 +589,6 @@ Prior versions of Jackett are no longer supported.
  * Simurg
  * Siqi
  * SkipTheCommercials
- * Slobit Games
  * SnowPT (SSPT)
  * SoulVoice (聆音Club) [![(invite needed)][inviteneeded]](#)
  * SpeedApp (SceneFZ, XtreMeZone / MYXZ, ICE Torrent)

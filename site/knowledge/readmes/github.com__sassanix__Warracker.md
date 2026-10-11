@@ -3,7 +3,7 @@
     
 <img src="https://github.com/user-attachments/assets/2132a842-4233-4d37-8fde-b2d23353ed76" width="100"/>
 
-<h1 <strong>Warracker</strong></h1>
+<h1><strong>Warracker</strong></h1>
 <p align="center">
     <b>Open-source warranty tracker for individuals and teams.</b> <br/>
 The easiest way to organize product warranties, monitor expiration dates, and store receipts or related documents.
@@ -20,21 +20,15 @@ The easiest way to organize product warranties, monitor expiration dates, and st
 ![GitHub release](https://img.shields.io/github/v/release/sassanix/Warracker)
 ![GitHub contributors](https://img.shields.io/github/contributors/sassanix/Warracker)
 [![Discord](https://img.shields.io/badge/discord-chat-green?logo=discord)](https://discord.gg/PGxVS3U2Nw)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/sassanix/Warracker)
+[![Ask DeepWiki](https://img.shields.io/badge/Ask_DeepWiki-AI_docs-blue)](https://deepwiki.com/sassanix/Warracker)
 
 <p align="center">
   <img src="images/demo2.gif" alt="Warracker Demo" width="650">
 </p>
 
-
-#
-
-
-    
 </div>
-⭐ If you find Warracker helpful, we’d truly appreciate a star on GitHub! Your support motivates us to keep improving and building great new features.
 
-#
+⭐ If you find Warracker helpful, we’d truly appreciate a star on GitHub! Your support motivates us to keep improving and building great new features.
 
 ## 🌟Overview
 
@@ -124,7 +118,18 @@ The essential features are reliable and ready for everyday use. Development is o
 
 *   Docker and Docker Compose installed on your system.
 
-## 🐋Pull Docker
+### Steps
+
+1. Copy the compose file and `.env` example from the [`Docker/`](https://github.com/sassanix/Warracker/tree/main/Docker) folder.
+2. Fill in the required values in your `.env` file (database credentials, `SECRET_KEY`, etc.).
+3. Start the stack:
+    ```
+    docker compose up -d
+    ```
+4. Open `http://localhost:8005` in your browser. The first account you create automatically becomes the admin.
+
+<details>
+<summary>Full <code>docker-compose.yml</code> reference</summary>
 
 ```
 services:
@@ -159,7 +164,7 @@ volumes:
   warracker_uploads:
 ```
 
-To get the docker compose file with environemts and .env example for warracker and the warrackerdb please go [here](https://github.com/sassanix/Warracker/tree/main/Docker)
+</details>
 
 ## 📝 Usage
 
@@ -308,6 +313,10 @@ We welcome contributions and appreciate your interest in improving this project!
 
 Want to discuss the project or need help? Join our Discord community!
 
+## 🔒Security
+
+Found a vulnerability? Please report it privately instead of opening a public issue — open a [private security advisory](https://github.com/sassanix/Warracker/security/advisories/new) or reach out on [Discord](https://discord.gg/PGxVS3U2Nw). We credit all responsible disclosures in the release notes and README acknowledgements.
+
 ## 📜License
 
 This project is licensed under the GNU Affero General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
@@ -320,6 +329,10 @@ This project is licensed under the GNU Affero General Public License v3.0 - see 
 *   Chart.js
 *   Apprise
 *   i18next
+
+### Security researchers
+*   [lazymaster101](https://github.com/lazymaster101) and the CSCE 413 (Texas A&M University) vulnerability-research team — Carrigan Royer, Jayani Singh, Seshadithya Saravanan, Aaditya Srinivasan, Miko Quinones — for the responsible disclosure of a stored XSS vulnerability.
+*   [humidnhefty](https://github.com/humidnhefty) (Malik Abdullah, Lupine Security) — for the responsible disclosure of an authorization bypass on the `/api/files/` document-serving route.
 
 
 ## ⭐Star History

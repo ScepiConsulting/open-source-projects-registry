@@ -44,6 +44,7 @@ It also detects any content featured *inside* pages & extracts it out into a fol
 - 🎥 **Social Media**/**News** ➡️ `post content TXT`, `comments`, `title`, `author`, `images`, ...
 - 🎬 **YouTube**/**SoundCloud**/etc. ➡️ `MP3/MP4`s, `subtitles`, `metadata`, `thumbnail`, ...
 - 💾 **Github**/**Gitlab**/etc. links ➡️ `clone of GIT source code`, `README`, `images`, ...
+- 📑 **Google Docs**/**Dropbox**/**Scientific Papers** ➡️ `PDF`, `DOCX`, `CSV`, `PPTX`, ...
 - ✨ *and more, see [Output Formats](#output-formats) below...*
 
 You can run ArchiveBox as a Docker web app to manage these snapshots, or continue accessing the same collection using the `uv`-installed CLI, Python API, and SQLite3 APIs.
@@ -186,7 +187,7 @@ docker compose exec archivebox archivebox help
 </li>
 </ol>
 
-See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the CLI, Web UI, or <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#sql-shell-usage">filesystem/SQL/Python</a> to manage your archive.
+See <a href="#cli-usage">below</a> for more usage examples using the CLI, Web UI, or <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#sql-shell-usage">filesystem/SQL/Python</a> to manage your archive.
 <br/><br/>
 </details>
 
@@ -210,7 +211,7 @@ docker exec archivebox archivebox help
 </li>
 </ol>
 
-See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.
+See <a href="#cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.
 <br/><br/>
 </details>
 
@@ -224,7 +225,7 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 </li>
 </ol>
 
-See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
+See <a href="#cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
 See <a href="https://github.com/ArchiveBox/ArchiveBox/blob/dev/bin/setup.sh"><code>setup.sh</code></a> for the source code of the <code>uv</code> install shortcut.<br/>
 See <a href="https://docs.sweeting.me/s/against-curl-sh">"Against curl | sh as an install method"</a> blog post for my thoughts on the shortcomings of this install method.
 <br/><br/>
@@ -264,7 +265,7 @@ archivebox help
 </li>
 </ol>
 
-See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
+See <a href="#cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
 <br/>
 <sub>See the <a href="https://docs.astral.sh/uv/guides/tools/"><code>uv tool</code> documentation</a> for more details about this installation method.</sub>
 <br/><br/>
@@ -299,7 +300,7 @@ archivebox help
 </code></pre>
 </li>
 </ol>
-See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
+See <a href="#cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
 <sub>The apt package is a thin dev-channel wrapper around the normal Python install flow. <code>sudo archivebox install</code> uses apt for missing system dependencies while preserving ownership of the user-owned collection. See the <a href="https://github.com/ArchiveBox/debian-archivebox"><code>debian-archivebox</code></a> repo for details.</sub>
 <br/><br/>
 </details>
@@ -333,7 +334,7 @@ archivebox help
 </li>
 </ol>
 
-See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
+See <a href="#cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
 <sub>See the <a href="https://github.com/ArchiveBox/homebrew-archivebox"><code>homebrew-archivebox</code></a> repo for more details about this distribution.</sub>
 <br/><br/>
 </details>
@@ -351,7 +352,7 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for more usage examples using the C
 <li>Guix: <a href="https://packages.guix.gnu.org/packages/archivebox/"><code>guix install archivebox</code></a> (contributed by <a href="https://github.com/rakino"><code>@rakino</code></a>)</li>
 <li>More: <a href="https://github.com/ArchiveBox/ArchiveBox/issues/new"><i>contribute another distribution...!</i></a></li>
 </ul>
-See <a href="#%EF%B8%8F-cli-usage">below</a> for usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.
+See <a href="#cli-usage">below</a> for usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.
 <br/><br/>
 </details>
 
@@ -393,7 +394,7 @@ See <a href="#%EF%B8%8F-cli-usage">below</a> for usage examples using the CLI, W
 
 <li>More: <a href="https://github.com/ArchiveBox/ArchiveBox/issues/new"><i>contribute another distribution...!</i></a></li>
 </ul>
-See <a href="#%EF%B8%8F-cli-usage">below</a> for usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.
+See <a href="#cli-usage">below</a> for usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.
 <br/><br/>
 </details>
 
@@ -439,6 +440,8 @@ For more discussion on third-party hosting options see here: <a href="https://gi
 <br/>
 
 ### Usage
+
+<a id="cli-usage"></a>
 
 #### ⚡️&nbsp; <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#cli-usage">CLI Usage</a>
 
@@ -635,10 +638,13 @@ docker run -it -v $PWD:/data archivebox/archivebox:dev add --depth=1 'https://ex
 
 
 - <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/ff20d251-5347-4b85-ae9b-83037d0ac01e" height="28px"/> <b>From the official <a href="https://github.com/ArchiveBox/archivebox-extension">ArchiveBox Browser Extension</a></b>  
-  <i>Provides realtime archiving of browsing history or selected pages from Chrome/Chromium/Firefox/Safari browsers.</i>
+  <i>Provides realtime archiving of browsing history or selected pages from Chrome/Brave/Firefox/Safari/Edge browsers.</i>
 
-- <img src="https://app.archivebox.io/App/AppIcon.icon/Assets/ArchiveBox.png" alt="ArchiveBox app icon" height="28px"/> <b>From the official <a href="https://app.archivebox.io/">ArchiveBox macOS Desktop App or iOS Mobile App</a></b><br/>
+- <img src="https://app.archivebox.io/App/AppIcon.icon/Assets/ArchiveBox.png" alt="ArchiveBox app icon" height="28px"/> <b>From the official ArchiveBox <a href="https://app.archivebox.io/">macOS Desktop App</a>, <a href="https://app.archivebox.io/">iOS App</a>, or <a href="https://android.archivebox.io">Android App</a></b><br/>
   <i>Save directly from the Share menu or Siri/Shortcuts to your server.</i>
+
+- 💬 <b>From <a href="https://github.com/ArchiveBox/archivebox-chat-bot">ArchiveBox Bot</a> in your chat apps</b><br/>
+  <i>Save links from DMs, @mentions, and groups; use ArchiveBox AI Bot for multi-step archive tasks. <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Integrating-with-Slack">Setup & screenshots →</a></i>
 
 - <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/64078483-21d7-4eb1-aa6e-9ad55afe45b8" height="22px"/> From manual imports of URLs from RSS, JSON, CSV, TXT, SQL, HTML, Markdown, etc. files  
   <i>ArchiveBox supports injesting URLs in [any text-based format](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#import-a-list-of-urls-from-a-text-file).</i>
@@ -844,7 +850,7 @@ The on-disk layout is optimized to be easy to browse by hand and durable long-te
     index.sqlite3
     ArchiveBox.conf
     archive/
-        1617687755 -> users/admin/snapshots/20210406/example.com/SNAPSHOT_UUID/
+        1617687755 -> users/admin/snapshots/20210406/example.com/SNAPSHOT_UUID/   # legacy style dirs have been moved to a new layout
         users/
             admin/
                 snapshots/
@@ -1127,6 +1133,8 @@ Because ArchiveBox is designed to ingest a large volume of URLs with multiple co
 <img src="https://github.com/ArchiveBox/ArchiveBox/assets/511499/ca85432e-a2df-40c6-968f-51a1ef99b24e" width="100%" alt="paisley graphic">
 </div>
 
+
+<a id="background--motivation"></a>
 
 # Background & Motivation
 

@@ -21,7 +21,7 @@ Chatto is built with the help of coding agents. Read [Chatto is Robots](https://
 - **Chatto**: the chat server, CLI, and bundled web frontend.
 - **[Runling](packages/runling/README.md)**: an independent workflow and agent orchestrator, published to npm as `runling`.
 - **[Authling](authling/README.md)**: an independent identity provider. It is here temporarily and will move to its own repository.
-- **Shared framework modules**: [events](pkg/events/README.md), [natsruntime](pkg/natsruntime/README.md), [datacrypto](pkg/datacrypto/README.md), and [appconfig](pkg/appconfig/README.md).
+- **Shared framework modules**: [events](pkg/events/README.md), [jetstreamutil](pkg/jetstreamutil/README.md), [natsruntime](pkg/natsruntime/README.md), [datacrypto](pkg/datacrypto/README.md), and [appconfig](pkg/appconfig/README.md).
 
 ## Development
 
@@ -29,7 +29,7 @@ Chatto is built with the help of coding agents. Read [Chatto is Robots](https://
 mise dev
 ```
 
-This installs all tools and dependencies, then starts the development stack. Open `http://chatto.local.localhost:4000` and sign in as `alice` with the password `foobar123`. See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete development guide.
+This installs the tools and dependencies of Chatto, then starts it. `mise dev-full` also starts Authling, Runling, Mailpit, and LiveKit. Open `http://chatto.local.localhost:4000` and sign in as `alice` with the password `foobar123`. See [CONTRIBUTING.md](CONTRIBUTING.md) for the complete development guide.
 
 ## License
 

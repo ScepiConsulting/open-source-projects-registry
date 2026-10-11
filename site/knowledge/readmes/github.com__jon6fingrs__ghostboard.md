@@ -23,6 +23,9 @@ This project is aimed at self-hosters who want to quickly and easily share text 
   - **New Feature (v3.1.0)**: FULL MARKDOWN SUPPORT- thanks to /u/jack3308 for the suggestion!
   - **New Feature (v3.2.0)**: BUNDLED NGINX IN DOCKER! Can simply open port 80 now and not worry about complex reverse proxy routing.
   - **New Feature (v3.4.0)**: REST API support for updating and retrieving text.
+  - **v3.5.2**: Quieter container logs (no supervisor/nginx startup warnings, silent health check).
+  - **v3.5.1**: REST API accepts raw bodies (`curl --data-binary @file`); docs fixed for `&`/`+` truncation.
+  - **v3.5.0**: Multi-arch images (amd64 + arm64) built automatically by GitHub Actions. Large texts (up to 16 MiB) no longer drop the connection. Open tabs restore a board's text after the server restarts. Updated dependencies and quieter logs.
 
 - **Client** (Legacy):
   - Command-line tool to retrieve or update the shared text.
@@ -53,7 +56,7 @@ This project is aimed at self-hosters who want to quickly and easily share text 
    ```bash
    docker pull thehelpfulidiot/ghostboard-server
    ```
-   - Use tag `latest-arm64` for arm release.
+   - `latest` is multi-arch (amd64 + arm64). `latest-arm64` still works for older setups.
 
 2. Run the server container:
    ```bash
@@ -81,7 +84,7 @@ This project is aimed at self-hosters who want to quickly and easily share text 
 
 3. Run the server:
    ```bash
-   python3 server.py
+   python3 get_text.py
    ```
 
 4. Access the server:
@@ -99,15 +102,23 @@ You can update the text on a board using a POST request.
 
 **Examples:**
 
-- Update text from a file:
+- Update text from a file or command output (sent exactly as-is, newlines and all):
   ```bash
-  curl -X POST "http://ghostboard-server:port" -d "text=$(cat example.txt)"
+  curl -X POST "http://ghostboard-server:port" --data-binary @example.txt
+  du -h -d 2 . | sort -rh | curl -X POST "http://ghostboard-server:port" --data-binary @-
   ```
 
 - Update text directly:
   ```bash
-  curl -X POST "http://ghostboard-server:port" -d "text=example"
+  curl -X POST "http://ghostboard-server:port" --data-urlencode "text=example"
   ```
+
+- Clear a board:
+  ```bash
+  curl -X POST "http://ghostboard-server:port" -d "text="
+  ```
+
+> **Note:** Use `--data-urlencode` (not `-d`) when sending `text=...`. With `-d`, characters like `&`, `+` and `%` are not encoded, so the text gets cut off at the first `&` and `+` turns into a space. A raw body (`--data-binary`) avoids encoding entirely; a body that isn't a `text=` form field is stored as-is.
 
 ### Retrieving Text
 
@@ -139,7 +150,7 @@ These commands work with dynamically created boards by appending the desired boa
    ```bash
    docker pull thehelpfulidiot/ghostboard-client
    ```
-   - Use tag `latest-arm64` for arm release.
+   - `latest` is multi-arch (amd64 + arm64).
 
 2. Retrieve the current text:
    ```bash
@@ -294,6 +305,32 @@ error_page 404 /index.html;
 
 <!-- Connection Lost -->
 ![Connection Lost](screenshots/connection-lost.png)
+
+---
+
+## Configuration
+
+Optional environment variables for the server:
+
+| Variable | Default | Description |
+| --- | --- | --- |
+| `GHOSTBOARD_CLEAR_DELAY` | `300` | Seconds a board keeps its text after the last browser disconnects. |
+| `GHOSTBOARD_MAX_TEXT_SIZE` | `16777216` | Largest text accepted, in bytes. |
+
+---
+
+## Docker Images (CI)
+
+Images are built and pushed to Docker Hub by GitHub Actions (`.github/workflows/`):
+
+- Push to `main` touching `server/` → `thehelpfulidiot/ghostboard-server:latest` (+ `latest-arm64`, `sha-<commit>`).
+- Push to `main` touching `client/` → same for `thehelpfulidiot/ghostboard-client`.
+- Server builds on `main` are also tagged with the version shown in the page (`<strong>Version:</strong>` in `server/index.html`), e.g. `:3.5.1`, `:3.5`, `:3`. **Bump that version for each release**; otherwise the next build overwrites the existing version tag.
+- Push a git tag like `v3.5.0` → `:3.5.0`, `:3.5`, `:3` (works for the client image too).
+- Pull requests build and smoke-test only, without pushing.
+- Can be run manually from the Actions tab ("Run workflow").
+
+Setup (one time): create a Docker Hub access token with Read & Write scope, then add repository secrets `DOCKERHUB_USERNAME` and `DOCKERHUB_TOKEN` under *Settings → Secrets and variables → Actions*.
 
 ---
 

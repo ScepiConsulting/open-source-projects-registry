@@ -7,7 +7,7 @@
 <p align="center">
   <a href="https://www.python.org/" target="_blank"><img src="https://img.shields.io/badge/python-3.13-3670A0?style=flat&logo=python" alt="Python"></a>
   <a href="https://fastapi.tiangolo.com" target="_blank"><img src="https://img.shields.io/badge/FastAPI-0.141.1-009688.svg?style=flat&logo=FastAPI" alt="FastAPI"></a>
-  <a href="https://angular.dev/" target="_blank"><img src="https://img.shields.io/badge/angular-22.2.0-%23DD0031.svg?style=flat&logo=angular" alt="Angular"></a>
+  <a href="https://angular.dev/" target="_blank"><img src="https://img.shields.io/badge/angular-22.2.1-%23DD0031.svg?style=flat&logo=angular" alt="Angular"></a>
   <a href="https://github.com/nandyalu/trailarr?tab=GPL-3.0-1-ov-file" target="_blank"><img src="https://img.shields.io/badge/License-GPLv3-blue.svg" alt="License: GPL v3"></a>
 </p>
 
@@ -106,7 +106,7 @@ There are some changes that are planned for the future. These changes are not gu
 - [x] Add Support for Hardware Acceleration using VAAPI (Intel and AMD)
 - [x] Add Event tracking similar to History in Radarr/Sonarr
 - [x] Add Discord notifications for important events
-- [ ] Use TMDB API for finding trailers as an option - planned for v0.12.0 (Oct-Nov 2026)
+- [x] Use TMDB API for finding trailers as an option
 
 
 If you have any suggestions or ideas for new features, please feel free to reach out on [Discord](https://discord.gg/KKPr5kQEzQ). We are always looking for ways to improve the project.

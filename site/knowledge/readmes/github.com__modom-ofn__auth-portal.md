@@ -1,8 +1,8 @@
-# AuthPortal (v2.0.5)
+# AuthPortal (v2.0.6)
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/modomofn/auth-portal.svg)](https://hub.docker.com/r/modomofn/auth-portal)
 [![Docker Image Size](https://img.shields.io/docker/image-size/modomofn/auth-portal/latest)](https://hub.docker.com/r/modomofn/auth-portal)
-[![Go Version](https://img.shields.io/badge/Go-1.26.5%2B-00ADD8?logo=go)](https://go.dev/)
+[![Go Version](https://img.shields.io/badge/Go-1.26.8%2B-00ADD8?logo=go)](https://go.dev/)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL3.0-green.svg)](https://github.com/modom-ofn/auth-portal?tab=GPL-3.0-1-ov-file#readme)
 [![AI-Assisted Development](https://img.shields.io/badge/AI--Assisted_Development-Yes-6c757d)](#ai-assisted-development)
 [![Sonarcloud Status](https://sonarcloud.io/api/project_badges/measure?project=modom-ofn_auth-portal&metric=alert_status)](https://sonarcloud.io/dashboard?id=modom-ofn_auth-portal)
@@ -105,7 +105,7 @@ AuthPortal authenticates users directly against their connected media server acc
 - [AI-Assisted Development](#ai-assisted-development)
 - [Contributing](#contributing)
 - [License](#license)
-- [Upgrade Guide (to v2.0.5)](#upgrade-guide-to-v205)
+- [Upgrade Guide (to v2.0.6)](#upgrade-guide-to-v206)
 
 ---
 
@@ -238,7 +238,7 @@ PLEX_SERVER_NAME=
 # ---------- Emby ----------
 EMBY_SERVER_URL=http://localhost:8096
 EMBY_APP_NAME=AuthPortal
-EMBY_APP_VERSION=2.0.5
+EMBY_APP_VERSION=2.0.6
 # EMBY_API_KEY=
 EMBY_OWNER_USERNAME=
 EMBY_OWNER_ID=
@@ -247,7 +247,7 @@ EMBY_OWNER_ID=
 JELLYFIN_SERVER_URL=http://localhost:8096
 JELLYFIN_API_KEY=
 JELLYFIN_APP_NAME=AuthPortal
-JELLYFIN_APP_VERSION=2.0.5
+JELLYFIN_APP_VERSION=2.0.6
 ```
 
 
@@ -258,7 +258,7 @@ version: "3.9"
 
 services:
   postgres:
-    image: postgres:15
+    image: postgres:15.19@sha256:7e2070cf6ad06fb3cbbd141b1bafbb7fd5bb63e2b6001e6daf34448eb555e4b3
     restart: unless-stopped
     environment:
       POSTGRES_DB: authportaldb
@@ -358,12 +358,12 @@ services:
       JELLYFIN_SERVER_URL: ${JELLYFIN_SERVER_URL:-http://localhost:8096}
       JELLYFIN_API_KEY: ${JELLYFIN_API_KEY:-}
       JELLYFIN_APP_NAME: ${JELLYFIN_APP_NAME:-AuthPortal}
-      JELLYFIN_APP_VERSION: ${JELLYFIN_APP_VERSION:-2.0.5}
+      JELLYFIN_APP_VERSION: ${JELLYFIN_APP_VERSION:-2.0.6}
 
       # Emby
       EMBY_SERVER_URL: ${EMBY_SERVER_URL:-http://localhost:8096}
       EMBY_APP_NAME: ${EMBY_APP_NAME:-AuthPortal}
-      EMBY_APP_VERSION: ${EMBY_APP_VERSION:-2.0.5}
+      EMBY_APP_VERSION: ${EMBY_APP_VERSION:-2.0.6}
       EMBY_API_KEY: ${EMBY_API_KEY:-}
       EMBY_OWNER_USERNAME: ${EMBY_OWNER_USERNAME:-}
       EMBY_OWNER_ID: ${EMBY_OWNER_ID:-}
@@ -587,10 +587,10 @@ These tables are created and migrated automatically at startup. Existing legacy 
 
 ## Build & Images
 
-- Go: `1.26.5` on Docker Hardened Images `dhi.io/golang:1.26.5-alpine3.23-dev` (builder stage).
+- Go: `1.26.8` on Docker Hardened Images `dhi.io/golang:1.26.8-alpine3.23-dev` (builder stage).
 - Builder installs `git` + CA certs, runs `go mod download` then `go mod tidy -compat=1.26`, builds with:
     - `-v -x` (verbose), `-buildvcs=false` (avoid VCS scans), `-trimpath`, `-ldflags "-s -w"`.
-- Builder: `dhi.io/golang:1.26.5-alpine3.23-dev`.
+- Builder: `dhi.io/golang:1.26.8-alpine3.23-dev`.
 - Runtime: `dhi.io/alpine-base:3.23-alpine3.23`, keeps CA certs in-base, copies tzdata from the builder stage, and runs as non-root `uid 65532`.
 
 ---
@@ -817,9 +817,12 @@ GPL-3.0  https://opensource.org/license/gpl-3-0/
 
 ---
 
-## Upgrade Guide (to v2.0.5)
+## Upgrade Guide (to v2.0.6)
 
-1) Rebuild or pull `modomofn/auth-portal:v2.0.5` so you pick up the RBAC, LDAP Sync, and admin audit improvements.
+1) Pull `modomofn/auth-portal:v2.0.6` to receive the current Go toolchain,
+   dependency, and container security updates. Deployments upgrading from
+   versions before v2.0.5 also receive the RBAC, built-in LDAP Sync, and OAuth
+   audit improvements described above.
 2) If you previously used the standalone `ldap-sync` workflow, migrate that configuration into `Admin -> LDAP Sync` and stop relying on the external repo/service.
 3) If your compose/docs still reference `ldap-seed` for `ou=users`, remove that dependency unless you intentionally seed extra LDAP structure outside AuthPortal-managed sync.
 4) Review the new Access Control model:

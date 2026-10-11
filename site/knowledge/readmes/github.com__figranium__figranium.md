@@ -74,10 +74,11 @@ Figranium is proudly supported by:
 <div align="center">
   <table>
     <tr>
-      <td align="center" valign="middle" width="150"><a href="https://www.mintlify.com" target="_blank"><img src="partner-assets/mintlify.svg" width="110" alt="Mintlify"></a></td>
-      <td align="center" valign="middle" width="150"><a href="https://neon.com" target="_blank"><img src="partner-assets/neon.png" width="106" alt="Neon"></a></td>
-      <td align="center" valign="middle" width="150"><a href="https://www.algolia.com" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Algolia_logo_full_blue.svg/1920px-Algolia_logo_full_blue.svg.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail&_=20221025105233" width="110" alt="Algolia"></a></td>
-      <td align="center" valign="middle" width="170"><a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Figranium" target="_blank"><img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="150" alt="DigitalOcean"></a></td>
+      <td align="center" valign="middle" width="150"><a href="https://www.mintlify.com" target="_blank"><img src="https://cdn.simpleicons.org/mintlify/18B6A4" width="64" alt="Mintlify"></a></td>
+      <td align="center" valign="middle" width="150"><a href="https://neon.com" target="_blank"><img src="https://cdn.simpleicons.org/neon/00E599" width="64" alt="Neon"></a></td>
+      <td align="center" valign="middle" width="150"><a href="https://1password.com" target="_blank"><img src="https://cdn.simpleicons.org/1password/0572EC" width="64" alt="1Password"></a></td>
+      <td align="center" valign="middle" width="150"><a href="https://www.algolia.com" target="_blank"><img src="https://cdn.simpleicons.org/algolia/003DFF" width="64" alt="Algolia"></a></td>
+      <td align="center" valign="middle" width="170"><a href="https://www.digitalocean.com/?utm_medium=opensource&utm_source=Figranium" target="_blank"><img src="https://cdn.simpleicons.org/digitalocean/0080FF" width="64" alt="DigitalOcean"></a></td>
     </tr>
   </table>
 </div>
@@ -126,17 +127,18 @@ Caddy forwards WebSocket upgrades automatically. The viewer receives a short-liv
 
 ## Session Secret
 
-Set `SESSION_SECRET` before any run. A quick generator:
-
-```bash
-node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
-```
+Figranium automatically generates a cryptographically random session secret on first startup and stores it in the persistent data directory (`session_secret.txt`). Subsequent starts reuse the saved secret. You can optionally set `SESSION_SECRET` to provide your own; keep the data directory persistent so existing sessions remain valid.
 
 # Configuration
 
 | Variable | Purpose | Default |
 |----------|---------|---------|
-| `SESSION_SECRET` | Signs session cookies. Required. | — |
+| `SESSION_SECRET` | Optional override for the automatically generated, persisted session-cookie signing secret. | Auto-generated |
+| `MASTER_KEY` | Optional 256-bit key enabling encrypted at-rest secret files. Without it, the shared secret-store writes plaintext JSON. Supply 32 bytes encoded as base64url or 64 hexadecimal characters. | Unset (no shared secret-store encryption) |
+| `MASTER_KEY_FILE` | Optional location of a legacy local master key used to decrypt previously encrypted files during migration. Does not enable encryption for new writes without `MASTER_KEY`. Retain the original key until migration completes. | `data/master.key` (legacy key location) |
+| `PASSWORD_CACHE_KEY` | Secret used to encrypt the server-side 1Password cache. Set this to keep the encryption key outside the Figranium data directory. | Auto-generated and stored at `data/password_cache.key` |
+| `PASSWORD_CACHE_ENABLED` | Enable encrypted server-side caching of 1Password Login metadata and resolved passwords. Set to `false` to always fetch from 1Password. | `true` |
+| `FIGRANIUM_TELEMETRY_ENABLED` | Send anonymous installation environment details and daily UI/API usage flags to Figranium telemetry. Set to `false` to disable. | `true` |
 | `ALLOWED_IPS` | Comma list for basic IP allowlisting. | none (open) |
 | `TRUST_PROXY` | Honor `X-Forwarded-*` for application-level proxy behavior. Not required for the embedded browser viewer. | `0` |
 | `ALLOW_PRIVATE_NETWORKS` | Allow scraping local/private IPs (SSRF risk). | `false` |
@@ -151,6 +153,12 @@ node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
 | `USE_CLOAK_ENGINE` | Set to `true` to run the browser engine on CloakBrowser instead of the default Playwright stealth stack. | `false` |
 | `CLOAKBROWSER_LICENSE_KEY` | CloakBrowser license key for the latest binary. | — |
 | `MAX_CONCURRENT_EXECUTIONS` | Override the automatic browser-execution limit. | host-aware |
+
+
+## Upgrading to 0.21.1
+
+At-rest encryption in the shared secret store is now **opt-in**. Without `MASTER_KEY`, new file-backed secret writes use plaintext JSON; configure `MASTER_KEY` to keep them encrypted. Existing encrypted files are decrypted and migrated only when their original key is available. Preserve `data/master.key` (or the configured legacy `MASTER_KEY_FILE`) until migration is complete; missing keys never trigger destructive resets. Named API keys remain salted and hashed, not stored as plaintext. Separate 1Password password-cache encryption settings remain independent of `MASTER_KEY`.
+
 | `MAX_EXECUTION_QUEUE` | Maximum waiting executions before new work receives 503. | `50` |
 | `EXECUTION_QUEUE_TIMEOUT_MS` | Maximum time an execution may wait for capacity. | `600000` |
 | `EXECUTION_TIMEOUT_MS` | Maximum non-headful execution runtime. | `900000` |
@@ -302,8 +310,8 @@ Figranium includes a built-in scheduler that handles automated Task execution wi
 - [x] **Unified execution history** — review results, screenshots, and recordings through Executions rather than a duplicate Captures page.
 - [x] **IP rotation tooling** — import proxies and automatically rotate them.
 - [x] **API key workflow** — manage API access without extra setup.
-- [ ] **<a href="https://github.com/figranium/figranium/issues/405" target="_blank">Scoped API keys</a>** — support multiple individually revocable API keys with explicit permissions.
-- [ ] **<a href="https://github.com/figranium/figranium/issues/406" target="_blank">Password manager & credential injector</a>** — securely store credentials and inject them into browser Tasks at runtime.
+- [x] **<a href="https://github.com/figranium/figranium/issues/405" target="_blank">Scoped API keys</a>** — support multiple individually revocable API keys with explicit permissions.
+- [x] **<a href="https://github.com/figranium/figranium/issues/406" target="_blank">Password manager & credential injector</a>** — securely store credentials and inject them into browser Tasks at runtime.
 - [x] **Task proxy rotation toggle** — enable rotation per Task execution.
 - [x] **Spatial editor transition** — spatial block-based Task editor.
 - [ ] **<a href="https://github.com/figranium/figranium/issues/366" target="_blank">Action key combos</a>** — add modifier shortcuts for browser interactions.
@@ -316,7 +324,6 @@ Figranium includes a built-in scheduler that handles automated Task execution wi
 - [x] **Extraction response mode** — choose between HTML+data and data-only API responses.
 - [ ] **<a href="https://github.com/figranium/figranium/issues/369" target="_blank">Folder organization</a>** — organize Tasks and assets into named folders.
 - [x] **Configurable capture and execution retention** — set retention in Advanced Settings, with automatic cleanup.
-- [ ] **<a href="https://github.com/figranium/figranium/issues/370" target="_blank">Capture pinning and archiving</a>** — further organization beyond configurable retention.
 - [ ] **<a href="https://github.com/figranium/figranium/issues/371" target="_blank">Workspace templates</a>** — reusable workspace presets.
 - [ ] **<a href="https://github.com/figranium/figranium/issues/372" target="_blank">Geo-targeted exits</a>** — choose proxy regions for Tasks.
 - [x] **Complete anti-detection coverage** — anti-detection controls across browser executions.
@@ -335,7 +342,7 @@ Figranium includes a built-in scheduler that handles automated Task execution wi
 - [x] **Cron triggers** — schedule Tasks with cron expressions.
 - [x] **Resizable canvas notes** — add and resize annotations alongside workflows.
 - [ ] **<a href="https://github.com/figranium/figranium/issues/380" target="_blank">Page triggers</a>** — trigger a Task when a page changes in a specified way.
-- [ ] **<a href="https://github.com/figranium/figranium/issues/382" target="_blank">Task-dedicated browser state & cookie buckets</a>** — isolate or intentionally share persistent browser state between Tasks.
+- [x] **<a href="https://github.com/figranium/figranium/issues/382" target="_blank">Task-dedicated browser state & cookie buckets</a>** — isolate or intentionally share persistent browser state between Tasks.
 
 # Security Considerations
 

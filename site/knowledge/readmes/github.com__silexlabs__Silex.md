@@ -97,7 +97,7 @@ Silex is the work of contributors from all over the world. This project is maint
 
 <!-- Auto generated contributors -->
 
-**2026** — [Alex Hoyau](https://github.com/lexoyo), [mikemikimike](https://github.com/mikemikimike), [Sparsh Maurya](https://github.com/SparshM07), [Sparshm786](https://github.com/Sparshm786), [ZhangXiao](https://github.com/XiaoZ-0218), [Musfiqur Rahman Saimon](https://github.com/britsync07-prog), [mdsaimon1232](https://github.com/mdsaimon1), [Ayush Dubey](https://github.com/ayush2115), [Aysajan Eziz](https://github.com/AysajanE), [JE4NVRG](https://github.com/JE4NVRG), [KozakLordOfMatrix](https://github.com/MatrixNeoKozak), [pupuking723](https://github.com/pupuking723), [Ola Mohamed](https://github.com/ola-a11y), [Syed Ishmum Ahnaf](https://github.com/SyedIshmumAhnaf), [Wassim Triki](https://github.com/wassim-triki)
+**2026** — [Alex Hoyau](https://github.com/lexoyo), [DangTAnh](https://github.com/DangTAnh), [vict0r](https://github.com/HQCuong), [Mohammed Shoaib Choudry](https://github.com/DevShoaib78), [Musfiqur Rahman Saimon](https://github.com/britsync07-prog), [Sparsh Maurya](https://github.com/SparshM07), [mikemikimike](https://github.com/mikemikimike), [Sparshm786](https://github.com/Sparshm786), [ZhangXiao](https://github.com/XiaoZ-0218), [mdsaimon1232](https://github.com/mdsaimon1), [Ayush Dubey](https://github.com/ayush2115), [Aysajan Eziz](https://github.com/AysajanE), [JE4NVRG](https://github.com/JE4NVRG), [KozakLordOfMatrix](https://github.com/MatrixNeoKozak), [pupuking723](https://github.com/pupuking723), [Ola Mohamed](https://github.com/ola-a11y), [Syed Ishmum Ahnaf](https://github.com/SyedIshmumAhnaf), [Wassim Triki](https://github.com/wassim-triki)
 
 **2025** — [Alex Hoyau](https://github.com/lexoyo), [Mazen Kamal](https://github.com/Mazen050), Piotr Golebiewski, [ioleo](https://github.com/ioleo), [oliviermgx](https://github.com/oliviermgx)
 
@@ -137,7 +137,7 @@ owes just as much to people whose work lives elsewhere: see [THANKS.md](THANKS.m
 - [Official website](https://www.silex.me/)
 - [Manifesto](https://www.silex.me/manifesto/) — our values and commitments
 - [User documentation](https://docs.silex.me/)
-- [Developer documentation](https://docs.silex.me/en/dev)
+- [Developer documentation](https://docs.silex.me/developer/self-hosting/overview/)
 - [Road map](https://roadmap.silex.me) — help define tasks and priorities
 - [Community forums](https://community.silex.me)
 - [Newsletter (EN)](https://short.silex.me/news_en) | [(FR)](https://short.silex.me/news_fr)

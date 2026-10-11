@@ -13,9 +13,9 @@ For a semi-technical overview of this tool, check out the video: https://youtu.b
 ## Usage
 
 1. Go to [convert.to.it](https://convert.to.it/)
-2. Click the big blue box to add your file (or just drag it on to the window).
-3. An input format should have been automatically selected. If it wasn't, yikes! Try searching for it, or if it's really not there, see the "Issues" section below.
-4. Select an output format from the second list. If you're on desktop, that's the one on the right side. If you're on mobile, it'll be somewhere lower down.
+2. Click the big box to add your file (or just drag it on to the window).
+3. An input format should have been automatically selected (as shown at the top). If not, yikes! Try pressing "Show all" and searching for it, or if it's really not there, see the "Issues" section below.
+4. Press "Next" and select your output format.
 5. Click **Convert**!
 6. Hopefully, after a bit (or a lot) of thinking, the program will spit out the file you wanted. If not, see the "Issues" section below.
 
@@ -47,7 +47,7 @@ Though please note, "converting X to Y doesn't work" is **not** a bug report. Ho
 1. Clone this repository with `git clone https://github.com/p2r3/convert`.
 2. Install [Bun](https://bun.sh/).
 3. Run `bun install` to install dependencies.
-4. Run `bun run dev` to start the development server.
+4. Run `bun run dev` to prepare and start the development server.
 
 _The following steps are optional, but recommended for performance:_
 
@@ -76,6 +76,10 @@ docker compose -f docker/docker-compose.yml -f docker/docker-compose.override.ym
 ```
 
 The first Docker build is expected to be slow because Chromium and related system packages are installed in the build stage (needed for puppeteer in `buildCache.js`). Later builds are usually much faster due to Docker layer caching.
+
+### Manual
+
+Run `bun run build` and then `bun run cache:build`. Then serve the `dist/` folder on any HTTP server of your choice.
 
 ## Contributing
 
@@ -157,13 +161,15 @@ If your tool requires an external dependency (which it likely does), there are c
 
 ### AI Usage Policy
 
-If you intend to use an LLM, agent-enabled IDE, or other AI-driven tool for your contribution, please follow these guidelines:
+If you intend to use an AI/agentic/LLM tool for your contribution, please follow these guidelines:
 
-- Clearly state that you've used an LLM, ideally in your pull request's description. Do not attempt to pass off an AI's work as your own. I'm far more likely to accept a pull request that openly admits to using AI than one that does but pretends it doesn't. Transparency helps the maintainer (me) know what to keep an eye out for (e.g. hallucinations), and helps you keep yourself in check.
-- Do not overindulge. If your contribution is trivial or simple enough to be written by hand, please opt to write it by hand. This is especially true if it's your first contribution. You're much more likely to retain knowledge and understanding about architectural details if you've familiarized yourself with the process hands-on first.
-- Keep the scope to things you _could_ do by hand. LLMs are tools, and this is a community-driven project. Orchestrating an AI to write logic that you don't fully comprehend is not only reckless for a community project, it's also disrespectful towards human contributors who took the time to research their additions. In other words, there should _never_ be a scenario where you _need_ an LLM.
-- Do not write any of the pull request/issue text with an LLM, except for translation. I only want to talk with a real person.
+- State where and how you used the LLM. Not disclosing it may get your PR insta-closed.
+- Do not use it to write descriptions for issues/PRs (except for translation). This may also lead to your contribution being insta-closed.
 - Explain what you (and the LLM) are doing, in a way that makes it clear that you understand the changes you're making.
+- Review the full diff of your PR manually (skipping over bulk thoughtless parts is fine).
+- Keep the scope to things you could do by hand. In other words, there should _never_ be a scenario where you _need_ an LLM. In other other words, if you don't understand what the LLM did, don't pull request it.
+- Do not overindulge. If your contribution is trivial or simple enough to be written by hand, please opt to write it by hand, especially if it's your first contribution. You are much more likely to retain architectural knowledge that way.
+- All agentic tools are not allowed to create pull requests without human oversight.
 
 Not adhering to these rules will likely get your pull request closed.
 

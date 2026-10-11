@@ -75,6 +75,7 @@ One box, and everything a post can carry.
   the instance and no reader's browser ever talks to anybody else. An administrator
   can add their own on top with `occ social:gif add`, or turn the shipped set off
   with `occ config:app:set social gif_pack --value=0`.
+- **Read the whole conversation.** Opening a post brings in its replies from everywhere they were written, not only from the people somebody here follows.
 - **Quote a post**, with the original author's permission carried on the wire (FEP-044f).
 - **Say what language it is in**, starting from your Nextcloud language.
 - **Send it later.** Pick a time at least five minutes out and Post becomes Schedule.
@@ -105,6 +106,20 @@ you follow, of this instance and of the whole Fediverse are one click apart.
 
 ![For you in the settings](img/readme/interests.png)
 
+- **Bluesky** — every account is a Bluesky account too, hosted here: `alice.<your host>` resolves to a
+  `did:plc` identity (or a domain you own, as your custom handle), every public post goes to Bluesky as it is made (cut to 300 characters with a link
+  when it is longer, the first four pictures with it, a video made into a Bluesky video by Bluesky's
+  video service, a content warning as a self-label), and a relay crawls the instance's firehose. The
+  other way too: follow `alice.bsky.social` by its bare handle and read it in your home feed, badged,
+  its videos playing here; your likes and boosts reach Bluesky, and their follows, likes, replies and
+  mentions reach your Activities. Bluesky's custom feeds and lists read as timelines of their own,
+  the same ones a Bluesky app keeps for you, and a starter pack opens here to follow everybody in it. Your pronouns and website rows are your Bluesky profile's, and a Bluesky account's show here as rows. Mutes and muted words are the same here and in a Bluesky app signed in here. With a Jetstream endpoint and `occ social:atproto:listen`, followed Bluesky accounts' posts arrive within seconds. Discover shows
+  what is trending on Bluesky and whom Bluesky suggests to you. Bluesky apps sign in here, their direct messages included, with Bluesky sign-in, or with an app
+  password made in your settings, and post videos as they would on Bluesky. A Bluesky account of your
+  own moves here with its followers and its posts — from Bluesky, from Bridgy Fed's bridge of your Fediverse account,
+  or with any migration tool — and can move away again. Switched on by the administrator once the requirements
+  are met; see [docs/Atproto-Compatibility.md](docs/Atproto-Compatibility.md) for what is done and
+  what is next.
 - **For you** — the second feed in the switcher, right after My Feed, made of the hashtags you actually
   read. Aloha Social notices what you stay on, what you scroll past, and what you like,
   boost, reply to, bookmark and open, and keeps a list of hashtags from it; the feed
@@ -121,39 +136,49 @@ you follow, of this instance and of the whole Fediverse are one click apart.
   or turn it off. It never leaves this server and nobody else sees it.
   Administrators can switch it off or make it opt-in.
 
-![Stories](img/readme/stories.png)
+![The Shorts bar above the feed](img/readme/stories.png)
 
-- **Stories** — a row of faces above your feed: whose stories are up. One picture or
-  video, for followers, gone after a day; a ring on the face while there is something
-  you have not seen, a player that runs them one after another (videos with sound, a
-  speaker to mute them, and the same "Tap for sound" hint as Shorts), and your own place
-  first in the row with a **+** on it to add one. Adding one opens the same dialog as
-  a new short: record a video with the camera (15 s or 1 min) or upload one, trim it and
-  pick its cover; a picture or a text story goes on to the story editor below. The poster sees how many people
-  watched and can take it down early; nobody else sees either. Stories federate to
-  Pixelfed, in the shape Pixelfed actually reads — an `Add` carrying a capability its
-  inbox fetches the story with, measured field by field against Pixelfed's own source
-  rather than against the specification. One that arrives is held no longer than a day
-  here whatever the sender says. You can answer one with an emoji or a line of text,
-  and the poster is told and sees what was said; watching one posted elsewhere sends a
-  receipt to its author, so their own server can count it. The other direction is not ours to fix: Pixelfed sends
-  stories only to instances it has identified as Pixelfed.
-- **Text stories and stickers.** A story can be a few words on a coloured card instead
-  of a picture — the type shrinks as you write, the way the picture will — and a
-  picture story can carry stickers: eight emoji and a line of your own words, dragged
+- **Shorts, kept or for 24 hours.** A short is kept on your profile like any other
+  post, or lasts **24 hours**: one picture, video or card of words that only your
+  followers see, gone after a day. Above your feed is the **Shorts** bar — your own
+  tile first with a **+** to make one, then the people you follow who have a 24-hour
+  short up, a ring on the face while there is something you have not seen, and an
+  **All shorts** tile at the end. The bar is there only while somebody you follow has a
+  24-hour short up; the camera at the end of the post composer makes a **New short**
+  for 24 hours whether the bar is there or not. One player plays both kinds (videos with sound, a
+  speaker to mute them, a "Tap for sound" hint where the browser will not start with
+  it; a picture or a card for the seconds its poster gave it). On your own 24-hour
+  short you see **Who has seen it** and what was said, and can take it down early;
+  nobody else sees either. Anybody who can see one can answer it with an emoji or a
+  line of text, which goes to the poster alone. 24-hour shorts federate to Pixelfed,
+  and Pixelfed shows them in its stories bar — in the shape Pixelfed actually reads,
+  an `Add` carrying a capability its inbox fetches the short with, measured field by
+  field against Pixelfed's own source rather than against the specification. One
+  that arrives is held no longer than a day here whatever the sender says; watching
+  one posted elsewhere sends a receipt to its author, so their own server can count
+  it. The other direction is not ours to fix: Pixelfed sends its own only to
+  instances it has identified as Pixelfed.
+- **Words on a card, and stickers.** A 24-hour short can be a few words on a coloured
+  card instead of a picture — the type shrinks as you write, the way the picture will
+  — and a picture can carry stickers: eight emoji and a line of your own words, dragged
   where you want them (or moved with the arrow keys) and baked into the picture before
   it goes up, so they arrive on Pixelfed where you put them.
 - **Photos and Videos are timelines of their own**, drawn as grids and asked of the
   server rather than filtered out of a page you already have.
-- **Shorts**, in the sidebar under Videos, is the same videos as a stack: one at a
+- **Shorts**, in the sidebar under Videos, is a stack: one at a
   time, full height, playing as it comes past and stopping as it goes — the shape
-  somebody arriving from TikTok or YouTube Shorts already knows. A switch in the corner
+  somebody arriving from TikTok or YouTube Shorts already knows. The 24-hour shorts of
+  the people you follow come first, each person's together and the unseen ones ahead,
+  marked **24h** with the hours they have left; then the kept ones, which are the
+  videos of the Videos timeline. A switch in the corner
   picks whose videos: the people you follow, this server, or everywhere. It plays with
   sound, or muted with a "Tap for sound" hint when the browser will not start with it,
   one video at a time in a single player that moves from video to video (so the sound
   one tap allowed stays on as you scroll, iPhone included) while the others show their
   cover, and reachable
-  with the arrow keys and the space bar. The **+** opens a composer made for a short:
+  with the arrow keys and the space bar. The **+** opens a composer made for a short,
+  which first asks how long it lasts — **Keep it on my profile** or **Only for 24
+  hours, for my followers** (a 24-hour one may also be a picture or words), then lets you
   upload a video, drop one on it, or record one with the camera (a 3-2-1 countdown,
   front or back camera, 15 s, 60 s or 3 min; browsers offer the camera over https
   only). Then trim it with two handles over a
@@ -192,6 +217,9 @@ you follow, of this instance and of the whole Fediverse are one click apart.
   single video can be brought over by its address. Nothing is federated on the way in:
   re-publishing somebody's back catalogue would put it into every follower's timeline
   in one afternoon.
+- **No scores by default.** How many likes, dislikes, boosts and followers
+  something has is hidden unless you turn the numbers on — on posts, profiles and in
+  your phone apps alike. Less of a scoreboard, less pressure.
 - **How many people read it** — on your own posts and nobody else's, counted when
   somebody opens the post rather than scrolls past it, and never sent to another
   server. Three likes means something different out of five readers than out of four
@@ -342,7 +370,13 @@ own unified search. No external search engine to run.
 - **Quote controls** — who may quote each of your posts (anybody, your
   followers, nobody), who already has, and a button that detaches one and tells
   their server. Mastodon 4.5's `quote_approval_policy`, its quote list and its
-  revoke, over FEP-044f.
+  revoke, over FEP-044f. A quote from Bluesky is detached the way Bluesky does it,
+  through the post's postgate.
+- **Who can reply** — anybody, your followers, the people you follow, only the
+  people you mention, or nobody, chosen in the composer and changed later
+  from the post's menu. Held here, said to other servers as
+  `interactionPolicy.canReply`, and published to Bluesky as the post's
+  threadgate.
 - **Relays** — subscribe to one and a new server's federated timeline stops
   being empty: a relay rebroadcasts the public posts of every server on it, and
   carries this server's public posts out to all of them. Public posts only, and
@@ -355,9 +389,10 @@ own unified search. No external search engine to run.
 - **Authorized apps** — every app holding a key to your account, with what it
   may do and when it was last used, and a button that signs one out. The page
   to open after losing a phone.
-- **Filtered notifications** — on the Blocking page, the senders your notification
-  policy is holding, one row each, with Show these and Dismiss. The policy has been
-  in the API since 4.3; this is what makes it usable.
+- **Requests** — at the top of Activities, "3 people are waiting — Review": the
+  people your notification policy is holding, one row each, with Show these and
+  Dismiss. The waiting people are part of the Activities count in the sidebar, and
+  never ring the bell.
 - **Hide a whole server** from yourself, beside the blocked and muted accounts.
 - **Edit history** — the "Edited" line under a post opens every version of it.
 - **A portfolio** — a page of your work with its own public address, to put on a
@@ -448,14 +483,20 @@ It marks itself read after it has been in front of you for two seconds, not the 
 it renders — so it stops clearing the badge on your phone for things nobody saw.
 
 **Who may reach you.** Five questions about whoever is writing to you — do I follow
-them, do they follow me, are they new here, is this a private mention, has this server
-limited them — each answered *accept*, *hold* or *drop*. What is held waits in a
-requests inbox, gathered one row per account, so you decide about the account once
-instead of about each notification in turn. Nothing is held unless you ask for it, and
-nothing held is ever deleted: a policy you loosen next week can still show what it
-caught this week. Clients read it as Mastodon 4.3's notification policy, and read the
-same notifications grouped — "eight people favourited your post" rather than eight
-rows.
+them, do they follow me, are they new here (less than 30 days), is this a private
+mention I didn't ask for, has this server limited them — each answered **Allow** or
+**Hold for review**, in Settings → Notifications next to the digests and quiet hours.
+A held person can still write to you: everything they do waits together at the top of
+Activities, and raises no bell, push or mail. You decide about the person once —
+accept, and they are always allowed until you stop allowing them; dismiss, and what
+they sent is gone. New accounts start calm (strangers, new accounts, unsolicited
+private mentions and limited accounts held); existing accounts keep accepting
+everybody until they choose. Clients read it as Mastodon 4.3's notification policy,
+where *drop* stays available, and read the same notifications grouped — "eight people
+favourited your post" rather than eight rows.
+
+**Mute a conversation**, from any post's menu or a mention in Activities: the thread
+stays on your timelines, and stops notifying you until you unmute it.
 
 **Nextcloud's own bell rings too.** Mentions, favourites, boosts, new followers, follow
 requests, edits of posts you boosted and polls you voted in all reach Nextcloud
@@ -478,14 +519,19 @@ it that would do nothing on an instance whose accounts come from LDAP.
 Below it: your **lists**, your **scheduled posts** with a way to cancel one, your
 **blocked and muted accounts** with unblock and unmute inline, and **migration**.
 
-**Migration takes your account with you.** Export writes your profile, follows,
+**Migration takes your account with you.** Moving in starts from your old handle:
+the page looks the account up, shows what its server lets us read, and then follows
+everyone it follows and brings its public posts over in the background; the one step
+left is the move on the old server, and the page names the menu. Export writes your profile, follows,
 followers, blocks, mutes, bookmarks, likes and every post you have written to a zip —
 and **the pictures and videos come with it**, copied into the archive in the layout
 Mastodon's own export uses, with each attachment pointing at the copy rather than at
 the server you are leaving. Import reads one back, including an archive from
 `occ user:export`. A third section brings your follows over from Mastodon, Pixelfed,
 GoToSocial or Akkoma via their `following_accounts.csv` or `pixelfed-following.json`.
-Your private key is deliberately not in the archive. Naming the account you are
+Every import runs in the background and the page shows where it has got to, so a
+long follow list or a decade of posts is one upload rather than a race against the
+web server's timeout. Your private key is deliberately not in the archive. Naming the account you are
 moving from — the `alsoKnownAs` the old server insists on before it will hand over
 your followers — is a field in the same page rather than an `occ` command, because
 it federates nothing and is yours to set.
@@ -506,8 +552,8 @@ for a browser goes through `occ social:account:import-posts`.
   the posts, and says so if you try it), and the posts, reels and their pictures come
   across with their captions and the hashtags written in them. Instagram's archive says
   nothing about who could see a post, so they are posted with **your own default
-  visibility**; stories, archived posts and deleted ones are deliberately left where
-  they are.
+  visibility**; posts Instagram showed for only a day, archived posts and deleted ones
+  are deliberately left where they are.
 
 ## 📱 On a phone, and in the dark
 
@@ -525,7 +571,7 @@ the same app, not a second design.
 **Sound and touch**, in Settings: a soft tick on a like, a breath of air when a post
 goes out, a two-note chime when a direct message arrives, and a short tap in the hand
 on a phone. Sound is off until you turn it on; vibration is on, and your system's
-setting for less motion turns it off too. A third switch says whether Shorts and stories
+setting for less motion turns it off too. A third switch says whether Shorts
 start with their sound on. All three are kept on the device rather than the
 account, so the laptop at work can stay quiet while your phone taps back. The sounds
 are synthesised in the browser, so there is nothing to download.
@@ -535,6 +581,9 @@ are synthesised in the browser, so there is nothing to download.
 - **Share to Aloha Social, from Files.** Select a picture or a video — up to ten — pick
   *Share to Aloha Social* from the menu, and the composer opens with them already attached.
   Nothing is uploaded a second time.
+- **Replies show up in Files.** Public replies to a picture you posted from Files appear
+  in the file's Comments tab, and a comment you write there goes out as your reply.
+  Other people's comments on the file stay on your server.
 - **Links unfurl.** Paste a link to a post or a profile into a Talk message, a Text
   document or a Deck card and it becomes a card with the author, the text and the first
   picture. Only what anybody could read is rendered, because the card is cached once
@@ -568,7 +617,7 @@ are synthesised in the browser, so there is nothing to download.
   keeps what somebody passes on out of your timelines while leaving everything they
   write themselves.
 - **Per-user domain blocks** — **Blocking → Hidden servers** — and conversation
-  mute, which is through the API only.
+  mute, in the menu of any post.
 - **Nothing is sent to a third party.** No geocoder — a place on a post is one this
   instance has seen or one you name yourself, because sending somebody's location to a
   stranger at the moment they are deciding whether to publish it is exactly the failure
@@ -579,8 +628,11 @@ are synthesised in the browser, so there is nothing to download.
 
 ![The administration page](img/readme/admin.png)
 
-Everything in Administration → Aloha Social, built out of the same components as the rest of
-the administration settings:
+Everything in Administration → Aloha Social, in six groups — Overview, Moderation,
+Sign-ups, Explore and features, Federation and Server — with a search across all of them.
+It opens on what needs you: open reports, posts waiting for review, sign-ups to approve,
+deliveries about to be given up on and late background jobs, each a link to where it is
+dealt with.
 
 - **Reports** with **Silence**, **Suspend**, **Lift** and take-a-post-down, each
   recorded with the moderator who did it and written to Nextcloud's audit log.
@@ -609,7 +661,7 @@ the administration settings:
   share dialog, the contacts menu or the address book. Mastodon apps work for them. One
   click makes one an ordinary account of this server, password and Aloha Social account kept.
   `occ social:external` lists, adds and promotes them.
-- **Federation health** — how many deliveries are waiting, how many keep failing, which
+- **Deliveries** — how many deliveries are waiting, how many keep failing, which
   instances they are stacked up against, how close each is to being abandoned (**16
   attempts**), and which instances have been given up on in the last seven days.
   `occ social:queue:status` prints the same summary and
@@ -869,12 +921,15 @@ occ social:reset
   configuration key with its meaning and default, the sections of the
   administration page, how moderation is recorded, and the occ commands by task.
 - [docs/Mastodon-Compatibility.md](docs/Mastodon-Compatibility.md)
+- [docs/Atproto-Compatibility.md](docs/Atproto-Compatibility.md) — the specification for native Bluesky / AT Protocol identities, with what each phase built
   answers how close this is to Mastodon in the three senses that can mean —
   whether its clients work, whether peers can tell the difference, and whether an
   instance could move onto it. Its last section is the backlog that follows:
   everything still between this app and a full replacement, in tiers, with what
   each item actually fixes and whether it is done.
+- [docs/Atproto-Live-Test.md](docs/Atproto-Live-Test.md) — testing Bluesky on a live public host: the probe script and the checklist
 - [docs/User-Guide.md](docs/User-Guide.md)
+- [docs/Moving.md](docs/Moving.md) — moving to Aloha Social from another server, and away again, in the order it happens
   is the guide for the people using the app: getting an account, following,
   posting, reading, managing the account, keyboard shortcuts.
 - [docs/For-You.md](docs/For-You.md)
@@ -907,7 +962,8 @@ See the repository's license files in the `LICENSES/` directory.
 **[API](docs/API.md)** ·
 **[occ commands](docs/OCC-Commands.md)** ·
 **[Architecture](docs/Architecture.md)** ·
-**[Mastodon compatibility](docs/Mastodon-Compatibility.md)**
+**[Mastodon compatibility](docs/Mastodon-Compatibility.md)** ·
+**[Bluesky specification](docs/Atproto-Compatibility.md)**
 
 Screenshots are of a development instance with seeded demo accounts.
 

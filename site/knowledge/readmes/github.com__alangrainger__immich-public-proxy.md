@@ -12,12 +12,11 @@
 <a href="https://demo.ipp.nz/s/demo-gallery"><img alt="Open demo gallery" src="https://badgen.net/static/↗🖼️/live%20demo/green?scale=1.1"></a>
 </p>
 
-Share your Immich photos and albums in a safe way without exposing your Immich instance to the public.
+Share your Immich photos and albums in a safe way without exposing your Immich instance to the public. 
 
-👉 See a [Live demo gallery](https://demo.ipp.nz/s/demo-gallery)
-serving straight out of my own Immich instance.
+**This does not need an API key, or any privileged access to Immich.** Setup takes less than a minute, and you never need to touch it again as all of your sharing stays managed within Immich.
 
-Setup takes less than a minute, and you never need to touch it again as all of your sharing stays managed within Immich.
+See a [Live demo gallery](https://demo.ipp.nz/s/demo-gallery) serving straight out of my own Immich instance.
 
 <p align="center" width="100%">
 <img src="docs/public/screenshot.webp" width="602" height="414" border="1px solid white">
@@ -35,11 +34,14 @@ what you have shared.
 Read more in the [Introduction](https://docs.ipp.nz/introduction), including
 [why not just expose Immich's `/share/` path](https://docs.ipp.nz/introduction#why-not-expose-immich-directly).
 
+Visitors can optionally add their own photos and videos to a share, for example guests at a wedding. See
+**[Let visitors send photos back](https://docs.ipp.nz/visitor-uploads)**.
+
 ## Quick start
 
 1. Download the [docker-compose.yml](https://github.com/alangrainger/immich-public-proxy/blob/main/docker-compose.yml) file.
 2. Set `IMMICH_URL` to the local (not public) URL of your Immich server, and `PUBLIC_BASE_URL` to the public URL of IPP.
-3. Run `docker-compose up -d` and check that `https://your-proxy-url.com/share/healthcheck` responds.
+3. Run `docker-compose up -d` and check that `https://photos.example.com/share/healthcheck` responds.
 4. In Immich's **Server Settings**, set the "External domain" to your IPP URL. Every link Immich generates from now on
    points at the proxy.
 
@@ -53,15 +55,22 @@ Everything is at **[docs.ipp.nz](https://docs.ipp.nz)**:
 
 - [Installation](https://docs.ipp.nz/installation) and [Sharing from Immich](https://docs.ipp.nz/how-to-use)
 - [Configuration](https://docs.ipp.nz/config/): downloads, gallery layout, lightbox, metadata privacy, error responses
-- Guides: [single domain with Immich](https://docs.ipp.nz/running-on-single-domain),
+- Guides: [let visitors send photos back](https://docs.ipp.nz/visitor-uploads),
+  [single domain with Immich](https://docs.ipp.nz/running-on-single-domain),
   [redirect your root domain to a share](https://docs.ipp.nz/redirect-root-to-share),
   [securing Immich with mTLS](https://docs.ipp.nz/securing-immich-with-mtls)
 - [Troubleshooting](https://docs.ipp.nz/troubleshooting)
 
 ## Feature requests
 
-You can [add feature requests here](https://github.com/alangrainger/immich-public-proxy/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop),
-however my goal with this project is to keep it as lean as possible.
+You can [add feature requests here](https://github.com/alangrainger/immich-public-proxy/discussions/categories/feature-requests?discussions_q=is%3Aopen+category%3A%22Feature+Requests%22+sort%3Atop).
 
 IPP has **read-only** access to Immich and stores nothing: anything that needs an API key, modifies Immich, or would
-require storing a share key won't be considered. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full list.
+require storing a share key won't be considered. Visitor uploads are the one write path, and they live in their own
+optional container. See [CONTRIBUTING.md](CONTRIBUTING.md) for the full list.
+
+## Thanks
+
+The gallery lightbox, with its zoom, swipe and keyboard navigation, is **[PhotoSwipe](https://photoswipe.com/)** by
+[Dmytro Semenov](https://github.com/dimsemenov). It is a superb piece of work, MIT licensed, and IPP would be a much
+poorer viewer without it. If you find it useful, consider [sponsoring the project](https://github.com/sponsors/dimsemenov).
