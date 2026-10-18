@@ -61,7 +61,7 @@
 
 ## Description
 
-HortusFox is a free opensource self-hosted collaborative plant management system which you can use to manage all your plants. It provides an extensive amount of features to assist you in keeping track, taking care, and journal all things about your plants. The system is designed using a per-location approach, which means that plants are always assigned to locations. Not only does the app allow you to manage attributes, photos, notes, logs and many other things around your plants, it does also provide task management, inventory management, an extensive search feature, a calendar, a collaborative group chat and many, many more features. Your personal workspace can be customized via the integrated theme system, allowing for an individual look and feel while managing your plants. Furthermore, developers can leverage the integrated API to create their own third-party custom software for various scenarios. Please see a list of features below.
+HortusFox is a free, open-source, and self-hosted collaborative system to manage all your plants. It provides an extensive amount of features to assist you in keeping track, taking care, and journal all things about your plants. The system is designed using a per-location approach, which means that plants are always assigned to locations. Not only does the app allow you to manage attributes, photos, notes, logs and many other things around your plants, it does also provide task management, inventory management, an extensive search feature, a calendar, a collaborative group chat and many, many more features. Your personal workspace can be customized via the integrated theme system, allowing for an individual look and feel while managing your plants. Furthermore, developers can leverage the integrated API to create their own third-party custom software for various scenarios. Please see a list of features below.
 
 ## Features
 
@@ -489,6 +489,7 @@ The following scripts are currently available:
 - **clear-cache.dnys**: A script to clear the current application cache (both database and folders).
 - **install.dnys**: A script to install the project to the local system.
 - **launch.dnys**: A script to quickly launch a web server and open the project in the default browser.
+- **update.dnys**: A script to update various project meta data
 - **themes.dnys**: A script to manage local theme installations
 - **vercheck.dnys**: A script that prints the local version of the project, the latest available version, and whether there is a new version available or not.
 - **backup-export.dnys**: A script to export workspace data to a backup archive file

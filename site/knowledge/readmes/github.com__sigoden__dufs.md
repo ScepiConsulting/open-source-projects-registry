@@ -421,6 +421,7 @@ Your assets folder must contains a `index.html` file.
 
 - `__INDEX_DATA__`: directory listing data
 - `__ASSETS_PREFIX__`: assets url prefix
+- `__PATH_PREFIX__`: path prefix
 
 > A customized 404.html page is also supported.
 
@@ -429,6 +430,7 @@ Here are some Third-party customize UI project:
 - https://github.com/TransparentLC/dufs-material-assets
 - https://github.com/cercky/dufs_web
 - https://github.com/52funny/dufs-tabler-web
+- https://github.com/mikigo/dufs-shadcn-assets
 
 </details>
 

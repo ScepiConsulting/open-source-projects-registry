@@ -109,7 +109,6 @@ Prior versions of Jackett are no longer supported.
  * EZTV
  * FileMood
  * Free JAV Torrent
- * GamesTorrents
  * HDRTorrent
  * Internet Archive (archive.org)
  * kickasstorrents.to
@@ -223,7 +222,6 @@ Prior versions of Jackett are no longer supported.
  * New-Team
  * NewStudio (login)
  * NoNaMe Club (NNM-Club) (login)
- * Polskie-Torrenty
  * PornoLab
  * Postman (login)
  * ProPorno
@@ -258,6 +256,7 @@ Prior versions of Jackett are no longer supported.
  * 3D Torrents (3DT)
  * 3D Vault
  * 4thD (4th Dimension) [![(invite needed)][inviteneeded]](#)
+ * 52movie
  * 52PT
  * 720pier
  * Abnormal (ABN)
@@ -557,6 +556,7 @@ Prior versions of Jackett are no longer supported.
  * Qingwa (青蛙)
  * R3V WTF! [![(invite needed)][inviteneeded]](#)
  * Racing4Everyone (R4E)
+ * Racing4us
  * RacingForMe (RFM)
  * RailgunPT
  * Rastastugan
@@ -597,7 +597,6 @@ Prior versions of Jackett are no longer supported.
  * Spirit of Revolution [![(invite needed)][inviteneeded]](#)
  * SportsCora
  * SportsCult
- * Sportz247
  * SpringSunday (SSD) [![(invite needed)][inviteneeded]](#)
  * Stellarwinds
  * Superbits (SBS)

@@ -1,6 +1,9 @@
 <div align="center">
 
-<img src="img/nextcloud.png" alt="" width="72">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="img/social.svg">
+  <img src="img/social-dark.svg" alt="" width="72">
+</picture>
 
 # Aloha Social
 
@@ -76,6 +79,10 @@ One box, and everything a post can carry.
   can add their own on top with `occ social:gif add`, or turn the shipped set off
   with `occ config:app:set social gif_pack --value=0`.
 - **Read the whole conversation.** Opening a post brings in its replies from everywhere they were written, not only from the people somebody here follows.
+- **Hashtags and searches everywhere.** A hashtag's page and a search of posts bring in what was written beyond this server too.
+- **Hide a reply** in a conversation you started, wherever it was written; it is hidden on Bluesky too.
+- **See who reacted, everywhere.** The likes, boosts and quotes of a post list the people wherever they were, not only the ones on this server.
+- **See who follows whom, everywhere.** The followers and following lists of an account elsewhere show the people it has where it lives, not only the ones this server knows — unless the account keeps them private.
 - **Quote a post**, with the original author's permission carried on the wire (FEP-044f).
 - **Say what language it is in**, starting from your Nextcloud language.
 - **Send it later.** Pick a time at least five minutes out and Post becomes Schedule.
@@ -113,11 +120,12 @@ you follow, of this instance and of the whole Fediverse are one click apart.
   other way too: follow `alice.bsky.social` by its bare handle and read it in your home feed, badged,
   its videos playing here; your likes and boosts reach Bluesky, and their follows, likes, replies and
   mentions reach your Activities. Bluesky's custom feeds and lists read as timelines of their own,
-  the same ones a Bluesky app keeps for you, and a starter pack opens here to follow everybody in it. Your pronouns and website rows are your Bluesky profile's, and a Bluesky account's show here as rows. Mutes and muted words are the same here and in a Bluesky app signed in here. With a Jetstream endpoint and `occ social:atproto:listen`, followed Bluesky accounts' posts arrive within seconds. Discover shows
+  the same ones a Bluesky app keeps for you, and a starter pack opens here to follow everybody in it. Your pronouns and website rows are your Bluesky profile's, and a Bluesky account's show here as rows. Mutes, muted words, bookmarks and who may notify you are the same here and in a Bluesky app signed in here. Direct messages with somebody on Bluesky are conversations in your Messages like any other, both ways: what you write in a Bluesky app shows here too, a conversation read in one place is read in the other, a message request is what a direct message from anybody you do not follow is here, and who may send you direct messages is the same setting in both. With a Jetstream endpoint and `occ social:atproto:listen`, followed Bluesky accounts' posts arrive within seconds. Discover shows
   what is trending on Bluesky and whom Bluesky suggests to you. Bluesky apps sign in here, their direct messages included, with Bluesky sign-in, or with an app
   password made in your settings, and post videos as they would on Bluesky. A Bluesky account of your
   own moves here with its followers and its posts — from Bluesky, from Bridgy Fed's bridge of your Fediverse account,
-  or with any migration tool — and can move away again. Switched on by the administrator once the requirements
+  or with any migration tool — and can move away again. Anybody can switch their own presence on Bluesky off in
+  their settings, and on again with their profile and earlier posts back. Switched on by the administrator once the requirements
   are met; see [docs/Atproto-Compatibility.md](docs/Atproto-Compatibility.md) for what is done and
   what is next.
 - **For you** — the second feed in the switcher, right after My Feed, made of the hashtags you actually
@@ -128,7 +136,8 @@ you follow, of this instance and of the whole Fediverse are one click apart.
   Every post says why it is there, and **Less like this** in its menu takes it out.
   **Photos**, **Videos** and **Shorts** offer it too, narrowed to pictures or videos
   and looking back two weeks; where that is too little, the rest is what is popular
-  in the same kind right now, marked *Popular right now*. Shorts opens on it once
+  in the same kind right now, marked *Popular right now* (a short only once it has
+  gathered a few likes, boosts and views). Shorts opens on it once
   your reading has taught it something, and learns from how much of each video you
   watch.
   **Settings → For you** draws the list as a cloud — the bigger the hashtag, the
@@ -230,8 +239,11 @@ you follow, of this instance and of the whole Fediverse are one click apart.
   description when pressed.
 - **Lists**, made and filled in Settings or from anybody's profile — and **the
   Nextcloud groups your administrator chose** are lists of their own, built and
-  maintained by nobody.
-- **Follow a hashtag** and it reads exactly like following a person.
+  maintained by nobody. A list is yours alone unless you make it **public**: then
+  anyone can see it and who is on it, and it is one list wherever you use it — a
+  list you make in another app signed in here, or bring along when you move here,
+  is your list here too.
+- **Follow a hashtag** and it reads exactly like following a person: its new posts reach your home timeline wherever they were written, not only the ones that happened to arrive here.
 - **Filter out words you would rather not read** — **Blocking → Filtered words**. A
   filter is a handful of words, the timelines it applies in, and whether a matching
   post is **folded away behind the filter's name**, with a *Show anyway*, or taken out
@@ -300,8 +312,10 @@ six ways:
 - **The people you already share a Nextcloud with.** Every Nextcloud profile has a
   `fediverse` field; this app fills in yours and reads everybody else's, so your
   colleagues are suggested before any algorithm has a thing to say.
-- **Starter packs** — a named handful of accounts with one button that follows all of
-  them. Administrators curate their own.
+- **Starter packs** — a named handful of accounts, each with a Follow of its own, and
+  one button that follows all of them, whichever network the pack came from. Administrators curate their own, and the Collections curators publish on
+  Mastodon (FEP-7aa9, each member's consent checked) and Bluesky's suggested starter
+  packs are read in as starter packs too, once a day.
 - **Trending hashtags**, ranked over a window you choose from one hour to ten days. The
   busiest hour and the busiest ten days are genuinely different lists, not one list
   relabelled.
@@ -333,6 +347,7 @@ own unified search. No external search engine to run.
 ![A profile](img/readme/profile.jpg)
 
 - **Posts, Photos and Videos** as three tabs, each one a question asked of the server.
+  Posts has the account's boosts among its posts, as on Mastodon.
 - **A banner, a bio and four metadata fields**, federated the way Mastodon does it and
   edited in **Edit profile** on your own profile.
 - **Verified links.** A profile field naming a web page gets the tick when that page
@@ -372,8 +387,9 @@ own unified search. No external search engine to run.
   their server. Mastodon 4.5's `quote_approval_policy`, its quote list and its
   revoke, over FEP-044f. A quote from Bluesky is detached the way Bluesky does it,
   through the post's postgate.
-- **Who can reply** — anybody, your followers, the people you follow, only the
-  people you mention, or nobody, chosen in the composer and changed later
+- **Who can reply** — anybody, nobody, or any mix of your followers, the people
+  you follow, the people you mention and the people on one of your lists, chosen
+  in the composer and changed later
   from the post's menu. Held here, said to other servers as
   `interactionPolicy.canReply`, and published to Bluesky as the post's
   threadgate.
@@ -491,7 +507,9 @@ Activities, and raises no bell, push or mail. You decide about the person once �
 accept, and they are always allowed until you stop allowing them; dismiss, and what
 they sent is gone. New accounts start calm (strangers, new accounts, unsolicited
 private mentions and limited accounts held); existing accounts keep accepting
-everybody until they choose. Clients read it as Mastodon 4.3's notification policy,
+everybody until they choose. **Who may send you direct messages** — everybody, the
+people you follow, or nobody — is the private-mention question seen from the other side,
+in Settings → Profile and privacy. Clients read it as Mastodon 4.3's notification policy,
 where *drop* stays available, and read the same notifications grouped — "eight people
 favourited your post" rather than eight rows.
 
@@ -594,11 +612,15 @@ are synthesised in the browser, so there is nothing to download.
   the bell.
 - **Unified search**, so Aloha Social posts turn up where every other search result does.
 - **Deleting a Nextcloud user takes their Fediverse account with it** — tombstoned,
-  dropped, and a `Delete` federated so other servers drop their copies too.
+  dropped, and a `Delete` federated so other servers drop their copies too. The
+  channels the account ran go with it the same way.
 
 ## 🛡️ Safety, and privacy that is the default
 
 - **Block** to sever a relationship in both directions and hide somebody everywhere.
+- **Somebody who has blocked you is respected**, wherever they are: their posts leave
+  your timelines, and a reply, quote or follow that would only be dropped on their side
+  is refused with "This account has blocked you" instead.
 - **Mute** to hide them from your timelines and optionally your notifications without
   them ever knowing — **for an hour, a day, seven days, thirty, or until you lift it**.
   A profile says when a timed mute runs out.
@@ -618,6 +640,9 @@ are synthesised in the browser, so there is nothing to download.
   write themselves.
 - **Per-user domain blocks** — **Blocking → Hidden servers** — and conversation
   mute, in the menu of any post.
+- **Shared lists** — **Blocking → Shared lists**: subscribe to a moderation list
+  somebody else keeps, by its link, and everybody on it is muted or blocked here, kept
+  up to date as they change it. Ending the subscription undoes only what the list did.
 - **Nothing is sent to a third party.** No geocoder — a place on a post is one this
   instance has seen or one you name yourself, because sending somebody's location to a
   stranger at the moment they are deciding whether to publish it is exactly the failure
@@ -649,6 +674,13 @@ dealt with.
   never held**.
 - **An account browser** over every account this instance knows, with the standing
   decision and the strike history against each one.
+- **Verified accounts.** Your server can vouch for people — a company for its own staff,
+  a community for the accounts it knows — and a verified account carries a check beside
+  its name everywhere, saying who verified it. Moderators verify any account, here or
+  elsewhere, from its profile or from the administration page, in the name of an
+  account the administrator chooses. Where the verified person also has an identity on
+  the wider network, the verification is published with it, and apps that trust your
+  server as a verifier show the check too.
 - **Let people without an account join — for Aloha Social only.** Switch on external users
   and people register themselves from a "Create an account" button on the login page:
   a username that becomes their handle, an email address they confirm, the server rules
@@ -850,14 +882,44 @@ given a `FakeTable` that records the schema they ask for rather than building it
 
 A second PHP suite in `tests/Integration/` runs against a real Nextcloud and
 database — migrations, query SQL and storage boundaries the mocks cannot reach.
-CI runs it on SQLite, MySQL and PostgreSQL; locally, point it at an installed
-server:
+CI runs it on SQLite and PostgreSQL for every pull request, and on MySQL and
+MariaDB as well every night; locally, point it at an installed server:
 
 ```bash
 NEXTCLOUD_ROOT=/path/to/nextcloud composer run test:integration
 ```
 
 See `tests/Integration/README.md` for what it covers.
+Every night, `integration-robustness.yml` runs it twice on the same database
+and once in random order (the seed is in the job summary), on all three
+databases, and on SQLite with APCu and with Redis as the server's memcache.
+
+**Coverage** is measured in CI on one leg of `phpunit-sqlite.yml` (the newest
+server and PHP): the unit and the integration suite each write a Clover
+report, `tests/coverage-floor.php` merges the two line by line, puts a table
+per directory in the job summary and fails when line coverage of `lib/` drops
+under the floor in `tests/coverage-floor.json`. `vitest.yml` runs
+`npm run test:coverage`, which fails under the thresholds in
+`vitest.config.js`. Both floors sit about a point under what the suites cover;
+raise them as coverage grows.
+
+**Upgrades** are tested every night by `.github/workflows/upgrade.yml`, on
+SQLite, PostgreSQL and MySQL: the latest published release is installed and given two accounts,
+posts, a reply, a like, a boost, a follow and a picture (`tests/Upgrade/seed.sh`),
+then replaced by the change under test and upgraded with `occ upgrade`. The
+app's schema has to match a fresh install's, the seeded data has to read back
+through the client API (`tests/Upgrade/verify.py`), and the integration suite
+runs on the upgraded instance.
+
+`dependency-audit.yml` runs `composer audit` and `npm audit --omit=dev` every
+night.
+
+**Several open pull requests together** are checked by `stack-check.yml`: it
+merges their heads onto master in the order given (`tests/Stack/merge.sh`),
+stops with the files in conflict if one does not merge, and runs the unit and
+integration suites on the result. Start it from the Actions tab with the
+numbers in merge order, or put the `stack-check` label on the pull requests;
+the header of the workflow says what this adds to GitHub's own merge refs.
 
 ### Interop tests
 
@@ -879,29 +941,126 @@ composer run test:interop
 ```
 
 `.github/workflows/interop.yml` stands the whole thing up — Postgres, Redis,
-Mastodon, PeerTube, a Nextcloud and an account on each side — weekly and on
-demand. Deliberately
-not on every pull request: it depends on a third-party image whose startup this
-repository does not control. See `tests/Interop/README.md`, including what it
-cannot prove.
+Mastodon, PeerTube, a Nextcloud and an account on each side — every night and
+on demand against Mastodon 4.3 and 4.5, which is the version that writes quote
+posts, and against 4.3 on a pull request that touches the federation code
+(see *What CI runs, and when* below). It depends
+on third-party images whose startup this repository does not control, so a red
+run is worth reading for which side failed. See `tests/Interop/README.md`,
+including what it cannot prove.
 
 ### Browser tests
 
 `tests/e2e/` drives a real Nextcloud with the app installed, in Chromium,
 through [Playwright](https://playwright.dev): sign in, open the app, write a
-post and see it in the feed, walk the Discover page, switch scopes, open a
-group list, add and remove a keyword filter, and check that a post of your own
-offers to be deleted and written again. Nothing is mocked, and the bundle under test is the committed one
-in `js/`. `.github/workflows/e2e.yml` sets up a throwaway server for every pull
-request; against an instance of your own:
+post and see it in the feed, attach and describe a picture, vote in a poll,
+reply and boost, follow and unfollow, send a direct message only its recipient
+can read, receive a like and a mention, search for an account and a hashtag,
+make and fill a list, add and remove a keyword filter, read public profiles and
+posts signed out, and use the main pages on a phone-sized screen. Nothing is
+mocked, and the bundle under test is the committed one in `js/`.
+`.github/workflows/e2e.yml` sets up a throwaway server for every pull request,
+on Nextcloud 35; the nightly run adds Nextcloud master and 34, PostgreSQL and
+the smoke spec in Firefox. Against an instance of your own:
 
 ```
 npx playwright install chromium
 E2E_BASE_URL=https://cloud.example E2E_USER=alice E2E_PASSWORD=… E2E_GROUP="Design" npm run test:e2e
 ```
 
-`E2E_GROUP` is optional — the display name of a Nextcloud group the account is
-in, for the list test; without it that test is skipped.
+`E2E_USER` should not be the administrator: the flows with two people use the
+administrator as the other one (`E2E_ADMIN_USER`/`E2E_ADMIN_PASSWORD`, default
+`admin`/`admin`), who also creates a bystander account for the direct-message
+test. `E2E_GROUP` is optional — the display name of a Nextcloud group the
+account is in, for the list test; without it that test is skipped outside CI.
+The hashtag search test needs a hashtag the cron has counted; the workflow
+seeds `#alohasearch` with `occ social:note:create` and `occ social:cache:refresh`.
+`E2E_BROWSERS=webkit,firefox` (or `all`) also runs the smoke spec in those
+engines, once they are installed. `E2E_IGNORE_HTTPS_ERRORS=1` accepts a
+certificate nobody vouches for, as on a test instance with one of its own.
+
+The weekly run also sets the server up the ways production does and the
+built-in server alone does not: under a sub-path (`/nextcloud`), with pretty
+URLs, and over HTTPS behind a proxy. `tests/e2e/server/router.php` gives PHP's
+built-in server the first two:
+
+```
+E2E_WEBROOT=/nextcloud E2E_PRETTY_URLS=1 php -S localhost:8080 -t <dir with nextcloud in it> \
+    apps/social/tests/e2e/server/router.php
+```
+
+`accessibility.spec.mjs` scans every page of the app with
+[axe-core](https://github.com/dequelabs/axe-core) and fails on a serious or
+critical WCAG A/AA violation that `tests/e2e/a11y-baseline.json` does not
+already list; a listed one that is gone is reported in the log so the
+baseline can shrink. After fixing some, or to accept a change, rewrite the
+baseline from what the pages show now:
+
+```
+A11Y_UPDATE_BASELINE=1 E2E_BASE_URL=… E2E_USER=… E2E_PASSWORD=… npm run test:e2e -- accessibility.spec.mjs
+```
+
+`pseudo-locale.spec.mjs` reads the app in `en_XA`, a pseudo-locale that
+`tests/e2e/pseudo-locale.mjs` writes from the strings in the source: each one
+accented, a third longer and in brackets (`[Šéţţîñĝš ~]`). It fails on plain
+English inside the app, which is text that never went through `t()` or `n()`,
+and on pages that no longer fit, on a desktop and on a phone. The workflow runs
+it weekly and on demand; by hand:
+
+```
+node tests/e2e/pseudo-locale.mjs        # writes l10n/en_XA.json and .js
+occ user:setting alice core lang en_XA
+E2E_PSEUDO_LOCALE=1 E2E_BASE_URL=… E2E_USER=alice E2E_PASSWORD=… npm run test:e2e -- pseudo-locale.spec.mjs
+```
+
+### What CI runs, and when
+
+A pull request runs a fast core, about 30 jobs and 40 runner minutes, so
+that it is green within minutes rather than hours: it used to start 70 jobs
+and some 320 runner minutes, which the runner pool queued for about three
+hours. Everything else runs every night on master, between 02:00 and 03:00
+UTC, where a version-specific failure is found the next morning.
+
+**On every pull request** (and every push to master):
+
+- PHPUnit, unit and integration suites: SQLite and PostgreSQL on the newest
+  stable Nextcloud, plus the SQLite coverage leg on Nextcloud master, all on
+  the newest PHP (`.github/scripts/pull-request-legs.jq` picks them from the
+  version matrix);
+- PHP lint under the oldest PHP `info.xml` claims, Psalm, php-cs-fixer,
+  ESLint, Stylelint, the Node build check, Vitest, REUSE, `info.xml` lint and
+  the fixup-commit check;
+- the browser tests on Nextcloud 35, SQLite, Chromium (about four minutes);
+- the interop jobs (Mastodon and PeerTube, Bluesky, Loops, Pixelfed,
+  GoToSocial) only when the pull request touches the federation code: the
+  paths are listed in `interop-pr.yml`.
+
+**Every night** (and by hand from the Actions tab):
+
+- PHPUnit across the whole PHP × Nextcloud matrix `info.xml` allows, with
+  Nextcloud 34 and master, on SQLite, PostgreSQL, MySQL and MariaDB;
+- `integration-robustness.yml`: the integration suite twice on one database
+  and in random order, and with APCu and Redis as memcache;
+- `upgrade.yml`: every upgrade leg, from the latest release and from 0.10.0;
+- the browser tests on Nextcloud master and 34, on PostgreSQL and in Firefox
+  (the install shapes stay weekly);
+- PHP lint under every PHP of the matrix, the l10n extraction, the dependency
+  audit, and all interop jobs, Mastodon 4.5 included;
+- as before: the benchmark (`perf-nightly.yml`), fuzzing and mutation
+  testing; weekly: Misskey and Akkoma interop, the far time zones and the
+  l10n pull.
+
+**Labels** bring the night onto a pull request (`labelled-ci.yml`), when the
+label is put on and again on every push:
+
+- `full-ci` runs everything the nightly run does, for a pull request that
+  changes the schema, a query, a dependency or the CI itself;
+- `interop` runs the interop jobs on a pull request whose paths would not.
+
+**A red night opens an issue.** `nightly-failure.yml` opens one issue per
+failing scheduled workflow, titled "Nightly: *workflow* failing" and labelled
+`nightly-failure`, with a link to the run and the jobs that failed; a night
+that fails again updates it, and the first green scheduled run closes it.
 
 ## 🛠️ Contributing
 

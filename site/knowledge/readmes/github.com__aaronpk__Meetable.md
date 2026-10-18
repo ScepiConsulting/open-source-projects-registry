@@ -32,6 +32,8 @@ Events have a permalink that contains
 
 When logged in, you can add photos directly to an event page. Event pages also accept [webmentions](https://webmention.net) so that people can add photos and notes to the page from their own websites.
 
+With "Proposed Events" enabled in the site settings, an event can be created without a date, offering several possible dates instead. Logged-in users vote yes, if need be, or no on each date, and whoever can edit the event then chooses one, turning it into a regular scheduled event.
+
 ## Setup
 
 You can run Meetable using Docker Compose or install it manually.
@@ -45,14 +47,14 @@ curl -o .env https://raw.githubusercontent.com/aaronpk/Meetable/main/.env.exampl
 ```
 
 2\. Fill in your configuration. At minimum: \
-Set `APP_KEY` to a random 32-character string (for example you can run `crypto.randomUUID().replace(/-/g, '')` in your browser's console).
+Set `APP_KEY` to a random 32-character string (for example the output of `openssl rand -hex 16`, or of `crypto.randomUUID().replace(/-/g, '')` in your browser's console).
 Set the `APP_URL`, a secure `DB_PASSWORD` and `DB_ROOT_PASSWORD`.
 
 3\. Start the containers:
 ```bash
 docker compose up -d
 ```
-4\. Access the site at `http://localhost:8080`.
+4\. Access the site at `http://localhost:8080`. The port is only reachable from the server itself, so put a reverse proxy with TLS in front of it to make the site public.
 
 ### Manual Installation
 
@@ -131,6 +133,16 @@ Alternatively, you can set up a cron job to run every minute which will process 
 php artisan queue:work --stop-when-empty
 ```
 
+#### Scheduled Tasks
+
+Some things happen on a schedule rather than in response to a request: reminders are sent before events with a meeting link start, Discord channels are notified about upcoming events and the Discord server's event list is kept in sync, and the upcoming copies of recurring events are created. These all run from Laravel's scheduler, so set up a cron job that runs every minute, as the same user the web server runs the app as:
+
+```
+* * * * * cd /path/to/meetable && php artisan schedule:run >> /dev/null 2>&1
+```
+
+You can see what the scheduler will run with `php artisan schedule:list`.
+
 
 #### Web Server
 
@@ -192,6 +204,12 @@ You can choose whether or not you want a "log in/out" link to appear in the top 
 AUTH_SHOW_LOGIN=true
 AUTH_SHOW_LOGOUT=false
 ```
+
+A user's name, email address and profile photo are stored when they first log in and refreshed from the login provider on every later login. Profile photos are downloaded on the queue, so if `QUEUE_CONNECTION` is not `sync` a queue worker needs to be running for them to appear. With Vouch there is no login step of its own, so the user's h-card is re-read at the start of each browser session instead.
+
+#### Discord
+
+A Discord bot can post a message to a channel before events with a particular tag start, and can add upcoming events to the server's event list, where they appear in the sidebar and go live at their start time. The Discord page sets how far ahead events are added, and at most the 25 soonest are added so a busy calendar doesn't overwhelm the list. Set `DISCORD_CLIENT_ID` and `DISCORD_BOT_TOKEN` as described in `.env.example`, then add the bot to the server from the "Discord" page in the menu. This works with any login method: when the site logs in with Discord, every user can set up the bot, otherwise it is only available to people who can manage the site. If the bot was added before the server event list option existed, add it again so it gets the "Create Events" and "Manage Events" permissions.
 
 #### Passkey Authentication
 

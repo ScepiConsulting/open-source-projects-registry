@@ -169,7 +169,7 @@ You must manually provide:
 
 - Name
 - URL
-- Cover image (or use default)
+- Cover image (or use default). PNG, JPEG or WebP, up to 10 MB and 40 megapixels
 - Last released chapter selectors
 
 ## Last Released Chapter Selectors
@@ -183,17 +183,36 @@ Custom manga can automatically detect new chapters by getting the web page defin
   Attribute containing the chapter name or URL (e.g., href).
   If empty, the element text is used.
 - **Regex (optional)**:
-  Extracts the chapter number from the selected value.
+  Extracts the chapter number from the selected value. The chapter is the text captured by the regex groups (the parts in parentheses). Groups that didn't match are skipped, and when more than one matched, they're joined with a space. For example:
+  - `Chapter (\d+)` gets `100` from `Chapter 100`.
+  - `Chapter (\d+(?:\.\d+)?)` gets `12.5` from `Chapter 12.5`. Groups inside another group, like `(\d+(\.\d+)?)`, and non-capturing groups, `(?:...)`, are part of the group around them, not separate parts.
+  - `Ch\.(\d+)|Chapter (\d+)` works with both `Ch.7` and `Chapter 7`.
+  - `CHAPTER(\p{Nd}+).*?(\p{Nd}+)` gets `４ ８` from `CHAPTER４［ BLIND JUSTICE ］８（後編）`, a chapter in parts.
+
+  Regexes use [Go's syntax](https://github.com/google/re2/wiki/Syntax), where `\d` only matches `0-9`. Use `\p{Nd}` to also match digits like the full-width `４`. A chapter with more than one part, like `4 8`, isn't a number: Mantium shows it as unread when it's different from the last read chapter, and in a multimanga, compares it with the other sources by the date it was found.
 - **Get First (optional)**:
-  If enabled, selects the first matching element; otherwise, selects the last.
+  If enabled, selects the first matching element; otherwise, selects the last. Enable it when the site lists the newest chapter first.
 - **Use Browser (optional)**:
-  Uses a headless browser if the page requires JavaScript rendering.
+  Uses a headless browser if the page requires JavaScript rendering. Mantium waits up to 15 seconds for each selector's element to appear in the page.
   Otherwise, a simple HTTP GET request is used.
 
+The page is fetched once, and both selectors are applied to it.
+
+Use the **Test selectors** button in the add and edit forms to see which chapter the selectors get, without saving anything. If a selector, attribute or regex doesn't work, the message tells which one and why.
+
 > [!NOTE]
-> If the URL selector doesn't return a string that starts with `http`, Mantium will consider it a relative URL and will prepend the manga URL to it. For example, if the manga URL is `https://example.com/one-piece` and the URL selector returns `/chapter1000`, Mantium will consider the chapter URL to be `https://example.com/chapter1000`.
+> If the URL selector returns a relative URL, Mantium resolves it the same way a browser does: against the page's `<base>` element if it has one, else against the manga URL (after redirects). For example, if the manga URL is `https://example.com/title/one-piece/`, the URL selector returning `/chapter1000` becomes `https://example.com/chapter1000`, and returning `chapter1000` becomes `https://example.com/title/one-piece/chapter1000`.
 
 <img width="855" height="1335" alt="image" src="https://github.com/user-attachments/assets/4e844149-964e-463f-821f-f59a45c9a644" />
+
+## Private Addresses
+
+By default, the API refuses to get custom manga pages and cover images from private addresses, like `localhost`, `192.168.x.x`, `10.x.x.x` or `169.254.169.254`. This includes redirects and every request made by the browser when **Use Browser** is enabled. It prevents a URL from making the API reach services in your network that aren't meant to be reachable from outside.
+
+If you track a site hosted in your own network, set the API environment variable `ALLOW_PRIVATE_URLS=true`.
+
+> [!WARNING]
+> Custom mangas whose URL points to your network don't update until you set `ALLOW_PRIVATE_URLS=true`.
 
 ---
 

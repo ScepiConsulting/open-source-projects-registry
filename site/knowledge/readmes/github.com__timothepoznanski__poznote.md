@@ -25,6 +25,10 @@ A free, self-hosted, open-source alternative to Notion, Obsidian, Evernote, or O
 </h3>
 
 <p align="center">
+  <a href="https://poznote.com/video/poznote.mp4"><img src="images/poznote-video.jpg" alt="Watch the Poznote video" width="100%"></a>
+</p>
+
+<p align="center">
   <img src="images/pres1.png" alt="Poznote-light" width="100%">
 </p>
 
@@ -674,6 +678,7 @@ Poznote supports two primary note formats, each tailored for different workflows
 
 *   **Usage:** Write one note per day, journal-style, from a dedicated Diary board.
 *   **Workflow:** The "Create today's entry" button creates today's note (it reads "Go to today's entry" once the note exists), titled with the current date and stored automatically in a `Diary/YYYY/MM` folder structure.
+*   **Another Day:** The calendar button next to the view controls picks any day, on phones too. Days that already have an entry are marked with a dot; picking one opens its entry, picking another day creates the entry for that date.
 *   **Board View:** Entries are displayed as cards grouped by month, newest first, with a filter to quickly find past entries.
 *   **Journal View:** The scroll button next to the view controls switches to one reading column: every entry with its full content, newest first, loaded as you scroll. The filter works there too. Click an entry, or its pencil, to edit it right there; changes are saved as you type. The tag button next to the pencil turns the entry's tags into an editor: add or remove tags without opening the note.
 *   **Format:** New entries are created as rich text or Markdown notes, depending on the "Diary entry format" setting under **Settings > Behavior**.
@@ -1366,7 +1371,7 @@ Poznote includes an integrated AI chat that connects to a local [Ollama](https:/
 
 An administrator enables it from **Settings → Admin Tools → AI Assistant**, and every profile then gets an **AI assistant** button in the left icon rail. The AI server is called from the Poznote server, never from your browser, so with a local Ollama instance your notes never leave your machine.
 
-What the assistant can do, choosing a provider and a model, personal API keys, and connecting a local server from the Poznote container are covered in the [AI Assistant documentation](docs/AI-ASSISTANT.md). To let an external AI assistant (VS Code Copilot, Claude CLI...) manage your notes instead, see the [MCP Server](#mcp-server) below.
+What the assistant can do, choosing a provider and a model, personal API keys, external tools such as a web search (remote MCP servers), and connecting a local server from the Poznote container are covered in the [AI Assistant documentation](docs/AI-ASSISTANT.md). To let an external AI assistant (VS Code Copilot, Claude CLI...) manage your notes instead, see the [MCP Server](#mcp-server) below.
 
 ## Transcription (speech to text)
 
@@ -1392,6 +1397,7 @@ The MCP server ships with the official `docker-compose.yml` and is published on 
 Poznote runs in any browser, and can also be installed from the browser as a web app (PWA): it then gets its own icon and its own window, like a native application.
 
 *   **Android and computer:** open your Poznote instance in Chrome or Edge and choose **Install** in the browser menu.
+*   **Firefox on Android:** open your Poznote instance in Firefox and choose **Add to Home screen** in the browser menu.
 *   **iPhone and iPad:** open your Poznote instance in Safari, tap **Share**, then **Add to Home Screen**.
 
 > Installing the web app requires Poznote to be served over HTTPS (`http://localhost` also works).
@@ -1447,7 +1453,7 @@ Access the **Swagger UI** directly from Poznote at `Settings > About > API REST`
 
 Poznote prioritizes simplicity and portability - no complex frameworks, no heavy dependencies. Just straightforward, reliable web technologies that ensure your notes remain accessible and under your control.
 
-**Privacy-First Architecture:** Poznote operates entirely locally with no external connections required for functionality. All libraries (Excalidraw, Mermaid, KaTeX) are bundled and served from your own instance. Out of the box the only outbound connection is a daily update check; the optional features you turn on yourself (Git Sync, S3, an AI provider, webhooks, SMTP, OIDC) are the only other ones.
+**Privacy-First Architecture:** Poznote operates entirely locally with no external connections required for functionality. All libraries (Excalidraw, Mermaid, KaTeX) are bundled and served from your own instance. Out of the box the only outbound connection is a daily update check; the optional features you turn on yourself (Git Sync, S3, an AI provider and the external tools you connect to it, webhooks, SMTP, OIDC) are the only other ones.
 
 <details>
 <summary>If you are interested in the tech stack on which Poznote is built, <strong>have a look here.</strong></summary>
@@ -1460,7 +1466,7 @@ Poznote prioritizes simplicity and portability - no complex frameworks, no heavy
 - **HTML5** - Markup and structure
 - **CSS3** - Styling and responsive design
 - **JavaScript (Vanilla)** - Interactive features and dynamic content
-- **React + Vite** - Build toolchain for Excalidraw component (bundled as IIFE)
+- **Vite** - Build toolchain for the Excalidraw (React) and CodeMirror components (bundled as IIFE)
 - **AJAX** - Asynchronous data loading
 
 ### Libraries
@@ -1469,6 +1475,8 @@ Poznote prioritizes simplicity and portability - no complex frameworks, no heavy
 - **Mermaid** - Client-side JavaScript library for diagram and flowchart generation from text
 - **KaTeX** - Client-side JavaScript library for fast math typesetting and rendering mathematical equations
 - **Sortable.js** - JavaScript library for drag-and-drop sorting
+- **Lucide** - Icon set used across the interface
+- **Devicon** - Programming language icons for code blocks
 - **highlight.js** - Syntax highlighting for code blocks
 - **Swagger UI** - Interactive API documentation and testing interface
 
@@ -1481,5 +1489,6 @@ Poznote prioritizes simplicity and portability - no complex frameworks, no heavy
 - **Nginx + PHP-FPM** - High-performance web server with FastCGI Process Manager
 - **Alpine Linux** - Secure, lightweight base image
 - **Docker** - Containerization for easy deployment and portability
+- **Supervisor** - Runs Nginx, PHP-FPM and the background workers (reminders, scheduled backups)
 - **Python 3.12 (Alpine)** - MCP server runtime with the httpx, uvicorn and fastmcp libraries for AI assistant integration
 </details>

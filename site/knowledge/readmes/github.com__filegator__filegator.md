@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<a href="https://demo.filegator.io"><img src="https://img.shields.io/badge/Live-Demo-brightgreen.svg?style=flat-square" alt="Live demo"></a>
+<a href="https://demo.filegator.io/?ref=github.com%2Ffilegator%2Ffilegator"><img src="https://img.shields.io/badge/Live-Demo-brightgreen.svg?style=flat-square" alt="Live demo"></a>
 <a href="https://github.com/filegator/filegator/actions"><img src="https://github.com/filegator/filegator/workflows/PHP/badge.svg?branch=master" alt="Build Status PHP master"></a>
   <a href="https://github.com/filegator/filegator/actions"><img src="https://github.com/filegator/filegator/workflows/Node/badge.svg?branch=master" alt="Build Status Node master"></a>
 <a href="https://codecov.io/gh/filegator/filegator"><img src="https://codecov.io/gh/filegator/filegator/branch/master/graph/badge.svg" alt="Code Coverage"></a>
@@ -26,7 +26,7 @@ If allowed, users can download multiple files or folders at once.
 File upload supports drag&drop, progress bar, pause and resume. Upload is chunked so you should be able to upload large files regardless of your server configuration.
 
 <p align="center">
-<a href="https://demo.filegator.io"><img src="https://filegator.io/img/animated.gif" alt="Screenshot"></a>
+<a href="https://demo.filegator.io/?ref=github.com%2Ffilegator%2Ffilegator"><img src="https://filegator.io/img/animated.gif" alt="Screenshot"></a>
 </p>
 
 
@@ -37,23 +37,28 @@ FileGator is a free, open-source project. It's an independent project with its o
   <tbody>
     <tr>
       <td align="center" valign="middle">
-        <a href="https://www.hostinger.com" target="_blank">
+        <a href="https://www.hostg.xyz/aff_c?offer_id=815&aff_id=244019" target="_blank">
           <img title="Hostinger" width="177px" src="https://filegator.io/img/hstngr.png">
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://www.linkpreview.net/?utm_campaign=Sponsored%20GitHub%20FileGator" target="_blank">
+        <a href="https://www.linkpreview.net/?ref=github.com%2Ffilegator%2Ffilegator" target="_blank">
           <img title="Preview Web Links with our Free API service. Get JSON Response for any URL" width="200px" src="https://www.linkpreview.net/images/logo-dark.png">
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://correctme.app/?utm_campaign=Sponsored%20GitHub%20FileGator" target="_blank">
+        <a href="https://correctme.app/?ref=github.com%2Ffilegator%2Ffilegator" target="_blank">
           <img title="Free Online Grammar and Spell Checker" width="177px" src="https://correctme.app/logo.png">
         </a>
       </td>
       <td align="center" valign="middle">
-        <a href="https://interactive32.com/?utm_campaign=Sponsored%20GitHub%20FileGator" target="_blank">
+        <a href="https://interactive32.com/?ref=github.com%2Ffilegator%2Ffilegator" target="_blank">
           <img title="Modern approach to software development" width="177px" src="https://interactive32.com/images/logo.png">
+        </a>
+      </td>
+      <td align="center" valign="middle">
+        <a href="https://www.vanillavoice.com/?ref=github.com%2Ffilegator%2Ffilegator" target="_blank">
+          <img title="VanillaVoice - Turn any Text into Human-Sounding Speech" width="200px" src="https://www.vanillavoice.com/static/img/logo.svg">
         </a>
       </td>
     </tr>
@@ -72,7 +77,7 @@ FileGator is a free, open-source project. It's an independent project with its o
 
 
 ## Documentation
-Check out the official [documentation](https://docs.filegator.io/) on how to download, [install](https://docs.filegator.io/install.html) and use FileGator.
+Check out the official [documentation](https://docs.filegator.io/?ref=github.com%2Ffilegator%2Ffilegator) on how to download, [install](https://docs.filegator.io/install.html?ref=github.com%2Ffilegator%2Ffilegator) and use FileGator.
 
 
 ## Features & Goals
@@ -102,7 +107,7 @@ visit: http://127.0.0.1:8080 login as admin/admin123
 ## Other installation methods
 Sponsored or community-contributed installation methods for various platforms:
 
-- **[One-click deployment](https://www.hostg.xyz/SHK2W)** provided by [Hostinger](https://hostinger.com). No technical setup or manual server configuration is required.                                      
+- **[One-click deployment](https://www.hostg.xyz/SHK2W)** provided by [Hostinger](https://www.hostg.xyz/aff_c?offer_id=815&aff_id=244019). No technical setup or manual server configuration is required.                                      
 - **[Deploy with Easypanel](https://easypanel.io/templates/filegator)**, a self-hosted Docker deployment platform.
 
 Please note that this section may contain affiliate links. We may earn a commission at no extra cost to you, which helps support FileGator and its development.

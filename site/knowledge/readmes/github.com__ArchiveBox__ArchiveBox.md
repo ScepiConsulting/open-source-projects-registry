@@ -187,6 +187,8 @@ docker compose exec archivebox archivebox help
 </li>
 </ol>
 
+Docker image channels: `archivebox/archivebox:dev` advances only after full CI passes. Development servers can opt into `:dev-unstable`, which follows the newest clean `dev` image after both architectures finish the Docker build and checks, without waiting for the rest of CI. The existing universal `:sha-<12-character-commit>` tag is published at the same time. Both channels include amd64 and arm64, and are also available at `ghcr.io/archivebox/archivebox`. The early `dev-unstable` and SHA images can contain changes that fail later checks; ordinary installations should keep using the fully tested release channels.
+
 See <a href="#cli-usage">below</a> for more usage examples using the CLI, Web UI, or <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#sql-shell-usage">filesystem/SQL/Python</a> to manage your archive.
 <br/><br/>
 </details>
@@ -405,6 +407,7 @@ See <a href="#cli-usage">below</a> for usage examples using the CLI, Web UI, or 
 <li><a href="https://elest.io/open-source/archivebox"><img src="https://img.shields.io/badge/Managed_Hosting-Elest.io-%23193f7e.svg?style=flat" height="22px"/></a></li>
 <li><a href="https://www.stellarhosted.com/archivebox/"><img src="https://img.shields.io/badge/Semi_Managed_Hosting-StellarHosted.com-%23193f7e.svg?style=flat" height="22px"/></a> (USD $29-250/mo, <a href="https://www.stellarhosted.com/archivebox/#pricing">pricing</a>)</li>
 <li><a href="https://www.pikapods.com/pods?run=archivebox"><img src="https://img.shields.io/badge/Semi_Managed_Hosting-PikaPods.com-%2343a047.svg?style=flat" height="22px"/></a> (from USD $2.6/mo)</li>
+<li><a href="https://pethost.dev/templates/archivebox/"><img src="https://img.shields.io/badge/Semi_Managed_Hosting-Pethost.dev-%230e0e0e.svg?style=flat" height="22px"/></a> (from EUR €9.99/mo)</li>
 <li><a href="https://m.do.co/c/cbc4c0c17840">
  <img src="https://img.shields.io/badge/Unmanaged_VPS-DigitalOcean.com-%232f7cf7.svg?style=flat" height="22px"/>
 </a> (USD $5-50+/mo, <a href="https://m.do.co/c/cbc4c0c17840">🎗&nbsp; referral link</a>, <a href="https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-compose-on-ubuntu-20-04">instructions</a>)</li>
@@ -741,6 +744,16 @@ env CHROME_BINARY=chromium archivebox version   # run with a one-off config
 
 The configuration is documented here: **[Configuration Wiki](https://github.com/ArchiveBox/ArchiveBox/wiki/Configuration)**, and loaded from: [`archivebox/config/`](https://github.com/ArchiveBox/ArchiveBox/blob/dev/archivebox/config/).
 
+Title extraction prefers Open Graph or Twitter title metadata, then falls back
+to the rendered page title, including JavaScript changes. This preserves post
+captions on sites such as Instagram that use a generic document title.
+By default, HTTP downloads reuse Chrome's detected identity after browser setup.
+yt-dlp keeps its native identity and its own argument overrides.
+Set <code>USER_AGENT</code> to override the shared request identity, or
+<code>CHROME_USER_AGENT</code> for an explicit browser override, before creating a
+new crawl. The historical curl-only <code>CURL_USER_AGENT</code> option does not
+configure browser title extraction. Existing crawls retain their frozen config.
+
 <a name="most-common-options-to-tweak"></a>
 <details>
 <summary><i>Expand to see the most common options to tweak...</i></summary>
@@ -867,6 +880,22 @@ The on-disk layout is optimized to be easy to browse by hand and durable long-te
 </code></pre>
 
 Each snapshot subfolder includes static metadata and plain extractor output files. Current releases do not create top-level <code>data/archive/TIMESTAMP</code> projections; legacy timestamp directories are migrated into the user-scoped tree by <code>archivebox update --migrate-only</code>.
+
+To import saved captures into another collection, initialize the destination with
+<code>archivebox init</code>, then copy completed snapshot directories into its
+<code>archive/</code> tree, preserving their relative paths and
+<code>index.jsonl</code> (or legacy <code>index.json</code>) files. From the
+destination collection, run <code>archivebox update --rescan --migrate-only</code>.
+The explicit rescan discovers directories absent from the database, restores
+snapshot/crawl identities and saved results, and can be restarted. Normal
+<code>init</code> and <code>update</code> do not scan the entire archive tree.
+Conflicting identities are reported rather than overwritten. Copying captures
+does not require importing the old database or its machine/process records.
+
+Tags are restored on the first import. Later rescans preserve tag removals and
+renames made in the destination database and update the on-disk metadata.
+Crawl tags are copied to new snapshots at creation time. Changing crawl tags
+does not change earlier snapshots; use the admin bulk tag actions to edit those.
 
 <h4>Learn More</h4>
 <ul>
@@ -1037,6 +1066,9 @@ archivebox add --no-only-new 'https://example.com'
 </code></pre>
 
 The <img src="https://user-images.githubusercontent.com/511499/115942091-73c02300-a476-11eb-958e-5c1fc04da488.png" alt="Re-Snapshot Button" height="24px"/> button in the Admin UI performs the same explicit re-archive.
+
+<code>Archive Now</code> creates a new capture and preserves the selected historical
+snapshot. <code>Redo</code> reruns extraction on the selected snapshot in place.
 
 <h4>Learn More</h4>
 

@@ -31,7 +31,7 @@ If you don't need the web GUI of NPMplus, you may also have a look at caddy: htt
 - opt-in logging
 - zstd and brotli compression in addition to gzip
 - Goaccess log analytics (/goaccess) and a Swagger UI (/api/docs) for the api, both in the web UI
-- password/mfa reset (only sqlite): `docker exec -it npmplus password-reset.js USER_EMAIL [PASSWORD] [--disable-mfa]`
+- password/mfa reset (only sqlite): `docker exec -it npmplus password-reset.js USER_EMAIL [--disable-mfa]`, the new password is read from stdin
 - alpine based, much smaller image
 - punycode domain support
 - option to replace custom certs
@@ -201,6 +201,7 @@ upstream cu_mybackend {
 ```
 3. Configure your proxy host/stream like always in the UI, but set the hostname to the exact name of your upstream block (e.g. `cu_mybackend`) and leave the forward port field empty (ports are defined inside the upstream block)
    - The `cu_` prefix (short for **c**ustom **u**pstream) is required: NPMplus uses it to detect that the hostname refers to a custom upstream block and skips generating its own upstream block for it
+   - This also works for auth request upstreams (env or UI field), use the scheme and the name of your upstream block without port (e.g. `http://cu_myauth`), SNI and Host header are then set to the requested host like for proxy hosts, so the servers inside the upstream block need to point directly to the auth service and not to NPMplus itself
 
 ## Encrypted Client Hello (ECH)
 
@@ -329,6 +330,7 @@ If you need to run scripts before NPMplus launches put them under: `/opt/npmplus
     - or you are under (a) DDoS-attack(s), which you can't handle yourself and the attacker does not know your real ip/does not use it to attack you, but instead your domain: you could use cloudflare as dns nameserver for your domain with the proxy disabled and only enable it if you are under an attack (only work if the attacker did not cache your real ip)
     - or you want to hide your IP and only expose http(s) services, but then: don't use NPMplus at all, install cloudflared and use cloudflare tunnels and point it directly to your upstreams, this way you can still manage everything in a GUI and you don't even need to expose any ports
 - If you still want to use cloudflare proxy make sure to set `your domain => SSL/TLS => SSL/TLS encryption => Current encryption mode => Configure` to "Full (strict)"
+- If you use cloudflare proxy and your local dns server resolves your domains directly to NPMplus (split dns/dns rewrites), make sure it also overrides or blocks (empty answer) their HTTPS (type 65) records, otherwise browsers may use the ECH config of cloudflare (public name `cloudflare-ech.com`) and the connection to NPMplus will fail, since NPMplus does not have the ECH keys of cloudflare
 - Just using cloudflare as a dns nameserver provider for your domain is fine
 - If you use cloudflare to forward mails to your inbox, note that cloudflare also acts as man-in-the-middle in this case
 

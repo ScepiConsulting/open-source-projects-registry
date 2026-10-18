@@ -42,7 +42,9 @@ them to a given `redis` instance. Simply configure your `traefik` node with a
     - [Namespace via label prefix](#namespace-via-label-prefix)
   - [Docker API](#docker-api)
     - [Traefik Docker Provider Config](#traefik-docker-provider-config)
+  - [Redis TTL](#redis-ttl)
   - [Redis Sentinel](#redis-sentinel)
+  - [Redis TLS](#redis-tls)
   - [Releasing](#releasing)
   - [License](#license)
 
@@ -124,6 +126,12 @@ GLOBAL OPTIONS:
    --redis-pass value     Redis password (if needed) [$REDIS_PASS]
    --redis-db value       Redis DB number (default: 0) [$REDIS_DB]
    --redis-ttl value              Redis TTL (in seconds) (default: 0) [$REDIS_TTL]
+   --redis-tls                    Connect to Redis over TLS (default: false) [$REDIS_TLS]
+   --redis-tls-ca value           Path to PEM CA bundle used to verify the Redis server (default: system roots) [$REDIS_TLS_CA]
+   --redis-tls-cert value         Path to PEM client certificate for Redis mutual TLS [$REDIS_TLS_CERT]
+   --redis-tls-key value          Path to PEM client private key for Redis mutual TLS [$REDIS_TLS_KEY]
+   --redis-tls-server-name value  Server name used to verify the Redis certificate [$REDIS_TLS_SERVER_NAME]
+   --redis-tls-insecure-skip-verify  Skip verification of the Redis server certificate (insecure) [$REDIS_TLS_INSECURE_SKIP_VERIFY]
    --redis-sentinel-addrs value   Comma-separated list of Redis Sentinel addresses (e.g., host1:26379,host2:26379) [$REDIS_SENTINEL_ADDRS]
    --redis-sentinel-master value  Redis Sentinel master name [$REDIS_SENTINEL_MASTER]
    --docker-host value            Docker endpoint (default: "unix:///var/run/docker.sock") [$DOCKER_ADDR]
@@ -232,27 +240,34 @@ services:
       - 8088:80
 ```
 
-`8088` would automatically be used as the service endpoint's port in traefik. If
-you have more than one port or are using *host networking*, you will need to
-explicitly set the port binding via service label, like so:
+`8088` would automatically be used as the service endpoint's port in traefik.
+With multiple published ports, select the internal port using the standard
+Traefik service label. Traefik-kop matches both the internal port and protocol
+(TCP for HTTP/TCP services, UDP for UDP services) to find its host port:
 
 ```yaml
 services:
   nginx:
     image: "nginx:alpine"
-    network_mode: host
     ports:
       - 8088:80
-      - 8888:81
+      - "127.0.0.1::10/udp"
     labels:
       # (note: other labels snipped for brevity)
-      - "traefik.http.services.nginx.loadbalancer.server.port=8088"
+      - "traefik.http.services.nginx.loadbalancer.server.port=80"
+      - "traefik.udp.services.nginx-udp.loadbalancer.server.port=10"
 ```
 
-__NOTE:__ unlike the standard traefik-docker usage, we need to expose the
-service port on the host and tell traefik to bind to *that* port (8088 in the
-example above) in the load balancer config, not the internal port (80). This is
-so that traefik can reach it over the network.
+The HTTP endpoint uses host port `8088`. The UDP endpoint uses the ephemeral
+host port assigned by Docker, read from the container's runtime network settings.
+The same internal port number can be published separately for TCP and UDP.
+No additional labels or configuration are needed.
+
+If a labeled port has no matching internal-port publication, its value is used
+unchanged. This preserves explicit host-port labels and supports *host networking*.
+If a number matches an internal port, its published host port takes precedence.
+Published ports must be reachable from Traefik; a loopback-only binding is only
+reachable on that host.
 
 ## Namespaces
 
@@ -389,6 +404,25 @@ services:
           defaultRule: Host(`{{.Name}}.foo.example.com`)
 ```
 
+## Redis TTL
+
+Set `REDIS_TTL` (or `--redis-ttl`) to a positive number of seconds to expire
+published configuration when traefik-kop stops renewing it. The default, `0`,
+disables expiration.
+
+While running, traefik-kop renews its published keys every one-third of the TTL,
+even when the configuration is unchanged. This timer is independent of
+`KOP_POLL_INTERVAL`, so renewal also works when Docker polling is disabled (`0`)
+or the TTL is shorter than the poll interval. For example, `REDIS_TTL=300`
+renews keys every 100 seconds. Choose a TTL that leaves enough time for temporary
+Redis connectivity failures and scheduling delays; keys can still expire if
+renewal cannot reach Redis before the TTL elapses.
+
+Use a unique `KOP_HOSTNAME` for each instance. Configuration names in Redis are
+shared: if multiple instances publish the same router, service, or middleware
+keys, any of those instances can renew them. TTL is not per-node health checking
+for servers combined with `kop.merge-lbs`.
+
 ## Redis Sentinel
 
 If your Redis setup uses [Sentinel](https://redis.io/docs/management/sentinel/)
@@ -413,6 +447,38 @@ When Sentinel is configured, the `--redis-addr` flag is ignored.
 Both `--redis-sentinel-addrs` and `--redis-sentinel-master` must be provided
 together. The `--redis-user`, `--redis-pass`, and `--redis-db` flags still apply
 and are used for authenticating with the Redis master discovered by Sentinel.
+
+## Redis TLS
+
+To connect to a TLS-only Redis (optionally requiring client certificates),
+enable `REDIS_TLS` and point at the PEM files. The server certificate is
+verified by default against `REDIS_TLS_CA` (or the system roots if unset).
+
+```yaml
+services:
+  traefik-kop:
+    image: "ghcr.io/jittering/traefik-kop:latest"
+    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./certs:/certs:ro
+    environment:
+      - "REDIS_ADDR=redis.example.com:6380"
+      - "REDIS_USER=kop"
+      - "REDIS_PASS=secret"
+      - "REDIS_TLS=true"
+      - "REDIS_TLS_CA=/certs/ca.pem"
+      # mutual TLS (both required together)
+      - "REDIS_TLS_CERT=/certs/client.pem"
+      - "REDIS_TLS_KEY=/certs/client.key"
+      # only if the address does not match a name/IP in the server certificate
+      # - "REDIS_TLS_SERVER_NAME=redis.example.com"
+      - "BIND_IP=192.168.1.75"
+```
+
+Invalid or unreadable certificate files cause `traefik-kop` to exit at startup.
+`REDIS_TLS_INSECURE_SKIP_VERIFY` disables server verification and should be
+avoided. TLS settings also apply when using Sentinel.
 
 ## Releasing
 
