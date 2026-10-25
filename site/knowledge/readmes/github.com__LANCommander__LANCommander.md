@@ -60,10 +60,10 @@ LANCommander is an open-source, self-hostable digital game platform. Host your o
 - **Play session tracking** and statistics
 
 ### Game Packaging
-- **Dedicated Packager tool** with step-by-step wizard for creating game packages
+- **Built into the launcher** - a step-by-step wizard for creating game packages
 - **Automatic metadata lookup** - search IGDB and auto-fill game details
-- **Registry capture** and installer monitoring
-- **Direct upload** to your LANCommander server
+- **Registry capture** and installer monitoring, across 32- and 64-bit installers
+- **Direct publishing** to your LANCommander server, using the session you are already signed in with
 
 ### Developer SDK
 - **Published on NuGet** - [`LANCommander.SDK`](https://www.nuget.org/packages/LANCommander.SDK)
@@ -75,9 +75,10 @@ LANCommander is an open-source, self-hostable digital game platform. Host your o
 |-----------|:-------:|:-----:|:-----:|
 | Server    | x64, arm64 | x64, arm64 | x64, arm64 |
 | Launcher  | x64, arm64 | x64, arm64 | x64, arm64 |
-| Packager  | x86     | -     | -     |
 
 > **Note:** The launcher is primarily tested on Windows. Linux and macOS builds are provided but may have limited functionality.
+>
+> Game packaging is Windows-only: it works by injecting a hook DLL into the installer, which has no equivalent on other platforms.
 
 ## Quick Start
 
@@ -94,9 +95,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Etc/UTC
-      # Uncomment the line below to install SteamCMD
+      # Use lancommander/lancommander:latest-full for SteamCMD and WINE
       # - STEAMCMD=1
-      # Uncomment the line below to install WINE
       # - WINE=1
     volumes:
       - /path/to/app/data:/app/Data
@@ -113,13 +113,15 @@ All config and uploaded game archives are stored in `/app/Data`.
 
 Download the latest release for your platform from the [Releases](https://github.com/LANCommander/LANCommander/releases) page. The server is a self-contained binary with no external dependencies beyond a supported OS.
 
-### SteamCMD Support
+### SteamCMD and WINE Support
 
-The Docker image supports optional SteamCMD installation. Set `STEAMCMD=1` to enable it. SteamCMD will be installed in `/app/Data/Steam` with cached credentials persisted across container restarts.
+The default image includes yt-dlp and ffmpeg. SteamCMD and WINE are available in the `latest-full` image:
 
-### WINE Support
+```yaml
+image: lancommander/lancommander:latest-full
+```
 
-Set `WINE=1` to install WINE with wine32, wine64, and winetricks support in the Docker container.
+The default image can also install SteamCMD or WINE on first startup by setting `STEAMCMD=1` or `WINE=1`. SteamCMD is installed in `/app/Data/Steam` with cached credentials persisted across container restarts. The full image is currently published for amd64.
 
 > _Note: The Docker image runs the Linux build. Features such as server management may be limited._
 

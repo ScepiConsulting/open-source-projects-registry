@@ -1,6 +1,7 @@
 [![Go](https://github.com/bakito/adguardhome-sync/actions/workflows/go.yml/badge.svg)](https://github.com/bakito/adguardhome-sync/actions/workflows/go.yml)
 [![e2e tests](https://github.com/bakito/adguardhome-sync/actions/workflows/e2e.yaml/badge.svg)](https://github.com/bakito/adguardhome-sync/actions/workflows/e2e.yaml)
 [![Coverage Status](https://coveralls.io/repos/github/bakito/adguardhome-sync/badge.svg?branch=main&service=github)](https://coveralls.io/github/bakito/adguardhome-sync?branch=main)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/bakito/adguardhome-sync/badge)](https://scorecard.dev/viewer/?uri=github.com/bakito/adguardhome-sync)
 
 # <img src="./media/adguardhome-sync.svg" alt="AdGuardHome sync" width="50"/> AdGuardHome sync
 
@@ -67,6 +68,7 @@ For Replicas replace `#` with the index number for the replica. E.g.: `REPLICA#_
 | RUN_ON_START (bool)                                          | bool   | Run the sync on startup                                                                              |
 | PRINT_CONFIG_ONLY (bool)                                     | bool   | Print current config only and stop the application                                                   |
 | CONTINUE_ON_ERROR (bool)                                     | bool   | Continue sync on errors                                                                              |
+| SYNC_TRIGGER_FILE (string)                                   | string | Path to a file to watch; when modified, a re-sync is triggered                                       |
 | HTTP_CLIENT_TIMEOUT (string)                                 | string | Define a custom http client timeout ^([0-9]+(\.[0-9]+)?(ns|us|µs|ms|s|m|h))+$                        |
 | ORIGIN_URL (string)                                          | string | URL of adguardhome instance                                                                          |
 | ORIGIN_WEB_URL (string)                                      | string | Web URL of adguardhome instance                                                                      |
@@ -180,6 +182,8 @@ runOnStart:
 printConfigOnly:
 # Continue sync on errors (bool)
 continueOnError:
+# Path to a file to watch; when modified, a re-sync is triggered (string)
+syncTriggerFile:
 # Define a custom http client timeout ^([0-9]+(\.[0-9]+)?(ns|us|µs|ms|s|m|h))+$ (string)
 httpClientTimeout:
 # Origin instance (struct)
@@ -750,6 +754,30 @@ Serve the web dashboard with DNS statistics, sync status, and metrics (if enable
 
 - **Authentication**: Required (if configured)
 - **Response** (`200 OK`): HTML dashboard
+
+## Metrics
+
+If enabled, the following metrics are available:
+
+<!-- metrics-doc-start -->
+| Metric | Description |
+| ------ | ----------- |
+| adguard_avg_processing_time | This represent the average processing time for a DNS query in s |
+| adguard_home_sync_sync_count_total | Total number of started sync runs |
+| adguard_home_sync_sync_duration_seconds | This represents the duration of the last sync in seconds |
+| adguard_home_sync_sync_successful | This represents the whether the last sync was successful |
+| adguard_num_blocked_filtering | This represent the number of domains blocked |
+| adguard_num_dns_queries | Number of DNS queries |
+| adguard_num_replaced_parental | This represent the number of domains blocked (parental) |
+| adguard_num_replaced_safebrowsing | This represent the number of domains blocked (safe browsing) |
+| adguard_num_replaced_safesearch | This represent the number of domains blocked (safe search) |
+| adguard_protection_enabled | This represent if Adguard Protection is enabled |
+| adguard_query_types | This represent the DNS query types |
+| adguard_running | This represent if Adguard is running |
+| adguard_top_blocked_domains | This represent the top bloacked domains |
+| adguard_top_clients | This represent the top clients |
+| adguard_top_queried_domains | This represent the top queried domains |
+<!-- metrics-doc-end -->
 
 ## Video Tutorials
 

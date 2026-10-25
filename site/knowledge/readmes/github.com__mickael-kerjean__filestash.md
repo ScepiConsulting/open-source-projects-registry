@@ -3,7 +3,7 @@
 # What is this?
 
 <p>
-    Filestash started as a storage agnostic Dropbox-like file manager that speaks every storage protocol (<a href="https://www.filestash.app/ssh-file-transfer.html">SFTP</a>, <a href="https://www.filestash.app/s3-browser.html">S3</a>, <a href="https://www.filestash.app/smb-client.html">SMB</a>, <a href="https://www.filestash.app/webdav-client.html">WebDAV</a>, IPFS, <a href="https://www.filestash.app/ftp-client.html">FTP</a>, NFS, and <a href="https://www.filestash.app/docs/plugin/#storage">about 20 more</a>).
+    Filestash started as a storage-agnostic Dropbox-like file manager that speaks every storage protocol: <a href="https://www.filestash.app/ssh-file-transfer.html">SFTP</a>, <a href="https://www.filestash.app/s3-browser.html">S3</a>, <a href="https://www.filestash.app/smb-client.html">SMB</a>, <a href="https://www.filestash.app/webdav-client.html">WebDAV</a>, IPFS, <a href="https://www.filestash.app/ftp-client.html">FTP</a>, NFS, and <a href="https://www.filestash.app/docs/plugin/#storage">about 20 more</a> <sub>(probably the oddest <a href="https://demo.filestash.app/login?type=webdav&url=https://webdav.filestash.app/&next=/view/Documents/office.docx">Babel fish</a> in the Universe)</sub>
 </p>
 
 <p>
@@ -99,7 +99,7 @@ impl Authorisation for Plugin {
 impl Plugin {
     fn check(&self, path: &str) -> Decision {
         if path.split("/").any(|segment| segment == "top_secret") {
-            log::warn!("[TOPSECRET] access denied !!");
+            log::warn!("[TOPSECRET] access denied: beware of the leopard");
             return Decision::Deny;
         }
         Decision::Allow
@@ -114,7 +114,11 @@ And to be clear, code is the power-user path, there are [no code options](https:
 
 # Getting Started
 
-To install Filestash, head to the [Getting started](https://www.filestash.app/docs/?origin=github) guide. If you want to leverage plugins, head over to the [inventory](https://www.filestash.app/docs/plugin/?origin=github), or learn about [developing your own plugins](https://www.filestash.app/docs/guide/plugin-development.html?origin=github).
+<details><summary>Standard installation procedure</summary><a href="https://www.filestash.app/docs/?origin=github">the guide</a>, <a href="https://www.filestash.app/docs/plugin/?origin=github">plugin inventory</a></details>
+
+<details><summary>Engineering manual</summary><a href="https://www.filestash.app/docs/guide/plugin-development.html">create your own plugins</a>, <a href="https://www.filestash.app/2026/09/10/rust-runtime-plugin/">rust plugins</a>, <a href="https://github.com/mickael-kerjean/filestash/tree/master/server/plugin/plg_runtime_cookbook">runtime plugin cookbook</a>, <a href="https://github.com/mickael-kerjean/filestash/tree/master/server/plugin">plugin collection</a></details>
+
+<details><summary>🐟 Mostly harmless ROT13 transmission intercepted</summary><a href="https://en.wikipedia.org/wiki/ROT13">Svaq gur Onory svfu</a></details>
 
 # Support
 
@@ -135,4 +139,4 @@ Familiar with the infamous comment from Dropbox's launch on HN? In my memory it 
 
 Filestash stands on the shoulders of: [contributors](https://github.com/mickael-kerjean/filestash/graphs/contributors), folks developing [awesome libraries](https://github.com/mickael-kerjean/filestash/blob/master/go.mod), [BrandonM](https://news.ycombinator.com/user?id=BrandonM), a whole bunch of C stuff (the [C standard library](https://imgs.xkcd.com/comics/dependency.png), [libjpeg](https://libjpeg-turbo.org/), [libpng](https://www.libpng.org/pub/png/libpng.html), [libgif](https://giflib.sourceforge.net/), [libraw](https://www.libraw.org/about) and many more), [fontawesome](https://fontawesome.com), [material](https://material.io/icons/), [Browser stack](https://www.browserstack.com/) to let us test on real devices, and the many guys from Nebraska and elsewhere who have been thanklessly maintaining the critical pieces that Filestash sits on top:
 
-<img src="https://imgs.xkcd.com/comics/dependency.png" alt="credit to the nebraska guy on xkcd" />
+<img src="https://imgs.xkcd.com/comics/dependency.png" alt="so long, and thanks for all the fish" />

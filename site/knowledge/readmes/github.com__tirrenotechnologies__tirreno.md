@@ -11,7 +11,7 @@
 
 [tirreno](https://www.tirreno.com) is a security framework.
 
-tirreno *[tir.ˈrɛ.no]* helps understand, monitor, and protect your product from threats, fraud, and abuse. While classic cybersecurity focuses on infrastructure and network perimeter, most breaches occur through compromised accounts and application logic abuse that bypasses firewalls, SIEM, WAFs, and other defenses. tirreno detects threats where they actually happen: inside your product.
+tirreno *[tir.ˈrɛ.no]* helps understand, monitor, and protect your product from threats, and abuse. While classic cybersecurity focuses on infrastructure and network perimeter, most breaches occur through compromised accounts and application logic abuse that bypasses firewalls, SIEM, WAFs, and other defenses. tirreno detects threats where they actually happen: inside your product.
 
 tirreno is a hand-written, few-dependency, "low-tech" PHP/PostgreSQL application. After a straightforward five-minute installation, you can ingest events through API calls and immediately access a dashboard.
 
@@ -19,9 +19,9 @@ tirreno is a hand-written, few-dependency, "low-tech" PHP/PostgreSQL application
 * **SDKs & API** Integrate tirreno into any product with SDKs.
   Send events with full context in a few lines of code.
 * **Built-in dashboard** Monitor and understand your product's
-  security and risk events from a single interface. Ready for use in minutes.
+  security and risk events from a single interface. 
 * **Single user view** Analyze behaviour patterns, risk scores,
-  connected identities, and activity timelines for a specific entity.
+  and activity timelines for a specific entity.
 * **Rule engine** Calculate risk scores automatically with preset
   rules or create your own customized for your product.
 * **Review queue** Automatically suspend entities with risky events
@@ -29,27 +29,18 @@ tirreno is a hand-written, few-dependency, "low-tech" PHP/PostgreSQL application
 * **Field audit trail** Track modifications to important fields,
   including what changed and when to streamline audit and compliance.
 
-## Preset rules
-
-`Account takeover` `Credential stuffing` `Content spam` `Account registration` `Fraud prevention` `Insider threat`
-`Bot detection` `Dormant account` `Multi-accounting` `Promo abuse` `API protection` `High-risk regions`
-
 ## Built for
 
 * **Self-hosted, internal and legacy apps**: Embed security layer
   to extend your security through audit trails, protect user accounts
   from takeover, detect cyber threats and monitor insider threats.
-* **SaaS and digital platforms**: Prevent cross-tenant data leakage,
-  online fraud, privilege escalation, data exfiltration and business
-  logic abuse.
-* **E-commerce and online marketplaces**: Detect payment fraud, account
-  abuse, fake reviews, promotional code exploitation, inventory manipulation,
-  and protect against credential stuffing and carding attacks.
 * **Mission critical applications**: Sensitive application protection,
   even in air-gapped deployments.
 * **Industrial control systems (ICS) and command & control (C2)**: Protect,
   operational technology, command systems, and critical infrastructure
   platforms from unauthorized access and malicious commands.
+* **SaaS**: Prevent cross-tenant data leakage, privilege escalation,
+  data exfiltration and business logic abuse.
 * **Non-human identities (NHIs)**: Monitor service accounts, API keys,
   bot behaviors, and detect compromised machine identities.
 * **API-first applications**: Protect against abuse, rate limiting
@@ -133,9 +124,7 @@ See the [User guide](https://github.com/tirrenotechnologies/OPERATOR.md) for det
 
 ## About
 
-[tirreno](https://www.tirreno.com) is an open-source framework for building sovereign security, compliance and fraud prevention applications.
-
-The project started as a proprietary system in 2021 and was open-sourced (AGPL) in December 2024.
+[tirreno](https://www.tirreno.com) is a free, open-source framework for in-application security.
 
 We solve real people's challenges through love in *ascétique* code and open technologies. tirreno is not VC-motivated. Our inspiration comes from the daily threats posed by organized cybercriminals, driving us to reimagine the place of security in modern organizations.
 
@@ -155,6 +144,7 @@ While working on the logo, we conducted our own historical study and traced ment
 * [Developers documentation](https://github.com/tirrenotechnologies/DEVELOPMENT.md)
 * [Operator guide](https://github.com/tirrenotechnologies/OPERATOR.md)
 * [API reference](https://github.com/tirrenotechnologies/API.md)
+* [Event schema](https://github.com/tirrenotechnologies/EVENT_SCHEMA.md)
 * [Resource center](https://www.tirreno.com/bat/)
 * [Docker Hub](https://hub.docker.com/r/tirreno/tirreno)
 * [Packagist](https://packagist.org/packages/tirreno/tirreno)

@@ -289,7 +289,7 @@ sudo apt install archivebox
 <pre lang="bash"><code style="white-space: pre-line">mkdir -p ~/archivebox/data
 cd ~/archivebox/data
 archivebox init
-sudo archivebox install
+sudo "$(command -v archivebox)" install
 archivebox add 'https://example.com'
 </code></pre>
 <br/>
@@ -303,7 +303,7 @@ archivebox help
 </li>
 </ol>
 See <a href="#cli-usage">below</a> for more usage examples using the CLI, Web UI, or filesystem/SQL/Python to manage your archive.<br/>
-<sub>The apt package is a thin dev-channel wrapper around the normal Python install flow. <code>sudo archivebox install</code> uses apt for missing system dependencies while preserving ownership of the user-owned collection. See the <a href="https://github.com/ArchiveBox/debian-archivebox"><code>debian-archivebox</code></a> repo for details.</sub>
+<sub>The apt package is a thin dev-channel wrapper around the normal Python install flow. <code>sudo "$(command -v archivebox)" install</code> uses apt for missing system dependencies while preserving ownership of the user-owned collection. See the <a href="https://github.com/ArchiveBox/debian-archivebox"><code>debian-archivebox</code></a> repo for details.</sub>
 <br/><br/>
 </details>
 
@@ -683,6 +683,10 @@ See the [Usage: CLI](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#cli-usa
 
 It also includes a built-in scheduled import feature with `archivebox schedule`, handled by the same orchestrator that powers `archivebox server`, so you can pull in URLs from RSS feeds and websites regularly without a separate cron container.
 
+Recursive schedules (`--depth=1` or greater) refresh their explicit seed URLs on each run so they can discover new links. With `ONLY_NEW=True`, previously archived discovered URLs are still skipped. Nonrecursive schedules and ordinary `add --only-new` calls continue to skip existing URLs. Schedules preserve explicitly submitted filters, plugin selection, limits, and custom config; each new run resolves current defaults for settings left unspecified.
+
+`CRAWL_DISCOVERY_PLUGINS=parse_html_urls` restricts child URL discovery to the named plugin's saved `urls.jsonl`; comma-separated names select multiple sources, and the default empty value accepts every source. Other plugins still run and preserve their outputs. This setting leaves explicit seeds unchanged and combines with `URL_ALLOWLIST`, `URL_DENYLIST`, depth limits, and `ONLY_NEW` when admitting children.
+
 <br/>
 
 
@@ -891,6 +895,12 @@ snapshot/crawl identities and saved results, and can be restarted. Normal
 <code>init</code> and <code>update</code> do not scan the entire archive tree.
 Conflicting identities are reported rather than overwritten. Copying captures
 does not require importing the old database or its machine/process records.
+
+To repair only known captures, add snapshot filters, for example
+<code>archivebox update --rescan --migrate-only --filter-type timestamp TIMESTAMP</code>.
+Filtered rescans do not search other directories for orphans or recapture URLs.
+Retained files without recoverable extractor history contribute to the cached
+snapshot size without creating successful extractor results.
 
 Tags are restored on the first import. Later rescans preserve tag removals and
 renames made in the destination database and update the on-disk metadata.

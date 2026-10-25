@@ -1,7 +1,7 @@
 # ChronoFrame
 
 <p align="center">
-  <img src="https://socialify.git.ci/HoshinoSuzumi/chronoframe/image?custom_description=Self-hosted+personal+gallery+application.&description=1&font=KoHo&forks=0&issues=0&logo=https%3A%2F%2Fraw.githubusercontent.com%2FHoshinoSuzumi%2Fchronoframe%2Frefs%2Fheads%2Fmain%2Fpublic%2Ffavicon-96x96.png&name=1&owner=1&pattern=Plus&pulls=0&stargazers=0&theme=Auto" alt="Chronoframe">
+  <img src="./apps/self-hosted/public/chronoframe-banner.png" alt="ChronoFrame">
 </p>
 
 <p align="center">
@@ -11,7 +11,7 @@
   <a href="https://github.com/HoshinoSuzumi/chronoframe/releases">
     <img src="https://badgen.net/github/release/HoshinoSuzumi/chronoframe?icon=docker&label=prerelease" alt="Latest Prerelease">
   </a>
-  <img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License">
+  <img src="https://img.shields.io/badge/License-AGPL--3.0--only-blue.svg" alt="License">
 </p>
 
 <p align="center">
@@ -30,7 +30,7 @@
 
 ChronoFrame is a self-hosted photo gallery. Upload your photos and it extracts EXIF, creates previews and identifies shooting locations. Visitors can browse by time, album or map, zoom into large images and play Live Photos.
 
-[Live demo](https://lens.bh8.ga) · [Documentation](https://chronoframe.bh8.ga/) · [Changelog](https://chronoframe.bh8.ga/changelog)
+[Live demo](https://lens.bh8.ga) · [Documentation](https://docs.chronoframe.art/) · [Changelog](https://docs.chronoframe.art/changelog.html)
 
 ## ✨ Features
 
@@ -77,7 +77,7 @@ Open `http://localhost:3000` and use the setup wizard to create your administrat
 
 Keep the `./data` mount: it holds the database, settings, session secret and local photos when using the path above.
 
-Use HTTPS for a public deployment. See [Getting Started](https://chronoframe.bh8.ga/guide/getting-started) and the [update guide](https://chronoframe.bh8.ga/guide/updates) for proxies, backups and migration from older versions.
+Use HTTPS for a public deployment. See [Getting Started](https://docs.chronoframe.art/guide/getting-started.html) and the [update guide](https://docs.chronoframe.art/guide/updates.html) for proxies, backups and migration from older versions.
 
 ## 📖 Usage
 
@@ -85,7 +85,7 @@ Sign in and open `/dashboard` to upload and organize photos. After upload, the t
 
 For Apple Live Photos, the image and MOV must share a filename, such as `IMG_1234.heic` and `IMG_1234.mov`; either can be uploaded first. Image formats include JPEG, PNG, WebP, GIF, BMP, TIFF and HEIC / HEIF.
 
-Album passwords control access through ChronoFrame. If S3, OpenList or a CDN exposes public image URLs, manage access in that service too. Read [Using ChronoFrame](https://chronoframe.bh8.ga/guide/usage) for details.
+Album passwords control access through ChronoFrame. If S3, OpenList or a CDN exposes public image URLs, manage access in that service too. Read [Using ChronoFrame](https://docs.chronoframe.art/guide/usage.html) for details.
 
 ## 📸 Screenshots
 
@@ -114,9 +114,19 @@ pnpm build         # Build the application
 pnpm docs:build    # Build documentation
 ```
 
-After changing the database schema, run `pnpm db:generate` and review the SQL. Generating migrations is unnecessary just to start the app. See the [contributing guide](https://chronoframe.bh8.ga/development/contributing.html) for more.
+After changing the database schema, run `pnpm db:generate` and review the SQL. Generating migrations is unnecessary just to start the app. See the [contributing guide](https://docs.chronoframe.art/development/contributing.html) for more.
+
+## 📄 License
+
+ChronoFrame uses **AGPL-3.0-only** by default, including the Self-hosted and SaaS
+implementations. `packages/contracts` and `packages/webgl-image` remain MIT. See [LICENSE](LICENSE),
+[LICENSING.md](LICENSING.md) for scope, historical MIT rights,
+and commercial licensing inquiries to **ChronoFrame**. Paid hosting is permitted
+when the applicable AGPL requirements are met.
 
 ## 🤝 Contributing and community
+
+For suspected vulnerabilities, follow the [Security Policy](SECURITY.md) and report privately.
 
 Issues and pull requests are welcome. Explain the problem, resulting behavior and verification. Keep English and Chinese documentation in sync.
 

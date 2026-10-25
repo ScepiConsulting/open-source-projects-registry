@@ -1,97 +1,28 @@
-# 📚 MyBibliotheca
+# MyBibliotheca
 
-MyBibliotheca is a self-hosted personal library manager and reading tracker. Organize your collection, track reading progress, record daily reading activity, and keep control of your data.
+MyBibliotheca is a self-hosted library manager and reading tracker. Organize books, track reading progress, record reading sessions, and keep your collection on infrastructure you control.
 
-## Current release
+## Release 3.0.0
 
-**2.2.1 is the latest stable release.**
-
-Version 2.2.1 uses **KuzuDB** for graph-based library data and relationships. Back up your data before upgrading.
-
-### What's new in 2.2.1
-
-- Added Google Books API support for ISBN metadata lookups and imports
-- Re-enabled camera-based ISBN barcode scanning in Fast Add mode
-- Improved ISBN validation, scanner feedback, and scanner fallbacks
-- Improved CSV import handling, metadata enrichment, timeouts, and partial results
-- Fixed static asset links on Settings and book-detail pages
-
-## Features
-
-- 📖 Add books by ISBN or title with automatic metadata and cover fetching
-- 📥 Import books from Goodreads and other CSV files
-- ✅ Track reading status, progress, ratings, and reviews
-- 📅 Log reading sessions and maintain reading streaks
-- 📊 View reading statistics and analytics
-- 🔐 Multi-user authentication with isolated user libraries
-- 👤 Admin tools for user and system management
-- 🔒 Privacy controls for shared reading activity and library content
-- 🗄️ KuzuDB graph database for books, people, series, and relationships
-- 📱 Responsive interface for desktop and mobile devices
-- 💾 Backup, restore, and data export tools
-
-### Build from source with Docker Compose
-
-```bash
-git clone https://github.com/pickles4evaaaa/mybibliotheca.git
-cd mybibliotheca
-cp .env.example .env
-
-# Edit .env and set unique SECRET_KEY and SECURITY_PASSWORD_SALT values
-docker compose up -d --build
-```
-
-The Compose configuration stores application data in `./data` and configures KuzuDB at `/app/data/kuzu`.
-
-> **Important:** KuzuDB requires a single application worker. Keep `WORKERS=1` in production deployments.
+Version **3.0.0** uses PostgreSQL as its primary database. New installations use PostgreSQL automatically. Existing Kuzu installations need to be migrated with the in-app database migration wizard.
 
 ## Documentation
 
-Full installation, configuration, administration, backup, and troubleshooting guides are available at [docs.mybibliotheca.org](https://docs.mybibliotheca.org).
+The [MyBibliotheca documentation](https://docs.mybibliotheca.org/) is the source of truth for installing, configuring, upgrading, and maintaining the application. It includes the Docker Compose installation guide, the 3.0.0 image tag, and the Kuzu-to-PostgreSQL migration wizard instructions.
 
-## Project structure
+- [Quick start with Docker Compose](DOCKER.md)
+- [Install or upgrade MyBibliotheca](https://docs.mybibliotheca.org/stable/install/)
+- [Migrate from Kuzu to PostgreSQL](https://docs.mybibliotheca.org/stable/migration/)
+- [Backups and restore](https://docs.mybibliotheca.org/stable/backups/)
 
-```text
-mybibliotheca/
-├── app/
-│   ├── domain/                  # Domain models and business logic
-│   ├── infrastructure/          # KuzuDB connections and repositories
-│   ├── routes/                  # Application routes
-│   ├── services/                # Application services
-│   ├── schema/                  # Database schema definitions
-│   ├── templates/               # Jinja2 templates
-│   └── static/                  # Static assets
-├── data/                        # Persistent application data
-├── docs/                        # Project documentation
-├── scripts/                     # Administration and utility scripts
-├── docker-compose.yml           # Docker Compose configuration
-├── Dockerfile                   # Application image definition
-└── run.py                       # Application entry point
-```
+## Features
 
-## Development
+- Book and contributor metadata with ISBN lookup and cover fetching
+- Imports from Goodreads, StoryGraph, reading-history exports, and custom CSV files
+- Reading status, progress, sessions, ratings, reviews, and statistics
+- Multiple user accounts with private personal reading data
+- Admin tools, backups, restore, and data export
+- PostgreSQL persistence with a guided Kuzu migration for existing libraries
+- Optional Redis cache
 
-```bash
-git clone https://github.com/pickles4evaaaa/mybibliotheca.git
-cd mybibliotheca
-docker compose -f docker-compose.dev.yml up -d
-```
-
-Run the test suite with:
-
-```bash
-pytest
-```
-
-Bug reports, documentation improvements, and pull requests are welcome on [GitHub](https://github.com/pickles4evaaaa/mybibliotheca).
-
-## Getting help
-
-- Check the [documentation](https://docs.mybibliotheca.org)
-- Review container logs with `docker compose logs -f`
-- Open an issue on [GitHub](https://github.com/pickles4evaaaa/mybibliotheca/issues)
-- Join the [Discord community](https://discord.gg/Hc8C5eRm7Q)
-
-## License
-
-MyBibliotheca is licensed under the [MIT License](LICENSE).
+For support and source code, visit the [GitHub repository](https://github.com/pickles4evaaaa/mybibliotheca). MyBibliotheca is licensed under the [MIT License](LICENSE).

@@ -36,7 +36,7 @@ never writes to it.
 - **Shared tags** - One tag catalog across every resource type, with a Tags page to rename, merge, delete, and browse by tag, and per-tag downloads.
 - **Metadata editor** - Rich metadata for systems and books, drawn from curated lists you manage in **Settings → Metadata**. Parent systems group related lines ("Cyberpunk" + "Red" → "Cyberpunk Red").
 - **Bulk actions** - Multi-select books, maps, tokens, audio, and models, then bulk tag, add to a campaign, or edit metadata via a carousel.
-- **Duplicate detection** - An admin scan finds byte-identical files, near-identical titles, overlapping page text, and gridded/gridless map pairs. Nothing is ever deleted automatically; you review each pair side by side.
+- **Duplicate detection** - An admin scan finds byte-identical files, near-identical titles, overlapping page text, and gridded/gridless map pairs. Nothing is ever deleted automatically; you review each group side by side and merge copies without losing bookmarks, favourites or campaign links.
 
 ### Reading
 
@@ -213,7 +213,7 @@ open http://localhost:9481
 
 On first launch you'll be prompted to create an admin account, or you can pre-seed users automatically (see [Pre-seeding users](docs/users-and-permissions.md#pre-seeding-users)).
 
-### 3. Pull from DockerHub
+### 3. Pull from DockerHub (or GHCR)
 
 ```bash
 docker pull hunterreadca/grimoire:latest
@@ -223,6 +223,12 @@ Or pin to a specific release:
 
 ```bash
 docker pull hunterreadca/grimoire:1.5.0
+```
+
+Release and `nightly` tags are mirrored to the GitHub Container Registry, if you'd rather pull from there:
+
+```bash
+docker pull ghcr.io/hunter-read/grimoire:latest
 ```
 
 **Image variants:** the default tags (`latest`, `1.5.0`, …) include the Tesseract OCR engine so image-only PDFs are searchable (see [OCR](docs/performance.md#ocr)). If you don't need OCR and prefer a smaller image, use the matching `-slim` tag (e.g. `hunterreadca/grimoire:latest`'s slim counterpart `:slim`, or a pinned `:1.5.0-slim`), which omits Tesseract.
@@ -319,9 +325,11 @@ kept in the repo so it versions with the release you are running:
 
 | Guide                                         | What's in it                                                                    |
 | --------------------------------------------- | ------------------------------------------------------------------------------- |
+| [Settings](docs/settings.md)                  | Where each setting lives, searching for one, and the admin overview             |
 | [Searching your library](docs/search.md)      | Field searches (`title:`, `tag:`, `year:`) and how ranking works                |
 | [File management](docs/file-management.md)    | The in-app file manager, duplicates and versions, and adding files from outside |
 | [Metadata sidecars](docs/sidecars.md)         | Reading `.opf` in, and writing metadata back out to your library                |
+| [Filename rules](docs/filename-rules.md)      | Reading titles from structured filenames, renaming files to a scheme            |
 | [Campaigns](docs/campaigns.md)                | Characters, resources, the notes wiki, scheduling, and calendar export          |
 | [Wiki note templates](docs/wiki-templates.md) | Starting a campaign page from a template                                        |
 | [Token editor](docs/token-editor.md)          | Turning any picture into a VTT-ready token                                      |
@@ -356,6 +364,7 @@ kept in the repo so it versions with the release you are running:
 | [Architecture](docs/architecture.md) | Module map, request lifecycle, auth flow - for contributors                                                         |
 | [Data model](docs/data-model.md)     | ER diagram and table-by-table schema                                                                                |
 | [CI/CD pipelines](docs/pipelines.md) | Workflows, coverage gates, and the release checklist                                                                |
+| [TypeScript](docs/typescript.md)     | The frontend's TypeScript migration, API types generated from the backend, and converting a file                     |
 
 The live API is also self-documenting while the server is running:
 [`/api/docs`](http://localhost:9481/api/docs) (Swagger UI),

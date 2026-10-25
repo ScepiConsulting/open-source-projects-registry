@@ -108,7 +108,8 @@ labels:
 10. Save the file
 11. Redeploy the `compose.yaml`
 12. It is recommended to block at the earliest possible point, so if possible set up a firewall bouncer: https://docs.crowdsec.net/u/bouncers/firewall, make sure to also include the docker iptables in the firewall bouncer config
-13. Note that when using crowdsec requests will always be buffered, so setting `proxy_(request_)buffering` to off will not work
+13. Note that when crowdsec appsec is enabled for a host/location, request bodies will always be buffered, so setting `proxy_request_buffering` to off will not work there, response buffering is not affected
+14. Note that appsec blocks requests with a body bigger than 10 MiB by default, so you may want to enable "Disable Crowdsec Appsec" for hosts/locations which receive bigger uploads (like Nextcloud)
 
 ## Bot detection (optional)
 Bot detection challenges every request without a valid cookie, so clients which can not solve it, like apps, get blocked. Full documentation: https://doc.crowdsec.net/docs/next/appsec/bot_detection/enable, the short version:
@@ -143,7 +144,7 @@ location ~* [^/]\.php(?:$|/) {
 
 ## Comments on some buttons
 - Forward Hostname / IP / Path: if the scheme is set to path you can just put here a path in and nginx works as a file server, otherwise you need to input ip/domain, you can also append a path to the ip/domain like `127.0.0.1/path` to proxy to a subpath.
-  - For custom locations with a set path, dns will be only refreshed on nginx reloads and the path of the location will be stripped. So a request `GET /cdf/abc` to a custom location `/cdf` which proxies to `127.0.0.1/abc` will proxy to `127.0.0.1/abc/abc`, a custom location `/cdf/` which proxies to `127.0.0.1/` will proxy to `127.0.0.1/abc`  and a custom location `/cdf` which proxies to `127.0.0.1` will proxy to `127.0.0.1/cdf/abc`
+  - For custom locations with a set path, the path of the location will be stripped. So a request `GET /cdf/abc` to a custom location `/cdf` which proxies to `127.0.0.1/abc` will proxy to `127.0.0.1/abc/abc`, a custom location `/cdf/` which proxies to `127.0.0.1/` will proxy to `127.0.0.1/abc`  and a custom location `/cdf` which proxies to `127.0.0.1` will proxy to `127.0.0.1/cdf/abc`
   - If the scheme is set to `path`, a path ending with a `/` will be searched relative to the custom location (is uses nginx alias) and a path ending without a `/` will be searched relative to the main `/` location (it uses nginx root)
 - Forward Port (optional): port of upstream or php version if scheme is `path`
 - Send noindex header and block some user agents: This does what is says, it appends a header to all responses which says that the site should not be indexed while blocking requests of crawlers based on the user agent sent with the request
@@ -220,17 +221,13 @@ upstream cu_mybackend {
 
 ## Geoblocking example (mainly community support) 
 
-1. set the `NGINX_LOAD_GEOIP2_MODULE` env to true and redeploy NPMplus
-2. deploy a geoipupdate container (see the compose.yaml for an example, create credentials [here](https://www.maxmind.com/en/geolite2/signup))
-3. open and edit this file: `/opt/npmplus/custom_nginx/http_top.conf`, if you changed /opt/npmplus to a different path make sure to change the path to fit
+1. deploy a geoipupdate container (see the compose.yaml for an example, create credentials [here](https://www.maxmind.com/en/geolite2/signup))
+2. open and edit this file: `/opt/npmplus/custom_nginx/http_top.conf`, if you changed /opt/npmplus to a different path make sure to change the path to fit, the database is only reread when nginx reloads
 ```yaml
-geoip2 /data/goaccess/geoip/GeoLite2-Country.mmdb {
-  auto_reload 60m;
-  $geoip2_country_iso_code country iso_code;
-}
+geoip_country /data/goaccess/geoip/GeoLite2-Country.mmdb;
 
 # whitelist example, you can add as many country codes as you want, country code list: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#XY
-#map $geoip2_country_iso_code $geoip2_country_rule {
+#map $geoip_country_code $geoip2_country_rule {
 #  default no;
 #  AA yes;
 #  XY yes;
@@ -238,7 +235,7 @@ geoip2 /data/goaccess/geoip/GeoLite2-Country.mmdb {
 #}
 
 # blacklist example, you can add as many country codes as you want, country code list: https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#XY
-#map $geoip2_country_iso_code $geoip2_country_rule {
+#map $geoip_country_code $geoip2_country_rule {
 #  default yes;
 #  AA no;
 #  XY no;
@@ -258,7 +255,7 @@ geoip2 /data/goaccess/geoip/GeoLite2-Country.mmdb {
 #  fec0::/10 yes;
 #}
 ```  
-4a. to set it per location: press the gear button (on the tab itself, not the tab selection) on the details tab (or on the custom location you want to use), set your proxy settings and paste the following in the new text field at the bottom, you may want to adjust the last lines (do not use the advanced tab with this example as it may break cert renewals):
+3a. to set it per location: press the gear button (on the tab itself, not the tab selection) on the details tab (or on the custom location you want to use), set your proxy settings and paste the following in the new text field at the bottom, you may want to adjust the last lines (do not use the advanced tab with this example as it may break cert renewals):
 ```yaml
 # uncomment if you block/don't allow IPs with unknown country codes
 #if ($is_private_ip = yes) { 
@@ -268,7 +265,7 @@ if ($geoip2_country_rule = no) {
   return 444; # this rejects the connection, but you can also return 403 to tell the client that it was denied
 } 
 ```
-4b. to set it for an entire host: put this in the advanced tab:
+3b. to set it for an entire host: put this in the advanced tab:
 ```yaml
 # uncomment if you block/don't allow IPs with unknown country codes
 #if ($is_private_ip = yes) { 
@@ -281,7 +278,7 @@ if ($geoip2_country_rule = no) {
   return 444; # this rejects the connection, but you can also return 403 to tell the client that it was denied
 } 
 ```
-4c. to set it for all http hosts of them same type: put this in the `custom_nginx/server_proxy.conf` / `custom_nginx/server_redirect.conf` / `custom_nginx/server_dead.conf` file(s):
+3c. to set it for all http hosts of them same type: put this in the `custom_nginx/server_proxy.conf` / `custom_nginx/server_redirect.conf` / `custom_nginx/server_dead.conf` file(s):
 ```yaml
 # uncomment if you block/don't allow IPs with unknown country codes
 #if ($is_private_ip = yes) { 
@@ -294,7 +291,7 @@ if ($geoip2_country_rule = no) {
   return 444; # this rejects the connection, but you can also return 403 to tell the client that it was denied
 } 
 ```
-4d. to set it for all http hosts: put this in the `custom_nginx/server_http.conf` file:
+3d. to set it for all http hosts: put this in the `custom_nginx/server_http.conf` file:
 ```yaml
 # uncomment if you block/don't allow IPs with unknown country codes
 #if ($is_private_ip = yes) { 
@@ -307,7 +304,7 @@ if ($geoip2_country_rule = no) {
   return 444; # this rejects the connection, but you can also return 403 to tell the client that it was denied
 } 
 ```
-5. you can create multiple rule lists by adding multiple map directive, but you need to use a unique name instead of `$geoip2_country_rule` for each rule list (you need the unique name also in the custom locations)
+4. you can create multiple rule lists by adding multiple map directive, but you need to use a unique name instead of `$geoip2_country_rule` for each rule list (you need the unique name also in the custom locations)
 
 ## Prerun scripts (EXPERT option) - if you don't know what this is, ignore it
 If you need to run scripts before NPMplus launches put them under: `/opt/npmplus/prerun/*.sh` (please add `#!/usr/bin/env sh` / `#!/usr/bin/env bash` to the top of the script) you need to create this folder yourself, also set the `ENABLE_PRERUN` env to `true`
@@ -353,15 +350,18 @@ If you need to run scripts before NPMplus launches put them under: `/opt/npmplus
 ## What connections can be expected from the NPMplus container?
 - to your clients
 - to your upstreams
+- to your dns server for name resolution
 - to your acme/ocsp server
-- to github for a daily update check
+- to github for an hourly update check
 - if not disabled gravatar for profile pictures
 - if used to your OIDC
 - if used to pypi to download certbot plugins
 - if used to your dns provider for acme dns challenges
 - if used to www.site24x7.com for the reachability check
+- if enabled to the alpine package repositories to install the inbuilt php-fpm and its extensions
 - if enabled to cloudflare to download their IPs
 - if enabled to the crowdsec (container) lapi
+- if enabled to your captcha provider for the crowdsec captcha remediation
 - if you see more/others please report them
 
 ## Access Lists

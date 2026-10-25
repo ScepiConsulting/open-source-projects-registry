@@ -2,8 +2,15 @@
 
 **Unleash your containers as Tailscale Services.**
 
+<p>
+  <a href="https://github.com/marvinvr/docktail/releases/latest"><img src="https://img.shields.io/github/v/release/marvinvr/docktail?label=release" alt="Latest release"></a>
+  <a href="LICENSE"><img src="https://img.shields.io/github/license/marvinvr/docktail" alt="License: AGPL-3.0"></a>
+  <a href="https://github.com/marvinvr/docktail/pkgs/container/docktail"><img src="https://img.shields.io/badge/image-ghcr.io%2Fmarvinvr%2Fdocktail-blue?logo=docker&logoColor=white" alt="Image on ghcr.io"></a>
+  <a href="https://github.com/marvinvr/docktail/actions/workflows/ci.yaml"><img src="https://img.shields.io/github/actions/workflow/status/marvinvr/docktail/ci.yaml?branch=main&label=CI" alt="CI status"></a>
+</p>
+
 <p align="center">
-  <img src="assets/header.jpeg" alt="DockTail Header" width="100%">
+  <img src="assets/demo.gif" alt="Add docktail labels to a Compose service, run docker compose up -d, and open https://myapp.your-tailnet.ts.net" width="100%">
 </p>
 
 <p align="center">
@@ -13,6 +20,16 @@
 </p>
 
 DockTail watches Docker containers, reads `docktail.*` labels, and exposes matching containers as Tailscale Services. App containers do not need published Docker ports by default; DockTail proxies directly to their Docker network IPs.
+
+## Featured by Tailscale
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=qNw9aTHilos">
+    <img src="assets/tailscale-video.jpg" alt="Watch &quot;I'm Running Docker Apps Differently Now&quot; on Tailscale's YouTube channel" width="480">
+  </a>
+  <br>
+  <sub>▶ <a href="https://www.youtube.com/watch?v=qNw9aTHilos"><b>I'm Running Docker Apps Differently Now</b></a>: DockTail, featured on Tailscale's YouTube channel</sub>
+</p>
 
 ## Why DockTail?
 
@@ -151,7 +168,7 @@ environment:
 
 Without the key the module is completely inert: no connection is opened and DockTail behaves exactly as before. The link is outbound-only and metadata-only — the protocol has no exec, deploy, or shell message types, which you can verify in [`cloud/`](cloud/).
 
-DockTail Cloud is a paid service ([plans and pricing](https://docktail.org/cloud/#pricing)); a new workspace can connect one host as an unmonitored preview before you choose a plan. [`docker-compose.cloud.yaml`](docker-compose.cloud.yaml) is a complete example.
+DockTail Cloud is a paid service ([plans and pricing](https://docktail.org/cloud/#pricing)); Homelab and Team start with a 30-day free trial. Your AI agent can investigate incidents through its [MCP server and API](https://docktail.org/cloud/agents/). [`docker-compose.cloud.yaml`](docker-compose.cloud.yaml) is a complete example.
 
 [Explore DockTail Cloud](https://docktail.org/cloud/) · [open the dashboard](https://cloud.docktail.org/login) · [agent setup](docs/06-cloud.md)
 

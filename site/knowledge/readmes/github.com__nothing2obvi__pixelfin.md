@@ -14,8 +14,9 @@
 </p>
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
+![Latest release](https://img.shields.io/github/v/release/nothing2obvi/pixelfin?label=latest%20release)
 
 # Pixelfin: Jellyfin Artwork Inspector
 
@@ -314,11 +315,13 @@ The default image is:
 ghcr.io/nothing2obvi/pixelfin:latest
 ```
 
-The current release image is:
+To pin a specific release, use its full semantic version tag:
 
 ```text
-ghcr.io/nothing2obvi/pixelfin:v1.1.2
+ghcr.io/nothing2obvi/pixelfin:vX.Y.Z
 ```
+
+The app displays the version from the GitHub Release tag. Stable releases are also published with rolling `vX.Y` and `vX` tags; `latest` tracks the latest stable release.
 
 Open:
 
@@ -335,8 +338,12 @@ The current Docker release publishes multi-architecture images for:
 
 Tags:
 
-- `ghcr.io/nothing2obvi/pixelfin:v1.1.2`
+- `ghcr.io/nothing2obvi/pixelfin:vX.Y.Z`
+- `ghcr.io/nothing2obvi/pixelfin:vX.Y`
+- `ghcr.io/nothing2obvi/pixelfin:vX`
 - `ghcr.io/nothing2obvi/pixelfin:latest`
+
+Pre-releases are published using their exact release tag and do not update `latest`.
 
 ## Useful Notes
 
@@ -376,6 +383,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/avassor"><img src="https://avatars.githubusercontent.com/u/10287940?v=4?s=100" width="100px;" alt="avassor"/><br /><sub><b>avassor</b></sub></a><br /><a href="#ideas-avassor" title="Ideas, Planning, & Feedback">🤔</a> <a href="https://github.com/nothing2obvi/pixelfin/pulls?q=is%3Apr+reviewed-by%3Aavassor" title="Reviewed Pull Requests">👀</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/KingOfBadgers"><img src="https://avatars.githubusercontent.com/KingOfBadgers?s=100" width="100px;" alt="KingOfBadgers"/><br /><sub><b>KingOfBadgers</b></sub></a><br /><a href="https://github.com/nothing2obvi/pixelfin/commits?author=KingOfBadgers" title="Code">💻</a></td>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/pnthach95"><img src="https://avatars.githubusercontent.com/pnthach95?s=100" width="100px;" alt="pnthach95"/><br /><sub><b>pnthach95</b></sub></a><br /><a href="https://github.com/nothing2obvi/pixelfin/commits?author=pnthach95" title="Code">💻</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/danimart1991"><img src="https://avatars.githubusercontent.com/danimart1991?s=100" width="100px;" alt="Daniel Martin Gonzalez"/><br /><sub><b>Daniel Martin Gonzalez</b></sub></a><br /><a href="https://github.com/nothing2obvi/pixelfin/commits?author=danimart1991" title="Code">💻</a></td>
     </tr>
   </tbody>
 </table>

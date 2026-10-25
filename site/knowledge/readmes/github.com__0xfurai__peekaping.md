@@ -4,7 +4,6 @@
 ![Go](https://img.shields.io/badge/go-%23007d9c.svg?style=flat&logo=go&logoColor=white)
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=flat&logo=react&logoColor=%2361dafb)
 ![TypeScript](https://img.shields.io/badge/typescript-%23007acc.svg?style=flat&logo=typescript&logoColor=white)
-![MongoDB](https://img.shields.io/badge/mongodb-4ea94b.svg?style=flat&logo=mongodb&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/postgresql-%23336791.svg?style=flat&logo=postgresql&logoColor=white)
 ![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=flat&logo=sqlite&logoColor=white)
 ![Docker Pulls](https://img.shields.io/docker/pulls/0xfurai/peekaping-web)
@@ -31,7 +30,7 @@ Peekaping is a modern uptime monitoring solution designed with the requirements 
 - **Server built with Golang** — using one of the most performant compiled languages ensures high speed with minimal consumption of RAM and CPU resources
 - **Unmatched stability** — thanks to a typed client and compiled Golang language, the system demonstrates high reliability and predictable operation
 Modern and intuitive interface — clean user interface design built on contemporary UI/UX principles
-- **Flexible storage options** — support for three popular databases (SQLite / PostgreSQL / MongoDB) allows adapting the solution to any infrastructure
+- **Flexible storage options** — support for two popular databases (SQLite / PostgreSQL) allows adapting the solution to any infrastructure. MongoDB storage still works but is [deprecated](https://docs.peekaping.com/self-hosting/docker-with-mongo)
 - **API key management and access control** — built-in security system with access rights management and API keys provides enterprise-level protection
 
 
@@ -58,9 +57,19 @@ docker run -d --restart=always \
   0xfurai/peekaping-bundle-sqlite:latest
 ```
 
+Then open http://localhost:8383. The image runs Peekaping in single mode: one process, as a non-root user, with no Redis. It serves the web app and the API on port 8383. For HTTPS, put a reverse proxy in front of it.
+
 [Docker + SQLite Setup](https://docs.peekaping.com/self-hosting/docker-with-sqlite)
 
-Peekaping also support [PostgreSQL Setup](https://docs.peekaping.com/self-hosting/docker-with-postgres) and [MongoDB Setup](https://docs.peekaping.com/self-hosting/docker-with-mongo). Read docs for more guidance
+Peekaping also supports [PostgreSQL Setup](https://docs.peekaping.com/self-hosting/docker-with-postgres). Read docs for more guidance
+
+These images run single mode, the default for new installs. Cluster mode (Kubernetes with Helm, or Docker Compose) is for installs that need to scale out. See [Deployment modes](https://docs.peekaping.com/self-hosting/deployment-modes) to choose.
+
+MongoDB storage is deprecated. Existing installs keep working, but new installs should use SQLite or PostgreSQL. See the [deprecated MongoDB Setup](https://docs.peekaping.com/self-hosting/docker-with-mongo) for the removal rule and how to [move your data to SQLite or PostgreSQL](https://docs.peekaping.com/self-hosting/docker-with-mongo#move-to-sqlite-or-postgresql).
+
+## ☁️ One-Click Deploy
+
+[![Deploy on RepoCloud](https://d16t0pc4846x52.cloudfront.net/deploylobe.svg)](https://repocloud.io/details/peekaping/)
 
 ## ⚡ Features
 
@@ -178,7 +187,7 @@ If you enjoy this project, come say hi &amp; follow along!
 We welcome contributions! Please:
 
 1. Fork the repository
-2. Set up your environment with the [development guide](https://docs.peekaping.com/development). You need Go, Node.js and pnpm, installed any way you like; `make setup` checks them.
+2. Set up your environment with the [development guide](https://docs.peekaping.com/development). You need Go, Node.js and Bun, installed any way you like; `make setup` checks them.
 3. Create a feature branch
 4. Make your changes
 5. Add tests if applicable
@@ -205,7 +214,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Criteria to Consider When Looking for Uptime Kuma Alternatives
 When choosing an Uptime Kuma alternative, it's important to consider the technology stack and architecture. Solutions built with compiled languages (Go, Rust) deliver better performance and consume fewer resources. An API-first approach is critical for automation and integration with CI/CD processes.
 
-Ensure the system supports the necessary monitoring protocols (HTTP/HTTPS, TCP, databases, Docker, gRPC) and integrates with your communication channels. Also important are flexible storage options (SQLite/PostgreSQL/MongoDB), security features (MFA, RBAC, API keys), modular architecture for extensibility, and an active community with quality documentation.
+Ensure the system supports the necessary monitoring protocols (HTTP/HTTPS, TCP, databases, Docker, gRPC) and integrates with your communication channels. Also important are flexible storage options (SQLite/PostgreSQL), security features (MFA, RBAC, API keys), modular architecture for extensibility, and an active community with quality documentation.
 
 ## How to Choose the Right Uptime Kuma Alternative
 Determine the deployment format based on your capabilities and requirements. Self-hosted solutions provide complete control over data and deep customization options, but require technical resources for deployment and maintenance. Cloud solutions offer quick setup and automatic updates, but come with customization limitations and monthly subscriptions.

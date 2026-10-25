@@ -9,7 +9,7 @@
   <a href="https://www.gnu.org/licenses/agpl-3.0"><img alt="AGPL v3" src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"></a>
   <a href="https://github.com/murtaza-nasir/speakr/actions/workflows/docker-publish.yml"><img alt="Docker Build" src="https://github.com/murtaza-nasir/speakr/actions/workflows/docker-publish.yml/badge.svg"></a>
   <a href="https://hub.docker.com/r/learnedmachine/speakr"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/learnedmachine/speakr"></a>
-  <a href="https://github.com/murtaza-nasir/speakr/releases/latest"><img alt="Latest Version" src="https://img.shields.io/badge/version-0.10.14--alpha-brightgreen.svg"></a>
+  <a href="https://github.com/murtaza-nasir/speakr/releases/latest"><img alt="Latest Version" src="https://img.shields.io/badge/version-0.10.16--alpha-brightgreen.svg"></a>
 </p>
 
 <p align="center">
@@ -40,7 +40,7 @@ Speakr turns a recording into organized, searchable, shareable knowledge. Here i
 - **Hands-off intake** - a watched "black hole" folder auto-imports and processes any audio dropped into it, with optional per-user subfolders named by user id or username.
 
 ### Transcribe
-- **Bring your own engine** - self-hosted WhisperX (recommended; it is what enables the speaker features below), OpenAI, Mistral / Voxtral, AssemblyAI, OpenASR, Alibaba FunASR, or any custom ASR webservice. The right connector is auto-detected from your configuration.
+- **Bring your own engine** - self-hosted WhisperX (recommended; it is what enables the speaker features below), OpenAI, Mistral / Voxtral, AssemblyAI, Tencent Cloud ASR, OpenASR, Alibaba FunASR, or any custom ASR webservice. The right connector is auto-detected from your configuration.
 - **Speaker diarization** - automatic who-said-what labeling (WhisperX, or OpenAI's diarizing models).
 - **Voice profiles** - recognize the same person across different recordings via voice embeddings (requires the WhisperX ASR backend).
 - **Custom vocabulary and hotwords** (most effective with the WhisperX backend) - bias the transcriber toward names, jargon, and acronyms it would otherwise mishear; configurable globally, per tag / folder, or right in the upload and in-app recording dialogs, with reusable saved templates.
@@ -148,7 +148,7 @@ docker compose up -d
 
 **Required API Keys:**
 - `TRANSCRIPTION_API_KEY` - For speech-to-text (OpenAI) or `ASR_BASE_URL` for self-hosted
-- `TEXT_MODEL_API_KEY` - For summaries, titles, and chat (OpenRouter or OpenAI)
+- `TEXT_MODEL_API_KEY` - For summaries, titles, and chat (OpenRouter or OpenAI; not needed for a local server without authentication)
 
 ### Transcription Options
 
@@ -162,6 +162,7 @@ Speakr uses a **connector-based architecture** that auto-detects your transcript
 | **VibeVoice ASR** | Self-hosted (vLLM) | Yes (built-in) | No |
 | **MOSI/Mossland MOSS** | Hosted API key | Yes (built-in) | No |
 | **AssemblyAI** | Just API key | Yes (built-in) | No |
+| **Tencent Cloud ASR** | API keys (+ S3/COS bucket for files over 5 MiB) | Yes (built-in) | No |
 | **OpenASR** | Self-hosted server | Yes (built-in) | No |
 | **Alibaba FunASR** | API key + OSS bucket | Yes (built-in) | No |
 | **Legacy Whisper** | Just API key | No | No |
@@ -209,6 +210,14 @@ TRANSCRIPTION_API_KEY=your-assemblyai-key
 ```
 Handles multi-hour, multi-speaker files in a single job. New accounts get free credits with no card required.
 
+**Tencent Cloud ASR (Chinese and English meetings):**
+```bash
+TRANSCRIPTION_CONNECTOR=tencent_asr
+TENCENT_SECRET_ID=your-secret-id
+TENCENT_SECRET_KEY=your-secret-key
+```
+Files over 5 MiB are passed to Tencent through an S3-compatible bucket such as Tencent COS. See the [Tencent ASR guide](https://murtaza-nasir.github.io/speakr/advanced/tencent-asr) for engines and storage.
+
 > **PyTorch 2.6 Users:** If you encounter a "Weights only load failed" error with WhisperX, add `TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD=true` to your ASR container. See [troubleshooting](https://murtaza-nasir.github.io/speakr/troubleshooting#pytorch-26-weights-loading-error-whisperx-asr-service) for details.
 
 **[View Full Installation Guide →](https://murtaza-nasir.github.io/speakr/getting-started/installation)**
@@ -223,36 +232,28 @@ Complete documentation is available at **[murtaza-nasir.github.io/speakr](https:
 - [Troubleshooting](https://murtaza-nasir.github.io/speakr/troubleshooting) - Common issues and solutions
 - [FAQ](https://murtaza-nasir.github.io/speakr/faq) - Frequently asked questions
 
-## Latest Release (v0.10.14-alpha)
+## Latest Release (v0.10.16-alpha)
+
+- Tencent Cloud ASR connector with speaker diarization (#427), and request parameters for the text and chat models.
+- Dates, times, numbers, percentages and file sizes follow the interface language (#477, #480, #481).
+- Account-wide API limits and a cap on active tokens (discussion #484), and a CSRF check on the token API (#478).
+- Faster recording lists (discussion #483), clear errors for unreadable uploads (#482), and fixes for #475, #476, #479 and #485.
+
+### v0.10.15-alpha
+
+- Seven security fixes: email links, the remember-me cookie, recording files, summary display, the share target, Markdown rendering and gunicorn (#434 to #439, #442).
+- Find and replace in the transcript editors, and notes given to the summarizer as context (#440).
+- Inquire can be filtered by folder (#428), and the API specification has an operationId on every operation (#443).
+- Long file names (#430) and recordings deleted during transcription (#432) no longer cause errors, and the dependencies are pinned and verified.
+
+### v0.10.14-alpha
 
 - The light or dark mode and the color scheme are saved with the account, for every device (#419).
 - In the transcript editor, every speaker can be chosen for a segment again (#425).
 - Recordings stuck in QUEUED or SUMMARIZING can be reset, and a transcript is no longer lost when reprocessing cannot be queued (#420, #423, #424).
 - The exception line of a failed WhisperX request is kept (#422), and "Authentication Error" is no longer shown for an ID that contains "401".
 
-### v0.10.13-alpha
-
-- Storage quotas per user, with a default for new accounts, usage on the Account page and in the header (#413).
-- Shared Transcripts lists your public links, your shares with people and groups, and recordings shared with you (#416).
-- Right-to-left text is shown in its own direction (#414), and speaker counts from `.env` are sent to WhisperX (#415).
-- A local language model can be used without an API key, and the originals of a merge can be kept without their audio.
-
-### v0.10.12-alpha
-
-- System Statistics rebuilt: a 7, 30 or 90 day period compared with the one before, activity and health, usage and cost by task and by model, and one sortable users table.
-- Corrected statistics: "this month" is the calendar month, monthly charts show every month, and AI requests replace a "Total Queries" that was always 0.
-- Even header spacing on phones, and every screenshot recaptured with the current interface.
-
-### v0.10.11-alpha
-
-- Dates in generated titles, exports and AI prompts follow each user's timezone; Regenerate title applies the naming template (#412).
-- Renaming or merging speakers updates every recording they appear in.
-- Scoped, rate-limited API tokens, and an API v1 for integrations: changes feed, search, external references, share links, chat citations and Inquire.
-- Signed webhook send times, and `recording.updated` for edits made in the web app.
-- Every processing path runs the same steps: titles, events, exports and search indexing no longer depend on how a recording arrived.
-- A new icon, and even header buttons on phones.
-
-[Full release notes](https://github.com/murtaza-nasir/speakr/releases/tag/v0.10.14-alpha) · [All releases](https://github.com/murtaza-nasir/speakr/releases)
+[Full release notes](https://github.com/murtaza-nasir/speakr/releases/tag/v0.10.16-alpha) · [All releases](https://github.com/murtaza-nasir/speakr/releases)
 
 ## Screenshots
 
@@ -299,31 +300,7 @@ Complete documentation is available at **[murtaza-nasir.github.io/speakr](https:
 - **Database**: SQLite (default) or PostgreSQL
 - **Deployment**: Docker, Docker Compose
 
-## Roadmap
-
-### Completed
-- Speaker voice profiles with AI-powered identification (v0.5.9)
-- Group workspaces with shared recordings (v0.5.9)
-- PWA enhancements with offline support and background sync (v0.5.10)
-- Multi-user job queue with fair scheduling (v0.6.0)
-- SSO integration with OIDC providers (v0.7.0)
-- Token usage tracking and per-user budgets (v0.7.2)
-- Connector-based transcription architecture with auto-detection (v0.8.0)
-- Comprehensive REST API with Swagger UI documentation (v0.8.0)
-- Video retention with in-browser video playback (v0.8.11)
-- Parallel uploads with duplicate detection (v0.8.11)
-- Fullscreen video mode with live subtitles (v0.8.14)
-- Custom vocabulary and transcription hints (v0.8.14)
-
-### Near-term
-- Quick language switching for transcription
-- Automated workflow triggers
-
-### Long-term
-- Plugin system for custom integrations
-- End-to-end encryption option
-
-### Reporting Issues
+## Reporting Issues
 
 - [Report bugs](https://github.com/murtaza-nasir/speakr/issues)
 - [Request features](https://github.com/murtaza-nasir/speakr/discussions)

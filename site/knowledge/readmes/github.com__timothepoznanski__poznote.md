@@ -47,6 +47,16 @@ https://demo.poznote.com
 **Login**: poznote<br>
 **Password**: poznote
 
+### Don't want to manage a server?
+
+A hosting company can run Poznote for you.<br>
+[Compare the hosts](https://poznote.com/hosting.html) or deploy directly:
+
+<p>
+  <a href="https://www.pikapods.com/pods?run=poznote"><img src="https://www.pikapods.com/static/run-button.svg" alt="Run on PikaPods" height="44"></a>
+  <a href="https://calibernode.com/cloud-apps/poznote"><img src="images/run-on-calibernode.svg" alt="Run on Caliber Node" height="44"></a>
+</p>
+
 ### They talk about Poznote
 
 https://poznote.com/press.html
@@ -69,6 +79,7 @@ https://discord.gg/fuEV6uqf4N
 - [Revisions](#revisions)
 - [Personalization](#personalization)
 - [Multi-users](#multi-users)
+- [Sharing and collaboration](#sharing-and-collaboration)
 - [Activity Log](#activity-log)
 - [Webhooks](#webhooks)
 - [Git Synchronization](#git-synchronization)
@@ -243,6 +254,11 @@ docker compose up -d
 <summary><strong>☁️ Cloud</strong></summary><br>
 
 Don't want to manage a server? A hosting company can run Poznote for you and keep it online. See the available hosts and how to choose between them [here](https://poznote.com/hosting.html).
+
+<p>
+  <a href="https://www.pikapods.com/pods?run=poznote"><img src="https://www.pikapods.com/static/run-button.svg" alt="Run on PikaPods" height="44"></a>
+  <a href="https://calibernode.com/cloud-apps/poznote"><img src="images/run-on-calibernode.svg" alt="Run on Caliber Node" height="44"></a>
+</p>
 
 </details>
 
@@ -549,7 +565,7 @@ Poznote supports OpenID Connect (authorization code + PKCE) for single sign-on i
 1. The login page displays a `Continue with [Provider Name]` button when OIDC is enabled.
 2. Users authenticate with the OIDC authorization code flow secured by PKCE.
 3. Access can be restricted with allowed groups and, if needed, a legacy allowed users list.
-4. After authentication, Poznote links the identity in this order: `sub` (`oidc_subject`), then `preferred_username`, then `email`.
+4. After authentication, Poznote links the identity by `sub` (`oidc_subject`), then by a verified email (one set by an admin or synced from the provider, case does not matter). An existing profile is never linked by its username: to link one on its first SSO login, give it the email the provider sends, or paste its OIDC subject, in **Settings > Admin Tools > User Management**. A refused first login logs the subject to paste.
 5. If auto-create users is enabled and no profile matches, Poznote creates one automatically. Such a profile has **no password at all**: it never went through the initial-credential handover an admin does when creating an account, so it does not answer to the default password. Sign-in goes through the provider, or an admin sets an explicit password from **Settings > Admin Tools > User Management**.
 6. If `POZNOTE_OIDC_DISABLE_NORMAL_LOGIN=true`, the username/password form is hidden and the login page becomes SSO-only.
 7. REST API clients can authenticate with `Authorization: Bearer <OIDC JWT>` when OIDC is enabled; Poznote validates the provider JWKS, issuer, expiration, audience, and configured access controls.
@@ -598,7 +614,7 @@ From the OIDC admin page, configure:
 - **Allowed groups:** `poznote`
 - **Auto-create users:** enabled
 
-If auto-provisioning is enabled, Poznote generates a username from the OIDC claims (`preferred_username`, `nickname`, email local part, `name`, then `sub`) and stores the OIDC subject on the created profile.
+If auto-provisioning is enabled, Poznote generates a username from the OIDC claims (`preferred_username`, `nickname`, email local part, `name`, then `sub`) and stores the OIDC subject on the created profile. If an existing profile that has never signed in with SSO already carries that `preferred_username`, the login is refused instead of creating a second profile next to it: give that profile the email the provider sends, or its OIDC subject, so it is linked.
 
 </details>
 
@@ -681,7 +697,8 @@ Poznote supports two primary note formats, each tailored for different workflows
 *   **Another Day:** The calendar button next to the view controls picks any day, on phones too. Days that already have an entry are marked with a dot; picking one opens its entry, picking another day creates the entry for that date.
 *   **Board View:** Entries are displayed as cards grouped by month, newest first, with a filter to quickly find past entries.
 *   **Journal View:** The scroll button next to the view controls switches to one reading column: every entry with its full content, newest first, loaded as you scroll. The filter works there too. Click an entry, or its pencil, to edit it right there; changes are saved as you type. The tag button next to the pencil turns the entry's tags into an editor: add or remove tags without opening the note.
-*   **Format:** New entries are created as rich text or Markdown notes, depending on the "Diary entry format" setting under **Settings > Behavior**.
+*   **Format:** New entries are created as rich text or Markdown notes, depending on the "Diary entry format" setting under **Settings > Diary**.
+*   **Template:** To start every new entry with the same content (headings, checkboxes...), keep that note in a folder named `Templates` of the workspace and pick it in the "Diary entry template" setting under **Settings > Diary**. Each workspace has its own template, chosen among its own notes: open Settings from the workspace to set it. The template is converted when its format differs from the entry's.
 </details>
 
 ## Revisions
@@ -749,9 +766,10 @@ Under **Settings > Behavior**, you can configure:
 - **Show notes after folders:** list notes without folders below the folder list
 - **Code block word wrap:** enable or disable word wrap in code blocks
 - **Diary entry format:** create diary entries as rich text or Markdown notes
+- **Diary entry template:** a note from the workspace's `Templates` folder that every new diary entry of that workspace starts with
 - Interface language, timezone and date format, attachments and backlinks at the bottom of a note, spell check, and the keyboard shortcuts
 
-Under **Settings > Markdown**, you can configure the default view mode, the editor font, framed and coloured Markdown, and code block line numbers.
+Under **Settings > Markdown**, you can configure the default view mode, the views the view button of a note goes through (live preview, rich text, split), the editor font, framed and coloured Markdown, and code block line numbers.
 
 The theme is not a card here: the button at the bottom of the left icon rail walks through the themes, and an administrator chooses which ones it offers in **Settings > Admin Tools > Theme list**.
 
@@ -894,8 +912,7 @@ Override the tokens on `:root` for light and on `:root[data-theme='dark']` for d
 Poznote is multi-user: each profile has its own notes, workspaces, tags, folders, attachments and settings, and signs in with its own username or email address and password.
 
 - **User management**: administrators create, disable and manage profiles from **Settings > Admin Tools > User Management**, and can give a user access to another user's account without transferring its ownership.
-- **Sharing**: notes and folders can be shared with other users of the instance, read-only or editable, or publicly through dedicated links. An entire workspace can be shared with other users of the instance, who find it in their workspace menu and edit it alongside its owner. When the instance sends email (SMTP), each member can turn on **Settings > Workspaces > Shared workspace emails** to receive the list of notes the others created, edited or deleted there, a few minutes after the changes happen, or as a summary sent every day at 8:00 or every Monday at 8:00 (in the member's timezone). When several users can access the same note, only one edits it at a time and the others see who holds the lock.
-- **Editing the same note**: one person edits at a time. When a note is locked, the read-only banner offers to **take over**: the previous editor's screen turns read-only and their unsaved changes stay in their browser, offered again once the note is free. An open note picks up changes made elsewhere within a few seconds. For a **Markdown** note with unsaved edits on both sides, the two sets of changes are merged automatically when they touch different lines, and a banner lets you choose when they overlap. Rich-text notes are never merged, you choose which version to keep. Keep scripts and other code in fenced code blocks (```` ``` ````): raw HTML outside a code block is sanitized on save, which can make an otherwise clean merge look like a conflict.
+- **Sharing and collaboration**: workspaces, notes and folders can be shared with the other users of the instance, see [Sharing and collaboration](#sharing-and-collaboration).
 - **Tenant isolation (SaaS mode)**: administrators can stop non-admin users from discovering the other accounts of the instance, sharing with them, or registering personal webhooks. Leave everything unchecked for a family or team instance.
 
 <details>
@@ -923,6 +940,15 @@ data/
 ```
 
 </details>
+
+## Sharing and collaboration
+
+Poznote offers several ways to work with the other users of your instance, each person keeping their own account. For a common space (family, friends, a team), share a workspace.
+
+- **Share a workspace**: the owner opens **Settings > Workspaces** and clicks **Share** on the workspace's row (the share icon, or the first entry of its **...** menu), then picks the users. They find the workspace in their own workspace menu, under **Shared with me**, and edit its notes and folders with the full editor, with the same write access as the owner. The owner's other workspaces, settings, trash and backups stay private. In a shared workspace, writing `@username` in a note mentions that person, who finds it on their **Mentions** page. When the instance sends email (SMTP), each member can turn on **Settings > Workspaces > Shared workspace emails** to receive the list of notes the others created, edited or deleted there, a few minutes after the changes happen, or as a summary sent every day at 8:00 or every Monday at 8:00 (in the member's timezone).
+- **Share a note or a folder**: **Share** in the note's menu, or in the folder's menu, creates a link to that note or folder alone. The link can be public, protected by a password, or restricted to some users of the instance, who sign in to open it, and it can allow editing. The **Shares** page of the icon rail lists your shares, and what the others shared with you under **Shared with me**.
+- **Give access to a whole account**: an administrator can let a user open another user's account from **Settings > Admin Tools > User Management**, without transferring its ownership. The user switches to it from the **Accounts** section of the workspace menu.
+- **Editing the same note**: one person edits at a time. When a note is locked, the read-only banner offers to **take over**: the previous editor's screen turns read-only and their unsaved changes stay in their browser, offered again once the note is free. An open note picks up changes made elsewhere within a few seconds. For a **Markdown** note with unsaved edits on both sides, the two sets of changes are merged automatically when they touch different lines, and a banner lets you choose when they overlap. Rich-text notes are never merged, you choose which version to keep. Keep scripts and other code in fenced code blocks (```` ``` ````): raw HTML outside a code block is sanitized on save, which can make an otherwise clean merge look like a conflict.
 
 ## Activity Log
 
