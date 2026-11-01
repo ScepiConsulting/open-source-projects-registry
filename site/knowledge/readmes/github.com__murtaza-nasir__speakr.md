@@ -9,7 +9,7 @@
   <a href="https://www.gnu.org/licenses/agpl-3.0"><img alt="AGPL v3" src="https://img.shields.io/badge/License-AGPL_v3-blue.svg"></a>
   <a href="https://github.com/murtaza-nasir/speakr/actions/workflows/docker-publish.yml"><img alt="Docker Build" src="https://github.com/murtaza-nasir/speakr/actions/workflows/docker-publish.yml/badge.svg"></a>
   <a href="https://hub.docker.com/r/learnedmachine/speakr"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/learnedmachine/speakr"></a>
-  <a href="https://github.com/murtaza-nasir/speakr/releases/latest"><img alt="Latest Version" src="https://img.shields.io/badge/version-0.10.16--alpha-brightgreen.svg"></a>
+  <a href="https://github.com/murtaza-nasir/speakr/releases/latest"><img alt="Latest Version" src="https://img.shields.io/badge/version-0.10.18--alpha-brightgreen.svg"></a>
 </p>
 
 <p align="center">
@@ -70,6 +70,10 @@ Speakr turns a recording into organized, searchable, shareable knowledge. Here i
 - **Usage budgets** for LLM tokens and transcription minutes, per user.
 
 Speakr is also an installable Progressive Web App - mobile-first, offline-capable, with a phone share-target - and ships light/dark themes, an incognito mode, a configurable Help Center link for your own documentation, and a UI translated into seven languages.
+
+## Works with Mailr
+
+[Mailr](https://github.com/murtaza-nasir/mailr) is a self-hosted webmail application that I also develop. It includes a calendar, tasks, notes and an AI assistant, and mail accounts from any provider are connected over IMAP and SMTP. With a Speakr server connected, recordings are shown beside their meetings and emails, a follow-up email can be drafted from a recording, and its action items can be added as tasks. See [Speakr recordings](https://murtaza-nasir.github.io/mailr/user-guide/recordings/) in the Mailr documentation.
 
 ## Unofficial Companion Apps
 
@@ -232,28 +236,27 @@ Complete documentation is available at **[murtaza-nasir.github.io/speakr](https:
 - [Troubleshooting](https://murtaza-nasir.github.io/speakr/troubleshooting) - Common issues and solutions
 - [FAQ](https://murtaza-nasir.github.io/speakr/faq) - Frequently asked questions
 
-## Latest Release (v0.10.16-alpha)
+## Latest Release (v0.10.18-alpha)
+
+- Chat on incognito recordings works again (#527), and an incognito recording is kept through a page reload (#528).
+- Password sign-in is locked per account and client address after repeated wrong passwords, with an unlock in User Management (discussion #529).
+- The API specification lists only the operations a scoped token may call, so tool servers such as Open WebUI offer only those tools (#526).
+
+### v0.10.17-alpha
+
+- Security update of Authlib for SSO, and SSO sign-in works again under the default security policy (#496).
+- API tokens in the query string only for reading, and sign-in required for the app configuration and system info (#499, #500, #502).
+- Permissions on an existing share can be changed, and several people can be found and selected in the share window (discussions #517, #519).
+- Folder fixes for names, filters and group sharing (#511 to #516), and a per-account default sort for the recordings list.
+
+### v0.10.16-alpha
 
 - Tencent Cloud ASR connector with speaker diarization (#427), and request parameters for the text and chat models.
 - Dates, times, numbers, percentages and file sizes follow the interface language (#477, #480, #481).
 - Account-wide API limits and a cap on active tokens (discussion #484), and a CSRF check on the token API (#478).
 - Faster recording lists (discussion #483), clear errors for unreadable uploads (#482), and fixes for #475, #476, #479 and #485.
 
-### v0.10.15-alpha
-
-- Seven security fixes: email links, the remember-me cookie, recording files, summary display, the share target, Markdown rendering and gunicorn (#434 to #439, #442).
-- Find and replace in the transcript editors, and notes given to the summarizer as context (#440).
-- Inquire can be filtered by folder (#428), and the API specification has an operationId on every operation (#443).
-- Long file names (#430) and recordings deleted during transcription (#432) no longer cause errors, and the dependencies are pinned and verified.
-
-### v0.10.14-alpha
-
-- The light or dark mode and the color scheme are saved with the account, for every device (#419).
-- In the transcript editor, every speaker can be chosen for a segment again (#425).
-- Recordings stuck in QUEUED or SUMMARIZING can be reset, and a transcript is no longer lost when reprocessing cannot be queued (#420, #423, #424).
-- The exception line of a failed WhisperX request is kept (#422), and "Authentication Error" is no longer shown for an ID that contains "401".
-
-[Full release notes](https://github.com/murtaza-nasir/speakr/releases/tag/v0.10.16-alpha) · [All releases](https://github.com/murtaza-nasir/speakr/releases)
+[Full release notes](https://github.com/murtaza-nasir/speakr/releases/tag/v0.10.18-alpha) · [All releases](https://github.com/murtaza-nasir/speakr/releases)
 
 ## Screenshots
 

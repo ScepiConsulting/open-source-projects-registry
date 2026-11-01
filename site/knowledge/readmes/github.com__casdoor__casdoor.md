@@ -192,7 +192,7 @@ Organizations, applications, users, providers, roles and permissions can be kept
 
 ### From source — for development
 
-Use this if you intend to modify Casdoor. Prerequisites: **Go 1.25+** (see [`go.mod`](go.mod)), **Node.js 20 LTS**, **Yarn 1.x**, and a supported database (MySQL, PostgreSQL, SQLite, SQL Server and others).
+Use this if you intend to modify Casdoor. Prerequisites: **Go 1.26+** (see [`go.mod`](go.mod)), **Node.js 20 LTS**, **Yarn 1.x**, and a supported database (MySQL, PostgreSQL, SQLite, SQL Server and others).
 
 ```bash
 git clone https://github.com/casdoor/casdoor.git
@@ -314,7 +314,7 @@ Before exposing a Casdoor instance to the internet:
 - **Discord** — [join the community](https://discord.gg/5rPsrAzK7S) for questions and help
 - **GitHub Discussions** — [ask and search here](https://github.com/casdoor/casdoor/discussions)
 - **GitHub Issues** — [bug reports and feature requests](https://github.com/casdoor/casdoor/issues)
-- **Commercial support** — [casdoor.ai/help](https://casdoor.ai/help)
+- **Commercial support** — [SLA-backed support, procurement docs and migration help](https://www.casdoor.com/enterprise?utm_source=github&utm_medium=readme&utm_content=support)
 - **Managed hosting** — [Casdoor Cloud](https://www.casdoor.com/?utm_source=github&utm_medium=readme&utm_content=support) runs and upgrades Casdoor for you
 
 ## 🌍 Contributing

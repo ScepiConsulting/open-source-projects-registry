@@ -51,6 +51,8 @@ For self-hosted installations, please refer to our [Deployment Guides](https://d
 
 The client `npm run build` also checks the public form bundle size and eager dependencies. This check reads `.nuxt/dist/client/_nuxt`, independently of Nitro's deployment output directory (including AWS Amplify's `.amplify-hosting`). Run its regression tests from `client/` with `node --test scripts/check-public-form-bundle.test.mjs`.
 
+The public form budget is **425 KiB gzip**. On 25 October 2026, the integrations-content update brought the unchanged `main` build to 419.3 KiB, still within the old 420 KiB limit. The combined security fixes measured 421.7 KiB: an additional 2.4 KiB (about 0.6%). The previous baseline used 416.4 KiB of a 420 KiB budget. The new limit accepts this measured increase and restores comparable headroom without changing the forbidden eager-dependency checks. Regression fixtures verify that a route around 424 KiB passes and one around 426 KiB fails.
+
 ## Form list performance
 
 The dashboard fetches lightweight summaries in batches of 50. The API keeps its default page size of 10 and its maximum of 100 for other callers. It paginates forms before loading view and completed-submission counts for the returned IDs. Historical views use an index on `form_statistics.form_id`, and the aggregate is explicitly aliased as `total_views_count` so the model uses the preloaded value.
@@ -84,11 +86,25 @@ Run the browser suite against the running worktree with:
 
 The API resolves dependencies for PHP 8.3.36; use a patched PHP 8.3 or 8.4 runtime compatible with the lock and run `composer check-platform-reqs`. The client requires Node `^22.22.3 || ^24.15.0 || >=26`; CI and Docker use 24.22.1, also recorded in `client/.nvmrc`.
 
+Nuxt Content uses the native `node:sqlite` connector, including on Amplify's Node 24 runtime. Its Zod dependency is pinned to the patched v4 line through a scoped npm override; keep that override until Nuxt Content updates its dependency range.
+
 The executable npm audit policy is in [scripts/npm-exceptions.json](scripts/npm-exceptions.json). Dependabot checks Composer, client npm packages, and GitHub Actions weekly, with up to three open version-update PRs per ecosystem. Compatible application updates are grouped; major application dependency updates remain separate except for the coordinated VueUse packages. GitHub Actions updates are grouped together. Security update handling is unchanged.
+
+The lock requires node-forge 1.4.1 or newer. Its former RSA-verification exception has been removed; dated exceptions for other packages remain enforced.
 
 ## Date fields
 
 Clearing a date with a click, Enter, or Space keeps the calendar closed. Reopen it to choose another date.
+
+## Editor history
+
+The form editor shows whether changes are saved. For an existing form, **Save Changes** saves both its design and settings; changes to a published form take effect immediately. In **Settings**, use **Save and close** to save directly, or **Close** to return to the editor with your changes still pending. While saving, Settings cannot be edited or dismissed. Failed saves preserve the pending edits for retry, and validation errors lead to the relevant field editor. For a new form, **Done** applies settings without creating or publishing it. Leaving the editor with unsaved changes asks for confirmation.
+
+Clearing editor history uses the currently loaded form as the undo baseline and discards pending history updates. A subsequent edit can be undone back to that form without restoring an earlier loading state.
+
+## Submission file references
+
+File fields accept temporary upload references. To retain an existing upload through a URL, send its valid, unexpired signed download URL for the same form and application origin. Refresh submission data to obtain a new URL if it has expired. A prefilled file configured in the editor is copied into submission storage under a fresh name for each submission; its shared source remains available. Other shared form assets and arbitrary external URLs cannot be used as submission uploads. Submission processing only moves files from temporary upload storage; it never moves shared form images.
 
 ## Spreadsheet exports
 
@@ -120,8 +136,36 @@ OpnForm uses a dual-license model to make the project sustainable:
 
 By offering Enterprise features alongside our open-source core, we can continue to invest in making OpnForm better for everyone while keeping the project financially sustainable.
 
+## Security remediation rollout
+
+See [October 2026 deployment and compatibility notes](docs/security-remediation-2026-10.md) before deploying the API/client changes.
+
 ### Form validation translations
 
 Public submissions use the form's language for API validation messages. When adding a translated validation message, update the catalogs under `api/resources/lang/` for all languages in `Form::LANGUAGES`, preserving placeholders such as `:attribute`, `:min`, and `:max`.
 
 Run `vendor/bin/pest --filter=FormValidationTranslationsTest` from `api/` to check supported catalogs and render invalid date range, rating, selection, and Arabic file-type errors. The tests do not require a database. The catalog check excludes custom attribute aliases and the legacy password key, whose structure differs between Laravel versions. Client text coverage is checked separately by `test/unit/form-locale-keys.test.ts` in `client/`.
+
+## Production performance
+
+See [runtime limits, caching and reproducible local measurements](docs/reports/production-performance-2026-10.md).
+
+### Compare date fields in conditions
+
+For a single date field's **Equals**, **Before**, **After**, **On or before**, or
+**On or after** condition, choose **Fixed date** to use the calendar or
+**Field or variable** to compare against another single date field or a computed
+variable returning an ISO date. This works in
+conditional logic and custom validation. Date ranges are excluded from reference
+selection. Relative conditions such as **Within next X days** still take a number
+of days. A comparison against an empty date does not pass.
+
+Date operands are validated on the server when saving the form. References must
+point to another existing single date field or a variable returning a date.
+At evaluation, both runtimes reject nulls, empty strings, non-string values,
+impossible dates, and non-ISO date text. Fields without time compare calendar dates, ignoring the time and offset carried
+by the input. Fields with time compare instants with timezone offsets applied;
+timezone-free values use UTC. Field references must have matching time settings.
+Fractional seconds use millisecond precision in both runtimes. For fields with time, equality compares the instant, so timestamps with different
+offsets can be equal. Optional empty
+fields need an explicit **Is empty OR date comparison** rule if blanks should pass.

@@ -40,15 +40,13 @@ Subscribe to creators via RSS without a Google account, stay free of algorithms,
   - Auto-skip sponsored segments and chapters you choose
   - Replace clickbait titles, and thumbnails with screencaps
   - Miniplayer: keep video in corner while reading articles
-  - Modern article reading experience
+  - Browse and view articles side by side
+  - [Keyboard shortcuts & gestures](#keyboard-shortcuts--gestures)
 - ⚙️ **Customization**
   - Block YouTube shorts
   - Video mode for chosen categories
   - Play via YouTube or [Invidious](https://invidious.io/)
   - Hide sponsored links in video description intros
-- 🖥️ **Desktop & Mobile**
-  - Browse and view articles side by side
-  - [Keyboard shortcuts & gestures](#keyboard-shortcuts--gestures)
 - 📰 **FreshRSS features**
   - Subscribe to YouTube creators without an account
   - Manage article and video RSS feeds
@@ -78,11 +76,15 @@ Youlag is an extension for [FreshRSS](https://github.com/FreshRSS/FreshRSS) and 
 
 These shortcuts control the video in video mode. Clicking on the video hands the keyboard over to YouTube's player, so click anywhere outside the video to use these shortcuts again.
 
-- `Space`: play/pause
-- `←` `→`: seek 5s
+- `Space` or `K`: play/pause
+- `←` `→` or `J` `L`: seek 10s
 - `Ctrl`/`Option` + `←` `→`: previous/next chapter
   - `Ctrl` on Windows and Linux, `Option` on macOS.
+- `Enter`: skip the sponsor segment, or cancel the upcoming auto-skip
+- `0`-`9`: jump to 0–90% of the video
 - `M`: mute
+- `W`: add to or remove from watch later
+- `P`: open/close save to playlist
 - `I`: miniplayer
 - `Esc`: close video or article
   - The browser's `Back` navigation works too.

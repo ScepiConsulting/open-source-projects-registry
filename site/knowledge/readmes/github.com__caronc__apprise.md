@@ -84,6 +84,7 @@ The table below identifies the services this tool supports and some example serv
 | [Evolution API](https://appriseit.com/services/evolution/) | evolution:// or evolutions:// | (TCP) 80 or 443 | evolution://apikey@hostname/instance/ToPhoneNo<br/>evolution://apikey@hostname:port/instance/ToPhoneNo<br/>evolution://apikey@hostname/instance/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
 | [FCM](https://appriseit.com/services/fcm/) | fcm://    | (TCP) 443    | fcm://project@apikey/DEVICE_ID<br />fcm://project@apikey/#TOPIC<br/>fcm://project@apikey/DEVICE_ID1/#topic1/#topic2/DEVICE_ID2/
 | [Feishu](https://appriseit.com/services/feishu/) | feishu://    | (TCP) 443    | feishu://token
+| [FireHydrant](https://appriseit.com/services/firehydrant/) | firehydrant://  | (TCP) 443 | firehydrant://token<br />firehydrant://token?priority=low&tags=service:api
 | [Flock](https://appriseit.com/services/flock/) | flock://    | (TCP) 443    | flock://token<br/>flock://botname@token<br/>flock://app_token/u:userid<br/>flock://app_token/g:channel_id<br/>flock://app_token/u:userid/g:channel_id
 | [Flowtriq](https://appriseit.com/services/flowtriq/) | flowtriq:// or flowtriqs://    | (TCP) 80 or 443    | flowtriq://apikey@hostname/webhook/path<br />flowtriqs://apikey@hostname/webhook/path
 | [GitHub](https://appriseit.com/services/github/) | github://    | (TCP) 443    | github://token@owner/repo<br />github://token@owner/repo/issues/42<br />github://token@owner/repo/pull/1807<br />github://token@owner/repo/discussions/7
@@ -91,8 +92,10 @@ The table below identifies the services this tool supports and some example serv
 | [Google Chat](https://appriseit.com/services/googlechat/) | gchat://    | (TCP) 443    | gchat://workspace/key/token
 | [Gorush](https://appriseit.com/services/gorush/) | gorush:// or gorushs://   | (TCP) 8088, 80 or 443    | gorush://hostname:8088/device_token<br />gorush://hostname:8088/device_token1/device_token2?platform=ios<br />gorushs://user:password@hostname/device_token
 | [Gotify](https://appriseit.com/services/gotify/) | gotify:// or gotifys://   | (TCP) 80 or 443    | gotify://hostname/token<br />gotifys://hostname/token?priority=high
+| [Groundmail](https://appriseit.com/services/groundmail/) | groundmail://  | (TCP) 443   | groundmail://APIKey:FromEmail/<br />groundmail://APIKey:FromEmail/ToEmail<br />groundmail://APIKey:FromEmail/ToEmail1/ToEmail2/ToEmailN/
 | [GroupMe](https://appriseit.com/services/groupme/) | groupme://   | (TCP) 443   | groupme://bot_id<br />groupme://bot_id/access_token
 | [Growl](https://appriseit.com/services/growl/)  | growl://   | (UDP) 23053   | growl://hostname<br />growl://hostname:portno<br />growl://password@hostname<br />growl://password@hostname:port</br>**Note**: you can also use the get parameter _version_ which can allow the growl request to behave using the older v1.x protocol. An example would look like: growl://hostname?version=1
+| [Gupshup](https://appriseit.com/services/gupshup/) | gupshup://   | (TCP) 443   | gupshup://AppName:ApiKey@FromPhoneNo/ToPhoneNo<br/>gupshup://AppName:ApiKey@FromPhoneNo/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/<br/>gupshup://AppName:ApiKey@FromPhoneNo/ToPhoneNo?template=TemplateID&:body=1
 | [Guilded](https://appriseit.com/services/guilded/)  | guilded://   | (TCP) 443   | guilded://webhook_id/webhook_token<br />guilded://avatar@webhook_id/webhook_token
 | [Home Assistant](https://appriseit.com/services/homeassistant/)       | hassio:// or hassios://   | (TCP) 8123 or 443 | hassio://hostname/accesstoken<br />hassio://user@hostname/accesstoken<br />hassio://user:password@hostname:port/accesstoken<br />hassio://hostname/optional/path/accesstoken
 | [HumHub](https://appriseit.com/services/humhub/) | humhub:// or humhubs:// | (TCP) 80 or 443 | humhubs://token@hostname/container_id<br />humhubs://user:password@hostname/container_id<br />humhubs://token@hostname/id1/id2/id3
@@ -103,6 +106,7 @@ The table below identifies the services this tool supports and some example serv
 | [Jellyfin](https://appriseit.com/services/jellyfin/)  | jellyfin:// or jellyfins:// | (TCP) 8096 | jellyfin://user@hostname/<br />jellyfins://user:password@hostname
 | [Jira](https://appriseit.com/services/jira/) | jira:// | (TCP) 443 | jira://APIKey<br/>jira://APIKey/@UserID<br/>jira://APIKey/#Team<br/>jira://APIKey/\*Schedule<br/>jira://APIKey/^Escalation
 | [Join](https://appriseit.com/services/join/) | join://   | (TCP) 443    | join://apikey/device<br />join://apikey/device1/device2/deviceN/<br />join://apikey/group<br />join://apikey/groupA/groupB/groupN<br />join://apikey/DeviceA/groupA/groupN/DeviceN/
+| [KakaoTalk](https://appriseit.com/services/kakaotalk/) | kakaotalk:// or kakao:// | (TCP) 443 | kakaotalk://ClientID/RefreshToken<br/>kakaotalk://ClientSecret@ClientID/RefreshToken<br/>kakaotalk://ClientID/RefreshToken/FriendUUID1/FriendUUID2/FriendUUIDN/me
 | [KODI](https://appriseit.com/services/kodi/) | kodi:// or kodis://    | (TCP) 8080 or 443   | kodi://hostname<br />kodi://user@hostname<br />kodi://user:password@hostname:port
 | [Kook](https://appriseit.com/services/kook/) | kook:// | (TCP) 443 | kook://token/channel_id<br/>kook://token/channel1/channel2<br/>kook://token/@user_id<br/>kook://webhook_key?mode=webhook
 | [Kumulos](https://appriseit.com/services/kumulos/) | kumulos:// | (TCP) 443 | kumulos://apikey/serverkey
@@ -121,6 +125,7 @@ The table below identifies the services this tool supports and some example serv
 | [MQTT](https://appriseit.com/services/mqtt/) | mqtt://  or mqtts:// | (TCP) 1883 or 8883   | mqtt://hostname/topic<br />mqtt://user@hostname/topic<br />mqtts://user:pass@hostname:9883/topic
 | [Nextcloud](https://appriseit.com/services/nextcloud/) | ncloud:// or nclouds:// | (TCP) 80 or 443 | ncloud://adminuser:pass@host/User<br/>nclouds://adminuser:pass@host/User1/User2/UserN
 | [NextcloudTalk](https://appriseit.com/services/nextcloudtalk/) | nctalk:// or nctalks:// | (TCP) 80 or 443 | nctalk://user:pass@host/RoomId<br/>nctalks://user:pass@host/RoomId1/RoomId2/RoomIdN<br/>nctalks://host/RoomId?secret=BotSecret
+| [Nostr](https://appriseit.com/services/nostr/) | nostr:// | (TCP) 443 | nostr://nsec<br/>nostr://nsec/npub<br/>nostr://nsec/npub1/npub2/name@example.com
 | [Notica](https://appriseit.com/services/notica/) | notica://  | (TCP) 443   | notica://Token/
 | [Notifiarr](https://appriseit.com/services/notifiarr/) | notifiarr:// | (TCP) 443 | notifiarr://apikey/#channel<br />notifiarr://apikey/#channel1/#channel2/#channeln
 | [Notifico](https://appriseit.com/services/notifico/) | notifico:// or notificos://  | (TCP) 80 or 443   | notifico://ProjectID/MessageHook/<br />notifico://host/ProjectID/MessageHook/<br />notificos://host/ProjectID/MessageHook/
@@ -182,10 +187,12 @@ The table below identifies the services this tool supports and some example serv
 | [Webex Teams (Cisco)](https://appriseit.com/services/wxteams/) | wxteams://  | (TCP) 443   | wxteams://Token
 | [WeChat (WeCom)](https://appriseit.com/services/wechat/) | wechat://  | (TCP) 443   | wechat://CorpID:AppSecret@AgentID/@all<br/>wechat://CorpID:AppSecret@AgentID/UserID
 | [WeCom Bot](https://appriseit.com/services/wecombot/) | wecombot://  | (TCP) 443   | wecombot://BotKey
+| [Whapi.Cloud](https://appriseit.com/services/whapi/) | whapi://  | (TCP) 443   | whapi://Token/ToPhoneNo<br/>whapi://Token/ToPhoneNo1/ToGroupID/ToPhoneNoN
 | [WhatsApp](https://appriseit.com/services/whatsapp/) | whatsapp://  | (TCP) 443   | whatsapp://AccessToken@FromPhoneID/ToPhoneNo<br/>whatsapp://Template:AccessToken@FromPhoneID/ToPhoneNo
 | [WPUSH](https://appriseit.com/services/wpush/) | wpush://  | (TCP) 443   | wpush://APIKey<br/>wpush://APIKey/Topic1/Topic2/TopicN
 | [WxPusher](https://appriseit.com/services/wxpusher/) | wxpusher://  | (TCP) 443   | wxpusher://AppToken@UserID1/UserID2/UserIDN<br/>wxpusher://AppToken@Topic1/Topic2/Topic3<br/>wxpusher://AppToken@UserID1/Topic1/
 | [XBMC](https://appriseit.com/services/xbmc/) | xbmc:// or xbmcs://    | (TCP) 8080 or 443   | xbmc://hostname<br />xbmc://user@hostname<br />xbmc://user:password@hostname:port
+| [xMatters](https://appriseit.com/services/xmatters/) | xmatters://  | (TCP) 443   | xmatters://apikey@company/integration_id<br />xmatters://apikey@company/integration_id/recipient1/recipient2<br />xmatters://user:password@company.xmatters.com/integration_id/recipient
 | [XMPP](https://appriseit.com/services/xmpp/) | xmpp:// or xmpps://    | (TCP) 5222 or 5223   | xmpp://user:pass@hostname<br />xmpps://user:pass@hostname/jid<br />xmpps://user:pass@hostname/jid1/jid2@example.ca
 | [YouLMK](https://appriseit.com/services/youlmk/) | youlmk://  | (TCP) 443   | youlmk://ylk_token<br/>youlmk://k_key<br/>youlmk://ylk_token?priority=critical<br/>youlmk://ylk_token?failure=critical&url=https://example.com/runs/1
 | [Zalo](https://appriseit.com/services/zalo/) | zalo://  | (TCP) 443   | zalo://BotToken/ChatID<br/>zalo://BotToken/ChatID1/ChatID2/ChatIDN
@@ -209,12 +216,15 @@ SMS Notifications for the most part do not have a both a `title` and `body`.  Th
 | [Burst SMS](https://appriseit.com/services/burstsms/) | burstsms://  | (TCP) 443   | burstsms://ApiKey:ApiSecret@FromPhoneNo/ToPhoneNo<br/>burstsms://ApiKey:ApiSecret@FromPhoneNo/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
 | [Clickatell](https://appriseit.com/services/clickatell/)                         | clickatell://               | (TCP) 443       | clickatell://ApiKey/ToPhoneNo<br/>clickatell://FromPhoneNo@ApiKey/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN
 | [ClickSend](https://appriseit.com/services/clicksend/) | clicksend://  | (TCP) 443   | clicksend://user:pass@PhoneNo<br/>clicksend://user:pass@ToPhoneNo1/ToPhoneNo2/ToPhoneNoN
+| [CM.com](https://appriseit.com/services/cm/) | cm://  | (TCP) 443   | cm://ProductToken/ToPhoneNo<br/>cm://SenderID@ProductToken/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
 | [DAPNET](https://appriseit.com/services/dapnet/) | dapnet://  | (TCP) 80   | dapnet://user:pass@callsign<br/>dapnet://user:pass@callsign1/callsign2/callsignN
 | [D7 Networks](https://appriseit.com/services/d7networks/) | d7sms://  | (TCP) 443   | d7sms://token@PhoneNo<br/>d7sms://token@ToPhoneNo1/ToPhoneNo2/ToPhoneNoN
 | [DingTalk](https://appriseit.com/services/dingtalk/)  | dingtalk://   | (TCP) 443   | dingtalk://token/<br />dingtalk://token/ToPhoneNo<br />dingtalk://token/ToPhoneNo1/ToPhoneNo2/ToPhoneNo1/
 | [Exotel](https://appriseit.com/services/exotel/) | exotel://  | (TCP) 443   | exotel://sid:token@FromPhoneNo<br/>exotel://sid:token@FromPhoneNo/ToPhoneNo<br/>exotel://sid:token@FromPhoneNo/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN
 | [Free-Mobile](https://appriseit.com/services/freemobile/)  | freemobile://   | (TCP) 443   | freemobile://user@password/
 | [httpSMS](https://appriseit.com/services/httpsms/) | httpsms://  | (TCP) 443   | httpsms://ApiKey@FromPhoneNo<br/>httpsms://ApiKey@FromPhoneNo/ToPhoneNo<br/>httpsms://ApiKey@FromPhoneNo/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
+| [Infobip](https://appriseit.com/services/infobip/) | infobip://  | (TCP) 443   | infobip://ApiKey@BaseURL/ToPhoneNo<br/>infobip://ApiKey@BaseURL/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/?from=SenderID
+| [Kaleyra](https://appriseit.com/services/kaleyra/) | kaleyra:// or klr://  | (TCP) 443   | kaleyra://SID:ApiKey@SenderID/ToPhoneNo<br/>kaleyra://SID:ApiKey@SenderID/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/<br/>kaleyra://SID:ApiKey@SenderID/ToPhoneNo?region=in&template=TemplateID
 | [Kavenegar](https://appriseit.com/services/kavenegar/) | kavenegar://  | (TCP) 443   | kavenegar://ApiKey/ToPhoneNo<br/>kavenegar://FromPhoneNo@ApiKey/ToPhoneNo<br/>kavenegar://ApiKey/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN
 | [MessageBird](https://appriseit.com/services/messagebird/) | msgbird://  | (TCP) 443   | msgbird://ApiKey/FromPhoneNo<br/>msgbird://ApiKey/FromPhoneNo/ToPhoneNo<br/>msgbird://ApiKey/FromPhoneNo/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
 | [Mobile Message](https://appriseit.com/services/mobilemessage/) | mobilemessage:// or mobilemsg://  | (TCP) 443   | mobilemessage://ApiUser:ApiPass@SenderID/ToPhoneNo<br/>mobilemessage://ApiUser:ApiPass@SenderID/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
@@ -230,6 +240,7 @@ SMS Notifications for the most part do not have a both a `title` and `body`.  Th
 | [SMSEagle](https://appriseit.com/services/smseagle/) | smseagle:// or smseagles:// | (TCP) 80 or 443  | smseagles://hostname:port/ToPhoneNo<br/>smseagles://hostname:port/@ToContact<br/>smseagles://hostname:port/#ToGroup<br/>smseagles://hostname:port/ToPhoneNo1/#ToGroup/@ToContact/
 | [SMS Manager](https://appriseit.com/services/sms_manager/) | smsmgr://  | (TCP) 443   | smsmgr://ApiKey@ToPhoneNo<br/>smsmgr://ApiKey@ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
 | [SMSC](https://appriseit.com/services/smsc/) | smsc://  | (TCP) 443   | smsc://login:password@ToPhoneNo<br/>smsc://login:password@ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
+| [Telesign](https://appriseit.com/services/telesign/) | telesign://  | (TCP) 443   | telesign://CustomerID:ApiKey@ToPhoneNo<br/>telesign://CustomerID:ApiKey@ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/
 | [Telnyx](https://appriseit.com/services/telnyx/) | telnyx://  | (TCP) 443   | telnyx://ApiKey@FromPhoneNo<br/>telnyx://ApiKey@FromPhoneNo/ToPhoneNo<br/>telnyx://ApiKey@FromPhoneNo/ToPhoneNo1/ToPhoneNo2/ToPhoneNoN/<br/>telnyx://ApiKey@FromPhoneNo/ToPhoneNo?profile=MessagingProfileID
 | [Threema Gateway](https://appriseit.com/services/threema/) | threema://  | (TCP) 443   | threema://GatewayID@secret/ToPhoneNo<br/>threema://GatewayID@secret/ToEmail<br/>threema://GatewayID@secret/ToThreemaID/<br/>threema://GatewayID@secret/ToEmail/ToThreemaID/ToPhoneNo/...
 | [Trigv](https://trigv.com/) | trigv:// or trigvs:// | (TCP) 80 or 443 | trigvs://APIKey<br/>trigvs://APIKey/channel<br/>trigv://APIKey@hostname/channel

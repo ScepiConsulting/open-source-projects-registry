@@ -3,17 +3,18 @@
 [![Go Report Card](https://goreportcard.com/badge/github.com/sablierapp/sablier)](https://goreportcard.com/report/github.com/sablierapp/sablier)
 [![Discord](https://img.shields.io/discord/1298488955947454464?logo=discord&logoColor=5865F2&cacheSeconds=1&link=http%3A%2F%2F)](https://discord.gg/WXYp59KeK9)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/sablierapp/sablier/badge)](https://scorecard.dev/viewer/?uri=github.com/sablierapp/sablier)
+[![Tested with LocalStack](https://img.shields.io/badge/tested%20with-LocalStack-39227A)](https://localstack.cloud)
 
 Free and open-source software that starts workloads on demand and stops them after a period of inactivity.
 
 It integrates with [reverse proxy plugins](#usage-with-reverse-proxies) (Traefik, Caddy, Nginx, Envoy, etc.) to intercept incoming requests, wake up sleeping workloads, and display a waiting page until they're ready.
 
-![Demo](./docs/assets/img/demo.gif)
+![Demo](./docs/static/assets/img/demo.gif)
 
 Whether you're running on a resource-constrained device like a **Raspberry Pi**, managing a **QA environment** used only once a week, or reducing cloud costs by scaling idle workloads to zero — Sablier is built for you.
 
 **Key features:**
-- On-demand start/stop for Docker, Kubernetes, Podman, and Proxmox LXC workloads
+- On-demand start/stop for Docker, Kubernetes, Podman, Proxmox LXC, systemd, Nomad and AWS ECS workloads
 - Customizable waiting UI with themes while workloads warm up
 - [Webhook notifications](#webhooks) when instances start or stop
 - [Prometheus metrics](#metrics) for monitoring session and workload activity
@@ -40,6 +41,9 @@ Whether you're running on a resource-constrained device like a **Raspberry Pi**,
   - [Podman](#podman)
   - [Kubernetes](#kubernetes)
   - [Proxmox LXC](#proxmox-lxc)
+  - [Systemd](#systemd)
+  - [Nomad](#nomad)
+  - [AWS ECS](#aws-ecs)
 - [Scale Mode](#scale-mode)
 - [Webhooks](#webhooks)
 - [Observability](#observability)
@@ -57,6 +61,7 @@ Whether you're running on a resource-constrained device like a **Raspberry Pi**,
 - [Support](#support)
 - [Sponsor](#sponsor)
   - [DigitalOcean](#digitalocean)
+  - [LocalStack](#localstack)
 
 
 ## Installation
@@ -70,11 +75,11 @@ You can install Sablier using one of the following methods:
 
 ### Use the Docker image
 
-<img src="./docs/assets/img/docker.svg" alt="Helm" width="100" align="right" />
+<img src="./docs/static/assets/img/docker.svg" alt="Helm" width="100" align="right" />
 
 <!-- x-release-please-start-version -->
 ![Docker Pulls](https://img.shields.io/docker/pulls/sablierapp/sablier)
-![Docker Image Size (tag)](https://img.shields.io/docker/image-size/sablierapp/sablier/1.18.0)
+![Docker Image Size (tag)](https://img.shields.io/docker/image-size/sablierapp/sablier/1.19.1)
 <!-- x-release-please-end -->
 
 - **Docker Hub**: [sablierapp/sablier](https://hub.docker.com/r/sablierapp/sablier)
@@ -85,7 +90,7 @@ You can install Sablier using one of the following methods:
 ```yaml
 services:
   sablier:
-    image: sablierapp/sablier:1.18.0 # x-release-please-version
+    image: sablierapp/sablier:1.19.1 # x-release-please-version
     command:
       - start
       - --provider.name=docker
@@ -99,20 +104,20 @@ services:
 
 <!-- x-release-please-start-version -->
 ```bash
-docker run -p 10000:10000 -v /var/run/docker.sock:/var/run/docker.sock sablierapp/sablier:1.18.0
+docker run -p 10000:10000 -v /var/run/docker.sock:/var/run/docker.sock sablierapp/sablier:1.19.1
 ```
 
 > [!TIP]
 > Verify the image signature to ensure authenticity:
 > ```bash
-> gh attestation verify --owner sablierapp oci://sablierapp/sablier:1.18.0
+> gh attestation verify --owner sablierapp oci://sablierapp/sablier:1.19.1
 > ```
 
 <!-- x-release-please-end -->
 
 ### Use the binary distribution
 
-<img src="./docs/assets/img/github.svg" alt="Helm" width="100" align="right" />
+<img src="./docs/static/assets/img/github.svg" alt="Helm" width="100" align="right" />
 
 Grab the latest binary from the [releases](https://github.com/sablierapp/sablier/releases) page and run it:
 
@@ -138,7 +143,7 @@ make
 
 ### Use the Helm Chart
 
-<img src="./docs/assets/img/helm.png" alt="Helm" width="100" align="right" />
+<img src="./docs/static/assets/img/helm.png" alt="Helm" width="100" align="right" />
 
 Deploy Sablier to your Kubernetes cluster using the official Helm chart for production-ready deployments.
 
@@ -281,7 +286,7 @@ sablier --configFile=path/to/myconfigfile.yml
 
 ```yaml
 provider:
-  # Provider to use to manage containers (docker, swarm, kubernetes, podman, proxmox_lxc, systemd)
+  # Provider to use to manage containers (docker, swarm, kubernetes, podman, proxmox_lxc, systemd, nomad, ecs)
   name: docker
   # Reject requests for containers/services that don't have the Sablier enable label
   reject-unlabeled-requests: false
@@ -338,9 +343,11 @@ tracing:
   enabled: false
   # exporterType selects the trace backend: "otlphttp" (default) or "stdout".
   exporterType: otlphttp
-  # endpoint is the OTLP collector base URL (scheme + host + optional port).
+  # endpoint is the OTLP collector URL. Without a path, traces are sent to /v1/traces;
+  # a path is used as is.
   # For Jaeger: http://jaeger:4318
   # For Grafana Tempo: http://tempo:4318
+  # For VictoriaTraces: http://victoriatraces:10428/insert/opentelemetry/v1/traces
   endpoint: http://localhost:4318
   # serviceName is the logical name that appears in the tracing backend.
   serviceName: sablier
@@ -374,7 +381,7 @@ sablier --help
 
 # or
 
-docker run sablierapp/sablier:1.18.0 --help
+docker run sablierapp/sablier:1.19.1 --help
 ```
 <!-- x-release-please-end -->
 
@@ -401,7 +408,7 @@ TODO: Add link to full auto-generated reference
 
 ### Docker
 
-<img src="./docs/assets/img/docker.svg" alt="Docker" width="100" align="right" />
+<img src="./docs/static/assets/img/docker.svg" alt="Docker" width="100" align="right" />
 
 Sablier integrates seamlessly with Docker Engine to manage container lifecycle based on demand.
 
@@ -416,7 +423,7 @@ Sablier integrates seamlessly with Docker Engine to manage container lifecycle b
 
 ### Docker Swarm
 
-<img src="./docs/assets/img/docker_swarm.png" alt="Docker Swarm" width="100" align="right" />
+<img src="./docs/static/assets/img/docker_swarm.png" alt="Docker Swarm" width="100" align="right" />
 
 Sablier supports Docker Swarm mode for managing services across a cluster of Docker engines.
 
@@ -431,7 +438,7 @@ Sablier supports Docker Swarm mode for managing services across a cluster of Doc
 
 ### Podman
 
-<img src="./docs/assets/img/podman.png" alt="Podman" width="100" align="right" />
+<img src="./docs/static/assets/img/podman.png" alt="Podman" width="100" align="right" />
 
 Sablier works with Podman, the daemonless container engine, providing the same dynamic scaling capabilities as Docker.
 
@@ -446,7 +453,7 @@ Sablier works with Podman, the daemonless container engine, providing the same d
 
 ### Kubernetes
 
-<img src="./docs/assets/img/kubernetes.png" alt="Kubernetes" width="100" align="right" />
+<img src="./docs/static/assets/img/kubernetes.png" alt="Kubernetes" width="100" align="right" />
 
 Sablier provides native Kubernetes support for managing deployments, scaling workloads dynamically.
 
@@ -461,7 +468,7 @@ Sablier provides native Kubernetes support for managing deployments, scaling wor
 
 ### Proxmox LXC
 
-<img src="./docs/assets/img/proxmox.png" alt="Proxmox" width="100" align="right" />
+<img src="./docs/static/assets/img/proxmox.png" alt="Proxmox" width="100" align="right" />
 
 Sablier supports Proxmox VE for managing LXC containers on demand via the Proxmox API.
 
@@ -486,6 +493,34 @@ Sablier integrates with systemd to manage units on demand, including per-user se
 - Supports system or user instances
 
 📚 **[Full Documentation](https://sablierapp.dev/tutorials/providers/systemd/)**
+
+---
+
+### Nomad
+
+<img src="./docs/static/assets/img/nomad.svg" alt="Nomad" width="100" align="right" />
+
+Sablier supports HashiCorp Nomad for scaling job task groups to zero and back on demand. Nomad support is **experimental**.
+
+**Features:**
+- Connects to the Nomad HTTP API with an optional ACL token
+- Scales task groups to 0 and back through the scaling API
+- Discovers task groups by their `sablier.enable` job or group `meta`
+
+📚 **[Full Documentation](https://sablierapp.dev/tutorials/providers/nomad/)**
+
+### AWS ECS
+
+<img src="./docs/static/assets/img/ecs.svg" alt="AWS ECS" width="100" align="right" />
+
+Sablier scales Amazon ECS services on demand through the ECS API.
+
+**Features:**
+- Uses the AWS SDK credential chain (task role, instance role, profile)
+- Scales services to 0 and back through the desired count
+- Discovers services by `sablier.enable=true` resource tag
+
+📚 **[Full Documentation](https://sablierapp.dev/tutorials/providers/ecs/)**
 
 ## Scale Mode
 
@@ -606,7 +641,7 @@ These plugins intercept incoming requests, call the Sablier API to start sleepin
 
 ### Apache APISIX
 
-<img src="./docs/assets/img/apacheapisix.png" alt="Apache APISIX" width="100" align="right" />
+<img src="./docs/static/assets/img/apacheapisix.png" alt="Apache APISIX" width="100" align="right" />
 
 Sablier integrates with Apache APISIX through a Proxy-WASM plugin, enabling dynamic scaling for your services.
 
@@ -621,7 +656,7 @@ Sablier integrates with Apache APISIX through a Proxy-WASM plugin, enabling dyna
 
 ### Caddy
 
-<img src="./docs/assets/img/caddy.png" alt="Caddy" width="100" align="right" />
+<img src="./docs/static/assets/img/caddy.png" alt="Caddy" width="100" align="right" />
 
 Sablier provides a native Caddy module for seamless integration with Caddy v2.
 
@@ -636,7 +671,7 @@ Sablier provides a native Caddy module for seamless integration with Caddy v2.
 
 ### Envoy
 
-<img src="./docs/assets/img/envoy.png" alt="Envoy" width="100" align="right" />
+<img src="./docs/static/assets/img/envoy.png" alt="Envoy" width="100" align="right" />
 
 Sablier integrates with Envoy Proxy through a Proxy-WASM plugin for high-performance dynamic scaling.
 
@@ -651,7 +686,7 @@ Sablier integrates with Envoy Proxy through a Proxy-WASM plugin for high-perform
 
 ### Istio
 
-<img src="./docs/assets/img/istio.png" alt="Istio" width="100" align="right" />
+<img src="./docs/static/assets/img/istio.png" alt="Istio" width="100" align="right" />
 
 Sablier works with Istio service mesh using the Proxy-WASM plugin for intelligent traffic management.
 
@@ -666,7 +701,7 @@ Sablier works with Istio service mesh using the Proxy-WASM plugin for intelligen
 
 ### Nginx
 
-<img src="./docs/assets/img/nginx.svg" alt="Nginx" width="100" align="right" />
+<img src="./docs/static/assets/img/nginx.svg" alt="Nginx" width="100" align="right" />
 
 Sablier integrates with Nginx through a WASM module, bringing dynamic scaling to your Nginx deployments.
 
@@ -681,7 +716,7 @@ Sablier integrates with Nginx through a WASM module, bringing dynamic scaling to
 
 ### Traefik
 
-<img src="./docs/assets/img/traefik.png" alt="Traefik" width="100" align="right" />
+<img src="./docs/static/assets/img/traefik.png" alt="Traefik" width="100" align="right" />
 
 Sablier provides a powerful middleware plugin for Traefik, the cloud-native application proxy.
 
@@ -741,5 +776,17 @@ Every contribution, no matter the size, makes a real difference. Thank you for c
 <p>
   <a href="https://www.digitalocean.com/?refcode=67b25d34f559&utm_campaign=Referral_Invite&utm_medium=Referral_Program&utm_source=badge">
     <img src="https://opensource.nyc3.cdn.digitaloceanspaces.com/attribution/assets/SVG/DO_Logo_horizontal_blue.svg" width="201px">
+  </a>
+</p>
+
+### LocalStack
+
+<p>The AWS ECS provider is tested against <a href="https://localstack.cloud">LocalStack</a>, supported by the LocalStack for Open Source program:</p>
+<p>
+  <a href="https://localstack.cloud">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="./docs/static/assets/img/localstack-logo-horizontal-light.svg">
+      <img src="./docs/static/assets/img/localstack-logo-horizontal-color.svg" alt="LocalStack" width="201px">
+    </picture>
   </a>
 </p>

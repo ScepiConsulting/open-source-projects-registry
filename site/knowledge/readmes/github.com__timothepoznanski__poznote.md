@@ -7,7 +7,9 @@
   <a href="docs/README.pt.md">Português</a> ·
   <a href="docs/README.ru.md">Русский</a> ·
   <a href="docs/README.zh-cn.md">简体中文</a> ·
-  <a href="docs/README.ko.md">한국어</a>
+  <a href="docs/README.ko.md">한국어</a> ·
+  <a href="docs/README.ja.md">日本語</a> ·
+  <a href="docs/README.ca.md">Català</a>
 </p>
 <!-- /lang-selector -->
 
@@ -542,6 +544,7 @@ Each user can turn on two-factor authentication (TOTP) from **Settings > Two-fac
 - It protects password sign-in. An SSO login is left to the identity provider and its own second factor.
 - While it is on, the REST API no longer accepts the account password on its own: give clients an [app password](#app-passwords), or send the current code in the `X-Poznote-OTP` header.
 - An administrator can turn it off for a user who lost both their device and their recovery codes, from **Settings > Admin Tools > User Management** (password dialog).
+- An administrator can make it mandatory for every account that signs in with a password, from **Settings > Admin Tools > Require two-factor**. An account without it sets it up at its next sign-in (QR code and first code on the login page), sessions opened without it end, and its owner can no longer turn it off. SSO sign-ins are not concerned.
 - Turning it on or off invalidates existing remember-me cookies for that user.
 
 #### Default passwords
@@ -683,7 +686,7 @@ Poznote supports two primary note formats, each tailored for different workflows
 &nbsp;
 
 *   **Functionality:** Reuse pre-written content to standardize your documentation, from a full note to a short snippet.
-*   **Setup:** Put the notes you want to reuse in a folder named `Templates` (sub-folders are fine). A workspace named `Templates` works too and is offered from every workspace. The name is also recognized in the language of the interface (`Modèles`, `Vorlagen`, `Plantillas`, `Modelos`, `Шаблоны`, `模板`).
+*   **Setup:** Put the notes you want to reuse in a folder named `Templates` (sub-folders are fine). A workspace named `Templates` works too and is offered from every workspace. The name is also recognized in the language of the interface (`Modèles`, `Vorlagen`, `Plantillas`, `Modelos`, `Шаблоны`, `模板`, `템플릿`, `テンプレート`, `Plantilles`).
 *   **Insert into a note:** Type `/template` (or `/` followed by the template's title) in a rich text or Markdown note and pick a template: its content is pasted at the cursor, converted if the template and the note are not of the same type.
 *   **New note from a template:** Duplicate the template note, or duplicate a whole `Templates` folder to start a project with a ready-made folder structure.
 </details>
@@ -914,6 +917,40 @@ Poznote is multi-user: each profile has its own notes, workspaces, tags, folders
 - **User management**: administrators create, disable and manage profiles from **Settings > Admin Tools > User Management**, and can give a user access to another user's account without transferring its ownership.
 - **Sharing and collaboration**: workspaces, notes and folders can be shared with the other users of the instance, see [Sharing and collaboration](#sharing-and-collaboration).
 - **Tenant isolation (SaaS mode)**: administrators can stop non-admin users from discovering the other accounts of the instance, sharing with them, or registering personal webhooks. Leave everything unchecked for a family or team instance.
+- **Local network access**: non-admin users can only connect webhooks, Git Sync and their own AI, transcription or MCP servers to public internet hosts, apart from the local hosts an administrator allows, see [Local network access for non-admin users](#local-network-access).
+
+<a id="local-network-access"></a>
+<details>
+<summary><strong>Local network access for non-admin users</strong></summary>
+<br>
+
+Some features make the Poznote server itself connect to an address typed by a user: webhooks, Git Sync, and their own AI, transcription or MCP servers. The request leaves from the server, not from the user's browser. Without a limit, any account could use Poznote to reach the server itself, the other Docker containers, your local network or a cloud metadata service, places it cannot reach on its own.
+
+So the rule depends on who typed the address:
+
+- **Administrators** are not limited: they already control the server.
+- **Other users** can only use public internet hosts. A local or private address is refused: `localhost` and `127.0.0.1`, `10.x.x.x`, `172.16.x.x` to `172.31.x.x`, `192.168.x.x`, `169.254.x.x`, local IPv6 addresses (`fc00::/7`, `fe80::/10`), and any name that points to one of them, such as the name of another Docker service.
+
+What an administrator sets for the whole instance (the AI Assistant, Transcription, admin webhooks, S3, OIDC, SMTP) is not affected.
+
+On a family or team instance, users may need a server on your network, for example an Ollama server for their personal AI or n8n for their webhooks. List those hosts in **Settings > Admin Tools > Integrations > Local network access**, one entry per line:
+
+| Entry | What it allows |
+|---|---|
+| `ollama` or `ollama.lan` | this host name, whatever address it points to (a Docker service name works) |
+| `*.home.arpa` | every host name under this domain |
+| `192.168.1.20` | this address |
+| `192.168.1.0/24` | every address of this network (IPv6 works too, `fd00::/8`) |
+
+An entry allows every port of that host. Invalid entries are refused when you save, with the list of the ones to fix. The card shows **Public only** while the list is empty, and the number of entries otherwise.
+
+Good to know:
+
+- A host name in the list must resolve from inside the Poznote container, not only from your computer. A name that only your computer or your router knows cannot be resolved by Poznote, and it is refused like any unknown name: enter its address or its network instead.
+- The address is checked again on every connection, not only when it is saved: removing an entry takes effect right away, and a name that later points to a local address is refused.
+- For non-admin users, Poznote does not follow redirects, except in Git Sync, which checks every step of the redirect again.
+
+</details>
 
 <details>
 <summary><strong>Data layout on disk</strong></summary>
@@ -1485,7 +1522,7 @@ Poznote prioritizes simplicity and portability - no complex frameworks, no heavy
 <summary>If you are interested in the tech stack on which Poznote is built, <strong>have a look here.</strong></summary>
 
 ### Backend
-- **PHP 8.x** - Server-side scripting language
+- **PHP 8.5** - Server-side scripting language
 - **SQLite 3** - Lightweight, file-based relational database
 
 ### Frontend

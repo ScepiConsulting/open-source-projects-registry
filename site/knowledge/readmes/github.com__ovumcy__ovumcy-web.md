@@ -43,6 +43,8 @@ Ovumcy is a menstrual cycle tracker you run on your own server. If the thought o
 - **Your storage.** SQLite out of the box; PostgreSQL when you want it.
 - **No strings.** No vendor account, no analytics, no telemetry. CSV and JSON export whenever you like.
 
+> ⭐ **If Ovumcy is useful to you, star the repository.** Ovumcy is under active development, and stars are how people looking for a private cycle tracker find it. More ways to help: [Support the Project](#support-the-project).
+
 This README describes the current `main` branch. The latest tagged release is `v1.9.2`.
 
 ## Contents
@@ -53,7 +55,8 @@ This README describes the current `main` branch. The latest tagged release is `v
 - [Reminders & Notifications](#reminders--notifications) · [Supported Languages](#supported-languages)
 - [Privacy and Security](#privacy-and-security) · [Short FAQ](#short-faq)
 - [Architecture](#architecture) · [Operator CLI](#operator-cli) · [Related Projects](#related-projects)
-- [Development](#development) · [Contributing](#contributing) · [Releases](#releases) · [License](#license)
+- [Development](#development) · [Contributing](#contributing) · [Support the Project](#support-the-project)
+- [Releases](#releases) · [License](#license)
 
 ## Quick Start
 
@@ -69,7 +72,7 @@ docker compose up -d
 
 Then open `http://127.0.0.1:8080`.
 
-The compose file pulls the latest tagged release, `ghcr.io/ovumcy/ovumcy-web:v1.9.2`, from GHCR; no GitHub login is needed, and `pull_policy: always` keeps the tag fresh on every restart. The same image is mirrored to Docker Hub as `docker.io/ovumcy/ovumcy-web` under the same tags and at the same digest. Tagged releases from `v0.7.1` onward publish under these names. To run a different tag, set `OVUMCY_IMAGE` in `.env` or on the command line:
+The compose file pulls the latest tagged release, `ghcr.io/ovumcy/ovumcy-web:v1.9.2`, from GHCR; no GitHub login is needed, and `pull_policy: always` keeps the tag fresh on every restart. The same image is mirrored to Docker Hub as `docker.io/ovumcy/ovumcy-web` under the same tags and at the same digest. Tagged releases from `v0.7.1` onward publish under these names. `:latest` names the newest stable release (a pre-release tag never moves it); `:main` is the moving pre-release channel built from the tip of `main`, signed the same way but not a release, so pin a release tag for anything you rely on. To run a different tag, set `OVUMCY_IMAGE` in `.env` or on the command line:
 
 ```bash
 OVUMCY_IMAGE=ghcr.io/ovumcy/ovumcy-web:v1.9.2 docker compose up -d
@@ -156,6 +159,8 @@ go run ./cmd/ovumcy
 $env:SECRET_KEY_FILE = "C:\\path\\to\\ovumcy-secret.txt"
 go run ./cmd/ovumcy
 ```
+
+Up and running? A ⭐ on the repository helps others find Ovumcy.
 
 <a id="demo" name="demo"></a>
 <a id="screenshots" name="screenshots"></a>
@@ -397,14 +402,15 @@ go run ./cmd/ovumcy users delete --id 7
 go run ./cmd/ovumcy users set-email --id 7 owner@example.com
 go run ./cmd/ovumcy reset-password owner@example.com
 go run ./cmd/ovumcy reset-password --id 7
+go run ./cmd/ovumcy reset-password --full owner@example.com
 go run ./cmd/ovumcy repair symptom-names
 ```
 
-- `users create <email>` provisions an owner account, so an install script can set an instance up without opening registration, signing up, then closing it again. Run it once per person for household self-hosting: each owner's data stays isolated by `user_id`. `--skip-if-exists` makes re-runs idempotent (an existing email is skipped, never overwritten). The password never touches argv or the environment: an interactive terminal prompts twice with echo disabled, piped stdin supplies it as the first line. No recovery code is printed unless you pass `--show-recovery-code`, so none leaks into install logs. No health data passes through provisioning; each owner completes onboarding on first sign-in.
+- `users create <email>` provisions an owner account, so an install script can set an instance up without opening registration, signing up, then closing it again. Run it once per person for household self-hosting: each owner's data stays isolated by `user_id`. `--skip-if-exists` makes re-runs idempotent (an existing email is skipped, never overwritten). The password never touches argv or the environment: an interactive terminal prompts twice with echo disabled, piped stdin supplies it as the first line. No recovery code is printed unless you pass `--show-recovery-code`, so none leaks into install logs; under `OIDC_LOGIN_MODE=oidc_only` none is issued at all, so run the command with the server's environment. No health data passes through provisioning; each owner completes onboarding on first sign-in.
 - `users list` prints a minimal audit table: `id`, `email`, `role`, display name, onboarding state, and creation time.
 - `users delete <email>|--id <id>` removes the account together with its health data, after an explicit `DELETE` confirmation that quotes the stored address, id, and role — unless `--yes` is given. An address matching more than one row is refused, naming the ids; retry with `--id`.
 - `users set-email --id <id> <email>` re-homes one account to a new address. It is the repair for an account whose stored email predates strict sign-in normalization and can no longer be signed in to or addressed by email; it validates the new address under the sign-in rule, refuses one another account already answers to, leaves the health record untouched, and bumps `auth_session_version` because the address is the login identity. Runbook: [docs/self-hosted.md](docs/self-hosted.md#an-account-cannot-sign-in-after-upgrading-email-stored-in-a-legacy-form).
-- `reset-password <email>|--id <id>` prompts for a new password, validates it against the password policy, writes its bcrypt hash, and atomically bumps `auth_session_version` so every existing session is invalidated. Use it when an owner has lost both their password and their recovery code. `--id` exists for the same legacy-row reason as `set-email`, and an ambiguous address is refused rather than resolved to whichever row the database returns first.
+- `reset-password <email>|--id <id>` prompts for a new password, validates it against the password policy, writes its bcrypt hash, and atomically bumps `auth_session_version` so every existing session is invalidated. Use it when an owner has lost both their password and their recovery code. `--id` exists for the same legacy-row reason as `set-email`, and an ambiguous address is refused rather than resolved to whichever row the database returns first. `--full` is the compromise-recovery form: the same write also clears two-factor sign-in and the recovery code and unlinks every OIDC identity, so nothing an intruder enrolled or linked survives the reset.
 - `notify` runs one webhook reminder pass and is meant to be scheduled (cron, systemd timer, Docker one-shot, Task Scheduler), not run continuously; `REMINDER_SCHEDULER_ENABLED` runs the same pass in-process instead. `webhook show|set <email>` inspects or configures an owner's webhook settings from the shell, the same settings the Settings page writes; it has no `--id` form and refuses an ambiguous address. Both: [docs/notifications.md](docs/notifications.md).
 - `repair` lists the offline data repairs the binary carries; each inspects and reports by default and changes nothing until `--apply`. Unlike every other subcommand it opens the database *without* applying migrations, because it exists for the case where a migration is refusing to run — which also stops the server, so there is no application to fix the data in. Today it carries `symptom-names`, for an account holding two symptoms under the same name. Runbook: [docs/self-hosted.md](docs/self-hosted.md#duplicate-rows-that-refuse-a-migration).
 
@@ -451,6 +457,17 @@ the full quality and security approach.
 ## Contributing
 
 See [CONTRIBUTING.md](CONTRIBUTING.md). For bugs and feature requests, open a [GitHub issue](https://github.com/ovumcy/ovumcy-web/issues).
+
+## Support the Project
+
+Ovumcy is free, has no ads or trackers, and keeps growing release by release. If it is useful to you:
+
+- **Star the repository** ⭐ — it is the simplest way to help others find the project.
+- **Report bugs and share ideas** in [GitHub Issues](https://github.com/ovumcy/ovumcy-web/issues).
+- **Help with translations** — see [Supported Languages](#supported-languages) and [CONTRIBUTING.md](CONTRIBUTING.md).
+- **Tell a friend** who wants a cycle tracker that keeps their data at home.
+
+Want to support Ovumcy with a donation? Crypto options (Bitcoin, Monero, USDT, Ethereum) are on [ovumcy.com/support](https://ovumcy.com/support). If none of them works for you, write to [contact@ovumcy.com](mailto:contact@ovumcy.com).
 
 <a id="roadmap" name="roadmap"></a>
 ## Releases

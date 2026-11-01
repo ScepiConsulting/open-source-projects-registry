@@ -18,6 +18,7 @@ Investbrain is a smart open-source investment tracker that helps you manage, tra
 - [Under the hood](#under-the-hood)
 - [Install (self hosting)](#self-hosting)
 - [Chat with your holdings](#chat-with-your-holdings)
+- [Connect AI assistants (MCP)](#connect-ai-assistants-mcp)
 - [Market data providers](#market-data-providers)
 - [Import / Export](#import--export)
 - [Configuration](#configuration)
@@ -28,7 +29,7 @@ Investbrain is a smart open-source investment tracker that helps you manage, tra
 
 ## Under the hood
 
-Investbrain is a Laravel PHP web application that has an extensible market data provider interface. Out of the box, we feature many market data providers. But intrepid developers can [create their own providers](#custom-providers)! We also offer integrations with OpenAI and Ollama for our ["chat with your holdings"](#chat-with-your-holdings) capability. Finally, of course we have robust support for i18n, a11y, and dark mode. 
+Investbrain is a Laravel PHP web application that has an extensible market data provider interface. Out of the box, we feature many market data providers. But intrepid developers can [create their own providers](#custom-providers)! We also offer integrations with locally-hosted LLMs for our ["chat with your holdings"](#chat-with-your-holdings) capability and ships with a built-in [MCP server](#connect-ai-assistants-mcp). Finally, of course we have robust support for i18n, a11y, and dark mode. 
 
 ## Self hosting
 
@@ -72,6 +73,20 @@ See available options [below](#configuration).
 
 Always keep in mind the limitations of LLMs. When in doubt, consult a licensed investment advisor. 
 
+## Connect AI assistants (MCP)
+
+Investbrain includes a built-in MCP server. This lets MCP-compatible AI assistants (Claude, ChatGPT, Cursor, etc.) read and manage your portfolios on your behalf.
+
+Add your Investbrain MCP endpoint as a remote MCP server in your assistant:
+
+```
+https://your-investbrain-host/mcp
+```
+
+Authentication uses OAuth. Your assistant will discover and register itself automatically.
+
+> Note: Set `APP_URL` to the public URL your assistant can reach (HTTPS for most hosted assistants). The default of `http://localhost:8000` only works for local assistants.
+
 ## Market data providers
 
 Investbrain includes an extensible market data provider interface that allows you to retrieve stock market data from multiple providers, such as [Yahoo Finance](https://finance.yahoo.com/), [Twelve Data](https://twelvedata.com), [Finnhub](https://finnhub.io/pricing-stock-api-market-data), [Alpaca](https://alpaca.markets/), and [Alpha Vantage](https://www.alphavantage.co/support/). The interface includes a built-in fallback mechanism to ensure reliable data access, even if a provider fails.
@@ -93,6 +108,10 @@ MARKET_DATA_PROVIDER=yahoo,alphavantage
 ```
 
 In the above example, Yahoo Finance will be attempted first. If Yahoo Finance fails to retrieve market data, the application will automatically try Alpha Vantage.
+
+### Monitoring providers
+
+Health data for market data providers is automatically captured to support troubleshooting. Captured data includes: call volume, success rate, how often a fallback was used, and average response time for the last 24 hours, 7 days or 30 days, along with the most recent failures and their error messages. By default, the first user created will have access to this screen.
 
 ### Custom providers
 

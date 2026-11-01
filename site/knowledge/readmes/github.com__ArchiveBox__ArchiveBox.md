@@ -189,6 +189,8 @@ docker compose exec archivebox archivebox help
 
 Docker image channels: `archivebox/archivebox:dev` advances only after full CI passes. Development servers can opt into `:dev-unstable`, which follows the newest clean `dev` image after both architectures finish the Docker build and checks, without waiting for the rest of CI. The existing universal `:sha-<12-character-commit>` tag is published at the same time. Both channels include amd64 and arm64, and are also available at `ghcr.io/archivebox/archivebox`. The early `dev-unstable` and SHA images can contain changes that fail later checks; ordinary installations should keep using the fully tested release channels.
 
+For IPv6, set `BIND_ADDR=[::]:5797` in the container environment, or run `archivebox server '[::]:5797'` with a CLI install. The wildcard listener accepts both IPv6 and IPv4; `[::1]:5797` listens only on IPv6 loopback. Use brackets around IPv6 addresses when specifying a port. Docker still requires published ports or an IPv6-enabled network for clients to reach the container. `BASE_URL` controls public links independently of the listening address: use a DNS name with an AAAA record, or a bracketed address such as `http://[2001:db8::1]:5797`. Docker health checks follow the actual listener, including custom ports and command-line overrides.
+
 See <a href="#cli-usage">below</a> for more usage examples using the CLI, Web UI, or <a href="https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#sql-shell-usage">filesystem/SQL/Python</a> to manage your archive.
 <br/><br/>
 </details>
@@ -422,6 +424,7 @@ See <a href="#cli-usage">below</a> for usage examples using the CLI, Web UI, or 
 </a> (USD $0-5+/mo)</li>
 <li><a href="https://aws.amazon.com/marketplace/pp/Linnovate-Open-Source-Innovation-Support-For-Archi/B08RVW6MJ2"><img src="https://img.shields.io/badge/Unmanaged_VPS-AWS-%23ee8135.svg?style=flat" height="22px"/></a> (USD $60-200+/mo)</li>
 <li><a href="https://azuremarketplace.microsoft.com/en-us/marketplace/apps/meanio.archivebox?ocid=gtmrewards_whatsnewblog_archivebox_vol118"><img src="https://img.shields.io/badge/Unmanaged_VPS-Azure-%237cb300.svg?style=flat" height="22px"/></a> (USD $60-200+/mo)</li>
+<li><a href="https://repocloud.io/details/ArchiveBox/"><img src="https://d16t0pc4846x52.cloudfront.net/deploylobe.svg" alt="Deploy on RepoCloud" height="22px"/></a> (USD $3-50+/mo)</li>
 <br/>
 <sub><i>Referral links marked 🎗 provide $5-10 of free credit for new users and help pay for our <a href="https://demo.archivebox.io">demo server</a> hosting costs.</i></sub>
 </ul>
@@ -681,6 +684,8 @@ echo 'any text with <a href="https://example.com">urls</a> in it' | archivebox a
 
 See the [Usage: CLI](https://github.com/ArchiveBox/ArchiveBox/wiki/Usage#cli-usage) page for documentation and examples.
 
+Use `archivebox add --parser=jsonl --plugins=wget < bookmarks.jsonl` for structured imports, or set `"parser": "jsonl"` in a `POST /api/v1/cli/add` request whose `urls` list contains the import text. `json` also accepts a JSON object or array. These modes take each record's URL field as a complete URL, preserving its metadata without extracting additional URLs from its path or query. `parser` selects how the input is read; `plugins` independently selects how each resulting page is captured. Text/auto parsing still discovers embedded URLs in ambiguous input. Duplicate records for the same URL retain the richest supplied metadata and combine complementary tags.
+
 It also includes a built-in scheduled import feature with `archivebox schedule`, handled by the same orchestrator that powers `archivebox server`, so you can pull in URLs from RSS feeds and websites regularly without a separate cron container.
 
 Recursive schedules (`--depth=1` or greater) refresh their explicit seed URLs on each run so they can discover new links. With `ONLY_NEW=True`, previously archived discovered URLs are still skipped. Nonrecursive schedules and ordinary `add --only-new` calls continue to skip existing URLs. Schedules preserve explicitly submitted filters, plugin selection, limits, and custom config; each new run resolves current defaults for settings left unspecified.
@@ -797,7 +802,7 @@ ArchiveBox bundles industry-standard tools like [Google Chrome](https://github.c
 <li>Language: Python <code>&gt;=3.13</code></li>
 <li>Backend: <a href="https://www.djangoproject.com/">Django</a> + <a href="https://django-ninja.dev/">Django-Ninja</a> for REST API</li>
 <li>Frontend: <a href="https://docs.djangoproject.com/en/6.0/ref/contrib/admin/">Django Admin</a> + Vanilla HTML, CSS, JS</li>
-<li>Web Server: <a href="https://www.djangoproject.com/">Django</a> + <a href="https://github.com/django/daphne/"><code>daphne</code></a> (ASGI)</li>
+<li>Web Server: <a href="https://www.djangoproject.com/">Django</a> + <a href="https://uvicorn.dev/"><code>uvicorn</code></a> (ASGI; Daphne for <code>--debug</code>)</li>
 <li>Database: <a href="https://docs.djangoproject.com/en/6.0/ref/databases/#sqlite-notes">Django ORM</a> saving to <a href="https://www.sqlite.org/mostdeployed.html">SQLite3</a> <code>./data/index.sqlite3</code></li>
 <li>Job Queue: Custom orchestrator using <code>supervisord</code> for worker management</li>
 <li>Build/test/lint: <a href="https://github.com/astral-sh/uv"><code>uv</code></a> / <code>pyright</code>+<code>ty</code>+<code>pytest</code> / <code>ruff</code></li>
@@ -1106,9 +1111,18 @@ Because ArchiveBox is designed to ingest a large volume of URLs with multiple co
 <li><strong>Don't store large collections on older filesystems like EXT3/FAT</strong> as they may not be able to handle more than 50k directory entries in the <code>data/archive/</code> folder.
 </li>
 <li><strong>Keep the <code>data/index.sqlite3</code> file on a reliable local drive (not a network mount)</strong> or SSD when using SQLite; the <code>data/archive/</code> folder can be on a network mount or slower HDD.</li>
+<li>Do not synchronize a live SQLite database or its <code>-wal</code>, <code>-shm</code>, or <code>-journal</code> files with Syncthing or similar file-sync tools. SQLite coordinates its own readers and writers; copying or replacing those files externally bypasses that coordination.</li>
 <li>If using Docker or NFS/SMB/FUSE for the <code>data/archive/</code> folder, configure the server-side UID/GID mapping or ACL so ArchiveBox's non-root user can create and remove files. <code>root_squash</code> is compatible when the selected non-root identity has write access; do not rely on container root to override server-side permissions.
 </li>
 </ul>
+
+For an upgrade from 0.7.x or 0.8.x, stop the server and runners, run `archivebox init`, then run `archivebox update --rescan --migrate-only` from the collection directory. With Compose, use `docker compose stop archivebox` followed by `docker compose run --rm archivebox init` and `docker compose run --rm archivebox update --rescan --migrate-only`, then restart with `docker compose up -d`. Explicit filesystem migration refuses an already-running local server or runner. This check covers processes visible on this machine, not other hosts sharing storage.
+
+`archivebox check` reads SQLite's integrity and foreign-key checks **and every table row**, without migrating or repairing the database. It also works on older schemas; `archivebox check --database /path/to/index.sqlite3` checks a specific file. Schema migrations validate the database before and after changing it. A failed check or migration exits nonzero; inspect the error before retrying. These commands do not create backups.
+
+Filesystem migration preserves conflicting source and destination files and reports failure instead of overwriting them. Rerunning resumes completed work. Known unfinished snapshots are reported as `Skipped`, not migration errors, and `--migrate-only` does not start captures. For metadata rehydration of a specific existing snapshot, use `archivebox update --rescan --filter-type timestamp TIMESTAMP`; an unfiltered rescan discovers orphan directories too. Do not manually change every snapshot's `fs_version`: each row must agree with its verified filesystem layout.
+
+SQLite connections use durable `synchronous=EXTRA` commits (equivalent to `FULL` in WAL mode), and collection configuration rejects `OFF` and `MEMORY` journals. Keep filesystem sync enabled. These guarantees require storage that correctly implements locking and flushes; weakening them to speed up an upgrade can lose acknowledged writes. See [SQLite's durability documentation](https://www.sqlite.org/pragma.html#pragma_synchronous) and [Sonarr's database storage guidance](https://wiki.servarr.com/sonarr/faq).
 
 <h4>Learn More</h4>
 
@@ -1491,6 +1505,14 @@ archivebox install
 
 
 #### Make DB migrations, enter Django shell, other dev helper commands
+
+Treat released migration names and dependencies as durable history. Keep new changes additive; legacy forward-path repairs must retain the same resulting schema and preserve every existing row. Never mark a destructive data transformation reversible with a no-op. Rebuild tables inside Django's migration transaction, fail on copy conflicts, and verify row counts before dropping the source. Do not recover a failed transaction by rolling it back and replaying only its last statement or batch.
+
+Migration regression coverage lives in `archivebox/tests/test_migrations_*`, `test_sqlite_backend.py`, and `test_cli_update_unattributed_outputs.py`, and runs in the regular test suite. Changes must preserve users, credentials, tags, results, execution evidence, and captured bytes through upgrades, reruns, real process interruption, and destination conflicts. Include indexed query-plan and bounded-memory checks for collection-wide operations; a fresh empty database alone is not an upgrade test.
+
+Run the seeded randomized legacy-database tests at large-collection scale with `ABX_FUZZ_SNAPSHOTS=49000 ABX_FUZZ_RESULTS=349000 uv run pytest -s archivebox/tests/test_migrations_fuzz.py`. Three reproducible seeds exercise varied metadata, WAL/DELETE journals, SIGKILL during three migration stages, refusal and rollback of invalid metadata, full row comparisons, and repeated initialization. The ordinary CI run uses 300 snapshots and 20,000 results per seed; the environment variables raise the size without changing assertions. Temporary directories retain generated databases, expected results, CLI logs, and sampled process-memory/timing metrics. This tests database migration, not a collection's captured-file payloads or storage hardware.
+
+For real NFS filesystem testing, run `uv run python bin/test_nfs_migrations.py --local-root /tmp/new-test-run --archive-root /mnt/nfs/new-test-run --seed 1932` as an unprivileged user on Linux. Both directories must be new; the archive root must be on an already-mounted NFS export and the local root must be on a local filesystem. The probe creates 24 synthetic snapshots, varied payloads and symlinks, and a 64 MiB file; exercises actual process interruption, destination conflicts and permission failures; then verifies hashes, modes, database metadata and repeated rescans. It retains test data and logs for inspection and does not provision or change the NFS server. Migration file copies are flushed before atomic publication without overwriting; interrupted staging files remain outside snapshot directories and are not captured outputs.
 
 <details><summary><i>Click to expand...</i></summary>
 

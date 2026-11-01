@@ -63,7 +63,7 @@ Every change line, like those in the card at the top, is three columns: **what k
 | `new` | it was not there last time and is now | starting anything |
 | `replaced` | same name, different thing underneath | `docker compose up -d` — the container is recreated, so the name and the count are unchanged |
 | `image` | same container, different image | pulling a new tag |
-| `state` | same container, running where it was stopped, or the reverse | a crash, or bringing something back up |
+| `state` | same container, running where it was stopped, or the reverse; or a process that keeps restarting | a crash, a crash loop, or bringing something back up |
 | `port` | same port, a different process answering on it | one service taking over another's port |
 | `disk` | a mount moved by more than half a gigabyte | anything that writes |
 | `skipped` | the comparison could not be made | Docker was down when either snapshot was taken |
@@ -556,7 +556,7 @@ homebutler install purge uptime-kuma
 
 - **Pre-checks** — Verifies docker is installed/running, port is available, no duplicate containers
 - **Compose-based** — Each app gets its own `docker-compose.yml` you can inspect and customize
-- **Data safety** — `uninstall` stops containers but keeps your data; `purge` removes everything, including the Docker volumes the app used, and names them. One exception for now: filebrowser's accounts and settings do not survive an `uninstall` and reinstall (see the table)
+- **Data safety** — `uninstall` stops containers but keeps your data; `purge` removes everything, including the Docker volumes the app used, and names them
 - **Cross-platform** — Auto-detects docker socket (default, colima, podman)
 
 ### Available apps
@@ -566,7 +566,7 @@ homebutler install purge uptime-kuma
 | `uptime-kuma` | 3001 | Self-hosted monitoring tool | |
 | `plex` | 32400 | Plex Media Server | `--media /path` to mount media dir |
 | `vaultwarden` | 8080 | Bitwarden-compatible password manager | |
-| `filebrowser` | 8081 | Web-based file manager | ⚠️ `uninstall` keeps the files under `/srv` but not its accounts and settings: reinstalling starts a new database ([#327](https://github.com/Higangssh/homebutler/issues/327)) |
+| `filebrowser` | 8081 | Web-based file manager | Its upstream project is archived and gets no further releases or security fixes |
 | `it-tools` | 8082 | Developer utilities (JSON, Base64, Hash, etc.) | |
 | `gitea` | 3002 | Lightweight self-hosted Git service | |
 | `jellyfin` | 8096 | Media system (movies, TV, music) | `--media /path` to mount media dir |
@@ -984,7 +984,7 @@ Built-in [MCP](https://modelcontextprotocol.io/) server — an agent gets the sa
 
 Works with Claude Desktop, ChatGPT, Cursor, Windsurf, and any MCP client.
 
-To let an agent look without being able to change anything, add `"--max-risk", "read"` to `args`. Tools that change something are not offered and are refused if called by name, and `report` runs without saving a snapshot. Read mode stops changes, not reading: logs and container details are still visible. [What read mode covers →](docs/mcp-server.md#read-only-mode)
+To let an agent look without being able to change anything, add `"--max-risk", "read"` to `args`. Tools that change something are not offered and are refused if called by name, and `report` runs without saving a snapshot. Read mode stops changes, not reading: logs, container details and everything else a read returns are still visible. [What read mode covers →](docs/mcp-server.md#read-only-mode)
 
 📖 **[MCP server setup →](docs/mcp-server.md)** — supported clients, available tools, agent skills.
 

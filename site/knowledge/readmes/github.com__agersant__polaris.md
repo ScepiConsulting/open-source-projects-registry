@@ -18,13 +18,6 @@ The goals of this project are:
 - 📦️ Ease of installation, deployment and maintenance
 - ✨ Beautiful user interface
 
-# Try It Out!
-
-On your desktop or laptop computer, check out the demo over at https://demo.polaris.stream featuring a selection of Creative Commons Music. The credentials to access this server are:
-
-Username: `demo_user`  
-Password: `demo_password`
-
 # Features
 
 - 🖥️ Runs on Windows, Linux, BSD, or through Docker
@@ -57,16 +50,4 @@ Password: `demo_password`
 - 👷 [Contribute to Polaris](docs/CONTRIBUTING.md)
 - 🛟 [Maintenance Runbooks](docs/MAINTENANCE.md)
 
-The Polaris server API is documented via [OpenAPI](https://demo.polaris.stream/api-docs/). Every installation of Polaris distributes this interactive documentation. To access it, open http://localhost:5050/api-docs/ in your browser on the machine running Polaris.
-
-# Credits & License Information
-
-Music featured in the demo installation:
-
-- [Chris Zabriskie - Abandon Babylon](https://chriszabriskie.bandcamp.com/album/abandon-babylon) [(License)](https://creativecommons.org/licenses/by/3.0/)
-- [Chris Zabriskie - Angie's Sunday Service](https://chriszabriskie.bandcamp.com/album/angies-sunday-service) [(License)](https://creativecommons.org/licenses/by/3.0/)
-- [glaciære - pool water blue](https://steviasphere.bandcamp.com/album/pool-water-blue) [(License)](https://creativecommons.org/licenses/by/3.0/)
-- [glaciære - light ripples](https://steviasphere.bandcamp.com/album/light-ripples) [(License)](https://creativecommons.org/licenses/by/3.0/)
-- [Koresma South](https://koresma.bandcamp.com/album/south) [(License)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
-- [Pete Murphy - Essence EP](https://petemurphy.bandcamp.com/album/falling-down-the-fred-astaires-solo-jazz-piano) [(License)](https://creativecommons.org/licenses/by-nc-sa/3.0/)
-- [Rameses B - Essence EP](https://ramesesb.bandcamp.com/album/essence-ep) [(License)](https://creativecommons.org/licenses/by-nc-nd/3.0/)
+The Polaris server API is documented via OpenAPI, every installation of Polaris features this interactive documentation. To access it, open http://localhost:5050/api-docs/ in your browser on the machine running Polaris.

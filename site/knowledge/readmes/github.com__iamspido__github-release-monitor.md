@@ -12,7 +12,7 @@ A powerful, self-hostable application to automatically monitor GitHub, GitLab, C
 - **Flexible Release Filtering**:
     - **Global Settings**: Define application-wide rules for which release types (stable, pre-release, draft) to monitor.
     - **Per-Repository Overrides**: Customize filtering rules for individual repositories.
-    - **Regex-Powered Precision**: Use "Include" and "Exclude" regular expression patterns for fine-grained control over release tags. The "Include" pattern overrides the standard channel filters, giving you ultimate control.
+    - **Regex-Powered Precision**: Use "Include" and "Exclude" regular expression patterns for fine-grained control over release tags. The "Include" pattern overrides the standard channel filters, giving you ultimate control. Patterns run on a linear-time engine (RE2), so lookarounds, backreferences and patterns longer than 512 characters are not supported. A filter saved by an earlier version that is no longer supported is marked in the settings and lets no release through until you change it.
     - **Pre-release Granularity**: Select specific pre-release tags to watch (e.g., `alpha`, `beta`, `rc`).
 - **Modern & Responsive UI**:
     - Clean, intuitive interface built with ShadCN UI and Tailwind CSS.
@@ -22,7 +22,7 @@ A powerful, self-hostable application to automatically monitor GitHub, GitLab, C
   Brazilian Portuguese, Indonesian, Hindi, Simplified Chinese, Japanese,
   Korean, Turkish, Vietnamese, Italian, Polish, Ukrainian, Dutch, Russian,
   Hebrew, and Arabic out of the box, including right-to-left layout.
-- **Data Management**: Easily import or export your list of monitored repositories via JSON.
+- **Data Management**: Easily import or export your list of monitored repositories via JSON. An import containing a pattern that is no longer supported is refused.
 - **System Diagnostics**: A built-in test page to verify GitHub API connectivity and notification service (SMTP, Apprise) configuration.
 - **Secure Authentication**: Protects the application with Better Auth, SQLite-backed users/sessions, and one-time bootstrap setup.
 
@@ -200,6 +200,7 @@ Navigate to the `example/` directory. You will need to configure the environment
    # Defaults: development=debug, production=warn (if unset)
    # Failed logins and active lockouts are logged at WARN.
    # Successful logins and lockout expiry (access unblocked) are logged at INFO.
+   # Leftover temporary data files that a start removes are logged at INFO.
    LOG_LEVEL=info
    ```
 
@@ -274,6 +275,7 @@ For further customization of the SMTP relay, please refer to the official docume
 ### 3. Prepare Data Directory
 The application stores its configuration and data in a `./data` directory. For Docker, this directory on your host machine must have the correct permissions so that the application process inside the container can write to it.
 This is required for both repository/settings data and Better Auth state: the container writes `/app/data/auth.db` for users/sessions and `/app/data/auth-setup.lock` after the initial account has been created. If `/app/data` is not mounted or is not writable by UID/GID `1001`, the container can fail during startup.
+At every start of a release version, the application also records its version in `/app/data/grm-version.json`. A later upgrade reads this file to check which release last ran on the data, so keep it with the other files in the data directory.
 
 Create the directory and set the appropriate ownership before starting the containers:
 ```bash
@@ -344,6 +346,10 @@ The application will be accessible on `http://localhost:8080`. Note that this se
 ## 🛠️ Setup Guide (Manual)
 
 Follow these steps for a manual setup of the GitHub Release Monitor.
+
+### Prerequisites
+
+Manual builds require Node.js 24 or newer.
 
 ### 1. Clone the Repository
 
@@ -431,6 +437,8 @@ AUTH_SECRET=your_super_secret_better_auth_key_here
 ```
 
 Version 2.x retains the previous trusted-header behavior for logging and login limits when `AUTH_TRUST_PROXY_HEADERS` is unset. Password-reset IP limits use proxy client-address headers only when this option is explicitly `true`; otherwise, they fall back to a hashed account identifier. Configure the option explicitly so a future major upgrade does not change the deployment's general client-address handling unexpectedly.
+
+Failed logins are also counted per entered email address or username across all client addresses: after four times `AUTH_MAX_LOGIN_ATTEMPTS` failures within the window, signing in with it is locked for `AUTH_LOGIN_LOCKOUT_SECONDS`, even with the correct password.
 
 #### **Protocol (HTTP/HTTPS)**
 
@@ -797,7 +805,7 @@ Here is a complete list of all environment variables used by the application.
 | `AUTHENTICATION_METHOD` | Authentication mode: `Basic`, `AllowUnauthenticated`, or `External`. `External` should only be used behind another auth layer. | No | `Basic` |
 | `AUTH_LOGIN_LOCKOUT_SECONDS` | Lockout duration (seconds) after too many failed login attempts.                                   | No                     | `900`                      |
 | `AUTH_LOGIN_WINDOW_SECONDS` | Time window (seconds) used to count failed login attempts.                                          | No                     | `900`                      |
-| `AUTH_MAX_LOGIN_ATTEMPTS` | Maximum failed login attempts before a temporary lockout is applied.                                 | No                     | `5`                        |
+| `AUTH_MAX_LOGIN_ATTEMPTS` | Maximum failed login attempts per client address before a temporary lockout is applied. Failed attempts per email address or username are also limited to four times this value. | No                     | `5`                        |
 | `AUTH_TRUST_PROXY_HEADERS` | Trusts `X-Forwarded-For`/`X-Real-IP` for per-client login limits and, only when explicitly `true`, password-reset IP limits. Without explicit trust, password resets use a hashed account-identifier limit instead. Set to `true` only behind a proxy that overwrites these headers; use `false` for direct exposure. Version 2.x preserves the general trusted-header behavior when unset; the next major will default to `false`. | No | `true` (2.x compatibility; explicit `true` required for reset IP limits) |
 | `AUTH_TRUSTED_PROXY_HOPS` | Number of trusted proxy entries counted from the right side of `X-Forwarded-For` (1-10).                | No                     | `1`                        |
 | `AUTH_ENABLE_SIGNUP`  | Enables self-service signup when set to `true`. Keep `false` for single-user mode.                     | No                     | `false`                    |

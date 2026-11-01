@@ -40,6 +40,9 @@ Set up multiple Watcher routes for your servers and users, and sync pairs betwee
   <a href="https://www.reddit.com/r/CrossWatchApp/" style="margin: 0 6px;">
     <img alt="Reddit" src="https://img.shields.io/badge/Reddit-r%2FCrossWatchApp-ff4500?style=for-the-badge&logo=reddit&logoColor=white">
   </a>
+  <a href="https://discord.gg/c9cjzHGve" style="margin: 0 6px;">
+    <img alt="Discord" src="https://img.shields.io/badge/Discord-Join%20chat-5865F2?style=for-the-badge&logo=discord&logoColor=white">
+  </a>
 </p>
 
 <img width="1672" height="941" alt="CrossWatch web UI overview" src="https://github.com/user-attachments/assets/06355278-8cdc-4a13-95ae-89f924fd0975" />
@@ -61,7 +64,7 @@ When you need more control, Interactive Sync lets you review changes before appl
 - Watcher with multiple routes for different servers and users. **No Plex Pass or Emby Premiere needed.**
 - Server-to-server, server-to-tracker and tracker-to-tracker sync, where supported.
 - Watchlists, ratings, history, playback progress and collections. Rewatches too, for supported trackers.
-- Multiple accounts, separate profiles and managed user support.
+- Multiple accounts, separate profiles and managed users who can handle their own pairs, routes and schedule.
 - Interactive Sync to review additions, updates and removals before applying them.
 - Webhook scrobbling for supported providers.
 - Custom mappings for wrong matches, anime IDs, and split or combined episodes.
@@ -70,7 +73,7 @@ When you need more control, Interactive Sync lets you review changes before appl
 
 ## Supported integrations
 
-CW works with Plex, Jellyfin, Emby, SIMKL, Floppy, FlickList, Trakt, WeTrakr, AniList, MyAnimeList (MAL), Kitsu, TMDb, MDBList, PublicMetaDB, PunchPlay, BingeBase, Scrob, Tautulli, Tracearr, Kodi, Nuvio, Stremio and its own local CW Tracker.
+CW works with Plex, Jellyfin, Emby, Silo, SIMKL, Floppy, FlickList, Trakt, WeTrakr, AniList, MyAnimeList (MAL), Kitsu, TMDb, MDBList, PublicMetaDB, PunchPlay, BingeBase, Scrob, Tautulli, Tracearr, Kodi, Nuvio, Stremio and its own local CW Tracker.
 
 Not every integration supports every feature. Some sync lists and history; others report playback activity. Setup details are in the [wiki](https://wiki.crosswatch.app/).
 
@@ -134,7 +137,7 @@ See the [first-time setup guide](https://wiki.crosswatch.app/getting-started/fir
 
 ## Scrobbling
 
-**Watcher** reports playback from Plex, Emby, Jellyfin, Kodi and Scrob to supported trackers. No Plex Pass or Emby Premiere needed for Watcher.
+**Watcher** reports playback from Plex, Emby, Jellyfin, Silo, Kodi and Scrob to supported trackers. No Plex Pass or Emby Premiere needed for Watcher.
 
 You can also use **webhooks** from Plex, Emby and Jellyfin. Anime ID mapping is available for Watcher and webhooks with supported providers.
 
@@ -196,7 +199,7 @@ The command exits with `0` on success and `1` if the sync reports errors or canc
 
 ## Help and feedback
 
-Setup docs are in the [wiki](https://wiki.crosswatch.app/). For questions and discussion, there's [r/CrossWatchApp](https://www.reddit.com/r/CrossWatchApp/).
+Setup docs are in the [wiki](https://wiki.crosswatch.app/). For questions and discussion, there's [r/CrossWatchApp](https://www.reddit.com/r/CrossWatchApp/) and the [Discord server](https://discord.gg/c9cjzHGve).
 
 Please report bugs in [Issues](https://github.com/cenodude/CrossWatch/issues), with steps to reproduce them and what went wrong.
 

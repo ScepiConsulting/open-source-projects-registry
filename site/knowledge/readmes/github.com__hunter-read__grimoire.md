@@ -222,7 +222,7 @@ docker pull hunterreadca/grimoire:latest
 Or pin to a specific release:
 
 ```bash
-docker pull hunterreadca/grimoire:1.5.0
+docker pull hunterreadca/grimoire:1.10.0
 ```
 
 Release and `nightly` tags are mirrored to the GitHub Container Registry, if you'd rather pull from there:
@@ -231,7 +231,7 @@ Release and `nightly` tags are mirrored to the GitHub Container Registry, if you
 docker pull ghcr.io/hunter-read/grimoire:latest
 ```
 
-**Image variants:** the default tags (`latest`, `1.5.0`, …) include the Tesseract OCR engine so image-only PDFs are searchable (see [OCR](docs/performance.md#ocr)). If you don't need OCR and prefer a smaller image, use the matching `-slim` tag (e.g. `hunterreadca/grimoire:latest`'s slim counterpart `:slim`, or a pinned `:1.5.0-slim`), which omits Tesseract.
+**Image variants:** the default tags (`latest`, `1.10.0`, …) include the Tesseract OCR engine so image-only PDFs are searchable (see [OCR](docs/performance.md#ocr)). If you don't need OCR and prefer a smaller image, use the matching `-slim` tag (e.g. `hunterreadca/grimoire:latest`'s slim counterpart `:slim`, or a pinned `:1.10.0-slim`), which omits Tesseract.
 
 ### 4. Minimal `docker-compose.yml`
 
@@ -336,7 +336,7 @@ kept in the repo so it versions with the release you are running:
 | [Universal VTT editor](docs/uvtt-editor.md)   | Drawing walls, doors, and lights for dynamic lighting                           |
 | [Share links](docs/sharing.md)                | Public links to library items for people without an account                     |
 | [OTFBM and Avrae](docs/otfbm.md)              | Setting a map up as an OTFBM background for Avrae's `!map` on Discord           |
-| [Setting images](docs/setting-images.md)      | Campaign banners, system covers, and audio artwork                              |
+| [Setting images](docs/setting-images.md)      | Campaign banners, system and book covers, and audio artwork                     |
 | [Character sheets](docs/characters.md)        | The schema-driven character builder, content packs, and rulesets                |
 | [Themes](docs/themes.md)                      | Light, dark, and installable colour themes                                      |
 
@@ -364,7 +364,7 @@ kept in the repo so it versions with the release you are running:
 | [Architecture](docs/architecture.md) | Module map, request lifecycle, auth flow - for contributors                                                         |
 | [Data model](docs/data-model.md)     | ER diagram and table-by-table schema                                                                                |
 | [CI/CD pipelines](docs/pipelines.md) | Workflows, coverage gates, and the release checklist                                                                |
-| [TypeScript](docs/typescript.md)     | The frontend's TypeScript migration, API types generated from the backend, and converting a file                     |
+| [TypeScript](docs/typescript.md)     | The frontend's TypeScript setup, API types generated from the backend, and house conventions                         |
 
 The live API is also self-documenting while the server is running:
 [`/api/docs`](http://localhost:9481/api/docs) (Swagger UI),

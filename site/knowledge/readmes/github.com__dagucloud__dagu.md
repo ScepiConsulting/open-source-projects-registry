@@ -619,7 +619,7 @@ Dagu includes built-in actions that run within the Dagu process or on the select
 | `sftp.upload` / `sftp.download` | File transfer over SFTP |
 | `http.request` | HTTP requests with headers, auth, and request bodies |
 | `chat.completion` | Run an LLM chat completion step |
-| `harness.run` | Run external coding-agent CLIs such as Claude Code, Codex, Gemini CLI, Cursor, and DeepSeek Harness |
+| `harness.run` | Run external coding-agent CLIs such as Claude Code, Codex, Gemini CLI, Cursor, and DeepSeek Harness, or [managed OpenCode sessions](./skills/dagu/references/harnesses.md#managed-opencode-sessions) |
 | `browser.extract` / `browser.run` | Automate websites in a local Chrome with natural-language actions, structured extraction, and human input |
 | `computer.extract` / `computer.run` | Automate desktop applications on macOS and Windows workers with natural-language tasks, screen extraction, and human input |
 | `postgres.query` / `postgres.import` | PostgreSQL queries and imports |
@@ -988,6 +988,8 @@ remain inside `paths.dags_dir` continue to work. A symlink configured as
 | `DAGU_LICENSE_KEY` | - | License key for licensed self-host features |
 
 OIDC variables: `DAGU_AUTH_OIDC_CLIENT_ID`, `DAGU_AUTH_OIDC_CLIENT_SECRET`, `DAGU_AUTH_OIDC_ISSUER`, `DAGU_AUTH_OIDC_SCOPES`, `DAGU_AUTH_OIDC_WHITELIST`, `DAGU_AUTH_OIDC_AUTO_SIGNUP`, `DAGU_AUTH_OIDC_DEFAULT_ROLE`, `DAGU_AUTH_OIDC_ALLOWED_DOMAINS`.
+
+The auth, remote node, Git sync and Vault secrets can also be read from files, such as mounted Kubernetes or Docker secrets. Each of those secret keys has a `_file` key, and each of those secret variables a `_FILE` variable, that names the file: `DAGU_AUTH_BASIC_PASSWORD_FILE`, `DAGU_AUTH_TOKEN_SECRET_FILE`, `DAGU_AUTH_BUILTIN_INITIAL_ADMIN_PASSWORD_FILE`, `DAGU_AUTH_OIDC_CLIENT_SECRET_FILE`, `DAGU_GITSYNC_AUTH_TOKEN_FILE`, `DAGU_GITSYNC_AUTH_SSH_PASSPHRASE_FILE`, and `DAGU_SECRETS_VAULT_TOKEN_FILE`; `remote_nodes` entries take `basic_auth_password_file` and `auth_token_file`. Dagu reads the file at startup, not when it uses the secret, and removes the trailing line ends. Setting a non-empty secret and its `_file` form together, or naming a file that cannot be read or is empty, stops the startup. `tunnel.tailscale.auth_key` and `license.key` have no `_file` form.
 
 ### Scheduler
 

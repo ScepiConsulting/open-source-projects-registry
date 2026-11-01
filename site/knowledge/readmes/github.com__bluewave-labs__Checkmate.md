@@ -28,15 +28,17 @@
 ![](https://img.shields.io/github/languages/top/bluewave-labs/checkmate)
 ![](https://img.shields.io/github/issues/bluewave-labs/checkmate)
 ![](https://img.shields.io/github/issues-pr/bluewave-labs/checkmate)
-[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/bluewave-labs/checkmate)
 
 <h1 align="center"><a href="https://bluewavelabs.ca" target="_blank">Checkmate</a></h1>
 
-<p align="center"><strong>An open source uptime and infrastructure monitoring application</strong>
+<p align="center"><strong>An open source uptime and infrastructure monitoring application</strong></p>
 
-[![Run on PikaPods](https://www.pikapods.com/static/run-button.svg)](https://www.pikapods.com/pods?run=checkmate)
+<p align="center">
+  <a href="https://www.pikapods.com/pods?run=checkmate"><img src="https://www.pikapods.com/static/run-button.svg" alt="Run on PikaPods"></a>
+</p>
 
-<img width="1461" height="853" alt="image" src="https://github.com/user-attachments/assets/d5ee1a4e-9db9-47cc-ad47-e1ba88a9d796" />
+<p align="center">
+<img width="1680" height="955" alt="image" src="https://github.com/user-attachments/assets/1ed9ab90-8a05-4a10-83e8-19ced72f43d5" />
 </p>
 <br>
 
@@ -52,10 +54,12 @@ Checkmate also has an agent, called [Capture](https://github.com/bluewave-labs/c
 
 ## 🚀 Proven at scale
 
-**Checkmate** is used in production to monitor **1,600+ servers** on a single deployment.
+**Checkmate** is used in production to monitor **1,600+ servers** on a single deployment. 
 
 ✅ No reported performance bottlenecks  
 ✅ No significant operational issues
+
+Checkmate also scales horizontally for more than 5000 servers: you can run dedicated [worker nodes](https://checkmate.so/docs/getting-started/distributed-workers) that share the check load through MongoDB.
 
 </td>
 </tr>
@@ -89,8 +93,8 @@ The username is demouser@demo.com and the password is Demouser1! (just a note th
 Usage instructions can be found [here](https://checkmate.so/docs). 
 
 ## Prerequisites
-- [Docker](https://www.docker.com/) installed
-- [Git](https://git-scm.com/) installed
+- [Docker](https://www.docker.com/) with Docker Compose installed
+- [Git](https://git-scm.com/) only if you want to build the image yourself
 
 <a id="installation"></a>
 ## Installation
@@ -106,8 +110,28 @@ JWT_SECRET="$(openssl rand -hex 32)" docker compose up -d
 
 Then open http://localhost:52345. If the app is reached at another origin (domain or LAN IP), set `CLIENT_HOST` accordingly. To build the image yourself, run `docker build -f docker/Dockerfile -t checkmate .` from a checkout. For TLS, put any reverse proxy (Caddy, Traefik, nginx) in front of port 52345.
 
-There are also 1-click installation options like [Repocloud](https://repocloud.io/details/Checkmate),
-[Pikapods](https://www.pikapods.com/), [Coolify](https://coolify.io/), [Elestio](https://elest.io/open-source/checkmate), [Easypanel](https://easypanel.io/templates/checkmate), [K8s](./charts/helm/checkmate/INSTALLATION.md), [Sive Host](https://sive.host) (South Africa), [Cloudzy](https://cloudzy.com/marketplace/checkmate) or [Pethost](https://pethost.dev/templates/checkmate/). Note that the Helm chart has not yet been migrated to the all-in-one image: it still deploys the legacy `checkmate-client`, `checkmate-backend` and `checkmate-mongo` images, pinned at v3.8.1.
+### Install with one click
+
+You can also run Checkmate on any of these platforms:
+
+<table>
+  <tr>
+    <td align="center" width="120"><a href="https://repocloud.io/details/Checkmate"><img src="https://checkmate.so/img/brands/hosts/repocloud.png" height="28" alt="RepoCloud"><br><sub><b>RepoCloud</b></sub></a></td>
+    <td align="center" width="120"><a href="https://www.pikapods.com/pods?run=checkmate"><img src="https://checkmate.so/img/brands/hosts/pikapods.png" height="28" alt="PikaPods"><br><sub><b>PikaPods</b></sub></a></td>
+    <td align="center" width="120"><a href="https://coolify.io/"><img src="https://checkmate.so/img/brands/hosts/coolify.png" height="28" alt="Coolify"><br><sub><b>Coolify</b></sub></a></td>
+    <td align="center" width="120"><a href="https://elest.io/open-source/checkmate"><img src="https://checkmate.so/img/brands/hosts/elestio.png" height="28" alt="Elestio"><br><sub><b>Elestio</b></sub></a></td>
+    <td align="center" width="120"><a href="https://easypanel.io/templates/checkmate"><img src="https://checkmate.so/img/brands/hosts/easypanel.svg" height="28" alt="Easypanel"><br><sub><b>Easypanel</b></sub></a></td>
+  </tr>
+  <tr>
+    <td align="center" width="120"><a href="./charts/helm/checkmate/INSTALLATION.md"><img src="https://checkmate.so/img/brands/hosts/kubernetes.svg" height="28" alt="Kubernetes"><br><sub><b>Kubernetes</b></sub></a></td>
+    <td align="center" width="120"><a href="https://railyard.run/templates/checkmate"><img src="https://checkmate.so/img/brands/hosts/railyard.svg" height="28" alt="Railyard"><br><sub><b>Railyard</b></sub></a></td>
+    <td align="center" width="120"><a href="https://sive.host"><img src="https://checkmate.so/img/brands/hosts/sivehost.png" height="28" alt="Sive Host"><br><sub><b>Sive Host</b></sub></a></td>
+    <td align="center" width="120"><a href="https://cloudzy.com/marketplace/checkmate"><img src="https://checkmate.so/img/brands/hosts/cloudzy.svg" height="28" alt="Cloudzy"><br><sub><b>Cloudzy</b></sub></a></td>
+    <td align="center" width="120"><a href="https://pethost.dev/templates/checkmate/"><img src="https://checkmate.so/img/brands/hosts/pethost.svg" height="28" alt="Pethost"><br><sub><b>Pethost</b></sub></a></td>
+  </tr>
+</table>
+
+Note that the Helm chart has not yet been migrated to the all-in-one image: it still deploys the legacy `checkmate-client`, `checkmate-backend` and `checkmate-mongo` images, pinned at v3.8.1.
 
 
 ### Configuration
@@ -278,6 +302,46 @@ docker --tlsverify --tlscacert=ca.pem --tlscert=cert.pem --tlskey=key.pem \
   -H=docker.example.com:2376 version
 ```
 
+### Heartbeat monitors
+
+A heartbeat monitor is passive: your job pings Checkmate when it runs, and the monitor goes down if no ping arrives within its alert window. Use it for cron jobs, backups and scheduled tasks.
+
+Each ping URL combines the team's ping key with the monitor's slug:
+
+```
+https://<checkmate-host>/api/v1/heartbeat/<pingKey>/<slug>
+```
+
+- **Ping key**: one per team. Generate or rotate it in **Settings → Monitoring**. It is shown once, so copy it when it appears; rotating replaces it and the old key stops working.
+- **Slug**: set when you create the monitor, for example `nightly-backup`. Lowercase letters, numbers and single hyphens.
+
+| Route | Records |
+|---|---|
+| `GET` or `POST /<pingKey>/<slug>` | an up check |
+| `GET` or `POST /<pingKey>/<slug>/fail` | a down check |
+| `GET` or `POST /<pingKey>/<slug>/<exitCode>` | up for `0`, down for anything else |
+
+Optional query parameters, on any route:
+
+| Parameter | Effect |
+|---|---|
+| `duration=<ms>` | How long the run took, stored as the check's response time |
+| `msg=<text>` | A message stored on the check |
+| `create=true` | Creates the monitor if the slug doesn't exist yet (see below) |
+| `interval=<ms>` | Alert window for a monitor created by `create=true` (default 1 day) |
+
+```bash
+# Report the exit code and how long the job took
+START=$(date +%s); /path/to/job.sh; CODE=$?
+curl -fsS -m 10 --retry 3 "https://<checkmate-host>/api/v1/heartbeat/<pingKey>/nightly-backup/$CODE?duration=$((($(date +%s) - START) * 1000))"
+```
+
+**Creating monitors from a job.** Add `create=true` and a ping to an unknown slug creates the heartbeat monitor, then records the ping. Later pings reuse it. The new monitor is named after the slug, owned by the admin who generated the ping key, and has no notifications until you add them in the UI. Requests with `create=true` are limited to 20 per hour per ping key, including pings to monitors that already exist, so remove the flag after the first run for jobs that ping more often than every 3 minutes. Without `create=true`, an unknown slug returns `404`, so a typo never creates a monitor silently.
+
+```bash
+curl -fsS "https://<checkmate-host>/api/v1/heartbeat/<pingKey>/nightly-backup?create=true&interval=3600000"
+```
+
 For more documentation, see the [docs directory](./docs/).
 
 <a id="performance"></a>
@@ -306,6 +370,7 @@ Feel free to ask questions or share your ideas - we'd love to hear from you!
 
 - Completely open source, deployable on your servers or home devices (e.g Raspberry Pi 4 or 5)
 - Several monitoring options: HTTP (with SSL certificate expiry), Ping, Port, DNS, Docker, gRPC, WebSocket, Game server
+- Heartbeat monitors for cron jobs, backups and other scheduled tasks
 - Page speed monitoring
 - Infrastructure monitoring (memory, disk usage, CPU performance, network etc) - requires [Capture](https://github.com/bluewave-labs/capture) agent
   - Selective disk monitoring with mountpoint selection
@@ -322,7 +387,7 @@ Feel free to ask questions or share your ideas - we'd love to hear from you!
 1. A monitor executes a check (HTTP / ping / port / hardware via Capture agent)
 2. The result is stored (success/failure + response time)
 3. Recent check results are evaluated against the monitor's configured status change threshold
-4. If the monitor's status change threshold is met and the current status is not equal to the previous status, the monitor's state changes (e.g. `initializing`, `up`, `down`, `breached`)
+4. If the monitor's status change threshold is met and the current status is not equal to the previous status, the monitor's state changes (e.g. `up`, `down`, `breached`). New monitors start as `initializing`; monitors inside a maintenance window are set to `maintenance` and are not checked
 5. Upon a state change: an incident is either created or resolved, depending on the monitor's current status
 6. Notifications are triggered based on configuration
 
@@ -367,7 +432,7 @@ Feel free to ask questions or share your ideas - we'd love to hear from you!
 
 We are [Alex](http://github.com/ajhollid) (team lead), [Gorkem](http://github.com/gorkem-bwl/), [Aryaman](https://github.com/Br0wnHammer), [Malena](https://github.com/malenacaroline) and [Mert](https://github.com/mertssmnoglu) helping individuals and businesses monitor their infra and servers.
 
-We pride ourselves on building strong connections with contributors at every level. Despite being a young project, Checkmate has already earned almost 11K stars and attracted 150+ contributors from around the globe.
+We pride ourselves on building strong connections with contributors at every level. Despite being a young project, Checkmate has already earned more than 11K stars and attracted 150+ contributors from around the globe.
 
 Our repo is starred by employees from **Google, Microsoft, Intel, Cisco, Tencent, Electronic Arts, ByteDance, JP Morgan Chase, Deloitte, Accenture, Foxconn, Broadcom, China Telecom, Barclays, Capgemini, Wipro, Cloudflare, Dassault Systèmes and NEC**, so don’t hold back — jump in, contribute and learn with us!
 

@@ -84,6 +84,15 @@ Dependencies
 
    And set `APP_ENV=prod` in your `.env.local` file (see below)
 
+2. Generate a unique `APP_SECRET` and set it in your `.env.local` file (or as a real environment variable, see below):
+
+    ```
+    openssl rand -hex 16
+    ```
+
+    > [!CAUTION]
+    >
+    > The `.env` file committed in this repository ships a default `APP_SECRET`. It is the same for every installation, so you **must** override it. This value is not used to encrypt any data: you can change it at any time without losing anything.
 
 3. At least put the correct credentials to your database (driver and url) in your `.env.local` file so you can easily create the necessary tables.
 
@@ -109,7 +118,7 @@ Create your own `.env.local` file to change the necessary variables, if you plan
 
 > [!CAUTION]
 >
-> In a production environnement, the `APP_ENV` variable MUST be set to `prod` to prevent leaking sensitive data.
+> In a production environnement, the `APP_ENV` variable MUST be set to `prod` to prevent leaking sensitive data, and `APP_SECRET` MUST be set to a unique value (see the installation steps above).
 
 **a. The database driver and url** (_you should already have it configured since you created the database previously_)
 
@@ -770,6 +779,23 @@ bin/console dav:sync-birthday-calendar
 > This is a repair command, don't put it on a schedule. It deletes and recreates every birthday
 > event, so each run tells your clients that all of them changed and they download the lot again.
 > Birthdays are kept up to date on their own whenever a contact is added, changed or removed.
+
+### macOS Calendar shows "There was a problem accessing the availability for this account"
+
+macOS Calendar reads the user's availability (the hours they can be invited, RFC 7953) from the `calendar-availability` property of their scheduling inbox (`/dav/calendars/<user>/inbox/`) when the account settings are opened. Like any sabre/dav server (Baïkal behaves the same), Davis only stores that property once a client has written it, so for a new user it does not exist. Calendar treats a missing value as an error, whatever the server answers (a `404`, or the empty `418` propstat sabre/dav returns because Calendar asks for a minimal response), and never writes a default itself.
+
+Davis therefore answers with a default availability, **weekdays from 09:00 to 17:00**, until the user saves their own in Calendar. A few things to know:
+
+- The default is only shown to clients: free-busy lookups (when someone checks whether the user is free before inviting them) keep treating a user who never saved an availability as **always available**, as before. Once the user saves their availability, it applies everywhere.
+- The times are "floating": every client reads 09:00 to 17:00 in its own time zone.
+- Calendar asks for the property under its old Apple name (`{http://calendarserver.org/ns/}calendar-availability`), which sabre/dav maps to the standard one (`{urn:ietf:params:xml:ns:caldav}calendar-availability`): both names read and write the same value.
+
+To check what a user has, run a PROPFIND on their inbox (it returns the default if nothing is stored):
+
+```shell
+curl -u <user>:<password> -X PROPFIND -H 'Depth: 0' https://dav.example.org/dav/calendars/<user>/inbox/ \
+  --data '<d:propfind xmlns:d="DAV:" xmlns:c="urn:ietf:params:xml:ns:caldav"><d:prop><c:calendar-availability/></d:prop></d:propfind>'
+```
 
 # 📚 Libraries used
 
